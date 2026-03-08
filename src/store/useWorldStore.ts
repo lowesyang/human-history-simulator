@@ -1,0 +1,135 @@
+import { create } from "zustand";
+import type {
+  WorldState,
+  HistoricalEvent,
+  Region,
+  YearMonth,
+} from "@/lib/types";
+import type { EpochChangelog } from "@/lib/changelog";
+
+type Locale = "zh" | "en";
+
+interface WorldStore {
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
+
+  epochCount: number;
+  setEpochCount: (count: number) => void;
+
+  currentState: WorldState | null;
+  setCurrentState: (state: WorldState | null) => void;
+
+  pastEvents: HistoricalEvent[];
+  futureEvents: HistoricalEvent[];
+  setPastEvents: (events: HistoricalEvent[]) => void;
+  setFutureEvents: (events: HistoricalEvent[]) => void;
+
+  frontier: YearMonth;
+  setFrontier: (frontier: YearMonth) => void;
+
+  originTime: YearMonth;
+  setOriginTime: (time: YearMonth) => void;
+
+  viewingTime: YearMonth;
+  setViewingTime: (time: YearMonth) => void;
+
+  selectedRegionId: string | null;
+  setSelectedRegionId: (id: string | null) => void;
+  selectedRegion: Region | null;
+
+  isLoading: boolean;
+  setIsLoading: (loading: boolean) => void;
+
+  loadingStatus: string;
+  setLoadingStatus: (status: string) => void;
+
+  llmStreams: Record<string, string>;
+  appendLlmToken: (regionId: string, token: string) => void;
+  clearLlmStreams: () => void;
+
+  evolutionLogs: EpochChangelog[];
+  addEvolutionLog: (log: EpochChangelog) => void;
+  setEvolutionLogs: (logs: EpochChangelog[]) => void;
+  clearEvolutionLogs: () => void;
+
+  showLogPanel: boolean;
+  setShowLogPanel: (show: boolean) => void;
+
+  abortController: AbortController | null;
+  setAbortController: (ctrl: AbortController | null) => void;
+
+  isGeneratingEvents: boolean;
+  setIsGeneratingEvents: (generating: boolean) => void;
+}
+
+export const useWorldStore = create<WorldStore>((set, get) => ({
+  locale: "zh",
+  setLocale: (locale) => set({ locale }),
+
+  epochCount: 1,
+  setEpochCount: (epochCount) => set({ epochCount }),
+
+  currentState: null,
+  setCurrentState: (currentState) => {
+    set({ currentState });
+    const selectedId = get().selectedRegionId;
+    if (selectedId && currentState) {
+      const region =
+        currentState.regions.find((r) => r.id === selectedId) ?? null;
+      set({ selectedRegion: region });
+    }
+  },
+
+  pastEvents: [],
+  futureEvents: [],
+  setPastEvents: (pastEvents) => set({ pastEvents }),
+  setFutureEvents: (futureEvents) => set({ futureEvents }),
+
+  frontier: { year: -1600, month: 1 },
+  setFrontier: (frontier) => set({ frontier }),
+
+  originTime: { year: -1600, month: 1 },
+  setOriginTime: (originTime) => set({ originTime }),
+
+  viewingTime: { year: -1600, month: 1 },
+  setViewingTime: (viewingTime) => set({ viewingTime }),
+
+  selectedRegionId: null,
+  setSelectedRegionId: (id) => {
+    const state = get().currentState;
+    const region = id && state ? state.regions.find((r) => r.id === id) ?? null : null;
+    set({ selectedRegionId: id, selectedRegion: region });
+  },
+  selectedRegion: null,
+
+  isLoading: false,
+  setIsLoading: (isLoading) => set({ isLoading }),
+
+  loadingStatus: "",
+  setLoadingStatus: (loadingStatus) => set({ loadingStatus }),
+
+  llmStreams: {},
+  appendLlmToken: (regionId, token) =>
+    set((state) => ({
+      llmStreams: {
+        ...state.llmStreams,
+        [regionId]: (state.llmStreams[regionId] || "") + token,
+      },
+    })),
+  clearLlmStreams: () => set({ llmStreams: {} }),
+
+  evolutionLogs: [],
+  addEvolutionLog: (log) =>
+    set((state) => ({ evolutionLogs: [...state.evolutionLogs, log] })),
+  setEvolutionLogs: (evolutionLogs) => set({ evolutionLogs }),
+  clearEvolutionLogs: () => set({ evolutionLogs: [] }),
+
+  showLogPanel: false,
+  setShowLogPanel: (showLogPanel) => set({ showLogPanel }),
+
+  abortController: null,
+  setAbortController: (abortController) => set({ abortController }),
+
+  isGeneratingEvents: false,
+  setIsGeneratingEvents: (isGeneratingEvents) => set({ isGeneratingEvents }),
+}));

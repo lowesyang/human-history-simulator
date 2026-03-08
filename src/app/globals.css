@@ -1,26 +1,185 @@
 @import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Cinzel";
+  src: url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap");
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  --font-cinzel: "Cinzel", serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg-primary: #0f0e0c;
+  --color-bg-secondary: #1a1814;
+  --color-bg-tertiary: #252118;
+  --color-bg-glass: rgba(26, 24, 20, 0.75);
+
+  --color-text-primary: #e8dcc8;
+  --color-text-secondary: #a89a82;
+  --color-text-muted: #6b5f4e;
+
+  --color-accent-gold: #c9a84c;
+  --color-accent-copper: #b87333;
+  --color-accent-amber: #d4a017;
+
+  --color-border-subtle: rgba(201, 168, 76, 0.15);
+  --color-border-active: rgba(201, 168, 76, 0.4);
+
+  --color-status-war: #8b3a3a;
+  --color-status-trade: #2e6b4f;
+  --color-status-dynasty: #5b4a8a;
+  --color-status-invention: #3a6b8b;
+  --color-status-religion: #8a7340;
+
+  --color-background: #0f0e0c;
+  --color-foreground: #e8dcc8;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-bg-primary text-text-primary m-0 overflow-hidden;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme(--color-accent-gold) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  @apply bg-accent-gold rounded-sm;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.glass-panel {
+  @apply bg-bg-glass backdrop-blur-[16px] border border-border-subtle;
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.gold-border-left {
+  @apply border-l-2 border-accent-gold;
+}
+
+/* Range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  @apply w-3.5 h-3.5 rounded-full bg-accent-gold cursor-pointer border-2 border-bg-primary;
+  box-shadow: 0 0 6px rgba(201, 168, 76, 0.4);
+  transition: box-shadow 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.6);
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply w-3.5 h-3.5 rounded-full bg-accent-gold cursor-pointer border-2 border-bg-primary;
+  box-shadow: 0 0 6px rgba(201, 168, 76, 0.4);
+}
+
+/* Loading ring animation */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(201, 168, 76, 0);
+  }
+}
+
+.loading-ring {
+  animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Smooth map transitions */
+.maplibregl-canvas {
+  transition: filter 0.3s ease;
+}
+
+.map-dimmed .maplibregl-canvas {
+  filter: brightness(0.7);
+}
+
+/* Slide-in animation for detail panel */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Icon button base styles */
+.icon-btn {
+  @apply relative flex items-center justify-center w-8 h-8 rounded-full transition-all cursor-pointer;
+}
+
+.icon-btn:hover:not(:disabled) {
+  @apply text-accent-gold scale-110;
+  background: rgba(201, 168, 76, 0.15);
+  border-color: theme(--color-accent-gold) !important;
+  color: theme(--color-accent-gold) !important;
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.25);
+}
+
+.icon-btn:active:not(:disabled) {
+  @apply scale-95;
+  box-shadow: 0 0 4px rgba(201, 168, 76, 0.3);
+}
+
+.icon-btn:disabled {
+  @apply cursor-not-allowed opacity-40;
+}
+
+.icon-btn.icon-btn-danger:hover:not(:disabled) {
+  background: rgba(220, 80, 60, 0.15);
+  border-color: #dc503c !important;
+  color: #dc503c !important;
+  box-shadow: 0 0 12px rgba(220, 80, 60, 0.25);
+}
+
+/* Tooltip */
+.tooltip-wrap {
+  @apply relative;
+}
+
+.tooltip-wrap::after {
+  content: attr(data-tooltip);
+  @apply absolute left-1/2 py-1 px-2.5 rounded-md bg-bg-tertiary border border-border-active text-text-primary text-xs whitespace-nowrap pointer-events-none opacity-0 z-[100];
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tooltip-wrap:hover::after {
+  @apply opacity-100;
+  transform: translateX(-50%) translateY(0);
 }

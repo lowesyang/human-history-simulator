@@ -1,0 +1,2595 @@
+{
+  "id": "state-y-1600-m1-initial",
+  "timestamp": { "year": -1600, "month": 1 },
+  "era": {
+    "zh": "青铜时代中期",
+    "en": "Middle Bronze Age"
+  },
+  "regions": [
+    {
+      "id": "shang",
+      "name": { "zh": "商朝", "en": "Shang Dynasty" },
+      "territoryId": "china_central",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": { "zh": "商朝", "en": "Shang Dynasty" },
+        "type": "kingdom",
+        "ruler": { "zh": "商汤", "en": "King Tang" },
+        "rulerTitle": { "zh": "王", "en": "King" },
+        "dynasty": { "zh": "商", "en": "Shang" },
+        "capital": { "zh": "亳", "en": "Bo" },
+        "governmentForm": "absolute_monarchy",
+        "socialStructure": {
+          "zh": "以王室为核心的等级制度：王族、贵族、平民、奴隶四个阶层",
+          "en": "Hierarchical system centered on the royal house: royalty, nobility, commoners, and slaves"
+        },
+        "rulingClass": {
+          "zh": "商王室及世袭贵族，掌控宗教祭祀与政治权力",
+          "en": "Shang royal house and hereditary nobility, controlling religious rituals and political power"
+        },
+        "succession": {
+          "zh": "兄终弟及与父死子继并行的王位继承制",
+          "en": "Dual succession system alternating between fraternal and patrilineal inheritance"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "以商王为最高统治者的中央集权制，设内服与外服管理体系",
+          "en": "Centralized monarchy under the Shang king, with inner and outer service administrative systems"
+        },
+        "departments": [
+          {
+            "name": { "zh": "卜官署", "en": "Oracle Bureau" },
+            "function": { "zh": "主管占卜、祭祀及天文历法", "en": "Oversees divination, sacrificial rites, and astronomical calendar" },
+            "headCount": 50
+          },
+          {
+            "name": { "zh": "司徒", "en": "Minister of Land and People" },
+            "function": { "zh": "管理土地分配与农业生产", "en": "Manages land allocation and agricultural production" },
+            "headCount": 80
+          },
+          {
+            "name": { "zh": "司马", "en": "Minister of War" },
+            "function": { "zh": "掌管军事事务与战车部队", "en": "Commands military affairs and chariot forces" },
+            "headCount": 60
+          },
+          {
+            "name": { "zh": "司空", "en": "Minister of Works" },
+            "function": { "zh": "负责宫殿建造与青铜铸造", "en": "Responsible for palace construction and bronze casting" },
+            "headCount": 40
+          }
+        ],
+        "totalOfficials": 800,
+        "localAdmin": {
+          "zh": "外服制度：分封诸侯国管理边远地区，各方国向商王朝贡",
+          "en": "Outer service system: vassal states govern frontier regions and pay tribute to the Shang king"
+        },
+        "legalSystem": {
+          "zh": "以神判与刑罚为主的法律体系，商王兼任最高司法官",
+          "en": "Legal system based on divine judgment and penal codes, with the Shang king as supreme judge"
+        },
+        "taxationSystem": {
+          "zh": "贡赋制：诸侯定期向商王进贡粮食、青铜、玉器及奴隶",
+          "en": "Tribute system: vassals periodically present grain, bronze, jade, and slaves to the Shang king"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "祖先崇拜与上帝（天帝）信仰，大规模甲骨占卜决定国家大事",
+          "en": "Ancestor worship and belief in Shangdi (Supreme Deity), with large-scale oracle bone divination for state affairs"
+        },
+        "philosophy": {
+          "zh": "天命观：认为王权受上天授予，通过祭祀维系天人关系",
+          "en": "Mandate of Heaven concept: royal power granted by heaven, maintained through sacrificial rituals"
+        },
+        "writingSystem": {
+          "zh": "甲骨文——刻于龟甲和兽骨上的早期汉字，已有约1500个独立字符",
+          "en": "Oracle bone script — early Chinese characters inscribed on turtle shells and animal bones, with approximately 1,500 distinct characters"
+        },
+        "culturalAchievements": {
+          "zh": "高度发达的青铜铸造技术，精美的礼器制作，甲骨文的发展，天文历法的进步",
+          "en": "Highly advanced bronze casting technology, exquisite ritual vessel craftsmanship, development of oracle bone script, advances in astronomical calendar"
+        },
+        "languageFamily": {
+          "zh": "上古汉语（汉藏语系）",
+          "en": "Old Chinese (Sino-Tibetan language family)"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 800000000,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 2400,
+          "silverKg": 30000,
+          "displayNote": { "zh": "约合黄金2400公斤", "en": "Approximately 2,400 kg of gold equivalent" }
+        },
+        "gdpPerCapita": {
+          "amount": 200,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 0.0006,
+          "silverKg": 0.0075,
+          "displayNote": { "zh": "约合白银7.5克/人", "en": "Approximately 7.5g silver per capita" }
+        },
+        "gdpDescription": {
+          "zh": "以农业为基础、青铜手工业为特色的经济体系，贸易网络覆盖中原及周边地区",
+          "en": "Agriculture-based economy distinguished by bronze handicraft industry, with trade networks spanning the Central Plains and surrounding regions"
+        },
+        "mainIndustries": {
+          "zh": "粟米种植、青铜铸造、丝绸纺织、玉器加工、酿酒业",
+          "en": "Millet cultivation, bronze casting, silk weaving, jade carving, brewing"
+        },
+        "tradeGoods": {
+          "zh": "出口：青铜器、丝绸、玉器；进口：锡矿、铜矿、贝壳、龟甲",
+          "en": "Exports: bronze vessels, silk, jade; Imports: tin ore, copper ore, cowrie shells, turtle shells"
+        },
+        "currency": {
+          "name": { "zh": "贝币", "en": "Cowrie shells" },
+          "type": "commodity",
+          "metalBasis": "cowrie",
+          "unitName": { "zh": "朋（五枚为一系，二系为一朋）", "en": "Peng (5 shells per string, 2 strings per peng)" }
+        },
+        "householdWealth": {
+          "zh": "贵族拥有青铜器、玉器和大量奴隶；平民拥有陶器和少量粮食储备",
+          "en": "Nobles possess bronze vessels, jade, and numerous slaves; commoners own pottery and modest grain reserves"
+        },
+        "averageIncome": {
+          "amount": 120,
+          "unit": { "zh": "贝（枚/年）", "en": "cowrie shells per year" },
+          "silverKg": 0.0045,
+          "displayNote": { "zh": "普通农民年收入", "en": "Annual income of an average farmer" }
+        },
+        "foreignTradeVolume": {
+          "amount": 40000000,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 120,
+          "silverKg": 1500,
+          "displayNote": { "zh": "占GDP约5%", "en": "Approximately 5% of GDP" }
+        },
+        "economicSystem": {
+          "zh": "王室统制经济：青铜铸造与丝绸生产由王室垄断，农业实行井田制雏形",
+          "en": "Royal command economy: bronze casting and silk production monopolized by the crown; agriculture under a proto-well-field system"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 120000000,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 360,
+          "silverKg": 4500
+        },
+        "annualExpenditure": {
+          "amount": 100000000,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 300,
+          "silverKg": 3750
+        },
+        "surplus": {
+          "amount": 20000000,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 60,
+          "silverKg": 750
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "农业贡赋", "en": "Agricultural tribute" },
+            "amount": { "amount": 60000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 180, "silverKg": 2250 },
+            "percentage": 50
+          },
+          {
+            "source": { "zh": "方国进贡", "en": "Vassal state tribute" },
+            "amount": { "amount": 30000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 90, "silverKg": 1125 },
+            "percentage": 25
+          },
+          {
+            "source": { "zh": "手工业与贸易收入", "en": "Handicraft and trade revenue" },
+            "amount": { "amount": 24000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 72, "silverKg": 900 },
+            "percentage": 20
+          },
+          {
+            "source": { "zh": "劳役与杂税", "en": "Corvée labor and miscellaneous taxes" },
+            "amount": { "amount": 6000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 18, "silverKg": 225 },
+            "percentage": 5
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "军事开支", "en": "Military expenditure" },
+            "amount": { "amount": 35000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 105, "silverKg": 1313 },
+            "percentage": 35
+          },
+          {
+            "category": { "zh": "宫廷与祭祀", "en": "Court and religious rituals" },
+            "amount": { "amount": 30000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 90, "silverKg": 1125 },
+            "percentage": 30
+          },
+          {
+            "category": { "zh": "建设工程", "en": "Construction projects" },
+            "amount": { "amount": 20000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 60, "silverKg": 750 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "行政管理", "en": "Administration" },
+            "amount": { "amount": 15000000, "unit": { "zh": "贝", "en": "cowrie shells" }, "goldKg": 45, "silverKg": 562 },
+            "percentage": 15
+          }
+        ],
+        "treasury": {
+          "amount": 200000000,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 600,
+          "silverKg": 7500,
+          "displayNote": { "zh": "包括大量青铜器、玉器储备", "en": "Including large reserves of bronze vessels and jade" }
+        },
+        "treasuryDescription": {
+          "zh": "王室府库充盈，存有大量贝币、青铜器和玉器，是新建王朝的雄厚基础",
+          "en": "Royal treasury is well-stocked with cowrie shells, bronze vessels, and jade — a solid foundation for the newly established dynasty"
+        },
+        "fiscalPolicy": {
+          "zh": "商汤初立，施行轻赋政策以安抚民心，逐步恢复因灭夏战争消耗的国力",
+          "en": "King Tang, having just established the dynasty, enacts a policy of light taxation to pacify the people and gradually restore national strength depleted by the war to overthrow Xia"
+        }
+      },
+      "military": {
+        "level": 6,
+        "totalTroops": 30000,
+        "standingArmy": 10000,
+        "reserves": 20000,
+        "branches": [
+          {
+            "name": { "zh": "车兵", "en": "Chariot Corps" },
+            "count": 3000,
+            "description": { "zh": "商军核心力量，每乘战车配三名甲士", "en": "Core of Shang military, each chariot manned by three armored warriors" }
+          },
+          {
+            "name": { "zh": "步卒", "en": "Infantry" },
+            "count": 22000,
+            "description": { "zh": "配备青铜戈、矛、盾的步兵主力", "en": "Main infantry force equipped with bronze dagger-axes, spears, and shields" }
+          },
+          {
+            "name": { "zh": "射手", "en": "Archers" },
+            "count": 5000,
+            "description": { "zh": "使用复合弓的远程部队", "en": "Ranged units equipped with composite bows" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "商王亲任最高统帅", "en": "The Shang king serves as supreme commander" },
+          "totalGenerals": 8,
+          "keyGenerals": [
+            {
+              "name": { "zh": "伊尹", "en": "Yi Yin" },
+              "title": { "zh": "阿衡（宰相兼军师）", "en": "Grand Tutor (Prime Minister and Military Advisor)" },
+              "command": { "zh": "辅佐商汤制定军事战略", "en": "Assists King Tang in formulating military strategy" }
+            }
+          ]
+        },
+        "technology": {
+          "zh": "青铜兵器（戈、矛、钺），马拉战车，皮甲防具，城池防御工事",
+          "en": "Bronze weapons (dagger-axes, spears, battle-axes), horse-drawn chariots, leather armor, fortified city defenses"
+        },
+        "annualMilitarySpending": {
+          "amount": 35000000,
+          "unit": { "zh": "贝（枚）", "en": "cowrie shells" },
+          "goldKg": 105,
+          "silverKg": 1313
+        },
+        "militarySpendingPctGdp": 4.4
+      },
+      "demographics": {
+        "population": 4000000,
+        "populationDescription": {
+          "zh": "商朝初期人口约400万，主要聚居于黄河中下游的中原地区",
+          "en": "Early Shang population approximately 4 million, primarily concentrated in the Central Plains along the middle and lower Yellow River"
+        },
+        "urbanPopulation": 200000,
+        "urbanizationRate": 5,
+        "majorCities": [
+          { "name": { "zh": "亳（都城）", "en": "Bo (capital)" }, "population": 40000 },
+          { "name": { "zh": "郑州", "en": "Zhengzhou" }, "population": 25000 },
+          { "name": { "zh": "殷", "en": "Yin" }, "population": 15000 }
+        ],
+        "socialClasses": {
+          "zh": "王族（约0.5%）、贵族与卜官（约4%）、平民农户（约75%）、工匠（约10%）、奴隶（约10.5%）",
+          "en": "Royalty (~0.5%), nobility and diviners (~4%), commoner farmers (~75%), artisans (~10%), slaves (~10.5%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "周边臣服的方国与部落联盟",
+          "en": "Surrounding vassal states and tribal confederations that submitted to Shang rule"
+        },
+        "enemies": {
+          "zh": "西北方的鬼方、土方等游牧民族，夏朝残余势力",
+          "en": "Northwestern nomadic peoples such as Guifang and Tufang; remnants of the Xia dynasty"
+        },
+        "foreignPolicy": {
+          "zh": "以商为天下之中心，通过分封与朝贡体系建立宗主权，对不臣服者进行征伐",
+          "en": "Shang as the center of the civilized world, establishing suzerainty through enfeoffment and tribute; military campaigns against those who refuse submission"
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": { "zh": "青铜时代", "en": "Bronze Age" },
+        "keyInnovations": {
+          "zh": "先进的青铜合金冶炼与铸造（块范法），甲骨文字，天文历法（阴阳合历），丝绸纺织技术",
+          "en": "Advanced bronze alloy smelting and casting (piece-mold technique), oracle bone script, astronomical calendar (lunisolar calendar), silk weaving technology"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "商汤英明领导，灭夏立威；先进的青铜技术带来军事和经济优势；发达的文字系统有利于行政管理",
+          "en": "Capable leadership under King Tang, legitimized by overthrowing Xia; advanced bronze technology providing military and economic advantages; developed writing system facilitating administration"
+        },
+        "weaknesses": {
+          "zh": "新朝初立，统治根基尚需巩固；边疆游牧民族持续威胁；过度依赖占卜决策可能延误时机",
+          "en": "Newly established dynasty with foundations still needing consolidation; persistent threats from frontier nomadic peoples; over-reliance on divination for decisions may cause delays"
+        },
+        "outlook": {
+          "zh": "前景光明——商汤开创新朝，国力处于上升期，预计将进入数百年的辉煌统治",
+          "en": "Bright outlook — King Tang has founded a new dynasty with rising national strength, expected to enter centuries of illustrious rule"
+        }
+      },
+      "status": "thriving",
+      "description": {
+        "zh": "商汤推翻夏桀暴政，建立商朝，定都于亳。新朝方兴，以先进的青铜技术和完备的祭祀体系闻名于世，正在巩固对中原地区的统治。",
+        "en": "King Tang has overthrown the tyrannical Jie of Xia and established the Shang dynasty with its capital at Bo. The newly founded dynasty, renowned for its advanced bronze technology and elaborate ritual systems, is consolidating its rule over the Central Plains."
+      }
+    },
+
+    {
+      "id": "new_kingdom_egypt",
+      "name": { "zh": "新王国埃及", "en": "New Kingdom Egypt" },
+      "territoryId": "egypt",
+      "territoryScale": "md",
+      "civilization": {
+        "name": { "zh": "新王国埃及", "en": "New Kingdom Egypt" },
+        "type": "empire",
+        "ruler": { "zh": "图特摩斯一世", "en": "Thutmose I" },
+        "rulerTitle": { "zh": "法老", "en": "Pharaoh" },
+        "dynasty": { "zh": "第十八王朝", "en": "Eighteenth Dynasty" },
+        "capital": { "zh": "底比斯", "en": "Thebes" },
+        "governmentForm": "theocratic_monarchy",
+        "socialStructure": {
+          "zh": "严格的等级制度：法老-祭司-贵族-书吏-工匠-农民-奴隶",
+          "en": "Strict hierarchy: Pharaoh — priests — nobles — scribes — artisans — farmers — slaves"
+        },
+        "rulingClass": {
+          "zh": "法老被视为神在人间的化身，与阿蒙神祭司集团共同掌控国家",
+          "en": "Pharaoh regarded as the living incarnation of the gods, sharing power with the Amun priesthood"
+        },
+        "succession": {
+          "zh": "王位父子相传，注重王室血统纯正，法老常与王室女性联姻",
+          "en": "Patrilineal royal succession emphasizing pure royal bloodline; pharaohs often marry royal women"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "以法老为中心的神权政治，设维齐尔（宰相）管理上下埃及，各州设州长",
+          "en": "Theocratic government centered on the Pharaoh, with a Vizier administering Upper and Lower Egypt, and nomarchs governing each nome"
+        },
+        "departments": [
+          {
+            "name": { "zh": "维齐尔府", "en": "Office of the Vizier" },
+            "function": { "zh": "总管行政、司法与税收", "en": "Oversees administration, justice, and taxation" },
+            "headCount": 200
+          },
+          {
+            "name": { "zh": "阿蒙神庙管理局", "en": "Temple of Amun Administration" },
+            "function": { "zh": "管理阿蒙神庙财产、祭祀及神庙经济", "en": "Manages Amun temple properties, rituals, and temple economy" },
+            "headCount": 500
+          },
+          {
+            "name": { "zh": "军事署", "en": "Military Bureau" },
+            "function": { "zh": "管理陆军和新建立的海军力量", "en": "Administers the army and newly established naval forces" },
+            "headCount": 150
+          },
+          {
+            "name": { "zh": "书吏院", "en": "Scribal Academy" },
+            "function": { "zh": "培训书吏，管理文书档案与税务记录", "en": "Trains scribes, manages documents, archives, and tax records" },
+            "headCount": 300
+          },
+          {
+            "name": { "zh": "工程署", "en": "Bureau of Works" },
+            "function": { "zh": "负责神庙建造、陵墓修建及灌溉工程", "en": "Responsible for temple construction, tomb building, and irrigation projects" },
+            "headCount": 100
+          }
+        ],
+        "totalOfficials": 3000,
+        "localAdmin": {
+          "zh": "全国分为42个州（诺姆），由州长管辖；努比亚设总督统治",
+          "en": "Country divided into 42 nomes governed by nomarchs; Nubia administered by a viceroy"
+        },
+        "legalSystem": {
+          "zh": "以玛阿特（真理与正义）原则为基础的法律体系，法老为最高裁决者",
+          "en": "Legal system based on the principles of Ma'at (truth and justice), with the Pharaoh as supreme arbiter"
+        },
+        "taxationSystem": {
+          "zh": "按尼罗河泛滥后丈量的耕地面积征收实物税（谷物、牲畜），神庙免税",
+          "en": "In-kind taxation (grain, livestock) based on cultivated land measured after the Nile flood; temples are tax-exempt"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "多神崇拜，以阿蒙-拉为主神；法老既是神的代言人也是神本身；复杂的来世信仰与木乃伊制作",
+          "en": "Polytheistic worship with Amun-Ra as supreme deity; Pharaoh as both divine representative and god incarnate; elaborate afterlife beliefs and mummification"
+        },
+        "philosophy": {
+          "zh": "玛阿特理念——追求宇宙秩序、真理与正义的平衡",
+          "en": "Ma'at philosophy — pursuit of cosmic order, truth, and justice in balance"
+        },
+        "writingSystem": {
+          "zh": "圣书体（象形文字）用于神庙铭文，僧侣体用于日常文书，约700个基本符号",
+          "en": "Hieroglyphics for temple inscriptions, hieratic script for daily documents, approximately 700 base symbols"
+        },
+        "culturalAchievements": {
+          "zh": "帝王谷陵墓群的修建，卡纳克神庙扩建，医学《艾伯斯纸草书》，先进的天文学",
+          "en": "Construction of Valley of the Kings tombs, expansion of Karnak Temple, medical Ebers Papyrus, advanced astronomy"
+        },
+        "languageFamily": {
+          "zh": "古埃及语（亚非语系）",
+          "en": "Ancient Egyptian (Afro-Asiatic language family)"
+        }
+      },
+      "economy": {
+        "level": 7,
+        "gdpEstimate": {
+          "amount": 5000,
+          "unit": { "zh": "德本（金银衡量单位）", "en": "deben (unit of weight for gold/silver)" },
+          "goldKg": 4500,
+          "silverKg": 54000,
+          "displayNote": { "zh": "约合黄金4500公斤", "en": "Approximately 4,500 kg of gold equivalent" }
+        },
+        "gdpPerCapita": {
+          "amount": 1.67,
+          "unit": { "zh": "德本", "en": "deben" },
+          "goldKg": 0.0015,
+          "silverKg": 0.018,
+          "displayNote": { "zh": "约合白银18克/人", "en": "Approximately 18g silver per capita" }
+        },
+        "gdpDescription": {
+          "zh": "尼罗河农业为基础的富裕经济，辅以黄金开采、国际贸易和神庙经济体系",
+          "en": "Wealthy Nile-based agricultural economy supplemented by gold mining, international trade, and the temple economic system"
+        },
+        "mainIndustries": {
+          "zh": "灌溉农业（小麦、大麦）、黄金开采、亚麻纺织、石材采掘、纸莎草制作",
+          "en": "Irrigated agriculture (wheat, barley), gold mining, linen weaving, stone quarrying, papyrus production"
+        },
+        "tradeGoods": {
+          "zh": "出口：黄金、纸莎草、亚麻布、粮食；进口：雪松木（黎巴嫩）、锡、乳香、天青石",
+          "en": "Exports: gold, papyrus, linen, grain; Imports: cedarwood (Lebanon), tin, frankincense, lapis lazuli"
+        },
+        "currency": {
+          "name": { "zh": "德本", "en": "Deben" },
+          "type": "metal_weight",
+          "metalBasis": "gold",
+          "unitName": { "zh": "德本（约91克）", "en": "Deben (approximately 91 grams)" }
+        },
+        "householdWealth": {
+          "zh": "贵族拥有庄园和大量奴隶；农民生活较为安定，能保留部分收成；工匠享有相对优厚的待遇",
+          "en": "Nobles own estates and numerous slaves; farmers live relatively securely, retaining a portion of their harvest; artisans enjoy comparatively favorable conditions"
+        },
+        "averageIncome": {
+          "amount": 1.0,
+          "unit": { "zh": "德本/年", "en": "deben per year" },
+          "silverKg": 0.011,
+          "displayNote": { "zh": "普通农民年收入", "en": "Annual income of an average farmer" }
+        },
+        "foreignTradeVolume": {
+          "amount": 500,
+          "unit": { "zh": "德本", "en": "deben" },
+          "goldKg": 450,
+          "silverKg": 5400,
+          "displayNote": { "zh": "占GDP约10%", "en": "Approximately 10% of GDP" }
+        },
+        "economicSystem": {
+          "zh": "中央再分配经济：国家收取农产品后再分配给官员、祭司和工人；神庙拥有大量独立经济资源",
+          "en": "Central redistribution economy: the state collects agricultural products and redistributes to officials, priests, and workers; temples control substantial independent economic resources"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 900,
+          "unit": { "zh": "德本", "en": "deben" },
+          "goldKg": 810,
+          "silverKg": 9720
+        },
+        "annualExpenditure": {
+          "amount": 800,
+          "unit": { "zh": "德本", "en": "deben" },
+          "goldKg": 720,
+          "silverKg": 8640
+        },
+        "surplus": {
+          "amount": 100,
+          "unit": { "zh": "德本", "en": "deben" },
+          "goldKg": 90,
+          "silverKg": 1080
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "土地税（谷物实物税）", "en": "Land tax (grain in-kind)" },
+            "amount": { "amount": 360, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 324, "silverKg": 3888 },
+            "percentage": 40
+          },
+          {
+            "source": { "zh": "黄金矿产收入", "en": "Gold mining revenue" },
+            "amount": { "amount": 225, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 202.5, "silverKg": 2430 },
+            "percentage": 25
+          },
+          {
+            "source": { "zh": "国际贸易关税", "en": "International trade tariffs" },
+            "amount": { "amount": 135, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 121.5, "silverKg": 1458 },
+            "percentage": 15
+          },
+          {
+            "source": { "zh": "努比亚与叙利亚贡品", "en": "Tribute from Nubia and Syria" },
+            "amount": { "amount": 135, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 121.5, "silverKg": 1458 },
+            "percentage": 15
+          },
+          {
+            "source": { "zh": "劳役与手工业", "en": "Corvée labor and handicrafts" },
+            "amount": { "amount": 45, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 40.5, "silverKg": 486 },
+            "percentage": 5
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "军事征伐与防务", "en": "Military campaigns and defense" },
+            "amount": { "amount": 280, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 252, "silverKg": 3024 },
+            "percentage": 35
+          },
+          {
+            "category": { "zh": "神庙建造与祭祀", "en": "Temple construction and rituals" },
+            "amount": { "amount": 200, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 180, "silverKg": 2160 },
+            "percentage": 25
+          },
+          {
+            "category": { "zh": "行政与官僚体系", "en": "Administration and bureaucracy" },
+            "amount": { "amount": 160, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 144, "silverKg": 1728 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "基础设施与灌溉", "en": "Infrastructure and irrigation" },
+            "amount": { "amount": 120, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 108, "silverKg": 1296 },
+            "percentage": 15
+          },
+          {
+            "category": { "zh": "王室宫廷", "en": "Royal court" },
+            "amount": { "amount": 40, "unit": { "zh": "德本", "en": "deben" }, "goldKg": 36, "silverKg": 432 },
+            "percentage": 5
+          }
+        ],
+        "treasury": {
+          "amount": 3000,
+          "unit": { "zh": "德本", "en": "deben" },
+          "goldKg": 2700,
+          "silverKg": 32400,
+          "displayNote": { "zh": "包括努比亚黄金储备和神庙贡献", "en": "Including Nubian gold reserves and temple contributions" }
+        },
+        "treasuryDescription": {
+          "zh": "新王国时期国库极为充裕，得益于努比亚金矿和驱逐喜克索斯人后恢复的国际贸易",
+          "en": "New Kingdom treasury extremely well-funded, benefiting from Nubian gold mines and restored international trade after expelling the Hyksos"
+        },
+        "fiscalPolicy": {
+          "zh": "扩张性财政——大量投资军事征伐与神庙建设，以彰显法老权威与帝国荣耀",
+          "en": "Expansionary fiscal policy — heavy investment in military campaigns and temple construction to demonstrate pharaonic authority and imperial glory"
+        }
+      },
+      "military": {
+        "level": 7,
+        "totalTroops": 50000,
+        "standingArmy": 25000,
+        "reserves": 25000,
+        "branches": [
+          {
+            "name": { "zh": "战车部队", "en": "Chariot Corps" },
+            "count": 5000,
+            "description": { "zh": "精锐战车部队，使用复合弓的快速打击力量", "en": "Elite chariot units, rapid strike force equipped with composite bows" }
+          },
+          {
+            "name": { "zh": "步兵", "en": "Infantry" },
+            "count": 35000,
+            "description": { "zh": "装备青铜长矛和护盾的主力步兵，含努比亚弓箭手", "en": "Main infantry with bronze spears and shields, including Nubian archers" }
+          },
+          {
+            "name": { "zh": "海军", "en": "Navy" },
+            "count": 5000,
+            "description": { "zh": "尼罗河舰队与地中海巡防船队", "en": "Nile fleet and Mediterranean patrol vessels" }
+          },
+          {
+            "name": { "zh": "边境卫戍", "en": "Frontier Garrison" },
+            "count": 5000,
+            "description": { "zh": "驻守在努比亚要塞和东部边境的常备军", "en": "Standing forces stationed at Nubian fortresses and eastern frontier" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "法老图特摩斯一世亲征", "en": "Pharaoh Thutmose I personally leads campaigns" },
+          "totalGenerals": 12,
+          "keyGenerals": [
+            {
+              "name": { "zh": "阿赫摩斯·彭·涅赫贝特", "en": "Ahmose pen-Nekhbet" },
+              "title": { "zh": "大将军", "en": "Great General" },
+              "command": { "zh": "努比亚远征军总指挥", "en": "Commander-in-chief of the Nubian expedition" }
+            }
+          ]
+        },
+        "technology": {
+          "zh": "复合弓，青铜战车，青铜剑与矛，皮甲与青铜盾，攻城器械，战船",
+          "en": "Composite bows, bronze chariots, bronze swords and spears, leather and bronze armor, siege equipment, warships"
+        },
+        "annualMilitarySpending": {
+          "amount": 280,
+          "unit": { "zh": "德本", "en": "deben" },
+          "goldKg": 252,
+          "silverKg": 3024
+        },
+        "militarySpendingPctGdp": 5.6
+      },
+      "demographics": {
+        "population": 3000000,
+        "populationDescription": {
+          "zh": "人口约300万，高度集中于尼罗河谷和三角洲地区",
+          "en": "Population approximately 3 million, highly concentrated in the Nile Valley and Delta region"
+        },
+        "urbanPopulation": 450000,
+        "urbanizationRate": 15,
+        "majorCities": [
+          { "name": { "zh": "底比斯（都城）", "en": "Thebes (capital)" }, "population": 80000 },
+          { "name": { "zh": "孟菲斯", "en": "Memphis" }, "population": 60000 },
+          { "name": { "zh": "阿瓦里斯", "en": "Avaris" }, "population": 30000 },
+          { "name": { "zh": "赫利奥波利斯", "en": "Heliopolis" }, "population": 25000 }
+        ],
+        "socialClasses": {
+          "zh": "法老与王室（约0.1%）、祭司阶层（约5%）、书吏与官员（约3%）、军人（约2%）、工匠（约10%）、农民（约75%）、奴隶（约5%）",
+          "en": "Pharaoh and royalty (~0.1%), priestly class (~5%), scribes and officials (~3%), soldiers (~2%), artisans (~10%), farmers (~75%), slaves (~5%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "比布鲁斯等黎凡特沿海城邦",
+          "en": "Byblos and other Levantine coastal city-states"
+        },
+        "enemies": {
+          "zh": "喜克索斯残余势力、南部库施王国的抵抗、东部沙漠游牧民",
+          "en": "Hyksos remnants, resistance from the southern Kingdom of Kush, eastern desert nomads"
+        },
+        "foreignPolicy": {
+          "zh": "积极扩张政策——向南征服努比亚至第四瀑布，向北扩展至叙利亚-巴勒斯坦地区",
+          "en": "Active expansionist policy — conquering southward into Nubia to the Fourth Cataract, expanding northward into Syria-Palestine"
+        }
+      },
+      "technology": {
+        "level": 6,
+        "era": { "zh": "青铜时代", "en": "Bronze Age" },
+        "keyInnovations": {
+          "zh": "先进灌溉系统（沙杜夫），纸莎草造纸术，建筑工程学（方尖碑），医学外科技术，天文导航",
+          "en": "Advanced irrigation systems (shaduf), papyrus paper production, architectural engineering (obelisks), medical surgical techniques, astronomical navigation"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "法老图特摩斯一世军事才能卓越，帝国处于上升期；努比亚黄金保障了雄厚财力；成熟的官僚体系高效运转",
+          "en": "Pharaoh Thutmose I's exceptional military prowess with the empire in an ascendant phase; Nubian gold ensures substantial financial power; mature bureaucracy operates efficiently"
+        },
+        "weaknesses": {
+          "zh": "阿蒙神庙祭司势力日益膨胀，可能挑战王权；帝国扩张过快导致边境压力增大",
+          "en": "Growing power of the Amun priesthood may challenge royal authority; rapid imperial expansion increases frontier pressure"
+        },
+        "outlook": {
+          "zh": "极为乐观——新王国正处于扩张的黄金时期，将成为古代世界的超级强权",
+          "en": "Highly optimistic — the New Kingdom is entering its golden age of expansion, destined to become a superpower of the ancient world"
+        }
+      },
+      "status": "thriving",
+      "description": {
+        "zh": "新王国时期的埃及在驱逐喜克索斯人后迎来复兴，法老图特摩斯一世正率军向南征服努比亚、向北扩展至幼发拉底河，开创了古埃及最辉煌的帝国时代。",
+        "en": "New Kingdom Egypt is experiencing a renaissance after expelling the Hyksos. Pharaoh Thutmose I is leading campaigns southward into Nubia and northward to the Euphrates, inaugurating the most glorious imperial era of ancient Egypt."
+      }
+    },
+
+    {
+      "id": "kassite_babylonia",
+      "name": { "zh": "加喜特巴比伦", "en": "Kassite Babylonia" },
+      "territoryId": "mesopotamia",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": { "zh": "加喜特巴比伦", "en": "Kassite Babylonia" },
+        "type": "kingdom",
+        "ruler": { "zh": "布尔纳-布里亚什一世", "en": "Burna-Buriash I" },
+        "rulerTitle": { "zh": "巴比伦王", "en": "King of Babylon" },
+        "dynasty": { "zh": "加喜特王朝", "en": "Kassite Dynasty" },
+        "capital": { "zh": "巴比伦", "en": "Babylon" },
+        "governmentForm": "feudal_monarchy",
+        "socialStructure": {
+          "zh": "加喜特贵族与巴比伦本地精英并存的二元社会结构",
+          "en": "Dual social structure with Kassite nobility coexisting alongside native Babylonian elites"
+        },
+        "rulingClass": {
+          "zh": "加喜特军事贵族占据高位，但依赖巴比伦祭司和书吏阶层管理国家",
+          "en": "Kassite military nobility holds top positions but relies on Babylonian priests and scribal class for governance"
+        },
+        "succession": {
+          "zh": "王位在加喜特王室家族内传承，重视军事能力",
+          "en": "Kingship passed within the Kassite royal family, with emphasis on military capability"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "封建式王权：国王分封加喜特贵族管理各地区，保留巴比伦旧有的行政体系",
+          "en": "Feudal kingship: the king enfeoffs Kassite nobles to govern regions while preserving the existing Babylonian administrative system"
+        },
+        "departments": [
+          {
+            "name": { "zh": "王室行政署", "en": "Royal Chancellery" },
+            "function": { "zh": "管理王室文书与国际通信", "en": "Manages royal documents and international correspondence" },
+            "headCount": 100
+          },
+          {
+            "name": { "zh": "马尔杜克神庙管理处", "en": "Marduk Temple Administration" },
+            "function": { "zh": "管理主神庙事务与宗教仪式", "en": "Administers main temple affairs and religious ceremonies" },
+            "headCount": 200
+          },
+          {
+            "name": { "zh": "土地授封局", "en": "Land Grant Office" },
+            "function": { "zh": "管理库杜鲁（界碑石）土地授封记录", "en": "Manages kudurru (boundary stone) land grant records" },
+            "headCount": 50
+          },
+          {
+            "name": { "zh": "税务署", "en": "Tax Bureau" },
+            "function": { "zh": "征收谷物税和贸易关税", "en": "Collects grain taxes and trade tariffs" },
+            "headCount": 80
+          }
+        ],
+        "totalOfficials": 1200,
+        "localAdmin": {
+          "zh": "加喜特封建领主管理各省，城市保留一定自治权",
+          "en": "Kassite feudal lords administer provinces; cities retain a degree of autonomy"
+        },
+        "legalSystem": {
+          "zh": "沿用汉谟拉比法典传统，加喜特王室有最高裁决权",
+          "en": "Continues the tradition of Hammurabi's Code; Kassite royalty holds supreme judicial authority"
+        },
+        "taxationSystem": {
+          "zh": "土地税与贸易税并行，神庙享有部分免税特权",
+          "en": "Dual taxation of land and trade, with partial tax exemptions for temples"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "继承巴比伦多神信仰，以马尔杜克为主神；同时保留加喜特部落神灵崇拜",
+          "en": "Inherited Babylonian polytheism with Marduk as chief deity; Kassite tribal deities also retained"
+        },
+        "philosophy": {
+          "zh": "延续美索不达米亚传统的宿命论哲学与神话体系",
+          "en": "Continuation of Mesopotamian fatalistic philosophy and mythological traditions"
+        },
+        "writingSystem": {
+          "zh": "楔形文字（阿卡德语为官方语言，苏美尔语用于宗教和学术）",
+          "en": "Cuneiform script (Akkadian as official language, Sumerian for religious and scholarly use)"
+        },
+        "culturalAchievements": {
+          "zh": "库杜鲁界碑石艺术，大规模神庙修缮，文学经典的编纂与保存",
+          "en": "Kudurru boundary stone art, large-scale temple restoration, compilation and preservation of literary classics"
+        },
+        "languageFamily": {
+          "zh": "阿卡德语（闪米特语族）与加喜特语（语系不明）",
+          "en": "Akkadian (Semitic language family) and Kassite language (language family uncertain)"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 150000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 1200,
+          "silverKg": 12500,
+          "displayNote": { "zh": "约合白银12500公斤", "en": "Approximately 12,500 kg of silver equivalent" }
+        },
+        "gdpPerCapita": {
+          "amount": 0.1,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "silverKg": 0.0083,
+          "displayNote": { "zh": "约合白银8.3克/人", "en": "Approximately 8.3g silver per capita" }
+        },
+        "gdpDescription": {
+          "zh": "两河流域灌溉农业为基础，城市手工业和国际中转贸易发达",
+          "en": "Based on Mesopotamian irrigated agriculture, with developed urban handicrafts and international transit trade"
+        },
+        "mainIndustries": {
+          "zh": "灌溉农业（大麦、椰枣）、纺织业、陶器制作、金属加工、长途贸易",
+          "en": "Irrigated agriculture (barley, dates), textile production, pottery, metalworking, long-distance trade"
+        },
+        "tradeGoods": {
+          "zh": "出口：谷物、纺织品、陶器；进口：木材、金属矿石、宝石",
+          "en": "Exports: grain, textiles, pottery; Imports: timber, metal ores, gemstones"
+        },
+        "currency": {
+          "name": { "zh": "银锡克尔", "en": "Silver shekel" },
+          "type": "metal_weight",
+          "metalBasis": "silver",
+          "unitName": { "zh": "锡克尔（约8.3克银）", "en": "Shekel (approximately 8.3 grams of silver)" }
+        },
+        "householdWealth": {
+          "zh": "加喜特贵族获得大片封地；城市商人和旧巴比伦家族保有可观财富；农民依附于土地",
+          "en": "Kassite nobles granted extensive fiefs; urban merchants and old Babylonian families retain considerable wealth; farmers tied to the land"
+        },
+        "averageIncome": {
+          "amount": 0.06,
+          "unit": { "zh": "锡克尔银/年", "en": "shekels of silver per year" },
+          "silverKg": 0.005,
+          "displayNote": { "zh": "普通农民年收入", "en": "Annual income of an average farmer" }
+        },
+        "foreignTradeVolume": {
+          "amount": 12000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 96,
+          "silverKg": 1000,
+          "displayNote": { "zh": "占GDP约8%", "en": "Approximately 8% of GDP" }
+        },
+        "economicSystem": {
+          "zh": "封建授田经济与神庙经济并行，城市保留私有商业活动",
+          "en": "Feudal land-grant economy coexisting with temple economy; urban private commerce preserved"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 20000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 160,
+          "silverKg": 1660
+        },
+        "annualExpenditure": {
+          "amount": 18000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 144,
+          "silverKg": 1494
+        },
+        "surplus": {
+          "amount": 2000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 16,
+          "silverKg": 166
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "土地税与农业贡赋", "en": "Land tax and agricultural tribute" },
+            "amount": { "amount": 9000, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 72, "silverKg": 747 },
+            "percentage": 45
+          },
+          {
+            "source": { "zh": "贸易关税", "en": "Trade tariffs" },
+            "amount": { "amount": 5000, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 40, "silverKg": 415 },
+            "percentage": 25
+          },
+          {
+            "source": { "zh": "封建领地贡赋", "en": "Feudal domain tribute" },
+            "amount": { "amount": 4000, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 32, "silverKg": 332 },
+            "percentage": 20
+          },
+          {
+            "source": { "zh": "手工业与神庙捐献", "en": "Handicraft revenue and temple donations" },
+            "amount": { "amount": 2000, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 16, "silverKg": 166 },
+            "percentage": 10
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "军事与防御", "en": "Military and defense" },
+            "amount": { "amount": 5400, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 43.2, "silverKg": 448 },
+            "percentage": 30
+          },
+          {
+            "category": { "zh": "神庙维护与建设", "en": "Temple maintenance and construction" },
+            "amount": { "amount": 4500, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 36, "silverKg": 374 },
+            "percentage": 25
+          },
+          {
+            "category": { "zh": "行政管理", "en": "Administration" },
+            "amount": { "amount": 3600, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 28.8, "silverKg": 299 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "灌溉工程", "en": "Irrigation projects" },
+            "amount": { "amount": 2700, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 21.6, "silverKg": 224 },
+            "percentage": 15
+          },
+          {
+            "category": { "zh": "外交与贡品", "en": "Diplomacy and gifts" },
+            "amount": { "amount": 1800, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 14.4, "silverKg": 149 },
+            "percentage": 10
+          }
+        ],
+        "treasury": {
+          "amount": 50000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 400,
+          "silverKg": 4150,
+          "displayNote": { "zh": "继承了古巴比伦部分财富", "en": "Inherited portion of Old Babylonian wealth" }
+        },
+        "treasuryDescription": {
+          "zh": "国库规模中等，依赖维护古巴比伦时期的灌溉系统来保障农业收入",
+          "en": "Moderate treasury, reliant on maintaining the Old Babylonian-era irrigation systems to secure agricultural income"
+        },
+        "fiscalPolicy": {
+          "zh": "保守稳健——加喜特王朝注重维护现有经济结构，避免过度扩张",
+          "en": "Conservative and steady — the Kassite dynasty focuses on maintaining existing economic structures, avoiding overextension"
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 20000,
+        "standingArmy": 8000,
+        "reserves": 12000,
+        "branches": [
+          {
+            "name": { "zh": "战车兵", "en": "Chariot Corps" },
+            "count": 3000,
+            "description": { "zh": "加喜特人以精湛的马术闻名，战车部队为军事核心", "en": "Kassites renowned for superb horsemanship; chariot force is the military core" }
+          },
+          {
+            "name": { "zh": "步兵", "en": "Infantry" },
+            "count": 14000,
+            "description": { "zh": "配备青铜武器的常规步兵", "en": "Regular infantry equipped with bronze weapons" }
+          },
+          {
+            "name": { "zh": "城防部队", "en": "Garrison Forces" },
+            "count": 3000,
+            "description": { "zh": "驻守巴比伦城和主要城镇的守军", "en": "Troops garrisoning Babylon and major towns" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "国王布尔纳-布里亚什一世", "en": "King Burna-Buriash I" },
+          "totalGenerals": 6
+        },
+        "technology": {
+          "zh": "马拉战车，青铜武器与铠甲，城墙防御工事，攻城技术",
+          "en": "Horse-drawn chariots, bronze weapons and armor, city wall fortifications, siege techniques"
+        },
+        "annualMilitarySpending": {
+          "amount": 5400,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 43.2,
+          "silverKg": 448
+        },
+        "militarySpendingPctGdp": 3.6
+      },
+      "demographics": {
+        "population": 1500000,
+        "populationDescription": {
+          "zh": "人口约150万，集中于底格里斯河与幼发拉底河之间的灌溉区域",
+          "en": "Population approximately 1.5 million, concentrated in the irrigated zone between the Tigris and Euphrates rivers"
+        },
+        "urbanPopulation": 250000,
+        "urbanizationRate": 17,
+        "majorCities": [
+          { "name": { "zh": "巴比伦（都城）", "en": "Babylon (capital)" }, "population": 60000 },
+          { "name": { "zh": "尼普尔", "en": "Nippur" }, "population": 30000 },
+          { "name": { "zh": "乌尔", "en": "Ur" }, "population": 20000 },
+          { "name": { "zh": "西帕尔", "en": "Sippar" }, "population": 15000 }
+        ],
+        "socialClasses": {
+          "zh": "加喜特王室与军事贵族（约2%）、巴比伦祭司与书吏（约5%）、自由民（约60%）、依附农民（约28%）、奴隶（约5%）",
+          "en": "Kassite royalty and military nobility (~2%), Babylonian priests and scribes (~5%), free citizens (~60%), dependent farmers (~28%), slaves (~5%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与埃及新王国有外交通信（阿马尔纳体系前身）",
+          "en": "Diplomatic correspondence with New Kingdom Egypt (precursor to the Amarna system)"
+        },
+        "enemies": {
+          "zh": "亚述的扩张威胁，以拦人的边境袭扰",
+          "en": "Threat of Assyrian expansion, Sealand border raids"
+        },
+        "foreignPolicy": {
+          "zh": "注重外交平衡——通过联姻和国际通信维持与主要强权的和平关系",
+          "en": "Focused on diplomatic balance — maintaining peaceful relations with major powers through royal marriages and international correspondence"
+        }
+      },
+      "technology": {
+        "level": 6,
+        "era": { "zh": "青铜时代", "en": "Bronze Age" },
+        "keyInnovations": {
+          "zh": "先进灌溉工程，楔形文字文献编纂，改良马匹育种技术，精密天文观测",
+          "en": "Advanced irrigation engineering, cuneiform literary compilation, improved horse breeding techniques, precise astronomical observation"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "继承了巴比伦深厚的文化和制度遗产；战略位置处于国际贸易十字路口；加喜特人带来了先进的马术和战车技术",
+          "en": "Inherited Babylon's deep cultural and institutional legacy; strategic position at the crossroads of international trade; Kassites brought advanced horsemanship and chariot technology"
+        },
+        "weaknesses": {
+          "zh": "加喜特统治者作为外来征服者的合法性问题；亚述日益增长的威胁；灌溉系统老化需要持续维护",
+          "en": "Legitimacy concerns for Kassite rulers as foreign conquerors; growing Assyrian threat; aging irrigation systems requiring constant maintenance"
+        },
+        "outlook": {
+          "zh": "稳定但谨慎——加喜特王朝已初步稳固统治，但面临区域竞争的长期挑战",
+          "en": "Stable but cautious — the Kassite dynasty has initially consolidated rule but faces long-term challenges from regional competition"
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "加喜特人征服巴比伦后建立了新的王朝，在继承苏美尔-巴比伦文明精华的同时，以出色的马术和外交能力维持着两河流域的稳定。",
+        "en": "After conquering Babylon, the Kassites established a new dynasty, inheriting the essence of Sumerian-Babylonian civilization while maintaining Mesopotamian stability through superior horsemanship and diplomatic skill."
+      }
+    },
+
+    {
+      "id": "hittite_kingdom",
+      "name": { "zh": "赫梯王国", "en": "Hittite Kingdom" },
+      "territoryId": "anatolia",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": { "zh": "赫梯王国", "en": "Hittite Kingdom" },
+        "type": "kingdom",
+        "ruler": { "zh": "哈图西里一世", "en": "Hattusili I" },
+        "rulerTitle": { "zh": "大王", "en": "Great King" },
+        "dynasty": { "zh": "赫梯古王国", "en": "Old Hittite Kingdom" },
+        "capital": { "zh": "哈图沙", "en": "Hattusa" },
+        "governmentForm": "feudal_monarchy",
+        "socialStructure": {
+          "zh": "以大王为首的封建贵族制度，贵族会议（潘库）拥有限制王权的权力",
+          "en": "Feudal aristocratic system headed by the Great King, with a noble assembly (Panku) holding power to limit royal authority"
+        },
+        "rulingClass": {
+          "zh": "赫梯王室与世袭封建贵族，贵族会议可参与王位继承决策",
+          "en": "Hittite royal house and hereditary feudal nobility; the noble assembly can participate in succession decisions"
+        },
+        "succession": {
+          "zh": "王位继承由大王指定，但需获得潘库（贵族会议）认可",
+          "en": "Succession designated by the Great King but requiring approval from the Panku (noble assembly)"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "大王统治下的封建联盟制，地方由封臣和附庸国治理",
+          "en": "Feudal alliance system under the Great King, with local governance by vassals and client states"
+        },
+        "departments": [
+          {
+            "name": { "zh": "王室书记处", "en": "Royal Scribal Office" },
+            "function": { "zh": "管理国际条约和王室文书", "en": "Manages international treaties and royal documents" },
+            "headCount": 60
+          },
+          {
+            "name": { "zh": "军务署", "en": "Military Office" },
+            "function": { "zh": "统筹军事调度和战车部队", "en": "Coordinates military operations and chariot forces" },
+            "headCount": 40
+          },
+          {
+            "name": { "zh": "神庙管理处", "en": "Temple Administration" },
+            "function": { "zh": "管理国家宗教祭祀和神庙产业", "en": "Administers state religious ceremonies and temple properties" },
+            "headCount": 80
+          },
+          {
+            "name": { "zh": "税赋司", "en": "Revenue Office" },
+            "function": { "zh": "征收封臣贡赋和贸易税", "en": "Collects vassal tribute and trade taxes" },
+            "headCount": 30
+          }
+        ],
+        "totalOfficials": 600,
+        "localAdmin": {
+          "zh": "地方由王室封臣和附庸国君主治理，各自维持军队并定期向大王纳贡",
+          "en": "Local governance by royal vassals and client-state rulers, each maintaining armies and paying regular tribute to the Great King"
+        },
+        "legalSystem": {
+          "zh": "赫梯法典——相对温和的法律体系，强调赔偿而非报复性惩罚",
+          "en": "Hittite Law Code — relatively moderate legal system emphasizing compensation over retaliatory punishment"
+        },
+        "taxationSystem": {
+          "zh": "封臣缴纳贡赋（谷物、牲畜、金属），手工业者缴纳实物税",
+          "en": "Vassals pay tribute (grain, livestock, metals); artisans pay in-kind taxes"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "万神殿信仰——融合赫梯、哈提、胡里安等多种宗教传统，被称为'千神之民'",
+          "en": "Pantheon worship — syncretizing Hittite, Hattic, Hurrian, and other religious traditions, known as 'the people of a thousand gods'"
+        },
+        "philosophy": {
+          "zh": "强调与众神签订契约的观念，王权来自神的授权和人民的认可",
+          "en": "Emphasis on the concept of covenants with the gods; kingship derived from divine authorization and popular recognition"
+        },
+        "writingSystem": {
+          "zh": "楔形文字（用于阿卡德语和赫梯语文书）与赫梯象形文字（用于纪念碑铭文）",
+          "en": "Cuneiform script (for Akkadian and Hittite documents) and Hittite hieroglyphs (for monumental inscriptions)"
+        },
+        "culturalAchievements": {
+          "zh": "赫梯法典的编纂，先进的铁矿冶炼实验，国际条约外交传统的开创",
+          "en": "Compilation of the Hittite Law Code, pioneering iron smelting experiments, establishment of international treaty diplomacy traditions"
+        },
+        "languageFamily": {
+          "zh": "赫梯语（印欧语系安纳托利亚语族）",
+          "en": "Hittite (Anatolian branch of the Indo-European language family)"
+        }
+      },
+      "economy": {
+        "level": 5,
+        "gdpEstimate": {
+          "amount": 100000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 800,
+          "silverKg": 8300,
+          "displayNote": { "zh": "约合白银8300公斤", "en": "Approximately 8,300 kg of silver equivalent" }
+        },
+        "gdpPerCapita": {
+          "amount": 0.05,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "silverKg": 0.0042,
+          "displayNote": { "zh": "约合白银4.2克/人", "en": "Approximately 4.2g silver per capita" }
+        },
+        "gdpDescription": {
+          "zh": "以畜牧和旱作农业为基础的山地经济，矿产资源丰富，贸易位置优越",
+          "en": "Mountain economy based on pastoralism and dry farming, with rich mineral resources and advantageous trade position"
+        },
+        "mainIndustries": {
+          "zh": "畜牧业、旱作农业（小麦、大麦）、金属冶炼（铜、锡、初期铁器实验）、马匹繁育",
+          "en": "Pastoralism, dry farming (wheat, barley), metal smelting (copper, tin, early iron experiments), horse breeding"
+        },
+        "tradeGoods": {
+          "zh": "出口：金属制品、马匹、羊毛；进口：锡矿、奢侈品、纺织品",
+          "en": "Exports: metalwork, horses, wool; Imports: tin ore, luxury goods, textiles"
+        },
+        "currency": {
+          "name": { "zh": "银锡克尔", "en": "Silver shekel" },
+          "type": "metal_weight",
+          "metalBasis": "silver",
+          "unitName": { "zh": "锡克尔（约8.3克银）", "en": "Shekel (approximately 8.3 grams of silver)" }
+        },
+        "householdWealth": {
+          "zh": "贵族拥有大片领地和牲畜；自由农民拥有小块土地；存在相当数量的依附劳动者",
+          "en": "Nobles own extensive estates and livestock; free farmers hold small plots; significant number of dependent laborers exist"
+        },
+        "averageIncome": {
+          "amount": 0.03,
+          "unit": { "zh": "锡克尔银/年", "en": "shekels of silver per year" },
+          "silverKg": 0.0025,
+          "displayNote": { "zh": "普通农牧民年收入", "en": "Annual income of an average farmer-herder" }
+        },
+        "foreignTradeVolume": {
+          "amount": 6000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 48,
+          "silverKg": 498,
+          "displayNote": { "zh": "占GDP约6%", "en": "Approximately 6% of GDP" }
+        },
+        "economicSystem": {
+          "zh": "封建领地经济为主，王室和神庙经济为辅，存在一定程度的国际贸易",
+          "en": "Primarily feudal estate economy, supplemented by royal and temple economies, with some degree of international trade"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 12000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 96,
+          "silverKg": 996
+        },
+        "annualExpenditure": {
+          "amount": 11000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 88,
+          "silverKg": 913
+        },
+        "surplus": {
+          "amount": 1000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 8,
+          "silverKg": 83
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "封臣贡赋", "en": "Vassal tribute" },
+            "amount": { "amount": 4800, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 38.4, "silverKg": 398 },
+            "percentage": 40
+          },
+          {
+            "source": { "zh": "农牧业税", "en": "Agricultural and pastoral tax" },
+            "amount": { "amount": 3600, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 28.8, "silverKg": 299 },
+            "percentage": 30
+          },
+          {
+            "source": { "zh": "矿产与金属冶炼", "en": "Mining and metal smelting" },
+            "amount": { "amount": 2400, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 19.2, "silverKg": 199 },
+            "percentage": 20
+          },
+          {
+            "source": { "zh": "贸易税", "en": "Trade taxes" },
+            "amount": { "amount": 1200, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 9.6, "silverKg": 100 },
+            "percentage": 10
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "军事开支", "en": "Military expenditure" },
+            "amount": { "amount": 4400, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 35.2, "silverKg": 365 },
+            "percentage": 40
+          },
+          {
+            "category": { "zh": "宫廷与行政", "en": "Court and administration" },
+            "amount": { "amount": 2750, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 22, "silverKg": 228 },
+            "percentage": 25
+          },
+          {
+            "category": { "zh": "神庙与宗教", "en": "Temples and religion" },
+            "amount": { "amount": 2200, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 17.6, "silverKg": 183 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "城防与建设", "en": "Fortification and construction" },
+            "amount": { "amount": 1650, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 13.2, "silverKg": 137 },
+            "percentage": 15
+          }
+        ],
+        "treasury": {
+          "amount": 25000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 200,
+          "silverKg": 2075,
+          "displayNote": { "zh": "包括来自征伐叙利亚的战利品", "en": "Including spoils from Syrian campaigns" }
+        },
+        "treasuryDescription": {
+          "zh": "王室府库适中，主要来自矿产收入和军事战利品，正因扩张而增长",
+          "en": "Moderate royal treasury, primarily from mineral revenue and military spoils, growing due to expansion"
+        },
+        "fiscalPolicy": {
+          "zh": "军事扩张优先——哈图西里一世将大量资源投入对叙利亚的征伐",
+          "en": "Military expansion priority — Hattusili I devotes substantial resources to campaigns in Syria"
+        }
+      },
+      "military": {
+        "level": 6,
+        "totalTroops": 25000,
+        "standingArmy": 10000,
+        "reserves": 15000,
+        "branches": [
+          {
+            "name": { "zh": "战车军团", "en": "Chariot Corps" },
+            "count": 5000,
+            "description": { "zh": "重型战车部队，每车三人，为赫梯军核心战力", "en": "Heavy chariot force, three-man crews per chariot, core of Hittite military power" }
+          },
+          {
+            "name": { "zh": "步兵", "en": "Infantry" },
+            "count": 16000,
+            "description": { "zh": "配备青铜长矛、斧头和大盾的山地步兵", "en": "Mountain infantry equipped with bronze spears, axes, and large shields" }
+          },
+          {
+            "name": { "zh": "要塞守军", "en": "Fortress Garrison" },
+            "count": 4000,
+            "description": { "zh": "驻守哈图沙及边境要塞的常备军", "en": "Standing forces garrisoning Hattusa and frontier fortresses" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "大王哈图西里一世亲任统帅", "en": "Great King Hattusili I serves as supreme commander" },
+          "totalGenerals": 8
+        },
+        "technology": {
+          "zh": "重型三人战车（赫梯特色），青铜兵器，石砌城堡防御体系，初步铁器实验",
+          "en": "Heavy three-man chariots (distinctly Hittite), bronze weapons, stone fortress defense systems, preliminary iron smelting experiments"
+        },
+        "annualMilitarySpending": {
+          "amount": 4400,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 35.2,
+          "silverKg": 365
+        },
+        "militarySpendingPctGdp": 4.4
+      },
+      "demographics": {
+        "population": 2000000,
+        "populationDescription": {
+          "zh": "人口约200万，分布于安纳托利亚中部高原和叙利亚北部边境",
+          "en": "Population approximately 2 million, distributed across the central Anatolian plateau and northern Syrian frontier"
+        },
+        "urbanPopulation": 150000,
+        "urbanizationRate": 7.5,
+        "majorCities": [
+          { "name": { "zh": "哈图沙（都城）", "en": "Hattusa (capital)" }, "population": 40000 },
+          { "name": { "zh": "涅里克", "en": "Nerik" }, "population": 15000 },
+          { "name": { "zh": "库萨尔", "en": "Kussara" }, "population": 12000 }
+        ],
+        "socialClasses": {
+          "zh": "王室与贵族（约3%）、祭司（约3%）、自由民（约55%）、依附劳动者（约30%）、奴隶（约9%）",
+          "en": "Royalty and nobility (~3%), priests (~3%), free citizens (~55%), dependent laborers (~30%), slaves (~9%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "部分安纳托利亚附庸城邦",
+          "en": "Several Anatolian vassal city-states"
+        },
+        "enemies": {
+          "zh": "叙利亚北部的城邦（阿勒颇/扬哈德），胡里安人势力",
+          "en": "Northern Syrian city-states (Aleppo/Yamhad), Hurrian powers"
+        },
+        "foreignPolicy": {
+          "zh": "积极南向扩张——哈图西里一世正率军进攻叙利亚北部的扬哈德王国",
+          "en": "Active southward expansion — Hattusili I is leading campaigns against the Yamhad kingdom in northern Syria"
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": { "zh": "青铜时代晚期/铁器初始", "en": "Late Bronze Age / Early Iron Transition" },
+        "keyInnovations": {
+          "zh": "重型三人战车，铁矿冶炼初步实验，先进石砌城堡技术，多语种楔形文字书写",
+          "en": "Heavy three-man chariots, preliminary iron smelting experiments, advanced stone fortress construction, multilingual cuneiform writing"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "哈图西里一世的军事才能和扩张雄心；强大的战车部队；安纳托利亚丰富的矿产资源；相对开明的法律体系",
+          "en": "Hattusili I's military talent and expansionist ambition; powerful chariot forces; Anatolia's rich mineral resources; relatively enlightened legal system"
+        },
+        "weaknesses": {
+          "zh": "贵族势力过大可能威胁王权稳定；继承制度的不确定性；山地地形不利于集中统治",
+          "en": "Excessive noble power may threaten royal stability; uncertainty in the succession system; mountainous terrain hindering centralized rule"
+        },
+        "outlook": {
+          "zh": "上升态势——赫梯正从区域王国向近东大国转型，军事扩张势头强劲",
+          "en": "Rising trajectory — the Hittites are transforming from a regional kingdom to a Near Eastern great power, with strong military expansion momentum"
+        }
+      },
+      "status": "thriving",
+      "description": {
+        "zh": "赫梯大王哈图西里一世正将赫梯从安纳托利亚高原上的区域王国扩展为近东强权，以强大的战车军团向叙利亚北部发动攻势，并以开创性的铁器冶炼实验引领技术革新。",
+        "en": "Hittite Great King Hattusili I is expanding the Hittite state from a regional Anatolian highland kingdom into a Near Eastern power, launching offensives into northern Syria with formidable chariot forces and pioneering iron smelting experiments."
+      }
+    },
+
+    {
+      "id": "minoan_civilization",
+      "name": { "zh": "米诺斯文明", "en": "Minoan Civilization" },
+      "territoryId": "aegean",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": { "zh": "米诺斯文明", "en": "Minoan Civilization" },
+        "type": "trade_network",
+        "rulerTitle": { "zh": "宫殿统治者", "en": "Palace Ruler" },
+        "capital": { "zh": "克诺索斯", "en": "Knossos" },
+        "governmentForm": "theocratic_monarchy",
+        "socialStructure": {
+          "zh": "以宫殿为中心的再分配社会：宫殿精英-祭司-商人-工匠-农民",
+          "en": "Palace-centered redistributive society: palace elite — priests — merchants — artisans — farmers"
+        },
+        "rulingClass": {
+          "zh": "宫殿精英阶层兼具宗教和政治权力，可能以女祭司为重要角色",
+          "en": "Palace elite combining religious and political authority, with priestesses likely playing important roles"
+        },
+        "succession": {
+          "zh": "继承方式不明，可能通过宫殿内部精英共识或宗教仪式确认",
+          "en": "Succession method unclear, possibly through palace elite consensus or religious ritual confirmation"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "宫殿经济体制：各大宫殿（克诺索斯、斐斯托斯等）各自管理领地，克诺索斯为最高中心",
+          "en": "Palace economy system: major palaces (Knossos, Phaistos, etc.) each govern their territories, with Knossos as the supreme center"
+        },
+        "departments": [
+          {
+            "name": { "zh": "宫殿仓储管理处", "en": "Palace Storage Administration" },
+            "function": { "zh": "管理宫殿的大型仓储系统，负责物资再分配", "en": "Manages the palace's large storage system and oversees redistribution of goods" },
+            "headCount": 40
+          },
+          {
+            "name": { "zh": "贸易事务处", "en": "Trade Affairs Office" },
+            "function": { "zh": "协调与埃及、黎凡特及爱琴海岛屿的海上贸易", "en": "Coordinates maritime trade with Egypt, the Levant, and Aegean islands" },
+            "headCount": 30
+          },
+          {
+            "name": { "zh": "宗教事务处", "en": "Religious Affairs Office" },
+            "function": { "zh": "管理宗教祭祀和公牛跳跃仪式", "en": "Manages religious ceremonies and bull-leaping rituals" },
+            "headCount": 20
+          }
+        ],
+        "totalOfficials": 250,
+        "localAdmin": {
+          "zh": "各宫殿中心管理周围的农村和港口区域，通过再分配体系维持社会运转",
+          "en": "Each palace center administers surrounding rural and port areas, maintaining social function through a redistribution system"
+        },
+        "legalSystem": {
+          "zh": "宫殿统治者裁决纠纷，法律与宗教规范紧密结合",
+          "en": "Palace rulers adjudicate disputes; law closely intertwined with religious norms"
+        },
+        "taxationSystem": {
+          "zh": "实物贡赋制：农民向宫殿上交谷物、橄榄油和酒作为税赋",
+          "en": "In-kind tribute system: farmers deliver grain, olive oil, and wine to the palace as tax"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "母神崇拜为核心，与公牛和蛇神有关的宗教仪式，著名的公牛跳跃仪式",
+          "en": "Mother Goddess worship at the core, with religious rituals involving bull and snake deities, including the famous bull-leaping ceremony"
+        },
+        "philosophy": {
+          "zh": "崇尚自然与生命力，艺术中体现对海洋和自然界的深刻敬畏",
+          "en": "Reverence for nature and vitality, with art expressing profound awe of the sea and natural world"
+        },
+        "writingSystem": {
+          "zh": "线形文字A（尚未破译），用于宫殿行政记录",
+          "en": "Linear A script (undeciphered), used for palace administrative records"
+        },
+        "culturalAchievements": {
+          "zh": "克诺索斯宫殿建筑群，精美的壁画艺术，先进的排水和供水系统，独特的陶器风格",
+          "en": "Palace complex of Knossos, exquisite fresco art, advanced drainage and water supply systems, distinctive pottery styles"
+        },
+        "languageFamily": {
+          "zh": "米诺斯语（语系不明，非印欧语系）",
+          "en": "Minoan language (language family unknown, non-Indo-European)"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 15000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 120,
+          "silverKg": 1245,
+          "displayNote": { "zh": "约合白银1245公斤", "en": "Approximately 1,245 kg of silver equivalent" }
+        },
+        "gdpPerCapita": {
+          "amount": 0.06,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "silverKg": 0.005,
+          "displayNote": { "zh": "约合白银5克/人", "en": "Approximately 5g silver per capita" }
+        },
+        "gdpDescription": {
+          "zh": "以海上贸易为核心的繁荣商业经济，辅以橄榄油和酒的出口",
+          "en": "Prosperous commercial economy centered on maritime trade, supplemented by olive oil and wine exports"
+        },
+        "mainIndustries": {
+          "zh": "橄榄油生产、葡萄酒酿造、精美陶器制作、纺织品、海上贸易",
+          "en": "Olive oil production, wine making, fine pottery crafting, textiles, maritime trade"
+        },
+        "tradeGoods": {
+          "zh": "出口：橄榄油、葡萄酒、陶器、纺织品；进口：金属（铜、锡）、象牙、宝石",
+          "en": "Exports: olive oil, wine, pottery, textiles; Imports: metals (copper, tin), ivory, gemstones"
+        },
+        "currency": {
+          "name": { "zh": "实物交换/金属称量", "en": "Barter / Metal weights" },
+          "type": "commodity",
+          "metalBasis": "copper",
+          "unitName": { "zh": "铜锭（牛皮锭形）", "en": "Copper ingot (oxhide-shaped)" }
+        },
+        "householdWealth": {
+          "zh": "宫殿精英生活奢华，拥有精美壁画装饰的住宅；商人和工匠阶层相对富裕；农民生活简朴但基本温饱",
+          "en": "Palace elites live luxuriously in fresco-decorated residences; merchant and artisan classes relatively prosperous; farmers live simply but with adequate sustenance"
+        },
+        "averageIncome": {
+          "amount": 0.03,
+          "unit": { "zh": "锡克尔银/年", "en": "shekels of silver per year" },
+          "silverKg": 0.0025,
+          "displayNote": { "zh": "普通农民年收入", "en": "Annual income of an average farmer" }
+        },
+        "foreignTradeVolume": {
+          "amount": 3000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 24,
+          "silverKg": 249,
+          "displayNote": { "zh": "占GDP约20%——极高的贸易依赖度", "en": "Approximately 20% of GDP — extremely high trade dependency" }
+        },
+        "economicSystem": {
+          "zh": "宫殿再分配经济：宫殿收集、存储并再分配农产品和手工制品，同时积极参与国际贸易",
+          "en": "Palace redistribution economy: palaces collect, store, and redistribute agricultural products and handicrafts while actively engaging in international trade"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 2500,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 20,
+          "silverKg": 208
+        },
+        "annualExpenditure": {
+          "amount": 2200,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 17.6,
+          "silverKg": 183
+        },
+        "surplus": {
+          "amount": 300,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 2.4,
+          "silverKg": 25
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "海上贸易利润", "en": "Maritime trade profits" },
+            "amount": { "amount": 1000, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 8, "silverKg": 83 },
+            "percentage": 40
+          },
+          {
+            "source": { "zh": "橄榄油与酒税", "en": "Olive oil and wine tax" },
+            "amount": { "amount": 750, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 6, "silverKg": 62 },
+            "percentage": 30
+          },
+          {
+            "source": { "zh": "手工业产品", "en": "Handicraft products" },
+            "amount": { "amount": 500, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 4, "silverKg": 42 },
+            "percentage": 20
+          },
+          {
+            "source": { "zh": "农业贡赋", "en": "Agricultural tribute" },
+            "amount": { "amount": 250, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 2, "silverKg": 21 },
+            "percentage": 10
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "宫殿维护与建设", "en": "Palace maintenance and construction" },
+            "amount": { "amount": 660, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 5.28, "silverKg": 55 },
+            "percentage": 30
+          },
+          {
+            "category": { "zh": "船队与贸易基础设施", "en": "Fleet and trade infrastructure" },
+            "amount": { "amount": 550, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 4.4, "silverKg": 46 },
+            "percentage": 25
+          },
+          {
+            "category": { "zh": "宗教祭祀", "en": "Religious ceremonies" },
+            "amount": { "amount": 440, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 3.52, "silverKg": 37 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "行政管理", "en": "Administration" },
+            "amount": { "amount": 330, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 2.64, "silverKg": 27 },
+            "percentage": 15
+          },
+          {
+            "category": { "zh": "防务", "en": "Defense" },
+            "amount": { "amount": 220, "unit": { "zh": "锡克尔银", "en": "shekels of silver" }, "goldKg": 1.76, "silverKg": 18 },
+            "percentage": 10
+          }
+        ],
+        "treasury": {
+          "amount": 8000,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 64,
+          "silverKg": 664,
+          "displayNote": { "zh": "包括储存于宫殿仓库中的大量橄榄油和贵金属", "en": "Including large quantities of olive oil and precious metals stored in palace warehouses" }
+        },
+        "treasuryDescription": {
+          "zh": "宫殿仓库储存丰富的橄榄油、酒和贵重贸易品，财富主要以实物形式存在",
+          "en": "Palace storerooms hold abundant olive oil, wine, and precious trade goods; wealth exists primarily in material form"
+        },
+        "fiscalPolicy": {
+          "zh": "贸易导向——大量投资于船队和贸易网络，以维持米诺斯的海上商业霸权",
+          "en": "Trade-oriented — heavy investment in fleets and trade networks to maintain Minoan maritime commercial hegemony"
+        }
+      },
+      "military": {
+        "level": 3,
+        "totalTroops": 5000,
+        "standingArmy": 2000,
+        "reserves": 3000,
+        "branches": [
+          {
+            "name": { "zh": "海军", "en": "Navy" },
+            "count": 2500,
+            "description": { "zh": "强大的商船兼战船舰队，控制着爱琴海航路", "en": "Powerful merchant-warship fleet controlling Aegean sea routes" }
+          },
+          {
+            "name": { "zh": "宫殿卫队", "en": "Palace Guard" },
+            "count": 1500,
+            "description": { "zh": "保卫各宫殿中心的精锐卫队", "en": "Elite guard protecting palace centers" }
+          },
+          {
+            "name": { "zh": "民兵", "en": "Militia" },
+            "count": 1000,
+            "description": { "zh": "紧急征召的沿海防御力量", "en": "Emergency coastal defense force raised by conscription" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "克诺索斯宫殿统治者", "en": "Ruler of the Palace of Knossos" },
+          "totalGenerals": 4
+        },
+        "technology": {
+          "zh": "先进的造船技术，青铜武器，海上战术，但几乎无城防工事（依赖海上优势）",
+          "en": "Advanced shipbuilding technology, bronze weapons, naval tactics, but virtually no land fortifications (relying on naval superiority)"
+        },
+        "annualMilitarySpending": {
+          "amount": 220,
+          "unit": { "zh": "锡克尔银", "en": "shekels of silver" },
+          "goldKg": 1.76,
+          "silverKg": 18
+        },
+        "militarySpendingPctGdp": 1.5
+      },
+      "demographics": {
+        "population": 250000,
+        "populationDescription": {
+          "zh": "人口约25万，集中于克里特岛，部分散布于爱琴海岛屿的殖民定居点",
+          "en": "Population approximately 250,000, concentrated on Crete with some colonial settlements across Aegean islands"
+        },
+        "urbanPopulation": 50000,
+        "urbanizationRate": 20,
+        "majorCities": [
+          { "name": { "zh": "克诺索斯", "en": "Knossos" }, "population": 20000 },
+          { "name": { "zh": "斐斯托斯", "en": "Phaistos" }, "population": 10000 },
+          { "name": { "zh": "马利亚", "en": "Malia" }, "population": 8000 },
+          { "name": { "zh": "扎克罗斯", "en": "Zakros" }, "population": 5000 }
+        ],
+        "socialClasses": {
+          "zh": "宫殿精英（约3%）、祭司与祭司后裔（约4%）、商人（约8%）、工匠（约15%）、农民（约65%）、奴隶（约5%）",
+          "en": "Palace elite (~3%), priests (~4%), merchants (~8%), artisans (~15%), farmers (~65%), slaves (~5%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与埃及新王国有密切的贸易和外交关系",
+          "en": "Close trade and diplomatic relations with New Kingdom Egypt"
+        },
+        "enemies": {
+          "zh": "海盗威胁；迈锡尼希腊人的潜在竞争",
+          "en": "Pirate threats; potential competition from Mycenaean Greeks"
+        },
+        "foreignPolicy": {
+          "zh": "和平贸易为主导——凭借海上霸权维系广泛的地中海贸易网络，避免陆上军事冲突",
+          "en": "Peaceful trade dominance — leveraging maritime supremacy to maintain extensive Mediterranean trade networks while avoiding land military conflicts"
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": { "zh": "青铜时代", "en": "Bronze Age" },
+        "keyInnovations": {
+          "zh": "先进造船与航海术，宫殿排水和供水系统，精美壁画技术，线形文字A行政记录系统",
+          "en": "Advanced shipbuilding and navigation, palace drainage and water supply systems, exquisite fresco techniques, Linear A administrative record system"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "地中海最发达的海上贸易网络；高度精致的宫殿文化和艺术成就；与埃及等强国的良好外交关系",
+          "en": "The Mediterranean's most developed maritime trade network; highly refined palace culture and artistic achievements; strong diplomatic ties with powers like Egypt"
+        },
+        "weaknesses": {
+          "zh": "军事力量薄弱，几乎没有陆地防御工事；人口规模小；地震和火山活动的自然灾害风险",
+          "en": "Weak military force with virtually no land fortifications; small population; natural disaster risk from earthquakes and volcanic activity"
+        },
+        "outlook": {
+          "zh": "繁荣但脆弱——米诺斯文明处于文化和经济巅峰，但缺乏军事实力来应对潜在威胁",
+          "en": "Prosperous but fragile — Minoan civilization is at its cultural and economic peak, but lacks military power to counter potential threats"
+        }
+      },
+      "status": "thriving",
+      "description": {
+        "zh": "米诺斯文明正处于其辉煌的新宫殿时期，克诺索斯的壮丽宫殿群是爱琴海世界的贸易和文化中心。凭借无与伦比的海上贸易网络，米诺斯商船遍及东地中海，但这个以和平贸易著称的文明缺少强大的军事力量。",
+        "en": "Minoan civilization is in its magnificent New Palace period. The splendid palace complex at Knossos serves as the trade and cultural hub of the Aegean world. With unmatched maritime trade networks, Minoan merchant vessels ply the eastern Mediterranean, yet this civilization renowned for peaceful commerce lacks substantial military power."
+      }
+    },
+
+    {
+      "id": "late_harappan",
+      "name": { "zh": "晚期哈拉帕文明", "en": "Late Harappan Civilization" },
+      "territoryId": "indus_valley",
+      "territoryScale": "md",
+      "civilization": {
+        "name": { "zh": "晚期哈拉帕文明", "en": "Late Harappan Civilization" },
+        "type": "city_state",
+        "capital": { "zh": "多城市中心（哈拉帕、摩亨佐-达罗等）", "en": "Multiple urban centers (Harappa, Mohenjo-daro, etc.)" },
+        "governmentForm": "oligarchy",
+        "socialStructure": {
+          "zh": "相对平等的城市社会正在分化：商人精英-祭司-工匠-农民，城市中心日渐萎缩",
+          "en": "Relatively egalitarian urban society undergoing stratification: merchant elite — priests — artisans — farmers; urban centers gradually shrinking"
+        },
+        "rulingClass": {
+          "zh": "商人和祭司精英组成的寡头统治集团，但统治力正在削弱",
+          "en": "Oligarchic ruling group of merchant and priestly elites, but governance is weakening"
+        },
+        "succession": {
+          "zh": "城市领导权可能通过精英合议决定，各城市独立运作",
+          "en": "City leadership likely determined by elite consensus; each city operates independently"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "松散的城市联盟体制，各城市中心拥有高度自治权，中央协调能力日渐衰退",
+          "en": "Loose urban confederation with high autonomy for each city center; central coordination capacity steadily declining"
+        },
+        "departments": [
+          {
+            "name": { "zh": "粮仓管理处", "en": "Granary Administration" },
+            "function": { "zh": "管理城市公共粮仓和粮食分配", "en": "Manages urban public granaries and grain distribution" },
+            "headCount": 30
+          },
+          {
+            "name": { "zh": "排水与卫生署", "en": "Drainage and Sanitation Office" },
+            "function": { "zh": "维护城市排水系统和公共浴场", "en": "Maintains urban drainage systems and public baths" },
+            "headCount": 25
+          },
+          {
+            "name": { "zh": "贸易管理处", "en": "Trade Administration" },
+            "function": { "zh": "管理标准化度量衡和长途贸易", "en": "Administers standardized weights and measures and long-distance trade" },
+            "headCount": 20
+          }
+        ],
+        "totalOfficials": 300,
+        "localAdmin": {
+          "zh": "各城市独立管理，曾经的统一标准（度量衡、城市规划）正在分化",
+          "en": "Each city independently administered; once-unified standards (weights, measures, urban planning) are fragmenting"
+        },
+        "legalSystem": {
+          "zh": "城市习惯法体系，具体规则不详（文字未破译）",
+          "en": "Urban customary law system; specific rules unknown (script undeciphered)"
+        },
+        "taxationSystem": {
+          "zh": "推测为实物税——粮仓的大规模储存表明存在系统性的税收机制",
+          "en": "Presumed to be in-kind taxation — the scale of granary storage suggests systematic tax collection mechanisms"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "母神崇拜，与动物（特别是牛）有关的祭祀仪式，原始瑜伽修行者形象",
+          "en": "Mother Goddess worship, sacrificial rituals involving animals (especially cattle), proto-yogi figure imagery"
+        },
+        "philosophy": {
+          "zh": "注重净化和仪式性沐浴的精神传统（大浴池的存在表明此点）",
+          "en": "Spiritual tradition emphasizing purification and ritual bathing (evidenced by the existence of the Great Bath)"
+        },
+        "writingSystem": {
+          "zh": "印度河文字（约400个符号，尚未破译），用于印章和短铭文",
+          "en": "Indus script (approximately 400 symbols, undeciphered), used on seals and short inscriptions"
+        },
+        "culturalAchievements": {
+          "zh": "世界最早的城市排水系统，标准化度量衡，精密的城市网格规划，精美的印章雕刻",
+          "en": "World's earliest urban drainage systems, standardized weights and measures, precise urban grid planning, exquisite seal carving"
+        },
+        "languageFamily": {
+          "zh": "不确定（可能为达罗毗荼语系或其他未知语系）",
+          "en": "Uncertain (possibly Dravidian or another unknown language family)"
+        }
+      },
+      "economy": {
+        "level": 4,
+        "gdpEstimate": {
+          "amount": 50000,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 400,
+          "silverKg": 4150,
+          "displayNote": { "zh": "约合白银4150公斤（处于衰退中）", "en": "Approximately 4,150 kg of silver equivalent (in decline)" }
+        },
+        "gdpPerCapita": {
+          "amount": 0.05,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "silverKg": 0.0042,
+          "displayNote": { "zh": "约合白银4.2克/人（下降趋势）", "en": "Approximately 4.2g silver per capita (declining trend)" }
+        },
+        "gdpDescription": {
+          "zh": "曾经繁荣的贸易和农业经济正在衰退，长途贸易网络萎缩，城市人口流出",
+          "en": "Once-prosperous trade and agricultural economy in decline; long-distance trade networks shrinking; urban population outflow"
+        },
+        "mainIndustries": {
+          "zh": "棉花纺织、珠宝加工、陶器制作、灌溉农业（小麦、大麦、棉花）",
+          "en": "Cotton weaving, jewelry making, pottery production, irrigated agriculture (wheat, barley, cotton)"
+        },
+        "tradeGoods": {
+          "zh": "出口：棉花纺织品、玛瑙珠饰、象牙制品；进口：锡、铜、黄金、天青石（贸易量递减）",
+          "en": "Exports: cotton textiles, carnelian beads, ivory products; Imports: tin, copper, gold, lapis lazuli (trade volume decreasing)"
+        },
+        "currency": {
+          "name": { "zh": "标准化砝码交易", "en": "Standardized weight-based trading" },
+          "type": "commodity",
+          "metalBasis": "copper",
+          "unitName": { "zh": "标准砝码单位", "en": "Standard weight unit" }
+        },
+        "householdWealth": {
+          "zh": "商人阶层仍持有可观财富但在减少；工匠和农民的生活水平明显下降",
+          "en": "Merchant class still holds considerable but diminishing wealth; living standards for artisans and farmers noticeably declining"
+        },
+        "averageIncome": {
+          "amount": 0.03,
+          "unit": { "zh": "锡克尔银等价/年", "en": "shekels of silver equivalent per year" },
+          "silverKg": 0.0025,
+          "displayNote": { "zh": "普通居民年收入（持续下降）", "en": "Annual income of an average resident (steadily declining)" }
+        },
+        "foreignTradeVolume": {
+          "amount": 5000,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 40,
+          "silverKg": 415,
+          "displayNote": { "zh": "占GDP约10%（曾经高达25%）", "en": "Approximately 10% of GDP (once as high as 25%)" }
+        },
+        "economicSystem": {
+          "zh": "曾经的城市再分配经济正在瓦解，向分散的农村经济转型",
+          "en": "Former urban redistribution economy disintegrating, transitioning toward a dispersed rural economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 5000,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 40,
+          "silverKg": 415
+        },
+        "annualExpenditure": {
+          "amount": 5500,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 44,
+          "silverKg": 457
+        },
+        "surplus": {
+          "amount": -500,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": -4,
+          "silverKg": -42,
+          "displayNote": { "zh": "财政赤字——入不敷出", "en": "Fiscal deficit — expenditures exceed revenue" }
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "农业税", "en": "Agricultural tax" },
+            "amount": { "amount": 2250, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 18, "silverKg": 187 },
+            "percentage": 45
+          },
+          {
+            "source": { "zh": "手工业收入", "en": "Handicraft revenue" },
+            "amount": { "amount": 1500, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 12, "silverKg": 125 },
+            "percentage": 30
+          },
+          {
+            "source": { "zh": "贸易税（持续萎缩）", "en": "Trade tax (continuing to shrink)" },
+            "amount": { "amount": 1000, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 8, "silverKg": 83 },
+            "percentage": 20
+          },
+          {
+            "source": { "zh": "杂项收入", "en": "Miscellaneous revenue" },
+            "amount": { "amount": 250, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 2, "silverKg": 21 },
+            "percentage": 5
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "基础设施维护（排水系统修缮）", "en": "Infrastructure maintenance (drainage system repair)" },
+            "amount": { "amount": 1925, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 15.4, "silverKg": 160 },
+            "percentage": 35
+          },
+          {
+            "category": { "zh": "行政管理", "en": "Administration" },
+            "amount": { "amount": 1375, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 11, "silverKg": 114 },
+            "percentage": 25
+          },
+          {
+            "category": { "zh": "粮食储备", "en": "Grain reserves" },
+            "amount": { "amount": 1100, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 8.8, "silverKg": 91 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "防务与治安", "en": "Defense and security" },
+            "amount": { "amount": 825, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 6.6, "silverKg": 69 },
+            "percentage": 15
+          },
+          {
+            "category": { "zh": "宗教活动", "en": "Religious activities" },
+            "amount": { "amount": 275, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 2.2, "silverKg": 23 },
+            "percentage": 5
+          }
+        ],
+        "treasury": {
+          "amount": 10000,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 80,
+          "silverKg": 830,
+          "displayNote": { "zh": "正在逐年减少", "en": "Diminishing year by year" }
+        },
+        "treasuryDescription": {
+          "zh": "城市府库正在消耗——曾经充盈的粮仓和贸易储备正因人口流失和贸易萎缩而持续减少",
+          "en": "City treasuries being depleted — once-full granaries and trade reserves are steadily diminishing due to population outflow and trade contraction"
+        },
+        "fiscalPolicy": {
+          "zh": "维持性开支——将有限资源用于维护日益老化的城市基础设施",
+          "en": "Maintenance spending — allocating limited resources to upkeep of aging urban infrastructure"
+        }
+      },
+      "military": {
+        "level": 3,
+        "totalTroops": 8000,
+        "standingArmy": 3000,
+        "reserves": 5000,
+        "branches": [
+          {
+            "name": { "zh": "城市卫队", "en": "City Guard" },
+            "count": 3000,
+            "description": { "zh": "各城市的防御和治安力量", "en": "Defense and security forces of each city" }
+          },
+          {
+            "name": { "zh": "民兵", "en": "Militia" },
+            "count": 5000,
+            "description": { "zh": "紧急征召的农民和工匠", "en": "Emergency conscripts from farmers and artisans" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "各城市各自指挥", "en": "Each city commands independently" },
+          "totalGenerals": 6
+        },
+        "technology": {
+          "zh": "青铜武器（但数量有限），城墙防御，缺乏战车和弓兵等进攻性武器",
+          "en": "Bronze weapons (in limited quantities), city wall defenses; lacking offensive weapons like chariots and dedicated archer units"
+        },
+        "annualMilitarySpending": {
+          "amount": 825,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 6.6,
+          "silverKg": 69
+        },
+        "militarySpendingPctGdp": 1.7
+      },
+      "demographics": {
+        "population": 1000000,
+        "populationDescription": {
+          "zh": "人口约100万并持续下降（巅峰时期约500万），大量人口从城市向农村转移",
+          "en": "Population approximately 1 million and continuing to decline (peak was ~5 million); massive population shift from urban to rural areas"
+        },
+        "urbanPopulation": 120000,
+        "urbanizationRate": 12,
+        "majorCities": [
+          { "name": { "zh": "哈拉帕", "en": "Harappa" }, "population": 25000 },
+          { "name": { "zh": "摩亨佐-达罗", "en": "Mohenjo-daro" }, "population": 20000 },
+          { "name": { "zh": "多拉维拉", "en": "Dholavira" }, "population": 15000 },
+          { "name": { "zh": "洛塔尔", "en": "Lothal" }, "population": 10000 }
+        ],
+        "socialClasses": {
+          "zh": "商人精英（约3%）、祭司（约2%）、工匠（约15%）、农民（约75%）、依附劳动者（约5%）",
+          "en": "Merchant elite (~3%), priests (~2%), artisans (~15%), farmers (~75%), dependent laborers (~5%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与美索不达米亚的贸易联系日渐稀少",
+          "en": "Trade ties with Mesopotamia growing increasingly sparse"
+        },
+        "enemies": {
+          "zh": "来自西北方的游牧民族渗透压力",
+          "en": "Infiltration pressure from nomadic peoples to the northwest"
+        },
+        "foreignPolicy": {
+          "zh": "内向收缩——各城市专注于自身生存，国际外交能力大幅下降",
+          "en": "Inward contraction — each city focused on its own survival; international diplomatic capacity greatly diminished"
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": { "zh": "青铜时代", "en": "Bronze Age" },
+        "keyInnovations": {
+          "zh": "城市排水和卫生系统（仍在运作但维护困难），标准化度量衡，棉花纺织技术，精密珠饰加工",
+          "en": "Urban drainage and sanitation systems (still operational but difficult to maintain), standardized weights and measures, cotton textile technology, precision bead crafting"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "留存的先进城市基础设施和技术传统；精密的手工业技能；长期积累的贸易知识和经验",
+          "en": "Remaining advanced urban infrastructure and technological traditions; sophisticated handicraft skills; accumulated trade knowledge and experience"
+        },
+        "weaknesses": {
+          "zh": "城市人口持续流失；气候变化导致印度河流域水源不稳定；缺乏强有力的中央权威和军事力量；贸易网络严重萎缩",
+          "en": "Continued urban depopulation; climate change causing unstable water sources in the Indus Valley; lack of strong central authority and military power; severely contracted trade networks"
+        },
+        "outlook": {
+          "zh": "悲观——印度河文明的城市阶段正走向终结，将逐步过渡为分散的农村文化",
+          "en": "Pessimistic — the urban phase of the Indus civilization is ending, gradually transitioning to dispersed rural cultures"
+        }
+      },
+      "status": "declining",
+      "description": {
+        "zh": "曾经辉煌的印度河流域文明正处于不可逆转的衰退之中。摩亨佐-达罗和哈拉帕等大城市的人口持续外流，精密的排水系统日渐失修，长途贸易网络几近断裂，一个伟大文明正在缓缓落幕。",
+        "en": "The once-magnificent Indus Valley civilization is in irreversible decline. Major cities like Mohenjo-daro and Harappa face continued population outflow, sophisticated drainage systems fall into disrepair, long-distance trade networks nearly severed — a great civilization slowly drawing to a close."
+      }
+    },
+
+    {
+      "id": "kingdom_of_kush",
+      "name": { "zh": "库施王国（努比亚）", "en": "Kingdom of Kush (Nubia)" },
+      "territoryId": "nubia",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": { "zh": "库施王国", "en": "Kingdom of Kush" },
+        "type": "kingdom",
+        "rulerTitle": { "zh": "国王", "en": "King" },
+        "capital": { "zh": "凯尔迈", "en": "Kerma" },
+        "governmentForm": "absolute_monarchy",
+        "socialStructure": {
+          "zh": "以国王为首的等级社会：王族-贵族武士-祭司-工匠-农牧民-奴隶",
+          "en": "Hierarchical society headed by the king: royalty — noble warriors — priests — artisans — farmers/herders — slaves"
+        },
+        "rulingClass": {
+          "zh": "王室与军事贵族共同统治，以凯尔迈为政治和宗教中心",
+          "en": "Royal house and military nobility co-govern, with Kerma as the political and religious center"
+        },
+        "succession": {
+          "zh": "王位在王室家族内传承，可能采用母系继承线索确定继承人",
+          "en": "Kingship passed within the royal family, possibly using matrilineal descent to determine heirs"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "中央集权的部落王国，以凯尔迈城为中心，下辖数个部落区域",
+          "en": "Centralized tribal kingdom centered on the city of Kerma, governing several tribal districts"
+        },
+        "departments": [
+          {
+            "name": { "zh": "宫廷管理处", "en": "Court Administration" },
+            "function": { "zh": "管理宫廷事务和部落间协调", "en": "Manages court affairs and inter-tribal coordination" },
+            "headCount": 20
+          },
+          {
+            "name": { "zh": "贸易管理处", "en": "Trade Administration" },
+            "function": { "zh": "管理与埃及的黄金、象牙贸易", "en": "Manages gold and ivory trade with Egypt" },
+            "headCount": 15
+          },
+          {
+            "name": { "zh": "军事处", "en": "Military Office" },
+            "function": { "zh": "组织军事防御和对外战争", "en": "Organizes military defense and external campaigns" },
+            "headCount": 10
+          }
+        ],
+        "totalOfficials": 120,
+        "localAdmin": {
+          "zh": "各部落区域由忠于国王的酋长管辖",
+          "en": "Each tribal district governed by chiefs loyal to the king"
+        },
+        "legalSystem": {
+          "zh": "以部落习惯法为基础，国王拥有最高裁决权",
+          "en": "Based on tribal customary law, with the king holding supreme judicial authority"
+        },
+        "taxationSystem": {
+          "zh": "部落贡赋制——各部落向凯尔迈进贡牲畜、黄金和象牙",
+          "en": "Tribal tribute system — each tribe presents livestock, gold, and ivory to Kerma"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "本土神灵崇拜与部分埃及宗教元素融合，重视丧葬仪式（大型圆形墓葬）",
+          "en": "Indigenous deity worship blended with some Egyptian religious elements; emphasis on funerary rituals (large circular tumulus burials)"
+        },
+        "philosophy": {
+          "zh": "祖先崇拜传统，相信来世生活，丧葬中殉葬的习俗反映对死后世界的重视",
+          "en": "Ancestor worship traditions, belief in afterlife; burial sacrifice customs reflecting importance placed on the world after death"
+        },
+        "writingSystem": {
+          "zh": "尚未发展出独立文字系统，使用埃及象形文字进行有限的记录",
+          "en": "No independent writing system yet developed; limited use of Egyptian hieroglyphs for record-keeping"
+        },
+        "culturalAchievements": {
+          "zh": "凯尔迈大型圆形墓葬群（德夫法），独特的黑顶红陶工艺，精美的金银饰品",
+          "en": "Large circular tumulus burials at Kerma (deffufa), distinctive black-topped red pottery, exquisite gold and silver jewelry"
+        },
+        "languageFamily": {
+          "zh": "库施语（尼罗-撒哈拉语系）",
+          "en": "Kushite language (Nilo-Saharan language family)"
+        }
+      },
+      "economy": {
+        "level": 4,
+        "gdpEstimate": {
+          "amount": 3000,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 270,
+          "silverKg": 3240,
+          "displayNote": { "zh": "约合黄金270公斤", "en": "Approximately 270 kg of gold equivalent" }
+        },
+        "gdpPerCapita": {
+          "amount": 0.01,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 0.0009,
+          "silverKg": 0.0108,
+          "displayNote": { "zh": "约合白银10.8克/人", "en": "Approximately 10.8g silver per capita" }
+        },
+        "gdpDescription": {
+          "zh": "以黄金开采和中转贸易为特色的经济体系，辅以畜牧业和尼罗河沿岸农业",
+          "en": "Economy distinguished by gold mining and transit trade, supplemented by pastoralism and Nile-bank agriculture"
+        },
+        "mainIndustries": {
+          "zh": "黄金开采、象牙采集、畜牧业（牛群）、尼罗河农业、陶器制作",
+          "en": "Gold mining, ivory collection, pastoralism (cattle), Nile agriculture, pottery production"
+        },
+        "tradeGoods": {
+          "zh": "出口：黄金、象牙、乌木、豹皮、鸵鸟羽毛；进口：埃及奢侈品、纺织品、谷物",
+          "en": "Exports: gold, ivory, ebony, leopard skins, ostrich feathers; Imports: Egyptian luxury goods, textiles, grain"
+        },
+        "currency": {
+          "name": { "zh": "实物交换/黄金称量", "en": "Barter / Gold weights" },
+          "type": "commodity",
+          "metalBasis": "gold",
+          "unitName": { "zh": "黄金重量单位", "en": "Gold weight unit" }
+        },
+        "householdWealth": {
+          "zh": "王室和贵族拥有大量黄金和牛群；普通民众以畜牧和小规模农业为生",
+          "en": "Royalty and nobility possess large quantities of gold and cattle; common people subsist on herding and small-scale agriculture"
+        },
+        "averageIncome": {
+          "amount": 0.005,
+          "unit": { "zh": "德本等价/年", "en": "deben equivalent per year" },
+          "silverKg": 0.005,
+          "displayNote": { "zh": "普通牧民年收入", "en": "Annual income of an average herder" }
+        },
+        "foreignTradeVolume": {
+          "amount": 450,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 40.5,
+          "silverKg": 486,
+          "displayNote": { "zh": "占GDP约15%", "en": "Approximately 15% of GDP" }
+        },
+        "economicSystem": {
+          "zh": "王室主导的贸易经济：黄金和象牙贸易由王室垄断，畜牧业为民间经济基础",
+          "en": "Royal-dominated trade economy: gold and ivory trade monopolized by the crown; pastoralism forms the civilian economic base"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 400,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 36,
+          "silverKg": 432
+        },
+        "annualExpenditure": {
+          "amount": 370,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 33.3,
+          "silverKg": 400
+        },
+        "surplus": {
+          "amount": 30,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 2.7,
+          "silverKg": 32
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "黄金开采与贸易", "en": "Gold mining and trade" },
+            "amount": { "amount": 180, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 16.2, "silverKg": 194 },
+            "percentage": 45
+          },
+          {
+            "source": { "zh": "部落贡赋（牲畜）", "en": "Tribal tribute (livestock)" },
+            "amount": { "amount": 100, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 9, "silverKg": 108 },
+            "percentage": 25
+          },
+          {
+            "source": { "zh": "象牙与奢侈品贸易", "en": "Ivory and luxury goods trade" },
+            "amount": { "amount": 80, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 7.2, "silverKg": 86 },
+            "percentage": 20
+          },
+          {
+            "source": { "zh": "农业收入", "en": "Agricultural revenue" },
+            "amount": { "amount": 40, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 3.6, "silverKg": 43 },
+            "percentage": 10
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "军事防御", "en": "Military defense" },
+            "amount": { "amount": 130, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 11.7, "silverKg": 140 },
+            "percentage": 35
+          },
+          {
+            "category": { "zh": "王室与宫廷", "en": "Royal court" },
+            "amount": { "amount": 93, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 8.3, "silverKg": 100 },
+            "percentage": 25
+          },
+          {
+            "category": { "zh": "宗教与丧葬", "en": "Religion and funerary rites" },
+            "amount": { "amount": 74, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 6.7, "silverKg": 80 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "贸易基础设施", "en": "Trade infrastructure" },
+            "amount": { "amount": 56, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 5, "silverKg": 60 },
+            "percentage": 15
+          },
+          {
+            "category": { "zh": "行政管理", "en": "Administration" },
+            "amount": { "amount": 17, "unit": { "zh": "德本等价", "en": "deben equivalent" }, "goldKg": 1.5, "silverKg": 18 },
+            "percentage": 5
+          }
+        ],
+        "treasury": {
+          "amount": 800,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 72,
+          "silverKg": 864,
+          "displayNote": { "zh": "主要为黄金储备", "en": "Primarily gold reserves" }
+        },
+        "treasuryDescription": {
+          "zh": "王室金库以黄金和象牙为主要储备，凯尔迈的丧葬遗址显示了可观的财富积累",
+          "en": "Royal treasury with gold and ivory as primary reserves; Kerma's burial sites reveal considerable wealth accumulation"
+        },
+        "fiscalPolicy": {
+          "zh": "防御性财政——优先确保军事防御以抵御埃及的扩张压力",
+          "en": "Defensive fiscal policy — prioritizing military defense to resist Egyptian expansionist pressure"
+        }
+      },
+      "military": {
+        "level": 4,
+        "totalTroops": 8000,
+        "standingArmy": 3000,
+        "reserves": 5000,
+        "branches": [
+          {
+            "name": { "zh": "弓箭手", "en": "Archers" },
+            "count": 4000,
+            "description": { "zh": "努比亚以精准弓箭手闻名，被埃及人称为'弓之国度'", "en": "Nubia renowned for skilled archers, called 'Land of the Bow' by Egyptians" }
+          },
+          {
+            "name": { "zh": "步兵", "en": "Infantry" },
+            "count": 3000,
+            "description": { "zh": "配备长矛和盾牌的部落武士", "en": "Tribal warriors equipped with spears and shields" }
+          },
+          {
+            "name": { "zh": "尼罗河水师", "en": "Nile River Force" },
+            "count": 1000,
+            "description": { "zh": "沿尼罗河防御和巡逻的水上力量", "en": "Waterborne force for Nile defense and patrol" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "库施国王", "en": "King of Kush" },
+          "totalGenerals": 4
+        },
+        "technology": {
+          "zh": "精良的弓箭（努比亚弓闻名于世），青铜长矛，皮盾，简易尼罗河船只",
+          "en": "Fine bows and arrows (Nubian bows famed throughout the ancient world), bronze spears, hide shields, simple Nile boats"
+        },
+        "annualMilitarySpending": {
+          "amount": 130,
+          "unit": { "zh": "德本等价", "en": "deben equivalent" },
+          "goldKg": 11.7,
+          "silverKg": 140
+        },
+        "militarySpendingPctGdp": 4.3
+      },
+      "demographics": {
+        "population": 300000,
+        "populationDescription": {
+          "zh": "人口约30万，沿尼罗河上游（努比亚段）分布，以凯尔迈城为中心",
+          "en": "Population approximately 300,000, distributed along the upper Nile (Nubian section), centered on the city of Kerma"
+        },
+        "urbanPopulation": 25000,
+        "urbanizationRate": 8.3,
+        "majorCities": [
+          { "name": { "zh": "凯尔迈（都城）", "en": "Kerma (capital)" }, "population": 15000 },
+          { "name": { "zh": "萨伊岛", "en": "Sai Island" }, "population": 5000 }
+        ],
+        "socialClasses": {
+          "zh": "王室与贵族武士（约5%）、祭司（约3%）、工匠与商人（约7%）、农牧民（约80%）、奴隶（约5%）",
+          "en": "Royalty and noble warriors (~5%), priests (~3%), artisans and merchants (~7%), farmers/herders (~80%), slaves (~5%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "南方的非洲部落贸易伙伴",
+          "en": "Southern African tribal trade partners"
+        },
+        "enemies": {
+          "zh": "新王国埃及——图特摩斯一世正对库施发动征伐",
+          "en": "New Kingdom Egypt — Thutmose I is launching campaigns against Kush"
+        },
+        "foreignPolicy": {
+          "zh": "防御性——努力抵御埃及的南侵，同时维持黄金和象牙的出口贸易",
+          "en": "Defensive — striving to resist Egyptian southern aggression while maintaining gold and ivory export trade"
+        }
+      },
+      "technology": {
+        "level": 4,
+        "era": { "zh": "青铜时代", "en": "Bronze Age" },
+        "keyInnovations": {
+          "zh": "先进的弓箭制造技术，黄金开采和冶炼，独特的陶器烧制工艺，大型泥砖建筑（德夫法）",
+          "en": "Advanced bow-making technology, gold mining and smelting, distinctive pottery firing techniques, large mudbrick structures (deffufa)"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "丰富的黄金资源提供经济支柱；精锐弓箭手部队的战斗力；控制南北贸易要道的战略位置",
+          "en": "Abundant gold resources providing economic foundation; combat effectiveness of elite archer units; strategic position controlling north-south trade routes"
+        },
+        "weaknesses": {
+          "zh": "面对埃及新王国的军事压力严重不足；人口和经济规模远小于周边大国；文字系统缺失限制了行政效率",
+          "en": "Severely outmatched against New Kingdom Egypt's military pressure; population and economic scale far smaller than neighboring powers; lack of writing system limits administrative efficiency"
+        },
+        "outlook": {
+          "zh": "危机四伏——埃及法老图特摩斯一世的南征对库施的独立构成严重威胁",
+          "en": "Crisis-laden — Pharaoh Thutmose I's southern campaigns pose a severe threat to Kush's independence"
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "库施王国以凯尔迈为中心，控制着努比亚地区丰富的黄金和象牙资源。尽管在经济和文化上取得了显著成就，但来自北方新王国埃及的军事威胁日益逼近，库施正面临其独立以来最严峻的考验。",
+        "en": "The Kingdom of Kush, centered on Kerma, controls Nubia's rich gold and ivory resources. Despite notable economic and cultural achievements, the growing military threat from New Kingdom Egypt to the north is closing in — Kush faces the most severe test since its independence."
+      }
+    },
+
+    {
+      "id": "steppe_nomads",
+      "name": { "zh": "草原游牧民", "en": "Steppe Nomads" },
+      "territoryId": "steppe",
+      "territoryScale": "xs",
+      "civilization": {
+        "name": { "zh": "草原游牧民", "en": "Steppe Nomads" },
+        "type": "nomadic",
+        "governmentForm": "tribal_council",
+        "socialStructure": {
+          "zh": "以血缘为纽带的部落社会：各部落由族长领导，大事由部落长老会议决定",
+          "en": "Kinship-based tribal society: each tribe led by a chieftain, with major decisions made by a council of tribal elders"
+        },
+        "rulingClass": {
+          "zh": "各部落族长和长老——权力分散于众多独立部落之中",
+          "en": "Tribal chieftains and elders — power dispersed among numerous independent tribes"
+        },
+        "succession": {
+          "zh": "族长由部落长老会议从氏族首领中推选，重视军事和骑术能力",
+          "en": "Chieftains elected by tribal elder councils from clan leaders, emphasizing military and riding ability"
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "松散的部落联盟制，各部落保持高度独立，仅在战争时期形成临时联盟",
+          "en": "Loose tribal confederation, each tribe maintaining high independence, forming temporary alliances only during wartime"
+        },
+        "departments": [
+          {
+            "name": { "zh": "部落长老会", "en": "Council of Elders" },
+            "function": { "zh": "决定部落迁徙路线、战争与和平等重大事务", "en": "Decides major matters such as tribal migration routes, war and peace" },
+            "headCount": 10
+          },
+          {
+            "name": { "zh": "战争首领", "en": "War Chiefs" },
+            "function": { "zh": "在战时统领联合军事行动", "en": "Commands joint military operations during wartime" },
+            "headCount": 5
+          }
+        ],
+        "totalOfficials": 50,
+        "localAdmin": {
+          "zh": "各氏族和部落完全自治，按传统牧场分布迁徙",
+          "en": "Each clan and tribe fully autonomous, migrating according to traditional pasture distributions"
+        },
+        "legalSystem": {
+          "zh": "口传习惯法——由长老裁决，重视荣誉和血仇报复传统",
+          "en": "Oral customary law — adjudicated by elders, emphasizing honor and blood-feud traditions"
+        },
+        "taxationSystem": {
+          "zh": "无正式税收——通过牲畜分配、战利品分享和互惠义务维系部落经济",
+          "en": "No formal taxation — tribal economy sustained through livestock distribution, spoils sharing, and reciprocal obligations"
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "萨满教和天神崇拜——崇拜天空之神、太阳神和动物图腾",
+          "en": "Shamanism and sky-god worship — venerating the sky deity, sun god, and animal totems"
+        },
+        "philosophy": {
+          "zh": "尊崇自然力量和祖先精神，以口传史诗和英雄传说维系部落认同",
+          "en": "Reverence for natural forces and ancestral spirits; tribal identity maintained through oral epics and heroic legends"
+        },
+        "writingSystem": {
+          "zh": "无文字系统，全部知识通过口头传统传承",
+          "en": "No writing system; all knowledge transmitted through oral tradition"
+        },
+        "culturalAchievements": {
+          "zh": "精湛的马术与骑射技能，独特的动物纹饰艺术风格，青铜马具制作，口传英雄史诗",
+          "en": "Superb horsemanship and mounted archery skills, distinctive animal-motif art style, bronze horse gear crafting, oral heroic epics"
+        },
+        "languageFamily": {
+          "zh": "多种语言（印欧语系、阿尔泰语系等）",
+          "en": "Multiple languages (Indo-European, Altaic, and others)"
+        }
+      },
+      "economy": {
+        "level": 2,
+        "gdpEstimate": {
+          "amount": 5000,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 40,
+          "silverKg": 415,
+          "displayNote": { "zh": "约合白银415公斤（以牲畜为主要计价）", "en": "Approximately 415 kg of silver equivalent (livestock as primary measure of value)" }
+        },
+        "gdpPerCapita": {
+          "amount": 0.01,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "silverKg": 0.00083,
+          "displayNote": { "zh": "约合白银0.8克/人", "en": "Approximately 0.8g silver per capita" }
+        },
+        "gdpDescription": {
+          "zh": "以游牧畜牧业为基础的自给自足经济，辅以劫掠和定居文明的边境贸易",
+          "en": "Self-sufficient economy based on nomadic pastoralism, supplemented by raiding and frontier trade with settled civilizations"
+        },
+        "mainIndustries": {
+          "zh": "马匹和牛羊养殖、毛皮加工、皮革制品、马具制作",
+          "en": "Horse and livestock breeding, fur processing, leather goods, horse gear crafting"
+        },
+        "tradeGoods": {
+          "zh": "出口：马匹、毛皮、皮革、肉制品；进口/劫掠：金属制品、谷物、纺织品",
+          "en": "Exports: horses, furs, leather, meat products; Imports/raids: metalwork, grain, textiles"
+        },
+        "currency": {
+          "name": { "zh": "实物交换（以马匹和牲畜为价值尺度）", "en": "Barter (horses and livestock as measure of value)" },
+          "type": "commodity",
+          "metalBasis": "none",
+          "unitName": { "zh": "马匹/头羊", "en": "Horse / head of sheep" }
+        },
+        "householdWealth": {
+          "zh": "以牲畜数量衡量财富——富有的族长可能拥有数百匹马和数千头牛羊",
+          "en": "Wealth measured in livestock — wealthy chieftains may own hundreds of horses and thousands of cattle and sheep"
+        },
+        "averageIncome": {
+          "amount": 0.005,
+          "unit": { "zh": "锡克尔银等价/年", "en": "shekels of silver equivalent per year" },
+          "silverKg": 0.0004,
+          "displayNote": { "zh": "普通牧民年收入", "en": "Annual income of an average herder" }
+        },
+        "foreignTradeVolume": {
+          "amount": 500,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 4,
+          "silverKg": 42,
+          "displayNote": { "zh": "占GDP约10%（含劫掠所得）", "en": "Approximately 10% of GDP (including raid proceeds)" }
+        },
+        "economicSystem": {
+          "zh": "游牧自然经济——以家庭和氏族为生产单位，按季节在固定路线上迁徙放牧",
+          "en": "Nomadic natural economy — families and clans as production units, migrating seasonally along fixed routes for pasture"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 200,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 1.6,
+          "silverKg": 17
+        },
+        "annualExpenditure": {
+          "amount": 190,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 1.5,
+          "silverKg": 16
+        },
+        "surplus": {
+          "amount": 10,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 0.1,
+          "silverKg": 1
+        },
+        "revenueBreakdown": [
+          {
+            "source": { "zh": "牲畜产品", "en": "Livestock products" },
+            "amount": { "amount": 100, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 0.8, "silverKg": 8.3 },
+            "percentage": 50
+          },
+          {
+            "source": { "zh": "劫掠与战利品", "en": "Raiding and spoils" },
+            "amount": { "amount": 60, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 0.48, "silverKg": 5 },
+            "percentage": 30
+          },
+          {
+            "source": { "zh": "边境贸易", "en": "Frontier trade" },
+            "amount": { "amount": 40, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 0.32, "silverKg": 3.3 },
+            "percentage": 20
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": { "zh": "武器和马具", "en": "Weapons and horse gear" },
+            "amount": { "amount": 76, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 0.6, "silverKg": 6.3 },
+            "percentage": 40
+          },
+          {
+            "category": { "zh": "部落祭祀与庆典", "en": "Tribal rituals and celebrations" },
+            "amount": { "amount": 38, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 0.3, "silverKg": 3.2 },
+            "percentage": 20
+          },
+          {
+            "category": { "zh": "金属制品与谷物购入", "en": "Metalwork and grain purchases" },
+            "amount": { "amount": 57, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 0.45, "silverKg": 4.7 },
+            "percentage": 30
+          },
+          {
+            "category": { "zh": "其他", "en": "Other" },
+            "amount": { "amount": 19, "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" }, "goldKg": 0.15, "silverKg": 1.6 },
+            "percentage": 10
+          }
+        ],
+        "treasury": {
+          "amount": 300,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 2.4,
+          "silverKg": 25,
+          "displayNote": { "zh": "主要为牲畜和劫掠所得金属制品", "en": "Primarily livestock and metalwork from raids" }
+        },
+        "treasuryDescription": {
+          "zh": "游牧民的'国库'分散于各部落族长的帐篷和牧场中，主要以牲畜和少量金属制品的形式存在",
+          "en": "The nomads' 'treasury' is dispersed among chieftains' tents and pastures, primarily in the form of livestock and small quantities of metalwork"
+        },
+        "fiscalPolicy": {
+          "zh": "无正式财政制度——资源通过部落传统分配机制流动",
+          "en": "No formal fiscal system — resources flow through traditional tribal distribution mechanisms"
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 15000,
+        "standingArmy": 0,
+        "reserves": 15000,
+        "branches": [
+          {
+            "name": { "zh": "骑兵/骑射手", "en": "Cavalry / Horse Archers" },
+            "count": 10000,
+            "description": { "zh": "全民皆兵——几乎所有成年男性都是熟练的骑射手", "en": "All people are warriors — nearly all adult males are skilled horse archers" }
+          },
+          {
+            "name": { "zh": "轻步兵", "en": "Light Infantry" },
+            "count": 5000,
+            "description": { "zh": "步战辅助力量，负责营地防御和近战", "en": "Auxiliary foot soldiers responsible for camp defense and close combat" }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": { "zh": "战时由诸部落共推的军事首领", "en": "Wartime military leader elected by joint tribal consensus" },
+          "totalGenerals": 10
+        },
+        "technology": {
+          "zh": "复合弓（马上射击），青铜短剑和矛头，皮甲，出色的马术机动性",
+          "en": "Composite bows (mounted archery), bronze short swords and spearheads, leather armor, outstanding cavalry mobility"
+        },
+        "annualMilitarySpending": {
+          "amount": 76,
+          "unit": { "zh": "锡克尔银等价", "en": "shekels of silver equivalent" },
+          "goldKg": 0.6,
+          "silverKg": 6.3
+        },
+        "militarySpendingPctGdp": 1.5
+      },
+      "demographics": {
+        "population": 500000,
+        "populationDescription": {
+          "zh": "人口约50万，广泛散布于从黑海北岸到中亚的辽阔草原带",
+          "en": "Population approximately 500,000, widely dispersed across the vast steppe belt from north of the Black Sea to Central Asia"
+        },
+        "urbanPopulation": 0,
+        "urbanizationRate": 0,
+        "majorCities": [],
+        "socialClasses": {
+          "zh": "部落族长与长老（约3%）、武士（约25%）、普通牧民（约65%）、附庸部落民（约7%）",
+          "en": "Tribal chieftains and elders (~3%), warriors (~25%), common herders (~65%), vassal tribespeople (~7%)"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "各部落间的临时军事联盟",
+          "en": "Temporary military alliances between tribes"
+        },
+        "enemies": {
+          "zh": "周边定居文明（视为劫掠目标），部落间的争斗",
+          "en": "Surrounding settled civilizations (viewed as raiding targets); inter-tribal conflicts"
+        },
+        "foreignPolicy": {
+          "zh": "机会主义——在贸易和劫掠之间灵活切换，趋向弱处攻击",
+          "en": "Opportunistic — flexibly alternating between trade and raiding, targeting areas of weakness"
+        }
+      },
+      "technology": {
+        "level": 2,
+        "era": { "zh": "青铜时代（游牧阶段）", "en": "Bronze Age (nomadic stage)" },
+        "keyInnovations": {
+          "zh": "骑马技术和马术训练，复合弓制造，便携式帐篷（毡包），游牧迁徙路线规划",
+          "en": "Mounted riding and equestrian training, composite bow manufacture, portable tents (yurts), nomadic migration route planning"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "卓越的机动性和骑射能力使其在战场上具有巨大优势；广阔领土和游牧生活方式使敌人难以征服；适应力极强",
+          "en": "Outstanding mobility and mounted archery provide enormous battlefield advantage; vast territory and nomadic lifestyle make conquest by enemies difficult; extremely adaptable"
+        },
+        "weaknesses": {
+          "zh": "缺乏统一政治组织，难以长期集中力量；经济基础薄弱；无文字传统限制了知识积累；人口密度极低",
+          "en": "Lack of unified political organization, difficulty sustaining concentrated force; weak economic base; absence of writing tradition limits knowledge accumulation; extremely low population density"
+        },
+        "outlook": {
+          "zh": "潜力巨大但缺乏方向——草原游牧民拥有可怕的军事潜力，一旦出现强力领袖统一各部，将对定居文明构成致命威胁",
+          "en": "Enormous potential but lacking direction — steppe nomads possess fearsome military potential; should a powerful leader unite the tribes, they would pose a lethal threat to settled civilizations"
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "广袤的欧亚草原上散布着众多游牧部落，他们以精湛的骑射技术闻名。虽然在政治上四分五裂，经济上依赖畜牧和劫掠，但这些游牧民拥有令定居文明恐惧的军事潜力。",
+        "en": "Numerous nomadic tribes are scattered across the vast Eurasian steppe, renowned for their superb mounted archery. Though politically fragmented and economically dependent on herding and raiding, these nomads possess military potential that strikes fear into settled civilizations."
+      }
+    }
+  ],
+  "summary": {
+    "zh": "公元前1600年，世界正处于青铜时代中期。商汤推翻夏朝建立商王朝，开启了中国历史的新纪元；埃及新王国在驱逐喜克索斯后步入扩张的黄金时代；加喜特人统治下的巴比伦维持着两河流域的稳定；赫梯大王哈图西里一世将安纳托利亚的王国向近东扩展；米诺斯文明的海上贸易帝国达到巅峰；而印度河流域的哈拉帕文明则在气候变化和内部衰退中走向终结。库施王国在努比亚以黄金之国的身份崛起，却面临埃及南征的压力。欧亚草原上的游牧民族虽然分散但军事潜力惊人，预示着未来文明格局的重大变革。",
+    "en": "In 1600 BCE, the world is in the Middle Bronze Age. King Tang has overthrown the Xia to establish the Shang dynasty, opening a new era in Chinese history; New Kingdom Egypt enters its golden age of expansion after expelling the Hyksos; Kassite Babylonia maintains Mesopotamian stability; Hittite Great King Hattusili I expands the Anatolian kingdom into the Near East; Minoan maritime trade civilization reaches its zenith; while the Harappan civilization in the Indus Valley declines toward its end amid climate change and internal decay. The Kingdom of Kush rises in Nubia as the 'Land of Gold' but faces pressure from Egyptian campaigns. Eurasian steppe nomads, though dispersed, harbor formidable military potential, foreshadowing major shifts in the civilizational landscape."
+  }
+}

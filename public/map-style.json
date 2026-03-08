@@ -1,0 +1,36 @@
+{
+  "version": 8,
+  "name": "AncientAtlas",
+  "sources": {
+    "carto-dark": {
+      "type": "raster",
+      "tiles": [
+        "https://basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}@2x.png"
+      ],
+      "tileSize": 256,
+      "attribution": "&copy; <a href=\"https://carto.com/\">CARTO</a>"
+    }
+  },
+  "layers": [
+    {
+      "id": "ocean",
+      "type": "background",
+      "paint": {
+        "background-color": "#141E2B"
+      }
+    },
+    {
+      "id": "base-tiles",
+      "type": "raster",
+      "source": "carto-dark",
+      "paint": {
+        "raster-opacity": 0.9,
+        "raster-hue-rotate": 30,
+        "raster-brightness-min": 0.18,
+        "raster-brightness-max": 0.7,
+        "raster-contrast": 0.15,
+        "raster-saturation": -0.1
+      }
+    }
+  ]
+}

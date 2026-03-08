@@ -1,0 +1,5604 @@
+{
+  "id": "state-y-800-m1-initial",
+  "timestamp": {
+    "year": -800,
+    "month": 1
+  },
+  "era": {
+    "zh": "铁器时代",
+    "en": "Iron Age"
+  },
+  "summary": {
+    "zh": "公元前800年前后，欧亚非多地进入铁器时代的成熟阶段。西周仍据有王室名义上的天下，但王权已趋衰弱，诸侯势力上升；新亚述帝国在两河与黎凡特一带强势扩张；埃及处于第三中间期，由第二十二王朝等地方性王朝分治；希腊世界从黑暗时代后期走向城邦形成；腓尼基商邦通过海上贸易联结地中海；乌拉尔图在安纳托利亚东部与高加索南缘崛起；印度次大陆处于后吠陀时期，恒河流域农业与政治组织扩展；努比亚库施王国在上尼罗河稳定发展。整体而言，这是一个王权、贵族、祭司与商人共同塑造区域秩序的时代，战争、迁徙、贸易与宗教传统并行推进。",
+    "en": "Around 800 BCE, much of Afro-Eurasia had entered a mature phase of the Iron Age. The Western Zhou still held nominal royal authority in North China, but royal power was weakening as regional lords grew stronger; the Neo-Assyrian Empire dominated Mesopotamia and pressed into the Levant; Egypt was in the Third Intermediate Period under divided dynastic rule; the Greek world was emerging from the late Dark Age into the age of city-states; Phoenician merchant polities linked the Mediterranean by sea; Urartu was rising in eastern Anatolia and the southern Caucasus; the Indian subcontinent was in the Later Vedic age, with agriculture and political organization expanding in the Ganges basin; and the Kingdom of Kush was consolidating in Upper Nubia. Overall, this was an age shaped by kings, nobles, priests, and merchants alike, with warfare, migration, trade, and religious tradition all driving regional change."
+  },
+  "regions": [
+    {
+      "id": "western_zhou_china_central",
+      "name": {
+        "zh": "西周王畿",
+        "en": "Western Zhou Royal Domain"
+      },
+      "territoryId": "china_central",
+      "territoryScale": "lg",
+      "civilization": {
+        "name": {
+          "zh": "周朝",
+          "en": "Zhou Dynasty"
+        },
+        "type": "kingdom",
+        "ruler": {
+          "zh": "周宣王",
+          "en": "King Xuan of Zhou"
+        },
+        "rulerTitle": {
+          "zh": "天子",
+          "en": "Son of Heaven"
+        },
+        "dynasty": {
+          "zh": "姬周",
+          "en": "Ji Zhou"
+        },
+        "capital": {
+          "zh": "镐京",
+          "en": "Haojing"
+        },
+        "governmentForm": "feudal_monarchy",
+        "socialStructure": {
+          "zh": "宗法分封秩序下，王室、公卿、诸侯、卿大夫、士、庶人与奴隶并存。",
+          "en": "A feudal-patrilineal order with the royal house, high nobles, regional lords, ministerial lineages, shi elites, commoners, and slaves."
+        },
+        "rulingClass": {
+          "zh": "姬姓王室与世卿贵族",
+          "en": "The Ji royal house and hereditary aristocratic lineages"
+        },
+        "succession": {
+          "zh": "嫡长继承为原则，但常受宫廷与诸侯政治影响。",
+          "en": "Primogeniture in principle, though often shaped by court and feudal politics."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "周王居中，以宗法与分封维系诸侯体系。",
+          "en": "The Zhou king stood at the center, maintaining the feudal order through kinship and enfeoffment."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "太史寮",
+              "en": "Grand Scribes"
+            },
+            "function": {
+              "zh": "记事、册命、祭祀文书",
+              "en": "Record keeping, royal edicts, and ritual documentation"
+            },
+            "headCount": 120
+          },
+          {
+            "name": {
+              "zh": "司徒系统",
+              "en": "Minister of Land and People"
+            },
+            "function": {
+              "zh": "管理土地、户口与役使",
+              "en": "Administration of land, households, and labor service"
+            },
+            "headCount": 220
+          },
+          {
+            "name": {
+              "zh": "司马系统",
+              "en": "Minister of War"
+            },
+            "function": {
+              "zh": "统筹王师、车马与征伐",
+              "en": "Coordination of royal forces, chariots, and campaigns"
+            },
+            "headCount": 180
+          },
+          {
+            "name": {
+              "zh": "宗伯系统",
+              "en": "Minister of Rites"
+            },
+            "function": {
+              "zh": "主持宗庙礼仪与朝聘",
+              "en": "Management of ancestral rites and court ceremony"
+            },
+            "headCount": 160
+          }
+        ],
+        "totalOfficials": 680,
+        "localAdmin": {
+          "zh": "王畿由卿士直接管理，外围由封国世袭统治。",
+          "en": "The royal domain was directly managed by court aristocrats, while outer territories were ruled by hereditary feudal states."
+        },
+        "legalSystem": {
+          "zh": "以礼制为主，辅以王命、刑罚与贵族仲裁。",
+          "en": "Governed mainly by ritual norms, supplemented by royal commands, punishments, and aristocratic arbitration."
+        },
+        "taxationSystem": {
+          "zh": "贡赋、田税、徭役与军役并行。",
+          "en": "Tribute, agricultural levies, labor corvée, and military service formed the tax base."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "祖先崇拜、天命观与周礼祭祀",
+          "en": "Ancestor worship, the Mandate of Heaven, and Zhou ritual religion"
+        },
+        "philosophy": {
+          "zh": "以礼乐政治、宗法伦理与早期天命思想为核心",
+          "en": "Centered on ritual governance, kinship ethics, and early Mandate of Heaven thought"
+        },
+        "writingSystem": {
+          "zh": "金文与早期古汉字",
+          "en": "Bronze inscriptions and early Old Chinese script"
+        },
+        "culturalAchievements": {
+          "zh": "礼乐制度、青铜铭文、王室祭祀传统与诗歌口传发展",
+          "en": "Ritual-music institutions, bronze inscriptions, royal sacrificial traditions, and growing poetic transmission"
+        },
+        "languageFamily": {
+          "zh": "汉藏语系",
+          "en": "Sino-Tibetan"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 950,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 356250
+        },
+        "gdpPerCapita": {
+          "amount": 0.43,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.162
+        },
+        "gdpDescription": {
+          "zh": "以农业为主，青铜手工业和区域交换较发达，但王室财政受封建分散制约。",
+          "en": "Primarily agrarian, with significant bronze industry and regional exchange, though royal finances were constrained by feudal fragmentation."
+        },
+        "mainIndustries": {
+          "zh": "粟黍农业、青铜铸造、车马制造、玉器与纺织",
+          "en": "Millet agriculture, bronze casting, chariot production, jade working, and textiles"
+        },
+        "tradeGoods": {
+          "zh": "青铜器、盐、马匹、丝织品、玉石、粮食",
+          "en": "Bronzes, salt, horses, silk textiles, jade, and grain"
+        },
+        "currency": {
+          "name": {
+            "zh": "贝与金属权衡并用",
+            "en": "Cowries and weighed metal"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "贝",
+            "en": "cowry"
+          }
+        },
+        "householdWealth": {
+          "zh": "贵族富裕而庶民普遍有限，财富高度依附土地与宗族。",
+          "en": "Nobles were wealthy while common households remained modest; wealth was strongly tied to land and lineage."
+        },
+        "averageIncome": {
+          "amount": 0.28,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.105
+        },
+        "foreignTradeVolume": {
+          "amount": 35,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 13125
+        },
+        "economicSystem": {
+          "zh": "王室—封国并存的礼制农业经济",
+          "en": "A ritual-feudal agrarian economy shared between royal and regional powers"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 95,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 35625
+        },
+        "annualExpenditure": {
+          "amount": 92,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 34500
+        },
+        "surplus": {
+          "amount": 3,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 1125
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "田赋贡纳",
+              "en": "Land tax and tribute"
+            },
+            "amount": {
+              "amount": 48,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 50.5
+          },
+          {
+            "source": {
+              "zh": "徭役折算",
+              "en": "Corvée equivalent"
+            },
+            "amount": {
+              "amount": 20,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 21.1
+          },
+          {
+            "source": {
+              "zh": "封国贡献",
+              "en": "Contributions from feudatories"
+            },
+            "amount": {
+              "amount": 18,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 18.9
+          },
+          {
+            "source": {
+              "zh": "盐与工官收入",
+              "en": "Salt and state workshop income"
+            },
+            "amount": {
+              "amount": 9,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 9.5
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "王师与防务",
+              "en": "Royal army and defense"
+            },
+            "amount": {
+              "amount": 34,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 37
+          },
+          {
+            "category": {
+              "zh": "宫廷与祭祀",
+              "en": "Court and ritual"
+            },
+            "amount": {
+              "amount": 26,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 28.3
+          },
+          {
+            "category": {
+              "zh": "赏赐与诸侯关系",
+              "en": "Gifts and feudal relations"
+            },
+            "amount": {
+              "amount": 18,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 19.6
+          },
+          {
+            "category": {
+              "zh": "行政与工程",
+              "en": "Administration and works"
+            },
+            "amount": {
+              "amount": 14,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 15.1
+          }
+        ],
+        "treasury": {
+          "amount": 40,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 15000
+        },
+        "treasuryDescription": {
+          "zh": "王室府库尚可，但对诸侯动员能力下降。",
+          "en": "The royal treasury remained adequate, but the court’s ability to mobilize feudatories was declining."
+        },
+        "fiscalPolicy": {
+          "zh": "维持礼制支出与军费平衡，依赖贡赋而非高度集中征税。",
+          "en": "Aimed to balance ritual expenditure and military needs, relying on tribute rather than highly centralized taxation."
+        }
+      },
+      "military": {
+        "level": 6,
+        "totalTroops": 180000,
+        "standingArmy": 28000,
+        "reserves": 152000,
+        "branches": [
+          {
+            "name": {
+              "zh": "王师步卒",
+              "en": "Royal Infantry"
+            },
+            "count": 120000,
+            "description": {
+              "zh": "由王畿与附属封国征发，为主力。",
+              "en": "Levied from the royal domain and subordinate states; the main force."
+            }
+          },
+          {
+            "name": {
+              "zh": "战车兵",
+              "en": "Chariot Corps"
+            },
+            "count": 8000,
+            "description": {
+              "zh": "贵族车战核心兵种，象征地位与机动打击。",
+              "en": "Elite aristocratic chariot arm, central to prestige warfare and mobile shock."
+            }
+          },
+          {
+            "name": {
+              "zh": "边防部队",
+              "en": "Frontier Forces"
+            },
+            "count": 52000,
+            "description": {
+              "zh": "驻守北方及西北边境，应对戎狄侵扰。",
+              "en": "Stationed on northern and northwestern frontiers against Rong and Di incursions."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "周宣王",
+            "en": "King Xuan of Zhou"
+          },
+          "totalGenerals": 36
+        },
+        "technology": {
+          "zh": "青铜武器仍占优势，铁器开始普及于工具与部分兵器。",
+          "en": "Bronze weapons still predominated, while iron was increasingly used for tools and some arms."
+        },
+        "annualMilitarySpending": {
+          "amount": 34,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 12750
+        },
+        "militarySpendingPctGdp": 3.6,
+        "threats": {
+          "zh": "北方猃狁、犬戎及内部诸侯离心。",
+          "en": "The Xianyun and Quanrong on the frontier, as well as centrifugal feudal politics."
+        }
+      },
+      "demographics": {
+        "population": 22000000,
+        "populationDescription": {
+          "zh": "关中与黄河中游人口稠密，为华北核心农业区。",
+          "en": "Population was dense in the Guanzhong and middle Yellow River zone, the core agrarian heartland of North China."
+        },
+        "urbanPopulation": 1760000,
+        "urbanizationRate": 8,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "镐京",
+              "en": "Haojing"
+            },
+            "population": 120000
+          },
+          {
+            "name": {
+              "zh": "洛邑",
+              "en": "Luoyi"
+            },
+            "population": 90000
+          },
+          {
+            "name": {
+              "zh": "宗周",
+              "en": "Zongzhou"
+            },
+            "population": 70000
+          }
+        ],
+        "socialClasses": {
+          "zh": "王室、诸侯、卿大夫、士、农、工、商、奴隶",
+          "en": "Royal house, feudal lords, aristocrats, shi, peasants, artisans, merchants, and slaves"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "名义上诸侯国如晋、鲁、卫、齐等臣属于周。",
+          "en": "Nominally supported by feudatory states such as Jin, Lu, Wey, and Qi."
+        },
+        "enemies": {
+          "zh": "犬戎、猃狁等边境部族，以及不稳定的地方势力。",
+          "en": "Frontier groups such as the Quanrong and Xianyun, along with unstable regional powers."
+        },
+        "foreignPolicy": {
+          "zh": "以册命、婚姻、朝聘与征伐维持天下秩序。",
+          "en": "Sought to preserve order through investiture, marriage ties, court visits, and punitive campaigns."
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": {
+          "zh": "青铜晚期向铁器时代过渡",
+          "en": "Late Bronze to Iron Age transition"
+        },
+        "keyInnovations": {
+          "zh": "铁制农具扩大、车战体系成熟、青铜礼器铸造高度发达",
+          "en": "Expansion of iron agricultural tools, mature chariot warfare, and advanced bronze ritual casting"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "文化权威深厚、农业基础稳固、礼制网络广泛。",
+          "en": "Deep cultural legitimacy, a strong agrarian base, and a wide ritual-feudal network."
+        },
+        "weaknesses": {
+          "zh": "王权衰退、财政分散、边防压力增大。",
+          "en": "Declining royal authority, decentralized finances, and increasing frontier pressure."
+        },
+        "outlook": {
+          "zh": "短期尚能维持秩序，但诸侯坐大与西北威胁将加速危机。",
+          "en": "Order could be preserved in the short term, but rising regional lords and northwestern threats would intensify crisis."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "西周在宣王时期一度中兴，但复兴基础并不稳固，王室对诸侯与边疆的控制已出现明显裂痕。",
+        "en": "Under King Xuan, the Western Zhou enjoyed a partial revival, but its foundations were fragile and royal control over feudatories and frontiers was visibly weakening."
+      }
+    },
+    {
+      "id": "neo_assyria_mesopotamia",
+      "name": {
+        "zh": "新亚述帝国",
+        "en": "Neo-Assyrian Empire"
+      },
+      "territoryId": "mesopotamia",
+      "territoryScale": "xl",
+      "civilization": {
+        "name": {
+          "zh": "亚述帝国",
+          "en": "Assyrian Empire"
+        },
+        "type": "empire",
+        "ruler": {
+          "zh": "阿达德-尼拉里三世",
+          "en": "Adad-nirari III"
+        },
+        "rulerTitle": {
+          "zh": "亚述之王",
+          "en": "King of Assyria"
+        },
+        "dynasty": {
+          "zh": "亚述王朝",
+          "en": "Assyrian Dynasty"
+        },
+        "capital": {
+          "zh": "卡尔胡",
+          "en": "Kalhu"
+        },
+        "governmentForm": "absolute_monarchy",
+        "socialStructure": {
+          "zh": "王室、军功贵族、祭司、书吏、自由民、附庸民与奴隶构成等级社会。",
+          "en": "A hierarchical society of king, military nobility, priests, scribes, free commoners, dependent populations, and slaves."
+        },
+        "rulingClass": {
+          "zh": "王室、军政总督与宫廷贵族",
+          "en": "The royal house, military governors, and court nobility"
+        },
+        "succession": {
+          "zh": "王位世袭，但宫廷阴谋与军队支持对继承极为关键。",
+          "en": "The throne was hereditary, but succession depended heavily on court intrigue and military backing."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "中央集权君主制，以行省与附庸体系统治广阔领土。",
+          "en": "A centralized monarchy governing a broad imperial realm through provinces and vassals."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "王家书记处",
+              "en": "Royal Chancery"
+            },
+            "function": {
+              "zh": "诏令、档案与外交文书",
+              "en": "Edicts, archives, and diplomatic correspondence"
+            },
+            "headCount": 260
+          },
+          {
+            "name": {
+              "zh": "总督体系",
+              "en": "Provincial Governorships"
+            },
+            "function": {
+              "zh": "地方征税、征兵与治安",
+              "en": "Provincial taxation, recruitment, and security"
+            },
+            "headCount": 900
+          },
+          {
+            "name": {
+              "zh": "宫廷军务署",
+              "en": "Palace Military Office"
+            },
+            "function": {
+              "zh": "军队调动、补给与战役规划",
+              "en": "Troop deployment, supply, and campaign planning"
+            },
+            "headCount": 340
+          },
+          {
+            "name": {
+              "zh": "神庙管理机构",
+              "en": "Temple Administration"
+            },
+            "function": {
+              "zh": "管理神庙财产与祭祀",
+              "en": "Management of temple property and cult"
+            },
+            "headCount": 420
+          }
+        ],
+        "totalOfficials": 1920,
+        "localAdmin": {
+          "zh": "行省由总督治理，边缘地区以纳贡附庸王统治。",
+          "en": "Core areas were ruled by governors, while peripheral zones were controlled through tribute-paying vassal kings."
+        },
+        "legalSystem": {
+          "zh": "王命、习惯法与楔形文契约并用，刑罚严峻。",
+          "en": "Royal decree, customary law, and cuneiform contracts coexisted under a harsh penal regime."
+        },
+        "taxationSystem": {
+          "zh": "土地税、贡赋、战利品、劳役与商税并征。",
+          "en": "Land taxes, tribute, booty, labor obligations, and trade dues were all extracted."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "亚述与美索不达米亚多神信仰，以亚述神、伊什塔尔、马尔杜克等为核心",
+          "en": "Assyrian-Mesopotamian polytheism centered on Ashur, Ishtar, Marduk, and other deities"
+        },
+        "philosophy": {
+          "zh": "强调王权神授、宇宙秩序与占卜征兆",
+          "en": "Emphasized divinely sanctioned kingship, cosmic order, and omen interpretation"
+        },
+        "writingSystem": {
+          "zh": "阿卡德语楔形文字",
+          "en": "Akkadian cuneiform"
+        },
+        "culturalAchievements": {
+          "zh": "宫殿浮雕、王家铭文、天象与占卜传统、行政文书体系高度发达",
+          "en": "Palace reliefs, royal inscriptions, celestial and divinatory traditions, and a highly developed administrative record system"
+        },
+        "languageFamily": {
+          "zh": "闪米特语族",
+          "en": "Semitic"
+        }
+      },
+      "economy": {
+        "level": 8,
+        "gdpEstimate": {
+          "amount": 1400,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 525000
+        },
+        "gdpPerCapita": {
+          "amount": 0.78,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.292
+        },
+        "gdpDescription": {
+          "zh": "帝国农业、贡赋和掠夺经济并重，城市手工业和长途贸易强劲。",
+          "en": "An imperial economy combining agriculture, tribute, and plunder, supported by strong urban crafts and long-distance trade."
+        },
+        "mainIndustries": {
+          "zh": "灌溉农业、金属冶炼、纺织、军需制造、建筑",
+          "en": "Irrigated agriculture, metallurgy, textiles, military production, and construction"
+        },
+        "tradeGoods": {
+          "zh": "粮食、纺织品、金属器、木材、马匹、奢侈品",
+          "en": "Grain, textiles, metal goods, timber, horses, and luxury products"
+        },
+        "currency": {
+          "name": {
+            "zh": "银重体系",
+            "en": "Silver weight system"
+          },
+          "type": "metal_weight",
+          "unitName": {
+            "zh": "舍客勒",
+            "en": "shekel"
+          }
+        },
+        "householdWealth": {
+          "zh": "核心地区中等，征服地区财富集中于王室、神庙和军政贵族。",
+          "en": "Moderate in the core, but wealth in conquered regions was concentrated in the crown, temples, and military-administrative elites."
+        },
+        "averageIncome": {
+          "amount": 0.46,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.173
+        },
+        "foreignTradeVolume": {
+          "amount": 180,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 67500
+        },
+        "economicSystem": {
+          "zh": "中央征敛与附庸贡纳相结合的帝国经济",
+          "en": "An imperial economy combining centralized extraction with vassal tribute"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 220,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 82500
+        },
+        "annualExpenditure": {
+          "amount": 210,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 78750
+        },
+        "surplus": {
+          "amount": 10,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 3750
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "行省税收",
+              "en": "Provincial taxation"
+            },
+            "amount": {
+              "amount": 90,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 40.9
+          },
+          {
+            "source": {
+              "zh": "附庸贡赋",
+              "en": "Vassal tribute"
+            },
+            "amount": {
+              "amount": 50,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 22.7
+          },
+          {
+            "source": {
+              "zh": "战利品与赔款",
+              "en": "Booty and indemnities"
+            },
+            "amount": {
+              "amount": 45,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 20.5
+          },
+          {
+            "source": {
+              "zh": "商税与关税",
+              "en": "Trade and customs duties"
+            },
+            "amount": {
+              "amount": 35,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 15.9
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "军费",
+              "en": "Military"
+            },
+            "amount": {
+              "amount": 120,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 57.1
+          },
+          {
+            "category": {
+              "zh": "宫廷与建筑",
+              "en": "Court and construction"
+            },
+            "amount": {
+              "amount": 38,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 18.1
+          },
+          {
+            "category": {
+              "zh": "行省行政",
+              "en": "Provincial administration"
+            },
+            "amount": {
+              "amount": 32,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 15.2
+          },
+          {
+            "category": {
+              "zh": "神庙与祭祀",
+              "en": "Temples and cult"
+            },
+            "amount": {
+              "amount": 20,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 9.6
+          }
+        ],
+        "treasury": {
+          "amount": 85,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 31875
+        },
+        "treasuryDescription": {
+          "zh": "帝国府库充盈，但高度依赖持续征战与属地贡赋。",
+          "en": "The imperial treasury was strong, but heavily dependent on continued campaigns and tribute extraction."
+        },
+        "fiscalPolicy": {
+          "zh": "优先维持常备军与远征能力，通过征服扩大财政来源。",
+          "en": "Prioritized sustaining the standing army and expeditionary capacity, expanding revenue through conquest."
+        }
+      },
+      "military": {
+        "level": 9,
+        "totalTroops": 300000,
+        "standingArmy": 120000,
+        "reserves": 180000,
+        "branches": [
+          {
+            "name": {
+              "zh": "步兵",
+              "en": "Infantry"
+            },
+            "count": 190000,
+            "description": {
+              "zh": "帝国主力，含矛兵、弓兵与攻城部队。",
+              "en": "The imperial main arm, including spearmen, archers, and siege troops."
+            }
+          },
+          {
+            "name": {
+              "zh": "骑兵与战车",
+              "en": "Cavalry and Chariots"
+            },
+            "count": 45000,
+            "description": {
+              "zh": "骑兵比重日增，战车仍具象征与战术作用。",
+              "en": "Cavalry was increasingly important, while chariots retained symbolic and tactical value."
+            }
+          },
+          {
+            "name": {
+              "zh": "工兵与攻城部队",
+              "en": "Engineers and Siege Corps"
+            },
+            "count": 25000,
+            "description": {
+              "zh": "修筑攻城器、堑壕与渡桥，为亚述优势所在。",
+              "en": "Built siege engines, trenches, and bridges, forming a key Assyrian advantage."
+            }
+          },
+          {
+            "name": {
+              "zh": "边防与附庸军",
+              "en": "Frontier and Vassal Forces"
+            },
+            "count": 40000,
+            "description": {
+              "zh": "驻守边境与协同作战。",
+              "en": "Used for frontier defense and auxiliary operations."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "阿达德-尼拉里三世",
+            "en": "Adad-nirari III"
+          },
+          "totalGenerals": 58
+        },
+        "technology": {
+          "zh": "铁制武器、复合弓、攻城槌、筑城工事和组织化后勤先进。",
+          "en": "Advanced use of iron weapons, composite bows, battering rams, fortifications, and organized logistics."
+        },
+        "annualMilitarySpending": {
+          "amount": 120,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 45000
+        },
+        "militarySpendingPctGdp": 8.6,
+        "threats": {
+          "zh": "乌拉尔图、巴比伦不稳、叙利亚与黎凡特反叛。",
+          "en": "Urartu, unrest in Babylonia, and rebellion in Syria and the Levant."
+        }
+      },
+      "demographics": {
+        "population": 18000000,
+        "populationDescription": {
+          "zh": "人口集中于两河流域、北美索不达米亚和叙利亚城市走廊。",
+          "en": "Population was concentrated in Mesopotamia, northern Assyria, and the Syrian urban corridor."
+        },
+        "urbanPopulation": 3600000,
+        "urbanizationRate": 20,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "卡尔胡",
+              "en": "Kalhu"
+            },
+            "population": 120000
+          },
+          {
+            "name": {
+              "zh": "尼尼微",
+              "en": "Nineveh"
+            },
+            "population": 90000
+          },
+          {
+            "name": {
+              "zh": "亚述城",
+              "en": "Aššur"
+            },
+            "population": 70000
+          }
+        ],
+        "socialClasses": {
+          "zh": "王室、军政贵族、祭司书吏、城市工商业者、农民、奴隶与被迁徙人口",
+          "en": "Royal house, military-administrative elites, priests and scribes, urban artisans and merchants, peasants, slaves, and deported populations"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "部分阿拉米附庸、腓尼基城邦与黎凡特从属国。",
+          "en": "Some Aramaean vassals, Phoenician cities, and dependent Levantine states."
+        },
+        "enemies": {
+          "zh": "乌拉尔图、大马士革余势、巴比伦反对势力。",
+          "en": "Urartu, remaining Damascene resistance, and anti-Assyrian factions in Babylonia."
+        },
+        "foreignPolicy": {
+          "zh": "以威慑、远征、纳贡体系和强制迁徙维持帝国秩序。",
+          "en": "Maintained imperial order through intimidation, campaigning, tribute systems, and forced deportation."
+        }
+      },
+      "technology": {
+        "level": 8,
+        "era": {
+          "zh": "成熟铁器时代帝国体系",
+          "en": "Mature Iron Age imperial system"
+        },
+        "keyInnovations": {
+          "zh": "攻城工程、铁制兵器、行政档案与大规模军事调度",
+          "en": "Siege engineering, iron armaments, administrative record-keeping, and large-scale military mobilization"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "军力强大、行政成熟、财政汲取能力高。",
+          "en": "Powerful military, mature administration, and high extractive capacity."
+        },
+        "weaknesses": {
+          "zh": "扩张成本高，依赖强君与持续胜利。",
+          "en": "Expansion was costly and dependent on strong rulers and continued victories."
+        },
+        "outlook": {
+          "zh": "未来数十年仍将主导近东，但边疆过度延伸隐含风险。",
+          "en": "It would likely dominate the Near East for decades, though overextension posed clear risks."
+        }
+      },
+      "status": "thriving",
+      "description": {
+        "zh": "新亚述帝国是公元前800年前后近东最具压迫性与组织力的霸权国家。",
+        "en": "The Neo-Assyrian Empire was the most formidable and organized hegemonic power in the Near East around 800 BCE."
+      }
+    },
+    {
+      "id": "third_intermediate_egypt",
+      "name": {
+        "zh": "埃及第三中间期诸王朝",
+        "en": "Egypt in the Third Intermediate Period"
+      },
+      "territoryId": "egypt",
+      "territoryScale": "lg",
+      "civilization": {
+        "name": {
+          "zh": "埃及诸王朝",
+          "en": "Egyptian Dynastic Realm"
+        },
+        "type": "kingdom",
+        "ruler": {
+          "zh": "舍肖恩克三世",
+          "en": "Shoshenq III"
+        },
+        "rulerTitle": {
+          "zh": "法老",
+          "en": "Pharaoh"
+        },
+        "dynasty": {
+          "zh": "第二十二王朝",
+          "en": "Twenty-second Dynasty"
+        },
+        "capital": {
+          "zh": "塔尼斯",
+          "en": "Tanis"
+        },
+        "governmentForm": "feudal_monarchy",
+        "socialStructure": {
+          "zh": "法老、地方王公、祭司集团、军人、书记、农民与工匠并存。",
+          "en": "Pharaoh, local princes, temple elites, soldiers, scribes, peasants, and artisans coexisted in a stratified society."
+        },
+        "rulingClass": {
+          "zh": "利比亚裔王族、地方总督与阿蒙祭司集团",
+          "en": "Libyan-descended royal elites, local princes, and the priesthood of Amun"
+        },
+        "succession": {
+          "zh": "王位世袭，但地方分权与祭司势力常干预继承。",
+          "en": "The throne was hereditary, but succession was often shaped by regionalism and powerful priesthoods."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "名义统一、实际分裂的王朝与地方势力并存体制。",
+          "en": "A nominally unified but practically fragmented dynastic and regional political system."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "王室书记局",
+              "en": "Royal Scribal Office"
+            },
+            "function": {
+              "zh": "税册、诏命与档案管理",
+              "en": "Tax records, decrees, and archives"
+            },
+            "headCount": 180
+          },
+          {
+            "name": {
+              "zh": "神庙管理局",
+              "en": "Temple Administration"
+            },
+            "function": {
+              "zh": "神庙土地、祭祀与粮仓管理",
+              "en": "Management of temple lands, cult, and granaries"
+            },
+            "headCount": 420
+          },
+          {
+            "name": {
+              "zh": "尼罗河工程署",
+              "en": "Nile Works Office"
+            },
+            "function": {
+              "zh": "水利、仓储与运输",
+              "en": "Irrigation, storage, and transport"
+            },
+            "headCount": 140
+          },
+          {
+            "name": {
+              "zh": "地方总督系统",
+              "en": "Provincial Governor Network"
+            },
+            "function": {
+              "zh": "地方征税与治安",
+              "en": "Local taxation and security"
+            },
+            "headCount": 260
+          }
+        ],
+        "totalOfficials": 1000,
+        "localAdmin": {
+          "zh": "下埃及王室与上埃及祭司、地方王公分治。",
+          "en": "Lower Egypt was under royal authority while Upper Egypt was strongly influenced by priests and local princes."
+        },
+        "legalSystem": {
+          "zh": "法老敕令、传统习惯与神庙司法结合。",
+          "en": "Pharaonic decree, customary practice, and temple jurisdiction were combined."
+        },
+        "taxationSystem": {
+          "zh": "谷物税、神庙地租、劳役与贸易税。",
+          "en": "Grain taxes, temple rents, labor obligations, and trade dues."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "古埃及多神信仰，以阿蒙、拉、奥西里斯等崇拜为主",
+          "en": "Ancient Egyptian polytheism centered on Amun, Ra, Osiris, and related cults"
+        },
+        "philosophy": {
+          "zh": "强调玛阿特秩序、王权神圣与来世观念",
+          "en": "Emphasized Ma'at, sacred kingship, and belief in the afterlife"
+        },
+        "writingSystem": {
+          "zh": "圣书体、祭司体与世俗体埃及文",
+          "en": "Hieroglyphic, hieratic, and demotic precursors in Egyptian writing"
+        },
+        "culturalAchievements": {
+          "zh": "神庙建筑、葬祭传统、雕像与书记文书延续",
+          "en": "Temple building, funerary traditions, statuary, and scribal textual continuity"
+        },
+        "languageFamily": {
+          "zh": "亚非语系埃及语支",
+          "en": "Afroasiatic, Egyptian branch"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 700,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 262500
+        },
+        "gdpPerCapita": {
+          "amount": 0.58,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.218
+        },
+        "gdpDescription": {
+          "zh": "尼罗河农业仍具高产优势，但政治分裂削弱整体动员力。",
+          "en": "Nile agriculture remained highly productive, but political fragmentation weakened overall mobilization."
+        },
+        "mainIndustries": {
+          "zh": "谷物种植、亚麻纺织、神庙经济、采石与河运",
+          "en": "Grain farming, linen textiles, temple economy, quarrying, and river transport"
+        },
+        "tradeGoods": {
+          "zh": "粮食、亚麻、纸草、黄金、象牙、香料转运品",
+          "en": "Grain, linen, papyrus, gold, ivory, and transshipped aromatics"
+        },
+        "currency": {
+          "name": {
+            "zh": "谷物与金属权衡",
+            "en": "Grain and weighed metal"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "德本",
+            "en": "deben"
+          }
+        },
+        "householdWealth": {
+          "zh": "尼罗河谷普通农户较稳定，但财富多集中于神庙和地方贵族。",
+          "en": "Ordinary Nile households were relatively stable, but wealth was concentrated in temples and local elites."
+        },
+        "averageIncome": {
+          "amount": 0.34,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.128
+        },
+        "foreignTradeVolume": {
+          "amount": 70,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 26250
+        },
+        "economicSystem": {
+          "zh": "尼罗河农业—神庙再分配经济",
+          "en": "A Nile agrarian and temple-redistributive economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 82,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 30750
+        },
+        "annualExpenditure": {
+          "amount": 80,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 30000
+        },
+        "surplus": {
+          "amount": 2,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 750
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "谷物税",
+              "en": "Grain taxation"
+            },
+            "amount": {
+              "amount": 38,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 46.3
+          },
+          {
+            "source": {
+              "zh": "神庙贡献",
+              "en": "Temple contributions"
+            },
+            "amount": {
+              "amount": 18,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 22
+          },
+          {
+            "source": {
+              "zh": "河运与贸易税",
+              "en": "River and trade dues"
+            },
+            "amount": {
+              "amount": 12,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 14.6
+          },
+          {
+            "source": {
+              "zh": "属地与矿产收入",
+              "en": "Estate and mining income"
+            },
+            "amount": {
+              "amount": 14,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 17.1
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "神庙与祭祀",
+              "en": "Temples and cult"
+            },
+            "amount": {
+              "amount": 24,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "category": {
+              "zh": "军队与守备",
+              "en": "Army and garrisons"
+            },
+            "amount": {
+              "amount": 22,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 27.5
+          },
+          {
+            "category": {
+              "zh": "地方行政",
+              "en": "Regional administration"
+            },
+            "amount": {
+              "amount": 18,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 22.5
+          },
+          {
+            "category": {
+              "zh": "水利与仓储",
+              "en": "Irrigation and storage"
+            },
+            "amount": {
+              "amount": 16,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 20
+          }
+        ],
+        "treasury": {
+          "amount": 28,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 10500
+        },
+        "treasuryDescription": {
+          "zh": "国库中等，但多受地方势力与神庙经济掣肘。",
+          "en": "The treasury was moderate, but constrained by regional elites and temple wealth."
+        },
+        "fiscalPolicy": {
+          "zh": "依赖谷物征敛与神庙合作，优先维持河谷秩序。",
+          "en": "Depended on grain extraction and cooperation with temples, prioritizing order along the Nile valley."
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 42000,
+        "standingArmy": 18000,
+        "reserves": 24000,
+        "branches": [
+          {
+            "name": {
+              "zh": "河谷步兵",
+              "en": "Nile Infantry"
+            },
+            "count": 26000,
+            "description": {
+              "zh": "主要驻守三角洲与中上埃及。",
+              "en": "Mainly garrisoned in the Delta and Middle/Upper Egypt."
+            }
+          },
+          {
+            "name": {
+              "zh": "战车与贵族卫队",
+              "en": "Chariots and Noble Guard"
+            },
+            "count": 4000,
+            "description": {
+              "zh": "规模有限，多具仪式与精锐用途。",
+              "en": "Limited in scale, used as elite and ceremonial troops."
+            }
+          },
+          {
+            "name": {
+              "zh": "边境守军",
+              "en": "Frontier Garrison"
+            },
+            "count": 12000,
+            "description": {
+              "zh": "驻守利比亚边境、三角洲与努比亚接点。",
+              "en": "Stationed on the Libyan frontier, in the Delta, and near Nubia."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "舍肖恩克三世",
+            "en": "Shoshenq III"
+          },
+          "totalGenerals": 22
+        },
+        "technology": {
+          "zh": "铁器有限，仍以青铜传统和弓战、战车为主。",
+          "en": "Iron use was limited; warfare still relied mainly on bronze traditions, archery, and chariots."
+        },
+        "annualMilitarySpending": {
+          "amount": 22,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 8250
+        },
+        "militarySpendingPctGdp": 3.1,
+        "threats": {
+          "zh": "内部割据、利比亚部族压力与南方努比亚力量上升。",
+          "en": "Internal division, Libyan tribal pressures, and rising Nubian power in the south."
+        }
+      },
+      "demographics": {
+        "population": 12000000,
+        "populationDescription": {
+          "zh": "人口集中在尼罗河谷与三角洲，乡村性极强。",
+          "en": "Population was concentrated in the Nile Valley and Delta, with a strongly rural character."
+        },
+        "urbanPopulation": 1440000,
+        "urbanizationRate": 12,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "塔尼斯",
+              "en": "Tanis"
+            },
+            "population": 70000
+          },
+          {
+            "name": {
+              "zh": "孟菲斯",
+              "en": "Memphis"
+            },
+            "population": 60000
+          },
+          {
+            "name": {
+              "zh": "底比斯",
+              "en": "Thebes"
+            },
+            "population": 50000
+          }
+        ],
+        "socialClasses": {
+          "zh": "法老与王族、祭司、地方贵族、书记军人、农民工匠、仆役奴隶",
+          "en": "Pharaoh and royal kin, priests, local nobility, scribes and soldiers, peasants and artisans, servants and slaves"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与部分黎凡特商贸势力维持往来。",
+          "en": "Maintained contacts with some Levantine trading powers."
+        },
+        "enemies": {
+          "zh": "无稳定统一外敌，但受亚述扩张间接威胁。",
+          "en": "No single unified external enemy, though Assyrian expansion posed an indirect threat."
+        },
+        "foreignPolicy": {
+          "zh": "以守成为主，维持尼罗河与西奈通道安全。",
+          "en": "Primarily defensive, focused on preserving security along the Nile and Sinai routes."
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": {
+          "zh": "晚青铜—早期铁器混合阶段",
+          "en": "Late Bronze to Early Iron mixed stage"
+        },
+        "keyInnovations": {
+          "zh": "河运物流、神庙仓储管理、传统建筑与书记制度延续",
+          "en": "Riverine logistics, temple storage management, and continuity in building and scribal institutions"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "农业稳定、文化连续性强、神庙组织深厚。",
+          "en": "Stable agriculture, strong cultural continuity, and deeply rooted temple institutions."
+        },
+        "weaknesses": {
+          "zh": "王权分裂、军事有限、地方势力强。",
+          "en": "Fragmented kingship, limited military capacity, and powerful regional elites."
+        },
+        "outlook": {
+          "zh": "短期内难以恢复新王国式霸权，南方库施可能日益重要。",
+          "en": "A restoration of New Kingdom-style power was unlikely in the short term, while Kush would grow in importance."
+        }
+      },
+      "status": "declining",
+      "description": {
+        "zh": "公元前800年的埃及仍富庶而古老，但已不是近东的决定性强权。",
+        "en": "By 800 BCE, Egypt remained wealthy and ancient, but was no longer the decisive great power of the Near East."
+      }
+    },
+    {
+      "id": "phoenician_levant",
+      "name": {
+        "zh": "腓尼基诸城邦",
+        "en": "Phoenician City-States"
+      },
+      "territoryId": "levant",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "腓尼基商邦体系",
+          "en": "Phoenician Maritime Network"
+        },
+        "type": "trade_network",
+        "ruler": {
+          "zh": "皮格马利翁（推罗）",
+          "en": "Pygmalion of Tyre"
+        },
+        "rulerTitle": {
+          "zh": "城邦之王",
+          "en": "City-King"
+        },
+        "dynasty": {
+          "zh": "推罗王室",
+          "en": "Tyrian Royal House"
+        },
+        "capital": {
+          "zh": "推罗",
+          "en": "Tyre"
+        },
+        "governmentForm": "oligarchy",
+        "socialStructure": {
+          "zh": "王室、商人贵族、船主、工匠、水手与城市平民构成海贸社会。",
+          "en": "A maritime society of kings, merchant aristocrats, shipowners, artisans, sailors, and urban commoners."
+        },
+        "rulingClass": {
+          "zh": "推罗、西顿等城的商人贵族与王室",
+          "en": "Merchant aristocracies and royal houses of Tyre, Sidon, and related cities"
+        },
+        "succession": {
+          "zh": "多数城邦为世袭王权，但常受商人寡头制衡。",
+          "en": "Most cities had hereditary kingship, often checked by merchant oligarchies."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "各城邦自治，因贸易与殖民利益形成松散共同体。",
+          "en": "Autonomous city-states linked in a loose commonwealth by trade and colonial interests."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "港务署",
+              "en": "Harbor Office"
+            },
+            "function": {
+              "zh": "管理码头、仓储与关税",
+              "en": "Managed docks, storage, and customs"
+            },
+            "headCount": 140
+          },
+          {
+            "name": {
+              "zh": "商贸议事会",
+              "en": "Merchant Council"
+            },
+            "function": {
+              "zh": "航线、契约与商业仲裁",
+              "en": "Handled routes, contracts, and commercial arbitration"
+            },
+            "headCount": 90
+          },
+          {
+            "name": {
+              "zh": "神庙管理处",
+              "en": "Temple Administration"
+            },
+            "function": {
+              "zh": "祭祀、神庙资产与誓约",
+              "en": "Cult, temple assets, and sacred oaths"
+            },
+            "headCount": 110
+          },
+          {
+            "name": {
+              "zh": "舰队事务所",
+              "en": "Fleet Office"
+            },
+            "function": {
+              "zh": "商船与海防船调度",
+              "en": "Managed merchant ships and naval patrols"
+            },
+            "headCount": 80
+          }
+        ],
+        "totalOfficials": 420,
+        "localAdmin": {
+          "zh": "以城市议事和王室官员共同管理港口及属地。",
+          "en": "Ports and dependent territories were managed jointly by councils and royal officials."
+        },
+        "legalSystem": {
+          "zh": "习惯法、商约、神庙誓约与王室裁判并行。",
+          "en": "Customary law, commercial contracts, temple oaths, and royal judgment coexisted."
+        },
+        "taxationSystem": {
+          "zh": "港口关税、贸易抽成、属地贡纳与作坊税。",
+          "en": "Port customs, trade commissions, tribute from dependencies, and workshop taxes."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "迦南—腓尼基多神信仰，以巴力、阿斯塔特、梅尔卡特等为主",
+          "en": "Canaanite-Phoenician polytheism centered on Baal, Astarte, Melqart, and related gods"
+        },
+        "philosophy": {
+          "zh": "重实用、航海经验、神庙誓约与家族商业伦理",
+          "en": "Pragmatic outlook shaped by seamanship, temple oath culture, and family-based commercial ethics"
+        },
+        "writingSystem": {
+          "zh": "腓尼基字母",
+          "en": "Phoenician alphabet"
+        },
+        "culturalAchievements": {
+          "zh": "字母书写传播、远洋贸易、紫染工艺、殖民网络建设",
+          "en": "Spread of alphabetic writing, long-distance seaborne trade, purple dye production, and colonial expansion"
+        },
+        "languageFamily": {
+          "zh": "闪米特语族",
+          "en": "Semitic"
+        }
+      },
+      "economy": {
+        "level": 8,
+        "gdpEstimate": {
+          "amount": 360,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 135000
+        },
+        "gdpPerCapita": {
+          "amount": 1.03,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.386
+        },
+        "gdpDescription": {
+          "zh": "人口不大但人均富裕，依赖海上贸易、中介转运与手工业。",
+          "en": "Though not populous, it was wealthy per capita, relying on maritime trade, brokerage, and craft production."
+        },
+        "mainIndustries": {
+          "zh": "航运、木材、金属转运、玻璃、紫色染料、奢侈品加工",
+          "en": "Shipping, timber, metal transit trade, glass, purple dye, and luxury crafts"
+        },
+        "tradeGoods": {
+          "zh": "雪松木、紫染布、玻璃器、金银器、象牙制品、葡萄酒、橄榄油",
+          "en": "Cedar timber, purple textiles, glassware, precious metal goods, ivory products, wine, and olive oil"
+        },
+        "currency": {
+          "name": {
+            "zh": "银重与商品结算",
+            "en": "Silver weight and commodity accounting"
+          },
+          "type": "metal_weight",
+          "unitName": {
+            "zh": "舍客勒",
+            "en": "shekel"
+          }
+        },
+        "householdWealth": {
+          "zh": "城市商人和船主富裕，工匠中等，水手和平民波动较大。",
+          "en": "Merchants and shipowners were affluent, artisans middling, and sailors and commoners more vulnerable."
+        },
+        "averageIncome": {
+          "amount": 0.62,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.233
+        },
+        "foreignTradeVolume": {
+          "amount": 170,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 63750
+        },
+        "economicSystem": {
+          "zh": "海上商业寡头经济",
+          "en": "A maritime oligarchic commercial economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 52,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 19500
+        },
+        "annualExpenditure": {
+          "amount": 49,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 18375
+        },
+        "surplus": {
+          "amount": 3,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 1125
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "港口关税",
+              "en": "Port customs"
+            },
+            "amount": {
+              "amount": 22,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 42.3
+          },
+          {
+            "source": {
+              "zh": "贸易抽成",
+              "en": "Trade commissions"
+            },
+            "amount": {
+              "amount": 16,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 30.8
+          },
+          {
+            "source": {
+              "zh": "属地与殖民贡献",
+              "en": "Colonial and dependent contributions"
+            },
+            "amount": {
+              "amount": 8,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 15.4
+          },
+          {
+            "source": {
+              "zh": "作坊税",
+              "en": "Workshop taxes"
+            },
+            "amount": {
+              "amount": 6,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 11.5
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "舰队与护航",
+              "en": "Fleet and convoy protection"
+            },
+            "amount": {
+              "amount": 18,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 36.7
+          },
+          {
+            "category": {
+              "zh": "港口设施",
+              "en": "Port facilities"
+            },
+            "amount": {
+              "amount": 12,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 24.5
+          },
+          {
+            "category": {
+              "zh": "对外纳贡与外交",
+              "en": "Tribute and diplomacy"
+            },
+            "amount": {
+              "amount": 10,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 20.4
+          },
+          {
+            "category": {
+              "zh": "神庙与城市行政",
+              "en": "Temples and urban administration"
+            },
+            "amount": {
+              "amount": 9,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 18.4
+          }
+        ],
+        "treasury": {
+          "amount": 16,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 6000
+        },
+        "treasuryDescription": {
+          "zh": "各城独立财库较灵活，但受亚述压力需缴纳重贡。",
+          "en": "City treasuries were flexible, but Assyrian pressure forced heavy tribute payments."
+        },
+        "fiscalPolicy": {
+          "zh": "优先维持贸易畅通，并通过外交和进贡换取自治空间。",
+          "en": "Prioritized keeping trade routes open and preserving autonomy through diplomacy and tribute."
+        }
+      },
+      "military": {
+        "level": 6,
+        "totalTroops": 12000,
+        "standingArmy": 7000,
+        "reserves": 5000,
+        "branches": [
+          {
+            "name": {
+              "zh": "城邦步兵",
+              "en": "City Infantry"
+            },
+            "count": 7000,
+            "description": {
+              "zh": "负责守城、码头与近郊防务。",
+              "en": "Defended city walls, harbors, and nearby hinterlands."
+            }
+          },
+          {
+            "name": {
+              "zh": "舰队水手与海军",
+              "en": "Sailors and Naval Forces"
+            },
+            "count": 4000,
+            "description": {
+              "zh": "兼具商船护航与海上作战功能。",
+              "en": "Served both as convoy escorts and naval fighters."
+            }
+          },
+          {
+            "name": {
+              "zh": "贵族卫队",
+              "en": "Noble Guard"
+            },
+            "count": 1000,
+            "description": {
+              "zh": "王室及商人精英卫从。",
+              "en": "Retainers of royal and merchant elites."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "皮格马利翁（以推罗为代表）",
+            "en": "Pygmalion of Tyre (representative)"
+          },
+          "totalGenerals": 12
+        },
+        "technology": {
+          "zh": "航海技术、造船、字母书写和染色工艺先进。",
+          "en": "Advanced in navigation, shipbuilding, alphabetic writing, and dye production."
+        },
+        "annualMilitarySpending": {
+          "amount": 18,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 6750
+        },
+        "militarySpendingPctGdp": 5,
+        "threats": {
+          "zh": "亚述控制、海上风险及地中海竞争。",
+          "en": "Assyrian control, maritime danger, and Mediterranean competition."
+        }
+      },
+      "demographics": {
+        "population": 3500000,
+        "populationDescription": {
+          "zh": "沿海城市密集，海外殖民点人口逐渐增长。",
+          "en": "Population was concentrated in coastal cities, while overseas colonies were gradually growing."
+        },
+        "urbanPopulation": 1225000,
+        "urbanizationRate": 35,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "推罗",
+              "en": "Tyre"
+            },
+            "population": 45000
+          },
+          {
+            "name": {
+              "zh": "西顿",
+              "en": "Sidon"
+            },
+            "population": 40000
+          },
+          {
+            "name": {
+              "zh": "比布鲁斯",
+              "en": "Byblos"
+            },
+            "population": 25000
+          }
+        ],
+        "socialClasses": {
+          "zh": "王室、商人家族、祭司、工匠、水手、港口劳工、奴隶",
+          "en": "Royal houses, merchant families, priests, artisans, sailors, dockworkers, and slaves"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "地中海殖民地、部分塞浦路斯与西地中海贸易伙伴。",
+          "en": "Mediterranean colonies and trading partners in Cyprus and the western Mediterranean."
+        },
+        "enemies": {
+          "zh": "直接敌人有限，但受亚述胁迫并与希腊、地方势力竞争。",
+          "en": "Few direct enemies, but subject to Assyrian pressure and competition with Greeks and local powers."
+        },
+        "foreignPolicy": {
+          "zh": "以商业、殖民与灵活纳贡为核心。",
+          "en": "Centered on commerce, colonization, and flexible tribute diplomacy."
+        }
+      },
+      "technology": {
+        "level": 7,
+        "era": {
+          "zh": "成熟早期铁器海贸文明",
+          "en": "Mature Early Iron Age maritime civilization"
+        },
+        "keyInnovations": {
+          "zh": "字母传播、远航路线、紫染与玻璃工艺",
+          "en": "Spread of the alphabet, long-distance sailing routes, and purple dye and glass technologies"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "海贸网络广、文化传播力强、适应力高。",
+          "en": "Broad maritime networks, strong cultural diffusion, and high adaptability."
+        },
+        "weaknesses": {
+          "zh": "领土狭小、腹地有限、易受帝国控制。",
+          "en": "Small territorial base, limited hinterland, and vulnerability to empires."
+        },
+        "outlook": {
+          "zh": "未来将继续扩展殖民与贸易，但政治自主性受亚述影响。",
+          "en": "It would continue expanding trade and colonies, though political autonomy would remain constrained by Assyria."
+        }
+      },
+      "status": "thriving",
+      "description": {
+        "zh": "腓尼基世界是这一时期地中海最重要的商业中介之一，其文化影响远超其领土规模。",
+        "en": "The Phoenician world was one of the Mediterranean’s foremost commercial intermediaries, with influence far exceeding its territorial size."
+      }
+    },
+    {
+      "id": "urartu_anatolia",
+      "name": {
+        "zh": "乌拉尔图王国",
+        "en": "Kingdom of Urartu"
+      },
+      "territoryId": "anatolia",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "乌拉尔图",
+          "en": "Urartu"
+        },
+        "type": "kingdom",
+        "ruler": {
+          "zh": "米努阿",
+          "en": "Menua"
+        },
+        "rulerTitle": {
+          "zh": "国王",
+          "en": "King"
+        },
+        "dynasty": {
+          "zh": "乌拉尔图王室",
+          "en": "Urartian Royal House"
+        },
+        "capital": {
+          "zh": "图什帕",
+          "en": "Tushpa"
+        },
+        "governmentForm": "absolute_monarchy",
+        "socialStructure": {
+          "zh": "王室、军事贵族、堡垒总督、祭司、农民与工匠组成山地王国社会。",
+          "en": "A mountain kingdom of king, military nobles, fortress governors, priests, peasants, and artisans."
+        },
+        "rulingClass": {
+          "zh": "王室与军事总督集团",
+          "en": "The royal house and military-governor elite"
+        },
+        "succession": {
+          "zh": "王位世袭，王族与军权关系紧密。",
+          "en": "Hereditary kingship closely tied to military power."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "以堡垒、灌溉工程和地方军政长官控制领土。",
+          "en": "Controlled territory through fortresses, irrigation works, and regional military administrators."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "堡垒管理署",
+              "en": "Fortress Administration"
+            },
+            "function": {
+              "zh": "要塞驻军与仓储",
+              "en": "Garrisons and storage in fortresses"
+            },
+            "headCount": 190
+          },
+          {
+            "name": {
+              "zh": "灌溉工程署",
+              "en": "Irrigation Works Office"
+            },
+            "function": {
+              "zh": "修渠、蓄水与农地开发",
+              "en": "Canal building, water management, and land development"
+            },
+            "headCount": 130
+          },
+          {
+            "name": {
+              "zh": "王家书记处",
+              "en": "Royal Chancery"
+            },
+            "function": {
+              "zh": "铭文、贡册与政令",
+              "en": "Inscriptions, tribute records, and decrees"
+            },
+            "headCount": 90
+          }
+        ],
+        "totalOfficials": 410,
+        "localAdmin": {
+          "zh": "地方由堡主和军政官控制，依托要塞链管理山谷与平原。",
+          "en": "Local rule was exercised by fortress commanders and governors using chains of strongholds."
+        },
+        "legalSystem": {
+          "zh": "王命与地方习惯并行，军事纪律较严。",
+          "en": "Royal decree coexisted with local custom under strict military discipline."
+        },
+        "taxationSystem": {
+          "zh": "谷物、牲畜、金属贡纳与劳役。",
+          "en": "Grain, livestock, metal tribute, and labor service."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "乌拉尔图多神信仰，以哈勒迪等神为主",
+          "en": "Urartian polytheism centered on Haldi and related gods"
+        },
+        "philosophy": {
+          "zh": "强调王权、征服功绩与神庇护",
+          "en": "Emphasized kingship, conquest, and divine protection"
+        },
+        "writingSystem": {
+          "zh": "楔形文字（乌拉尔图语）",
+          "en": "Cuneiform in the Urartian language"
+        },
+        "culturalAchievements": {
+          "zh": "石刻铭文、山地要塞、灌溉工程与金属工艺",
+          "en": "Rock inscriptions, mountain fortresses, irrigation systems, and metalworking"
+        },
+        "languageFamily": {
+          "zh": "乌拉尔图语（非印欧、近胡里安传统）",
+          "en": "Urartian language, non-Indo-European with Hurrian affinities"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 260,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 97500
+        },
+        "gdpPerCapita": {
+          "amount": 0.72,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.27
+        },
+        "gdpDescription": {
+          "zh": "山地农业、畜牧和金属资源结合，国家工程推动生产。",
+          "en": "Combined mountain agriculture, pastoralism, and metal resources, with state projects boosting production."
+        },
+        "mainIndustries": {
+          "zh": "畜牧、谷物、金属冶炼、石工、军需生产",
+          "en": "Pastoralism, grain farming, metallurgy, stonework, and military production"
+        },
+        "tradeGoods": {
+          "zh": "铜铁器、牲畜、皮革、谷物、木材",
+          "en": "Copper and iron goods, livestock, leather, grain, and timber"
+        },
+        "currency": {
+          "name": {
+            "zh": "银重体系",
+            "en": "Silver weight system"
+          },
+          "type": "metal_weight",
+          "unitName": {
+            "zh": "舍客勒",
+            "en": "shekel"
+          }
+        },
+        "householdWealth": {
+          "zh": "王室与军事贵族较富，平民以村落自给为主。",
+          "en": "The royal and military elite were relatively wealthy, while commoners remained largely village self-sufficient."
+        },
+        "averageIncome": {
+          "amount": 0.38,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.143
+        },
+        "foreignTradeVolume": {
+          "amount": 26,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 9750
+        },
+        "economicSystem": {
+          "zh": "王权主导的堡垒—农业经济",
+          "en": "A royal fortress-agricultural economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 36,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 13500
+        },
+        "annualExpenditure": {
+          "amount": 34,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 12750
+        },
+        "surplus": {
+          "amount": 2,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 750
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "农业贡赋",
+              "en": "Agrarian tribute"
+            },
+            "amount": {
+              "amount": 14,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 38.9
+          },
+          {
+            "source": {
+              "zh": "畜牧与山地资源",
+              "en": "Pastoral and mountain resources"
+            },
+            "amount": {
+              "amount": 9,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 25
+          },
+          {
+            "source": {
+              "zh": "矿产与冶金",
+              "en": "Mining and metallurgy"
+            },
+            "amount": {
+              "amount": 8,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 22.2
+          },
+          {
+            "source": {
+              "zh": "附属部族贡献",
+              "en": "Subordinate tribal contributions"
+            },
+            "amount": {
+              "amount": 5,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 13.9
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "要塞与军费",
+              "en": "Fortresses and military"
+            },
+            "amount": {
+              "amount": 20,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 58.8
+          },
+          {
+            "category": {
+              "zh": "灌溉工程",
+              "en": "Irrigation works"
+            },
+            "amount": {
+              "amount": 7,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 20.6
+          },
+          {
+            "category": {
+              "zh": "宫廷与祭祀",
+              "en": "Court and cult"
+            },
+            "amount": {
+              "amount": 4,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 11.8
+          },
+          {
+            "category": {
+              "zh": "行政",
+              "en": "Administration"
+            },
+            "amount": {
+              "amount": 3,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 8.8
+          }
+        ],
+        "treasury": {
+          "amount": 12,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 4500
+        },
+        "treasuryDescription": {
+          "zh": "财力不及亚述，但足以维持山地防御与扩张。",
+          "en": "Its finances were weaker than Assyria’s, but sufficient for mountain defense and regional expansion."
+        },
+        "fiscalPolicy": {
+          "zh": "优先修筑要塞与水利，强化山地王国整合。",
+          "en": "Prioritized forts and irrigation to strengthen the integration of the mountain kingdom."
+        }
+      },
+      "military": {
+        "level": 7,
+        "totalTroops": 72000,
+        "standingArmy": 26000,
+        "reserves": 46000,
+        "branches": [
+          {
+            "name": {
+              "zh": "堡垒步兵",
+              "en": "Fortress Infantry"
+            },
+            "count": 42000,
+            "description": {
+              "zh": "守备与山地作战主力。",
+              "en": "The main garrison and mountain warfare force."
+            }
+          },
+          {
+            "name": {
+              "zh": "骑兵与战车",
+              "en": "Cavalry and Chariots"
+            },
+            "count": 12000,
+            "description": {
+              "zh": "用于机动袭击与平原交战。",
+              "en": "Used for mobile raids and combat on open ground."
+            }
+          },
+          {
+            "name": {
+              "zh": "工程部队",
+              "en": "Engineer Corps"
+            },
+            "count": 18000,
+            "description": {
+              "zh": "修筑道路、城墙与渠道，兼可作战。",
+              "en": "Built roads, walls, and canals, and could fight when needed."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "米努阿",
+            "en": "Menua"
+          },
+          "totalGenerals": 18
+        },
+        "technology": {
+          "zh": "铁器、山地要塞与灌溉工程结合，军政化程度高。",
+          "en": "Combined ironworking, mountain fortification, and irrigation engineering with strong militarization."
+        },
+        "annualMilitarySpending": {
+          "amount": 20,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 7500
+        },
+        "militarySpendingPctGdp": 7.7,
+        "threats": {
+          "zh": "亚述帝国持续南压，边缘部族时有反复。",
+          "en": "The continuing southern pressure of Assyria and instability among frontier tribes."
+        }
+      },
+      "demographics": {
+        "population": 3600000,
+        "populationDescription": {
+          "zh": "人口分布于凡湖周边与山谷要塞区域。",
+          "en": "Population was distributed around Lake Van and in fortified mountain valleys."
+        },
+        "urbanPopulation": 432000,
+        "urbanizationRate": 12,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "图什帕",
+              "en": "Tushpa"
+            },
+            "population": 35000
+          },
+          {
+            "name": {
+              "zh": "埃雷布尼",
+              "en": "Erebuni"
+            },
+            "population": 12000
+          },
+          {
+            "name": {
+              "zh": "阿尔吉什提希尼里",
+              "en": "Argishtihinili"
+            },
+            "population": 10000
+          }
+        ],
+        "socialClasses": {
+          "zh": "王室、军政贵族、祭司、堡民、农牧民、工匠与战俘",
+          "en": "Royal house, military nobles, priests, fortress populations, agro-pastoralists, artisans, and captives"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "部分高地部族与附属地区。",
+          "en": "Some highland tribes and subordinate territories."
+        },
+        "enemies": {
+          "zh": "亚述帝国为主要敌手。",
+          "en": "The Assyrian Empire was the principal enemy."
+        },
+        "foreignPolicy": {
+          "zh": "通过筑城、扩张与控制山口对抗亚述。",
+          "en": "Opposed Assyria through fortification, expansion, and control of mountain passes."
+        }
+      },
+      "technology": {
+        "level": 7,
+        "era": {
+          "zh": "早期铁器山地国家",
+          "en": "Early Iron Age highland state"
+        },
+        "keyInnovations": {
+          "zh": "山地要塞、引水渠道、铁制兵器与铭文行政",
+          "en": "Mountain fortresses, water channels, iron weapons, and inscription-based administration"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "地形险要、军政整合较强、工程能力突出。",
+          "en": "Strong defensive terrain, solid military-political integration, and notable engineering ability."
+        },
+        "weaknesses": {
+          "zh": "人口与资源规模有限，难与亚述长期消耗。",
+          "en": "Its population and resources were limited, making prolonged rivalry with Assyria difficult."
+        },
+        "outlook": {
+          "zh": "短期仍能保持区域强权地位，但将长期处于与亚述对抗的高压中。",
+          "en": "It would remain a regional power in the short term, but under sustained pressure from Assyria."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "乌拉尔图是近东北缘最重要的山地王国，既是亚述的对手，也是其压力下形成的军事化国家。",
+        "en": "Urartu was the most important highland kingdom on the northern Near Eastern frontier, both a rival to Assyria and a militarized state shaped by that rivalry."
+      }
+    },
+    {
+      "id": "greek_aegean",
+      "name": {
+        "zh": "希腊诸城邦与部族共同体",
+        "en": "Greek Poleis and Tribal Communities"
+      },
+      "territoryId": "aegean",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "希腊世界",
+          "en": "Greek World"
+        },
+        "type": "city_state",
+        "ruler": {
+          "zh": "多位巴西琉斯与贵族政权并存",
+          "en": "Multiple basileis and aristocratic regimes"
+        },
+        "rulerTitle": {
+          "zh": "巴西琉斯/执政者",
+          "en": "Basileus / Magistrate"
+        },
+        "dynasty": {
+          "zh": "无统一王朝",
+          "en": "No single dynasty"
+        },
+        "capital": {
+          "zh": "雅典",
+          "en": "Athens"
+        },
+        "governmentForm": "other",
+        "socialStructure": {
+          "zh": "以贵族氏族、自由农民、手工业者与奴隶为基础，部族与城邦形态并存。",
+          "en": "Based on aristocratic clans, free farmers, artisans, and slaves, with tribal and polis forms coexisting."
+        },
+        "rulingClass": {
+          "zh": "地方贵族家族与战士精英",
+          "en": "Local aristocratic families and warrior elites"
+        },
+        "succession": {
+          "zh": "多地由贵族共治或有限王权，继承方式不统一。",
+          "en": "Many communities were ruled by aristocratic collectives or limited kingship, with no uniform succession pattern."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "从部落首领制向城邦制度过渡，各地政体差异很大。",
+          "en": "A transitional political landscape moving from tribal chieftaincy toward the polis, with wide local variation."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "长老议事会",
+              "en": "Council of Elders"
+            },
+            "function": {
+              "zh": "贵族协商与政治裁决",
+              "en": "Aristocratic deliberation and political judgment"
+            },
+            "headCount": 180
+          },
+          {
+            "name": {
+              "zh": "宗教祭司机构",
+              "en": "Cult Priesthoods"
+            },
+            "function": {
+              "zh": "城邦祭祀与圣所管理",
+              "en": "Managed civic cults and sanctuaries"
+            },
+            "headCount": 140
+          },
+          {
+            "name": {
+              "zh": "港市事务所",
+              "en": "Port and Market Offices"
+            },
+            "function": {
+              "zh": "管理集市、关税与船只往来",
+              "en": "Managed markets, dues, and shipping"
+            },
+            "headCount": 90
+          }
+        ],
+        "totalOfficials": 410,
+        "localAdmin": {
+          "zh": "各城邦自治，乡村地区由贵族家族支配。",
+          "en": "Each polis governed itself, while rural areas were dominated by aristocratic families."
+        },
+        "legalSystem": {
+          "zh": "口传习惯法与贵族裁判为主，成文法尚少。",
+          "en": "Primarily oral customary law and aristocratic judgment, with little codified law yet."
+        },
+        "taxationSystem": {
+          "zh": "临时征收、祭祀捐献、港口收费与贵族供给。",
+          "en": "Relied on ad hoc levies, cult contributions, port dues, and aristocratic support."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "希腊多神信仰，以宙斯、赫拉、雅典娜、阿波罗等神为主",
+          "en": "Greek polytheism centered on Zeus, Hera, Athena, Apollo, and other gods"
+        },
+        "philosophy": {
+          "zh": "史诗伦理、荣誉文化与神谕传统占主导",
+          "en": "Epic ethics, honor culture, and oracular tradition predominated"
+        },
+        "writingSystem": {
+          "zh": "采用并改造腓尼基字母形成早期希腊字母",
+          "en": "The Phoenician alphabet was being adapted into the early Greek alphabet"
+        },
+        "culturalAchievements": {
+          "zh": "荷马史诗传统、圣所网络、陶器风格转变与城邦形成",
+          "en": "Homeric epic tradition, sanctuary networks, changing pottery styles, and polis formation"
+        },
+        "languageFamily": {
+          "zh": "印欧语系希腊语支",
+          "en": "Indo-European, Hellenic branch"
+        }
+      },
+      "economy": {
+        "level": 5,
+        "gdpEstimate": {
+          "amount": 300,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 112500
+        },
+        "gdpPerCapita": {
+          "amount": 0.6,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.225
+        },
+        "gdpDescription": {
+          "zh": "农业基础薄弱但海运和手工业逐渐活跃，地区差异大。",
+          "en": "Agriculture was limited, but seafaring and craft production were becoming more active, with strong regional variation."
+        },
+        "mainIndustries": {
+          "zh": "橄榄、葡萄、畜牧、陶器、金属工艺、海运",
+          "en": "Olives, wine, pastoralism, pottery, metalwork, and seafaring"
+        },
+        "tradeGoods": {
+          "zh": "陶器、葡萄酒、橄榄油、金属器、奴隶",
+          "en": "Pottery, wine, olive oil, metal goods, and slaves"
+        },
+        "currency": {
+          "name": {
+            "zh": "金属权衡与物物交换",
+            "en": "Weighed metal and barter"
+          },
+          "type": "metal_weight",
+          "unitName": {
+            "zh": "铁条/银重",
+            "en": "iron spits / silver weight"
+          }
+        },
+        "householdWealth": {
+          "zh": "多数自由农较脆弱，贵族与海贸家庭逐渐积累财富。",
+          "en": "Most free farmers were economically fragile, while aristocrats and maritime households were slowly accumulating wealth."
+        },
+        "averageIncome": {
+          "amount": 0.31,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.116
+        },
+        "foreignTradeVolume": {
+          "amount": 55,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 20625
+        },
+        "economicSystem": {
+          "zh": "分散的城邦农业—交换经济",
+          "en": "A decentralized polis agrarian-exchange economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 30,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 11250
+        },
+        "annualExpenditure": {
+          "amount": 29,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 10875
+        },
+        "surplus": {
+          "amount": 1,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 375
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "港口与市集收费",
+              "en": "Port and market dues"
+            },
+            "amount": {
+              "amount": 11,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 36.7
+          },
+          {
+            "source": {
+              "zh": "贵族供给与捐助",
+              "en": "Aristocratic support and contributions"
+            },
+            "amount": {
+              "amount": 8,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 26.7
+          },
+          {
+            "source": {
+              "zh": "临时战争征收",
+              "en": "Emergency war levies"
+            },
+            "amount": {
+              "amount": 6,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "source": {
+              "zh": "祭祀与圣所收入",
+              "en": "Cult and sanctuary income"
+            },
+            "amount": {
+              "amount": 5,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 16.6
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "防务",
+              "en": "Defense"
+            },
+            "amount": {
+              "amount": 12,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 41.4
+          },
+          {
+            "category": {
+              "zh": "宗教节庆",
+              "en": "Religious festivals"
+            },
+            "amount": {
+              "amount": 7,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 24.1
+          },
+          {
+            "category": {
+              "zh": "公共工程",
+              "en": "Public works"
+            },
+            "amount": {
+              "amount": 5,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 17.2
+          },
+          {
+            "category": {
+              "zh": "城邦行政",
+              "en": "Civic administration"
+            },
+            "amount": {
+              "amount": 5,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 17.2
+          }
+        ],
+        "treasury": {
+          "amount": 8,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 3000
+        },
+        "treasuryDescription": {
+          "zh": "各城邦财力不大，但机动灵活。",
+          "en": "Individual city treasuries were modest but flexible."
+        },
+        "fiscalPolicy": {
+          "zh": "尽量压低常设行政成本，以维持祭祀和防务。",
+          "en": "Sought to keep permanent administrative costs low while sustaining cult and defense."
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 90000,
+        "standingArmy": 10000,
+        "reserves": 80000,
+        "branches": [
+          {
+            "name": {
+              "zh": "公民步兵",
+              "en": "Citizen Infantry"
+            },
+            "count": 65000,
+            "description": {
+              "zh": "以自备武装的自由民和贵族追随者为核心。",
+              "en": "Centered on self-equipped free men and aristocratic retainers."
+            }
+          },
+          {
+            "name": {
+              "zh": "轻装兵",
+              "en": "Light Troops"
+            },
+            "count": 15000,
+            "description": {
+              "zh": "投石、标枪与山地机动作战。",
+              "en": "Slingers, javelin men, and mobile fighters in rough terrain."
+            }
+          },
+          {
+            "name": {
+              "zh": "舰船人员",
+              "en": "Ship Crews"
+            },
+            "count": 10000,
+            "description": {
+              "zh": "数量有限，多用于运输、贸易和局部海战。",
+              "en": "Limited in number, used for transport, trade, and local naval fighting."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "各城巴西琉斯与贵族将领",
+            "en": "Local basileis and aristocratic war leaders"
+          },
+          "totalGenerals": 40
+        },
+        "technology": {
+          "zh": "铁器逐渐普及，圆盾长矛步兵尚在形成，战船与字母输入影响深远。",
+          "en": "Iron was spreading, spear-and-shield infantry systems were developing, and ships and alphabetic literacy were transformative."
+        },
+        "annualMilitarySpending": {
+          "amount": 12,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 4500
+        },
+        "militarySpendingPctGdp": 4,
+        "threats": {
+          "zh": "城邦间冲突、海盗与资源贫乏。",
+          "en": "Inter-polis conflict, piracy, and resource scarcity."
+        }
+      },
+      "demographics": {
+        "population": 5000000,
+        "populationDescription": {
+          "zh": "人口分散于爱琴海岛屿、希腊本土谷地与沿海聚落。",
+          "en": "Population was dispersed across Aegean islands, Greek mainland valleys, and coastal settlements."
+        },
+        "urbanPopulation": 650000,
+        "urbanizationRate": 13,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "雅典",
+              "en": "Athens"
+            },
+            "population": 30000
+          },
+          {
+            "name": {
+              "zh": "科林斯",
+              "en": "Corinth"
+            },
+            "population": 20000
+          },
+          {
+            "name": {
+              "zh": "阿尔戈斯",
+              "en": "Argos"
+            },
+            "population": 18000
+          }
+        ],
+        "socialClasses": {
+          "zh": "贵族、自由农、公民战士、工匠商人、佃农、奴隶",
+          "en": "Aristocrats, free farmers, citizen-warriors, artisans and merchants, dependents, and slaves"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "无统一联盟，地区性圣所与亲族关系重要。",
+          "en": "No unified alliance system; regional sanctuaries and kinship ties were important."
+        },
+        "enemies": {
+          "zh": "彼此竞争的城邦、海盗以及部分外来势力。",
+          "en": "Rival poleis, pirates, and some external powers."
+        },
+        "foreignPolicy": {
+          "zh": "以殖民、贸易与局部竞争为主。",
+          "en": "Focused on colonization, trade, and localized competition."
+        }
+      },
+      "technology": {
+        "level": 6,
+        "era": {
+          "zh": "早期铁器城邦形成期",
+          "en": "Early Iron Age polis-forming period"
+        },
+        "keyInnovations": {
+          "zh": "希腊字母、几何风格陶器、更广泛的铁制工具与海上殖民",
+          "en": "Greek alphabet adoption, Geometric pottery, wider use of iron tools, and overseas colonization"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "海洋适应力强、政治创新活跃、文化活力高。",
+          "en": "Strong maritime adaptability, active political experimentation, and high cultural dynamism."
+        },
+        "weaknesses": {
+          "zh": "政治分裂、资源有限、战争频仍。",
+          "en": "Political fragmentation, limited resources, and frequent conflict."
+        },
+        "outlook": {
+          "zh": "未来数十年城邦制度与海外殖民将加快发展。",
+          "en": "In coming decades, the polis system and overseas colonization would accelerate."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "希腊世界在公元前800年前后正处于重生节点，尚无统一国家，但制度与文化创造力极强。",
+        "en": "Around 800 BCE, the Greek world stood at a point of regeneration: not unified, but highly creative institutionally and culturally."
+      }
+    },
+    {
+      "id": "later_vedic_india_north",
+      "name": {
+        "zh": "后吠陀北印度诸国",
+        "en": "Later Vedic North India"
+      },
+      "territoryId": "india_north",
+      "territoryScale": "lg",
+      "civilization": {
+        "name": {
+          "zh": "后吠陀诸部与王国",
+          "en": "Later Vedic Polities"
+        },
+        "type": "kingdom",
+        "ruler": {
+          "zh": "诸王并立",
+          "en": "Multiple regional rajas"
+        },
+        "rulerTitle": {
+          "zh": "罗阇",
+          "en": "Raja"
+        },
+        "dynasty": {
+          "zh": "俱卢—般遮罗等王族",
+          "en": "Kuru-Panchala and related royal houses"
+        },
+        "capital": {
+          "zh": "阿桑迪瓦特/坎皮利亚等",
+          "en": "Asandivat / Kampilya and others"
+        },
+        "governmentForm": "feudal_monarchy",
+        "socialStructure": {
+          "zh": "婆罗门、刹帝利、吠舍、首陀罗等级秩序日益明确。",
+          "en": "The varna order of Brahmins, Kshatriyas, Vaishyas, and Shudras was becoming more clearly defined."
+        },
+        "rulingClass": {
+          "zh": "刹帝利王族与婆罗门祭司集团",
+          "en": "Kshatriya royal houses and Brahmin priestly elites"
+        },
+        "succession": {
+          "zh": "王位世袭，但需贵族与祭司认可。",
+          "en": "Kingship was hereditary, but required recognition by nobles and priests."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "部族王权向领土国家过渡，王庭与祭司共治。",
+          "en": "A transition from tribal kingship to territorial states, with courts and priesthoods sharing influence."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "祭官团",
+              "en": "Priestly Colleges"
+            },
+            "function": {
+              "zh": "祭礼、占仪与王权合法化",
+              "en": "Ritual, divination, and legitimization of kingship"
+            },
+            "headCount": 300
+          },
+          {
+            "name": {
+              "zh": "王家侍从署",
+              "en": "Royal Household Office"
+            },
+            "function": {
+              "zh": "宫廷、仓储与贡品管理",
+              "en": "Court service, storage, and tribute management"
+            },
+            "headCount": 220
+          },
+          {
+            "name": {
+              "zh": "村社征敛网络",
+              "en": "Village Revenue Network"
+            },
+            "function": {
+              "zh": "征收谷物、牲畜与劳役",
+              "en": "Collected grain, livestock, and labor dues"
+            },
+            "headCount": 500
+          }
+        ],
+        "totalOfficials": 1020,
+        "localAdmin": {
+          "zh": "以村社、氏族领袖和地方王公维系治理。",
+          "en": "Governance was maintained through village communities, clan leaders, and local rulers."
+        },
+        "legalSystem": {
+          "zh": "以习惯法、祭仪规范与王室裁判为主。",
+          "en": "Dominated by customary law, ritual norms, and royal judgment."
+        },
+        "taxationSystem": {
+          "zh": "收取谷物、牲畜、祭礼供品和劳役。",
+          "en": "Collected grain, livestock, ritual offerings, and labor obligations."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "吠陀宗教，以祭火、因陀罗、阿耆尼、婆罗门祭礼为中心",
+          "en": "Vedic religion centered on fire sacrifice, Indra, Agni, and Brahmanical ritual"
+        },
+        "philosophy": {
+          "zh": "婆罗门祭仪思想扩展，早期奥义书思潮萌芽",
+          "en": "Brahmanical ritual thought was expanding, while early Upanishadic speculation was beginning to emerge"
+        },
+        "writingSystem": {
+          "zh": "以口传吠陀传统为主，尚无广泛行政文字",
+          "en": "Predominantly oral Vedic transmission, with no widely used administrative script"
+        },
+        "culturalAchievements": {
+          "zh": "吠陀诗歌、祭祀体系、社会等级观念与铁器农业扩张",
+          "en": "Vedic poetry, sacrificial systems, social hierarchy formation, and iron-age agrarian expansion"
+        },
+        "languageFamily": {
+          "zh": "印欧语系印度-雅利安语支",
+          "en": "Indo-European, Indo-Aryan branch"
+        }
+      },
+      "economy": {
+        "level": 5,
+        "gdpEstimate": {
+          "amount": 900,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 337500
+        },
+        "gdpPerCapita": {
+          "amount": 0.5,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.188
+        },
+        "gdpDescription": {
+          "zh": "农业扩张显著，畜牧和祭祀再分配经济并存，区域市场刚起步。",
+          "en": "Agricultural expansion was significant; pastoralism and ritual redistribution coexisted, while regional markets were only beginning to develop."
+        },
+        "mainIndustries": {
+          "zh": "稻麦农业、畜牧、冶铁、木工、纺织",
+          "en": "Rice and wheat agriculture, pastoralism, ironworking, carpentry, and textiles"
+        },
+        "tradeGoods": {
+          "zh": "谷物、牲畜、铁器、布匹、盐",
+          "en": "Grain, livestock, iron tools, cloth, and salt"
+        },
+        "currency": {
+          "name": {
+            "zh": "牲畜与金属价值单位",
+            "en": "Cattle and metal value units"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "牛/尼什卡",
+            "en": "cattle / nishka"
+          }
+        },
+        "householdWealth": {
+          "zh": "村社自给为主，贵族与祭司通过贡献和土地占优。",
+          "en": "Village self-sufficiency predominated, while nobles and priests gained advantage through tribute and land control."
+        },
+        "averageIncome": {
+          "amount": 0.24,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.09
+        },
+        "foreignTradeVolume": {
+          "amount": 30,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 11250
+        },
+        "economicSystem": {
+          "zh": "村社农业与祭礼再分配经济",
+          "en": "A village agrarian and ritual-redistributive economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 88,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 33000
+        },
+        "annualExpenditure": {
+          "amount": 85,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 31875
+        },
+        "surplus": {
+          "amount": 3,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 1125
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "谷物与牲畜贡纳",
+              "en": "Grain and livestock tribute"
+            },
+            "amount": {
+              "amount": 46,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 52.3
+          },
+          {
+            "source": {
+              "zh": "劳役折算",
+              "en": "Corvée equivalent"
+            },
+            "amount": {
+              "amount": 18,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 20.5
+          },
+          {
+            "source": {
+              "zh": "祭礼供献",
+              "en": "Ritual offerings"
+            },
+            "amount": {
+              "amount": 14,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 15.9
+          },
+          {
+            "source": {
+              "zh": "贸易与过境收入",
+              "en": "Trade and transit income"
+            },
+            "amount": {
+              "amount": 10,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 11.3
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "王室与战士供养",
+              "en": "Court and warrior support"
+            },
+            "amount": {
+              "amount": 34,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "category": {
+              "zh": "祭祀",
+              "en": "Ritual expenditure"
+            },
+            "amount": {
+              "amount": 20,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 23.5
+          },
+          {
+            "category": {
+              "zh": "仓储与赈济",
+              "en": "Storage and relief"
+            },
+            "amount": {
+              "amount": 17,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "地方治理",
+              "en": "Local governance"
+            },
+            "amount": {
+              "amount": 14,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 16.5
+          }
+        ],
+        "treasury": {
+          "amount": 22,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 8250
+        },
+        "treasuryDescription": {
+          "zh": "王家财富多以牲畜、粮仓和礼器储存。",
+          "en": "Royal wealth was largely stored in cattle, granaries, and ritual valuables."
+        },
+        "fiscalPolicy": {
+          "zh": "通过祭礼与征敛强化王权，支持农垦与聚落扩展。",
+          "en": "Used ritual and extraction to strengthen kingship and support agrarian expansion and settlement growth."
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 270000,
+        "standingArmy": 45000,
+        "reserves": 225000,
+        "branches": [
+          {
+            "name": {
+              "zh": "部族步兵",
+              "en": "Tribal Infantry"
+            },
+            "count": 200000,
+            "description": {
+              "zh": "来自农牧村社的主要战斗力量。",
+              "en": "The main fighting force drawn from agrarian and pastoral communities."
+            }
+          },
+          {
+            "name": {
+              "zh": "战车贵族",
+              "en": "Chariot Nobility"
+            },
+            "count": 12000,
+            "description": {
+              "zh": "刹帝利精英战力与身份象征。",
+              "en": "Elite Kshatriya arm and symbol of status."
+            }
+          },
+          {
+            "name": {
+              "zh": "地方卫队",
+              "en": "Local Guards"
+            },
+            "count": 58000,
+            "description": {
+              "zh": "守卫渡口、仓储与王庭。",
+              "en": "Guarded river crossings, storage sites, and royal courts."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "诸罗阇",
+            "en": "Regional rajas"
+          },
+          "totalGenerals": 50
+        },
+        "technology": {
+          "zh": "铁制农具和部分兵器增加，战车传统仍重要。",
+          "en": "Iron tools and some weapons were increasing, while chariot traditions remained important."
+        },
+        "annualMilitarySpending": {
+          "amount": 34,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 12750
+        },
+        "militarySpendingPctGdp": 3.8,
+        "threats": {
+          "zh": "诸部竞争、东进扩张中的资源争夺与地方叛服不定。",
+          "en": "Competition among polities, resource struggles in eastward expansion, and unstable local loyalties."
+        }
+      },
+      "demographics": {
+        "population": 18000000,
+        "populationDescription": {
+          "zh": "人口主要分布在旁遮普、俱卢—般遮罗和恒河上游。",
+          "en": "Population was concentrated in the Punjab, Kuru-Panchala, and upper Ganges basin."
+        },
+        "urbanPopulation": 1260000,
+        "urbanizationRate": 7,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "坎皮利亚",
+              "en": "Kampilya"
+            },
+            "population": 25000
+          },
+          {
+            "name": {
+              "zh": "考赏毗",
+              "en": "Kausambi"
+            },
+            "population": 20000
+          },
+          {
+            "name": {
+              "zh": "阿桑迪瓦特",
+              "en": "Asandivat"
+            },
+            "population": 15000
+          }
+        ],
+        "socialClasses": {
+          "zh": "婆罗门、刹帝利、吠舍、首陀罗及部族边缘群体",
+          "en": "Brahmins, Kshatriyas, Vaishyas, Shudras, and peripheral tribal groups"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "通过婚姻和祭礼形成的区域性王族联盟。",
+          "en": "Regional royal alliances formed through marriage and ritual."
+        },
+        "enemies": {
+          "zh": "相邻部族与竞争王国。",
+          "en": "Neighboring tribes and rival kingdoms."
+        },
+        "foreignPolicy": {
+          "zh": "以控制农耕扩展地带与祭礼威望为核心。",
+          "en": "Focused on controlling expanding agrarian zones and ritual prestige."
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": {
+          "zh": "后吠陀铁器扩张期",
+          "en": "Later Vedic Iron Age expansion"
+        },
+        "keyInnovations": {
+          "zh": "铁制农具、森林开垦、吠陀祭礼系统化",
+          "en": "Iron tools, forest clearance, and systematized Vedic ritual"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "人口基础庞大、农业前景广阔、文化整合力强。",
+          "en": "Large population base, broad agricultural potential, and strong cultural integrative capacity."
+        },
+        "weaknesses": {
+          "zh": "政治碎片化、行政薄弱、城市化有限。",
+          "en": "Political fragmentation, weak administration, and limited urbanization."
+        },
+        "outlook": {
+          "zh": "未来数十年向恒河中下游扩展将孕育更复杂国家。",
+          "en": "Further expansion into the middle Ganges would foster more complex states in the coming decades."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "北印度在公元前800年处于从部族王权走向区域国家的关键阶段，铁器和祭礼共同推动社会重组。",
+        "en": "North India in 800 BCE was at a key transition from tribal kingship to regional states, driven by both iron technology and ritual order."
+      }
+    },
+    {
+      "id": "kush_nubia",
+      "name": {
+        "zh": "库施王国",
+        "en": "Kingdom of Kush"
+      },
+      "territoryId": "nubia",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "库施",
+          "en": "Kush"
+        },
+        "type": "kingdom",
+        "ruler": {
+          "zh": "阿拉拉",
+          "en": "Alara"
+        },
+        "rulerTitle": {
+          "zh": "国王",
+          "en": "King"
+        },
+        "dynasty": {
+          "zh": "纳帕塔王朝前期",
+          "en": "Early Napatan Dynasty"
+        },
+        "capital": {
+          "zh": "纳帕塔",
+          "en": "Napata"
+        },
+        "governmentForm": "theocratic_monarchy",
+        "socialStructure": {
+          "zh": "王室、祭司、地方首领、农牧民、工匠与战俘构成。",
+          "en": "Composed of the royal house, priests, local chiefs, agro-pastoralists, artisans, and captives."
+        },
+        "rulingClass": {
+          "zh": "纳帕塔王室与阿蒙祭司",
+          "en": "The Napatan royal house and priests of Amun"
+        },
+        "succession": {
+          "zh": "王位世袭，受王族与神庙传统支持。",
+          "en": "Hereditary kingship supported by royal lineage and temple tradition."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "王权与神庙权威结合，控制上尼罗河要地。",
+          "en": "Kingship was fused with temple authority to control key Upper Nile zones."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "阿蒙神庙管理处",
+              "en": "Amun Temple Administration"
+            },
+            "function": {
+              "zh": "祭祀、财富管理与合法性建构",
+              "en": "Cult, wealth management, and legitimacy"
+            },
+            "headCount": 150
+          },
+          {
+            "name": {
+              "zh": "河谷征敛署",
+              "en": "Nile Valley Revenue Office"
+            },
+            "function": {
+              "zh": "征收粮食、牲畜与金矿收入",
+              "en": "Collected grain, livestock, and gold revenues"
+            },
+            "headCount": 110
+          },
+          {
+            "name": {
+              "zh": "边地首领网络",
+              "en": "Chiefly Frontier Network"
+            },
+            "function": {
+              "zh": "协调地方治理与军事动员",
+              "en": "Coordinated local rule and military mobilization"
+            },
+            "headCount": 140
+          }
+        ],
+        "totalOfficials": 400,
+        "localAdmin": {
+          "zh": "依靠地方酋长、神庙与河谷据点治理。",
+          "en": "Governed through local chiefs, temples, and Nile strongpoints."
+        },
+        "legalSystem": {
+          "zh": "王命、宗教规范与部族习惯法结合。",
+          "en": "Royal decree, religious norms, and tribal customary law were combined."
+        },
+        "taxationSystem": {
+          "zh": "谷物、牲畜、黄金、象牙与劳役。",
+          "en": "Grain, livestock, gold, ivory, and labor service."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "受埃及影响的阿蒙崇拜与本地努比亚传统融合",
+          "en": "A fusion of Egyptian-influenced Amun worship with local Nubian traditions"
+        },
+        "philosophy": {
+          "zh": "王权神圣、祖先崇拜与河谷圣地观念并重",
+          "en": "Sacred kingship, ancestor reverence, and holy Nile landscapes were all important"
+        },
+        "writingSystem": {
+          "zh": "埃及圣书与祭司书写传统影响",
+          "en": "Influenced by Egyptian hieroglyphic and priestly writing traditions"
+        },
+        "culturalAchievements": {
+          "zh": "纳帕塔宗教中心形成、金矿开发与埃及式王权象征传播",
+          "en": "Formation of Napata as a religious center, gold exploitation, and diffusion of Egyptian-style royal symbolism"
+        },
+        "languageFamily": {
+          "zh": "尼罗-撒哈拉语系并受埃及语文化影响",
+          "en": "Nilo-Saharan languages with strong Egyptian cultural influence"
+        }
+      },
+      "economy": {
+        "level": 5,
+        "gdpEstimate": {
+          "amount": 150,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 56250
+        },
+        "gdpPerCapita": {
+          "amount": 0.68,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.255
+        },
+        "gdpDescription": {
+          "zh": "依赖尼罗河农业、牧业、黄金与南北贸易。",
+          "en": "Relied on Nile agriculture, pastoralism, gold, and north-south trade."
+        },
+        "mainIndustries": {
+          "zh": "农牧、金矿、象牙贸易、河运",
+          "en": "Agro-pastoralism, gold mining, ivory trade, and river transport"
+        },
+        "tradeGoods": {
+          "zh": "黄金、象牙、乌木、牲畜、谷物",
+          "en": "Gold, ivory, ebony, livestock, and grain"
+        },
+        "currency": {
+          "name": {
+            "zh": "金属权衡与实物贡纳",
+            "en": "Weighed metal and goods tribute"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "德本",
+            "en": "deben"
+          }
+        },
+        "householdWealth": {
+          "zh": "一般村社有限，王室与神庙掌握高价值黄金资源。",
+          "en": "Ordinary village wealth was modest, while the crown and temples controlled high-value gold resources."
+        },
+        "averageIncome": {
+          "amount": 0.3,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.113
+        },
+        "foreignTradeVolume": {
+          "amount": 24,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 9000
+        },
+        "economicSystem": {
+          "zh": "王室—神庙主导的河谷资源经济",
+          "en": "A royal-temple Nile resource economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 20,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 7500
+        },
+        "annualExpenditure": {
+          "amount": 18,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 6750
+        },
+        "surplus": {
+          "amount": 2,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 750
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "黄金与矿产",
+              "en": "Gold and mining"
+            },
+            "amount": {
+              "amount": 8,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "source": {
+              "zh": "谷物与牲畜贡纳",
+              "en": "Grain and livestock tribute"
+            },
+            "amount": {
+              "amount": 7,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 35
+          },
+          {
+            "source": {
+              "zh": "南北贸易",
+              "en": "North-south trade"
+            },
+            "amount": {
+              "amount": 5,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 25
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "神庙与王室",
+              "en": "Temple and court"
+            },
+            "amount": {
+              "amount": 7,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 38.9
+          },
+          {
+            "category": {
+              "zh": "军队",
+              "en": "Military"
+            },
+            "amount": {
+              "amount": 6,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 33.3
+          },
+          {
+            "category": {
+              "zh": "河运与据点",
+              "en": "River transport and strongpoints"
+            },
+            "amount": {
+              "amount": 3,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 16.7
+          },
+          {
+            "category": {
+              "zh": "地方整合",
+              "en": "Local integration"
+            },
+            "amount": {
+              "amount": 2,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 11.1
+          }
+        ],
+        "treasury": {
+          "amount": 7,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 2625
+        },
+        "treasuryDescription": {
+          "zh": "财库不大，但黄金资源提供战略弹性。",
+          "en": "The treasury was not large, but gold resources gave strategic flexibility."
+        },
+        "fiscalPolicy": {
+          "zh": "稳步整合河谷，依托黄金和宗教中心增强王权。",
+          "en": "Gradually integrated the Nile valley, using gold and religious centers to strengthen kingship."
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 22000,
+        "standingArmy": 9000,
+        "reserves": 13000,
+        "branches": [
+          {
+            "name": {
+              "zh": "步兵",
+              "en": "Infantry"
+            },
+            "count": 14000,
+            "description": {
+              "zh": "以矛兵和弓兵为主，守卫河谷。",
+              "en": "Mainly spearmen and archers defending the Nile valley."
+            }
+          },
+          {
+            "name": {
+              "zh": "弓箭手",
+              "en": "Archers"
+            },
+            "count": 5000,
+            "description": {
+              "zh": "努比亚弓手传统强，适于边地作战。",
+              "en": "Nubian archery traditions were strong and suited to frontier warfare."
+            }
+          },
+          {
+            "name": {
+              "zh": "王室卫队",
+              "en": "Royal Guard"
+            },
+            "count": 3000,
+            "description": {
+              "zh": "保护纳帕塔与王室圣地。",
+              "en": "Protected Napata and royal sacred sites."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "阿拉拉",
+            "en": "Alara"
+          },
+          "totalGenerals": 10
+        },
+        "technology": {
+          "zh": "装备总体朴实，但弓箭与沙漠—河谷机动经验丰富。",
+          "en": "Equipment was relatively simple, but archery and desert-river mobility were strong."
+        },
+        "annualMilitarySpending": {
+          "amount": 6,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 2250
+        },
+        "militarySpendingPctGdp": 4,
+        "threats": {
+          "zh": "北方埃及势力、沙漠部族与内部整合挑战。",
+          "en": "Egyptian influence to the north, desert tribes, and internal consolidation challenges."
+        }
+      },
+      "demographics": {
+        "population": 2200000,
+        "populationDescription": {
+          "zh": "人口沿上尼罗河分布，聚落呈带状。",
+          "en": "Population was distributed linearly along the Upper Nile."
+        },
+        "urbanPopulation": 176000,
+        "urbanizationRate": 8,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "纳帕塔",
+              "en": "Napata"
+            },
+            "population": 20000
+          },
+          {
+            "name": {
+              "zh": "凯尔玛旧址区域",
+              "en": "Kerma region"
+            },
+            "population": 12000
+          },
+          {
+            "name": {
+              "zh": "库尔古斯附近据点",
+              "en": "Kurgus area strongpoint"
+            },
+            "population": 8000
+          }
+        ],
+        "socialClasses": {
+          "zh": "王族祭司、地方酋长、农牧民、矿工、工匠、战俘",
+          "en": "Royal and priestly elites, local chiefs, agro-pastoralists, miners, artisans, and captives"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "上尼罗河地方酋长网络。",
+          "en": "Networks of Upper Nile local chiefs."
+        },
+        "enemies": {
+          "zh": "无压倒性外敌，但与埃及关系复杂。",
+          "en": "No overwhelming external foe, though relations with Egypt were complex."
+        },
+        "foreignPolicy": {
+          "zh": "向北保持接触，向南控制贸易与资源通道。",
+          "en": "Maintained contact northward while controlling trade and resource corridors to the south."
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": {
+          "zh": "早期铁器尼罗河王国",
+          "en": "Early Iron Age Nile kingdom"
+        },
+        "keyInnovations": {
+          "zh": "黄金开发、河谷节点统治与埃及化王权象征",
+          "en": "Gold exploitation, control of Nile nodes, and Egyptianized royal symbolism"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "黄金资源、宗教凝聚力、弓兵传统。",
+          "en": "Gold resources, religious cohesion, and strong archery traditions."
+        },
+        "weaknesses": {
+          "zh": "人口少、城市化低、行政薄弱。",
+          "en": "Small population, low urbanization, and limited administration."
+        },
+        "outlook": {
+          "zh": "若埃及持续分裂，库施未来有北上干预空间。",
+          "en": "If Egypt remained divided, Kush would have future opportunities to intervene northward."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "库施在前8世纪初仍属稳步上升的尼罗河中上游王国，其真正的区域性扩张尚在未来。",
+        "en": "In the early 8th century BCE, Kush was a steadily rising Upper Nile kingdom whose major regional expansion still lay ahead."
+      }
+    },
+    {
+      "id": "etruscan_italy",
+      "name": {
+        "zh": "伊特鲁里亚与拉丁诸邦",
+        "en": "Etruscan and Latin Italy"
+      },
+      "territoryId": "italy",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "意大利中部诸邦",
+          "en": "Central Italian Polities"
+        },
+        "type": "city_state",
+        "ruler": {
+          "zh": "多位卢库蒙与地方王",
+          "en": "Various lucumones and local kings"
+        },
+        "rulerTitle": {
+          "zh": "王/卢库蒙",
+          "en": "King / Lucumo"
+        },
+        "dynasty": {
+          "zh": "无统一王朝",
+          "en": "No single dynasty"
+        },
+        "capital": {
+          "zh": "韦伊",
+          "en": "Veii"
+        },
+        "governmentForm": "other",
+        "socialStructure": {
+          "zh": "贵族氏族统治城市与乡村，农民、工匠与附属人口居下。",
+          "en": "Aristocratic clans dominated towns and countryside above farmers, artisans, and dependent populations."
+        },
+        "rulingClass": {
+          "zh": "伊特鲁里亚贵族与拉丁首领",
+          "en": "Etruscan aristocrats and Latin chiefs"
+        },
+        "succession": {
+          "zh": "地方世袭与贵族推举并存。",
+          "en": "Local hereditary rule coexisted with aristocratic selection."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "城邦和聚落联盟松散并存。",
+          "en": "Loose coexistence of city-states and settlement leagues."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "贵族议会",
+              "en": "Aristocratic Council"
+            },
+            "function": {
+              "zh": "决策战争、祭祀与外交",
+              "en": "Decided war, cult, and diplomacy"
+            },
+            "headCount": 120
+          },
+          {
+            "name": {
+              "zh": "神庙祭司团",
+              "en": "Temple Priesthoods"
+            },
+            "function": {
+              "zh": "占卜、祭礼与历法",
+              "en": "Divination, ritual, and calendars"
+            },
+            "headCount": 90
+          },
+          {
+            "name": {
+              "zh": "工匠与市场管理",
+              "en": "Craft and Market Offices"
+            },
+            "function": {
+              "zh": "监督市集与手工业",
+              "en": "Oversaw markets and craft production"
+            },
+            "headCount": 60
+          }
+        ],
+        "totalOfficials": 270,
+        "localAdmin": {
+          "zh": "以城市核心统合周边农村和山地聚落。",
+          "en": "Urban centers integrated surrounding rural and hill settlements."
+        },
+        "legalSystem": {
+          "zh": "习惯法、贵族调解和宗教占兆影响强。",
+          "en": "Customary law, aristocratic mediation, and divinatory religion had strong influence."
+        },
+        "taxationSystem": {
+          "zh": "贡纳、贸易收费与战时征发。",
+          "en": "Tribute, trade dues, and wartime levies."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "伊特鲁里亚—意大利多神传统，重占卜与神意",
+          "en": "Etruscan-Italic polytheism with strong emphasis on divination and divine signs"
+        },
+        "philosophy": {
+          "zh": "宗教仪式与家族荣誉为核心",
+          "en": "Centered on ritual observance and family honor"
+        },
+        "writingSystem": {
+          "zh": "受希腊和腓尼基影响的早期意大利书写萌芽",
+          "en": "Early Italic writing was emerging under Greek and Phoenician influence"
+        },
+        "culturalAchievements": {
+          "zh": "金属工艺、墓葬文化、城市聚落成长与跨海交流增强",
+          "en": "Metalworking, rich funerary culture, growing urban settlements, and increasing overseas contact"
+        },
+        "languageFamily": {
+          "zh": "伊特鲁里亚语及意大利语族并存",
+          "en": "Etruscan and Italic language groups coexisted"
+        }
+      },
+      "economy": {
+        "level": 5,
+        "gdpEstimate": {
+          "amount": 220,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 82500
+        },
+        "gdpPerCapita": {
+          "amount": 0.63,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.236
+        },
+        "gdpDescription": {
+          "zh": "农业和金属业是基础，沿海交流刺激财富增长。",
+          "en": "Agriculture and metallurgy formed the base, while coastal exchange stimulated wealth growth."
+        },
+        "mainIndustries": {
+          "zh": "谷物、葡萄、牧业、铜铁加工、陶器",
+          "en": "Grain, viticulture, pastoralism, copper and iron working, and pottery"
+        },
+        "tradeGoods": {
+          "zh": "金属、陶器、盐、葡萄酒、奴隶",
+          "en": "Metals, pottery, salt, wine, and slaves"
+        },
+        "currency": {
+          "name": {
+            "zh": "金属权衡与实物交换",
+            "en": "Weighed metal and barter"
+          },
+          "type": "metal_weight",
+          "unitName": {
+            "zh": "青铜重",
+            "en": "bronze weight"
+          }
+        },
+        "householdWealth": {
+          "zh": "贵族墓葬显示财富集中，普通农户中等偏低。",
+          "en": "Elite tombs reveal concentrated wealth, while ordinary farm households remained modest."
+        },
+        "averageIncome": {
+          "amount": 0.29,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.109
+        },
+        "foreignTradeVolume": {
+          "amount": 26,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 9750
+        },
+        "economicSystem": {
+          "zh": "城邦贵族主导的农业—金属经济",
+          "en": "An aristocratic city-state agrarian-metal economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 22,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 8250
+        },
+        "annualExpenditure": {
+          "amount": 21,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 7875
+        },
+        "surplus": {
+          "amount": 1,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 375
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "农业贡纳",
+              "en": "Agrarian tribute"
+            },
+            "amount": {
+              "amount": 10,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 45.5
+          },
+          {
+            "source": {
+              "zh": "金属作坊与贸易",
+              "en": "Metal workshops and trade"
+            },
+            "amount": {
+              "amount": 7,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 31.8
+          },
+          {
+            "source": {
+              "zh": "港口与市集收费",
+              "en": "Port and market dues"
+            },
+            "amount": {
+              "amount": 5,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 22.7
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "武装与城防",
+              "en": "Arms and fortifications"
+            },
+            "amount": {
+              "amount": 9,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 42.9
+          },
+          {
+            "category": {
+              "zh": "宗教与仪式",
+              "en": "Religion and ritual"
+            },
+            "amount": {
+              "amount": 5,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 23.8
+          },
+          {
+            "category": {
+              "zh": "公共建设",
+              "en": "Public building"
+            },
+            "amount": {
+              "amount": 4,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 19
+          },
+          {
+            "category": {
+              "zh": "行政",
+              "en": "Administration"
+            },
+            "amount": {
+              "amount": 3,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 14.3
+          }
+        ],
+        "treasury": {
+          "amount": 6,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 2250
+        },
+        "treasuryDescription": {
+          "zh": "城邦财库规模有限，但贵族私产可迅速动员。",
+          "en": "City treasuries were limited, but elite private wealth could be mobilized quickly."
+        },
+        "fiscalPolicy": {
+          "zh": "优先防务与仪式性开支，依赖贵族承担公共义务。",
+          "en": "Prioritized defense and ritual expenditure, relying on aristocrats to shoulder public obligations."
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 70000,
+        "standingArmy": 8000,
+        "reserves": 62000,
+        "branches": [
+          {
+            "name": {
+              "zh": "贵族战士步兵",
+              "en": "Aristocratic Infantry"
+            },
+            "count": 42000,
+            "description": {
+              "zh": "由城邦贵族和追随者组成。",
+              "en": "Made up of aristocrats and their retainers."
+            }
+          },
+          {
+            "name": {
+              "zh": "轻装部队",
+              "en": "Light Troops"
+            },
+            "count": 18000,
+            "description": {
+              "zh": "乡村征召兵与投射兵。",
+              "en": "Rural levies and missile troops."
+            }
+          },
+          {
+            "name": {
+              "zh": "城防卫队",
+              "en": "Town Guards"
+            },
+            "count": 10000,
+            "description": {
+              "zh": "守卫聚落和仓储。",
+              "en": "Guarded settlements and storage sites."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "地方王与卢库蒙",
+            "en": "Local kings and lucumones"
+          },
+          "totalGenerals": 24
+        },
+        "technology": {
+          "zh": "冶金进步明显，受希腊和腓尼基交流刺激。",
+          "en": "Metallurgy was advancing, stimulated by contact with Greeks and Phoenicians."
+        },
+        "annualMilitarySpending": {
+          "amount": 9,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 3375
+        },
+        "militarySpendingPctGdp": 4.1,
+        "threats": {
+          "zh": "城邦竞争、山地部族与沿海争夺。",
+          "en": "Inter-city rivalry, hill tribes, and coastal competition."
+        }
+      },
+      "demographics": {
+        "population": 3500000,
+        "populationDescription": {
+          "zh": "人口分布于意大利中部城镇、山地村落和沿海平原。",
+          "en": "Population was spread across central Italian towns, hill villages, and coastal plains."
+        },
+        "urbanPopulation": 350000,
+        "urbanizationRate": 10,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "韦伊",
+              "en": "Veii"
+            },
+            "population": 20000
+          },
+          {
+            "name": {
+              "zh": "塔尔奎尼亚",
+              "en": "Tarquinia"
+            },
+            "population": 18000
+          },
+          {
+            "name": {
+              "zh": "罗马",
+              "en": "Rome"
+            },
+            "population": 12000
+          }
+        ],
+        "socialClasses": {
+          "zh": "贵族、自由农、工匠商人、附属民、奴隶",
+          "en": "Aristocrats, free farmers, artisans and merchants, dependents, and slaves"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "地方联盟与跨海贸易伙伴。",
+          "en": "Local leagues and overseas trade partners."
+        },
+        "enemies": {
+          "zh": "相邻城邦与内陆部族。",
+          "en": "Neighboring city-states and inland tribes."
+        },
+        "foreignPolicy": {
+          "zh": "以地区联盟、贸易和武力威慑维持势力。",
+          "en": "Used local alliances, trade, and military deterrence to maintain influence."
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": {
+          "zh": "早期铁器意大利城市化阶段",
+          "en": "Early Iron Age Italian urbanizing phase"
+        },
+        "keyInnovations": {
+          "zh": "金属工艺提升、聚落扩张、外来字母与航海接触",
+          "en": "Improved metallurgy, settlement growth, incoming alphabets, and maritime contacts"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "金属资源、贵族动员力、地中海交流增多。",
+          "en": "Metal resources, aristocratic mobilization, and growing Mediterranean contact."
+        },
+        "weaknesses": {
+          "zh": "政治碎片化、制度未定型、规模有限。",
+          "en": "Political fragmentation, undeveloped institutions, and limited scale."
+        },
+        "outlook": {
+          "zh": "未来将受希腊殖民与内部城市化深刻影响。",
+          "en": "Its future would be deeply shaped by Greek colonization and internal urban growth."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "公元前800年的意大利中部正处于从村社向城邦与区域贵族政治过渡的关键阶段。",
+        "en": "Central Italy in 800 BCE was at a key transition from village society to city-states and regional aristocratic politics."
+      }
+    },
+    {
+      "id": "medes_persia",
+      "name": {
+        "zh": "伊朗高原部族与早期米底-波斯诸群体",
+        "en": "Iranian Highland Tribal Confederacies"
+      },
+      "territoryId": "persia",
+      "territoryScale": "lg",
+      "civilization": {
+        "name": {
+          "zh": "伊朗高原部族联盟",
+          "en": "Iranian Tribal Confederacies"
+        },
+        "type": "tribal",
+        "ruler": {
+          "zh": "诸部酋长并立",
+          "en": "Multiple tribal chiefs"
+        },
+        "rulerTitle": {
+          "zh": "酋长",
+          "en": "Chieftain"
+        },
+        "dynasty": {
+          "zh": "无统一王朝",
+          "en": "No unified dynasty"
+        },
+        "capital": {
+          "zh": "埃克巴坦那地区雏形",
+          "en": "Proto-Ecbatana region"
+        },
+        "governmentForm": "tribal_council",
+        "socialStructure": {
+          "zh": "贵族战士氏族、自由牧民农民与附属部众构成。",
+          "en": "Composed of noble warrior clans, free pastoral-agricultural households, and dependent followers."
+        },
+        "rulingClass": {
+          "zh": "部族贵族与骑战首领",
+          "en": "Tribal nobles and mounted war leaders"
+        },
+        "succession": {
+          "zh": "氏族内世袭与部族会议认可相结合。",
+          "en": "Clan heredity combined with approval by tribal councils."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "松散部族联盟，酋长会议比统一国家更重要。",
+          "en": "A loose tribal confederate order in which councils mattered more than unified statehood."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "部族议会",
+              "en": "Tribal Council"
+            },
+            "function": {
+              "zh": "协商战争、迁徙与盟约",
+              "en": "Debated war, migration, and alliances"
+            },
+            "headCount": 160
+          },
+          {
+            "name": {
+              "zh": "贡品与畜群管理",
+              "en": "Tribute and Herd Management"
+            },
+            "function": {
+              "zh": "协调牲畜、粮食与战利品分配",
+              "en": "Coordinated distribution of livestock, grain, and booty"
+            },
+            "headCount": 100
+          },
+          {
+            "name": {
+              "zh": "圣火与祭司团",
+              "en": "Fire Cult and Priestly Groups"
+            },
+            "function": {
+              "zh": "主持宗教仪式与部族誓约",
+              "en": "Oversaw ritual and tribal oaths"
+            },
+            "headCount": 80
+          }
+        ],
+        "totalOfficials": 340,
+        "localAdmin": {
+          "zh": "依赖氏族首领、山谷据点与季节性迁徙网络。",
+          "en": "Depended on clan chiefs, valley strongholds, and seasonal migration networks."
+        },
+        "legalSystem": {
+          "zh": "习惯法、血亲仲裁与部族会议裁决。",
+          "en": "Customary law, kin arbitration, and tribal council judgment."
+        },
+        "taxationSystem": {
+          "zh": "以牲畜、战利品和临时贡纳为主。",
+          "en": "Based mainly on livestock, booty, and occasional tribute."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "伊朗早期宗教传统，崇火、天神与祭礼并存",
+          "en": "Early Iranian religious traditions involving fire cults, sky gods, and ritual observance"
+        },
+        "philosophy": {
+          "zh": "重视氏族荣誉、契约誓言与战士伦理",
+          "en": "Valued clan honor, oath-keeping, and warrior ethics"
+        },
+        "writingSystem": {
+          "zh": "主要依靠口传，无成熟本地行政文字",
+          "en": "Mainly oral, without a mature local administrative script"
+        },
+        "culturalAchievements": {
+          "zh": "骑战文化扩展、伊朗语族部落迁徙定居与高原牧业整合",
+          "en": "Expansion of mounted warrior culture, Iranian settlement patterns, and highland pastoral integration"
+        },
+        "languageFamily": {
+          "zh": "印欧语系伊朗语支",
+          "en": "Indo-European, Iranian branch"
+        }
+      },
+      "economy": {
+        "level": 4,
+        "gdpEstimate": {
+          "amount": 280,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 105000
+        },
+        "gdpPerCapita": {
+          "amount": 0.47,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "goldKg": 0,
+          "silverKg": 0.176
+        },
+        "gdpDescription": {
+          "zh": "以牧业和山地农业为主，贸易节点有限但战略位置重要。",
+          "en": "Pastoralism and highland agriculture predominated, with limited but strategically important trade nodes."
+        },
+        "mainIndustries": {
+          "zh": "畜牧、谷物、马匹、金属采集与手工冶炼",
+          "en": "Pastoralism, grain farming, horse raising, mining, and small-scale metallurgy"
+        },
+        "tradeGoods": {
+          "zh": "马匹、牲畜、皮革、金属、山地产物",
+          "en": "Horses, livestock, leather, metals, and mountain products"
+        },
+        "currency": {
+          "name": {
+            "zh": "牲畜与银重交换",
+            "en": "Livestock and silver weight exchange"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "牛/银重",
+            "en": "cattle / silver weight"
+          }
+        },
+        "householdWealth": {
+          "zh": "财富以牲畜和氏族动员力体现，差距随贵族化扩大。",
+          "en": "Wealth was measured in herds and clan following, with inequality growing alongside aristocratization."
+        },
+        "averageIncome": {
+          "amount": 0.21,
+          "unit": {
+            "zh": "两白银年值/人",
+            "en": "taels silver annual equivalent per person"
+          },
+          "silverKg": 0.079
+        },
+        "foreignTradeVolume": {
+          "amount": 18,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 6750
+        },
+        "economicSystem": {
+          "zh": "部族牧农混合经济",
+          "en": "A tribal agro-pastoral mixed economy"
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 18,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 6750
+        },
+        "annualExpenditure": {
+          "amount": 17,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 6375
+        },
+        "surplus": {
+          "amount": 1,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 375
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "牲畜贡纳",
+              "en": "Livestock tribute"
+            },
+            "amount": {
+              "amount": 8,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 44.4
+          },
+          {
+            "source": {
+              "zh": "战利品",
+              "en": "Booty"
+            },
+            "amount": {
+              "amount": 4,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 22.2
+          },
+          {
+            "source": {
+              "zh": "山地贸易",
+              "en": "Highland trade"
+            },
+            "amount": {
+              "amount": 3,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 16.7
+          },
+          {
+            "source": {
+              "zh": "谷物与劳役贡献",
+              "en": "Grain and labor contributions"
+            },
+            "amount": {
+              "amount": 3,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 16.7
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "战士供养",
+              "en": "Warrior support"
+            },
+            "amount": {
+              "amount": 9,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 52.9
+          },
+          {
+            "category": {
+              "zh": "盟约与馈赠",
+              "en": "Alliance gifts"
+            },
+            "amount": {
+              "amount": 4,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 23.5
+          },
+          {
+            "category": {
+              "zh": "宗教仪式",
+              "en": "Rituals"
+            },
+            "amount": {
+              "amount": 2,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 11.8
+          },
+          {
+            "category": {
+              "zh": "营地与迁徙后勤",
+              "en": "Camp and migration logistics"
+            },
+            "amount": {
+              "amount": 2,
+              "unit": {
+                "zh": "万两白银年值",
+                "en": "ten-thousand taels silver annual equivalent"
+              }
+            },
+            "percentage": 11.8
+          }
+        ],
+        "treasury": {
+          "amount": 5,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "goldKg": 0,
+          "silverKg": 1875
+        },
+        "treasuryDescription": {
+          "zh": "财富分散于酋长与氏族，并非集中财库。",
+          "en": "Wealth was dispersed among chieftains and clans rather than held in a centralized treasury."
+        },
+        "fiscalPolicy": {
+          "zh": "重在维持部族忠诚与战时动员，而非固定税制。",
+          "en": "Focused on maintaining tribal loyalty and wartime mobilization rather than fixed taxation."
+        }
+      },
+      "military": {
+        "level": 5,
+        "totalTroops": 150000,
+        "standingArmy": 20000,
+        "reserves": 130000,
+        "branches": [
+          {
+            "name": {
+              "zh": "部族步兵",
+              "en": "Tribal Infantry"
+            },
+            "count": 90000,
+            "description": {
+              "zh": "由氏族征召，装备不统一。",
+              "en": "Levied by clans, with uneven equipment."
+            }
+          },
+          {
+            "name": {
+              "zh": "骑战部队",
+              "en": "Mounted Forces"
+            },
+            "count": 35000,
+            "description": {
+              "zh": "高原机动优势明显。",
+              "en": "Showed strong mobility on the plateau."
+            }
+          },
+          {
+            "name": {
+              "zh": "山地守备",
+              "en": "Highland Guards"
+            },
+            "count": 25000,
+            "description": {
+              "zh": "守卫山谷据点与通道。",
+              "en": "Guarded valley strongholds and passes."
+            }
+          }
+        ],
+        "commandStructure": {
+          "commanderInChief": {
+            "zh": "诸部联盟首领",
+            "en": "Confederate tribal leaders"
+          },
+          "totalGenerals": 28
+        },
+        "technology": {
+          "zh": "铁器逐渐普及，骑乘与山地机动能力优于定居帝国边地军。",
+          "en": "Iron was spreading, and mounted and mountain mobility outmatched many frontier troops of settled empires."
+        },
+        "annualMilitarySpending": {
+          "amount": 9,
+          "unit": {
+            "zh": "万两白银年值",
+            "en": "ten-thousand taels silver annual equivalent"
+          },
+          "silverKg": 3375
+        },
+        "militarySpendingPctGdp": 3.2,
+        "threats": {
+          "zh": "亚述东进、内部部族竞争与资源脆弱性。",
+          "en": "Assyrian eastern pressure, tribal rivalry, and fragile resources."
+        }
+      },
+      "demographics": {
+        "population": 6000000,
+        "populationDescription": {
+          "zh": "人口分散于札格罗斯山区、高原谷地与牧道。",
+          "en": "Population was scattered across the Zagros, plateau valleys, and pastoral corridors."
+        },
+        "urbanPopulation": 300000,
+        "urbanizationRate": 5,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "埃克巴坦那地区聚落",
+              "en": "Ecbatana region settlement"
+            },
+            "population": 12000
+          },
+          {
+            "name": {
+              "zh": "安善地区",
+              "en": "Anshan region"
+            },
+            "population": 10000
+          },
+          {
+            "name": {
+              "zh": "札格罗斯山谷据点",
+              "en": "Zagros valley strongpoint"
+            },
+            "population": 8000
+          }
+        ],
+        "socialClasses": {
+          "zh": "部族贵族、战士、牧民农民、工匠、附属民",
+          "en": "Tribal nobles, warriors, pastoralists and farmers, artisans, and dependents"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "部族联盟内部暂时盟约。",
+          "en": "Temporary compacts within tribal confederacies."
+        },
+        "enemies": {
+          "zh": "亚述扩张势力与相邻竞争部族。",
+          "en": "Assyrian expansion and rival neighboring tribes."
+        },
+        "foreignPolicy": {
+          "zh": "以生存、机动与联盟平衡为主。",
+          "en": "Focused on survival, mobility, and balancing through alliances."
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": {
+          "zh": "早期铁器伊朗高原部族阶段",
+          "en": "Early Iron Age Iranian plateau tribal phase"
+        },
+        "keyInnovations": {
+          "zh": "骑乘扩展、铁器工具、部族联盟化趋势",
+          "en": "Expansion of mounted mobility, iron tools, and confederative tribal organization"
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "机动性强、地形有利、部族战力顽强。",
+          "en": "Strong mobility, favorable terrain, and resilient tribal fighting capacity."
+        },
+        "weaknesses": {
+          "zh": "缺乏统一政权、财政与行政松散。",
+          "en": "Lacked unified statehood and had loose fiscal and administrative structures."
+        },
+        "outlook": {
+          "zh": "未来可能在外部压力下加快政治整合。",
+          "en": "External pressure could accelerate political consolidation in the future."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "公元前800年的伊朗高原尚未形成统一帝国，但米底与波斯等伊朗语部族正在积累后来国家形成的基础。",
+        "en": "In 800 BCE the Iranian plateau had not yet formed a unified empire, but Iranian-speaking groups such as the Medes and Persians were laying foundations for later state formation."
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-iron-age-001",
+      "timestamp": {
+        "year": -799,
+        "month": 4
+      },
+      "title": {
+        "zh": "亚述向叙利亚与大马士革施压",
+        "en": "Assyrian Pressure on Syria and Damascus"
+      },
+      "description": {
+        "zh": "阿达德-尼拉里三世继续在叙利亚地区展示军威，要求地方王公与商邦纳贡，以巩固对黎凡特内陆与贸易线路的控制。",
+        "en": "Adad-nirari III continued to project force in Syria, compelling local rulers and trading polities to pay tribute and reinforcing control over inland Levantine routes."
+      },
+      "affectedRegions": [
+        "neo_assyria_mesopotamia",
+        "phoenician_levant"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-002",
+      "timestamp": {
+        "year": -798,
+        "month": 7
+      },
+      "title": {
+        "zh": "周宣王整饬王畿军备",
+        "en": "King Xuan Reorganizes the Zhou Royal Forces"
+      },
+      "description": {
+        "zh": "面对西北边患与诸侯离心，周宣王加强王畿征发与军备整顿，试图恢复王室对边防和封国的主导权。",
+        "en": "Facing northwestern threats and increasingly independent feudatories, King Xuan strengthened levies and military organization in the royal domain to restore royal authority."
+      },
+      "affectedRegions": [
+        "western_zhou_china_central"
+      ],
+      "category": "other",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-003",
+      "timestamp": {
+        "year": -797,
+        "month": 3
+      },
+      "title": {
+        "zh": "乌拉尔图修筑新堡垒链",
+        "en": "Urartu Expands Its Fortress Chain"
+      },
+      "description": {
+        "zh": "米努阿在高地与通道地带增筑堡垒和储粮设施，以巩固王权并对抗亚述边境压力。",
+        "en": "Menua expanded fortresses and storage installations across highland passes to reinforce royal control and resist Assyrian frontier pressure."
+      },
+      "affectedRegions": [
+        "urartu_anatolia"
+      ],
+      "category": "other",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-004",
+      "timestamp": {
+        "year": -796,
+        "month": 9
+      },
+      "title": {
+        "zh": "希腊字母使用进一步扩散",
+        "en": "Wider Adoption of the Greek Alphabet"
+      },
+      "description": {
+        "zh": "受腓尼基字母启发的希腊书写方式在爱琴海若干城邦和圣所中更广泛使用，促进铭文和贸易标记的发展。",
+        "en": "Writing adapted from the Phoenician alphabet spread more widely among Aegean communities and sanctuaries, aiding inscriptions and commercial marking."
+      },
+      "affectedRegions": [
+        "greek_aegean",
+        "phoenician_levant"
+      ],
+      "category": "invention",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-005",
+      "timestamp": {
+        "year": -795,
+        "month": 6
+      },
+      "title": {
+        "zh": "尼罗河低洪引发歉收",
+        "en": "Low Nile Flood Causes Poor Harvest"
+      },
+      "description": {
+        "zh": "一年异常偏低的尼罗河洪水导致部分三角洲与河谷地区减产，埃及地方政权与神庙加大仓储调配。",
+        "en": "An unusually low Nile flood reduced yields in parts of the Delta and valley, forcing Egyptian rulers and temples to rely more heavily on stored grain."
+      },
+      "affectedRegions": [
+        "third_intermediate_egypt"
+      ],
+      "category": "natural_disaster",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-006",
+      "timestamp": {
+        "year": -794,
+        "month": 5
+      },
+      "title": {
+        "zh": "推罗加强西地中海殖民航线",
+        "en": "Tyre Strengthens Western Mediterranean Routes"
+      },
+      "description": {
+        "zh": "推罗商人继续向塞浦路斯、西西里与北非沿岸扩展商业站点，为后续更稳固的殖民网络奠定基础。",
+        "en": "Tyrian merchants further expanded commercial stations toward Cyprus, Sicily, and the North African coast, laying groundwork for a stronger colonial network."
+      },
+      "affectedRegions": [
+        "phoenician_levant",
+        "etruscan_italy"
+      ],
+      "category": "trade",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-007",
+      "timestamp": {
+        "year": -793,
+        "month": 6
+      },
+      "title": {
+        "zh": "亚述发生著名日食征兆",
+        "en": "The Famous Assyrian Eclipse Omen"
+      },
+      "description": {
+        "zh": "一次显著日食被亚述书记与占卜者记录为重大天象征兆，宫廷政治和宗教解释随之加强。",
+        "en": "A notable solar eclipse was recorded by Assyrian scribes and interpreted as a major omen, intensifying court ritual and political concern."
+      },
+      "affectedRegions": [
+        "neo_assyria_mesopotamia"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-008",
+      "timestamp": {
+        "year": -792,
+        "month": 8
+      },
+      "title": {
+        "zh": "后吠陀诸国向恒河流域东部推进",
+        "en": "Later Vedic Expansion Eastward in the Ganges Basin"
+      },
+      "description": {
+        "zh": "北印度若干王族与部族进一步开垦森林、拓展耕地，推动恒河流域政治与社会结构转型。",
+        "en": "Several North Indian royal and tribal groups pushed farther east, clearing forests and extending cultivation, deepening social and political transformation in the Ganges basin."
+      },
+      "affectedRegions": [
+        "later_vedic_india_north"
+      ],
+      "category": "migration",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-009",
+      "timestamp": {
+        "year": -791,
+        "month": 10
+      },
+      "title": {
+        "zh": "周与西北戎狄再起冲突",
+        "en": "Renewed Zhou Conflict with Northwestern Rong"
+      },
+      "description": {
+        "zh": "西周边境再遭戎狄侵扰，王室与相关诸侯联合出兵，虽暂时稳定边防，但消耗巨大。",
+        "en": "The Zhou frontier faced renewed Rong incursions, prompting joint royal and feudal campaigns that restored temporary order at high cost."
+      },
+      "affectedRegions": [
+        "western_zhou_china_central"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-010",
+      "timestamp": {
+        "year": -790,
+        "month": 2
+      },
+      "title": {
+        "zh": "爱琴海地震损毁沿海聚落",
+        "en": "Aegean Earthquake Damages Coastal Settlements"
+      },
+      "description": {
+        "zh": "爱琴海东部发生强震，若干沿海聚落与港口设施受损，海上贸易短暂中断。",
+        "en": "A strong earthquake in the eastern Aegean damaged several coastal settlements and harbor facilities, briefly disrupting maritime trade."
+      },
+      "affectedRegions": [
+        "greek_aegean"
+      ],
+      "category": "natural_disaster",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-011",
+      "timestamp": {
+        "year": -789,
+        "month": 11
+      },
+      "title": {
+        "zh": "埃及地方分权进一步加深",
+        "en": "Regional Fragmentation Deepens in Egypt"
+      },
+      "description": {
+        "zh": "三角洲与上埃及地方势力在财政和神庙资源分配上更趋独立，法老的直接控制继续削弱。",
+        "en": "Regional powers in the Delta and Upper Egypt became more independent in finance and temple resource allocation, further weakening pharaonic control."
+      },
+      "affectedRegions": [
+        "third_intermediate_egypt"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-012",
+      "timestamp": {
+        "year": -788,
+        "month": 4
+      },
+      "title": {
+        "zh": "乌拉尔图与亚述边境冲突升级",
+        "en": "Urartu-Assyria Frontier Fighting Escalates"
+      },
+      "description": {
+        "zh": "两国在北叙利亚和山地通道的影响力竞争加剧，边境袭扰与筑城行动频繁。",
+        "en": "Competition for influence in northern Syria and the mountain corridors intensified, with frequent raids and fortification on both sides."
+      },
+      "affectedRegions": [
+        "neo_assyria_mesopotamia",
+        "urartu_anatolia"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-013",
+      "timestamp": {
+        "year": -787,
+        "month": 6
+      },
+      "title": {
+        "zh": "库施巩固纳帕塔宗教中心",
+        "en": "Kush Consolidates Napata as a Religious Center"
+      },
+      "description": {
+        "zh": "纳帕塔阿蒙神庙地位提升，王室借助宗教仪式加强对上尼罗河地方首领的整合。",
+        "en": "The status of the Amun temple at Napata increased, allowing the Kushite monarchy to strengthen ties with Upper Nile chiefs through religious legitimacy."
+      },
+      "affectedRegions": [
+        "kush_nubia"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-014",
+      "timestamp": {
+        "year": -786,
+        "month": 9
+      },
+      "title": {
+        "zh": "希腊与意大利间贸易接触增强",
+        "en": "Greek-Italian Trade Contacts Intensify"
+      },
+      "description": {
+        "zh": "爱琴海商人与意大利南北沿海的交流增加，陶器、金属和技术观念在地中海中部传播更快。",
+        "en": "Contacts between Aegean merchants and the coasts of Italy intensified, accelerating the spread of pottery styles, metals, and technical ideas in the central Mediterranean."
+      },
+      "affectedRegions": [
+        "greek_aegean",
+        "etruscan_italy"
+      ],
+      "category": "trade",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-015",
+      "timestamp": {
+        "year": -785,
+        "month": 5
+      },
+      "title": {
+        "zh": "亚述王权受宫廷重臣影响加深",
+        "en": "Assyrian Kingship Increasingly Shaped by Court Magnates"
+      },
+      "description": {
+        "zh": "随着长期征战与行政扩大，宫廷大臣和高阶官员在帝国决策中的影响更加明显。",
+        "en": "As campaigns and administration expanded, powerful courtiers and senior officials played a more visible role in imperial decision-making."
+      },
+      "affectedRegions": [
+        "neo_assyria_mesopotamia"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-016",
+      "timestamp": {
+        "year": -784,
+        "month": 7
+      },
+      "title": {
+        "zh": "黄河流域旱情冲击西周收成",
+        "en": "Drought Hits Harvests in the Yellow River Region"
+      },
+      "description": {
+        "zh": "黄河中游出现明显旱情，王畿与若干诸侯国粮食减产，迫使各地增加仓储调配与徭役压力。",
+        "en": "Marked drought in the middle Yellow River region reduced harvests in the Zhou royal domain and several feudal states, increasing pressure on storage and labor obligations."
+      },
+      "affectedRegions": [
+        "western_zhou_china_central"
+      ],
+      "category": "natural_disaster",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-017",
+      "timestamp": {
+        "year": -783,
+        "month": 3
+      },
+      "title": {
+        "zh": "伊朗高原部族联盟更加紧密",
+        "en": "Iranian Highland Tribes Form Tighter Confederacies"
+      },
+      "description": {
+        "zh": "在札格罗斯与高原边地，面对外部压力和内部竞争，若干部族开始形成更稳定的联盟结构。",
+        "en": "Across the Zagros and plateau frontier, external threats and internal rivalry encouraged some tribes to form more durable confederative ties."
+      },
+      "affectedRegions": [
+        "medes_persia"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-018",
+      "timestamp": {
+        "year": -782,
+        "month": 8
+      },
+      "title": {
+        "zh": "腓尼基海贸受亚述贡赋挤压",
+        "en": "Phoenician Trade Strained by Assyrian Tribute"
+      },
+      "description": {
+        "zh": "尽管商业依旧繁荣，但亚述帝国的贡赋要求提高了腓尼基城邦的财政负担，迫使其更积极开拓海外收入来源。",
+        "en": "Though commerce remained prosperous, heavier Assyrian tribute demands strained Phoenician finances and pushed the cities to seek more overseas revenue."
+      },
+      "affectedRegions": [
+        "phoenician_levant",
+        "neo_assyria_mesopotamia"
+      ],
+      "category": "trade",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-019",
+      "timestamp": {
+        "year": -781,
+        "month": 10
+      },
+      "title": {
+        "zh": "意大利中部城市化加速",
+        "en": "Urban Growth Accelerates in Central Italy"
+      },
+      "description": {
+        "zh": "伊特鲁里亚与拉丁地区若干聚落扩大城防、公共区与贵族墓地，显示更明显的城邦化趋势。",
+        "en": "Several Etruscan and Latin settlements expanded fortifications, communal spaces, and elite cemeteries, showing clearer movement toward urban forms."
+      },
+      "affectedRegions": [
+        "etruscan_italy"
+      ],
+      "category": "other",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-020",
+      "timestamp": {
+        "year": -780,
+        "month": 1
+      },
+      "title": {
+        "zh": "亚述远征黎凡特取得新贡纳",
+        "en": "Assyrian Campaign Secures Fresh Levantine Tribute"
+      },
+      "description": {
+        "zh": "亚述对黎凡特诸邦的军事展示带来新的贡赋和服从誓约，进一步压缩地方自主空间。",
+        "en": "An Assyrian show of force in the Levant yielded fresh tribute and renewed oaths of submission, further limiting local autonomy."
+      },
+      "affectedRegions": [
+        "neo_assyria_mesopotamia",
+        "phoenician_levant"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-021",
+      "timestamp": {
+        "year": -779,
+        "month": 6
+      },
+      "title": {
+        "zh": "恒河流域出现季风洪灾",
+        "en": "Monsoon Flooding in the Ganges Basin"
+      },
+      "description": {
+        "zh": "异常季风导致北印度部分河段泛滥，聚落和农田受损，但洪后沉积也改善了部分地区的农业条件。",
+        "en": "Abnormal monsoon flooding damaged settlements and fields in parts of North India, though post-flood silt also improved agricultural conditions in some areas."
+      },
+      "affectedRegions": [
+        "later_vedic_india_north"
+      ],
+      "category": "natural_disaster",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-022",
+      "timestamp": {
+        "year": -778,
+        "month": 9
+      },
+      "title": {
+        "zh": "希腊圣所网络增强跨城联系",
+        "en": "Pan-Hellenic Sanctuaries Strengthen Inter-Polis Ties"
+      },
+      "description": {
+        "zh": "奥林匹亚、德尔斐等圣所吸引更多共同参与，帮助分散的希腊共同体形成更清晰的文化联系。",
+        "en": "Sanctuaries such as Olympia and Delphi drew wider participation, helping dispersed Greek communities develop clearer shared cultural ties."
+      },
+      "affectedRegions": [
+        "greek_aegean"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-023",
+      "timestamp": {
+        "year": -777,
+        "month": 4
+      },
+      "title": {
+        "zh": "库施扩大黄金与南方贸易控制",
+        "en": "Kush Expands Control over Gold and Southern Trade"
+      },
+      "description": {
+        "zh": "库施王权进一步掌控金矿与南方商路节点，为未来更强的区域政治行动积累资源。",
+        "en": "The Kushite monarchy tightened control over gold sources and southern trade routes, accumulating resources for stronger future regional action."
+      },
+      "affectedRegions": [
+        "kush_nubia"
+      ],
+      "category": "trade",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-024",
+      "timestamp": {
+        "year": -776,
+        "month": 7
+      },
+      "title": {
+        "zh": "传统上首届奥林匹克竞技会举行",
+        "en": "Traditional Date of the First Olympic Games"
+      },
+      "description": {
+        "zh": "后世传统将这一年视为奥林匹克竞技会之始，反映希腊世界正在形成跨城邦的共同宗教与竞技文化。",
+        "en": "Later Greek tradition regarded this year as the first Olympic Games, reflecting the emergence of a shared inter-polis religious and athletic culture."
+      },
+      "affectedRegions": [
+        "greek_aegean"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-025",
+      "timestamp": {
+        "year": -775,
+        "month": 5
+      },
+      "title": {
+        "zh": "周王室与诸侯关系继续紧张",
+        "en": "Tensions Continue Between the Zhou Court and Feudatories"
+      },
+      "description": {
+        "zh": "随着边防消耗和赋役压力上升，诸侯对王室命令的响应日益选择性，西周政治裂痕加深。",
+        "en": "As frontier costs and burdens rose, feudatories responded more selectively to royal commands, deepening political fractures within the Western Zhou order."
+      },
+      "affectedRegions": [
+        "western_zhou_china_central"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-026",
+      "timestamp": {
+        "year": -774,
+        "month": 8
+      },
+      "title": {
+        "zh": "乌拉尔图继续北部与东部拓展",
+        "en": "Urartu Continues Northern and Eastern Expansion"
+      },
+      "description": {
+        "zh": "在与亚述僵持之际，乌拉尔图转而加强对周边高地和谷地的控制，扩大资源与兵源基础。",
+        "en": "While holding against Assyria, Urartu strengthened control over nearby highlands and valleys, broadening its resource and manpower base."
+      },
+      "affectedRegions": [
+        "urartu_anatolia"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-027",
+      "timestamp": {
+        "year": -773,
+        "month": 11
+      },
+      "title": {
+        "zh": "埃及与库施间宗教文化联系增强",
+        "en": "Religious and Cultural Links Grow Between Egypt and Kush"
+      },
+      "description": {
+        "zh": "上尼罗河阿蒙崇拜的共同传统加强了埃及南部与库施之间的文化互动，也为后续政治介入埋下伏笔。",
+        "en": "Shared Amun traditions along the Upper Nile deepened cultural interaction between southern Egypt and Kush, foreshadowing later political involvement."
+      },
+      "affectedRegions": [
+        "third_intermediate_egypt",
+        "kush_nubia"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-028",
+      "timestamp": {
+        "year": -772,
+        "month": 6
+      },
+      "title": {
+        "zh": "亚述帝国边疆治理压力上升",
+        "en": "Administrative Strain Rises on Assyria’s Frontiers"
+      },
+      "description": {
+        "zh": "帝国行省和附庸区因远征、贡赋和驻军问题出现更多摩擦，中央开始更依赖总督与地方强人。",
+        "en": "Campaigns, tribute burdens, and garrison demands generated greater friction in Assyria’s provinces and vassal zones, increasing central reliance on governors and local strongmen."
+      },
+      "affectedRegions": [
+        "neo_assyria_mesopotamia"
+      ],
+      "category": "other",
+      "status": "pending"
+    },
+    {
+      "id": "evt-iron-age-029",
+      "timestamp": {
+        "year": -771,
+        "month": 3
+      },
+      "title": {
+        "zh": "西周内外危机逼近转折点",
+        "en": "Western Zhou Crisis Nears a Breaking Point"
+      },
+      "description": {
+        "zh": "在长期边患、财政紧张与诸侯离心共同作用下，西周王室威望和实控能力接近危险临界，未来数年形势极可能急剧恶化。",
+        "en": "After years of frontier pressure, fiscal strain, and feudal disobedience, the Western Zhou court approached a dangerous threshold in both prestige and effective control, with sharp deterioration likely in the years ahead."
+      },
+      "affectedRegions": [
+        "western_zhou_china_central"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    }
+  ]
+}

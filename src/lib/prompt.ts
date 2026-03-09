@@ -88,7 +88,7 @@ Return ONLY a valid JSON object (no markdown, no explanation, no whitespace form
         "rulerTitle": { "zh": "...", "en": "..." },
         "dynasty": { "zh": "...", "en": "..." },
         "capital": { "zh": "...", "en": "..." },
-        "governmentForm": "absolute_monarchy|feudal_monarchy|constitutional_monarchy|theocratic_monarchy|oligarchy|aristocratic_republic|democracy|tribal_council|military_dictatorship|colonial_administration|communist_state|federal_republic|confederation|other",
+        "governmentForm": { "zh": "...", "en": "..." },
         "socialStructure": { "zh": "...", "en": "..." },
         "rulingClass": { "zh": "...", "en": "..." },
         "succession": { "zh": "...", "en": "..." }

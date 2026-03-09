@@ -4,6 +4,7 @@ import type {
   HistoricalEvent,
   Region,
   YearMonth,
+  War,
 } from "@/lib/types";
 import type { EpochChangelog } from "@/lib/changelog";
 
@@ -60,6 +61,21 @@ interface WorldStore {
 
   isGeneratingEvents: boolean;
   setIsGeneratingEvents: (generating: boolean) => void;
+
+  eventGenAbortController: AbortController | null;
+  setEventGenAbortController: (ctrl: AbortController | null) => void;
+
+  needsEvents: boolean;
+  setNeedsEvents: (needs: boolean) => void;
+
+  activeWars: War[];
+  setActiveWars: (wars: War[]) => void;
+
+  selectedWar: War | null;
+  setSelectedWar: (war: War | null) => void;
+
+  preAdvanceYear: number | null;
+  setPreAdvanceYear: (year: number | null) => void;
 }
 
 export const useWorldStore = create<WorldStore>((set, get) => ({
@@ -132,4 +148,19 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
 
   isGeneratingEvents: false,
   setIsGeneratingEvents: (isGeneratingEvents) => set({ isGeneratingEvents }),
+
+  eventGenAbortController: null,
+  setEventGenAbortController: (eventGenAbortController) => set({ eventGenAbortController }),
+
+  needsEvents: false,
+  setNeedsEvents: (needsEvents) => set({ needsEvents }),
+
+  activeWars: [],
+  setActiveWars: (activeWars) => set({ activeWars }),
+
+  selectedWar: null,
+  setSelectedWar: (selectedWar) => set({ selectedWar }),
+
+  preAdvanceYear: null,
+  setPreAdvanceYear: (preAdvanceYear) => set({ preAdvanceYear }),
 }));

@@ -34,5 +34,17 @@ export function useLocale() {
     return text[locale] ?? text.en ?? text.zh ?? "";
   };
 
-  return { locale, setLocale, t: tFn, localized: localizedFn };
+  const tWithFallback = (prefix: string, value: string | LocalizedText) => {
+    if (typeof value === "object" && value !== null) {
+      return value[locale] ?? value.en ?? value.zh ?? "";
+    }
+    const key = `${prefix}.${value}`;
+    const translated = strings[locale]?.[key];
+    if (translated) return translated;
+    return value
+      .replace(/_/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
+  return { locale, setLocale, t: tFn, localized: localizedFn, tWithFallback };
 }

@@ -7,6 +7,8 @@ const FIELD_SCHEMA = getRegionFieldSchema();
 
 const SYSTEM_DIRECT = `You are a historian for a civilization simulation. Given a civilization's current state and historical events that DIRECTLY affect it, produce a TRANSITION describing how this civilization changes.
 
+CRITICAL: The events provided are based on real historical records. Your transitions must faithfully reflect what actually happened historically — real consequences, real outcomes, real leadership changes. Do NOT invent outcomes that contradict the historical record.
+
 Do NOT output the full updated state. Output ONLY the CHANGES (transition) as compact JSON.
 
 Output format (compact JSON, no markdown):
@@ -34,6 +36,8 @@ ${FIELD_SCHEMA}`;
 
 const SYSTEM_INDIRECT = `You are a historian for a civilization simulation. Given a civilization that is INDIRECTLY affected by nearby historical events, produce a TRANSITION describing minor ripple effects.
 
+CRITICAL: The events provided are based on real historical records. Your indirect effects must be historically plausible and consistent with what actually happened in this period. Do NOT invent major events or outcomes that contradict the historical record.
+
 Do NOT output the full updated state. Output ONLY the CHANGES (transition) as compact JSON.
 
 Output format (compact JSON, no markdown):
@@ -57,11 +61,42 @@ Rules:
 
 ${FIELD_SCHEMA}`;
 
+const SYSTEM_INDEPENDENT = `You are a historian for a civilization simulation. You are given MULTIPLE civilizations that are GEOGRAPHICALLY ISOLATED and have NO mutual relationship in this era. Produce a TRANSITION for EACH civilization describing its own independent historical evolution for this time period.
+
+CRITICAL RULES:
+1. Each civilization evolves INDEPENDENTLY. Do NOT invent interactions, trade, diplomacy, or influence between these civilizations — they are unrelated to each other.
+2. Base each civilization's changes on its OWN internal dynamics: natural population growth, local economic development, internal politics, cultural evolution, and any background historical trends appropriate to its region and era.
+3. The provided events may not directly affect these civilizations. Apply only plausible, minor background changes consistent with the historical period.
+4. Keep changes small and realistic — typical internal evolution for the time period (e.g., modest population growth, gradual economic shifts, slow technological progress).
+
+Do NOT output the full updated state. Output ONLY the CHANGES (transition) as compact JSON.
+
+Output format (compact JSON, no markdown):
+{"era":{"zh":"...","en":"..."},"summary":{"zh":"...","en":"..."},"transitions":[{"regionId":"xxx","description":{"zh":"本期独立演进","en":"Independent evolution this period"},"changes":{"field.path":value,...}},{"regionId":"yyy","description":{"zh":"...","en":"..."},"changes":{...}}]}
+
+Change value rules:
+- Number fields: use relative delta. Use "=N" string for absolute set.
+- LocalizedText fields: provide full {"zh":"...","en":"..."} as replacement.
+- MonetaryValue fields: provide {amount: delta, goldKg: delta}.
+- Enum/string fields: provide the new value directly.
+- ONLY include fields that actually change. Omit unchanged fields.
+- Do NOT set military.totalTroops or demographics.urbanizationRate (auto-calculated).
+
+Rules:
+- Each region's transition must reflect ONLY its own internal development
+- Keep the transition small per region (typically 2-5 field changes)
+- ALL text must be bilingual: {"zh":"...","en":"..."}
+- status must be one of: thriving|stable|declining|conflict|collapsed
+- You MUST produce one transition entry for EVERY region listed
+
+${FIELD_SCHEMA}`;
+
 export async function runHistorian(
   ctx: AgentContext,
   regionIds: string[],
   isDirect: boolean,
-  onToken?: TokenCallback
+  onToken?: TokenCallback,
+  isOrphanGroup?: boolean
 ): Promise<TransitionResult> {
   const regionsToUpdate = ctx.currentState.regions.filter((r) =>
     regionIds.includes(r.id)
@@ -110,14 +145,27 @@ export async function runHistorian(
     },
   }));
 
+  let systemPrompt: string;
+  let temperature: number;
+  if (isOrphanGroup) {
+    systemPrompt = SYSTEM_INDEPENDENT;
+    temperature = 0.3;
+  } else if (isDirect) {
+    systemPrompt = SYSTEM_DIRECT;
+    temperature = 0.5;
+  } else {
+    systemPrompt = SYSTEM_INDIRECT;
+    temperature = 0.3;
+  }
+
   const messages: AgentMessage[] = [
-    { role: "system", content: isDirect ? SYSTEM_DIRECT : SYSTEM_INDIRECT },
+    { role: "system", content: systemPrompt },
     {
       role: "user",
       content: `Year: ${ctx.targetYear}
 Era: ${JSON.stringify(ctx.currentState.era)}
 Events: ${JSON.stringify(eventsSummary)}
-Region to update (current key stats): ${JSON.stringify(regionSnapshot)}
+Regions to update (current key stats): ${JSON.stringify(regionSnapshot)}
 Other civilizations: ${JSON.stringify(otherRegionNames)}`,
     },
   ];
@@ -127,7 +175,7 @@ Other civilizations: ${JSON.stringify(otherRegionNames)}`,
     messages,
     rid,
     onToken ?? (() => { }),
-    { temperature: isDirect ? 0.5 : 0.3 }
+    { temperature }
   );
   return safeParseJSON<TransitionResult>(response);
 }

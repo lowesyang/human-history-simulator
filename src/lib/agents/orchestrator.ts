@@ -1,10 +1,11 @@
-import type { WorldState, HistoricalEvent, Region, LocalizedText } from "../types";
+import type { WorldState, HistoricalEvent, Region, LocalizedText, War } from "../types";
 import type { AgentContext, ProgressCallback, TokenStreamCallback } from "./types";
 import type { RegionTransition, TransitionResult } from "../transition";
 import { applyTransition } from "../transition";
 import { runHistorian } from "./historian";
+import { buildRelationGraph, clusterRegions, type RegionGroup } from "../region-grouping";
 
-const MAX_PARALLEL = 4;
+const MAX_PARALLEL = 10;
 
 export interface OrchestrateResult {
   era: LocalizedText;
@@ -36,7 +37,8 @@ export async function orchestrate(
   currentState: WorldState,
   events: HistoricalEvent[],
   onProgress: ProgressCallback,
-  onToken?: TokenStreamCallback
+  onToken?: TokenStreamCallback,
+  activeWars?: War[]
 ): Promise<OrchestrateResult> {
   const targetYear = events[events.length - 1].timestamp.year;
   const ctx: AgentContext = { currentState, events, targetYear };
@@ -50,33 +52,38 @@ export async function orchestrate(
     }
   }
 
-  const regionsToProcess = allRegionIds.filter((id) => directIds.has(id));
-  const indirectRegions = allRegionIds.filter((id) => !directIds.has(id));
-  const allToProcess = [...regionsToProcess, ...indirectRegions];
+  const graph = buildRelationGraph(
+    currentState.regions,
+    events,
+    activeWars ?? []
+  );
+  const groups = clusterRegions(graph);
 
   onProgress("simulating", {
     targetYear,
     batch: 1,
-    totalBatches: 1,
+    totalBatches: groups.length,
     regionIds: Array.from(directIds),
   });
 
   console.log(
-    `[Orchestrator] Year ${targetYear}: ${directIds.size} direct + ${indirectRegions.length} indirect regions, concurrency=${MAX_PARALLEL}`
+    `[Orchestrator] Year ${targetYear}: ${directIds.size} direct + ${allRegionIds.length - directIds.size} indirect regions, ${groups.length} groups (max ${groups.reduce((m, g) => Math.max(m, g.regionIds.length), 0)} per group), concurrency=${MAX_PARALLEL}`
   );
 
-  const tasks = allToProcess.map((regionId) => async (): Promise<TransitionResult | null> => {
-    const isDirect = directIds.has(regionId);
+  const tasks = groups.map((group) => async (): Promise<TransitionResult | null> => {
+    const { regionIds: groupIds, isOrphanGroup } = group;
+    const hasDirect = groupIds.some((id) => directIds.has(id));
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        return await runHistorian(ctx, [regionId], isDirect, onToken);
+        return await runHistorian(ctx, groupIds, hasDirect, onToken, isOrphanGroup);
       } catch (err) {
+        const label = groupIds.length === 1 ? groupIds[0] : `[${groupIds.join(",")}]`;
         console.warn(
-          `[Orchestrator]   ${regionId} attempt ${attempt + 1} failed:`,
+          `[Orchestrator]   ${label} attempt ${attempt + 1} failed:`,
           err instanceof Error ? err.message : err
         );
         if (attempt === 2) {
-          console.error(`[Orchestrator]   ${regionId} all attempts failed, keeping original`);
+          console.error(`[Orchestrator]   ${label} all attempts failed, keeping original`);
           return null;
         }
       }

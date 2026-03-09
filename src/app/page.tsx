@@ -11,7 +11,8 @@ import CivilizationDetail from "@/components/CivilizationDetail";
 import LlmStreamPanel from "@/components/LlmStreamPanel";
 import EvolutionLogPanel from "@/components/EvolutionLogPanel";
 import EraSelectModal from "@/components/EraSelectModal";
-import type { HistoricalEvent, WorldState } from "@/lib/types";
+import WarDetailModal from "@/components/WarDetailModal";
+import type { HistoricalEvent, WorldState, War } from "@/lib/types";
 import type { EpochChangelog } from "@/lib/changelog";
 
 const WorldMap = dynamic(() => import("@/components/WorldMap"), { ssr: false });
@@ -26,6 +27,8 @@ export default function Home() {
   const setViewingTime = useWorldStore((s) => s.setViewingTime);
   const setEvolutionLogs = useWorldStore((s) => s.setEvolutionLogs);
   const setShowLogPanel = useWorldStore((s) => s.setShowLogPanel);
+  const setActiveWars = useWorldStore((s) => s.setActiveWars);
+  const activeWars = useWorldStore((s) => s.activeWars);
   const isLoading = useWorldStore((s) => s.isLoading);
   const loadingStatus = useWorldStore((s) => s.loadingStatus);
   const viewingTime = useWorldStore((s) => s.viewingTime);
@@ -51,6 +54,9 @@ export default function Home() {
           setCurrentState(stateData as WorldState);
           setFrontier(stateData.timestamp);
           setViewingTime(stateData.timestamp);
+          if (stateData.wars) {
+            setActiveWars(stateData.wars as War[]);
+          }
         }
 
         if (eventsData.events) {
@@ -74,7 +80,7 @@ export default function Home() {
       }
     }
     init();
-  }, [setCurrentState, setPastEvents, setFutureEvents, setFrontier, setOriginTime, setViewingTime, setEvolutionLogs, setShowLogPanel]);
+  }, [setCurrentState, setPastEvents, setFutureEvents, setFrontier, setOriginTime, setViewingTime, setEvolutionLogs, setShowLogPanel, setActiveWars]);
 
   useEffect(() => {
     async function loadSnapshot() {
@@ -85,13 +91,16 @@ export default function Home() {
         const data = await resp.json();
         if (data && !data.error) {
           setCurrentState(data as WorldState);
+          if (data.wars) {
+            setActiveWars(data.wars as War[]);
+          }
         }
       } catch (err) {
         console.error("Failed to load snapshot:", err);
       }
     }
     loadSnapshot();
-  }, [viewingTime.year, viewingTime.month, setCurrentState]);
+  }, [viewingTime.year, viewingTime.month, setCurrentState, setActiveWars]);
 
   const formatYear = (year: number) => {
     if (locale === "zh") {
@@ -112,6 +121,7 @@ export default function Home() {
     store.clearEvolutionLogs();
     store.setShowLogPanel(false);
     store.setSelectedRegionId(null);
+    store.setNeedsEvents(false);
 
     try {
       const resp = await fetch("/api/playback/init-era", {
@@ -128,6 +138,7 @@ export default function Home() {
       const reader = resp.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
+      let currentEvent = "";
 
       while (true) {
         const { done, value } = await reader.read();
@@ -137,8 +148,24 @@ export default function Home() {
         const lines = buffer.split("\n");
         buffer = lines.pop() || "";
 
-        let currentEvent = "";
         for (const line of lines) {
+          if (line.startsWith("event: ")) {
+            currentEvent = line.slice(7);
+          } else if (line.startsWith("data: ") && currentEvent) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              handleEraSSE(currentEvent, data, locale);
+            } catch {
+              // ignore
+            }
+            currentEvent = "";
+          }
+        }
+      }
+
+      if (buffer.trim()) {
+        const remaining = buffer.split("\n");
+        for (const line of remaining) {
           if (line.startsWith("event: ")) {
             currentEvent = line.slice(7);
           } else if (line.startsWith("data: ") && currentEvent) {
@@ -182,6 +209,22 @@ export default function Home() {
             <span className="text-text-muted text-xs">▾</span>
           </button>
           <LanguageSwitch />
+          {activeWars.length > 0 && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded border border-red-900/40 bg-red-900/10 text-red-400 text-xs">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="3" x2="12" y2="12" />
+                <line x1="12" y1="12" x2="20" y2="20" />
+                <line x1="3" y1="7" x2="7" y2="3" />
+                <line x1="17" y1="21" x2="21" y2="17" />
+                <line x1="21" y1="3" x2="12" y2="12" />
+                <line x1="12" y1="12" x2="4" y2="20" />
+                <line x1="17" y1="3" x2="21" y2="7" />
+                <line x1="3" y1="17" x2="7" y2="21" />
+              </svg>
+              <span className="font-semibold">{activeWars.length}</span>
+              <span>{t("war.title")}</span>
+            </div>
+          )}
           <div className="font-mono text-xs px-2 py-1 rounded bg-bg-tertiary text-accent-amber">
             {formatYear(viewingTime.year)} M{viewingTime.month}
           </div>
@@ -227,6 +270,8 @@ export default function Home() {
           onCancel={() => setShowEraModal(false)}
         />
       )}
+
+      <WarDetailModal />
     </div>
   );
 }
@@ -289,16 +334,23 @@ function handleEraSSE(
         store.setOriginTime(state.timestamp as import("@/lib/types").YearMonth);
       }
       const events = data.events as { status: string }[] | undefined;
-      if (events) {
+      if (events && events.length > 0) {
         store.setPastEvents(
           events.filter((e) => e.status === "processed") as unknown as import("@/lib/types").HistoricalEvent[]
         );
         store.setFutureEvents(
           events.filter((e) => e.status === "pending") as unknown as import("@/lib/types").HistoricalEvent[]
         );
+      } else {
+        store.setPastEvents([]);
+        store.setFutureEvents([]);
       }
       store.clearEvolutionLogs();
       store.setShowLogPanel(false);
+      store.setActiveWars([]);
+      if (data.needsEvents) {
+        store.setNeedsEvents(true);
+      }
       break;
     }
 

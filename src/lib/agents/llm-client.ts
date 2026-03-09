@@ -35,6 +35,7 @@ export async function callAgentStreaming(
           messages,
           temperature,
           stream: true,
+          response_format: { type: "json_object" },
         }),
         signal: controller.signal,
       }
@@ -118,6 +119,7 @@ export async function callAgent(
           model,
           messages,
           temperature,
+          response_format: { type: "json_object" },
         }),
         signal: controller.signal,
       }
@@ -154,9 +156,14 @@ export function extractJSONFromResponse(text: string): string {
   if (jsonMatch) return jsonMatch[1].trim();
 
   const braceStart = text.indexOf("{");
-  if (braceStart === -1) return text;
+  const bracketStart = text.indexOf("[");
 
-  // Return everything from the first { to the end — let repair handle truncation
+  if (braceStart === -1 && bracketStart === -1) return text;
+
+  if (bracketStart !== -1 && (braceStart === -1 || bracketStart < braceStart)) {
+    return text.slice(bracketStart);
+  }
+
   return text.slice(braceStart);
 }
 
@@ -167,22 +174,31 @@ export function safeParseJSON<T = unknown>(text: string): T {
     return JSON.parse(jsonStr);
   } catch { /* fall through */ }
 
+  const sanitized = sanitizeJSONControlChars(jsonStr);
+  if (sanitized !== jsonStr) {
+    try {
+      return JSON.parse(sanitized);
+    } catch { /* fall through */ }
+  }
+
+  const target = sanitized !== jsonStr ? sanitized : jsonStr;
+
   try {
-    const repaired = repairJSON(jsonStr);
+    const repaired = repairJSON(target);
     const result = JSON.parse(repaired);
     console.warn(`[JSON] Parsed with light repair (${jsonStr.length} chars)`);
     return result;
   } catch { /* fall through */ }
 
   try {
-    const aggressive = aggressiveRepairJSON(jsonStr);
+    const aggressive = aggressiveRepairJSON(target);
     const result = JSON.parse(aggressive);
     console.warn(`[JSON] Parsed with aggressive repair (${jsonStr.length} → ${aggressive.length} chars)`);
     return result;
   } catch { /* fall through */ }
 
   try {
-    const nuclear = nuclearRepairJSON(jsonStr);
+    const nuclear = nuclearRepairJSON(target);
     const result = JSON.parse(nuclear);
     console.warn(`[JSON] Parsed with nuclear repair (${jsonStr.length} → ${nuclear.length} chars)`);
     return result;
@@ -190,6 +206,53 @@ export function safeParseJSON<T = unknown>(text: string): T {
     console.error(`[JSON] All repair strategies failed for ${jsonStr.length} chars. First 200: ${jsonStr.slice(0, 200)}...`);
     throw err;
   }
+}
+
+/**
+ * Fix unescaped control characters inside JSON string values.
+ * Walks the string tracking whether we're inside a JSON string literal,
+ * and escapes any raw control chars (0x00-0x1F) found there.
+ */
+function sanitizeJSONControlChars(json: string): string {
+  const chars: string[] = [];
+  let inStr = false;
+  let esc = false;
+
+  for (let i = 0; i < json.length; i++) {
+    const ch = json[i];
+    const code = json.charCodeAt(i);
+
+    if (esc) {
+      esc = false;
+      chars.push(ch);
+      continue;
+    }
+
+    if (inStr) {
+      if (ch === "\\") {
+        esc = true;
+        chars.push(ch);
+      } else if (ch === '"') {
+        inStr = false;
+        chars.push(ch);
+      } else if (code < 0x20) {
+        if (code === 0x0a) chars.push("\\n");
+        else if (code === 0x0d) chars.push("\\r");
+        else if (code === 0x09) chars.push("\\t");
+        else chars.push(`\\u${code.toString(16).padStart(4, "0")}`);
+      } else {
+        chars.push(ch);
+      }
+      continue;
+    }
+
+    if (ch === '"') {
+      inStr = true;
+    }
+    chars.push(ch);
+  }
+
+  return chars.join("");
 }
 
 /**

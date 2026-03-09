@@ -86,7 +86,7 @@ export interface Region {
     rulerTitle?: LocalizedText;
     dynasty?: LocalizedText;
     capital?: LocalizedText;
-    governmentForm: GovernmentForm;
+    governmentForm: GovernmentForm | LocalizedText;
     socialStructure: LocalizedText;
     rulingClass: LocalizedText;
     succession: LocalizedText;
@@ -240,4 +240,29 @@ export interface HistoricalEvent {
   status: "pending" | "processed";
   isCustom?: boolean;
   processedAt?: string;
+}
+
+export interface War {
+  id: string;
+  name: LocalizedText;
+  startYear: number;
+  endYear: number | null;
+  belligerents: {
+    side1: { regionIds: string[]; label: LocalizedText };
+    side2: { regionIds: string[]; label: LocalizedText };
+  };
+  cause: LocalizedText;
+  casus_belli: LocalizedText;
+  status: "ongoing" | "side1_victory" | "side2_victory" | "stalemate" | "ceasefire";
+  victor?: "side1" | "side2" | null;
+  summary: LocalizedText;
+  advantages: {
+    side1: LocalizedText;
+    side2: LocalizedText;
+  };
+  impact: {
+    side1: LocalizedText;
+    side2: LocalizedText;
+  };
+  relatedEventIds: string[];
 }

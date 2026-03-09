@@ -13,7 +13,7 @@ const STATUS_COLORS: Record<string, string> = {
 };
 
 export default function HeaderSection({ region }: { region: Region }) {
-  const { t, localized } = useLocale();
+  const { t, localized, tWithFallback } = useLocale();
 
   return (
     <div className="space-y-3">
@@ -58,7 +58,7 @@ export default function HeaderSection({ region }: { region: Region }) {
         )}
         <div>
           <span className="text-text-muted">{t("info.government")}:</span>{" "}
-          {t(`govtForm.${region.civilization.governmentForm}`)}
+          {tWithFallback("govtForm", region.civilization.governmentForm)}
         </div>
         <div>
           <span className="text-text-muted">{t("info.population")}:</span>{" "}

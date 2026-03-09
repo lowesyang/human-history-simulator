@@ -151,8 +151,8 @@ export default function EraSelectModal({ onConfirm, onCancel }: Props) {
                         <span>⚡</span>
                         <span>
                           {locale === "zh"
-                            ? "该时代已有预构建数据，将即时加载"
-                            : "Prebuilt data available — loads instantly"}
+                            ? "该时代世界状态将即时加载，进入后可手动生成历史事件"
+                            : "World state loads instantly — generate events after entering"}
                         </span>
                       </div>
                     </div>

@@ -87,6 +87,28 @@ function extractCompleteObjects(
 export async function POST(request: NextRequest) {
   const encoder = new TextEncoder();
 
+  let reqCount = 20;
+  let reqStartYear: number | undefined;
+  let reqEventsPerYear = 3;
+  let reqCategories: string[] | undefined;
+  let reqFocusRegions: string[] | undefined;
+  let reqDetailLevel: "brief" | "normal" | "detailed" = "normal";
+  try {
+    const body = await request.json();
+    if (body.count) reqCount = Math.min(Math.max(Number(body.count), 1), 50);
+    if (body.startYear != null) reqStartYear = Number(body.startYear);
+    if (body.eventsPerYear != null) reqEventsPerYear = Math.min(Math.max(Number(body.eventsPerYear), 1), 5);
+    if (body.categories && Array.isArray(body.categories) && body.categories.length > 0) {
+      reqCategories = body.categories;
+    }
+    if (body.focusRegions && Array.isArray(body.focusRegions) && body.focusRegions.length > 0) {
+      reqFocusRegions = body.focusRegions;
+    }
+    if (body.detailLevel) reqDetailLevel = body.detailLevel;
+  } catch {
+    // no body or invalid JSON, use defaults
+  }
+
   const stream = new ReadableStream({
     async start(controller) {
       try {
@@ -110,7 +132,9 @@ export async function POST(request: NextRequest) {
         const pendingEvents = allEvents.filter((e) => e.status === "pending");
 
         let startYear: number;
-        if (pendingEvents.length > 0) {
+        if (reqStartYear != null) {
+          startYear = reqStartYear;
+        } else if (pendingEvents.length > 0) {
           const nonCustomPending = pendingEvents.filter((e) => !e.isCustom);
           if (nonCustomPending.length > 0) {
             const maxPendingYear = Math.max(...nonCustomPending.map((e) => e.timestamp.year));
@@ -127,12 +151,9 @@ export async function POST(request: NextRequest) {
           .map((e) => `[${e.timestamp.year}] ${e.title.en}`)
           .join("\n");
 
-        const endYear = startYear + 29;
-
         sendSSE(controller, encoder, "progress", {
           stage: "calling_llm",
           startYear,
-          endYear,
         });
 
         const apiKey = process.env.OPENROUTER_API_KEY;
@@ -144,17 +165,56 @@ export async function POST(request: NextRequest) {
 
         const model = process.env.LLM_MODEL || "openai/gpt-5.4";
 
-        const systemPrompt = `You are a historical events generator for a civilization simulation. Generate concise, historically plausible events. Return ONLY a JSON array, no other text.`;
+        const descInstruction = reqDetailLevel === "brief"
+          ? "Keep descriptions very concise (1 sentence each)."
+          : reqDetailLevel === "detailed"
+            ? "Provide detailed descriptions (2-4 sentences each) including causes, key figures, and consequences."
+            : "Provide moderate descriptions (1-2 sentences each).";
 
-        const userPrompt = `Generate events for ${startYear < 0 ? `${Math.abs(startYear)} BCE` : `${startYear} CE`} to ${endYear < 0 ? `${Math.abs(endYear)} BCE` : `${endYear} CE`}.
+        const systemPrompt = `You are a historical events generator for a civilization simulation.
+
+CRITICAL RULES:
+1. You must ONLY generate events that are historically documented and actually happened in real history. Every event must be a real, verifiable historical event with accurate dates, people, places, and outcomes.
+2. Only include events that had SIGNIFICANT historical impact — events that shaped the course of history, influenced civilizations, triggered major changes, or had lasting consequences. Examples: major wars, decisive battles, dynastic changes, important inventions/discoveries, significant treaties, documented plagues/famines/earthquakes, religious movements, great migrations.
+3. Do NOT include trivial, minor, or obscure events. Every event should be one that a historian would consider important.
+4. Do NOT invent, fabricate, or speculate any events. If an event is not recorded in historical sources, do not include it.
+5. For natural disasters: only include historically documented ones that had significant impact (e.g., major recorded earthquakes, devastating plagues, severe famines).
+6. ${descInstruction}
+
+Each event's title and description must reflect the real historical record — real names of rulers, battles, treaties, inventions, and their actual consequences.
+
+Return ONLY a JSON array, no other text.`;
+
+        const minCount = Math.max(1, reqCount - 5);
+        const maxCount = Math.min(50, reqCount + 5);
+
+        const fmtY = (y: number) => y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`;
+
+        const categoryList = reqCategories
+          ? reqCategories.join("|")
+          : "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|other";
+
+        const regionFocusHint = reqFocusRegions && reqFocusRegions.length > 0
+          ? `\n- PRIORITIZE events related to these regions: [${reqFocusRegions.join(", ")}]. Most events should involve at least one of these regions, but you may include events from other regions if they are historically significant enough.`
+          : "\n- Cover as many of the listed regions as possible.";
+
+        const userPrompt = `Starting from ${fmtY(startYear)}, generate the next ${minCount}-${maxCount} SIGNIFICANT, real historical events that actually happened.
 
 Regions: [${regionIds.join(", ")}]
 (${regionSummaries})
 
-Recent: ${recentEvents || "None"}
+Recent events already generated: ${recentEvents || "None"}
 
-Generate 20-30 events. Categories: war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|other.
-Include 3-4 natural disasters. Every region should appear at least once.
+REQUIREMENTS:
+- Every event MUST be a real, documented historical event that had significant impact on history.
+- Use accurate dates (year and approximate month), real names of people, places, battles, treaties, and inventions.
+- Only include events important enough to shape civilizations, trigger wars, change dynasties, advance technology, or cause major demographic shifts.
+- Include documented natural disasters ONLY if they had significant historical consequences.
+- IMPORTANT: Generate up to ${reqEventsPerYear} events per year. Many years had multiple significant events happening simultaneously across different regions. Spread events naturally across different months.
+- Do NOT fabricate any event. Do NOT include minor or trivial events.
+- The events should be in chronological order starting from ${fmtY(startYear)}.${regionFocusHint}
+
+Categories (ONLY use these): ${categoryList}.
 
 JSON array format:
 [{"timestamp":{"year":${startYear},"month":6},"title":{"zh":"标题","en":"Title"},"description":{"zh":"描述","en":"Desc"},"affectedRegions":["id"],"category":"war"}]`;
@@ -189,7 +249,7 @@ JSON array format:
                   { role: "system", content: systemPrompt },
                   { role: "user", content: userPrompt },
                 ],
-                temperature: 0.7,
+                temperature: 0.4,
                 stream: true,
               }),
               signal: abortCtrl.signal,
@@ -305,7 +365,7 @@ JSON array format:
           });
         }
 
-        console.log(`[Event Generator] Inserted ${inserted} events for years ${startYear}-${endYear}`);
+        console.log(`[Event Generator] Inserted ${inserted} events starting from year ${startYear}`);
 
         sendSSE(controller, encoder, "done", { generated: inserted });
         controller.close();

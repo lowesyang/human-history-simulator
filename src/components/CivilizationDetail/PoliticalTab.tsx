@@ -5,7 +5,7 @@ import { useLocale } from "@/lib/i18n";
 import DataTable from "./DataTable";
 
 export default function PoliticalTab({ region }: { region: Region }) {
-  const { t, localized } = useLocale();
+  const { t, localized, tWithFallback } = useLocale();
 
   const deptRows = (region.government.departments || []).map((d) => ({
     name: localized(d.name),
@@ -20,7 +20,7 @@ export default function PoliticalTab({ region }: { region: Region }) {
       </Section>
 
       <Section title={t("info.government")}>
-        <InfoRow label={t("info.government")} value={t(`govtForm.${region.civilization.governmentForm}`)} />
+        <InfoRow label={t("info.government")} value={tWithFallback("govtForm", region.civilization.governmentForm)} />
         <InfoRow label={t("political.socialStructure")} value={localized(region.civilization.socialStructure)} />
         <InfoRow label={t("political.rulingClass")} value={localized(region.civilization.rulingClass)} />
         <InfoRow label={t("political.succession")} value={localized(region.civilization.succession)} />

@@ -7,9 +7,13 @@ import {
   insertSnapshot,
   markEventsProcessed,
   insertEvolutionLog,
+  insertWar,
+  getActiveWars,
+  updateWarStatus,
 } from "@/lib/db";
 import { generateChangelog } from "@/lib/changelog";
-import type { WorldState, HistoricalEvent, Region } from "@/lib/types";
+import { extractWarsFromEvents } from "@/lib/war-extractor";
+import type { WorldState, HistoricalEvent, Region, War } from "@/lib/types";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -51,6 +55,10 @@ export async function POST(request: NextRequest) {
       try {
         let lastState: WorldState | null = null;
         const allProcessedEvents: string[] = [];
+
+        const preSnapshot = getLatestSnapshot();
+        const preAdvanceYear = preSnapshot ? preSnapshot.year : null;
+        sendSSE(controller, "pre_advance", { preAdvanceYear });
 
         for (let i = 0; i < epochs; i++) {
           const allEpochEvents = getNextEpochEvents() as HistoricalEvent[];
@@ -119,6 +127,8 @@ export async function POST(request: NextRequest) {
             tokenFlushTimer = null;
           };
 
+          const warsForOrchestrate = getActiveWars(targetYear) as War[];
+
           const result = await orchestrate(
             currentState,
             pendingEvents,
@@ -136,7 +146,8 @@ export async function POST(request: NextRequest) {
               if (!tokenFlushTimer) {
                 tokenFlushTimer = setTimeout(flushTokens, 80);
               }
-            }
+            },
+            warsForOrchestrate
           );
 
           if (tokenFlushTimer) {
@@ -198,16 +209,73 @@ export async function POST(request: NextRequest) {
 
           insertEvolutionLog(targetYear, changelog);
 
+          const hasWarEvents = pendingEvents.some((e) => e.category === "war");
+          let newWars: War[] = [];
+          if (hasWarEvents) {
+            try {
+              const existingWars = getActiveWars(targetYear) as War[];
+              const rawWars = await extractWarsFromEvents(
+                pendingEvents,
+                result.regions,
+                existingWars,
+                targetYear
+              );
+              for (const w of rawWars) {
+                if (!w.name || !w.belligerents) continue;
+                const existingMatch = existingWars.find(
+                  (ew) => ew.name.en === w.name!.en || ew.name.zh === w.name!.zh
+                );
+                if (existingMatch && w.status && w.status !== "ongoing") {
+                  updateWarStatus(existingMatch.id, w.status, targetYear);
+                } else if (!existingMatch) {
+                  const warId = `war-${uuidv4().slice(0, 8)}`;
+                  const war: War = {
+                    id: warId,
+                    name: w.name!,
+                    startYear: targetYear,
+                    endYear: w.status && w.status !== "ongoing" ? targetYear : null,
+                    belligerents: w.belligerents!,
+                    cause: w.cause || { zh: "", en: "" },
+                    casus_belli: w.casus_belli || { zh: "", en: "" },
+                    status: w.status || "ongoing",
+                    victor: w.victor ?? null,
+                    summary: w.summary || { zh: "", en: "" },
+                    advantages: w.advantages || { side1: { zh: "", en: "" }, side2: { zh: "", en: "" } },
+                    impact: w.impact || { side1: { zh: "", en: "" }, side2: { zh: "", en: "" } },
+                    relatedEventIds: pendingEvents.filter((e) => e.category === "war").map((e) => e.id),
+                  };
+                  insertWar(
+                    war.id, war.name, war.startYear, war.endYear,
+                    war.belligerents, war.cause, war.casus_belli,
+                    war.status, war.summary, war.advantages,
+                    war.impact, war.relatedEventIds, war.victor
+                  );
+                  newWars.push(war);
+                }
+              }
+            } catch (err) {
+              console.error("[Advance] War extraction failed:", err);
+            }
+          }
+
+          const activeWarsForYear = getActiveWars(targetYear) as War[];
+
           sendSSE(controller, "epoch_complete", {
             epoch: i + 1,
             totalEpochs: epochs,
             state: lastState,
+            wars: activeWarsForYear,
           });
         }
+
+        const finalWars = lastState
+          ? (getActiveWars(lastState.timestamp.year) as War[])
+          : [];
 
         sendSSE(controller, "done", {
           state: lastState,
           processedEvents: allProcessedEvents,
+          wars: finalWars,
           done: false,
         });
 

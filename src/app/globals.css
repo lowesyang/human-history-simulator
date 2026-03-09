@@ -183,3 +183,17 @@ input[type="range"]::-moz-range-thumb {
   @apply opacity-100;
   transform: translateX(-50%) translateY(0);
 }
+
+/* War marker pulse */
+@keyframes warPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.15); }
+}
+
+.war-marker-btn {
+  z-index: 10;
+}
+
+.war-marker-btn:hover {
+  z-index: 20;
+}

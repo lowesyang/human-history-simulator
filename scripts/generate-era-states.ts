@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import { v4 as uuidv4 } from "uuid";
 
 interface EraPreset {
   id: string;
@@ -13,6 +12,7 @@ interface EraPreset {
 
 const SEED_DIR = path.join(process.cwd(), "src", "data", "seed");
 const TERRITORY_PATH = path.join(process.cwd(), "public", "geojson", "territories.json");
+const LLM_TIMEOUT_MS = 300_000;
 
 const ERA_PRESETS: EraPreset[] = [
   { id: "bronze-age", name: { zh: "青铜时代", en: "Bronze Age" }, year: -1600, month: 1, era: { zh: "青铜时代中期", en: "Middle Bronze Age" }, description: { zh: "商朝建立，巴比伦帝国鼎盛", en: "Shang Dynasty founded, Babylonian Empire at peak" } },
@@ -36,425 +36,519 @@ const ERA_PRESETS: EraPreset[] = [
   { id: "modern-era", name: { zh: "现代世界", en: "Modern World" }, year: 2000, month: 1, era: { zh: "千禧之交", en: "Turn of the Millennium" }, description: { zh: "千年之交，互联网时代来临", en: "Turn of millennium, Internet age dawning" } },
 ];
 
-const LLM_TIMEOUT_MS = 900_000;
-const VALID_CATEGORIES = new Set([
-  "war", "dynasty", "invention", "trade", "religion",
-  "disaster", "natural_disaster", "exploration", "diplomacy", "migration", "other",
-]);
+// ─── LLM call ──────────────────────────────────────────────────────────────
 
-function getTerritoryList(): string {
-  const raw = fs.readFileSync(TERRITORY_PATH, "utf-8");
-  const territories = JSON.parse(raw) as Record<string, Record<string, unknown>>;
-  const lines: string[] = [];
-  for (const [id, scales] of Object.entries(territories)) {
-    const scaleKeys = Object.keys(scales).join(", ");
-    lines.push(`- ${id}: [${scaleKeys}]`);
+function extractJSON(text: string): string {
+  const m = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (m) return m[1].trim();
+  const b = text.indexOf("{");
+  const a = text.indexOf("[");
+  let s: number, e: number;
+  if (b === -1 && a === -1) return text;
+  if (b === -1) { s = a; e = text.lastIndexOf("]"); }
+  else if (a === -1) { s = b; e = text.lastIndexOf("}"); }
+  else if (a < b) { s = a; e = text.lastIndexOf("]"); }
+  else { s = b; e = text.lastIndexOf("}"); }
+  return s !== -1 && e >= s ? text.slice(s, e + 1) : text;
+}
+
+async function callLLM(
+  apiKey: string,
+  model: string,
+  prompts: { system: string; user: string },
+  label: string,
+  maxRetries = 2
+): Promise<string> {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    const ctrl = new AbortController();
+    let th = setTimeout(() => ctrl.abort(), LLM_TIMEOUT_MS);
+    const reset = () => { clearTimeout(th); th = setTimeout(() => ctrl.abort(), LLM_TIMEOUT_MS); };
+    let content = "";
+    let tokens = 0;
+    try {
+      const resp = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://human-history-simulator.local",
+          "X-Title": "Human Civilization Simulator",
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: "system", content: prompts.system },
+            { role: "user", content: prompts.user },
+          ],
+          temperature: 0.7,
+          stream: true,
+        }),
+        signal: ctrl.signal,
+      });
+      if (!resp.ok) throw new Error(`API ${resp.status}: ${await resp.text()}`);
+      const reader = resp.body!.getReader();
+      const dec = new TextDecoder();
+      let buf = "";
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        reset();
+        buf += dec.decode(value, { stream: true });
+        const lines = buf.split("\n");
+        buf = lines.pop() || "";
+        for (const line of lines) {
+          if (!line.startsWith("data: ")) continue;
+          const p = line.slice(6).trim();
+          if (p === "[DONE]") continue;
+          try {
+            const d = JSON.parse(p).choices?.[0]?.delta?.content;
+            if (d) { content += d; tokens++; }
+          } catch { }
+        }
+      }
+      clearTimeout(th);
+      return content;
+    } catch (err) {
+      clearTimeout(th);
+      if (attempt < maxRetries) {
+        console.log(`    [${label}] attempt ${attempt + 1} failed (${tokens} tok), retry...`);
+        await new Promise(r => setTimeout(r, 2000));
+        continue;
+      }
+      throw new Error(`[${label}] failed: ${err instanceof Error ? err.message : String(err)}`);
+    }
   }
-  return lines.join("\n");
+  throw new Error("unreachable");
 }
 
-function buildPrompts(preset: EraPreset, territoryList: string) {
-  const yearRange = `${preset.year} to ${preset.year + 29}`;
-  const system = `You are a world history state generator for a civilization simulation.
-Your task is to generate the complete world state for a specific historical period.
+// ─── Step 1: generate skeleton ─────────────────────────────────────────────
 
-You must return a JSON object with two top-level keys:
-1. "state" — the world state with era, summary, and regions
-2. "events" — an array of 20-30 historical events spanning the next 30 years from the start date
+interface SkeletonRegion {
+  id: string;
+  name: { zh: string; en: string };
+  territoryId: string;
+  territoryScale: string;
+  civilizationName: { zh: string; en: string };
+  type: string;
+  ruler: { zh: string; en: string };
+  rulerTitle: { zh: string; en: string };
+  dynasty: { zh: string; en: string };
+  capital: { zh: string; en: string };
+  governmentForm: string;
+  population: number;
+  status: string;
+  description: { zh: string; en: string };
+}
 
-## State Format
-The "state" object must contain:
-- "era": { "zh": "...", "en": "..." }
-- "summary": { "zh": "...", "en": "..." }
-- "regions": [ ... array of Region objects ... ]
+function buildSkeletonPrompt(preset: EraPreset, territoryList: string) {
+  const yearLabel = preset.year < 0 ? `${Math.abs(preset.year)} BCE` : `${preset.year} CE`;
+  const system = `You generate a SKELETON listing ALL civilizations, kingdoms, empires, and notable polities that existed in a given historical period.
 
-Each Region must have ALL of these fields:
+Return a JSON object:
 {
-  "id": "territory_based_id",
-  "name": { "zh": "...", "en": "..." },
-  "territoryId": "from_territory_list",
-  "territoryScale": "xs|sm|md|lg|xl",
-  "civilization": {
-    "name": { "zh": "...", "en": "..." },
-    "type": "empire|kingdom|city_state|tribal|nomadic|trade_network|theocracy|republic",
-    "ruler": { "zh": "...", "en": "..." },
-    "rulerTitle": { "zh": "...", "en": "..." },
-    "dynasty": { "zh": "...", "en": "..." },
-    "capital": { "zh": "...", "en": "..." },
-    "governmentForm": "absolute_monarchy|feudal_monarchy|constitutional_monarchy|theocratic_monarchy|oligarchy|aristocratic_republic|democracy|tribal_council|military_dictatorship|colonial_administration|communist_state|federal_republic|confederation|other",
-    "socialStructure": { "zh": "...", "en": "..." },
-    "rulingClass": { "zh": "...", "en": "..." },
-    "succession": { "zh": "...", "en": "..." }
-  },
-  "government": {
-    "structure": { "zh": "...", "en": "..." },
-    "departments": [{ "name": { "zh": "...", "en": "..." }, "function": { "zh": "...", "en": "..." }, "headCount": 0 }],
-    "totalOfficials": 0,
-    "localAdmin": { "zh": "...", "en": "..." },
-    "legalSystem": { "zh": "...", "en": "..." },
-    "taxationSystem": { "zh": "...", "en": "..." }
-  },
-  "culture": {
-    "religion": { "zh": "...", "en": "..." },
-    "philosophy": { "zh": "...", "en": "..." },
-    "writingSystem": { "zh": "...", "en": "..." },
-    "culturalAchievements": { "zh": "...", "en": "..." },
-    "languageFamily": { "zh": "...", "en": "..." }
-  },
-  "economy": {
-    "level": 1-10,
-    "gdpEstimate": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "goldKg": 0, "silverKg": 0 },
-    "gdpPerCapita": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "goldKg": 0, "silverKg": 0 },
-    "gdpDescription": { "zh": "...", "en": "..." },
-    "mainIndustries": { "zh": "...", "en": "..." },
-    "tradeGoods": { "zh": "...", "en": "..." },
-    "currency": { "name": { "zh": "...", "en": "..." }, "type": "commodity|metal_weight|coin|paper|fiat", "unitName": { "zh": "...", "en": "..." } },
-    "householdWealth": { "zh": "...", "en": "..." },
-    "averageIncome": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "silverKg": 0 },
-    "foreignTradeVolume": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "goldKg": 0, "silverKg": 0 },
-    "economicSystem": { "zh": "...", "en": "..." }
-  },
-  "finances": {
-    "annualRevenue": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "goldKg": 0, "silverKg": 0 },
-    "annualExpenditure": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "goldKg": 0, "silverKg": 0 },
-    "surplus": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "goldKg": 0, "silverKg": 0 },
-    "revenueBreakdown": [{ "source": { "zh": "...", "en": "..." }, "amount": { "amount": 0, "unit": { "zh": "...", "en": "..." } }, "percentage": 0 }],
-    "expenditureBreakdown": [{ "category": { "zh": "...", "en": "..." }, "amount": { "amount": 0, "unit": { "zh": "...", "en": "..." } }, "percentage": 0 }],
-    "treasury": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "goldKg": 0, "silverKg": 0 },
-    "treasuryDescription": { "zh": "...", "en": "..." },
-    "fiscalPolicy": { "zh": "...", "en": "..." }
-  },
-  "military": {
-    "level": 1-10,
-    "totalTroops": 0,
-    "standingArmy": 0,
-    "reserves": 0,
-    "branches": [{ "name": { "zh": "...", "en": "..." }, "count": 0, "description": { "zh": "...", "en": "..." } }],
-    "commandStructure": { "commanderInChief": { "zh": "...", "en": "..." }, "totalGenerals": 0 },
-    "technology": { "zh": "...", "en": "..." },
-    "annualMilitarySpending": { "amount": 0, "unit": { "zh": "...", "en": "..." }, "silverKg": 0 },
-    "militarySpendingPctGdp": 0,
-    "threats": { "zh": "...", "en": "..." }
-  },
-  "demographics": {
-    "population": 0,
-    "populationDescription": { "zh": "...", "en": "..." },
-    "urbanPopulation": 0,
-    "urbanizationRate": 0,
-    "majorCities": [{ "name": { "zh": "...", "en": "..." }, "population": 0 }],
-    "socialClasses": { "zh": "...", "en": "..." }
-  },
-  "diplomacy": {
-    "allies": { "zh": "...", "en": "..." },
-    "enemies": { "zh": "...", "en": "..." },
-    "foreignPolicy": { "zh": "...", "en": "..." }
-  },
-  "technology": {
-    "level": 1-10,
-    "era": { "zh": "...", "en": "..." },
-    "keyInnovations": { "zh": "...", "en": "..." }
-  },
-  "assessment": {
-    "strengths": { "zh": "...", "en": "..." },
-    "weaknesses": { "zh": "...", "en": "..." },
-    "outlook": { "zh": "...", "en": "..." }
-  },
-  "status": "thriving|stable|declining|conflict|collapsed",
-  "description": { "zh": "...", "en": "..." }
+  "era": {"zh":"...","en":"..."},
+  "summary": {"zh":"...","en":"..."},
+  "regions": [
+    {
+      "id": "unique_id",
+      "name": {"zh":"...","en":"..."},
+      "territoryId": "from_territory_list",
+      "territoryScale": "xs|sm|md|lg|xl",
+      "civilizationName": {"zh":"...","en":"..."},
+      "type": "empire|kingdom|city_state|tribal|nomadic|trade_network|theocracy|republic",
+      "ruler": {"zh":"...","en":"..."},
+      "rulerTitle": {"zh":"...","en":"..."},
+      "dynasty": {"zh":"...","en":"..."},
+      "capital": {"zh":"...","en":"..."},
+      "governmentForm": "absolute_monarchy|feudal_monarchy|constitutional_monarchy|theocratic_monarchy|oligarchy|aristocratic_republic|democracy|tribal_council|military_dictatorship|colonial_administration|communist_state|federal_republic|confederation|other",
+      "population": 1000000,
+      "status": "thriving|stable|declining|conflict|collapsed",
+      "description": {"zh":"one-line summary","en":"one-line summary"}
+    }
+  ]
 }
 
-## Events Format
-Each event in the "events" array:
-{
-  "timestamp": { "year": number, "month": number },
-  "title": { "zh": "...", "en": "..." },
-  "description": { "zh": "...", "en": "..." },
-  "affectedRegions": ["region_id"],
-  "category": "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|other"
-}
+Rules:
+1. ALL text bilingual {"zh":"...","en":"..."}
+2. Include ALL civilizations/polities that existed in this year, covering EVERY populated region on the map. For periods like the Warring States, list each state separately. For fragmented regions, list key kingdoms individually. AIM for 20-35 entries — do NOT limit yourself to just the "major" civilizations.
+3. Coverage must include: East Asia, South/Southeast Asia, Central/West Asia, Europe, Africa, Americas (if applicable).
+4. Use ONLY territoryIds from the list. One territoryId may be used by multiple polities at different scales.
+5. Be historically accurate (rulers, capitals, dynasties)
+6. Return ONLY valid JSON, no markdown
 
-## Rules
-1. ALL text fields MUST be bilingual: { "zh": "...", "en": "..." }
-2. Include 6-12 major civilizations that existed in this period
-3. Use ONLY territoryIds from the available list
-4. Be historically accurate with real names, titles, rulers, capitals
-5. Each region's id should be based on its territoryId (e.g., "china_central" -> "tang_dynasty")
-6. Military troops = 1-5% of population
-7. finances must be internally consistent
-8. Include 3-4 natural disasters in events
-9. Events should span years ${yearRange}, covering all major regions
-10. Return ONLY valid JSON, no markdown, no explanation
-
-## Available Territory Templates
+Available Territories:
 ${territoryList}`;
 
-  const yearLabel = preset.year < 0 ? `${Math.abs(preset.year)} BCE` : `${preset.year} CE`;
-  const user = `Generate the complete world state for the year ${yearLabel}, the "${preset.name.en}" period.
-
+  const user = `Generate a COMPREHENSIVE civilization skeleton for year ${yearLabel}, "${preset.name.en}".
 Context: ${preset.description.en}
-
-Create a historically accurate snapshot of all major civilizations that existed at this time, including their political systems, economies, militaries, cultures, and diplomatic relationships. Also generate 20-30 historical events for the next 30 years.
-
-Return compact JSON: {"state":{...},"events":[...]}`;
+Include every notable polity worldwide, not just the largest empires. Cover all regions of the map.`;
 
   return { system, user };
 }
 
-function extractJSON(text: string): string {
-  const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  if (jsonMatch) return jsonMatch[1].trim();
-  const braceStart = text.indexOf("{");
-  const braceEnd = text.lastIndexOf("}");
-  if (braceStart !== -1 && braceEnd !== -1) return text.slice(braceStart, braceEnd + 1);
-  return text;
+// ─── Step 2: generate detail for one region ─────────────────────────────────
+
+function buildDetailPrompt(
+  preset: EraPreset,
+  skeleton: SkeletonRegion,
+  allRegionNames: string[]
+) {
+  const yearLabel = preset.year < 0 ? `${Math.abs(preset.year)} BCE` : `${preset.year} CE`;
+  const neighbors = allRegionNames.filter(n => n !== skeleton.name.en).join(", ");
+
+  const system = `You generate DETAILED data for ONE civilization in year ${yearLabel}.
+Given a skeleton, fill in all detail sections. Return ONLY a JSON object with these exact keys:
+
+{
+  "civilization": {
+    "name":{"zh":"...","en":"..."}, "type":"...",
+    "ruler":{"zh":"...","en":"..."}, "rulerTitle":{"zh":"...","en":"..."},
+    "dynasty":{"zh":"...","en":"..."}, "capital":{"zh":"...","en":"..."},
+    "governmentForm":{"zh":"...","en":"..."},
+    "socialStructure":{"zh":"...","en":"..."}, "rulingClass":{"zh":"...","en":"..."}, "succession":{"zh":"...","en":"..."}
+  },
+  "government": {
+    "structure":{"zh":"...","en":"..."},
+    "departments":[{"name":{"zh":"...","en":"..."},"function":{"zh":"...","en":"..."},"headCount":100}],
+    "totalOfficials":5000,
+    "localAdmin":{"zh":"...","en":"..."}, "legalSystem":{"zh":"...","en":"..."}, "taxationSystem":{"zh":"...","en":"..."}
+  },
+  "culture": {
+    "religion":{"zh":"...","en":"..."}, "philosophy":{"zh":"...","en":"..."},
+    "writingSystem":{"zh":"...","en":"..."}, "culturalAchievements":{"zh":"...","en":"..."}, "languageFamily":{"zh":"...","en":"..."}
+  },
+  "economy": {
+    "level":5,
+    "gdpEstimate":{"amount":0,"unit":{"zh":"...","en":"..."},"goldKg":0,"silverKg":0},
+    "gdpPerCapita":{"amount":0,"unit":{"zh":"...","en":"..."},"goldKg":0,"silverKg":0},
+    "gdpDescription":{"zh":"...","en":"..."}, "mainIndustries":{"zh":"...","en":"..."}, "tradeGoods":{"zh":"...","en":"..."},
+    "currency":{"name":{"zh":"...","en":"..."},"type":"commodity|metal_weight|coin|paper|fiat","unitName":{"zh":"...","en":"..."}},
+    "householdWealth":{"zh":"...","en":"..."}, "averageIncome":{"amount":0,"unit":{"zh":"...","en":"..."},"silverKg":0},
+    "foreignTradeVolume":{"amount":0,"unit":{"zh":"...","en":"..."},"goldKg":0,"silverKg":0},
+    "economicSystem":{"zh":"...","en":"..."}
+  },
+  "finances": {
+    "annualRevenue":{"amount":0,"unit":{"zh":"...","en":"..."},"goldKg":0,"silverKg":0},
+    "annualExpenditure":{"amount":0,"unit":{"zh":"...","en":"..."},"goldKg":0,"silverKg":0},
+    "surplus":{"amount":0,"unit":{"zh":"...","en":"..."},"goldKg":0,"silverKg":0},
+    "revenueBreakdown":[{"source":{"zh":"...","en":"..."},"amount":{"amount":0,"unit":{"zh":"...","en":"..."}},"percentage":30}],
+    "expenditureBreakdown":[{"category":{"zh":"...","en":"..."},"amount":{"amount":0,"unit":{"zh":"...","en":"..."}},"percentage":30}],
+    "treasury":{"amount":0,"unit":{"zh":"...","en":"..."},"goldKg":0,"silverKg":0},
+    "treasuryDescription":{"zh":"...","en":"..."}, "fiscalPolicy":{"zh":"...","en":"..."}
+  },
+  "military": {
+    "level":5, "totalTroops":50000, "standingArmy":30000, "reserves":20000,
+    "branches":[{"name":{"zh":"...","en":"..."},"count":10000,"description":{"zh":"...","en":"..."}}],
+    "commandStructure":{"commanderInChief":{"zh":"...","en":"..."},"totalGenerals":10},
+    "technology":{"zh":"...","en":"..."},
+    "annualMilitarySpending":{"amount":0,"unit":{"zh":"...","en":"..."},"silverKg":0},
+    "militarySpendingPctGdp":5, "threats":{"zh":"...","en":"..."}
+  },
+  "demographics": {
+    "population":${skeleton.population}, "populationDescription":{"zh":"...","en":"..."},
+    "urbanPopulation":100000, "urbanizationRate":10,
+    "majorCities":[{"name":{"zh":"...","en":"..."},"population":50000}],
+    "socialClasses":{"zh":"...","en":"..."}
+  },
+  "diplomacy": {
+    "allies":{"zh":"...","en":"..."}, "enemies":{"zh":"...","en":"..."}, "foreignPolicy":{"zh":"...","en":"..."}
+  },
+  "technology": {
+    "level":5, "era":{"zh":"...","en":"..."}, "keyInnovations":{"zh":"...","en":"..."}
+  },
+  "assessment": {
+    "strengths":{"zh":"...","en":"..."}, "weaknesses":{"zh":"...","en":"..."}, "outlook":{"zh":"...","en":"..."}
+  }
 }
 
-function repairTruncatedJSON(json: string): string {
-  let repaired = json.replace(/,\s*([}\]])/g, "$1");
-  const openBraces = (repaired.match(/{/g) || []).length;
-  const closeBraces = (repaired.match(/}/g) || []).length;
-  const openBrackets = (repaired.match(/\[/g) || []).length;
-  const closeBrackets = (repaired.match(/]/g) || []).length;
-  for (let i = 0; i < openBrackets - closeBrackets; i++) repaired += "]";
-  for (let i = 0; i < openBraces - closeBraces; i++) repaired += "}";
-  return repaired;
+Rules:
+1. ALL text bilingual {"zh":"...","en":"..."}
+2. Military troops = 1-5% of population (${skeleton.population})
+3. Be historically accurate
+4. Return ONLY valid JSON, no markdown`;
+
+  const user = `Generate full detail for: ${skeleton.civilizationName.en} (${skeleton.type})
+Year: ${yearLabel}, Era: ${preset.name.en}
+Ruler: ${skeleton.ruler.en} (${skeleton.rulerTitle.en}), Dynasty: ${skeleton.dynasty.en}
+Capital: ${skeleton.capital.en}, Population: ${skeleton.population.toLocaleString()}
+Status: ${skeleton.status}
+Context: ${skeleton.description.en}
+Neighboring civilizations: ${neighbors}`;
+
+  return { system, user };
 }
 
-async function generateEraState(
+// ─── Generation pipeline ────────────────────────────────────────────────────
+
+async function generateEra(
   preset: EraPreset,
   apiKey: string,
   model: string,
-  territoryList: string
+  territoryList: string,
+  detailConcurrency: number
 ) {
-  const { system, user } = buildPrompts(preset, territoryList);
-  const controller = new AbortController();
-  let timeoutHandle = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
+  const t0 = Date.now();
 
-  function resetTimeout() {
-    clearTimeout(timeoutHandle);
-    timeoutHandle = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
-  }
+  // Step 1: Skeleton
+  console.log(`  [Step 1] Generating skeleton...`);
+  const skeletonRaw = await callLLM(apiKey, model, buildSkeletonPrompt(preset, territoryList), `${preset.id}/skeleton`);
+  const skeletonJson = extractJSON(skeletonRaw);
+  const skeletonData = JSON.parse(skeletonJson) as {
+    era: { zh: string; en: string };
+    summary: { zh: string; en: string };
+    regions: SkeletonRegion[];
+  };
 
-  let fullContent = "";
-  let tokenCount = 0;
+  if (!skeletonData.regions?.length) throw new Error("Empty skeleton");
+  console.log(`  [Step 1] Got ${skeletonData.regions.length} civilizations (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
 
-  try {
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://human-history-simulator.local",
-        "X-Title": "Human Civilization Simulator - Era Generator",
-      },
-      body: JSON.stringify({
-        model,
-        messages: [
-          { role: "system", content: system },
-          { role: "user", content: user },
-        ],
-        temperature: 0.7,
-        stream: true,
-      }),
-      signal: controller.signal,
-    });
+  const allNames = skeletonData.regions.map(r => r.civilizationName?.en || r.name.en);
 
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`LLM API error ${response.status}: ${errText}`);
-    }
+  // Step 2: Detail for each region (parallel with concurrency limit)
+  console.log(`  [Step 2] Generating details (concurrency=${detailConcurrency})...`);
+  const fullRegions: Record<string, unknown>[] = [];
+  const queue = [...skeletonData.regions];
+  let completed = 0;
 
-    const reader = response.body!.getReader();
-    const decoder = new TextDecoder();
-    let sseBuffer = "";
+  async function worker() {
+    while (queue.length > 0) {
+      const skel = queue.shift()!;
+      const label = skel.name.en;
+      try {
+        const detailRaw = await callLLM(
+          apiKey, model,
+          buildDetailPrompt(preset, skel, allNames),
+          `${preset.id}/${skel.id}`
+        );
+        const detailJson = extractJSON(detailRaw);
+        const detail = JSON.parse(detailJson);
 
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      resetTimeout();
-      sseBuffer += decoder.decode(value, { stream: true });
-      const lines = sseBuffer.split("\n");
-      sseBuffer = lines.pop() || "";
-      for (const line of lines) {
-        if (!line.startsWith("data: ")) continue;
-        const payload = line.slice(6).trim();
-        if (payload === "[DONE]") continue;
-        try {
-          const chunk = JSON.parse(payload);
-          const delta = chunk.choices?.[0]?.delta?.content;
-          if (delta) {
-            fullContent += delta;
-            tokenCount++;
-            if (tokenCount % 500 === 0) process.stdout.write(`  ...${tokenCount} tokens\r`);
-          }
-        } catch { /* skip */ }
+        fullRegions.push({
+          id: skel.id,
+          name: skel.name,
+          territoryId: skel.territoryId,
+          territoryScale: skel.territoryScale,
+          ...detail,
+          status: skel.status,
+          description: skel.description,
+        });
+
+        completed++;
+        console.log(`    ✓ ${label} (${completed}/${skeletonData.regions.length})`);
+      } catch (err) {
+        completed++;
+        console.log(`    ✗ ${label} — ${err instanceof Error ? err.message.slice(0, 80) : "error"}`);
+        // Create a minimal placeholder so the era isn't broken
+        fullRegions.push(createMinimalRegion(skel));
       }
     }
-
-    console.log(`  Received ${tokenCount} tokens, ${fullContent.length} chars`);
-  } catch (err) {
-    clearTimeout(timeoutHandle);
-    if (fullContent.length > 5000) {
-      console.log(`  Stream interrupted after ${tokenCount} tokens (${fullContent.length} chars), attempting partial recovery...`);
-    } else {
-      throw new Error(`terminated after ${tokenCount} tokens: ${err instanceof Error ? err.message : String(err)}`);
-    }
-  } finally {
-    clearTimeout(timeoutHandle);
   }
 
-  return parseAndBuild(preset, fullContent);
-}
-
-function parseAndBuild(preset: EraPreset, fullContent: string) {
-  const jsonStr = extractJSON(fullContent);
-  let parsed: { state: { era?: object; summary?: object; regions: Record<string, unknown>[] }; events: Record<string, unknown>[] };
-  try {
-    parsed = JSON.parse(jsonStr);
-  } catch {
-    console.log("  JSON parse failed, attempting repair...");
-    parsed = JSON.parse(repairTruncatedJSON(jsonStr));
-    console.log("  Repair successful");
+  const workers: Promise<void>[] = [];
+  for (let i = 0; i < Math.min(detailConcurrency, queue.length); i++) {
+    workers.push(worker());
   }
+  await Promise.all(workers);
 
-  if (!parsed.state?.regions) throw new Error("Invalid response: missing state.regions");
-
-  const regionIds = new Set(parsed.state.regions.map((r) => r.id as string));
-  const events = (parsed.events || []).map((evt) => {
-    const ts = evt.timestamp as { year: number; month: number };
-    const affected = ((evt.affectedRegions as string[]) || []).filter((r) => regionIds.has(r));
-    if (affected.length === 0 && regionIds.size > 0) affected.push([...regionIds][0]);
-    const category = VALID_CATEGORIES.has(evt.category as string) ? (evt.category as string) : "other";
-    return {
-      id: `evt-era-${uuidv4().slice(0, 8)}`,
-      timestamp: { year: ts.year, month: ts.month || 6 },
-      title: evt.title,
-      description: evt.description,
-      affectedRegions: affected,
-      category,
-      status: "pending",
-    };
-  });
+  const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
+  console.log(`  Done: ${fullRegions.length} regions in ${elapsed}s`);
 
   return {
     id: `state-y${preset.year}-m${preset.month}-initial`,
     timestamp: { year: preset.year, month: preset.month },
-    era: parsed.state.era || preset.era,
-    summary: parsed.state.summary,
-    regions: parsed.state.regions,
-    events,
+    era: skeletonData.era || preset.era,
+    summary: skeletonData.summary,
+    regions: fullRegions,
   };
+}
+
+function createMinimalRegion(skel: SkeletonRegion): Record<string, unknown> {
+  return {
+    id: skel.id,
+    name: skel.name,
+    territoryId: skel.territoryId,
+    territoryScale: skel.territoryScale,
+    civilization: {
+      name: skel.civilizationName,
+      type: skel.type,
+      ruler: skel.ruler,
+      rulerTitle: skel.rulerTitle,
+      dynasty: skel.dynasty,
+      capital: skel.capital,
+      governmentForm: skel.governmentForm,
+      socialStructure: { zh: "—", en: "—" },
+      rulingClass: { zh: "—", en: "—" },
+      succession: { zh: "—", en: "—" },
+    },
+    government: {
+      structure: { zh: "—", en: "—" },
+      departments: [],
+      totalOfficials: 0,
+      localAdmin: { zh: "—", en: "—" },
+      legalSystem: { zh: "—", en: "—" },
+      taxationSystem: { zh: "—", en: "—" },
+    },
+    culture: {
+      religion: { zh: "—", en: "—" },
+      culturalAchievements: { zh: "—", en: "—" },
+      languageFamily: { zh: "—", en: "—" },
+    },
+    economy: {
+      level: 3,
+      gdpEstimate: { amount: 0, unit: { zh: "—", en: "—" } },
+      gdpPerCapita: { amount: 0, unit: { zh: "—", en: "—" } },
+      gdpDescription: { zh: "—", en: "—" },
+      mainIndustries: { zh: "—", en: "—" },
+      tradeGoods: { zh: "—", en: "—" },
+      currency: { name: { zh: "—", en: "—" }, type: "commodity", unitName: { zh: "—", en: "—" } },
+      householdWealth: { zh: "—", en: "—" },
+      averageIncome: { amount: 0, unit: { zh: "—", en: "—" } },
+      foreignTradeVolume: { amount: 0, unit: { zh: "—", en: "—" } },
+      economicSystem: { zh: "—", en: "—" },
+    },
+    finances: {
+      annualRevenue: { amount: 0, unit: { zh: "—", en: "—" } },
+      annualExpenditure: { amount: 0, unit: { zh: "—", en: "—" } },
+      surplus: { amount: 0, unit: { zh: "—", en: "—" } },
+      revenueBreakdown: [],
+      expenditureBreakdown: [],
+      treasury: { amount: 0, unit: { zh: "—", en: "—" } },
+      treasuryDescription: { zh: "—", en: "—" },
+      fiscalPolicy: { zh: "—", en: "—" },
+    },
+    military: {
+      level: 3,
+      totalTroops: Math.round(skel.population * 0.02),
+      standingArmy: Math.round(skel.population * 0.01),
+      reserves: Math.round(skel.population * 0.01),
+      branches: [],
+      commandStructure: { totalGenerals: 0 },
+      technology: { zh: "—", en: "—" },
+      annualMilitarySpending: { amount: 0, unit: { zh: "—", en: "—" } },
+      militarySpendingPctGdp: 0,
+    },
+    demographics: {
+      population: skel.population,
+      populationDescription: { zh: "—", en: "—" },
+      urbanPopulation: Math.round(skel.population * 0.1),
+      urbanizationRate: 10,
+      majorCities: [],
+      socialClasses: { zh: "—", en: "—" },
+    },
+    diplomacy: {
+      allies: { zh: "—", en: "—" },
+      enemies: { zh: "—", en: "—" },
+      foreignPolicy: { zh: "—", en: "—" },
+    },
+    technology: {
+      level: 3,
+      era: { zh: "—", en: "—" },
+      keyInnovations: { zh: "—", en: "—" },
+    },
+    assessment: {
+      strengths: { zh: "—", en: "—" },
+      weaknesses: { zh: "—", en: "—" },
+      outlook: { zh: "—", en: "—" },
+    },
+    status: skel.status,
+    description: skel.description,
+  };
+}
+
+// ─── Helpers ────────────────────────────────────────────────────────────────
+
+function getTerritoryList(): string {
+  const raw = fs.readFileSync(TERRITORY_PATH, "utf-8");
+  const t = JSON.parse(raw) as Record<string, Record<string, unknown>>;
+  return Object.entries(t).map(([id, scales]) => `- ${id}: [${Object.keys(scales).join(", ")}]`).join("\n");
 }
 
 function loadEnv() {
   const envPath = path.join(process.cwd(), ".env.local");
-  if (fs.existsSync(envPath)) {
-    const content = fs.readFileSync(envPath, "utf-8");
-    for (const line of content.split("\n")) {
-      const match = line.match(/^(\w+)=(.*)$/);
-      if (match && !process.env[match[1]]) process.env[match[1]] = match[2];
-    }
+  if (!fs.existsSync(envPath)) return;
+  for (const line of fs.readFileSync(envPath, "utf-8").split("\n")) {
+    const m = line.match(/^(\w+)=(.*)$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
   }
 }
+
+// ─── Main ───────────────────────────────────────────────────────────────────
 
 async function main() {
   loadEnv();
   const apiKey = process.env.OPENROUTER_API_KEY;
-  if (!apiKey) { console.error("Error: OPENROUTER_API_KEY not set."); process.exit(1); }
+  if (!apiKey) { console.error("OPENROUTER_API_KEY not set"); process.exit(1); }
   const model = process.env.LLM_MODEL || "openai/gpt-5.4";
+
   const args = process.argv.slice(2);
   const forceFlag = args.includes("--force");
-  const parallelFlag = args.includes("--parallel");
-  const concurrencyArg = args.find((a) => a.startsWith("--concurrency="));
-  const concurrency = concurrencyArg ? parseInt(concurrencyArg.split("=")[1], 10) : 5;
-  const specificEras = args.filter((a) => !a.startsWith("--"));
+  const concurrencyArg = args.find(a => a.startsWith("--concurrency="));
+  const eraConcurrency = concurrencyArg ? parseInt(concurrencyArg.split("=")[1], 10) : 3;
+  const detailConcArg = args.find(a => a.startsWith("--detail-concurrency="));
+  const detailConcurrency = detailConcArg ? parseInt(detailConcArg.split("=")[1], 10) : 5;
+  const specificEras = args.filter(a => !a.startsWith("--"));
 
-  const erasToGenerate = specificEras.length > 0
-    ? ERA_PRESETS.filter((e) => specificEras.includes(e.id))
+  const erasToProcess = specificEras.length > 0
+    ? ERA_PRESETS.filter(e => specificEras.includes(e.id))
     : ERA_PRESETS;
-
-  if (specificEras.length > 0) {
-    const unknown = specificEras.filter((id) => !ERA_PRESETS.find((e) => e.id === id));
-    if (unknown.length > 0) {
-      console.error(`Unknown era IDs: ${unknown.join(", ")}`);
-      console.log("Available: " + ERA_PRESETS.map((e) => e.id).join(", "));
-      process.exit(1);
-    }
-  }
 
   if (!fs.existsSync(SEED_DIR)) fs.mkdirSync(SEED_DIR, { recursive: true });
   const territoryList = getTerritoryList();
 
-  const toGenerate: EraPreset[] = [];
+  const toGen: EraPreset[] = [];
   const skipped: string[] = [];
-
-  for (const preset of erasToGenerate) {
-    const outPath = path.join(SEED_DIR, `era-${preset.id}.json`);
-    if (fs.existsSync(outPath) && !forceFlag) {
-      skipped.push(preset.id);
+  for (const p of erasToProcess) {
+    if (fs.existsSync(path.join(SEED_DIR, `era-${p.id}.json`)) && !forceFlag) {
+      skipped.push(p.id);
     } else {
-      toGenerate.push(preset);
+      toGen.push(p);
     }
   }
 
-  console.log(`\n=== Era State Generator ===`);
+  console.log(`\n=== Era State Generator (2-step: skeleton → detail) ===`);
   console.log(`Model: ${model}`);
-  console.log(`Mode: ${parallelFlag ? `parallel (concurrency=${concurrency})` : "sequential"}`);
-  console.log(`To generate: ${toGenerate.length}`);
-  console.log(`Skipped (already exist): ${skipped.length}${skipped.length > 0 ? " — " + skipped.join(", ") : ""}`);
-  console.log(`Force regenerate: ${forceFlag}\n`);
+  console.log(`Era concurrency: ${eraConcurrency}, Detail concurrency: ${detailConcurrency}`);
+  console.log(`To generate: ${toGen.length}, Skipped: ${skipped.length}`);
+  if (skipped.length) console.log(`  Existing: ${skipped.join(", ")}`);
+  console.log(`Force: ${forceFlag}\n`);
 
-  if (toGenerate.length === 0) {
-    console.log("Nothing to generate. Use --force to regenerate existing files.");
-    return;
-  }
+  if (!toGen.length) { console.log("Nothing to generate."); return; }
 
   const succeeded: string[] = [];
   const failed: string[] = [];
 
-  async function processOne(preset: EraPreset): Promise<void> {
+  async function processEra(preset: EraPreset) {
     const outPath = path.join(SEED_DIR, `era-${preset.id}.json`);
-    const t0 = Date.now();
-    console.log(`[START] ${preset.name.en} (${preset.id}) — year ${preset.year}`);
+    console.log(`\n[ERA] ${preset.name.en} (${preset.id}) — ${preset.year < 0 ? Math.abs(preset.year) + " BCE" : preset.year + " CE"}`);
     try {
-      const result = await generateEraState(preset, apiKey!, model, territoryList);
+      const result = await generateEra(preset, apiKey!, model, territoryList, detailConcurrency);
       fs.writeFileSync(outPath, JSON.stringify(result, null, 2), "utf-8");
-      const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
-      console.log(`[DONE]  ${preset.name.en} — ${result.regions.length} regions, ${result.events.length} events (${elapsed}s)`);
+      console.log(`[ERA] ✓ ${preset.name.en} — ${result.regions.length} regions saved`);
       succeeded.push(preset.id);
     } catch (err) {
-      const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
-      console.error(`[FAIL]  ${preset.name.en} — ${err instanceof Error ? err.message : String(err)} (${elapsed}s)`);
+      console.error(`[ERA] ✗ ${preset.name.en} — ${err instanceof Error ? err.message : String(err)}`);
       failed.push(preset.id);
     }
   }
 
-  if (parallelFlag) {
-    const queue = [...toGenerate];
-    const workers: Promise<void>[] = [];
-    for (let i = 0; i < Math.min(concurrency, queue.length); i++) {
-      workers.push((async () => {
-        while (queue.length > 0) {
-          const preset = queue.shift()!;
-          await processOne(preset);
-        }
-      })());
-    }
-    await Promise.all(workers);
-  } else {
-    for (const preset of toGenerate) {
-      await processOne(preset);
-    }
+  const queue = [...toGen];
+  const workers: Promise<void>[] = [];
+  for (let i = 0; i < Math.min(eraConcurrency, queue.length); i++) {
+    workers.push((async () => {
+      while (queue.length > 0) {
+        await processEra(queue.shift()!);
+      }
+    })());
   }
+  await Promise.all(workers);
 
   console.log(`\n=== Summary ===`);
   console.log(`  Succeeded: ${succeeded.length} — ${succeeded.join(", ") || "none"}`);
   console.log(`  Skipped:   ${skipped.length} — ${skipped.join(", ") || "none"}`);
   console.log(`  Failed:    ${failed.length} — ${failed.join(", ") || "none"}`);
-  if (failed.length > 0) {
-    console.log(`\nTo retry failed eras:`);
-    console.log(`  npx tsx scripts/generate-era-states.ts --parallel ${failed.join(" ")}`);
+  if (failed.length) {
+    console.log(`\nRetry: npx tsx scripts/generate-era-states.ts ${failed.join(" ")}`);
   }
 }
 
-main().catch((err) => { console.error("Fatal error:", err); process.exit(1); });
+main().catch(err => { console.error("Fatal:", err); process.exit(1); });

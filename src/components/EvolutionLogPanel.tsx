@@ -50,11 +50,11 @@ export default function EvolutionLogPanel() {
   const setShowLogPanel = useWorldStore((s) => s.setShowLogPanel);
   const { locale, t, localized } = useLocale();
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [expandedEpochs, setExpandedEpochs] = useState<Set<number>>(new Set());
+  const [expandedEpoch, setExpandedEpoch] = useState<number | null>(null);
 
   useEffect(() => {
     if (evolutionLogs.length > 0) {
-      setExpandedEpochs((prev) => new Set([...prev, evolutionLogs.length - 1]));
+      setExpandedEpoch(evolutionLogs.length - 1);
     }
   }, [evolutionLogs.length]);
 
@@ -65,12 +65,7 @@ export default function EvolutionLogPanel() {
   }, [evolutionLogs.length]);
 
   const toggleEpoch = (idx: number) => {
-    setExpandedEpochs((prev) => {
-      const next = new Set(prev);
-      if (next.has(idx)) next.delete(idx);
-      else next.add(idx);
-      return next;
-    });
+    setExpandedEpoch((prev) => (prev === idx ? null : idx));
   };
 
   return (
@@ -109,7 +104,7 @@ export default function EvolutionLogPanel() {
                   key={`${log.targetYear}-${originalIdx}`}
                   log={log}
                   index={originalIdx}
-                  expanded={expandedEpochs.has(originalIdx)}
+                  expanded={expandedEpoch === originalIdx}
                   onToggle={() => toggleEpoch(originalIdx)}
                   locale={locale}
                   t={t}
@@ -226,7 +221,7 @@ function RegionChangeBlock({
   t: (key: string) => string;
   localized: (text: { zh: string; en: string } | undefined) => string;
 }) {
-  const [expanded, setExpanded] = useState(region.isDirect);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="rounded border border-border-subtle overflow-hidden">

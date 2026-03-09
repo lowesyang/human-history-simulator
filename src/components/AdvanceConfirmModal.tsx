@@ -100,6 +100,47 @@ export default function AdvanceConfirmModal({
     store.setFutureEvents(updatedFuture);
 
     setCustomFormYear(null);
+    setEditingEvent(undefined);
+  };
+
+  const [editingEvent, setEditingEvent] = useState<HistoricalEvent | undefined>(undefined);
+
+  const handleEditEvent = (evt: HistoricalEvent) => {
+    setEditingEvent(evt);
+    setCustomFormYear(evt.timestamp.year);
+  };
+
+  const handleCustomEventUpdated = (evt: HistoricalEvent) => {
+    const updated = events.map((e) => e.id === evt.id ? evt : e).sort(
+      (a, b) => a.timestamp.year - b.timestamp.year || a.timestamp.month - b.timestamp.month
+    );
+    setEvents(updated);
+
+    const store = useWorldStore.getState();
+    const currentFuture = store.futureEvents;
+    const updatedFuture = currentFuture.map((e) => e.id === evt.id ? evt : e).sort(
+      (a, b) => a.timestamp.year - b.timestamp.year || a.timestamp.month - b.timestamp.month
+    );
+    store.setFutureEvents(updatedFuture);
+
+    setCustomFormYear(null);
+    setEditingEvent(undefined);
+  };
+
+  const handleDeleteEvent = async (evtId: string) => {
+    if (!confirm(t("events.deleteConfirm"))) return;
+    try {
+      const resp = await fetch(`/api/events/custom?id=${evtId}`, { method: "DELETE" });
+      if (resp.ok) {
+        setEvents((prev) => prev.filter((e) => e.id !== evtId));
+        setUnchecked((prev) => { const n = new Set(prev); n.delete(evtId); return n; });
+
+        const store = useWorldStore.getState();
+        store.setFutureEvents(store.futureEvents.filter((e) => e.id !== evtId));
+      }
+    } catch (err) {
+      console.error("Delete event failed:", err);
+    }
   };
 
   if (events.length === 0) {
@@ -169,7 +210,7 @@ export default function AdvanceConfirmModal({
                   {t("advance.eventCount").replace("{count}", String(yearEvents.length))}
                 </span>
                 <button
-                  onClick={() => setCustomFormYear(year)}
+                  onClick={() => { setEditingEvent(undefined); setCustomFormYear(year); }}
                   className="ml-auto text-text-muted hover:text-accent-gold transition-colors px-1 py-0.5 rounded hover:bg-bg-tertiary/60"
                   title={t("events.addCustom")}
                 >
@@ -206,6 +247,11 @@ export default function AdvanceConfirmModal({
                           >
                             {t(`events.category.${evt.category}`)}
                           </span>
+                          {evt.isCustom && (
+                            <span className="shrink-0 text-xs px-1 py-0.5 rounded bg-accent-gold/20 text-accent-gold font-medium">
+                              {t("events.customTag")}
+                            </span>
+                          )}
                           <span className="text-xs font-semibold text-text-primary truncate">
                             {localized(evt.title)}
                           </span>
@@ -217,6 +263,28 @@ export default function AdvanceConfirmModal({
                           {localized(evt.description)}
                         </div>
                       </div>
+                      {evt.isCustom && evt.status === "pending" && (
+                        <div className="flex items-center gap-0.5 shrink-0">
+                          <button
+                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleEditEvent(evt); }}
+                            className="p-1 rounded text-text-muted hover:text-accent-gold hover:bg-bg-tertiary/60 transition-colors"
+                            title={t("events.editCustom")}
+                          >
+                            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M11.5 2.5l2 2L5 13H3v-2z" />
+                            </svg>
+                          </button>
+                          <button
+                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleDeleteEvent(evt.id); }}
+                            className="p-1 rounded text-text-muted hover:text-red-400 hover:bg-red-400/10 transition-colors"
+                            title={t("events.deleteCustom")}
+                          >
+                            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M3 5h10M5.5 5V3.5a1 1 0 011-1h3a1 1 0 011 1V5M6.5 7.5v4M9.5 7.5v4M4.5 5l.5 8a1 1 0 001 1h4a1 1 0 001-1l.5-8" />
+                            </svg>
+                          </button>
+                        </div>
+                      )}
                     </label>
                   );
                 })}
@@ -251,8 +319,9 @@ export default function AdvanceConfirmModal({
           regions={currentState?.regions ?? []}
           frontier={frontier}
           defaultYear={customFormYear}
-          onSubmit={handleCustomEventAdded}
-          onCancel={() => setCustomFormYear(null)}
+          editEvent={editingEvent}
+          onSubmit={editingEvent ? handleCustomEventUpdated : handleCustomEventAdded}
+          onCancel={() => { setCustomFormYear(null); setEditingEvent(undefined); }}
         />
       )}
     </div>
@@ -266,6 +335,7 @@ function InlineCustomEventModal({
   regions,
   frontier,
   defaultYear,
+  editEvent,
   onSubmit,
   onCancel,
 }: {
@@ -275,17 +345,20 @@ function InlineCustomEventModal({
   regions: { id: string; name: { zh: string; en: string } }[];
   frontier: { year: number; month: number };
   defaultYear: number;
+  editEvent?: HistoricalEvent;
   onSubmit: (evt: HistoricalEvent) => void;
   onCancel: () => void;
 }) {
+  const isEdit = !!editEvent;
   const minYear = frontier.year;
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [era, setEra] = useState<"bce" | "ce">(defaultYear <= 0 ? "bce" : "ce");
-  const [yearAbs, setYearAbs] = useState(Math.abs(defaultYear));
-  const [month, setMonth] = useState(1);
-  const [category, setCategory] = useState<EventCategory>("other");
-  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
+  const initYear = editEvent ? editEvent.timestamp.year : defaultYear;
+  const [title, setTitle] = useState(editEvent ? localized(editEvent.title) : "");
+  const [description, setDescription] = useState(editEvent ? localized(editEvent.description) : "");
+  const [era, setEra] = useState<"bce" | "ce">(initYear <= 0 ? "bce" : "ce");
+  const [yearAbs, setYearAbs] = useState(Math.abs(initYear));
+  const [month, setMonth] = useState(editEvent ? editEvent.timestamp.month : 1);
+  const [category, setCategory] = useState<EventCategory>(editEvent ? editEvent.category : "other");
+  const [selectedRegions, setSelectedRegions] = useState<string[]>(editEvent ? editEvent.affectedRegions : []);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -314,6 +387,7 @@ function InlineCustomEventModal({
     setSubmitting(true);
     try {
       const body = {
+        ...(isEdit ? { id: editEvent.id } : {}),
         title: { zh: title.trim(), en: title.trim() },
         description: { zh: description.trim() || title.trim(), en: description.trim() || title.trim() },
         affectedRegions: selectedRegions.length > 0 ? selectedRegions : (regions.length > 0 ? [regions[0].id] : []),
@@ -322,7 +396,7 @@ function InlineCustomEventModal({
       };
 
       const resp = await fetch("/api/events/custom", {
-        method: "POST",
+        method: isEdit ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
@@ -360,7 +434,7 @@ function InlineCustomEventModal({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="px-5 py-3.5 border-b border-border-subtle flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-text-primary">{t("events.addCustom")}</h2>
+          <h2 className="text-sm font-semibold text-text-primary">{t(isEdit ? "events.editCustom" : "events.addCustom")}</h2>
           <button onClick={onCancel} className="text-text-muted hover:text-text-primary transition-colors">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
               <line x1="4" y1="4" x2="12" y2="12" /><line x1="12" y1="4" x2="4" y2="12" />
@@ -481,7 +555,7 @@ function InlineCustomEventModal({
             {submitting ? (
               <span className="inline-block w-3 h-3 border-2 border-accent-gold border-t-transparent rounded-full animate-spin" />
             ) : (
-              t("events.customSubmit")
+              t(isEdit ? "events.customSave" : "events.customSubmit")
             )}
           </button>
         </div>

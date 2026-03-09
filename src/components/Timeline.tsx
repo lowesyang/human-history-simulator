@@ -6,29 +6,15 @@ import { useLocale } from "@/lib/i18n";
 import AdvanceConfirmModal from "./AdvanceConfirmModal";
 import type { HistoricalEvent } from "@/lib/types";
 
-function formatYearMonth(year: number, month: number, locale: "zh" | "en") {
+function formatYear(year: number, locale: "zh" | "en") {
   if (locale === "zh") {
     return year < 0
-      ? `公元前${Math.abs(year)}年 ${month}月`
-      : `公元${year}年 ${month}月`;
+      ? `公元前${Math.abs(year)}年`
+      : `公元${year}年`;
   }
   return year < 0
-    ? `${Math.abs(year)} BCE M${month}`
-    : `${year} CE M${month}`;
-}
-
-function yearMonthToNum(year: number, month: number): number {
-  return year * 12 + month;
-}
-
-function numToYearMonth(num: number): { year: number; month: number } {
-  let year = Math.floor(num / 12);
-  let month = num - year * 12;
-  if (month <= 0) {
-    year -= 1;
-    month += 12;
-  }
-  return { year, month };
+    ? `${Math.abs(year)} BCE`
+    : `${year} CE`;
 }
 
 function getRegionNames(ids: string[], locale: "zh" | "en"): string {
@@ -108,14 +94,13 @@ export default function Timeline() {
   const [isFetchingPreview, setIsFetchingPreview] = useState(false);
 
   const originTime = useWorldStore((s) => s.originTime);
-  const startNum = yearMonthToNum(originTime.year, originTime.month);
-  const frontierNum = yearMonthToNum(frontier.year, frontier.month);
-  const viewNum = yearMonthToNum(viewingTime.year, viewingTime.month);
+  const startYear = originTime.year;
+  const frontierYear = frontier.year;
+  const viewYear = viewingTime.year;
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = parseInt(e.target.value, 10);
-    const { year, month } = numToYearMonth(val);
-    setViewingTime({ year, month });
+    const year = parseInt(e.target.value, 10);
+    setViewingTime({ year, month: 1 });
   };
 
   const handleAdvanceClick = async () => {
@@ -165,6 +150,7 @@ export default function Timeline() {
       const reader = resp.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
+      let currentEvent = "";
 
       while (true) {
         const { done, value } = await reader.read();
@@ -174,7 +160,6 @@ export default function Timeline() {
         const lines = buffer.split("\n");
         buffer = lines.pop() || "";
 
-        let currentEvent = "";
         for (const line of lines) {
           if (line.startsWith("event: ")) {
             currentEvent = line.slice(7);
@@ -184,6 +169,23 @@ export default function Timeline() {
               handleSSEEvent(currentEvent, data, locale);
             } catch {
               // ignore parse errors for partial chunks
+            }
+            currentEvent = "";
+          }
+        }
+      }
+
+      if (buffer.trim()) {
+        const remaining = buffer.split("\n");
+        for (const line of remaining) {
+          if (line.startsWith("event: ")) {
+            currentEvent = line.slice(7);
+          } else if (line.startsWith("data: ") && currentEvent) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              handleSSEEvent(currentEvent, data, locale);
+            } catch {
+              // ignore
             }
             currentEvent = "";
           }
@@ -199,6 +201,7 @@ export default function Timeline() {
       useWorldStore.getState().setLoadingStatus("");
       useWorldStore.getState().setAbortController(null);
       useWorldStore.getState().clearLlmStreams();
+      useWorldStore.getState().setPreAdvanceYear(null);
     }
   };
 
@@ -207,12 +210,45 @@ export default function Timeline() {
     setPreviewEvents([]);
   };
 
-  const handleAbort = () => {
-    const ctrl = useWorldStore.getState().abortController;
+  const handleAbort = async () => {
+    const store = useWorldStore.getState();
+    const ctrl = store.abortController;
     if (ctrl) ctrl.abort();
-    useWorldStore.getState().setIsLoading(false);
-    useWorldStore.getState().setLoadingStatus("");
-    useWorldStore.getState().setAbortController(null);
+    store.setIsLoading(false);
+    store.setLoadingStatus("");
+    store.setAbortController(null);
+
+    const rollbackYear = store.preAdvanceYear;
+    store.setPreAdvanceYear(null);
+
+    if (rollbackYear != null) {
+      try {
+        const resp = await fetch("/api/playback/rollback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ year: rollbackYear }),
+        });
+        const data = await resp.json();
+        if (data.state) {
+          store.setCurrentState(data.state);
+          store.setFrontier(data.state.timestamp);
+          store.setViewingTime(data.state.timestamp);
+        }
+        if (data.events) {
+          store.setPastEvents(
+            data.events.filter((e: { status: string }) => e.status === "processed")
+          );
+          store.setFutureEvents(
+            data.events.filter((e: { status: string }) => e.status === "pending")
+          );
+        }
+        if (data.wars) {
+          store.setActiveWars(data.wars);
+        }
+      } catch (err) {
+        console.error("Rollback failed:", err);
+      }
+    }
   };
 
   const handleReset = async () => {
@@ -327,21 +363,21 @@ export default function Timeline() {
 
         {/* Current time display */}
         <div className="font-mono text-sm whitespace-nowrap min-w-[180px] text-accent-gold">
-          {formatYearMonth(viewingTime.year, viewingTime.month, locale)}
+          {formatYear(viewingTime.year, locale)}
         </div>
 
         {/* Timeline slider */}
         <div className="flex-1 relative">
           <input
             type="range"
-            min={startNum}
-            max={frontierNum}
-            value={Math.min(viewNum, frontierNum)}
+            min={startYear}
+            max={frontierYear}
+            value={Math.min(viewYear, frontierYear)}
             onChange={handleSliderChange}
             className="w-full h-1 rounded-lg appearance-none cursor-pointer accent-accent-gold"
             style={{
-              background: `linear-gradient(to right, var(--color-accent-gold) ${((Math.min(viewNum, frontierNum) - startNum) /
-                Math.max(frontierNum - startNum, 1)) *
+              background: `linear-gradient(to right, var(--color-accent-gold) ${((Math.min(viewYear, frontierYear) - startYear) /
+                Math.max(frontierYear - startYear, 1)) *
                 100
                 }%, var(--color-bg-tertiary) 0%)`,
             }}
@@ -377,6 +413,12 @@ function handleSSEEvent(
   const store = useWorldStore.getState();
 
   switch (event) {
+    case "pre_advance": {
+      const preAdvanceYear = data.preAdvanceYear as number | null;
+      store.setPreAdvanceYear(preAdvanceYear);
+      break;
+    }
+
     case "progress":
       store.setLoadingStatus(formatStageText(data, locale));
       break;
@@ -407,6 +449,10 @@ function handleSSEEvent(
           state.timestamp as import("@/lib/types").YearMonth
         );
       }
+      const epochWars = data.wars as import("@/lib/types").War[] | undefined;
+      if (epochWars) {
+        store.setActiveWars(epochWars);
+      }
       break;
     }
 
@@ -420,6 +466,10 @@ function handleSSEEvent(
         store.setViewingTime(
           state.timestamp as import("@/lib/types").YearMonth
         );
+      }
+      const doneWars = data.wars as import("@/lib/types").War[] | undefined;
+      if (doneWars) {
+        store.setActiveWars(doneWars);
       }
       refreshEvents();
       break;

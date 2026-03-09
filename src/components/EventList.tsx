@@ -37,6 +37,10 @@ export default function EventList() {
   const setFutureEvents = useWorldStore((s) => s.setFutureEvents);
   const isGeneratingEvents = useWorldStore((s) => s.isGeneratingEvents);
   const setIsGeneratingEvents = useWorldStore((s) => s.setIsGeneratingEvents);
+  const setEventGenAbortController = useWorldStore((s) => s.setEventGenAbortController);
+  const isLoading = useWorldStore((s) => s.isLoading);
+  const needsEvents = useWorldStore((s) => s.needsEvents);
+  const setNeedsEvents = useWorldStore((s) => s.setNeedsEvents);
   const currentState = useWorldStore((s) => s.currentState);
   const frontier = useWorldStore((s) => s.frontier);
   const { locale, t, localized } = useLocale();
@@ -69,11 +73,38 @@ export default function EventList() {
     }
   }, [futureEvents.length, isGeneratingEvents, tab]);
 
-  const handleGenerateEvents = async () => {
+  const [showGenerateConfirm, setShowGenerateConfirm] = useState(false);
+
+  const handleAbortGeneration = () => {
+    const ctrl = useWorldStore.getState().eventGenAbortController;
+    if (ctrl) {
+      ctrl.abort();
+    }
+  };
+
+  const handleGenerateEvents = async (params: {
+    count: number;
+    startYear: number;
+    eventsPerYear: number;
+    categories?: string[];
+    focusRegions?: string[];
+    detailLevel: string;
+  }) => {
+    setShowGenerateConfirm(false);
     setIsGeneratingEvents(true);
+    setNeedsEvents(false);
     setGenStatus(t("events.generating"));
+
+    const abortCtrl = new AbortController();
+    setEventGenAbortController(abortCtrl);
+
     try {
-      const resp = await fetch("/api/events/generate", { method: "POST" });
+      const resp = await fetch("/api/events/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(params),
+        signal: abortCtrl.signal,
+      });
 
       if (!resp.ok || !resp.body) {
         console.error("Generate events error:", resp.status);
@@ -84,6 +115,7 @@ export default function EventList() {
       const reader = resp.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
+      let currentEvent = "";
 
       while (true) {
         const { done, value } = await reader.read();
@@ -93,7 +125,6 @@ export default function EventList() {
         const lines = buffer.split("\n");
         buffer = lines.pop() || "";
 
-        let currentEvent = "";
         for (const line of lines) {
           if (line.startsWith("event: ")) {
             currentEvent = line.slice(7);
@@ -104,11 +135,10 @@ export default function EventList() {
                 const stage = data.stage as string;
                 if (stage === "calling_llm") {
                   const sy = data.startYear as number;
-                  const ey = data.endYear as number;
                   const fmtY = (y: number) => y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`;
                   setGenStatus(locale === "zh"
-                    ? `AI 正在生成 ${fmtY(sy)}–${fmtY(ey)} 的事件...`
-                    : `Generating ${fmtY(sy)}–${fmtY(ey)}...`);
+                    ? `AI 正在生成 ${fmtY(sy)} 起的重大历史事件...`
+                    : `Generating significant events from ${fmtY(sy)}...`);
                 } else if (stage === "streaming") {
                   setGenStatus(locale === "zh"
                     ? `正在接收数据...`
@@ -142,12 +172,51 @@ export default function EventList() {
           }
         }
       }
+
+      if (buffer.trim()) {
+        const remaining = buffer.split("\n");
+        for (const line of remaining) {
+          if (line.startsWith("event: ")) {
+            currentEvent = line.slice(7);
+          } else if (line.startsWith("data: ") && currentEvent) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              if (currentEvent === "done") {
+                setGenStatus("");
+              } else if (currentEvent === "new_event") {
+                const evt: HistoricalEvent = {
+                  id: data.id,
+                  timestamp: data.timestamp,
+                  title: data.title,
+                  description: data.description,
+                  affectedRegions: data.affectedRegions,
+                  category: data.category,
+                  status: "pending",
+                };
+                const current = useWorldStore.getState().futureEvents;
+                setFutureEvents([...current, evt]);
+              } else if (currentEvent === "error") {
+                console.error("Event generation error:", data.error);
+                setGenStatus("");
+              }
+            } catch {
+              // skip
+            }
+            currentEvent = "";
+          }
+        }
+      }
     } catch (err) {
-      console.error("Generate events failed:", err);
-      setGenStatus("");
+      if (err instanceof DOMException && err.name === "AbortError") {
+        setGenStatus(locale === "zh" ? "已中止生成" : "Generation aborted");
+        setTimeout(() => setGenStatus(""), 2000);
+      } else {
+        console.error("Generate events failed:", err);
+        setGenStatus("");
+      }
     } finally {
       setIsGeneratingEvents(false);
-      setGenStatus("");
+      setEventGenAbortController(null);
     }
   };
 
@@ -158,6 +227,50 @@ export default function EventList() {
     );
     setFutureEvents(updated);
     setShowCustomForm(false);
+    setEditingEvent(undefined);
+  };
+
+  const [editingEvent, setEditingEvent] = useState<HistoricalEvent | undefined>(undefined);
+
+  const handleEditEvent = (evt: HistoricalEvent) => {
+    setEditingEvent(evt);
+    setCustomFormDefaultYear(evt.timestamp.year);
+    setShowCustomForm(true);
+  };
+
+  const handleCustomEventUpdated = (evt: HistoricalEvent) => {
+    const current = useWorldStore.getState().futureEvents;
+    const updated = current.map((e) => e.id === evt.id ? evt : e).sort(
+      (a, b) => a.timestamp.year - b.timestamp.year || a.timestamp.month - b.timestamp.month
+    );
+    setFutureEvents(updated);
+    setShowCustomForm(false);
+    setEditingEvent(undefined);
+  };
+
+  const handleDeleteEvent = async (evtId: string) => {
+    if (!confirm(t("events.deleteConfirm"))) return;
+    try {
+      const resp = await fetch(`/api/events/custom?id=${evtId}`, { method: "DELETE" });
+      if (resp.ok) {
+        const current = useWorldStore.getState().futureEvents;
+        setFutureEvents(current.filter((e) => e.id !== evtId));
+      }
+    } catch (err) {
+      console.error("Delete event failed:", err);
+    }
+  };
+
+  const handleClearPendingEvents = async () => {
+    if (!confirm(t("events.clearConfirm"))) return;
+    try {
+      const resp = await fetch("/api/events", { method: "DELETE" });
+      if (resp.ok) {
+        setFutureEvents([]);
+      }
+    } catch (err) {
+      console.error("Clear pending events failed:", err);
+    }
   };
 
   return (
@@ -187,7 +300,27 @@ export default function EventList() {
 
         {/* Events */}
         <div ref={scrollRef} className="flex-1 overflow-y-auto px-2 py-2 space-y-3">
-          {sortedYears.length === 0 && (
+          {needsEvents && tab === "future" && sortedYears.length === 0 && !isGeneratingEvents && (
+            <div className="flex flex-col items-center gap-3 py-6 px-3 text-center">
+              <div className="w-10 h-10 rounded-full bg-accent-gold/10 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-accent-gold">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <div className="space-y-1.5">
+                <p className="text-xs font-semibold text-text-primary">
+                  {locale === "zh" ? "世界状态已加载" : "World state loaded"}
+                </p>
+                <p className="text-xs text-text-muted leading-relaxed">
+                  {locale === "zh"
+                    ? "请点击下方按钮生成该时期的历史事件，以便开始模拟演进"
+                    : "Click the button below to generate historical events for this era to start the simulation"}
+                </p>
+              </div>
+            </div>
+          )}
+          {sortedYears.length === 0 && !needsEvents && (
             <div className="text-center text-xs py-8 text-text-muted">
               {t("events.empty")}
             </div>
@@ -198,8 +331,9 @@ export default function EventList() {
                 <span>{formatYear(year, locale)}</span>
                 {tab === "future" && (
                   <button
-                    onClick={() => { setCustomFormDefaultYear(year); setShowCustomForm(true); }}
-                    className="text-text-muted hover:text-accent-gold transition-colors px-1 py-0.5 rounded hover:bg-bg-tertiary/60"
+                    onClick={() => { setCustomFormDefaultYear(year); setEditingEvent(undefined); setShowCustomForm(true); }}
+                    disabled={isLoading}
+                    className="text-text-muted hover:text-accent-gold transition-colors px-1 py-0.5 rounded hover:bg-bg-tertiary/60 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:text-text-muted disabled:hover:bg-transparent"
                     title={t("events.addCustom")}
                   >
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -211,7 +345,17 @@ export default function EventList() {
               </div>
               <div className="space-y-1">
                 {groupedByYear[year].map((evt) => (
-                  <EventCard key={evt.id} event={evt} locale={locale} localized={localized} t={t} />
+                  <EventCard
+                    key={evt.id}
+                    event={evt}
+                    locale={locale}
+                    localized={localized}
+                    t={t}
+                    showActions={tab === "future"}
+                    isSimulating={isLoading}
+                    onEdit={handleEditEvent}
+                    onDelete={handleDeleteEvent}
+                  />
                 ))}
               </div>
             </div>
@@ -221,31 +365,55 @@ export default function EventList() {
         {/* Bottom controls — only visible on future tab */}
         {tab === "future" && (
           <div className="shrink-0 px-2 py-2 border-t border-border-subtle space-y-2">
-            <button
-              onClick={handleGenerateEvents}
-              disabled={isGeneratingEvents}
-              className={`w-full py-2 rounded text-xs font-semibold transition-all border ${isGeneratingEvents
-                ? "bg-bg-tertiary text-text-muted border-border-subtle cursor-not-allowed"
-                : "bg-transparent text-accent-gold border-accent-gold hover:bg-accent-gold/10"
-                }`}
-              title={t("events.generateHint")}
-            >
-              {isGeneratingEvents ? (
+            {isGeneratingEvents ? (
+              <button
+                onClick={handleAbortGeneration}
+                disabled={isLoading}
+                className="w-full py-2 rounded text-xs font-semibold transition-all border bg-bg-tertiary text-text-muted border-border-subtle hover:border-red-500/60 hover:text-red-400 cursor-pointer group disabled:opacity-40 disabled:cursor-not-allowed"
+                title={t("events.abortGenerate")}
+              >
                 <span className="flex items-center justify-center gap-2">
-                  <span className="inline-block w-3 h-3 border-2 border-accent-gold border-t-transparent rounded-full animate-spin" />
-                  <span className="truncate">{genStatus || t("events.generating")}</span>
+                  <span className="inline-block w-3 h-3 border-2 border-accent-gold border-t-transparent rounded-full animate-spin group-hover:hidden" />
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" className="hidden group-hover:block text-red-400">
+                    <rect x="3" y="3" width="10" height="10" rx="1.5" />
+                  </svg>
+                  <span className="truncate">
+                    <span className="group-hover:hidden">{genStatus || t("events.generating")}</span>
+                    <span className="hidden group-hover:inline text-red-400">{t("events.abortGenerate")}</span>
+                  </span>
                 </span>
-              ) : (
-                t("events.generate")
-              )}
-            </button>
+              </button>
+            ) : (
+              <button
+                onClick={() => setShowGenerateConfirm(true)}
+                disabled={isLoading}
+                className={`w-full py-2 rounded text-xs font-semibold transition-all border ${needsEvents
+                  ? "bg-accent-gold/10 text-accent-gold border-accent-gold animate-pulse"
+                  : "bg-transparent text-accent-gold border-accent-gold hover:bg-accent-gold/10"
+                  } disabled:opacity-40 disabled:cursor-not-allowed disabled:animate-none`}
+                title={t("events.generateHint")}
+              >
+                {t("events.generate")}
+              </button>
+            )}
 
             <button
-              onClick={() => { setCustomFormDefaultYear(undefined); setShowCustomForm(true); }}
-              className="w-full py-1.5 rounded text-xs font-semibold transition-all border bg-transparent text-text-secondary border-border-subtle hover:border-accent-gold hover:text-accent-gold"
+              onClick={() => { setCustomFormDefaultYear(undefined); setEditingEvent(undefined); setShowCustomForm(true); }}
+              disabled={isLoading}
+              className="w-full py-1.5 rounded text-xs font-semibold transition-all border bg-transparent text-text-secondary border-border-subtle hover:border-accent-gold hover:text-accent-gold disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-border-subtle disabled:hover:text-text-secondary"
             >
               + {t("events.addCustom")}
             </button>
+
+            {futureEvents.length > 0 && !isGeneratingEvents && (
+              <button
+                onClick={handleClearPendingEvents}
+                disabled={isLoading}
+                className="w-full py-1.5 rounded text-xs font-semibold transition-all border bg-transparent text-text-muted border-border-subtle hover:border-red-500/60 hover:text-red-400 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-border-subtle disabled:hover:text-text-muted"
+              >
+                {t("events.clearAll")}
+              </button>
+            )}
           </div>
         )}
       </div>
@@ -258,11 +426,329 @@ export default function EventList() {
           regions={currentState?.regions ?? []}
           frontier={frontier}
           defaultYear={customFormDefaultYear}
-          onSubmit={handleCustomEventAdded}
-          onCancel={() => setShowCustomForm(false)}
+          editEvent={editingEvent}
+          onSubmit={editingEvent ? handleCustomEventUpdated : handleCustomEventAdded}
+          onCancel={() => { setShowCustomForm(false); setEditingEvent(undefined); }}
+        />
+      )}
+
+      {showGenerateConfirm && (
+        <GenerateConfirmModal
+          locale={locale}
+          t={t}
+          frontier={frontier}
+          regions={currentState?.regions ?? []}
+          onConfirm={handleGenerateEvents}
+          onCancel={() => setShowGenerateConfirm(false)}
         />
       )}
     </>
+  );
+}
+
+function GenerateConfirmModal({
+  locale,
+  t,
+  frontier,
+  regions,
+  onConfirm,
+  onCancel,
+}: {
+  locale: "zh" | "en";
+  t: (key: string) => string;
+  frontier: { year: number; month: number };
+  regions: { id: string; name: { zh: string; en: string } }[];
+  onConfirm: (params: {
+    count: number;
+    startYear: number;
+    eventsPerYear: number;
+    categories?: string[];
+    focusRegions?: string[];
+    detailLevel: string;
+  }) => void;
+  onCancel: () => void;
+}) {
+  const defaultStart = frontier.year + 1;
+  const [count, setCount] = useState(20);
+  const [startEra, setStartEra] = useState<"bce" | "ce">(defaultStart <= 0 ? "bce" : "ce");
+  const [startAbs, setStartAbs] = useState(Math.abs(defaultStart));
+  const [eventsPerYear, setEventsPerYear] = useState(3);
+  const [detailLevel, setDetailLevel] = useState<"brief" | "normal" | "detailed">("normal");
+  const [showAdvanced, setShowAdvanced] = useState(false);
+
+  const allCategories: { id: string; label: string }[] = [
+    { id: "war", label: t("events.category.war") },
+    { id: "dynasty", label: t("events.category.dynasty") },
+    { id: "invention", label: t("events.category.invention") },
+    { id: "trade", label: t("events.category.trade") },
+    { id: "religion", label: t("events.category.religion") },
+    { id: "disaster", label: t("events.category.disaster") },
+    { id: "natural_disaster", label: t("events.category.natural_disaster") },
+    { id: "exploration", label: t("events.category.exploration") },
+    { id: "diplomacy", label: t("events.category.diplomacy") },
+    { id: "migration", label: t("events.category.migration") },
+  ];
+  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
+    new Set(allCategories.map((c) => c.id))
+  );
+  const [focusRegions, setFocusRegions] = useState<Set<string>>(new Set());
+
+  const toggleCategory = (id: string) => {
+    setSelectedCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) { if (next.size > 1) next.delete(id); }
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const toggleFocusRegion = (id: string) => {
+    setFocusRegions((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const computeStart = () => startEra === "bce" ? -startAbs : startAbs;
+
+  const fmtYear = (y: number) => {
+    if (locale === "zh") return y < 0 ? `公元前${Math.abs(y)}年` : `公元${y}年`;
+    return y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`;
+  };
+
+  const allCategoriesSelected = selectedCategories.size === allCategories.length;
+
+  const handleConfirm = () => {
+    onConfirm({
+      count,
+      startYear: computeStart(),
+      eventsPerYear,
+      categories: allCategoriesSelected ? undefined : [...selectedCategories],
+      focusRegions: focusRegions.size > 0 ? [...focusRegions] : undefined,
+      detailLevel,
+    });
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center" onClick={onCancel}>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div
+        className="relative rounded-lg max-w-md w-full mx-4 border border-border-active/50 shadow-2xl max-h-[85vh] flex flex-col"
+        style={{ background: "linear-gradient(to bottom, #1e1b16, #151310)" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="px-5 py-3.5 border-b border-border-subtle flex items-center justify-between shrink-0">
+          <h2 className="text-sm font-semibold text-text-primary">{t("events.generateConfirmTitle")}</h2>
+          <button onClick={onCancel} className="text-text-muted hover:text-text-primary transition-colors">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              <line x1="4" y1="4" x2="12" y2="12" /><line x1="12" y1="4" x2="4" y2="12" />
+            </svg>
+          </button>
+        </div>
+
+        <div className="px-5 py-4 space-y-4 overflow-y-auto flex-1">
+          <p className="text-xs text-text-muted">{t("events.generateConfirmDesc")}</p>
+
+          {/* Count slider */}
+          <div>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="text-xs font-medium text-text-secondary">{t("events.generateCount")}</label>
+              <span className="text-xs font-semibold text-accent-gold">{count} {t("events.generateCountUnit")}</span>
+            </div>
+            <input
+              type="range"
+              min={1}
+              max={50}
+              value={count}
+              onChange={(e) => setCount(Number(e.target.value))}
+              className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-accent-gold bg-bg-tertiary"
+              style={{ accentColor: "var(--accent-gold, #d4a853)" }}
+            />
+            <div className="flex justify-between text-xs text-text-muted mt-1">
+              <span>1</span>
+              <span>25</span>
+              <span>50</span>
+            </div>
+          </div>
+
+          {/* Start year */}
+          <div>
+            <label className="text-xs font-medium text-text-secondary block mb-1.5">{t("events.generateStartYear")}</label>
+            <div className="flex">
+              <select
+                value={startEra}
+                onChange={(e) => setStartEra(e.target.value as "bce" | "ce")}
+                className="shrink-0 bg-bg-primary/60 border border-r-0 border-border-subtle rounded-l-md px-2 py-1.5 text-xs text-text-primary focus:outline-none focus:border-accent-gold/60 transition-all"
+              >
+                <option value="bce">{t("events.customEra.bce")}</option>
+                <option value="ce">{t("events.customEra.ce")}</option>
+              </select>
+              <input
+                type="number"
+                min={1}
+                value={startAbs}
+                onChange={(e) => setStartAbs(Math.max(1, Number(e.target.value)))}
+                className="w-full bg-bg-primary/60 border border-border-subtle rounded-r-md px-2 py-1.5 text-xs text-text-primary focus:outline-none focus:border-accent-gold/60 focus:ring-1 focus:ring-accent-gold/20 transition-all"
+              />
+            </div>
+          </div>
+
+          {/* Events per year */}
+          <div>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="text-xs font-medium text-text-secondary">{t("events.prefEventsPerYear")}</label>
+              <span className="text-xs font-semibold text-accent-gold">{t("events.prefMaxPerYear").replace("{n}", String(eventsPerYear))}</span>
+            </div>
+            <input
+              type="range"
+              min={1}
+              max={5}
+              value={eventsPerYear}
+              onChange={(e) => setEventsPerYear(Number(e.target.value))}
+              className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-accent-gold bg-bg-tertiary"
+              style={{ accentColor: "var(--accent-gold, #d4a853)" }}
+            />
+            <div className="flex justify-between text-xs text-text-muted mt-1">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+            </div>
+          </div>
+
+          {/* Detail level */}
+          <div>
+            <label className="text-xs font-medium text-text-secondary block mb-1.5">{t("events.prefDetailLevel")}</label>
+            <div className="flex gap-1.5">
+              {([
+                { id: "brief" as const, label: t("events.prefDetail.brief") },
+                { id: "normal" as const, label: t("events.prefDetail.normal") },
+                { id: "detailed" as const, label: t("events.prefDetail.detailed") },
+              ]).map((opt) => (
+                <button
+                  key={opt.id}
+                  onClick={() => setDetailLevel(opt.id)}
+                  className={`flex-1 py-1.5 rounded text-xs font-medium transition-all border ${detailLevel === opt.id
+                    ? "bg-accent-gold/15 border-accent-gold/50 text-accent-gold"
+                    : "bg-bg-primary/40 border-border-subtle text-text-muted hover:border-border-active hover:text-text-secondary"
+                    }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Advanced toggle */}
+          <button
+            onClick={() => setShowAdvanced(!showAdvanced)}
+            className="flex items-center gap-1.5 text-xs text-text-muted hover:text-text-secondary transition-colors"
+          >
+            <svg
+              width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+              className={`transition-transform duration-200 ${showAdvanced ? "rotate-90" : ""}`}
+            >
+              <polyline points="6 4 10 8 6 12" />
+            </svg>
+            {t("events.prefAdvanced")}
+          </button>
+
+          {showAdvanced && (
+            <div className="space-y-4 pl-1">
+              {/* Category filter */}
+              <div>
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="text-xs font-medium text-text-secondary">{t("events.prefCategories")}</label>
+                  <button
+                    onClick={() => {
+                      if (allCategoriesSelected) {
+                        setSelectedCategories(new Set(["war"]));
+                      } else {
+                        setSelectedCategories(new Set(allCategories.map((c) => c.id)));
+                      }
+                    }}
+                    className="text-xs text-text-muted hover:text-accent-gold transition-colors"
+                  >
+                    {allCategoriesSelected ? t("advance.deselectAll") : t("advance.selectAll")}
+                  </button>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {allCategories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => toggleCategory(cat.id)}
+                      className={`px-2 py-1 rounded-full text-xs transition-all border ${selectedCategories.has(cat.id)
+                        ? "bg-accent-gold/15 border-accent-gold/50 text-accent-gold"
+                        : "bg-bg-primary/40 border-border-subtle text-text-muted hover:border-border-active"
+                        }`}
+                    >
+                      {cat.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Region focus */}
+              {regions.length > 0 && (
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="text-xs font-medium text-text-secondary">{t("events.prefFocusRegions")}</label>
+                    {focusRegions.size > 0 && (
+                      <button
+                        onClick={() => setFocusRegions(new Set())}
+                        className="text-xs text-text-muted hover:text-accent-gold transition-colors"
+                      >
+                        {t("events.prefClearFocus")}
+                      </button>
+                    )}
+                  </div>
+                  <p className="text-xs text-text-muted mb-1.5">{t("events.prefFocusRegionsHint")}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {regions.map((r) => (
+                      <button
+                        key={r.id}
+                        onClick={() => toggleFocusRegion(r.id)}
+                        className={`px-2 py-1 rounded-full text-xs transition-all border ${focusRegions.has(r.id)
+                          ? "bg-accent-gold/15 border-accent-gold/50 text-accent-gold"
+                          : "bg-bg-primary/40 border-border-subtle text-text-muted hover:border-border-active"
+                          }`}
+                      >
+                        {r.name[locale]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Summary */}
+          <div className="text-xs text-text-muted bg-bg-primary/30 rounded-md px-3 py-2 border border-border-subtle">
+            {locale === "zh"
+              ? `从 ${fmtYear(computeStart())} 开始生成约 ${count} 个重大历史事件，每年最多 ${eventsPerYear} 个${focusRegions.size > 0 ? `，聚焦 ${focusRegions.size} 个地区` : ""}`
+              : `~${count} significant events from ${fmtYear(computeStart())}, up to ${eventsPerYear}/year${focusRegions.size > 0 ? `, focusing on ${focusRegions.size} region(s)` : ""}`}
+          </div>
+        </div>
+
+        <div className="px-5 py-3.5 border-t border-border-subtle flex justify-end gap-2 shrink-0">
+          <button
+            onClick={onCancel}
+            className="px-4 py-1.5 rounded-md text-xs border border-border-subtle text-text-muted hover:text-text-primary hover:border-border-active transition-colors"
+          >
+            {t("events.customCancel")}
+          </button>
+          <button
+            onClick={handleConfirm}
+            className="px-5 py-1.5 rounded-md text-xs font-semibold border border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-bg-primary transition-all"
+          >
+            {t("events.generateStart")}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -273,6 +759,7 @@ function CustomEventModal({
   regions,
   frontier,
   defaultYear,
+  editEvent,
   onSubmit,
   onCancel,
 }: {
@@ -282,18 +769,20 @@ function CustomEventModal({
   regions: { id: string; name: { zh: string; en: string } }[];
   frontier: { year: number; month: number };
   defaultYear?: number;
+  editEvent?: HistoricalEvent;
   onSubmit: (evt: HistoricalEvent) => void;
   onCancel: () => void;
 }) {
+  const isEdit = !!editEvent;
   const minYear = frontier.year;
-  const initYear = defaultYear ?? minYear + 1;
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const initYear = editEvent ? editEvent.timestamp.year : (defaultYear ?? minYear + 1);
+  const [title, setTitle] = useState(editEvent ? localized(editEvent.title) : "");
+  const [description, setDescription] = useState(editEvent ? localized(editEvent.description) : "");
   const [era, setEra] = useState<"bce" | "ce">(initYear <= 0 ? "bce" : "ce");
   const [yearAbs, setYearAbs] = useState(Math.abs(initYear));
-  const [month, setMonth] = useState(1);
-  const [category, setCategory] = useState<EventCategory>("other");
-  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
+  const [month, setMonth] = useState(editEvent ? editEvent.timestamp.month : 1);
+  const [category, setCategory] = useState<EventCategory>(editEvent ? editEvent.category : "other");
+  const [selectedRegions, setSelectedRegions] = useState<string[]>(editEvent ? editEvent.affectedRegions : []);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -322,19 +811,16 @@ function CustomEventModal({
     setSubmitting(true);
     try {
       const body = {
-        title: locale === "zh"
-          ? { zh: title.trim(), en: title.trim() }
-          : { zh: title.trim(), en: title.trim() },
-        description: locale === "zh"
-          ? { zh: description.trim() || title.trim(), en: description.trim() || title.trim() }
-          : { zh: description.trim() || title.trim(), en: description.trim() || title.trim() },
+        ...(isEdit ? { id: editEvent.id } : {}),
+        title: { zh: title.trim(), en: title.trim() },
+        description: { zh: description.trim() || title.trim(), en: description.trim() || title.trim() },
         affectedRegions: selectedRegions.length > 0 ? selectedRegions : (regions.length > 0 ? [regions[0].id] : []),
         category,
         timestamp: { year, month },
       };
 
       const resp = await fetch("/api/events/custom", {
-        method: "POST",
+        method: isEdit ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
@@ -372,7 +858,7 @@ function CustomEventModal({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="px-5 py-3.5 border-b border-border-subtle flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-text-primary">{t("events.addCustom")}</h2>
+          <h2 className="text-sm font-semibold text-text-primary">{t(isEdit ? "events.editCustom" : "events.addCustom")}</h2>
           <button onClick={onCancel} className="text-text-muted hover:text-text-primary transition-colors">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
               <line x1="4" y1="4" x2="12" y2="12" /><line x1="12" y1="4" x2="4" y2="12" />
@@ -493,7 +979,7 @@ function CustomEventModal({
             {submitting ? (
               <span className="inline-block w-3 h-3 border-2 border-accent-gold border-t-transparent rounded-full animate-spin" />
             ) : (
-              t("events.customSubmit")
+              t(isEdit ? "events.customSave" : "events.customSubmit")
             )}
           </button>
         </div>
@@ -507,11 +993,19 @@ function EventCard({
   locale,
   localized,
   t,
+  showActions,
+  isSimulating,
+  onEdit,
+  onDelete,
 }: {
   event: HistoricalEvent;
   locale: "zh" | "en";
   localized: (text: { zh: string; en: string } | undefined) => string;
   t: (key: string) => string;
+  showActions?: boolean;
+  isSimulating?: boolean;
+  onEdit?: (evt: HistoricalEvent) => void;
+  onDelete?: (id: string) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -542,6 +1036,28 @@ function EventCard({
             {t("month.label").replace("{month}", String(event.timestamp.month))}
           </div>
         </div>
+        {showActions && event.isCustom && event.status === "pending" && !isSimulating && (
+          <div className="flex items-center gap-0.5 shrink-0">
+            <button
+              onClick={(e) => { e.stopPropagation(); onEdit?.(event); }}
+              className="p-1 rounded text-text-muted hover:text-accent-gold hover:bg-bg-tertiary/60 transition-colors"
+              title={t("events.editCustom")}
+            >
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M11.5 2.5l2 2L5 13H3v-2z" />
+              </svg>
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); onDelete?.(event.id); }}
+              className="p-1 rounded text-text-muted hover:text-red-400 hover:bg-red-400/10 transition-colors"
+              title={t("events.deleteCustom")}
+            >
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 5h10M5.5 5V3.5a1 1 0 011-1h3a1 1 0 011 1V5M6.5 7.5v4M9.5 7.5v4M4.5 5l.5 8a1 1 0 001 1h4a1 1 0 001-1l.5-8" />
+              </svg>
+            </button>
+          </div>
+        )}
         <svg
           width="14"
           height="14"

@@ -20,7 +20,7 @@ function tryLoadPrebuilt(eraId: string): {
   era: object;
   summary?: object;
   regions: object[];
-  events: {
+  events?: {
     id: string;
     timestamp: { year: number; month: number };
     title: object;
@@ -97,7 +97,7 @@ function handlePrebuilt(
           era: preset.name,
         });
 
-        const dbEvents = prebuilt.events.map((evt) => ({
+        const dbEvents = (prebuilt.events || []).map((evt) => ({
           id: evt.id,
           year: evt.timestamp.year,
           month: evt.timestamp.month,
@@ -115,7 +115,7 @@ function handlePrebuilt(
           prebuilt.era,
           prebuilt.regions,
           prebuilt.summary,
-          dbEvents
+          dbEvents.length > 0 ? dbEvents : undefined
         );
 
         const snapshot = getLatestSnapshot();
@@ -136,6 +136,7 @@ function handlePrebuilt(
           state: worldState,
           events,
           frontier,
+          needsEvents: !events || events.length === 0,
         });
         controller.close();
       } catch (error) {
@@ -211,7 +212,7 @@ Each Region must have ALL of these fields:
     "rulerTitle": { "zh": "...", "en": "..." },
     "dynasty": { "zh": "...", "en": "..." },
     "capital": { "zh": "...", "en": "..." },
-    "governmentForm": "absolute_monarchy|feudal_monarchy|constitutional_monarchy|theocratic_monarchy|oligarchy|aristocratic_republic|democracy|tribal_council|military_dictatorship|colonial_administration|communist_state|federal_republic|confederation|other",
+    "governmentForm": { "zh": "...", "en": "..." },
     "socialStructure": { "zh": "...", "en": "..." },
     "rulingClass": { "zh": "...", "en": "..." },
     "succession": { "zh": "...", "en": "..." }
@@ -307,12 +308,12 @@ Each event in the "events" array:
 1. ALL text fields MUST be bilingual: { "zh": "...", "en": "..." }
 2. Include 6-12 major civilizations that existed in this period
 3. Use ONLY territoryIds from the available list
-4. Be historically accurate with real names, titles, rulers, capitals
+4. Be historically accurate with real names, titles, rulers, capitals — based on documented historical records
 5. Each region's id should be based on its territoryId (e.g., "china_central" → "tang_dynasty")
 6. Military troops = 1-5% of population
 7. finances must be internally consistent
-8. Include 3-4 natural disasters in events
-9. Events should span years ${preset.year} to ${preset.year + 29}, covering all major regions
+8. CRITICAL: Every event in the "events" array MUST be a real, documented historical event that actually happened. Use accurate dates, real names of people, battles, treaties, inventions, and natural disasters. Do NOT invent or fabricate any event. Only include events with historical evidence.
+9. Events should span years ${preset.year} to ${preset.year + 29}, covering all major regions. Generate 1-3 events per year — many years had multiple significant events across different regions. Spread events naturally across different months.
 10. Return ONLY valid JSON, no markdown, no explanation
 
 ## Available Territory Templates
@@ -322,7 +323,9 @@ ${territoryList}`;
 
 Context: ${preset.description.en}
 
-Create a historically accurate snapshot of all major civilizations that existed at this time, including their political systems, economies, militaries, cultures, and diplomatic relationships. Also generate 20-30 historical events for the next 30 years.
+Create a historically accurate snapshot of all major civilizations that existed at this time, including their political systems, economies, militaries, cultures, and diplomatic relationships.
+
+Also generate 20-30 REAL historical events for the next 30 years. CRITICAL: Every event must be a historically documented, verifiable event that actually occurred. Use real names, real dates, real battles, real treaties, real inventions, and real natural disasters from the historical record. Do NOT fabricate any event.
 
 Return compact JSON: {"state":{...},"events":[...]}`;
 
@@ -346,7 +349,7 @@ Return compact JSON: {"state":{...},"events":[...]}`;
                   { role: "system", content: systemPrompt },
                   { role: "user", content: userPrompt },
                 ],
-                temperature: 0.7,
+                temperature: 0.4,
                 stream: true,
               }),
               signal: abortCtrl.signal,

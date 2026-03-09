@@ -58,12 +58,64 @@ function initSchema(db: Database.Database) {
       created_at TEXT DEFAULT (datetime('now'))
     );
     CREATE INDEX IF NOT EXISTS idx_evolution_logs_year ON evolution_logs(target_year);
+
+    CREATE TABLE IF NOT EXISTS wars (
+      id TEXT PRIMARY KEY,
+      name_json TEXT NOT NULL,
+      start_year INTEGER NOT NULL,
+      end_year INTEGER,
+      belligerents_json TEXT NOT NULL,
+      cause_json TEXT NOT NULL,
+      casus_belli_json TEXT NOT NULL,
+      status TEXT DEFAULT 'ongoing',
+      victor TEXT,
+      summary_json TEXT NOT NULL,
+      advantages_json TEXT NOT NULL,
+      impact_json TEXT NOT NULL DEFAULT '{"side1":{"zh":"","en":""},"side2":{"zh":"","en":""}}',
+      related_event_ids_json TEXT NOT NULL DEFAULT '[]',
+      created_at TEXT DEFAULT (datetime('now'))
+    );
+    CREATE INDEX IF NOT EXISTS idx_wars_years ON wars(start_year, end_year);
+    CREATE INDEX IF NOT EXISTS idx_wars_status ON wars(status);
   `);
 
   // Migration: add is_custom column if missing
   const cols = db.prepare("PRAGMA table_info(events)").all() as { name: string }[];
   if (!cols.some((c) => c.name === "is_custom")) {
     db.exec("ALTER TABLE events ADD COLUMN is_custom INTEGER DEFAULT 0");
+  }
+
+  const tables = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='wars'").get();
+  if (!tables) {
+    db.exec(`
+      CREATE TABLE IF NOT EXISTS wars (
+        id TEXT PRIMARY KEY,
+        name_json TEXT NOT NULL,
+        start_year INTEGER NOT NULL,
+        end_year INTEGER,
+        belligerents_json TEXT NOT NULL,
+        cause_json TEXT NOT NULL,
+        casus_belli_json TEXT NOT NULL,
+        status TEXT DEFAULT 'ongoing',
+        victor TEXT,
+        summary_json TEXT NOT NULL,
+        advantages_json TEXT NOT NULL,
+        impact_json TEXT NOT NULL DEFAULT '{"side1":{"zh":"","en":""},"side2":{"zh":"","en":""}}',
+        related_event_ids_json TEXT NOT NULL DEFAULT '[]',
+        created_at TEXT DEFAULT (datetime('now'))
+      );
+      CREATE INDEX IF NOT EXISTS idx_wars_years ON wars(start_year, end_year);
+      CREATE INDEX IF NOT EXISTS idx_wars_status ON wars(status);
+    `);
+  }
+
+  // Migration: add victor and impact_json columns to wars if missing
+  const warCols = db.prepare("PRAGMA table_info(wars)").all() as { name: string }[];
+  if (!warCols.some((c) => c.name === "victor")) {
+    db.exec("ALTER TABLE wars ADD COLUMN victor TEXT");
+  }
+  if (!warCols.some((c) => c.name === "impact_json")) {
+    db.exec(`ALTER TABLE wars ADD COLUMN impact_json TEXT NOT NULL DEFAULT '{"side1":{"zh":"","en":""},"side2":{"zh":"","en":""}}'`);
   }
 }
 
@@ -324,6 +376,47 @@ export function markEventsProcessed(eventIds: string[]) {
   tx();
 }
 
+export function updateEvent(
+  id: string,
+  year: number,
+  month: number,
+  title: object,
+  description: object,
+  affectedRegions: string[],
+  category: string
+) {
+  const db = getDb();
+  db.prepare(`
+    UPDATE events
+    SET year = ?, month = ?, title_json = ?, description_json = ?,
+        affected_regions_json = ?, category = ?
+    WHERE id = ? AND is_custom = 1 AND status = 'pending'
+  `).run(
+    year,
+    month,
+    JSON.stringify(title),
+    JSON.stringify(description),
+    JSON.stringify(affectedRegions),
+    category,
+    id
+  );
+}
+
+export function deleteEvent(id: string) {
+  const db = getDb();
+  db.prepare(
+    `DELETE FROM events WHERE id = ? AND is_custom = 1 AND status = 'pending'`
+  ).run(id);
+}
+
+export function deletePendingEvents() {
+  const db = getDb();
+  const result = db.prepare(
+    `DELETE FROM events WHERE status = 'pending'`
+  ).run();
+  return result.changes;
+}
+
 export function getFrontier() {
   const db = getDb();
   const row = db
@@ -344,6 +437,26 @@ export function getOriginTime() {
   return row ?? { year: -1600, month: 1 };
 }
 
+export function rollbackToYear(targetYear: number) {
+  const db = getDb();
+  const tx = db.transaction(() => {
+    db.prepare(`DELETE FROM state_snapshots WHERE year > ?`).run(targetYear);
+
+    db.prepare(
+      `UPDATE events SET status = 'pending', processed_at = NULL WHERE year > ?`
+    ).run(targetYear);
+
+    db.prepare(`DELETE FROM evolution_logs WHERE target_year > ?`).run(targetYear);
+
+    db.prepare(`DELETE FROM wars WHERE start_year > ?`).run(targetYear);
+
+    db.prepare(
+      `UPDATE wars SET status = 'ongoing', end_year = NULL WHERE end_year IS NOT NULL AND end_year > ?`
+    ).run(targetYear);
+  });
+  tx();
+}
+
 export function resetToInitialState() {
   const db = getDb();
   const tx = db.transaction(() => {
@@ -357,6 +470,8 @@ export function resetToInitialState() {
     ).run();
     // Clear evolution logs
     db.prepare(`DELETE FROM evolution_logs`).run();
+    // Clear wars
+    db.prepare(`DELETE FROM wars`).run();
   });
   tx();
 }
@@ -384,6 +499,7 @@ export function resetAndReinitialize(
     db.prepare(`DELETE FROM state_snapshots`).run();
     db.prepare(`DELETE FROM events`).run();
     db.prepare(`DELETE FROM evolution_logs`).run();
+    db.prepare(`DELETE FROM wars`).run();
 
     db.prepare(`
       INSERT INTO state_snapshots
@@ -439,4 +555,89 @@ export function getEvolutionLogs() {
 export function clearEvolutionLogs() {
   const db = getDb();
   db.prepare(`DELETE FROM evolution_logs`).run();
+}
+
+export function insertWar(
+  id: string,
+  name: object,
+  startYear: number,
+  endYear: number | null,
+  belligerents: object,
+  cause: object,
+  casusBelli: object,
+  status: string,
+  summary: object,
+  advantages: object,
+  impact: object,
+  relatedEventIds: string[],
+  victor?: string | null
+) {
+  const db = getDb();
+  db.prepare(`
+    INSERT OR REPLACE INTO wars
+      (id, name_json, start_year, end_year, belligerents_json, cause_json, casus_belli_json, status, victor, summary_json, advantages_json, impact_json, related_event_ids_json)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `).run(
+    id,
+    JSON.stringify(name),
+    startYear,
+    endYear,
+    JSON.stringify(belligerents),
+    JSON.stringify(cause),
+    JSON.stringify(casusBelli),
+    status,
+    victor ?? null,
+    JSON.stringify(summary),
+    JSON.stringify(advantages),
+    JSON.stringify(impact),
+    JSON.stringify(relatedEventIds)
+  );
+}
+
+export function getActiveWars(year: number) {
+  const db = getDb();
+  const rows = db.prepare(
+    `SELECT * FROM wars WHERE start_year <= ? AND (end_year IS NULL OR end_year >= ?) ORDER BY start_year DESC`
+  ).all(year, year) as Record<string, unknown>[];
+  return rows.map(parseWarRow);
+}
+
+export function getAllWars() {
+  const db = getDb();
+  const rows = db.prepare(
+    `SELECT * FROM wars ORDER BY start_year DESC`
+  ).all() as Record<string, unknown>[];
+  return rows.map(parseWarRow);
+}
+
+export function updateWarStatus(id: string, status: string, endYear?: number) {
+  const db = getDb();
+  if (endYear != null) {
+    db.prepare(`UPDATE wars SET status = ?, end_year = ? WHERE id = ?`).run(status, endYear, id);
+  } else {
+    db.prepare(`UPDATE wars SET status = ? WHERE id = ?`).run(status, id);
+  }
+}
+
+export function deleteAllWars() {
+  const db = getDb();
+  db.prepare(`DELETE FROM wars`).run();
+}
+
+function parseWarRow(row: Record<string, unknown>) {
+  return {
+    id: row.id as string,
+    name: JSON.parse(row.name_json as string),
+    startYear: row.start_year as number,
+    endYear: row.end_year as number | null,
+    belligerents: JSON.parse(row.belligerents_json as string),
+    cause: JSON.parse(row.cause_json as string),
+    casus_belli: JSON.parse(row.casus_belli_json as string),
+    status: row.status as string,
+    victor: (row.victor as string | null) ?? null,
+    summary: JSON.parse(row.summary_json as string),
+    advantages: JSON.parse(row.advantages_json as string),
+    impact: JSON.parse((row.impact_json as string) || '{"side1":{"zh":"","en":""},"side2":{"zh":"","en":""}}'),
+    relatedEventIds: JSON.parse(row.related_event_ids_json as string),
+  };
 }

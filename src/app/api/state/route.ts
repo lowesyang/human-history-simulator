@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSnapshot, getLatestSnapshot } from "@/lib/db";
+import { getSnapshot, getLatestSnapshot, getActiveWars } from "@/lib/db";
 
 export async function GET(request: NextRequest) {
   try {
@@ -23,6 +23,8 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    const wars = getActiveWars(snapshot.year);
+
     return NextResponse.json({
       id: snapshot.id,
       timestamp: { year: snapshot.year, month: snapshot.month },
@@ -30,6 +32,7 @@ export async function GET(request: NextRequest) {
       regions: snapshot.regions,
       summary: snapshot.summary,
       triggeredByEventId: snapshot.triggeredByEventId,
+      wars,
     });
   } catch (error) {
     console.error("State API error:", error);

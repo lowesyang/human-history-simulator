@@ -197,7 +197,7 @@ civilization.ruler: LocalizedText
 civilization.rulerTitle: LocalizedText
 civilization.dynasty: LocalizedText
 civilization.capital: LocalizedText
-civilization.governmentForm: GovernmentForm (absolute_monarchy|feudal_monarchy|constitutional_monarchy|theocratic_monarchy|oligarchy|aristocratic_republic|democracy|tribal_council|military_dictatorship|colonial_administration|communist_state|federal_republic|confederation|other)
+civilization.governmentForm: LocalizedText
 civilization.socialStructure: LocalizedText
 civilization.rulingClass: LocalizedText
 civilization.succession: LocalizedText

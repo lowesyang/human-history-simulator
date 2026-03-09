@@ -8,13 +8,17 @@
 
 **Human History Simulator** is an AI-powered civilization simulator that uses large language models as simulation engines — not chatbots. Pick any era from 1600 BCE to 2000 CE, and watch dozens of civilizations evolve on an interactive world map as the AI generates events, computes state transitions, and reshapes the geopolitical landscape turn by turn.
 
+<p align="center">
+  <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
+</p>
+
 Every civilization carries a rich state snapshot — rulers, government, economy, military, technology, culture, demographics, diplomacy — and every turn produces historically grounded mutations: wars redraw borders, trade routes shift wealth, plagues decimate populations, and inventions spark new eras. Same starting conditions, different emergent histories.
 
 [English](./README.md) · [中文](./README.zh-CN.md)
 
 ## Highlights
 
-- **19 Historical Eras** — Bronze Age through Modern World, each seeded with dozens of historically accurate civilizations.
+- **[19 Historical Eras](#supported-eras)** — Bronze Age through Modern World, each seeded with dozens of historically accurate civilizations.
 - **LLM-Driven Evolution** — AI orchestrator clusters regions, generates events, and computes per-field state transitions across economy, military, diplomacy, culture, and more.
 - **Interactive World Map** — Territory overlays with hover inspection and click-to-detail for every civilization.
 - **Deep Civilization Profiles** — 10 tabs per region: Political, Military, Economy, Finances, Technology, Culture, Demographics, Diplomacy, Assessment, History.
@@ -88,19 +92,27 @@ Open [http://localhost:3000](http://localhost:3000) — pick an era and start si
 
 ## Supported Eras
 
-| Era                | Year     | Era                   | Year    |
-| ------------------ | -------- | --------------------- | ------- |
-| Bronze Age         | 1600 BCE | Tang Golden Age       | 750 CE  |
-| Iron Age           | 800 BCE  | Age of Crusades       | 1200 CE |
-| Axial Age          | 500 BCE  | Mongol Empire         | 1280 CE |
-| Hellenistic Period | 323 BCE  | Renaissance           | 1500 CE |
-| Qin-Han & Rome     | 221 BCE  | Early Modern Period   | 1648 CE |
-| Twin Empires       | 100 CE   | Age of Enlightenment  | 1750 CE |
-| Three Kingdoms     | 220 CE   | Industrial Revolution | 1840 CE |
-| Fall of Rome       | 476 CE   | Age of Imperialism    | 1900 CE |
-|                    |          | World War Era         | 1939 CE |
-|                    |          | Cold War Era          | 1962 CE |
-|                    |          | Modern World          | 2000 CE |
+|     | Era                       | Year     | Description                                                                                                                |
+| --- | ------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 🏺  | **Bronze Age**            | 1600 BCE | Shang Dynasty founded, Babylonian Empire at peak, Egyptian New Kingdom rising, Mycenaean civilization flourishing          |
+| ⚔️  | **Iron Age**              | 800 BCE  | Late Western Zhou, Assyrian Empire dominant, Greek city-states emerging, Phoenicians trading across Mediterranean          |
+| 🧘  | **Axial Age**             | 500 BCE  | Age of Confucius and Laozi, Persian Empire at peak, Greek democracy established, Buddha teaching in India                  |
+| 🏛️  | **Hellenistic Period**    | 323 BCE  | Alexander the Great just died, empire fragmenting, Warring States era in China, Maurya Empire unifying India               |
+| 👑  | **Qin-Han & Rome**        | 221 BCE  | Qin Shi Huang unifies China, Roman Republic expanding, Punic Wars ongoing, Maurya Empire at peak                           |
+| 🛣️  | **Twin Empires**          | 100 CE   | Eastern Han at peak, Roman Empire under Trajan, Silk Road thriving, Kushan Empire bridging East and West                   |
+| 🐉  | **Three Kingdoms**        | 220 CE   | Wei, Shu, Wu competing, Roman Empire in Third Century Crisis, Sassanid Persia rising, Gupta Empire emerging                |
+| 🏚️  | **Fall of Rome**          | 476 CE   | Western Roman Empire fallen, Northern and Southern Dynasties in China, Byzantine Empire endures, barbarian kingdoms emerge |
+| 🌸  | **Tang Golden Age**       | 750 CE   | Tang Dynasty at apex before An Lushan Rebellion, Abbasid Caliphate just established, Carolingian Empire emerging           |
+| ⚜️  | **Age of Crusades**       | 1200 CE  | Southern Song in China, Mongol Empire about to rise, Crusades continuing, Kamakura Shogunate in Japan                      |
+| 🏇  | **Mongol Empire**         | 1280 CE  | Yuan Dynasty rules China, Mongol Empire spans Eurasia, Marco Polo visits China, Delhi Sultanate resists Mongols            |
+| 🎨  | **Renaissance**           | 1500 CE  | Ming Dynasty thriving, Ottoman Empire at peak, European Renaissance, Age of Exploration begins                             |
+| 🔭  | **Early Modern Period**   | 1648 CE  | Thirty Years' War ends, Westphalian system established, early Qing Dynasty, Scientific Revolution underway                 |
+| 💡  | **Age of Enlightenment**  | 1750 CE  | Qing Dynasty Qianlong era, European Enlightenment at peak, eve of French Revolution, Industrial Revolution beginning       |
+| 🏭  | **Industrial Revolution** | 1840 CE  | Opium War begins, Victorian Britain, Industrial Revolution transforming the world, Japan approaching Meiji Restoration     |
+| 🌍  | **Age of Imperialism**    | 1900 CE  | British Empire at zenith, USA rising, Meiji Japan industrialized, Scramble for Africa complete                             |
+| 💥  | **World War Era**         | 1939 CE  | WWII begins, Nazi Germany expanding, Japan invading China, Soviet Union preparing, USA neutral but soon to join            |
+| ☢️  | **Cold War Era**          | 1962 CE  | Cuban Missile Crisis, US-Soviet confrontation, decolonization wave, Space Race intensifying                                |
+| 🌐  | **Modern World**          | 2000 CE  | Turn of millennium, Internet age dawning, globalization accelerating, China joining WTO                                    |
 
 ## Contributing
 

@@ -1,6 +1,5 @@
 import type { Region, HistoricalEvent, War } from "./types";
-
-const DEFAULT_MAX_GROUP_SIZE = 10;
+import { getModelProfile } from "./settings";
 
 export interface RegionGroup {
   regionIds: string[];
@@ -119,7 +118,12 @@ export function clusterRegions(
   }
 
   if (orphans.length > 0) {
-    groups.push({ regionIds: orphans, isOrphanGroup: true });
+    for (let i = 0; i < orphans.length; i += cap) {
+      groups.push({
+        regionIds: orphans.slice(i, i + cap),
+        isOrphanGroup: true,
+      });
+    }
   }
 
   return groups;
@@ -131,5 +135,5 @@ export function getMaxGroupSize(): number {
     const parsed = parseInt(envVal, 10);
     if (!isNaN(parsed) && parsed > 0) return parsed;
   }
-  return DEFAULT_MAX_GROUP_SIZE;
+  return getModelProfile().maxGroupSize;
 }

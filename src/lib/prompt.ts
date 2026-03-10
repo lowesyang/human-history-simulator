@@ -188,9 +188,10 @@ Return ONLY a valid JSON object (no markdown, no explanation, no whitespace form
 13. military.totalTroops = standingArmy + reserves; branches sum to totalTroops
 14. Population growth ~0.05-0.1% per year in ancient times
 15. Military troops = 1-5% of population for pre-modern civilizations
-16. Event categories include: war, dynasty, invention, trade, religion, disaster, natural_disaster, exploration, diplomacy, migration, other
+16. Event categories include: war, dynasty, invention, trade, religion, disaster, natural_disaster, exploration, diplomacy, migration, technology, finance, other
 17. For natural_disaster events: apply population loss, economic damage, fiscal burden, and check cascading effects on neighbors
 18. EVERY civilization's diplomacy and assessment sections MUST reflect the new geopolitical reality after the event, not just the directly affected ones
+19. ABSOLUTELY FORBIDDEN — Vague / Placeholder Values: NEVER use "待定", "TBD", "未知", "Unknown", "(pending)", "(to be determined)", "新当选总统", or ANY similar vague phrasing in ANY field. Every field MUST have a CONCRETE, SPECIFIC value — real names, real policies, specific descriptions. This is a simulation: when the historical record is ambiguous or the simulation advances beyond known history, you MUST make well-reasoned PREDICTIONS based on political context, factional dynamics, succession rules, geopolitical pressures, and historical patterns. Commit to a specific prediction; never hedge.
 
 ## Available Territory Templates
 TERRITORY_LIST`;
@@ -222,6 +223,15 @@ export function buildUserPrompt(
   const year = lastEvent.timestamp.year;
   const month = lastEvent.timestamp.month;
 
+  const techEraBlock = year >= 1900
+    ? `
+6. TECHNOLOGY ERA (post-1900): Technology is the PRIMARY driver of civilization change. For every technology/invention event:
+   - Cascade impact across economy (GDP +5-15%, new industries), military (doctrine, weapons systems), demographics (urbanization, life expectancy), diplomacy (tech alliances, embargoes), and culture (media, education)
+   - Technology leadership determines geopolitical power — amplify gains for tech leaders, show relative decline for laggards
+   - Military changes are inseparable from technology — always update military.technology alongside any tech event
+   - Update assessment.outlook to reflect each civilization's technology position as a dominant factor`
+    : "";
+
   return `## Current State (Year: ${year}, Month: ${month})
 ${JSON.stringify(stateForLLM)}
 
@@ -234,7 +244,7 @@ Apply these events to the current state. For each event:
 2. Analyze ripple effects on ALL other civilizations (trade disruption, power balance shifts, refugee flows, alliance changes)
 3. Re-evaluate diplomatic relationships between ALL civilizations
 4. For natural disasters: compute population loss, economic damage, and check if weakened states face new threats
-5. Update every civilization's assessment.outlook and diplomacy fields to reflect the new geopolitical reality
+5. Update every civilization's assessment.outlook and diplomacy fields to reflect the new geopolitical reality${techEraBlock}
 
 Return the complete updated state as a single compact JSON object (no whitespace formatting).`;
 }

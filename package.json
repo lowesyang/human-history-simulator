@@ -9,15 +9,19 @@
     "lint": "eslint",
     "seed": "npx tsx scripts/seed-db.ts",
     "seed:era": "npx tsx scripts/seed-db.ts",
-    "generate:eras": "npx tsx scripts/generate-era-states.ts"
+    "generate:eras": "npx tsx scripts/generate-era-states.ts",
+    "build:geo": "npx tsx scripts/build-geo-snapshots.ts"
   },
   "dependencies": {
+    "@turf/helpers": "^7.3.4",
+    "@turf/simplify": "^7.3.4",
     "@vis.gl/react-maplibre": "^8.1.0",
     "better-sqlite3": "^12.6.2",
     "maplibre-gl": "^5.19.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
     "uuid": "^13.0.0",
     "zustand": "^5.0.11"
   },

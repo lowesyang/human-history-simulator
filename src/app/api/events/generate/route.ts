@@ -5,7 +5,9 @@ import {
   getEvents,
   insertEvent,
   getFrontier,
+  getCurrentEraId,
 } from "@/lib/db";
+import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
 import type { Region } from "@/lib/types";
 
 function sendSSE(
@@ -89,7 +91,7 @@ export async function POST(request: NextRequest) {
 
   let reqCount = 20;
   let reqStartYear: number | undefined;
-  let reqEventsPerYear = 3;
+  let reqEventsPerYear = 4;
   let reqCategories: string[] | undefined;
   let reqFocusRegions: string[] | undefined;
   let reqDetailLevel: "brief" | "normal" | "detailed" = "normal";
@@ -97,7 +99,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     if (body.count) reqCount = Math.min(Math.max(Number(body.count), 1), 50);
     if (body.startYear != null) reqStartYear = Number(body.startYear);
-    if (body.eventsPerYear != null) reqEventsPerYear = Math.min(Math.max(Number(body.eventsPerYear), 1), 5);
+    if (body.eventsPerYear != null) reqEventsPerYear = Math.min(Math.max(Number(body.eventsPerYear), 1), 8);
     if (body.categories && Array.isArray(body.categories) && body.categories.length > 0) {
       reqCategories = body.categories;
     }
@@ -121,6 +123,7 @@ export async function POST(request: NextRequest) {
           return;
         }
 
+        const eraId = getCurrentEraId();
         const regions = latestSnapshot.regions as Region[];
         const regionIds = regions.map((r) => r.id);
         const regionSummaries = regions
@@ -156,14 +159,14 @@ export async function POST(request: NextRequest) {
           startYear,
         });
 
-        const apiKey = process.env.OPENROUTER_API_KEY;
+        const apiKey = getEffectiveApiKey();
         if (!apiKey) {
           sendSSE(controller, encoder, "error", { error: "OPENROUTER_API_KEY not configured" });
           controller.close();
           return;
         }
 
-        const model = process.env.LLM_MODEL || "openai/gpt-5.4";
+        const model = getEffectiveModel();
 
         const descInstruction = reqDetailLevel === "brief"
           ? "Keep descriptions very concise (1 sentence each)."
@@ -180,6 +183,7 @@ CRITICAL RULES:
 4. Do NOT invent, fabricate, or speculate any events. If an event is not recorded in historical sources, do not include it.
 5. For natural disasters: only include historically documented ones that had significant impact (e.g., major recorded earthquakes, devastating plagues, severe famines).
 6. ${descInstruction}
+7. ABSOLUTELY FORBIDDEN — Vague / Placeholder Values: Every event MUST name specific people, places, and outcomes. NEVER use vague references like "a new leader", "new president (TBD)", "unknown ruler", "待定", "某位领导人". Always use real historical names and concrete facts.
 
 Each event's title and description must reflect the real historical record — real names of rulers, battles, treaties, inventions, and their actual consequences.
 
@@ -192,11 +196,21 @@ Return ONLY a JSON array, no other text.`;
 
         const categoryList = reqCategories
           ? reqCategories.join("|")
-          : "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|other";
+          : "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|technology|finance|other";
 
         const regionFocusHint = reqFocusRegions && reqFocusRegions.length > 0
           ? `\n- PRIORITIZE events related to these regions: [${reqFocusRegions.join(", ")}]. Most events should involve at least one of these regions, but you may include events from other regions if they are historically significant enough.`
           : "\n- Cover as many of the listed regions as possible.";
+
+        const techEraHint = startYear >= 1900
+          ? `\n\nTECHNOLOGY ERA EMPHASIS (post-1900):
+Since ${fmtY(startYear)} falls in the modern/contemporary era, technology and scientific breakthroughs are PRIMARY drivers of civilization change. Apply these priorities:
+- At least 30-40% of generated events should be category "technology" or "invention" — including industrial innovations, scientific discoveries, space exploration, nuclear technology, computing milestones, internet/telecom revolutions, biotech advances, AI breakthroughs, energy transitions, etc.
+- For war and diplomacy events, ALWAYS highlight the technological dimension (e.g., mechanized warfare, nuclear deterrence, cyber warfare, satellite intelligence, drone warfare).
+- Include "finance" events driven by technology (e.g., Bretton Woods, digital currencies, fintech disruption, semiconductor trade wars).
+- Show how technology reshapes demographics (urbanization from industrialization, medical advances extending lifespan, green revolution feeding billions).
+- Technology events should reflect real paradigm shifts: electrification, aviation, nuclear energy, computing, internet, mobile, AI, biotech, space.`
+          : "";
 
         const userPrompt = `Starting from ${fmtY(startYear)}, generate the next ${minCount}-${maxCount} SIGNIFICANT, real historical events that actually happened.
 
@@ -211,8 +225,9 @@ REQUIREMENTS:
 - Only include events important enough to shape civilizations, trigger wars, change dynasties, advance technology, or cause major demographic shifts.
 - Include documented natural disasters ONLY if they had significant historical consequences.
 - IMPORTANT: Generate up to ${reqEventsPerYear} events per year. Many years had multiple significant events happening simultaneously across different regions. Spread events naturally across different months.
+- GRANULARITY: For each year, diversify events across DIFFERENT categories and DIFFERENT regions. Do not cluster multiple events of the same category in the same year. Each year should paint a multi-faceted picture: political changes in one region, economic shifts in another, military conflicts elsewhere, technological breakthroughs, diplomatic moves, etc. Use specific months (not always month 6) to reflect when events actually occurred.
 - Do NOT fabricate any event. Do NOT include minor or trivial events.
-- The events should be in chronological order starting from ${fmtY(startYear)}.${regionFocusHint}
+- The events should be in chronological order starting from ${fmtY(startYear)}.${regionFocusHint}${techEraHint}
 
 Categories (ONLY use these): ${categoryList}.
 
@@ -224,7 +239,8 @@ JSON array format:
 
         const validCategories = new Set([
           "war", "dynasty", "invention", "trade", "religion",
-          "disaster", "natural_disaster", "exploration", "diplomacy", "migration", "other",
+          "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
+          "technology", "finance", "other",
         ]);
         const regionIdSet = new Set(regionIds);
 
@@ -306,7 +322,9 @@ JSON array format:
                       evt.description,
                       filteredRegions,
                       category,
-                      "pending"
+                      "pending",
+                      false,
+                      eraId ?? undefined
                     );
                     inserted++;
 
@@ -349,7 +367,9 @@ JSON array format:
             evt.description,
             filteredRegions,
             category,
-            "pending"
+            "pending",
+            false,
+            eraId ?? undefined
           );
           inserted++;
 

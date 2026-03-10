@@ -259,4 +259,17 @@ export const ERA_PRESETS: EraPreset[] = [
     icon: "🌐",
     color: "#0984E3",
   },
+  {
+    id: "ai-age",
+    name: { zh: "AI时代", en: "AI Age" },
+    year: 2023,
+    month: 11,
+    era: { zh: "人工智能时代", en: "Age of Artificial Intelligence" },
+    description: {
+      zh: "ChatGPT引爆AI革命，大模型竞赛全面展开，各国竞相布局AI战略，科技巨头与创业公司争夺AI霸主地位",
+      en: "ChatGPT ignites AI revolution, foundation model race in full swing, nations racing to set AI strategies, tech giants and startups competing for AI dominance",
+    },
+    icon: "🤖",
+    color: "#8B5CF6",
+  },
 ];

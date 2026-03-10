@@ -16,12 +16,15 @@ const CATEGORY_COLORS: Record<string, string> = {
   exploration: "#2e8b57",
   diplomacy: "#4682b4",
   migration: "#7b6b8a",
+  technology: "#6d28d9",
+  finance: "#0d9488",
   other: "#6b5f4e",
 };
 
 const ALL_CATEGORIES: EventCategory[] = [
   "war", "dynasty", "invention", "trade", "religion",
-  "disaster", "natural_disaster", "exploration", "diplomacy", "migration", "other",
+  "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
+  "technology", "finance", "other",
 ];
 
 function formatYear(year: number, locale: "zh" | "en"): string {
@@ -472,7 +475,7 @@ function GenerateConfirmModal({
   const [count, setCount] = useState(20);
   const [startEra, setStartEra] = useState<"bce" | "ce">(defaultStart <= 0 ? "bce" : "ce");
   const [startAbs, setStartAbs] = useState(Math.abs(defaultStart));
-  const [eventsPerYear, setEventsPerYear] = useState(3);
+  const [eventsPerYear, setEventsPerYear] = useState(4);
   const [detailLevel, setDetailLevel] = useState<"brief" | "normal" | "detailed">("normal");
   const [showAdvanced, setShowAdvanced] = useState(false);
 
@@ -604,7 +607,7 @@ function GenerateConfirmModal({
             <input
               type="range"
               min={1}
-              max={5}
+              max={8}
               value={eventsPerYear}
               onChange={(e) => setEventsPerYear(Number(e.target.value))}
               className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-accent-gold bg-bg-tertiary"

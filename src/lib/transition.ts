@@ -263,6 +263,16 @@ technology.level: number (1-10)
 technology.era: LocalizedText
 technology.keyInnovations: LocalizedText
 technology.infrastructure: LocalizedText
+--- aiSector (optional, only for AI-era civilizations) ---
+aiSector.level: number (1-10)
+aiSector.policy: LocalizedText
+aiSector.regulatoryStance: LocalizedText
+aiSector.investmentScale: LocalizedText
+aiSector.researchFocus: LocalizedText
+aiSector.computeInfrastructure: LocalizedText
+aiSector.talentPool: LocalizedText
+aiSector.globalRanking: LocalizedText
+aiSector.outlook: LocalizedText
 --- assessment ---
 assessment.strengths: LocalizedText
 assessment.weaknesses: LocalizedText
@@ -270,7 +280,7 @@ assessment.outlook: LocalizedText
 
 Value types:
 - LocalizedText = {"zh":"中文","en":"English"}
-- MonetaryValue delta = {amount: +/-number, goldKg: +/-number, silverKg: +/-number} (numeric fields are added to current)
+- MonetaryValue delta = {amount: +/-number, unit: {"zh":"单位","en":"unit"}, goldKg: +/-number, silverKg: +/-number}. "unit" indicates the currency denomination (e.g. {"zh":"百万美元","en":"million USD"}, {"zh":"万两白银","en":"10k taels silver"}). goldKg and silverKg MUST be computed from amount using historically accurate exchange rates for the era (e.g. ancient: 1 talent ≈ 26kg silver; 1945: 1oz gold = $35; 2000: 1oz gold ≈ $280; 2020: 1oz gold ≈ $1800). NEVER set goldKg/silverKg to 0 when amount is non-zero.
 - number fields = relative delta by default (e.g. -50000 means subtract). Use "=50000" string for absolute set.
 - string/LocalizedText fields = absolute replacement
 - null = clear the field

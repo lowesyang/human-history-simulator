@@ -1,0 +1,2072 @@
+[
+  {
+    "id": "ai_thailand",
+    "name": {
+      "zh": "泰王国",
+      "en": "Kingdom of Thailand"
+    },
+    "territoryId": "ai_thailand",
+    "territoryScale": "md",
+    "civilization": {
+      "name": {
+        "zh": "泰王国",
+        "en": "Kingdom of Thailand"
+      },
+      "type": "republic",
+      "ruler": {
+        "zh": "斯雷塔·塔维信",
+        "en": "Srettha Thavisin"
+      },
+      "rulerTitle": {
+        "zh": "总理",
+        "en": "Prime Minister"
+      },
+      "dynasty": {
+        "zh": "为泰党执政期（却克里王朝立宪君主制）",
+        "en": "Pheu Thai administration (Chakri dynasty constitutional monarchy)"
+      },
+      "capital": {
+        "zh": "曼谷",
+        "en": "Bangkok"
+      },
+      "governmentForm": {
+        "zh": "以国王为元首的君主立宪制，实行议会民主制，总理由众议院选举产生。",
+        "en": "Constitutional monarchy with the King as head of state, operating a parliamentary democracy with the Prime Minister elected by the House of Representatives."
+      },
+      "socialStructure": {
+        "zh": "以皇室为精神领袖的等级社会，新兴中产阶级与城市科技工作者增长迅速，农村与城市差距依然显著。",
+        "en": "A hierarchical society with the monarchy as spiritual anchor, a rapidly growing urban middle class and tech workforce, yet a persistent rural-urban divide."
+      },
+      "rulingClass": {
+        "zh": "皇室、军方高层、商业财阀（华裔为主）与民选政客共同构成权力结构。",
+        "en": "The monarchy, senior military, business conglomerates (predominantly Sino-Thai), and elected politicians together form the power structure."
+      },
+      "succession": {
+        "zh": "国王世袭，总理由众议院选举产生，需获多数党或联盟支持。",
+        "en": "The king succeeds by hereditary right; the prime minister is elected by the House of Representatives with majority party or coalition support."
+      }
+    },
+    "government": {
+      "structure": {
+        "zh": "国会分参众两院，总理领导内阁行使行政权，司法独立。军方在政治中保持重大影响力。",
+        "en": "A bicameral National Assembly, with the Prime Minister leading the Cabinet for executive authority and an independent judiciary. The military retains significant political influence."
+      },
+      "departments": [
+        {
+          "name": {
+            "zh": "总理府",
+            "en": "Office of the Prime Minister"
+          },
+          "function": {
+            "zh": "协调政策制定、国家战略规划与政府间事务。",
+            "en": "Coordinates policy formulation, national strategic planning, and inter-ministerial affairs."
+          },
+          "headCount": 2500
+        },
+        {
+          "name": {
+            "zh": "数字经济与社会部",
+            "en": "Ministry of Digital Economy and Society"
+          },
+          "function": {
+            "zh": "主管数字化转型、AI政策、网络安全与数据治理。",
+            "en": "Oversees digital transformation, AI policy, cybersecurity, and data governance."
+          },
+          "headCount": 3000
+        },
+        {
+          "name": {
+            "zh": "财政部",
+            "en": "Ministry of Finance"
+          },
+          "function": {
+            "zh": "管理国家财政收支、税收政策与金融监管。",
+            "en": "Manages national revenue and expenditure, tax policy, and financial regulation."
+          },
+          "headCount": 35000
+        },
+        {
+          "name": {
+            "zh": "国防部",
+            "en": "Ministry of Defence"
+          },
+          "function": {
+            "zh": "统辖三军武装力量与国防战略。",
+            "en": "Commands the armed forces across all three services and national defense strategy."
+          },
+          "headCount": 15000
+        }
+      ],
+      "totalOfficials": 2300000,
+      "localAdmin": {
+        "zh": "全国分为76府及曼谷直辖市，各府设府尹，地方自治体系逐步完善。",
+        "en": "Divided into 76 provinces and Bangkok Metropolitan Administration, each headed by a governor, with local self-governance gradually improving."
+      },
+      "legalSystem": {
+        "zh": "大陆法系为基础，兼受泰国传统法与佛教习惯法影响，宪法法院拥有违宪审查权。",
+        "en": "Based on civil law, influenced by Thai traditional law and Buddhist customary law, with the Constitutional Court exercising judicial review."
+      },
+      "taxationSystem": {
+        "zh": "以增值税（7%）与个人所得税为主要税源，公司税率20%，正推进数字税改革。",
+        "en": "VAT (7%) and personal income tax as primary revenue sources, corporate tax at 20%, with digital taxation reform underway."
+      }
+    },
+    "culture": {
+      "religion": {
+        "zh": "上座部佛教为国教（约95%），伊斯兰教、基督教少数",
+        "en": "Theravada Buddhism as state religion (~95%), with Muslim and Christian minorities"
+      },
+      "philosophy": {
+        "zh": "佛教伦理与国王「足够经济」哲学深刻影响社会价值观，兼具现代消费主义与传统家族观念。",
+        "en": "Buddhist ethics and the King's 'Sufficiency Economy' philosophy deeply shape social values, alongside modern consumerism and traditional family bonds."
+      },
+      "writingSystem": {
+        "zh": "泰文字母（源自高棉文字系统）",
+        "en": "Thai script (derived from Khmer writing system)"
+      },
+      "culturalAchievements": {
+        "zh": "泰拳、泰餐全球影响力持续扩大，影视与流行文化产业增长迅速，曼谷成为东南亚创意经济中心。",
+        "en": "Muay Thai and Thai cuisine continue to expand global influence, with a fast-growing film and pop culture industry and Bangkok emerging as Southeast Asia's creative economy hub."
+      },
+      "languageFamily": {
+        "zh": "壮侗语系（泰语为官方语言）",
+        "en": "Kra-Dai language family (Thai as the official language)"
+      }
+    },
+    "economy": {
+      "level": 6,
+      "gdpEstimate": {
+        "amount": 500000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 8064516,
+        "displayNote": {
+          "zh": "2023年GDP约5000亿美元，东盟第二大经济体",
+          "en": "2023 GDP approximately $500 billion, ASEAN's second-largest economy"
+        }
+      },
+      "gdpPerCapita": {
+        "amount": 6900,
+        "unit": {
+          "zh": "美元/人",
+          "en": "US dollars per capita"
+        },
+        "goldKg": 0.11
+      },
+      "gdpDescription": {
+        "zh": "东盟第二大经济体，制造业、旅游业与服务业为支柱。疫后复苏稳健，数字经济快速增长，但面临人口老龄化与中等收入陷阱挑战。",
+        "en": "ASEAN's second-largest economy, with manufacturing, tourism, and services as pillars. Post-pandemic recovery is steady, the digital economy is growing rapidly, but demographic aging and the middle-income trap remain challenges."
+      },
+      "mainIndustries": {
+        "zh": "汽车制造、电子产品、旅游业、农产品加工、数字服务、医疗健康",
+        "en": "Automobile manufacturing, electronics, tourism, agri-food processing, digital services, healthcare"
+      },
+      "tradeGoods": {
+        "zh": "汽车及零部件、电子元件、大米、橡胶、热带水果、旅游服务",
+        "en": "Automobiles and parts, electronic components, rice, rubber, tropical fruits, tourism services"
+      },
+      "currency": {
+        "name": {
+          "zh": "泰铢",
+          "en": "Thai Baht"
+        },
+        "type": "fiat",
+        "metalBasis": "none",
+        "unitName": {
+          "zh": "泰铢",
+          "en": "THB"
+        }
+      },
+      "householdWealth": {
+        "zh": "家庭财富中位数约2.5万美元，城乡差距显著。曼谷中产阶级财富快速增长，农村地区仍依赖农业收入。",
+        "en": "Median household wealth approximately $25,000, with a stark urban-rural gap. Bangkok's middle class is seeing rapid wealth growth while rural areas still rely on agricultural income."
+      },
+      "averageIncome": {
+        "amount": 5200,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        }
+      },
+      "foreignTradeVolume": {
+        "amount": 560000000000,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        },
+        "goldKg": 9032258
+      },
+      "tradeRoutes": {
+        "zh": "东盟内贸为核心，中日美为主要贸易伙伴，湄公河次区域经济合作框架，RCEP成员国。",
+        "en": "Intra-ASEAN trade as the core, with China, Japan, and the US as major partners, the Greater Mekong Subregion economic framework, and RCEP membership."
+      },
+      "economicSystem": {
+        "zh": "以市场经济为主，政府通过BOI（投资促进委员会）引导外商投资与产业升级，EEC（东部经济走廊）为数字与高科技产业特区。",
+        "en": "Primarily a market economy, with the government guiding foreign investment and industrial upgrading through the BOI (Board of Investment), and the EEC (Eastern Economic Corridor) as a special zone for digital and high-tech industries."
+      }
+    },
+    "finances": {
+      "annualRevenue": {
+        "amount": 78000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 1258064
+      },
+      "annualExpenditure": {
+        "amount": 96000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 1548387
+      },
+      "surplus": {
+        "amount": -18000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": -290322
+      },
+      "revenueBreakdown": [
+        {
+          "source": {
+            "zh": "增值税",
+            "en": "Value-added tax"
+          },
+          "amount": {
+            "amount": 28000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 35.9
+        },
+        {
+          "source": {
+            "zh": "公司所得税",
+            "en": "Corporate income tax"
+          },
+          "amount": {
+            "amount": 19000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 24.4
+        },
+        {
+          "source": {
+            "zh": "个人所得税",
+            "en": "Personal income tax"
+          },
+          "amount": {
+            "amount": 13000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 16.7
+        }
+      ],
+      "expenditureBreakdown": [
+        {
+          "category": {
+            "zh": "教育",
+            "en": "Education"
+          },
+          "amount": {
+            "amount": 19000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 19.8
+        },
+        {
+          "category": {
+            "zh": "基础设施与交通",
+            "en": "Infrastructure and transport"
+          },
+          "amount": {
+            "amount": 15000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 15.6
+        },
+        {
+          "category": {
+            "zh": "国防",
+            "en": "Defense"
+          },
+          "amount": {
+            "amount": 7500000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 7.8
+        }
+      ],
+      "treasury": {
+        "amount": 220000000000,
+        "unit": {
+          "zh": "美元等值外汇储备",
+          "en": "US dollar equivalent foreign reserves"
+        },
+        "goldKg": 3548387
+      },
+      "treasuryDescription": {
+        "zh": "外汇储备约2200亿美元，为东南亚较高水平，泰国央行审慎管理汇率与资本流动。",
+        "en": "Foreign reserves of approximately $220 billion, among the highest in Southeast Asia, with the Bank of Thailand prudently managing exchange rates and capital flows."
+      },
+      "debtLevel": {
+        "amount": 310000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "displayNote": {
+          "zh": "公共债务约占GDP的62%，疫情期间大幅增加",
+          "en": "Public debt approximately 62% of GDP, increased significantly during the pandemic"
+        }
+      },
+      "fiscalPolicy": {
+        "zh": "扩张性财政政策以刺激消费，推出数字钱包计划向公民发放1万泰铢，同时加大EEC数字基础设施投资。",
+        "en": "Expansionary fiscal policy to stimulate consumption, launching a digital wallet scheme distributing 10,000 baht to citizens, while increasing EEC digital infrastructure investment."
+      }
+    },
+    "military": {
+      "level": 5,
+      "totalTroops": 555000,
+      "standingArmy": 360000,
+      "reserves": 195000,
+      "branches": [
+        {
+          "name": {
+            "zh": "泰国皇家陆军",
+            "en": "Royal Thai Army"
+          },
+          "count": 245000,
+          "description": {
+            "zh": "东南亚规模较大的陆上力量，装备以中国与美国武器为主。",
+            "en": "One of the larger land forces in Southeast Asia, equipped primarily with Chinese and American weapons."
+          }
+        },
+        {
+          "name": {
+            "zh": "泰国皇家海军",
+            "en": "Royal Thai Navy"
+          },
+          "count": 70000,
+          "description": {
+            "zh": "负责泰国湾与安达曼海防务，拥有东南亚唯一航母（查克里·纳吕贝特号）。",
+            "en": "Responsible for Gulf of Thailand and Andaman Sea defense, operating Southeast Asia's only aircraft carrier (HTMS Chakri Naruebet)."
+          }
+        },
+        {
+          "name": {
+            "zh": "泰国皇家空军",
+            "en": "Royal Thai Air Force"
+          },
+          "count": 45000,
+          "description": {
+            "zh": "装备F-16与鹰狮战斗机，正评估下一代战机采购。",
+            "en": "Equipped with F-16 and Gripen fighters, currently evaluating next-generation fighter procurement."
+          }
+        }
+      ],
+      "commandStructure": {
+        "commanderInChief": {
+          "zh": "国王玛哈·哇集拉隆功（名义），总理为实际最高军事决策者",
+          "en": "King Maha Vajiralongkorn (nominal), Prime Minister as de facto supreme military decision-maker"
+        },
+        "totalGenerals": 1700
+      },
+      "technology": {
+        "zh": "中等技术水平，装备来自美中欧多方来源，正推进国防工业数字化与无人系统引进。",
+        "en": "Moderate technology level with equipment from US, Chinese, and European sources, advancing defense digitalization and introducing unmanned systems."
+      },
+      "annualMilitarySpending": {
+        "amount": 7500000000,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        },
+        "goldKg": 120967
+      },
+      "militarySpendingPctGdp": 1.5,
+      "threats": {
+        "zh": "南部马来穆斯林分离运动、缅甸难民危机溢出、南海局势间接影响。",
+        "en": "Southern Malay Muslim separatist insurgency, spillover from Myanmar's refugee crisis, and indirect impact of South China Sea tensions."
+      },
+      "recentBattles": {
+        "zh": "南部三府低强度反叛乱行动持续，无大规模对外冲突。",
+        "en": "Ongoing low-intensity counter-insurgency in the three southern provinces, no large-scale external conflict."
+      }
+    },
+    "demographics": {
+      "population": 72000000,
+      "populationDescription": {
+        "zh": "东南亚第四人口大国，人口增长近乎停滞，老龄化速度为东盟最快之一。",
+        "en": "Southeast Asia's fourth most populous country, with near-stagnant population growth and one of ASEAN's fastest aging rates."
+      },
+      "urbanPopulation": 37000000,
+      "urbanizationRate": 52,
+      "majorCities": [
+        {
+          "name": {
+            "zh": "曼谷",
+            "en": "Bangkok"
+          },
+          "population": 10700000
+        },
+        {
+          "name": {
+            "zh": "清迈",
+            "en": "Chiang Mai"
+          },
+          "population": 1300000
+        },
+        {
+          "name": {
+            "zh": "芭提雅",
+            "en": "Pattaya"
+          },
+          "population": 1200000
+        }
+      ],
+      "ethnicGroups": {
+        "zh": "泰族（97.5%含华裔泰人14%）、马来族（2.3%）、高地少数民族等",
+        "en": "Thai (97.5% including Sino-Thai 14%), Malay (2.3%), highland minorities and others"
+      },
+      "socialClasses": {
+        "zh": "皇室与军政精英、华裔商业巨头、城市白领中产、工业工人与农村农民构成社会分层。",
+        "en": "The royal-military elite, Sino-Thai business magnates, urban white-collar middle class, industrial workers, and rural farmers form the social strata."
+      },
+      "literacyRate": {
+        "zh": "93.8%",
+        "en": "93.8%"
+      },
+      "lifeExpectancy": {
+        "zh": "78.7岁",
+        "en": "78.7 years"
+      }
+    },
+    "diplomacy": {
+      "allies": {
+        "zh": "美国（条约盟友）、中国（主要经济伙伴）、日本、东盟成员国。",
+        "en": "United States (treaty ally), China (major economic partner), Japan, ASEAN member states."
+      },
+      "enemies": {
+        "zh": "无正式敌国，但与缅甸军政府关系因难民与边境问题紧张。",
+        "en": "No formal enemies, but relations with Myanmar's military junta strained over refugee and border issues."
+      },
+      "treaties": {
+        "zh": "东盟宪章、RCEP、泰美共同防御条约、中泰铁路合作协议等。",
+        "en": "ASEAN Charter, RCEP, Thai-US Mutual Defense Treaty, China-Thailand Railway Cooperation Agreement, etc."
+      },
+      "foreignPolicy": {
+        "zh": "\"竹子外交\"——在中美之间灵活平衡，同时深化东盟区域合作与经济多元化。",
+        "en": "'Bamboo diplomacy' — flexibly balancing between China and the US while deepening ASEAN regional cooperation and economic diversification."
+      },
+      "recentDiplomaticEvents": {
+        "zh": "2023年APEC主办国，为泰党政府积极修复与西方民主国家关系。",
+        "en": "Hosted APEC 2022; the Pheu Thai government actively restoring relations with Western democracies in 2023."
+      }
+    },
+    "technology": {
+      "level": 5,
+      "era": {
+        "zh": "数字化转型期",
+        "en": "Digital transformation era"
+      },
+      "keyInnovations": {
+        "zh": "5G网络部署加速、数字政务\"泰国4.0\"、LINE生态系统整合AI服务、智慧农业与医疗AI应用。",
+        "en": "Accelerated 5G deployment, 'Thailand 4.0' digital government, LINE ecosystem integrating AI services, smart agriculture and medical AI applications."
+      },
+      "infrastructure": {
+        "zh": "EEC（东部经济走廊）为数字特区，曼谷数据中心集群扩展中，中泰高铁建设进行中。",
+        "en": "EEC (Eastern Economic Corridor) as a digital special zone, Bangkok data center cluster expanding, China-Thailand high-speed rail under construction."
+      }
+    },
+    "aiSector": {
+      "level": 2,
+      "policy": {
+        "zh": "2022年发布《国家AI战略》（2022-2027），重点推动AI在医疗、农业与政务领域应用，目标至2027年AI对GDP贡献达12%。",
+        "en": "Released the National AI Strategy (2022-2027) in 2022, focusing on AI applications in healthcare, agriculture, and government services, targeting 12% AI contribution to GDP by 2027."
+      },
+      "regulatoryStance": {
+        "zh": "以促进发展为主，AI监管框架尚在起步阶段，数据保护法（PDPA）2022年生效。",
+        "en": "Development-first approach, AI regulatory framework still in early stages, Personal Data Protection Act (PDPA) took effect in 2022."
+      },
+      "investmentScale": {
+        "zh": "AI领域投资规模较小，政府与日本合作推动AI研发，私营部门以LINE、SCB等企业为先导。",
+        "en": "Relatively small AI investment scale, with government-Japan cooperation driving AI R&D, and private sector led by LINE, SCB, and other enterprises."
+      },
+      "keyModels": [
+        {
+          "name": {
+            "zh": "WangchanBERTa",
+            "en": "WangchanBERTa"
+          },
+          "developer": {
+            "zh": "VISTEC / NECTEC",
+            "en": "VISTEC / NECTEC"
+          },
+          "releaseYear": 2021,
+          "capabilities": {
+            "zh": "泰语预训练语言模型，用于文本分类、情感分析与命名实体识别等NLP任务。",
+            "en": "Thai-language pre-trained language model for NLP tasks including text classification, sentiment analysis, and named entity recognition."
+          }
+        },
+        {
+          "name": {
+            "zh": "LINE AI（泰国）",
+            "en": "LINE AI (Thailand)"
+          },
+          "developer": {
+            "zh": "LINE（日本Z Holdings子公司）",
+            "en": "LINE (Z Holdings subsidiary, Japan)"
+          },
+          "releaseYear": 2023,
+          "capabilities": {
+            "zh": "聊天机器人、AI翻译与内容推荐，深度整合LINE平台为泰国4700万用户提供AI服务。",
+            "en": "Chatbot, AI translation, and content recommendation services, deeply integrated into the LINE platform serving 47 million Thai users."
+          }
+        }
+      ],
+      "leadingCompanies": [
+        {
+          "name": {
+            "zh": "LINE泰国",
+            "en": "LINE Thailand"
+          },
+          "valuation": {
+            "zh": "Z Holdings子公司（母公司市值约250亿美元）",
+            "en": "Z Holdings subsidiary (parent market cap ~$25 billion)"
+          },
+          "keyProducts": {
+            "zh": "LINE AI聊天机器人、LINE Man（外卖配送AI优化）、LINE Shopping",
+            "en": "LINE AI chatbot, LINE Man (delivery AI optimization), LINE Shopping"
+          },
+          "headquarters": {
+            "zh": "曼谷",
+            "en": "Bangkok"
+          }
+        },
+        {
+          "name": {
+            "zh": "暹罗商业银行（SCB 10X）",
+            "en": "Siam Commercial Bank (SCB 10X)"
+          },
+          "valuation": {
+            "zh": "SCB集团市值约140亿美元",
+            "en": "SCB Group market cap ~$14 billion"
+          },
+          "keyProducts": {
+            "zh": "金融科技AI、反欺诈系统、AI驱动的智能投顾",
+            "en": "FinTech AI, anti-fraud systems, AI-driven robo-advisory"
+          },
+          "headquarters": {
+            "zh": "曼谷",
+            "en": "Bangkok"
+          }
+        },
+        {
+          "name": {
+            "zh": "NECTEC（国家电子与计算机技术中心）",
+            "en": "NECTEC (National Electronics and Computer Technology Center)"
+          },
+          "valuation": {
+            "zh": "政府研究机构",
+            "en": "Government research institution"
+          },
+          "keyProducts": {
+            "zh": "泰语NLP工具、AI农业监测系统、智慧城市平台",
+            "en": "Thai-language NLP tools, AI agricultural monitoring systems, smart city platforms"
+          },
+          "headquarters": {
+            "zh": "巴吞他尼",
+            "en": "Pathum Thani"
+          }
+        }
+      ],
+      "keyFigures": [
+        {
+          "name": {
+            "zh": "查隆·伊萨朗坤",
+            "en": "Chalong Isarankun Na Ayuthaya"
+          },
+          "title": {
+            "zh": "NSTDA主席",
+            "en": "President of NSTDA"
+          },
+          "affiliation": {
+            "zh": "国家科学技术发展署",
+            "en": "National Science and Technology Development Agency"
+          },
+          "contribution": {
+            "zh": "领导泰国国家AI战略制定与科技研发生态建设。",
+            "en": "Led the formulation of Thailand's National AI Strategy and S&T R&D ecosystem development."
+          }
+        },
+        {
+          "name": {
+            "zh": "查尼特·西里摩恩坤",
+            "en": "Chanit Sirimoenkhun"
+          },
+          "title": {
+            "zh": "数字经济与社会部次长",
+            "en": "Permanent Secretary, Ministry of Digital Economy and Society"
+          },
+          "affiliation": {
+            "zh": "数字经济与社会部",
+            "en": "Ministry of Digital Economy and Society"
+          },
+          "contribution": {
+            "zh": "推动泰国数字化转型与AI政策落地，协调公私部门AI合作。",
+            "en": "Driving Thailand's digital transformation and AI policy implementation, coordinating public-private AI collaboration."
+          }
+        }
+      ],
+      "researchFocus": {
+        "zh": "泰语NLP、医疗AI（影像诊断与药物研发）、智慧农业、智慧旅游与反欺诈AI。",
+        "en": "Thai-language NLP, medical AI (imaging diagnostics and drug discovery), smart agriculture, smart tourism, and anti-fraud AI."
+      },
+      "computeInfrastructure": {
+        "zh": "EEC数据中心集群建设中，依赖AWS与Google Cloud区域节点，GPU算力有限。",
+        "en": "EEC data center cluster under construction, reliant on AWS and Google Cloud regional nodes, with limited GPU compute capacity."
+      },
+      "talentPool": {
+        "zh": "朱拉隆功大学、泰国国立法政大学与VISTEC为主要AI人才培养基地，人才流失至海外仍是挑战。",
+        "en": "Chulalongkorn University, Thammasat University, and VISTEC as primary AI talent development bases, with brain drain overseas remaining a challenge."
+      },
+      "globalRanking": {
+        "zh": "全球AI指数排名约第35-40位，东盟内位列新加坡之后的第二梯队。",
+        "en": "Ranked approximately 35th-40th in global AI indexes, in the second tier within ASEAN behind Singapore."
+      },
+      "outlook": {
+        "zh": "若能有效实施国家AI战略并吸引外资建设AI基础设施，泰国有望成为东盟AI应用创新中心。",
+        "en": "If the National AI Strategy is effectively implemented and foreign investment is attracted for AI infrastructure, Thailand could become ASEAN's AI application innovation hub."
+      }
+    },
+    "assessment": {
+      "strengths": {
+        "zh": "东盟第二大经济体、LINE平台巨大用户基础、EEC数字特区政策吸引力、医疗旅游AI应用潜力。",
+        "en": "ASEAN's second-largest economy, massive LINE platform user base, EEC digital zone policy appeal, and medical tourism AI application potential."
+      },
+      "weaknesses": {
+        "zh": "AI人才短缺严重、算力基础设施不足、政治不稳定风险、英语能力限制国际合作。",
+        "en": "Severe AI talent shortage, insufficient compute infrastructure, political instability risk, and limited English proficiency constraining international collaboration."
+      },
+      "outlook": {
+        "zh": "数字钱包计划与EEC发展有望催化AI应用市场，但需大力投资人才培养与算力基础设施。",
+        "en": "The digital wallet scheme and EEC development could catalyze the AI application market, but significant investment in talent development and compute infrastructure is needed."
+      }
+    },
+    "status": "stable",
+    "description": {
+      "zh": "2023年的泰国在斯雷塔·塔维信总理领导下推进\"泰国4.0\"数字转型战略，依托LINE生态与NECTEC研究力量发展AI应用，EEC东部经济走廊成为数字产业核心引擎。",
+      "en": "Thailand in 2023 under PM Srettha Thavisin advances its 'Thailand 4.0' digital transformation strategy, leveraging the LINE ecosystem and NECTEC research capabilities for AI applications, with the EEC Eastern Economic Corridor as the core engine for digital industry."
+    }
+  },
+  {
+    "id": "ai_philippines",
+    "name": {
+      "zh": "菲律宾共和国",
+      "en": "Republic of the Philippines"
+    },
+    "territoryId": "ai_philippines",
+    "territoryScale": "md",
+    "civilization": {
+      "name": {
+        "zh": "菲律宾共和国",
+        "en": "Republic of the Philippines"
+      },
+      "type": "republic",
+      "ruler": {
+        "zh": "小费迪南德·马科斯",
+        "en": "Ferdinand Marcos Jr."
+      },
+      "rulerTitle": {
+        "zh": "总统",
+        "en": "President"
+      },
+      "dynasty": {
+        "zh": "马科斯家族回归执政",
+        "en": "Marcos family return to power"
+      },
+      "capital": {
+        "zh": "马尼拉",
+        "en": "Manila"
+      },
+      "governmentForm": {
+        "zh": "总统制共和国，总统兼任国家元首与政府首脑，实行三权分立。",
+        "en": "Presidential republic with the president serving as both head of state and government, operating a separation of powers."
+      },
+      "socialStructure": {
+        "zh": "以政治家族与商业精英为核心的寡头社会，庞大的海外劳工群体（OFW）支撑家庭经济，年轻人口为主。",
+        "en": "An oligarchic society centered on political dynasties and business elites, with a vast overseas Filipino worker (OFW) community sustaining household economies, and a predominantly young population."
+      },
+      "rulingClass": {
+        "zh": "政治家族（马科斯、杜特尔特、阿基诺等）、华裔商业巨头与天主教会共同构成权力核心。",
+        "en": "Political dynasties (Marcos, Duterte, Aquino, etc.), Sino-Filipino business magnates, and the Catholic Church together form the power center."
+      },
+      "succession": {
+        "zh": "总统由全国直选产生，任期六年，不可连任。",
+        "en": "The president is elected by national direct vote for a single six-year term, with no re-election allowed."
+      }
+    },
+    "government": {
+      "structure": {
+        "zh": "总统领导内阁，参众两院组成国会，最高法院行使司法权。地方实行省、市、镇三级行政体系。",
+        "en": "The president leads the Cabinet, Congress is bicameral with Senate and House, and the Supreme Court exercises judicial power. Local governance operates on provincial, city, and municipal levels."
+      },
+      "departments": [
+        {
+          "name": {
+            "zh": "总统执行办公室",
+            "en": "Office of the President"
+          },
+          "function": {
+            "zh": "总统行政决策中心，协调各部门政策与国家发展计划。",
+            "en": "Presidential administrative decision center, coordinating departmental policies and national development plans."
+          },
+          "headCount": 5000
+        },
+        {
+          "name": {
+            "zh": "信息与通信技术部",
+            "en": "Department of Information and Communications Technology"
+          },
+          "function": {
+            "zh": "主管数字基础设施、ICT政策、AI发展与网络安全。",
+            "en": "Oversees digital infrastructure, ICT policy, AI development, and cybersecurity."
+          },
+          "headCount": 3500
+        },
+        {
+          "name": {
+            "zh": "财政部",
+            "en": "Department of Finance"
+          },
+          "function": {
+            "zh": "管理国家财政、税收政策与公共债务。",
+            "en": "Manages national finances, tax policy, and public debt."
+          },
+          "headCount": 25000
+        },
+        {
+          "name": {
+            "zh": "国防部",
+            "en": "Department of National Defense"
+          },
+          "function": {
+            "zh": "统辖武装力量，制定国防政策与南海安全战略。",
+            "en": "Commands armed forces, formulates defense policy and South China Sea security strategy."
+          },
+          "headCount": 10000
+        }
+      ],
+      "totalOfficials": 1800000,
+      "localAdmin": {
+        "zh": "全国分为17个大区、82省、146市、1488镇，实行地方政府法典下的分权自治。",
+        "en": "Divided into 17 regions, 82 provinces, 146 cities, and 1,488 municipalities, with devolved self-governance under the Local Government Code."
+      },
+      "legalSystem": {
+        "zh": "混合法系，兼采大陆法系（西班牙遗产）与普通法系（美国遗产），伊斯兰法在棉兰老穆斯林自治区适用。",
+        "en": "A mixed legal system combining civil law (Spanish heritage) and common law (American heritage), with Islamic law applicable in the Bangsamoro Autonomous Region."
+      },
+      "taxationSystem": {
+        "zh": "增值税12%为主要间接税，个人所得税率累进至35%，\"CREATE法案\"降低企业税至25%以吸引投资。",
+        "en": "12% VAT as the primary indirect tax, progressive personal income tax up to 35%, and the CREATE Act reducing corporate tax to 25% to attract investment."
+      }
+    },
+    "culture": {
+      "religion": {
+        "zh": "天主教为主（约86%），伊斯兰教（5%）、基督新教（3%）等",
+        "en": "Roman Catholic predominant (~86%), Islam (5%), Protestant (3%), and others"
+      },
+      "philosophy": {
+        "zh": "天主教信仰与家族/社区纽带深刻塑造社会伦理，\"巴扬尼汉\"（互助精神）为核心文化价值观。",
+        "en": "Catholic faith and family/community bonds deeply shape social ethics, with 'Bayanihan' (communal mutual aid) as a core cultural value."
+      },
+      "writingSystem": {
+        "zh": "拉丁字母（菲律宾语与英语均为官方语言）",
+        "en": "Latin alphabet (Filipino and English as co-official languages)"
+      },
+      "culturalAchievements": {
+        "zh": "BPO产业培育了大量英语服务人才，K-pop与本土流行文化融合，社交媒体使用率全球领先。",
+        "en": "The BPO industry has cultivated a large English-speaking service workforce, K-pop and local pop culture blend, and social media usage leads globally."
+      },
+      "languageFamily": {
+        "zh": "南岛语系（菲律宾语/他加禄语为国语，英语为共同官方语言）",
+        "en": "Austronesian family (Filipino/Tagalog as national language, English as co-official language)"
+      }
+    },
+    "economy": {
+      "level": 5,
+      "gdpEstimate": {
+        "amount": 400000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 6451612,
+        "displayNote": {
+          "zh": "2023年GDP约4000亿美元，东盟第五大经济体",
+          "en": "2023 GDP approximately $400 billion, ASEAN's fifth-largest economy"
+        }
+      },
+      "gdpPerCapita": {
+        "amount": 3500,
+        "unit": {
+          "zh": "美元/人",
+          "en": "US dollars per capita"
+        },
+        "goldKg": 0.056
+      },
+      "gdpDescription": {
+        "zh": "以服务业为主导的快速增长经济体，BPO产业全球领先，海外侨汇为重要外汇来源，年轻人口红利推动消费增长。",
+        "en": "A fast-growing service-sector-led economy with a globally leading BPO industry, overseas remittances as a key forex source, and a youth demographic dividend driving consumption growth."
+      },
+      "mainIndustries": {
+        "zh": "BPO/外包服务、电子产品装配、侨汇经济、农业、旅游业、矿业",
+        "en": "BPO/outsourcing services, electronics assembly, remittance economy, agriculture, tourism, mining"
+      },
+      "tradeGoods": {
+        "zh": "电子产品及半导体（出口最大宗）、BPO服务、椰子制品、水果、矿产品",
+        "en": "Electronics and semiconductors (largest export), BPO services, coconut products, fruits, mineral products"
+      },
+      "currency": {
+        "name": {
+          "zh": "菲律宾比索",
+          "en": "Philippine Peso"
+        },
+        "type": "fiat",
+        "metalBasis": "none",
+        "unitName": {
+          "zh": "菲律宾比索",
+          "en": "PHP"
+        }
+      },
+      "householdWealth": {
+        "zh": "家庭财富中位数约1万美元，城乡与阶层差距悬殊。马尼拉商业区与贫民窟并存，海外汇款显著改善受惠家庭生活。",
+        "en": "Median household wealth approximately $10,000 with stark urban-rural and class disparities. Manila's business districts coexist with slums, and overseas remittances significantly improve recipient families' livelihoods."
+      },
+      "averageIncome": {
+        "amount": 2800,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        }
+      },
+      "foreignTradeVolume": {
+        "amount": 230000000000,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        },
+        "goldKg": 3709677
+      },
+      "tradeRoutes": {
+        "zh": "对美日中为主要贸易伙伴，东盟内贸稳步增长，RCEP为新增自贸框架。",
+        "en": "Major trading partners include the US, Japan, and China, with steadily growing intra-ASEAN trade and RCEP as a new free trade framework."
+      },
+      "economicSystem": {
+        "zh": "市场经济，政府通过BOI激励外商投资，经济特区（PEZA）为BPO与制造业提供税收优惠。",
+        "en": "Market economy with the government incentivizing foreign investment through the BOI, and special economic zones (PEZA) providing tax incentives for BPO and manufacturing."
+      }
+    },
+    "finances": {
+      "annualRevenue": {
+        "amount": 60000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 967741
+      },
+      "annualExpenditure": {
+        "amount": 78000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 1258064
+      },
+      "surplus": {
+        "amount": -18000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": -290322
+      },
+      "revenueBreakdown": [
+        {
+          "source": {
+            "zh": "增值税",
+            "en": "Value-added tax"
+          },
+          "amount": {
+            "amount": 18000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 30
+        },
+        {
+          "source": {
+            "zh": "个人所得税",
+            "en": "Individual income taxes"
+          },
+          "amount": {
+            "amount": 15000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 25
+        },
+        {
+          "source": {
+            "zh": "公司所得税",
+            "en": "Corporate income tax"
+          },
+          "amount": {
+            "amount": 12000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 20
+        }
+      ],
+      "expenditureBreakdown": [
+        {
+          "category": {
+            "zh": "教育",
+            "en": "Education"
+          },
+          "amount": {
+            "amount": 12000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 15.4
+        },
+        {
+          "category": {
+            "zh": "基础设施（\"大建特建\"计划）",
+            "en": "Infrastructure ('Build, Build, Build' program)"
+          },
+          "amount": {
+            "amount": 18000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 23.1
+        },
+        {
+          "category": {
+            "zh": "国防",
+            "en": "Defense"
+          },
+          "amount": {
+            "amount": 4500000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 5.8
+        }
+      ],
+      "treasury": {
+        "amount": 100000000000,
+        "unit": {
+          "zh": "美元等值外汇储备",
+          "en": "US dollar equivalent foreign reserves"
+        },
+        "goldKg": 1612903
+      },
+      "treasuryDescription": {
+        "zh": "外汇储备约1000亿美元，海外劳工汇款年均超360亿美元为稳定外汇来源。",
+        "en": "Foreign reserves of approximately $100 billion, with overseas worker remittances averaging over $36 billion annually as a stable forex source."
+      },
+      "debtLevel": {
+        "amount": 250000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "displayNote": {
+          "zh": "公共债务约占GDP的61%，疫情后债务水平上升",
+          "en": "Public debt approximately 61% of GDP, debt levels risen post-pandemic"
+        }
+      },
+      "fiscalPolicy": {
+        "zh": "持续推进\"大建特建\"基础设施计划，加大数字基础设施投资，同时推进税制改革以扩大财政空间。",
+        "en": "Continuing the 'Build, Build, Build' infrastructure program, increasing digital infrastructure investment, while advancing tax reform to expand fiscal space."
+      }
+    },
+    "military": {
+      "level": 4,
+      "totalTroops": 400000,
+      "standingArmy": 150000,
+      "reserves": 250000,
+      "branches": [
+        {
+          "name": {
+            "zh": "菲律宾陆军",
+            "en": "Philippine Army"
+          },
+          "count": 100000,
+          "description": {
+            "zh": "以反叛乱与国内安全为主要任务，正推进现代化升级。",
+            "en": "Focused on counter-insurgency and internal security, undergoing modernization upgrades."
+          }
+        },
+        {
+          "name": {
+            "zh": "菲律宾海军",
+            "en": "Philippine Navy"
+          },
+          "count": 30000,
+          "description": {
+            "zh": "负责南海与群岛水域巡防，正通过购入新舰提升蓝水能力。",
+            "en": "Responsible for South China Sea and archipelagic waters patrol, upgrading blue-water capabilities through new vessel acquisitions."
+          }
+        },
+        {
+          "name": {
+            "zh": "菲律宾空军",
+            "en": "Philippine Air Force"
+          },
+          "count": 20000,
+          "description": {
+            "zh": "装备有限但正快速现代化，采购FA-50战斗机增强空防能力。",
+            "en": "Limited equipment but rapidly modernizing, procuring FA-50 fighters to enhance air defense capabilities."
+          }
+        }
+      ],
+      "commandStructure": {
+        "commanderInChief": {
+          "zh": "总统小费迪南德·马科斯",
+          "en": "President Ferdinand Marcos Jr."
+        },
+        "totalGenerals": 350
+      },
+      "technology": {
+        "zh": "军事技术水平中等偏下，长期依赖美国军援，正通过\"地平线\"军事现代化项目提升装备水平。",
+        "en": "Below-moderate military technology level, long-term reliance on US military aid, upgrading through the 'Horizon' military modernization program."
+      },
+      "annualMilitarySpending": {
+        "amount": 4500000000,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        },
+        "goldKg": 72580
+      },
+      "militarySpendingPctGdp": 1.1,
+      "threats": {
+        "zh": "南海中国扩张为首要外部威胁，南部伊斯兰极端主义残余势力，共产党叛军（NPA）威胁降低但未消除。",
+        "en": "Chinese expansion in the South China Sea as the primary external threat, remnants of southern Islamic extremism, and a reduced but uneliminated Communist NPA insurgency."
+      },
+      "recentBattles": {
+        "zh": "2023年南海仁爱礁与中国海警船频繁对峙，南部反恐行动持续。",
+        "en": "Frequent standoffs with Chinese coast guard near Second Thomas Shoal in 2023, ongoing counter-terrorism operations in the south."
+      }
+    },
+    "demographics": {
+      "population": 115000000,
+      "populationDescription": {
+        "zh": "东盟第二人口大国，人口年轻且增长迅速（中位年龄约25岁），为全球最大劳务输出国之一。",
+        "en": "ASEAN's second most populous nation with a young and rapidly growing population (median age ~25), and one of the world's largest labor-exporting countries."
+      },
+      "urbanPopulation": 55000000,
+      "urbanizationRate": 48,
+      "majorCities": [
+        {
+          "name": {
+            "zh": "马尼拉大都会",
+            "en": "Metro Manila"
+          },
+          "population": 14400000
+        },
+        {
+          "name": {
+            "zh": "宿务",
+            "en": "Cebu"
+          },
+          "population": 3200000
+        },
+        {
+          "name": {
+            "zh": "达沃",
+            "en": "Davao"
+          },
+          "population": 1800000
+        }
+      ],
+      "ethnicGroups": {
+        "zh": "他加禄族（28%）、宿务族（13%）、伊洛卡诺族（9%）、比萨亚族、摩洛族等170余个民族语言群体",
+        "en": "Tagalog (28%), Cebuano (13%), Ilocano (9%), Bisaya, Moro, and over 170 ethno-linguistic groups"
+      },
+      "socialClasses": {
+        "zh": "政治家族与华裔商业精英为顶层，庞大的BPO白领与城市服务业者为中间层，农渔民与非正规劳动者为底层。",
+        "en": "Political dynasties and Sino-Filipino business elites at the top, a large BPO white-collar and urban service worker middle layer, and farmers, fishers, and informal laborers at the base."
+      },
+      "literacyRate": {
+        "zh": "96.3%",
+        "en": "96.3%"
+      },
+      "lifeExpectancy": {
+        "zh": "72.4岁",
+        "en": "72.4 years"
+      }
+    },
+    "diplomacy": {
+      "allies": {
+        "zh": "美国（条约盟友，2023年新增4个EDCA基地）、日本、澳大利亚、东盟成员国。",
+        "en": "United States (treaty ally, 4 new EDCA bases in 2023), Japan, Australia, ASEAN member states."
+      },
+      "enemies": {
+        "zh": "与中国因南海主权争端关系紧张，2023年对峙事件频发。",
+        "en": "Tense relations with China over South China Sea sovereignty disputes, with frequent confrontation incidents in 2023."
+      },
+      "treaties": {
+        "zh": "美菲共同防御条约、EDCA（增强防务合作协议）、东盟宪章、RCEP等。",
+        "en": "US-Philippines Mutual Defense Treaty, EDCA (Enhanced Defense Cooperation Agreement), ASEAN Charter, RCEP, etc."
+      },
+      "foreignPolicy": {
+        "zh": "马科斯政府明显亲美转向，强化与美日澳安全合作，同时试图维持与中国经济往来。",
+        "en": "The Marcos government has made a clear pro-US pivot, strengthening security cooperation with the US, Japan, and Australia, while attempting to maintain economic ties with China."
+      },
+      "recentDiplomaticEvents": {
+        "zh": "2023年新增EDCA基地协议、南海仁爱礁对峙升级、东盟峰会推进南海行为准则谈判。",
+        "en": "New EDCA base agreements in 2023, escalating Second Thomas Shoal standoffs, and ASEAN summit advancing South China Sea Code of Conduct negotiations."
+      }
+    },
+    "technology": {
+      "level": 4,
+      "era": {
+        "zh": "数字化起步与BPO驱动时代",
+        "en": "Digital nascency and BPO-driven era"
+      },
+      "keyInnovations": {
+        "zh": "BPO全球领先（全球占比约13%）、移动互联网快速普及、GCash/PayMaya等数字支付、初创企业生态兴起。",
+        "en": "Global BPO leadership (~13% global share), rapid mobile internet adoption, GCash/PayMaya digital payments, and an emerging startup ecosystem."
+      },
+      "infrastructure": {
+        "zh": "数字基础设施仍较薄弱，光纤覆盖快速扩展中，数据中心建设起步，群岛地理增加连接难度。",
+        "en": "Digital infrastructure still relatively weak, fiber coverage rapidly expanding, data center construction starting, with archipelagic geography increasing connectivity challenges."
+      }
+    },
+    "aiSector": {
+      "level": 2,
+      "policy": {
+        "zh": "2021年发布《国家AI路线图》（NAIRP 2.0），聚焦AI人才培养与政务AI应用，DICT推进AI试点项目。",
+        "en": "Released the National AI Roadmap (NAIRP 2.0) in 2021, focusing on AI talent development and government AI applications, with DICT advancing AI pilot projects."
+      },
+      "regulatoryStance": {
+        "zh": "监管框架尚在建设中，2012年数据隐私法为现有法律基础，AI专项立法讨论中。",
+        "en": "Regulatory framework still under construction, the 2012 Data Privacy Act as the existing legal foundation, with AI-specific legislation under discussion."
+      },
+      "investmentScale": {
+        "zh": "AI专项投资有限，主要依托BPO企业自主投入与外国科技公司引入，政府AI预算约数千万美元级别。",
+        "en": "Limited dedicated AI investment, mainly relying on BPO companies' own investment and foreign tech company engagement, with government AI budget at tens of millions of dollars level."
+      },
+      "keyModels": [
+        {
+          "name": {
+            "zh": "Globe Telecom AI助手",
+            "en": "Globe Telecom AI Assistant"
+          },
+          "developer": {
+            "zh": "Globe Telecom",
+            "en": "Globe Telecom"
+          },
+          "releaseYear": 2023,
+          "capabilities": {
+            "zh": "客户服务AI聊天机器人、网络优化与故障预测、用户行为分析。",
+            "en": "Customer service AI chatbot, network optimization and fault prediction, user behavior analytics."
+          }
+        },
+        {
+          "name": {
+            "zh": "Voyager AI服务",
+            "en": "Voyager AI Services"
+          },
+          "developer": {
+            "zh": "Voyager Innovations（PLDT旗下）",
+            "en": "Voyager Innovations (PLDT subsidiary)"
+          },
+          "releaseYear": 2022,
+          "capabilities": {
+            "zh": "金融科技AI（信用评分、反欺诈）、PayMaya智能推荐系统。",
+            "en": "FinTech AI (credit scoring, anti-fraud), PayMaya intelligent recommendation system."
+          }
+        }
+      ],
+      "leadingCompanies": [
+        {
+          "name": {
+            "zh": "Globe Telecom",
+            "en": "Globe Telecom"
+          },
+          "valuation": {
+            "zh": "市值约70亿美元",
+            "en": "Market cap ~$7 billion"
+          },
+          "keyProducts": {
+            "zh": "AI驱动的电信网络优化、客服聊天机器人、数字服务平台",
+            "en": "AI-driven telecom network optimization, customer service chatbot, digital services platform"
+          },
+          "headquarters": {
+            "zh": "马卡蒂",
+            "en": "Makati"
+          }
+        },
+        {
+          "name": {
+            "zh": "Voyager Innovations",
+            "en": "Voyager Innovations"
+          },
+          "valuation": {
+            "zh": "估值超10亿美元（独角兽）",
+            "en": "Valued at over $1 billion (unicorn)"
+          },
+          "keyProducts": {
+            "zh": "PayMaya（数字支付）、Lendr（AI信贷）",
+            "en": "PayMaya (digital payments), Lendr (AI lending)"
+          },
+          "headquarters": {
+            "zh": "马卡蒂",
+            "en": "Makati"
+          }
+        },
+        {
+          "name": {
+            "zh": "TaskUs",
+            "en": "TaskUs"
+          },
+          "valuation": {
+            "zh": "市值约20亿美元",
+            "en": "Market cap ~$2 billion"
+          },
+          "keyProducts": {
+            "zh": "AI数据标注、内容审核AI、客户体验AI解决方案",
+            "en": "AI data annotation, content moderation AI, customer experience AI solutions"
+          },
+          "headquarters": {
+            "zh": "美国（主要运营在菲律宾）",
+            "en": "US (primary operations in the Philippines)"
+          }
+        }
+      ],
+      "keyFigures": [
+        {
+          "name": {
+            "zh": "伊万·约翰·乌伊",
+            "en": "Ivan John Uy"
+          },
+          "title": {
+            "zh": "信息与通信技术部部长",
+            "en": "Secretary of DICT"
+          },
+          "affiliation": {
+            "zh": "信息与通信技术部",
+            "en": "Department of Information and Communications Technology"
+          },
+          "contribution": {
+            "zh": "推动国家AI路线图实施与数字基础设施建设。",
+            "en": "Driving implementation of the National AI Roadmap and digital infrastructure development."
+          }
+        },
+        {
+          "name": {
+            "zh": "恩斯特·库",
+            "en": "Ernest Cu"
+          },
+          "title": {
+            "zh": "Globe Telecom首席执行官",
+            "en": "CEO of Globe Telecom"
+          },
+          "affiliation": {
+            "zh": "Globe Telecom",
+            "en": "Globe Telecom"
+          },
+          "contribution": {
+            "zh": "领导Globe Telecom AI转型，推动菲律宾电信行业智能化升级。",
+            "en": "Leading Globe Telecom's AI transformation, driving intelligent upgrading of the Philippine telecom industry."
+          }
+        }
+      ],
+      "researchFocus": {
+        "zh": "AI数据标注与训练数据服务（BPO+AI融合）、菲律宾语NLP、金融科技AI、灾害预警AI。",
+        "en": "AI data annotation and training data services (BPO + AI convergence), Filipino-language NLP, FinTech AI, and disaster warning AI."
+      },
+      "computeInfrastructure": {
+        "zh": "数据中心建设起步阶段，主要依赖海外云服务，马尼拉数据中心集群初步形成。",
+        "en": "Data center construction in early stages, primarily reliant on overseas cloud services, with a Manila data center cluster beginning to form."
+      },
+      "talentPool": {
+        "zh": "拥有大量英语熟练劳动力，BPO行业训练的数据处理人才可向AI标注转型，但高端AI研究人才匮乏。",
+        "en": "A large English-proficient workforce, with BPO-trained data processing talent able to transition to AI annotation, but a severe shortage of high-end AI research talent."
+      },
+      "globalRanking": {
+        "zh": "全球AI指数排名约第50-55位，但AI数据标注服务潜力巨大。",
+        "en": "Ranked approximately 50th-55th in global AI indexes, but with enormous potential in AI data annotation services."
+      },
+      "outlook": {
+        "zh": "BPO产业向\"AI标注工厂\"转型是最大机遇，若能提升数字基础设施与AI人才培养，菲律宾可成为全球AI训练数据服务中心。",
+        "en": "The BPO industry's transformation into an 'AI annotation factory' is the biggest opportunity; if digital infrastructure and AI talent development improve, the Philippines could become a global AI training data service hub."
+      }
+    },
+    "assessment": {
+      "strengths": {
+        "zh": "全球BPO领导地位可向AI标注转型、英语能力强、年轻人口红利、美国安全同盟支撑。",
+        "en": "Global BPO leadership position convertible to AI annotation, strong English proficiency, youth demographic dividend, and US security alliance support."
+      },
+      "weaknesses": {
+        "zh": "数字基础设施落后、高端AI人才极度匮乏、南海安全风险、自然灾害频发。",
+        "en": "Lagging digital infrastructure, extreme shortage of high-end AI talent, South China Sea security risks, and frequent natural disasters."
+      },
+      "outlook": {
+        "zh": "若BPO产业成功向AI价值链攀升，菲律宾有望在全球AI数据服务领域占据重要位置。",
+        "en": "If the BPO industry successfully climbs the AI value chain, the Philippines could secure an important position in the global AI data services sector."
+      }
+    },
+    "status": "stable",
+    "description": {
+      "zh": "2023年的菲律宾在马科斯总统领导下积极推进数字化转型，全球BPO之都正探索向AI标注与数据服务中心转型的道路，南海局势紧张但美菲同盟持续强化。",
+      "en": "The Philippines in 2023 under President Marcos Jr. actively advances digital transformation, with the global BPO capital exploring a path toward AI annotation and data service center, facing South China Sea tensions but with a continuously strengthening US-Philippines alliance."
+    }
+  },
+  {
+    "id": "ai_malaysia",
+    "name": {
+      "zh": "马来西亚",
+      "en": "Malaysia"
+    },
+    "territoryId": "ai_malaysia",
+    "territoryScale": "md",
+    "civilization": {
+      "name": {
+        "zh": "马来西亚",
+        "en": "Malaysia"
+      },
+      "type": "republic",
+      "ruler": {
+        "zh": "安瓦尔·易卜拉欣",
+        "en": "Anwar Ibrahim"
+      },
+      "rulerTitle": {
+        "zh": "首相",
+        "en": "Prime Minister"
+      },
+      "dynasty": {
+        "zh": "希望联盟（团结政府）执政期",
+        "en": "Pakatan Harapan (Unity Government) administration"
+      },
+      "capital": {
+        "zh": "吉隆坡（行政首都布城）",
+        "en": "Kuala Lumpur (administrative capital Putrajaya)"
+      },
+      "governmentForm": {
+        "zh": "联邦选举君主立宪制，由九位世袭苏丹轮流出任最高元首，首相由国会选举产生。",
+        "en": "Federal elective constitutional monarchy with nine hereditary sultans rotating as Yang di-Pertuan Agong, and the Prime Minister elected by Parliament."
+      },
+      "socialStructure": {
+        "zh": "以马来人优先政策（\"土著特权\"）为基础的多元种族社会，马来人、华人、印度人三大族群共存。",
+        "en": "A multi-ethnic society based on Malay-first policies ('Bumiputera privileges'), with Malay, Chinese, and Indian communities coexisting."
+      },
+      "rulingClass": {
+        "zh": "马来苏丹、政党精英、马来官联企业领袖与华裔商业大亨共同构成权力结构。",
+        "en": "Malay sultans, party elites, government-linked company (GLC) leaders, and Chinese business tycoons together form the power structure."
+      },
+      "succession": {
+        "zh": "最高元首由九位苏丹按轮流制选出，任期五年；首相须为国会下院多数党领袖。",
+        "en": "The Yang di-Pertuan Agong is elected by nine sultans on a rotational basis for a five-year term; the PM must be the majority party leader in the lower house."
+      }
+    },
+    "government": {
+      "structure": {
+        "zh": "联邦制，国会分上下两院，首相领导内阁行使行政权，联邦法院为最高司法机构。",
+        "en": "Federal system with a bicameral Parliament, the Prime Minister leading the Cabinet for executive power, and the Federal Court as the highest judicial body."
+      },
+      "departments": [
+        {
+          "name": {
+            "zh": "首相署",
+            "en": "Prime Minister's Office"
+          },
+          "function": {
+            "zh": "制定国家战略、协调各部门政策、监督政府改革与数字化转型。",
+            "en": "Formulates national strategy, coordinates inter-ministerial policy, and oversees government reform and digital transformation."
+          },
+          "headCount": 8000
+        },
+        {
+          "name": {
+            "zh": "通讯与数字部",
+            "en": "Ministry of Communications and Digital"
+          },
+          "function": {
+            "zh": "主管数字经济、AI政策、数据治理、5G部署与网络安全。",
+            "en": "Oversees the digital economy, AI policy, data governance, 5G deployment, and cybersecurity."
+          },
+          "headCount": 4000
+        },
+        {
+          "name": {
+            "zh": "财政部",
+            "en": "Ministry of Finance"
+          },
+          "function": {
+            "zh": "管理国家财政、税收政策与国家石油收入。",
+            "en": "Manages national finances, tax policy, and national petroleum revenue."
+          },
+          "headCount": 20000
+        },
+        {
+          "name": {
+            "zh": "国防部",
+            "en": "Ministry of Defence"
+          },
+          "function": {
+            "zh": "统辖三军与国防战略制定。",
+            "en": "Commands the armed forces and formulates defense strategy."
+          },
+          "headCount": 8000
+        }
+      ],
+      "totalOfficials": 1700000,
+      "localAdmin": {
+        "zh": "联邦制下辖13州与3联邦直辖区，各州设州务大臣或首席部长，沙巴沙捞越享有更大自治权。",
+        "en": "Federal system with 13 states and 3 federal territories, each state headed by a Menteri Besar or Chief Minister, with Sabah and Sarawak enjoying greater autonomy."
+      },
+      "legalSystem": {
+        "zh": "普通法系（英国遗产）为基础，伊斯兰法在马来穆斯林个人事务中并行适用，双轨法律体系。",
+        "en": "Based on common law (British heritage), with Islamic law applying in parallel for Malay Muslim personal matters, creating a dual-track legal system."
+      },
+      "taxationSystem": {
+        "zh": "销售与服务税（SST，10%/6%）替代此前的GST，石油收入（Petronas股息）为重要财政来源，个人所得税率累进至30%。",
+        "en": "Sales and Service Tax (SST, 10%/6%) replacing the former GST, petroleum revenue (Petronas dividends) as a key fiscal source, with progressive personal income tax up to 30%."
+      }
+    },
+    "culture": {
+      "religion": {
+        "zh": "伊斯兰教为国教（约61%），佛教（20%）、基督教（9%）、印度教（6%）",
+        "en": "Islam as state religion (~61%), Buddhism (20%), Christianity (9%), Hinduism (6%)"
+      },
+      "philosophy": {
+        "zh": "伊斯兰价值观与\"国家原则\"（Rukun Negara）并行，多元文化共存理念与马来优先政策之间存在张力。",
+        "en": "Islamic values and the 'Rukun Negara' (National Principles) in parallel, with tension between multicultural coexistence ideals and Malay-first policies."
+      },
+      "writingSystem": {
+        "zh": "拉丁字母（马来语为国语）与爪夷文字（伊斯兰学校使用）",
+        "en": "Latin alphabet (Malay as national language) with Jawi script (used in Islamic schools)"
+      },
+      "culturalAchievements": {
+        "zh": "多元美食文化享誉全球、双子塔为城市地标、马来影视与音乐产业区域影响力扩大。",
+        "en": "Multi-ethnic cuisine culture renowned globally, Petronas Twin Towers as a city landmark, and Malaysian film and music industry expanding regional influence."
+      },
+      "languageFamily": {
+        "zh": "南岛语系（马来语为国语，英语为通用商业语言，华语与泰米尔语社区广泛使用）",
+        "en": "Austronesian family (Malay as national language, English as common business language, with Mandarin and Tamil widely used in their communities)"
+      }
+    },
+    "economy": {
+      "level": 6,
+      "gdpEstimate": {
+        "amount": 400000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 6451612,
+        "displayNote": {
+          "zh": "2023年GDP约4000亿美元，东盟第三大经济体",
+          "en": "2023 GDP approximately $400 billion, ASEAN's third-largest economy"
+        }
+      },
+      "gdpPerCapita": {
+        "amount": 12100,
+        "unit": {
+          "zh": "美元/人",
+          "en": "US dollars per capita"
+        },
+        "goldKg": 0.195
+      },
+      "gdpDescription": {
+        "zh": "以石油天然气、电子制造与棕榈油为支柱的中高收入经济体，数字经济与数据中心产业快速崛起。正向高收入国家门槛冲刺。",
+        "en": "An upper-middle-income economy built on oil & gas, electronics manufacturing, and palm oil, with the digital economy and data center industry rising rapidly. Sprinting toward high-income nation status."
+      },
+      "mainIndustries": {
+        "zh": "石油天然气（Petronas）、半导体封测、电子制造、棕榈油、数据中心、旅游、伊斯兰金融",
+        "en": "Oil & gas (Petronas), semiconductor packaging and testing, electronics manufacturing, palm oil, data centers, tourism, Islamic finance"
+      },
+      "tradeGoods": {
+        "zh": "半导体与电子产品、石油天然气、棕榈油、橡胶、数据中心服务",
+        "en": "Semiconductors and electronics, oil and gas, palm oil, rubber, data center services"
+      },
+      "currency": {
+        "name": {
+          "zh": "马来西亚令吉",
+          "en": "Malaysian Ringgit"
+        },
+        "type": "fiat",
+        "metalBasis": "none",
+        "unitName": {
+          "zh": "令吉",
+          "en": "MYR"
+        }
+      },
+      "householdWealth": {
+        "zh": "家庭财富中位数约3.5万美元，种族间收入差距有所收窄但仍显著。城市中产阶级消费力增强。",
+        "en": "Median household wealth approximately $35,000 with narrowing but still significant inter-ethnic income gaps. Urban middle class consumption power is growing."
+      },
+      "averageIncome": {
+        "amount": 9600,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        }
+      },
+      "foreignTradeVolume": {
+        "amount": 530000000000,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        },
+        "goldKg": 8548387
+      },
+      "tradeRoutes": {
+        "zh": "马六甲海峡为全球最重要贸易航道之一，中新日美为主要贸易伙伴，东盟内贸与RCEP框架。",
+        "en": "The Strait of Malacca as one of the world's most important trade routes, with China, Singapore, Japan, and the US as major partners, intra-ASEAN trade and RCEP framework."
+      },
+      "economicSystem": {
+        "zh": "以市场经济为主，政府通过Petronas与官联企业（GLCs）发挥重大经济角色，\"新经济模型\"推动知识经济转型。",
+        "en": "Primarily a market economy, with the government playing a major economic role through Petronas and government-linked companies (GLCs), and the 'New Economic Model' driving knowledge-economy transformation."
+      }
+    },
+    "finances": {
+      "annualRevenue": {
+        "amount": 72000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 1161290
+      },
+      "annualExpenditure": {
+        "amount": 88000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": 1419354
+      },
+      "surplus": {
+        "amount": -16000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "goldKg": -258064
+      },
+      "revenueBreakdown": [
+        {
+          "source": {
+            "zh": "Petronas石油股息与税收",
+            "en": "Petronas petroleum dividends and taxes"
+          },
+          "amount": {
+            "amount": 22000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 30.6
+        },
+        {
+          "source": {
+            "zh": "公司所得税",
+            "en": "Corporate income tax"
+          },
+          "amount": {
+            "amount": 17000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 23.6
+        },
+        {
+          "source": {
+            "zh": "个人所得税",
+            "en": "Individual income tax"
+          },
+          "amount": {
+            "amount": 10000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 13.9
+        }
+      ],
+      "expenditureBreakdown": [
+        {
+          "category": {
+            "zh": "行政运营（包含公务员薪酬）",
+            "en": "Administrative operations (including civil service salaries)"
+          },
+          "amount": {
+            "amount": 37000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 42
+        },
+        {
+          "category": {
+            "zh": "发展开支",
+            "en": "Development expenditure"
+          },
+          "amount": {
+            "amount": 20000000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 22.7
+        },
+        {
+          "category": {
+            "zh": "国防",
+            "en": "Defense"
+          },
+          "amount": {
+            "amount": 4500000000,
+            "unit": {
+              "zh": "美元",
+              "en": "US dollars"
+            }
+          },
+          "percentage": 5.1
+        }
+      ],
+      "treasury": {
+        "amount": 115000000000,
+        "unit": {
+          "zh": "美元等值外汇储备",
+          "en": "US dollar equivalent foreign reserves"
+        },
+        "goldKg": 1854838
+      },
+      "treasuryDescription": {
+        "zh": "外汇储备约1150亿美元，加上Petronas千亿美元级资产储备，整体财政缓冲较强。",
+        "en": "Foreign reserves of approximately $115 billion, plus Petronas' hundreds-of-billions-dollar asset base, providing a strong overall fiscal buffer."
+      },
+      "debtLevel": {
+        "amount": 250000000000,
+        "unit": {
+          "zh": "美元",
+          "en": "US dollars"
+        },
+        "displayNote": {
+          "zh": "联邦政府债务约占GDP的63%，接近法定上限",
+          "en": "Federal government debt approximately 63% of GDP, approaching the statutory ceiling"
+        }
+      },
+      "fiscalPolicy": {
+        "zh": "安瓦尔政府推进补贴合理化改革（削减燃油补贴），增加针对性社会支出，加大数字经济与AI基础设施投入。",
+        "en": "The Anwar government is advancing subsidy rationalization (reducing fuel subsidies), increasing targeted social spending, and boosting digital economy and AI infrastructure investment."
+      }
+    },
+    "military": {
+      "level": 5,
+      "totalTroops": 260000,
+      "standingArmy": 110000,
+      "reserves": 150000,
+      "branches": [
+        {
+          "name": {
+            "zh": "马来西亚陆军",
+            "en": "Malaysian Army"
+          },
+          "count": 80000,
+          "description": {
+            "zh": "以国土防御与维和任务为主，装备以西方与土耳其武器为主。",
+            "en": "Focused on territorial defense and peacekeeping, equipped primarily with Western and Turkish weapons."
+          }
+        },
+        {
+          "name": {
+            "zh": "马来西亚皇家海军",
+            "en": "Royal Malaysian Navy"
+          },
+          "count": 18000,
+          "description": {
+            "zh": "负责马六甲海峡与南海巡防，拥有轻型护卫舰与巡逻艇。",
+            "en": "Responsible for Strait of Malacca and South China Sea patrols, operating light frigates and patrol vessels."
+          }
+        },
+        {
+          "name": {
+            "zh": "马来西亚皇家空军",
+            "en": "Royal Malaysian Air Force"
+          },
+          "count": 12000,
+          "description": {
+            "zh": "装备苏-30MKM与F/A-18D战斗机，正评估下一代战机采购。",
+            "en": "Equipped with Su-30MKM and F/A-18D fighters, currently evaluating next-generation fighter procurement."
+          }
+        }
+      ],
+      "commandStructure": {
+        "commanderInChief": {
+          "zh": "最高元首为武装力量统帅（名义），首相为实际最高军事决策者",
+          "en": "Yang di-Pertuan Agong as commander-in-chief (nominal), Prime Minister as de facto supreme military decision-maker"
+        },
+        "totalGenerals": 500
+      },
+      "technology": {
+        "zh": "中等水平，装备来源多元（美俄欧土），正推进国防工业与网络安全能力建设。",
+        "en": "Moderate level with diverse equipment sources (US, Russian, European, Turkish), advancing domestic defense industry and cybersecurity capabilities."
+      },
+      "annualMilitarySpending": {
+        "amount": 4500000000,
+        "unit": {
+          "zh": "美元/年",
+          "en": "US dollars per year"
+        },
+        "goldKg": 72580
+      },
+      "militarySpendingPctGdp": 1.1,
+      "threats": {
+        "zh": "南海主权争端（与中国、越南等）、马六甲海峡海盗与恐怖主义、沙巴主权争议。",
+        "en": "South China Sea sovereignty disputes (with China, Vietnam, etc.), piracy and terrorism in the Strait of Malacca, and the Sabah sovereignty dispute."
+      },
+      "recentBattles": {
+        "zh": "无大规模军事冲突，持续进行反海盗与反恐巡逻行动。",
+        "en": "No large-scale military conflicts, ongoing anti-piracy and counter-terrorism patrol operations."
+      }
+    },
+    "demographics": {
+      "population": 33000000,
+      "populationDescription": {
+        "zh": "多元种族国家，人口增长稳定，城市化水平较高，正经历人口结构转型。",
+        "en": "A multi-ethnic nation with stable population growth, relatively high urbanization, undergoing demographic transition."
+      },
+      "urbanPopulation": 25000000,
+      "urbanizationRate": 78,
+      "majorCities": [
+        {
+          "name": {
+            "zh": "吉隆坡",
+            "en": "Kuala Lumpur"
+          },
+          "population": 8400000
+        },
+        {
+          "name": {
+            "zh": "槟城",
+            "en": "Penang"
+          },
+          "population": 1800000
+        },
+        {
+          "name": {
+            "zh": "新山",
+            "en": "Johor Bahru"
+          },
+          "population": 1600000
+        }
+      ],
+      "ethnicGroups": {
+        "zh": "马来人与原住民（69.8%）、华裔（22.4%）、印度裔（6.8%）及其他",
+        "en": "Malay and Bumiputera (69.8%), Chinese (22.4%), Indian (6.8%), and others"
+      },
+      "socialClasses": {
+        "zh": "马来政治精英与官联企业管理层、华裔商业大亨、专业中产阶级、外劳与底层工人构成社会分层。",
+        "en": "Malay political elites and GLC management, Chinese business magnates, professional middle class, and migrant workers and lower-class laborers form the social strata."
+      },
+      "literacyRate": {
+        "zh": "95.0%",
+        "en": "95.0%"
+      },
+      "lifeExpectancy": {
+        "zh": "76.2岁",
+        "en": "76.2 years"
+      }
+    },
+    "diplomacy": {
+      "allies": {
+        "zh": "东盟成员国、中国（主要经济伙伴）、美国、英国（五国联防协议）、沙特阿拉伯（伊斯兰合作）。",
+        "en": "ASEAN member states, China (major economic partner), US, UK (Five Power Defence Arrangements), Saudi Arabia (Islamic cooperation)."
+      },
+      "enemies": {
+        "zh": "无正式敌国，但与中国在南海存在领土争议，菲律宾主张沙巴主权。",
+        "en": "No formal enemies, but territorial disputes with China in the South China Sea, and the Philippines claiming sovereignty over Sabah."
+      },
+      "treaties": {
+        "zh": "东盟宪章、RCEP、五国联防协议（FPDA）、CPTPP、中马全面战略伙伴关系等。",
+        "en": "ASEAN Charter, RCEP, Five Power Defence Arrangements (FPDA), CPTPP, China-Malaysia Comprehensive Strategic Partnership, etc."
+      },
+      "foreignPolicy": {
+        "zh": "安瓦尔推行\"务实等距\"外交，深化与中国经济合作同时维持与西方关系，积极推动全球南方合作与伊斯兰世界团结。",
+        "en": "Anwar pursues 'pragmatic equidistance' diplomacy, deepening economic cooperation with China while maintaining Western ties, and actively promoting Global South cooperation and Islamic world solidarity."
+      },
+      "recentDiplomaticEvents": {
+        "zh": "2023年安瓦尔访华加强双边关系，推动半导体合作；出席联合国大会倡导巴勒斯坦权利。",
+        "en": "Anwar's 2023 China visit strengthened bilateral ties and semiconductor cooperation; addressed the UN General Assembly advocating Palestinian rights."
+      }
+    },
+    "technology": {
+      "level": 6,
+      "era": {
+        "zh": "数字经济与数据中心枢纽崛起时代",
+        "en": "Rising digital economy and data center hub era"
+      },
+      "keyInnovations": {
+        "zh": "半导体封测全球领先（槟城为中心）、5G网络快速部署、区域数据中心枢纽、数字支付（Touch'n Go eWallet）。",
+        "en": "Global leadership in semiconductor packaging and testing (Penang-centered), rapid 5G deployment, regional data center hub, and digital payments (Touch'n Go eWallet)."
+      },
+      "infrastructure": {
+        "zh": "区域最佳数据中心基础设施之一，AWS、微软、Google大规模投资数据中心，柔佛成为新数据中心走廊。",
+        "en": "Among the region's best data center infrastructure, with AWS, Microsoft, and Google investing heavily in data centers, and Johor emerging as a new data center corridor."
+      }
+    },
+    "aiSector": {
+      "level": 3,
+      "policy": {
+        "zh": "《马来西亚AI路线图2021-2025》（AI-Rmap）制定七大战略推动AI发展，MDEC（马来西亚数字经济发展局）牵头实施。",
+        "en": "The Malaysia AI Roadmap 2021-2025 (AI-Rmap) sets seven strategies to drive AI development, led by MDEC (Malaysia Digital Economy Corporation)."
+      },
+      "regulatoryStance": {
+        "zh": "推出AI治理与伦理框架，数据保护法（PDPA 2010）正在修订以适应AI发展需求。",
+        "en": "Introduced AI governance and ethics framework, with the Personal Data Protection Act (PDPA 2010) under revision to accommodate AI development needs."
+      },
+      "investmentScale": {
+        "zh": "2023年微软宣布在马22亿美元数据中心投资，AWS投资60亿美元，Google云区域节点落地。外国科技巨头AI基础设施投资总额超100亿美元。",
+        "en": "In 2023, Microsoft announced $2.2 billion in Malaysian data center investment, AWS invested $6 billion, and Google Cloud regional nodes launched. Total foreign tech giant AI infrastructure investment exceeds $10 billion."
+      },
+      "keyModels": [
+        {
+          "name": {
+            "zh": "MaLLaM（马来语大模型）",
+            "en": "MaLLaM (Malay Large Language Model)"
+          },
+          "developer": {
+            "zh": "MIMOS / 马来西亚AI研究中心",
+            "en": "MIMOS / Malaysian AI Research Center"
+          },
+          "releaseYear": 2023,
+          "capabilities": {
+            "zh": "马来语优化的大语言模型，支持政务问答、文档处理与多语言翻译。",
+            "en": "Malay-language-optimized large language model supporting government Q&A, document processing, and multilingual translation."
+          }
+        },
+        {
+          "name": {
+            "zh": "Petronas AI（油气AI平台）",
+            "en": "Petronas AI (Oil & Gas AI Platform)"
+          },
+          "developer": {
+            "zh": "Petronas Technology",
+            "en": "Petronas Technology"
+          },
+          "releaseYear": 2022,
+          "capabilities": {
+            "zh": "AI驱动的石油勘探优化、设备预测性维护、碳排放监控与能源效率优化。",
+            "en": "AI-driven oil exploration optimization, predictive equipment maintenance, carbon emission monitoring, and energy efficiency optimization."
+          }
+        }
+      ],
+      "leadingCompanies": [
+        {
+          "name": {
+            "zh": "Petronas",
+            "en": "Petronas"
+          },
+          "valuation": {
+            "zh": "总资产超1700亿美元（国有企业）",
+            "en": "Total assets over $170 billion (state-owned enterprise)"
+          },
+          "keyProducts": {
+            "zh": "AI驱动的智能油气生产、碳捕获与存储技术、数字能源管理平台",
+            "en": "AI-driven smart oil & gas production, carbon capture and storage technology, digital energy management platform"
+          },
+          "headquarters": {
+            "zh": "吉隆坡",
+            "en": "Kuala Lumpur"
+          }
+        },
+        {
+          "name": {
+            "zh": "MDEC（马来西亚数字经济发展局）",
+            "en": "MDEC (Malaysia Digital Economy Corporation)"
+          },
+          "valuation": {
+            "zh": "政府机构",
+            "en": "Government agency"
+          },
+          "keyProducts": {
+            "zh": "AI产业促进、数字自贸区、全国AI人才培养计划",
+            "en": "AI industry promotion, Digital Free Trade Zone, national AI talent development programs"
+          },
+          "headquarters": {
+            "zh": "赛城",
+            "en": "Cyberjaya"
+          }
+        },
+        {
+          "name": {
+            "zh": "AirAsia Digital（亚航数字）",
+            "en": "AirAsia Digital (Capital A)"
+          },
+          "valuation": {
+            "zh": "Capital A集团市值约15亿美元",
+            "en": "Capital A group market cap ~$1.5 billion"
+          },
+          "keyProducts": {
+            "zh": "AirAsia超级应用AI推荐引擎、动态定价算法、Teleport物流AI",
+            "en": "AirAsia super app AI recommendation engine, dynamic pricing algorithm, Teleport logistics AI"
+          },
+          "headquarters": {
+            "zh": "吉隆坡",
+            "en": "Kuala Lumpur"
+          }
+        },
+        {
+          "name": {
+            "zh": "Carsome",
+            "en": "Carsome"
+          },
+          "valuation": {
+            "zh": "东南亚最大汽车电商平台，估值约17亿美元（独角兽）",
+            "en": "Southeast Asia's largest online car marketplace, valued at ~$1.7 billion (unicorn)"
+          },
+          "keyProducts": {
+            "zh": "AI车辆估价与检测系统、智能库存管理",
+            "en": "AI vehicle valuation and inspection system, intelligent inventory management"
+          },
+          "headquarters": {
+            "zh": "八打灵再也",
+            "en": "Petaling Jaya"
+          }
+        }
+      ],
+      "keyFigures": [
+        {
+          "name": {
+            "zh": "法赫米·法齐尔",
+            "en": "Fahmi Fadzil"
+          },
+          "title": {
+            "zh": "通讯与数字部部长",
+            "en": "Minister of Communications and Digital"
+          },
+          "affiliation": {
+            "zh": "通讯与数字部",
+            "en": "Ministry of Communications and Digital"
+          },
+          "contribution": {
+            "zh": "主导马来西亚数字经济与AI政策制定，推动数据中心产业吸引外资。",
+            "en": "Leading Malaysia's digital economy and AI policy formulation, driving data center industry foreign investment attraction."
+          }
+        },
+        {
+          "name": {
+            "zh": "穆罕默德·陶菲克",
+            "en": "Tengku Muhammad Taufik"
+          },
+          "title": {
+            "zh": "Petronas总裁兼CEO",
+            "en": "President & CEO of Petronas"
+          },
+          "affiliation": {
+            "zh": "Petronas",
+            "en": "Petronas"
+          },
+          "contribution": {
+            "zh": "推动Petronas向AI驱动的智能能源公司转型，加速碳中和技术研发。",
+            "en": "Driving Petronas' transformation into an AI-driven smart energy company, accelerating carbon-neutral technology R&D."
+          }
+        }
+      ],
+      "researchFocus": {
+        "zh": "马来语NLP与多语言AI、能源AI（Petronas主导）、半导体封测AI优化、伊斯兰金融科技AI。",
+        "en": "Malay-language NLP and multilingual AI, energy AI (Petronas-led), semiconductor packaging and testing AI optimization, Islamic FinTech AI."
+      },
+      "computeInfrastructure": {
+        "zh": "东南亚数据中心枢纽之一，AWS马来西亚区域2023年启用，微软在柔佛大规模建设数据中心，总算力快速增长。",
+        "en": "One of Southeast Asia's data center hubs, with AWS Malaysia region launched in 2023, Microsoft massively building data centers in Johor, and total compute capacity growing rapidly."
+      },
+      "talentPool": {
+        "zh": "马来亚大学、国民大学、理科大学为AI人才培养基地，赛城与槟城为科技人才聚集地，但高端AI人才仍向新加坡流失。",
+        "en": "University of Malaya, National University of Malaysia, and Universiti Sains Malaysia as AI talent bases, with Cyberjaya and Penang as tech talent clusters, though top AI talent still migrates to Singapore."
+      },
+      "globalRanking": {
+        "zh": "全球AI指数排名约第30-35位，东盟内仅次于新加坡，以数据中心基础设施见长。",
+        "en": "Ranked approximately 30th-35th in global AI indexes, second only to Singapore in ASEAN, with data center infrastructure as a key strength."
+      },
+      "outlook": {
+        "zh": "数据中心枢纽地位持续巩固，若能将基础设施优势转化为AI应用创新，马来西亚有望成为东南亚AI产业核心节点。",
+        "en": "Data center hub position continues to consolidate; if infrastructure advantages can be converted into AI application innovation, Malaysia could become a core node in Southeast Asia's AI industry."
+      }
+    },
+    "assessment": {
+      "strengths": {
+        "zh": "数据中心基础设施领先东盟、Petronas资本实力雄厚、半导体产业链完整、多语言多文化适应性强。",
+        "en": "ASEAN-leading data center infrastructure, Petronas' strong capital base, complete semiconductor industry chain, and strong multilingual-multicultural adaptability."
+      },
+      "weaknesses": {
+        "zh": "高端AI人才流失至新加坡、种族政策限制人才充分利用、原创AI研究产出有限、对石油收入依赖度高。",
+        "en": "Top AI talent drain to Singapore, ethnic policies limiting full talent utilization, limited original AI research output, and high dependence on petroleum revenue."
+      },
+      "outlook": {
+        "zh": "AWS、微软、Google的百亿美元级数据中心投资使马来西亚成为东南亚AI基础设施领跑者，关键在于能否培育本土AI创新生态。",
+        "en": "Multi-billion-dollar data center investments from AWS, Microsoft, and Google make Malaysia Southeast Asia's AI infrastructure frontrunner; the key is whether it can cultivate a local AI innovation ecosystem."
+      }
+    },
+    "status": "stable",
+    "description": {
+      "zh": "2023年的马来西亚在安瓦尔首相领导下加速数字经济转型，凭借数据中心枢纽地位吸引AWS、微软、Google百亿美元投资，Petronas以AI赋能能源产业，MDEC推进国家AI路线图实施。",
+      "en": "Malaysia in 2023 under PM Anwar Ibrahim accelerates digital economy transformation, leveraging its data center hub status to attract multi-billion-dollar investments from AWS, Microsoft, and Google, with Petronas empowering the energy industry through AI and MDEC advancing the National AI Roadmap."
+    }
+  }
+]

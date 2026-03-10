@@ -16,12 +16,15 @@ const CATEGORY_COLORS: Record<string, string> = {
   exploration: "#2e8b57",
   diplomacy: "#4682b4",
   migration: "#7b6b8a",
+  technology: "#6d28d9",
+  finance: "#0d9488",
   other: "#6b5f4e",
 };
 
 const ALL_CATEGORIES: EventCategory[] = [
   "war", "dynasty", "invention", "trade", "religion",
-  "disaster", "natural_disaster", "exploration", "diplomacy", "migration", "other",
+  "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
+  "technology", "finance", "other",
 ];
 
 function formatYear(year: number, locale: "zh" | "en"): string {

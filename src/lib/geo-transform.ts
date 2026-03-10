@@ -1,32 +1,28 @@
-import type { Region, CivilizationType, RegionStatus } from "./types";
+import type { Region, RegionStatus } from "./types";
 
-const CIVILIZATION_COLORS: Record<
-  CivilizationType,
+const STATUS_COLORS: Record<
+  RegionStatus,
   { fill: string; border: string }
 > = {
-  empire: { fill: "#B8860B", border: "#8B6914" },
-  kingdom: { fill: "#CD853F", border: "#A0522D" },
-  city_state: { fill: "#D4A76A", border: "#B8956A" },
-  tribal: { fill: "#6B8E23", border: "#556B2F" },
-  nomadic: { fill: "#8B7355", border: "#6B5B3F" },
-  trade_network: { fill: "#2E8B57", border: "#1B6B3F" },
-  theocracy: { fill: "#8B668B", border: "#6B4A6B" },
-  republic: { fill: "#4682B4", border: "#2E6B8B" },
+  thriving: { fill: "#22c55e", border: "#15803d" },
+  stable: { fill: "#d97706", border: "#92400e" },
+  declining: { fill: "#eab308", border: "#a16207" },
+  conflict: { fill: "#ef4444", border: "#b91c1c" },
+  collapsed: { fill: "#6b7280", border: "#4b5563" },
 };
 
 const STATUS_MODIFIERS: Record<
   RegionStatus,
   {
-    colorOverride?: string;
     dashArray?: number[];
     opacityMultiplier: number;
   }
 > = {
   thriving: { opacityMultiplier: 1.0 },
   stable: { opacityMultiplier: 0.85 },
-  declining: { dashArray: [4, 4], opacityMultiplier: 0.6 },
-  conflict: { colorOverride: "#CD5C5C", opacityMultiplier: 0.8 },
-  collapsed: { dashArray: [2, 6], opacityMultiplier: 0.3 },
+  declining: { dashArray: [4, 4], opacityMultiplier: 0.7 },
+  conflict: { opacityMultiplier: 0.85 },
+  collapsed: { dashArray: [2, 6], opacityMultiplier: 0.35 },
 };
 
 let _territories: Record<
@@ -51,6 +47,10 @@ export function regionToGeoJSON(
   region: Region,
   locale: "zh" | "en"
 ): GeoJSON.Feature | null {
+  if (region.geometry) {
+    return buildFeature(region, region.geometry, locale);
+  }
+
   if (!_territories) return null;
 
   const regionTemplates = _territories[region.territoryId];
@@ -74,7 +74,7 @@ function buildFeature(
   geometry: GeoJSON.Geometry,
   locale: "zh" | "en"
 ): GeoJSON.Feature {
-  const colors = CIVILIZATION_COLORS[region.civilization?.type] ?? {
+  const statusColors = STATUS_COLORS[region.status] ?? {
     fill: "#888",
     border: "#666",
   };
@@ -82,7 +82,7 @@ function buildFeature(
     opacityMultiplier: 0.8,
   };
 
-  const baseOpacity = 0.2 + ((region.economy?.level ?? 0) / 10) * 0.5;
+  const baseOpacity = 0.25 + ((region.economy?.level ?? 0) / 10) * 0.45;
   const fillOpacity = baseOpacity * (statusMod.opacityMultiplier ?? 1.0);
   const borderWidth = 1 + ((region.military?.level ?? 0) / 10) * 2;
   const area = computeArea(geometry);
@@ -94,8 +94,8 @@ function buildFeature(
       regionId: region.id,
       label: region.name?.[locale] ?? region.id,
       sublabel: region.civilization?.name?.[locale] ?? "",
-      fillColor: statusMod.colorOverride ?? colors.fill,
-      borderColor: colors.border,
+      fillColor: statusColors.fill,
+      borderColor: statusColors.border,
       fillOpacity,
       borderWidth,
       borderDash: statusMod.dashArray ?? [0],
@@ -139,19 +139,26 @@ export function regionsToLabelPoints(
   regions: Region[],
   locale: "zh" | "en"
 ): GeoJSON.FeatureCollection {
-  if (!_territories) return { type: "FeatureCollection", features: [] };
-
   const labelFeatures: GeoJSON.Feature[] = [];
 
   for (const region of regions) {
-    const regionTemplates = _territories[region.territoryId];
-    if (!regionTemplates) continue;
-    const template =
-      regionTemplates[region.territoryScale] ??
-      Object.values(regionTemplates)[0];
-    if (!template) continue;
+    let geometry: GeoJSON.Geometry | null = null;
 
-    const centroid = computeCentroid(template.geometry);
+    if (region.geometry) {
+      geometry = region.geometry;
+    } else if (_territories) {
+      const regionTemplates = _territories[region.territoryId];
+      if (regionTemplates) {
+        const template =
+          regionTemplates[region.territoryScale] ??
+          Object.values(regionTemplates)[0];
+        if (template) geometry = template.geometry;
+      }
+    }
+
+    if (!geometry) continue;
+
+    const centroid = computeCentroid(geometry);
     if (!centroid) continue;
 
     const population = region.demographics?.population ?? 0;
@@ -196,32 +203,58 @@ function computeArea(geometry: GeoJSON.Geometry): number {
   return total;
 }
 
-function computeCentroid(geometry: GeoJSON.Geometry): [number, number] | null {
-  const coords: number[][] = [];
+function polygonCentroid(ring: number[][]): { cx: number; cy: number; area: number } {
+  let area = 0;
+  let cx = 0;
+  let cy = 0;
+  for (let i = 0, len = ring.length, j = len - 1; i < len; j = i++) {
+    const cross = ring[j][0] * ring[i][1] - ring[i][0] * ring[j][1];
+    area += cross;
+    cx += (ring[j][0] + ring[i][0]) * cross;
+    cy += (ring[j][1] + ring[i][1]) * cross;
+  }
+  area /= 2;
+  const absArea = Math.abs(area);
+  if (absArea < 1e-10) return { cx: ring[0][0], cy: ring[0][1], area: 0 };
+  const factor = 1 / (6 * area);
+  return { cx: cx * factor, cy: cy * factor, area: absArea };
+}
 
-  function collect(g: GeoJSON.Geometry) {
-    if (g.type === "Polygon") {
-      for (const c of (g as GeoJSON.Polygon).coordinates[0]) coords.push(c);
-    } else if (g.type === "MultiPolygon") {
-      for (const poly of (g as GeoJSON.MultiPolygon).coordinates)
-        for (const c of poly[0]) coords.push(c);
+function computeCentroid(geometry: GeoJSON.Geometry): [number, number] | null {
+  const parts: { cx: number; cy: number; area: number }[] = [];
+
+  if (geometry.type === "Polygon") {
+    const p = polygonCentroid((geometry as GeoJSON.Polygon).coordinates[0]);
+    parts.push(p);
+  } else if (geometry.type === "MultiPolygon") {
+    for (const poly of (geometry as GeoJSON.MultiPolygon).coordinates) {
+      parts.push(polygonCentroid(poly[0]));
     }
   }
 
-  collect(geometry);
-  if (coords.length === 0) return null;
+  if (parts.length === 0) return null;
 
-  let sumLng = 0, sumLat = 0;
-  for (const c of coords) {
-    sumLng += c[0];
-    sumLat += c[1];
+  const totalArea = parts.reduce((s, p) => s + p.area, 0);
+  if (totalArea < 1e-10) {
+    return [parts[0].cx, parts[0].cy];
   }
-  return [sumLng / coords.length, sumLat / coords.length];
+
+  let wLng = 0;
+  let wLat = 0;
+  for (const p of parts) {
+    const w = p.area / totalArea;
+    wLng += p.cx * w;
+    wLat += p.cy * w;
+  }
+  return [wLng, wLat];
 }
 
 export function getRegionCentroid(
   region: Region
 ): [number, number] | null {
+  if (region.geometry) {
+    return computeCentroid(region.geometry);
+  }
   if (!_territories) return null;
   const regionTemplates = _territories[region.territoryId];
   if (!regionTemplates) return null;

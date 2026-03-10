@@ -1,4 +1,5 @@
 import type { AgentMessage } from "./types";
+import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
 
 const LLM_TIMEOUT_MS = 300_000;
 
@@ -10,10 +11,10 @@ export async function callAgentStreaming(
   onToken: TokenCallback,
   options?: { temperature?: number }
 ): Promise<string> {
-  const apiKey = process.env.OPENROUTER_API_KEY;
+  const apiKey = getEffectiveApiKey();
   if (!apiKey) throw new Error("OPENROUTER_API_KEY is not configured");
 
-  const model = process.env.LLM_MODEL || "openai/gpt-5.4";
+  const model = getEffectiveModel();
   const temperature = options?.temperature ?? 0.5;
 
   const controller = new AbortController();
@@ -95,10 +96,10 @@ export async function callAgent(
   messages: AgentMessage[],
   options?: { temperature?: number }
 ): Promise<string> {
-  const apiKey = process.env.OPENROUTER_API_KEY;
+  const apiKey = getEffectiveApiKey();
   if (!apiKey) throw new Error("OPENROUTER_API_KEY is not configured");
 
-  const model = process.env.LLM_MODEL || "openai/gpt-5.4";
+  const model = getEffectiveModel();
   const temperature = options?.temperature ?? 0.5;
 
   const controller = new AbortController();

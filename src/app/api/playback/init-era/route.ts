@@ -1,12 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import {
-  resetAndReinitialize,
+  switchToEra,
   getLatestSnapshot,
   getEvents,
   getFrontier,
+  getEvolutionLogs,
+  getActiveWars,
+  getOriginTime,
 } from "@/lib/db";
 import { ERA_PRESETS } from "@/data/era-presets";
+import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
+import {
+  findClosestSnapshotYear,
+  mergeSnapshotGeometry,
+} from "@/lib/geo-snapshots";
+import type { Region } from "@/lib/types";
 import fs from "fs";
 import path from "path";
 
@@ -108,19 +117,27 @@ function handlePrebuilt(
           status: evt.status || "pending",
         }));
 
-        resetAndReinitialize(
+        const snapshotYear = findClosestSnapshotYear(prebuilt.timestamp.year);
+        const regions = prebuilt.regions as Region[];
+        mergeSnapshotGeometry(regions, snapshotYear);
+
+        switchToEra(
           prebuilt.id,
           prebuilt.timestamp.year,
           prebuilt.timestamp.month,
           prebuilt.era,
-          prebuilt.regions,
+          regions,
           prebuilt.summary,
-          dbEvents.length > 0 ? dbEvents : undefined
+          dbEvents.length > 0 ? dbEvents : undefined,
+          preset.id
         );
 
         const snapshot = getLatestSnapshot();
         const events = getEvents();
         const frontier = getFrontier();
+        const originTime = getOriginTime();
+        const evolutionLogs = getEvolutionLogs();
+        const wars = snapshot ? getActiveWars(snapshot.year) : [];
 
         const worldState = snapshot
           ? {
@@ -136,6 +153,10 @@ function handlePrebuilt(
           state: worldState,
           events,
           frontier,
+          originTime,
+          evolutionLogs,
+          wars,
+          eraId: preset.id,
           needsEvents: !events || events.length === 0,
         });
         controller.close();
@@ -169,7 +190,7 @@ function handleLLMGeneration(preset: (typeof ERA_PRESETS)[number]) {
           era: preset.name,
         });
 
-        const apiKey = process.env.OPENROUTER_API_KEY;
+        const apiKey = getEffectiveApiKey();
         if (!apiKey) {
           sendSSE(controller, encoder, "error", {
             error: "OPENROUTER_API_KEY not configured",
@@ -178,7 +199,7 @@ function handleLLMGeneration(preset: (typeof ERA_PRESETS)[number]) {
           return;
         }
 
-        const model = process.env.LLM_MODEL || "openai/gpt-5.4";
+        const model = getEffectiveModel();
         const territoryList = getTerritoryList();
 
         const yearLabel =
@@ -301,7 +322,7 @@ Each event in the "events" array:
   "title": { "zh": "...", "en": "..." },
   "description": { "zh": "...", "en": "..." },
   "affectedRegions": ["region_id"],
-  "category": "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|other"
+  "category": "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|technology|finance|other"
 }
 
 ## Rules
@@ -444,11 +465,12 @@ Return compact JSON: {"state":{...},"events":[...]}`;
           const stateEra = parsed.state.era || preset.era;
           const stateSummary = parsed.state.summary;
 
-          const snapshotId = `state-y${preset.year}-m${preset.month}-initial`;
+          const snapshotId = `state-${preset.id}-y${preset.year}-m${preset.month}-initial`;
 
           const validCategories = new Set([
             "war", "dynasty", "invention", "trade", "religion",
-            "disaster", "natural_disaster", "exploration", "diplomacy", "migration", "other",
+            "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
+            "technology", "finance", "other",
           ]);
           const regionIds = new Set(stateRegions.map((r) => r.id as string));
 
@@ -476,19 +498,24 @@ Return compact JSON: {"state":{...},"events":[...]}`;
             };
           });
 
-          resetAndReinitialize(
+          const llmSnapshotYear = findClosestSnapshotYear(preset.year);
+          mergeSnapshotGeometry(stateRegions as unknown as Region[], llmSnapshotYear);
+
+          switchToEra(
             snapshotId,
             preset.year,
             preset.month,
             stateEra as object,
             stateRegions,
             stateSummary as object | undefined,
-            dbEvents
+            dbEvents,
+            preset.id
           );
 
           const snapshot = getLatestSnapshot();
           const events = getEvents();
           const frontier = getFrontier();
+          const originTime = getOriginTime();
 
           const worldState = snapshot
             ? {
@@ -504,6 +531,8 @@ Return compact JSON: {"state":{...},"events":[...]}`;
             state: worldState,
             events,
             frontier,
+            originTime,
+            eraId: preset.id,
           });
           controller.close();
         } catch (err) {

@@ -12,8 +12,15 @@ import LlmStreamPanel from "@/components/LlmStreamPanel";
 import EvolutionLogPanel from "@/components/EvolutionLogPanel";
 import EraSelectModal from "@/components/EraSelectModal";
 import WarDetailModal from "@/components/WarDetailModal";
+import WarsPanel from "@/components/WarsPanel";
+import SettingsModal from "@/components/SettingsModal";
+import { useSettingsStore } from "@/store/useSettingsStore";
+import { SUPPORTED_MODELS, DEFAULT_MODEL } from "@/lib/settings";
 import type { HistoricalEvent, WorldState, War } from "@/lib/types";
 import type { EpochChangelog } from "@/lib/changelog";
+import { ERA_PRESETS } from "@/data/era-presets";
+
+const DEFAULT_ERA_ID = "modern-era";
 
 const WorldMap = dynamic(() => import("@/components/WorldMap"), { ssr: false });
 
@@ -26,9 +33,13 @@ export default function Home() {
   const setOriginTime = useWorldStore((s) => s.setOriginTime);
   const setViewingTime = useWorldStore((s) => s.setViewingTime);
   const setEvolutionLogs = useWorldStore((s) => s.setEvolutionLogs);
+  const evolutionLogs = useWorldStore((s) => s.evolutionLogs);
+  const showLogPanel = useWorldStore((s) => s.showLogPanel);
   const setShowLogPanel = useWorldStore((s) => s.setShowLogPanel);
   const setActiveWars = useWorldStore((s) => s.setActiveWars);
   const activeWars = useWorldStore((s) => s.activeWars);
+  const showWarsPanel = useWorldStore((s) => s.showWarsPanel);
+  const setShowWarsPanel = useWorldStore((s) => s.setShowWarsPanel);
   const isLoading = useWorldStore((s) => s.isLoading);
   const loadingStatus = useWorldStore((s) => s.loadingStatus);
   const viewingTime = useWorldStore((s) => s.viewingTime);
@@ -37,6 +48,75 @@ export default function Home() {
   const currentState = useWorldStore((s) => s.currentState);
 
   const [showEraModal, setShowEraModal] = useState(false);
+  const setShowSettings = useSettingsStore((s) => s.setShowSettings);
+  const fetchServerState = useSettingsStore((s) => s.fetchServerState);
+  const settingsModel = useSettingsStore((s) => s.model);
+  const envModel = useSettingsStore((s) => s.envModel);
+
+  const effectiveModelId = settingsModel || envModel || DEFAULT_MODEL;
+  const effectiveModelLabel = SUPPORTED_MODELS.find((m) => m.id === effectiveModelId)?.label ?? effectiveModelId.split("/").pop();
+
+  const autoLoadDefaultEra = () => {
+    const defaultPreset = ERA_PRESETS.find((e) => e.id === DEFAULT_ERA_ID);
+    if (!defaultPreset) return;
+    const currentLocale = useWorldStore.getState().locale;
+    const store = useWorldStore.getState();
+    store.setIsLoading(true);
+    store.setLoadingStatus(
+      currentLocale === "zh"
+        ? `正在加载「${defaultPreset.name.zh}」初始状态...`
+        : `Loading "${defaultPreset.name.en}" initial state...`
+    );
+    store.clearLlmStreams();
+    store.clearCompletedLlmRegions();
+    store.clearEvolutionLogs();
+    store.setShowLogPanel(false);
+    store.setSelectedRegionId(null);
+    store.setNeedsEvents(false);
+
+    fetch("/api/playback/init-era", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ eraId: DEFAULT_ERA_ID }),
+    })
+      .then(async (resp) => {
+        if (!resp.ok || !resp.body) {
+          console.error("Auto era init API error:", resp.status);
+          return;
+        }
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+        let currentEvent = "";
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          buffer = lines.pop() || "";
+          for (const line of lines) {
+            if (line.startsWith("event: ")) {
+              currentEvent = line.slice(7);
+            } else if (line.startsWith("data: ") && currentEvent) {
+              try {
+                const data = JSON.parse(line.slice(6));
+                handleEraSSE(currentEvent, data, useWorldStore.getState().locale);
+              } catch { /* skip */ }
+              currentEvent = "";
+            }
+          }
+        }
+      })
+      .catch((err) => console.error("Auto era init error:", err))
+      .finally(() => {
+        useWorldStore.getState().setIsLoading(false);
+        useWorldStore.getState().setLoadingStatus("");
+      });
+  };
+
+  useEffect(() => {
+    fetchServerState();
+  }, [fetchServerState]);
 
   useEffect(() => {
     async function init() {
@@ -50,6 +130,8 @@ export default function Home() {
         const eventsData = await eventsResp.json();
         const logsData = await logsResp.json();
 
+        let hasState = false;
+
         if (stateData && !stateData.error) {
           setCurrentState(stateData as WorldState);
           setFrontier(stateData.timestamp);
@@ -57,6 +139,7 @@ export default function Home() {
           if (stateData.wars) {
             setActiveWars(stateData.wars as War[]);
           }
+          hasState = true;
         }
 
         if (eventsData.events) {
@@ -70,17 +153,26 @@ export default function Home() {
         if (eventsData.originTime) {
           setOriginTime(eventsData.originTime);
         }
+        if (eventsData.eraId) {
+          useWorldStore.getState().setCurrentEraId(eventsData.eraId as string);
+        }
 
         if (logsData.logs && logsData.logs.length > 0) {
           setEvolutionLogs(logsData.logs as EpochChangelog[]);
           setShowLogPanel(true);
         }
+
+        if (!hasState) {
+          autoLoadDefaultEra();
+        }
       } catch (err) {
         console.error("Init failed:", err);
+        autoLoadDefaultEra();
       }
     }
     init();
-  }, [setCurrentState, setPastEvents, setFutureEvents, setFrontier, setOriginTime, setViewingTime, setEvolutionLogs, setShowLogPanel, setActiveWars]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     async function loadSnapshot() {
@@ -102,13 +194,6 @@ export default function Home() {
     loadSnapshot();
   }, [viewingTime.year, viewingTime.month, setCurrentState, setActiveWars]);
 
-  const formatYear = (year: number) => {
-    if (locale === "zh") {
-      return year < 0 ? `公元前${Math.abs(year)}年` : `公元${year}年`;
-    }
-    return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`;
-  };
-
   const handleEraSelect = async (eraId: string) => {
     setShowEraModal(false);
 
@@ -118,6 +203,7 @@ export default function Home() {
       locale === "zh" ? "正在生成世界状态..." : "Generating world state..."
     );
     store.clearLlmStreams();
+    store.clearCompletedLlmRegions();
     store.clearEvolutionLogs();
     store.setShowLogPanel(false);
     store.setSelectedRegionId(null);
@@ -187,17 +273,74 @@ export default function Home() {
     }
   };
 
-  const eraName = currentState?.era
+  const eraNameRaw = currentState?.era
     ? currentState.era[locale]
     : locale === "zh" ? "青铜时代中期" : "Middle Bronze Age";
+  const eraName = eraNameRaw
+    .replace(/^[^:：]+[：:]\s*/, "")
+    .replace(/\s*[（(]\s*(?:公元前?\d+年|\d+\s*(?:BCE?|CE|AD))\s*[）)]\s*$/, "");
 
   return (
     <div className="h-screen w-screen flex flex-col overflow-hidden">
       {/* Top bar */}
-      <header className="glass-panel px-4 py-2 flex items-center justify-between shrink-0 z-30 border-b border-border-subtle">
-        <h1 className="font-cinzel text-sm font-bold tracking-wide text-accent-gold">
-          {t("app.title")}
-        </h1>
+      <header className="glass-panel px-4 py-2 flex items-center justify-between shrink-0 z-30 border-b border-border-subtle relative">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <img src="/logo.png" alt="Logo" className="w-7 h-7" />
+            <h1 className="font-cinzel text-lg font-bold tracking-wide text-accent-gold">
+              {t("app.title")}
+            </h1>
+          </div>
+          <div className="h-5 w-px bg-border-subtle" />
+          <button
+            onClick={() => {
+              const next = !showLogPanel;
+              setShowLogPanel(next);
+              if (next) setShowWarsPanel(false);
+            }}
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs cursor-pointer transition-all ${showLogPanel
+              ? "border-accent-gold/60 bg-accent-gold/10 text-accent-gold"
+              : "border-border-subtle text-text-muted hover:text-accent-gold hover:border-border-active"
+              }`}
+          >
+            <span className="text-sm leading-none">📜</span>
+            <span>{t("log.toggle")}</span>
+            {evolutionLogs.length > 0 && (
+              <span className="text-xs px-1 py-0.5 rounded-full bg-accent-gold/15 text-accent-gold font-semibold min-w-[18px] text-center">
+                {evolutionLogs.length}
+              </span>
+            )}
+          </button>
+          <button
+            onClick={() => {
+              const next = !showWarsPanel;
+              setShowWarsPanel(next);
+              if (next) setShowLogPanel(false);
+            }}
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs cursor-pointer transition-all ${showWarsPanel
+              ? "border-red-700/60 bg-red-900/25 text-red-300"
+              : "border-border-subtle text-text-muted hover:text-red-400 hover:border-red-900/40"
+              }`}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="3" x2="12" y2="12" />
+              <line x1="12" y1="12" x2="20" y2="20" />
+              <line x1="3" y1="7" x2="7" y2="3" />
+              <line x1="17" y1="21" x2="21" y2="17" />
+              <line x1="21" y1="3" x2="12" y2="12" />
+              <line x1="12" y1="12" x2="4" y2="20" />
+              <line x1="17" y1="3" x2="21" y2="7" />
+              <line x1="3" y1="17" x2="7" y2="21" />
+            </svg>
+            <span>{t("war.title")}</span>
+            {activeWars.length > 0 && (
+              <span className="text-xs px-1 py-0.5 rounded-full bg-red-900/20 text-red-400 border border-red-900/30 font-semibold min-w-[18px] text-center">
+                {activeWars.length}
+              </span>
+            )}
+          </button>
+        </div>
+
         <div className="flex items-center gap-3">
           <button
             onClick={() => setShowEraModal(true)}
@@ -208,26 +351,44 @@ export default function Home() {
             <span className="max-w-[120px] truncate">{eraName}</span>
             <span className="text-text-muted text-xs">▾</span>
           </button>
+          <button
+            onClick={() => setShowSettings(true)}
+            className="tooltip-wrap tooltip-below tooltip-multiline flex items-center gap-1.5 px-2.5 py-1 rounded border border-border-subtle text-text-muted hover:text-accent-gold hover:border-border-active transition-all cursor-pointer text-xs"
+            data-tooltip={locale === "zh"
+              ? `当前引擎：${effectiveModelLabel}。AI 基于大语言模型扮演历史学家，依据真实历史事件与用户自定义事件，科学推演各文明的兴衰变迁——王朝更替、战争胜负、经济涨落、人口迁徙、科技演进等，力求符合历史规律与因果逻辑。点击切换模型。`
+              : `Engine: ${effectiveModelLabel}. Powered by LLM acting as a historian, it rigorously deduces each civilization's trajectory from both real historical events and user-defined scenarios — dynastic shifts, war outcomes, economic cycles, migrations, tech evolution — grounded in historical causality and logic. Click to switch.`
+            }
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2" />
+              <rect x="9" y="9" width="6" height="6" />
+              <line x1="9" y1="1" x2="9" y2="4" /><line x1="15" y1="1" x2="15" y2="4" />
+              <line x1="9" y1="20" x2="9" y2="23" /><line x1="15" y1="20" x2="15" y2="23" />
+              <line x1="20" y1="9" x2="23" y2="9" /><line x1="20" y1="14" x2="23" y2="14" />
+              <line x1="1" y1="9" x2="4" y2="9" /><line x1="1" y1="14" x2="4" y2="14" />
+            </svg>
+            <span className="font-mono">{effectiveModelLabel}</span>
+          </button>
+          <button
+            onClick={() => setShowSettings(true)}
+            className="tooltip-wrap flex items-center justify-center w-8 h-8 rounded-full border border-border-subtle text-text-secondary hover:text-accent-gold hover:border-border-active transition-all cursor-pointer"
+            data-tooltip={t("settings.tooltip")}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </button>
           <LanguageSwitch />
-          {activeWars.length > 0 && (
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded border border-red-900/40 bg-red-900/10 text-red-400 text-xs">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="3" x2="12" y2="12" />
-                <line x1="12" y1="12" x2="20" y2="20" />
-                <line x1="3" y1="7" x2="7" y2="3" />
-                <line x1="17" y1="21" x2="21" y2="17" />
-                <line x1="21" y1="3" x2="12" y2="12" />
-                <line x1="12" y1="12" x2="4" y2="20" />
-                <line x1="17" y1="3" x2="21" y2="7" />
-                <line x1="3" y1="17" x2="7" y2="21" />
-              </svg>
-              <span className="font-semibold">{activeWars.length}</span>
-              <span>{t("war.title")}</span>
-            </div>
-          )}
-          <div className="font-mono text-xs px-2 py-1 rounded bg-bg-tertiary text-accent-amber">
-            {formatYear(viewingTime.year)} M{viewingTime.month}
-          </div>
         </div>
       </header>
 
@@ -258,6 +419,7 @@ export default function Home() {
         </div>
 
         <EvolutionLogPanel />
+        <WarsPanel />
         <CivilizationDetail />
         <EventList />
       </div>
@@ -272,6 +434,7 @@ export default function Home() {
       )}
 
       <WarDetailModal />
+      <SettingsModal />
     </div>
   );
 }
@@ -329,8 +492,20 @@ function handleEraSSE(
       const state = data.state as Record<string, unknown> | undefined;
       if (state) {
         store.setCurrentState(state as unknown as import("@/lib/types").WorldState);
+      }
+      if (data.eraId) {
+        store.setCurrentEraId(data.eraId as string);
+      }
+      if (data.frontier) {
+        store.setFrontier(data.frontier as import("@/lib/types").YearMonth);
+        store.setViewingTime(data.frontier as import("@/lib/types").YearMonth);
+      } else if (state) {
         store.setFrontier(state.timestamp as import("@/lib/types").YearMonth);
         store.setViewingTime(state.timestamp as import("@/lib/types").YearMonth);
+      }
+      if (data.originTime) {
+        store.setOriginTime(data.originTime as import("@/lib/types").YearMonth);
+      } else if (state) {
         store.setOriginTime(state.timestamp as import("@/lib/types").YearMonth);
       }
       const events = data.events as { status: string }[] | undefined;
@@ -345,9 +520,20 @@ function handleEraSSE(
         store.setPastEvents([]);
         store.setFutureEvents([]);
       }
-      store.clearEvolutionLogs();
-      store.setShowLogPanel(false);
-      store.setActiveWars([]);
+      const logs = data.evolutionLogs as unknown[] | undefined;
+      if (logs && logs.length > 0) {
+        store.setEvolutionLogs(logs as import("@/lib/changelog").EpochChangelog[]);
+        store.setShowLogPanel(true);
+      } else {
+        store.clearEvolutionLogs();
+        store.setShowLogPanel(false);
+      }
+      const wars = data.wars as import("@/lib/types").War[] | undefined;
+      if (wars && wars.length > 0) {
+        store.setActiveWars(wars);
+      } else {
+        store.setActiveWars([]);
+      }
       if (data.needsEvents) {
         store.setNeedsEvents(true);
       }

@@ -48,6 +48,10 @@ interface WorldStore {
   appendLlmToken: (regionId: string, token: string) => void;
   clearLlmStreams: () => void;
 
+  completedLlmRegions: Set<string>;
+  markLlmRegionDone: (regionIds: string[]) => void;
+  clearCompletedLlmRegions: () => void;
+
   evolutionLogs: EpochChangelog[];
   addEvolutionLog: (log: EpochChangelog) => void;
   setEvolutionLogs: (logs: EpochChangelog[]) => void;
@@ -68,11 +72,17 @@ interface WorldStore {
   needsEvents: boolean;
   setNeedsEvents: (needs: boolean) => void;
 
+  currentEraId: string | null;
+  setCurrentEraId: (eraId: string | null) => void;
+
   activeWars: War[];
   setActiveWars: (wars: War[]) => void;
 
   selectedWar: War | null;
   setSelectedWar: (war: War | null) => void;
+
+  showWarsPanel: boolean;
+  setShowWarsPanel: (show: boolean) => void;
 
   preAdvanceYear: number | null;
   setPreAdvanceYear: (year: number | null) => void;
@@ -134,6 +144,15 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
     })),
   clearLlmStreams: () => set({ llmStreams: {} }),
 
+  completedLlmRegions: new Set(),
+  markLlmRegionDone: (regionIds) =>
+    set((state) => {
+      const next = new Set(state.completedLlmRegions);
+      for (const id of regionIds) next.add(id);
+      return { completedLlmRegions: next };
+    }),
+  clearCompletedLlmRegions: () => set({ completedLlmRegions: new Set() }),
+
   evolutionLogs: [],
   addEvolutionLog: (log) =>
     set((state) => ({ evolutionLogs: [...state.evolutionLogs, log] })),
@@ -155,11 +174,17 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
   needsEvents: false,
   setNeedsEvents: (needsEvents) => set({ needsEvents }),
 
+  currentEraId: null,
+  setCurrentEraId: (currentEraId) => set({ currentEraId }),
+
   activeWars: [],
   setActiveWars: (activeWars) => set({ activeWars }),
 
   selectedWar: null,
   setSelectedWar: (selectedWar) => set({ selectedWar }),
+
+  showWarsPanel: false,
+  setShowWarsPanel: (showWarsPanel) => set({ showWarsPanel }),
 
   preAdvanceYear: null,
   setPreAdvanceYear: (preAdvanceYear) => set({ preAdvanceYear }),

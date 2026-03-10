@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Human Civilization Simulator",
   description:
     "Visualize the evolution of human civilizations through an AI-driven interactive world map",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

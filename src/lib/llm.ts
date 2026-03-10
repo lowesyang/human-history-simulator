@@ -1,13 +1,15 @@
+import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
+
 export async function callLLM(
   systemPrompt: string,
   userPrompt: string
 ): Promise<string> {
-  const apiKey = process.env.OPENROUTER_API_KEY;
+  const apiKey = getEffectiveApiKey();
   if (!apiKey || apiKey === "your_openrouter_api_key_here") {
     throw new Error("OPENROUTER_API_KEY is not configured");
   }
 
-  const model = process.env.LLM_MODEL || "openai/gpt-5.4";
+  const model = getEffectiveModel();
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 300_000);

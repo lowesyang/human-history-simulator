@@ -85,9 +85,15 @@ export default function Timeline() {
   const setEpochCount = useWorldStore((s) => s.setEpochCount);
   const isLoading = useWorldStore((s) => s.isLoading);
   const loadingStatus = useWorldStore((s) => s.loadingStatus);
-  const showLogPanel = useWorldStore((s) => s.showLogPanel);
-  const evolutionLogs = useWorldStore((s) => s.evolutionLogs);
+  const currentState = useWorldStore((s) => s.currentState);
   const { locale, t } = useLocale();
+
+  const eraNameRaw = currentState?.era
+    ? currentState.era[locale]
+    : locale === "zh" ? "青铜时代中期" : "Middle Bronze Age";
+  const eraName = eraNameRaw
+    .replace(/^[^:：]+[：:]\s*/, "")
+    .replace(/\s*[（(]\s*(?:公元前?\d+年|\d+\s*(?:BCE?|CE|AD))\s*[）)]\s*$/, "");
 
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [previewEvents, setPreviewEvents] = useState<HistoricalEvent[]>([]);
@@ -109,7 +115,20 @@ export default function Timeline() {
       const store = useWorldStore.getState();
       const resp = await fetch(`/api/events/preview?epochs=${store.epochCount}`);
       const data = await resp.json();
-      setPreviewEvents(data.events || []);
+      let events = data.events || [];
+
+      if (events.length === 0 && store.futureEvents.length > 0) {
+        await fetch("/api/events/sync", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ events: store.futureEvents }),
+        });
+        const retryResp = await fetch(`/api/events/preview?epochs=${store.epochCount}`);
+        const retryData = await retryResp.json();
+        events = retryData.events || [];
+      }
+
+      setPreviewEvents(events);
       setShowConfirmModal(true);
     } catch (err) {
       console.error("Failed to fetch preview:", err);
@@ -130,6 +149,7 @@ export default function Timeline() {
       locale === "zh" ? "正在连接..." : "Connecting..."
     );
     store.clearLlmStreams();
+    store.clearCompletedLlmRegions();
 
     try {
       const resp = await fetch("/api/playback/advance", {
@@ -201,6 +221,7 @@ export default function Timeline() {
       useWorldStore.getState().setLoadingStatus("");
       useWorldStore.getState().setAbortController(null);
       useWorldStore.getState().clearLlmStreams();
+      useWorldStore.getState().clearCompletedLlmRegions();
       useWorldStore.getState().setPreAdvanceYear(null);
     }
   };
@@ -266,6 +287,10 @@ export default function Timeline() {
         store.setCurrentState(data.state);
         store.setFrontier(data.state.timestamp);
         store.setViewingTime(data.state.timestamp);
+      }
+      if (data.originTime) {
+        store.setOriginTime(data.originTime);
+      } else if (data.state) {
         store.setOriginTime(data.state.timestamp);
       }
       if (data.events) {
@@ -278,6 +303,7 @@ export default function Timeline() {
       }
       store.clearEvolutionLogs();
       store.setShowLogPanel(false);
+      store.setActiveWars([]);
     } catch (err) {
       console.error("Reset error:", err);
     }
@@ -286,35 +312,24 @@ export default function Timeline() {
   return (
     <>
       <div className="glass-panel border-t border-border-subtle px-4 py-3 flex items-center gap-4">
-        {/* Log toggle button — leftmost */}
-        {evolutionLogs.length > 0 && (
-          <button
-            onClick={() => useWorldStore.getState().setShowLogPanel(!showLogPanel)}
-            className={`icon-btn tooltip-wrap border ${showLogPanel ? "border-accent-gold text-accent-gold" : "border-border-subtle text-text-muted"}`}
-            data-tooltip={t("log.toggle")}
-          >
-            📜
-          </button>
-        )}
-
         {/* Epoch count selector */}
         <div
-          className="tooltip-wrap flex items-center rounded-full overflow-visible border border-border-subtle"
-          data-tooltip={
-            locale === "zh"
-              ? `一次性演进 ${epochCount} 个历史周期`
-              : `Advance ${epochCount} epoch${epochCount > 1 ? "s" : ""} at once`
-          }
+          className="flex items-center rounded-full overflow-visible border border-border-subtle"
         >
           {EPOCH_OPTIONS.map((n) => (
             <button
               key={n}
               onClick={() => setEpochCount(n)}
               disabled={isLoading}
-              className={`px-2.5 py-1 text-xs font-semibold transition-all min-w-[28px] ${epochCount === n
+              className={`tooltip-wrap px-2.5 py-1 text-xs font-semibold transition-all min-w-[28px] ${epochCount === n
                 ? "bg-accent-gold text-bg-primary"
                 : "bg-transparent text-text-muted"
                 } ${isLoading ? "opacity-50" : ""}`}
+              data-tooltip={
+                locale === "zh"
+                  ? `一次性演进 ${n} 个历史周期`
+                  : `Advance ${n} epoch${n > 1 ? "s" : ""} at once`
+              }
               style={{
                 borderRadius:
                   n === EPOCH_OPTIONS[0]
@@ -361,9 +376,15 @@ export default function Timeline() {
           ↺
         </button>
 
-        {/* Current time display */}
-        <div className="font-mono text-sm whitespace-nowrap min-w-[180px] text-accent-gold">
-          {formatYear(viewingTime.year, locale)}
+        {/* Era & Year display */}
+        <div className="era-banner-inline">
+          <div className="era-banner-year">
+            {formatYear(viewingTime.year, locale)}
+          </div>
+          <div className="era-banner-divider" />
+          <div className="era-banner-name">
+            {eraName}
+          </div>
         </div>
 
         {/* Timeline slider */}
@@ -428,6 +449,14 @@ function handleSSEEvent(
       const token = data.token as string;
       if (regionId && token) {
         store.appendLlmToken(regionId, token);
+      }
+      break;
+    }
+
+    case "llm_region_done": {
+      const regionIds = data.regionIds as string[];
+      if (regionIds) {
+        store.markLlmRegionDone(regionIds);
       }
       break;
     }

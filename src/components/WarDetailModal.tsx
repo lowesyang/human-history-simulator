@@ -130,7 +130,7 @@ export default function WarDetailModal() {
           </div>
 
           {/* Summary */}
-          <Section title={t("war.summary")} icon={<CrossedSwordsIcon size={13} color="#a89a82" />}>
+          <Section title={t("war.summary")} icon={<CrossedSwordsIcon size={13} color="#c4b49a" />}>
             <p className="text-xs leading-relaxed text-text-primary">
               {localized(war.summary)}
             </p>
@@ -359,10 +359,10 @@ function BelligerentCard({
 
       {/* Regions */}
       {regions.map((r) => (
-        <div key={r.id} className="flex items-center gap-1 text-xs justify-center" style={{ color: isDefeated ? "#6b7280" : "#a89a82" }}>
+        <div key={r.id} className="flex items-center gap-1 text-xs justify-center" style={{ color: isDefeated ? "#6b7280" : "#c4b49a" }}>
           <span
             className="w-1.5 h-1.5 rounded-full shrink-0"
-            style={{ background: isVictor ? "#4ade80" : isDefeated ? "#6b7280" : "#a89a82" }}
+            style={{ background: isVictor ? "#4ade80" : isDefeated ? "#6b7280" : "#c4b49a" }}
           />
           <span>{localized(r.name)}</span>
         </div>

@@ -14,11 +14,11 @@
   --color-bg-primary: #0f0e0c;
   --color-bg-secondary: #1a1814;
   --color-bg-tertiary: #252118;
-  --color-bg-glass: rgba(26, 24, 20, 0.75);
+  --color-bg-glass: rgba(26, 24, 20, 0.88);
 
-  --color-text-primary: #e8dcc8;
-  --color-text-secondary: #a89a82;
-  --color-text-muted: #6b5f4e;
+  --color-text-primary: #efe5d4;
+  --color-text-secondary: #c4b49a;
+  --color-text-muted: #8a7d6a;
 
   --color-accent-gold: #c9a84c;
   --color-accent-copper: #b87333;
@@ -34,7 +34,7 @@
   --color-status-religion: #8a7340;
 
   --color-background: #0f0e0c;
-  --color-foreground: #e8dcc8;
+  --color-foreground: #efe5d4;
 }
 
 body {
@@ -184,10 +184,31 @@ input[type="range"]::-moz-range-thumb {
   transform: translateX(-50%) translateY(0);
 }
 
+.tooltip-wrap.tooltip-below::after {
+  bottom: auto;
+  top: calc(100% + 8px);
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.tooltip-wrap.tooltip-below:hover::after {
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-wrap.tooltip-multiline::after {
+  white-space: normal;
+  width: 240px;
+  text-align: left;
+  line-height: 1.5;
+}
+
 /* War marker pulse */
 @keyframes warPulse {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50% { opacity: 0.8; transform: scale(1.15); }
+}
+
+@keyframes warPing {
+  75%, 100% { transform: scale(2); opacity: 0; }
 }
 
 .war-marker-btn {
@@ -196,4 +217,237 @@ input[type="range"]::-moz-range-thumb {
 
 .war-marker-btn:hover {
   z-index: 20;
+}
+
+.war-marker-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  max-width: 280px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(20, 18, 15, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(127, 29, 29, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.war-marker-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(20, 18, 15, 0.95);
+}
+
+.war-marker-btn:hover .war-marker-tooltip {
+  opacity: 1;
+}
+
+/* Explain "Why?" button & tooltip */
+.explain-btn {
+  @apply shrink-0 px-2 py-0.5 rounded-full cursor-pointer transition-all;
+  font-size: 11px;
+  background: rgba(201, 168, 76, 0.12);
+  color: #c9a84c;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.explain-btn:hover {
+  background: rgba(201, 168, 76, 0.25);
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.15);
+}
+
+.explain-btn-active {
+  background: rgba(201, 168, 76, 0.2);
+  border-color: rgba(201, 168, 76, 0.5);
+  color: #c9a84c;
+}
+
+.explain-tooltip {
+  animation: explainFadeIn 0.15s ease-out;
+}
+
+.explain-tooltip-arrow {
+  position: absolute;
+  bottom: -5px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background: #1e1b16;
+  border-right: 1px solid rgba(201, 168, 76, 0.3);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  transform: rotate(45deg);
+}
+
+.explain-tooltip-body {
+  @apply text-xs leading-relaxed text-text-secondary;
+  background: #1e1b16;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  max-height: 260px;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55), 0 0 1px rgba(201, 168, 76, 0.2);
+}
+
+.explain-prose p {
+  margin: 0.35em 0;
+  line-height: 1.65;
+}
+
+.explain-prose p:first-child {
+  margin-top: 0;
+}
+
+.explain-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.explain-prose strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.explain-prose em {
+  color: var(--color-accent-amber);
+  font-style: italic;
+}
+
+.explain-prose ol,
+.explain-prose ul {
+  margin: 0.35em 0;
+  padding-left: 1.4em;
+}
+
+.explain-prose ol {
+  list-style: decimal;
+}
+
+.explain-prose ul {
+  list-style: disc;
+}
+
+.explain-prose li {
+  margin: 0.2em 0;
+  line-height: 1.6;
+}
+
+.explain-prose li > p {
+  margin: 0;
+}
+
+.explain-prose h1,
+.explain-prose h2,
+.explain-prose h3,
+.explain-prose h4 {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  margin: 0.5em 0 0.25em;
+  line-height: 1.4;
+}
+
+.explain-prose h1 { font-size: 1.1em; }
+.explain-prose h2 { font-size: 1.05em; }
+.explain-prose h3 { font-size: 1em; }
+
+.explain-prose blockquote {
+  border-left: 2px solid var(--color-accent-gold);
+  padding-left: 0.75em;
+  margin: 0.35em 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.explain-prose code {
+  background: rgba(201, 168, 76, 0.1);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.explain-prose hr {
+  border: none;
+  border-top: 1px solid var(--color-border-subtle);
+  margin: 0.5em 0;
+}
+
+.explain-prose a {
+  color: var(--color-accent-gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@keyframes explainFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Era banner — grand overlay (header) */
+.era-banner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 20px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Era banner — inline (timeline bar) */
+.era-banner-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.era-banner-year {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: #c9a84c;
+  text-shadow: 0 0 14px rgba(201, 168, 76, 0.3);
+  white-space: nowrap;
+}
+
+.era-banner-divider {
+  width: 1px;
+  height: 14px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(201, 168, 76, 0.45) 50%,
+    transparent 100%
+  );
+  flex-shrink: 0;
+}
+
+.era-banner-name {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #e8dcc8;
+  text-shadow: 0 0 10px rgba(232, 220, 200, 0.12);
+  white-space: nowrap;
 }

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
-import { insertEvent, getLatestSnapshot, updateEvent, deleteEvent } from "@/lib/db";
+import { insertEvent, getLatestSnapshot, updateEvent, deleteEvent, getCurrentEraId } from "@/lib/db";
 import type { Region } from "@/lib/types";
 
 interface CustomEventBody {
@@ -71,7 +71,8 @@ export async function POST(request: NextRequest) {
       filteredRegions,
       category,
       "pending",
-      true
+      true,
+      getCurrentEraId() ?? undefined
     );
 
     return NextResponse.json({

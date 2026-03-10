@@ -6,26 +6,30 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-username/human-history-simulator/pulls)
 
-**Human History Simulator** is an AI-powered civilization simulator that uses large language models as simulation engines — not chatbots. Pick any era from 1600 BCE to 2000 CE, and watch dozens of civilizations evolve on an interactive world map as the AI generates events, computes state transitions, and reshapes the geopolitical landscape turn by turn.
+> _If you had the power to rewrite history, where would you take humanity?_
+
+**Human History Simulator** is a civilization simulation powered by an LLM-based multi-agent system as its historical reasoning engine. Choose from **19 eras** spanning **3,600 years**, from the Bronze Age forges of 1600 BCE to the digital networks of 2000 CE, and set **1,400+ civilizations** in motion on an interactive world map. Each civilization is a deeply modeled entity tracking **100+ state fields**: GDP, military strength, literacy, trade routes, cultural output, and far more. Every turn, the multi-agent engine weaves new events, computes state transitions, and reshapes the geopolitical landscape. No two playthroughs are ever the same.
 
 <p align="center">
   <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
 </p>
 
-Every civilization carries a rich state snapshot — rulers, government, economy, military, technology, culture, demographics, diplomacy — and every turn produces historically grounded mutations: wars redraw borders, trade routes shift wealth, plagues decimate populations, and inventions spark new eras. Same starting conditions, different emergent histories.
+Territory boundaries are drawn from **47 real historical GeoJSON snapshots** (2000 BCE – 2010 CE) built on open academic basemaps: actual scholarly boundary data, not approximations. Wars redraw borders. Trade routes shift wealth across continents. Plagues decimate populations. Inventions ignite revolutions. Every mutation is logged at field-level granularity, giving you a god's-eye view of cause and effect across millennia. Same starting conditions, endlessly divergent histories.
 
 [English](./README.md) · [中文](./README.zh-CN.md)
 
 ## Highlights
 
-- **[19 Historical Eras](#supported-eras)** — Bronze Age through Modern World, each seeded with dozens of historically accurate civilizations.
-- **LLM-Driven Evolution** — AI orchestrator clusters regions, generates events, and computes per-field state transitions across economy, military, diplomacy, culture, and more.
-- **Interactive World Map** — Territory overlays with hover inspection and click-to-detail for every civilization.
-- **Deep Civilization Profiles** — 10 tabs per region: Political, Military, Economy, Finances, Technology, Culture, Demographics, Diplomacy, Assessment, History.
-- **War System** — Structured conflict tracking with belligerents, casus belli, strategic advantages, and post-war impact.
-- **Custom Events** — Inject "what-if" events and watch the AI react.
-- **Time Control** — Play / pause / step / advance by epoch / rollback to any year.
-- **Bilingual** — Full English & Chinese UI with localized civilization data.
+- **[19 Historical Eras](#supported-eras)** covering Bronze Age through Modern World, each seeded with historically accurate civilizations, rulers, and geopolitical configurations.
+- **1,400+ Civilizations** including empires, kingdoms, city-states, tribes, and trade networks, with 60 to 100 regions simulated per era.
+- **Multi-Agent Evolution** where an AI orchestrator clusters regions, generates events, and computes per-field state transitions across economy, military, diplomacy, culture, and more.
+- **Real Historical Boundaries** from 47 GeoJSON boundary snapshots sourced from open academic basemaps, spanning 4,000 years of territorial change.
+- **Interactive World Map** with territory overlays, hover inspection, and click-to-detail for every civilization.
+- **Deep Civilization Profiles** with 10 dimension tabs per region and 100+ tracked fields: rulers, government departments, GDP, trade goods, military branches, demographics, cultural achievements, and more.
+- **War System** providing structured conflict tracking with belligerents, casus belli, strategic advantages, and post-war impact.
+- **Custom Events** that let you inject "what-if" scenarios and watch the AI react.
+- **Time Control** with play, pause, step, advance-by-epoch, and rollback to any year.
+- **Bilingual** with full English & Chinese UI and localized civilization data.
 
 ## How It Works
 
@@ -113,6 +117,28 @@ Open [http://localhost:3000](http://localhost:3000) — pick an era and start si
 | 💥  | **World War Era**         | 1939 CE  | WWII begins, Nazi Germany expanding, Japan invading China, Soviet Union preparing, USA neutral but soon to join            |
 | ☢️  | **Cold War Era**          | 1962 CE  | Cuban Missile Crisis, US-Soviet confrontation, decolonization wave, Space Race intensifying                                |
 | 🌐  | **Modern World**          | 2000 CE  | Turn of millennium, Internet age dawning, globalization accelerating, China joining WTO                                    |
+
+## Roadmap
+
+- [ ] **Smarter Simulation Engine**: Optimize historical progression efficiency and add tunable parameters like _contingency_ (chance of unexpected events) and _determinism_ (weight of structural forces) to shape the balance between chaos and inevitability.
+- [ ] **Richer Civilization Profiles**: Deepen per-civilization data with more granular fields: social structure, religious influence, artistic movements, infrastructure, and more.
+- [ ] **Broader Historical Coverage**: Surface overlooked but historically significant states, tribes, and regions on the map. The ones textbooks forget, but history remembers.
+- [ ] **War Impact Visualization**: Go beyond event logs and visualize the ripple effects of conflict on borders, population, economy, and power balance in real time.
+- [ ] **Flexible Custom Events**: Make "what-if" injection more expressive and fun: chain events, set preconditions, and craft elaborate alternate history scenarios.
+- [ ] **Future Era Projection**: Extend the timeline beyond the present and let the engine speculate on humanity's next chapters: 2050, 2100, and beyond.
+- [ ] **Perspective Mode**: Step into the shoes of a national leader. See the world through the strategic lens of any civilization: their threats, opportunities, alliances, and blind spots.
+- [ ] **Skill-Based Agent Integration**: Expose the simulator as a set of Skills so that autonomous agents from platforms like OpenClaw can take over the human role: selecting eras, injecting events, making strategic decisions, and driving the simulation forward without manual interaction.
+- [ ] **Historical Economics & Finance Data**: Integrate more accurate per-era economic and financial data — trade volumes, monetary systems, taxation structures, debt levels, and wealth distribution — to ground each civilization's economy in real historical research.
+- [ ] **Core Asset Price Tracking**: Model the historical trajectories of key assets across eras: commodities (gold, silver, grain, oil), land values, and proto-equity instruments, visualized as interactive trend charts that evolve alongside the simulation.
+- [ ] **Spiritual & Cultural Civilization Index**: Assess and quantify the state of humanity's intellectual and spiritual life in each era — philosophical movements, religious influence, artistic output, scientific thought, and collective morale — as a first-class simulation dimension.
+- [ ] **Contingency vs. Determinism Monitor**: Add fine-grained tracking that compares historical contingency (butterfly-effect events, unlikely outcomes) against structural determinism (geographic, economic, demographic forces), with side-by-side divergence analysis across parallel runs.
+- [ ] **Live State Editor**: Allow direct modification of any civilization's state at any point in time — tweak GDP, change a ruler, redraw an alliance, adjust military strength — and watch the engine propagate consequences forward.
+
+## Acknowledgments
+
+- **[aourednik/historical-basemaps](https://github.com/aourednik/historical-basemaps)** — Open-source historical world map boundaries (GeoJSON) from 2000 BCE to 2010 CE by André Ourednik. This project's territory visualization is built upon these academic basemaps, simplified and matched to our internal region system. We are deeply grateful for this invaluable open dataset that makes historical boundary rendering possible.
+- **[OpenRouter](https://openrouter.ai/)** — Unified LLM API gateway that powers the simulation engine.
+- **[MapLibre GL](https://maplibre.org/)** — Open-source map rendering library.
 
 ## Contributing
 

@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
+import ExplainButton from "@/components/ExplainButton";
 import type { EpochChangelog, RegionChangelog, ChangeEntry, ChangeSentiment } from "@/lib/changelog";
 
 const SENTIMENT_COLORS: Record<ChangeSentiment, string> = {
@@ -70,7 +71,7 @@ export default function EvolutionLogPanel() {
 
   return (
     <div
-      className={`absolute top-0 bottom-0 left-0 z-40 w-[360px] glass-panel flex flex-col overflow-hidden border-r border-border-subtle transition-transform duration-300 ease-out ${showLogPanel ? "translate-x-0" : "-translate-x-full"}`}
+      className={`absolute top-0 bottom-0 left-0 z-40 w-[360px] ${locale === "en" ? "sm:w-[420px]" : ""} glass-panel flex flex-col overflow-hidden border-r border-border-subtle transition-transform duration-300 ease-out ${showLogPanel ? "translate-x-0" : "-translate-x-full"}`}
     >
       {/* Header */}
       <div className="flex items-center justify-between px-3 py-2 border-b border-border-subtle shrink-0">
@@ -195,13 +196,18 @@ function EpochLogEntry({
           )}
 
           {/* Region changes */}
-          {log.regions.map((region) => (
+          {log.regions.map((region, idx) => (
             <RegionChangeBlock
-              key={region.regionId}
+              key={`${region.regionId}-${idx}`}
               region={region}
               locale={locale}
               t={t}
               localized={localized}
+              epochContext={{
+                year: log.targetYear,
+                era: localized(log.era),
+                eventTitles: log.events.map((e) => localized(e.title)),
+              }}
             />
           ))}
         </div>
@@ -215,11 +221,17 @@ function RegionChangeBlock({
   locale,
   t,
   localized,
+  epochContext,
 }: {
   region: RegionChangelog;
   locale: "zh" | "en";
   t: (key: string) => string;
   localized: (text: { zh: string; en: string } | undefined) => string;
+  epochContext: {
+    year: number;
+    era: string;
+    eventTitles: string[];
+  };
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -230,23 +242,24 @@ function RegionChangeBlock({
         className="flex items-center gap-2 px-2 py-1.5 cursor-pointer hover:bg-bg-tertiary/50 transition-colors"
         onClick={() => setExpanded(!expanded)}
       >
-        <span className="text-xs text-text-muted">{expanded ? "▾" : "▸"}</span>
-        <span className="text-xs font-semibold text-text-primary">
+        <span className="text-xs text-text-muted shrink-0">{expanded ? "▾" : "▸"}</span>
+        <span className="text-xs font-semibold text-text-primary truncate min-w-0">
           {localized(region.regionName)}
         </span>
-        <span
-          className="text-xs px-1 py-0.5 rounded"
-          style={{
-            background: region.isDirect ? "rgba(201, 168, 76, 0.2)" : "rgba(107, 95, 78, 0.2)",
-            color: region.isDirect ? "#c9a84c" : "#6b5f4e",
-          }}
-        >
-          {region.isDirect ? t("log.directlyAffected") : t("log.indirectlyAffected")}
-        </span>
-        <span className="flex-1" />
-        <span className="text-xs text-text-muted">
-          {region.changes.length} {t("log.changes")}
-        </span>
+        <div className="flex items-center gap-1.5 shrink-0 ml-auto">
+          <span
+            className="text-xs px-1 py-0.5 rounded whitespace-nowrap"
+            style={{
+              background: region.isDirect ? "rgba(201, 168, 76, 0.2)" : "rgba(107, 95, 78, 0.2)",
+              color: region.isDirect ? "#c9a84c" : "#8a7d6a",
+            }}
+          >
+            {region.isDirect ? t("log.directlyAffected") : t("log.indirectlyAffected")}
+          </span>
+          <span className="text-xs text-text-muted whitespace-nowrap">
+            {region.changes.length} {t("log.changes")}
+          </span>
+        </div>
       </div>
 
       {/* Change entries */}
@@ -262,7 +275,16 @@ function RegionChangeBlock({
           ) : (
             <div className="divide-y divide-border-subtle">
               {region.changes.map((change, i) => (
-                <ChangeRow key={i} change={change} localized={localized} />
+                <ChangeRow
+                  key={i}
+                  change={change}
+                  localized={localized}
+                  locale={locale}
+                  regionName={localized(region.regionName)}
+                  regionId={region.regionId}
+                  regionDescription={localized(region.description)}
+                  epochContext={epochContext}
+                />
               ))}
             </div>
           )}
@@ -361,25 +383,55 @@ function resolveLabel(
 function ChangeRow({
   change,
   localized,
+  locale,
+  regionName,
+  regionId,
+  regionDescription,
+  epochContext,
 }: {
   change: ChangeEntry;
   localized: (text: { zh: string; en: string } | undefined) => string;
+  locale: "zh" | "en";
+  regionName: string;
+  regionId: string;
+  regionDescription: string;
+  epochContext: {
+    year: number;
+    era: string;
+    eventTitles: string[];
+  };
 }) {
   const icon = CATEGORY_ICONS[change.category] || "•";
   const sentimentColor = SENTIMENT_COLORS[change.sentiment];
 
   return (
-    <div className="flex items-start gap-1.5 px-2 py-1.5">
-      <span className="text-xs mt-0.5 shrink-0">{icon}</span>
-      <div className="flex-1 min-w-0">
-        <div className="text-xs font-semibold text-text-secondary">
-          {resolveLabel(change.label, localized)}
-        </div>
-        <div
-          className={`text-xs leading-relaxed break-words${sentimentColor ? "" : " text-text-muted"}`}
-          style={sentimentColor ? { color: sentimentColor } : undefined}
-        >
-          {localized(change.detail)}
+    <div className="px-2 py-1.5">
+      <div className="flex items-start gap-1.5">
+        <span className="text-xs mt-0.5 shrink-0">{icon}</span>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-semibold text-text-secondary">
+              {resolveLabel(change.label, localized)}
+            </span>
+            <ExplainButton
+              locale={locale}
+              regionName={regionName}
+              regionId={regionId}
+              year={epochContext.year}
+              era={epochContext.era}
+              eventTitles={epochContext.eventTitles}
+              changeLabel={resolveLabel(change.label, localized)}
+              changeDetail={localized(change.detail)}
+              changeSentiment={change.sentiment}
+              regionDescription={regionDescription}
+            />
+          </div>
+          <div
+            className={`text-xs leading-relaxed break-words${sentimentColor ? "" : " text-text-primary"}`}
+            style={sentimentColor ? { color: sentimentColor } : undefined}
+          >
+            {localized(change.detail)}
+          </div>
         </div>
       </div>
     </div>

@@ -4,8 +4,16 @@ import type { RegionTransition, TransitionResult } from "../transition";
 import { applyTransition } from "../transition";
 import { runHistorian } from "./historian";
 import { buildRelationGraph, clusterRegions, type RegionGroup } from "../region-grouping";
+import { getModelProfile } from "../settings";
 
-const MAX_PARALLEL = 10;
+function getMaxParallel(): number {
+  const envVal = process.env.LLM_MAX_PARALLEL;
+  if (envVal) {
+    const parsed = parseInt(envVal, 10);
+    if (!isNaN(parsed) && parsed > 0) return parsed;
+  }
+  return getModelProfile().maxParallel;
+}
 
 export interface OrchestrateResult {
   era: LocalizedText;
@@ -33,12 +41,15 @@ async function runWithConcurrency<T>(
   return results;
 }
 
+export type RegionDoneCallback = (regionIds: string[]) => void;
+
 export async function orchestrate(
   currentState: WorldState,
   events: HistoricalEvent[],
   onProgress: ProgressCallback,
   onToken?: TokenStreamCallback,
-  activeWars?: War[]
+  activeWars?: War[],
+  onRegionDone?: RegionDoneCallback
 ): Promise<OrchestrateResult> {
   const targetYear = events[events.length - 1].timestamp.year;
   const ctx: AgentContext = { currentState, events, targetYear };
@@ -66,8 +77,10 @@ export async function orchestrate(
     regionIds: Array.from(directIds),
   });
 
+  const maxParallel = getMaxParallel();
+
   console.log(
-    `[Orchestrator] Year ${targetYear}: ${directIds.size} direct + ${allRegionIds.length - directIds.size} indirect regions, ${groups.length} groups (max ${groups.reduce((m, g) => Math.max(m, g.regionIds.length), 0)} per group), concurrency=${MAX_PARALLEL}`
+    `[Orchestrator] Year ${targetYear}: ${directIds.size} direct + ${allRegionIds.length - directIds.size} indirect regions, ${groups.length} groups (max ${groups.reduce((m, g) => Math.max(m, g.regionIds.length), 0)} per group), concurrency=${maxParallel}`
   );
 
   const tasks = groups.map((group) => async (): Promise<TransitionResult | null> => {
@@ -75,7 +88,9 @@ export async function orchestrate(
     const hasDirect = groupIds.some((id) => directIds.has(id));
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        return await runHistorian(ctx, groupIds, hasDirect, onToken, isOrphanGroup);
+        const result = await runHistorian(ctx, groupIds, hasDirect, onToken, isOrphanGroup);
+        onRegionDone?.(groupIds);
+        return result;
       } catch (err) {
         const label = groupIds.length === 1 ? groupIds[0] : `[${groupIds.join(",")}]`;
         console.warn(
@@ -84,6 +99,7 @@ export async function orchestrate(
         );
         if (attempt === 2) {
           console.error(`[Orchestrator]   ${label} all attempts failed, keeping original`);
+          onRegionDone?.(groupIds);
           return null;
         }
       }
@@ -91,7 +107,7 @@ export async function orchestrate(
     return null;
   });
 
-  const results = await runWithConcurrency(tasks, MAX_PARALLEL);
+  const results = await runWithConcurrency(tasks, maxParallel);
 
   let mergedEra = currentState.era;
   let mergedSummary = currentState.summary || { zh: "", en: "" };

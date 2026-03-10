@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
 import HeaderSection from "./HeaderSection";
@@ -12,40 +12,78 @@ import DemographicsTab from "./DemographicsTab";
 import CultureTab from "./CultureTab";
 import DiplomacyTab from "./DiplomacyTab";
 import TechnologyTab from "./TechnologyTab";
+import AISectorTab from "./AISectorTab";
 import AssessmentTab from "./AssessmentTab";
 import HistoryTab from "./HistoryTab";
+import FactionsTab from "./FactionsTab";
+import WarsTab from "./WarsTab";
 
-const TABS = [
+const BASE_TABS = [
   { key: "history", labelKey: "info.history" },
   { key: "political", labelKey: "info.political" },
+  { key: "factions", labelKey: "info.factions" },
   { key: "military", labelKey: "info.military" },
+  { key: "wars", labelKey: "info.wars" },
   { key: "economy", labelKey: "info.economy" },
   { key: "finances", labelKey: "info.finances" },
   { key: "demographics", labelKey: "info.demographics" },
   { key: "culture", labelKey: "info.culture" },
   { key: "diplomacy", labelKey: "info.diplomacy" },
   { key: "technology", labelKey: "info.technology" },
+  { key: "aiSector", labelKey: "info.aiSector" },
   { key: "assessment", labelKey: "info.assessment" },
 ] as const;
 
-type TabKey = (typeof TABS)[number]["key"];
+type TabKey = (typeof BASE_TABS)[number]["key"];
 
 export default function CivilizationDetail() {
   const selectedRegion = useWorldStore((s) => s.selectedRegion);
   const setSelectedRegionId = useWorldStore((s) => s.setSelectedRegionId);
+  const activeWars = useWorldStore((s) => s.activeWars);
   const { t } = useLocale();
   const [activeTab, setActiveTab] = useState<TabKey>("political");
 
+  const hasFactions = !!(selectedRegion?.factions && selectedRegion.factions.length > 0);
+  const hasAiSector = !!selectedRegion?.aiSector;
+  const hasWars = selectedRegion
+    ? activeWars.some(
+      (w) =>
+        w.belligerents.side1.regionIds.includes(selectedRegion.id) ||
+        w.belligerents.side2.regionIds.includes(selectedRegion.id)
+    )
+    : false;
+
+  const tabs = useMemo(
+    () => BASE_TABS.filter((tab) => {
+      if (tab.key === "factions") return hasFactions;
+      if (tab.key === "aiSector") return hasAiSector;
+      if (tab.key === "wars") return hasWars;
+      return true;
+    }),
+    [hasFactions, hasAiSector, hasWars]
+  );
+
   if (!selectedRegion) return null;
 
+  const effectiveTab =
+    (activeTab === "factions" && !hasFactions) ||
+      (activeTab === "aiSector" && !hasAiSector) ||
+      (activeTab === "wars" && !hasWars)
+      ? "political"
+      : activeTab;
+
   const renderTab = () => {
-    switch (activeTab) {
+    switch (effectiveTab) {
       case "history":
         return <HistoryTab region={selectedRegion} />;
       case "political":
         return <PoliticalTab region={selectedRegion} />;
+      case "factions":
+        return <FactionsTab region={selectedRegion} />;
       case "military":
         return <MilitaryTab region={selectedRegion} />;
+      case "wars":
+        return <WarsTab region={selectedRegion} />;
       case "economy":
         return <EconomyTab region={selectedRegion} />;
       case "finances":
@@ -58,6 +96,8 @@ export default function CivilizationDetail() {
         return <DiplomacyTab region={selectedRegion} />;
       case "technology":
         return <TechnologyTab region={selectedRegion} />;
+      case "aiSector":
+        return <AISectorTab region={selectedRegion} />;
       case "assessment":
         return <AssessmentTab region={selectedRegion} />;
       default:
@@ -86,11 +126,11 @@ export default function CivilizationDetail() {
 
       {/* Tab navigation */}
       <div className="flex flex-wrap gap-1 px-3 py-2 shrink-0 border-b border-border-subtle">
-        {TABS.map((tab) => (
+        {tabs.map((tab) => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className={`px-2 py-1 rounded text-xs transition-all border ${activeTab === tab.key
+            className={`px-2 py-1 rounded text-xs transition-all border ${effectiveTab === tab.key
               ? "bg-accent-gold text-bg-primary border-accent-gold"
               : "bg-transparent text-text-secondary border-border-subtle"
               }`}

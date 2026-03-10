@@ -10,7 +10,7 @@ export default function PoliticalTab({ region }: { region: Region }) {
   const deptRows = (region.government.departments || []).map((d) => ({
     name: localized(d.name),
     function: localized(d.function),
-    count: d.headCount.toLocaleString(),
+    count: d.headCount != null ? d.headCount.toLocaleString() : "—",
   }));
 
   return (
@@ -35,22 +35,30 @@ export default function PoliticalTab({ region }: { region: Region }) {
           ]}
           rows={deptRows}
         />
-        <div className="mt-1 text-text-muted">
-          {t("govt.officials")}: {region.government.totalOfficials.toLocaleString()}
-        </div>
+        {region.government?.totalOfficials != null && (
+          <div className="mt-1 text-text-muted">
+            {t("govt.officials")}: {region.government.totalOfficials.toLocaleString()}
+          </div>
+        )}
       </Section>
 
-      <Section title={t("govt.localAdmin")}>
-        <p>{localized(region.government.localAdmin)}</p>
-      </Section>
+      {region.government?.localAdmin && (
+        <Section title={t("govt.localAdmin")}>
+          <p>{localized(region.government.localAdmin)}</p>
+        </Section>
+      )}
 
-      <Section title={t("govt.legal")}>
-        <p>{localized(region.government.legalSystem)}</p>
-      </Section>
+      {region.government?.legalSystem && (
+        <Section title={t("govt.legal")}>
+          <p>{localized(region.government.legalSystem)}</p>
+        </Section>
+      )}
 
-      <Section title={t("govt.taxation")}>
-        <p>{localized(region.government.taxationSystem)}</p>
-      </Section>
+      {region.government?.taxationSystem && (
+        <Section title={t("govt.taxation")}>
+          <p>{localized(region.government.taxationSystem)}</p>
+        </Section>
+      )}
 
       {region.government.keyOfficials && region.government.keyOfficials.length > 0 && (
         <Section title={t("govt.keyOfficials")}>

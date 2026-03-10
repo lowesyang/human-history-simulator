@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { ERA_PRESETS } from "@/data/era-presets";
+import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
 import fs from "fs";
 import path from "path";
 
@@ -37,12 +38,12 @@ export async function POST(request: NextRequest) {
   const eraIds = (body.eraIds as string[] | undefined) || ERA_PRESETS.map((e) => e.id);
   const force = body.force === true;
 
-  const apiKey = process.env.OPENROUTER_API_KEY;
+  const apiKey = getEffectiveApiKey();
   if (!apiKey) {
     return NextResponse.json({ error: "OPENROUTER_API_KEY not configured" }, { status: 500 });
   }
 
-  const model = process.env.LLM_MODEL || "openai/gpt-5.4";
+  const model = getEffectiveModel();
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream({

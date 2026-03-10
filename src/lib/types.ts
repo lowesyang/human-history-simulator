@@ -69,15 +69,80 @@ export type EventCategory =
   | "exploration"
   | "diplomacy"
   | "migration"
+  | "technology"
+  | "finance"
   | "other";
 
 export type BatchMode = "per_event" | "per_month" | "per_year";
+
+export interface Faction {
+  id: string;
+  name: LocalizedText;
+  type: "party" | "rebel" | "warlord" | "separatist" | "religious" | "other";
+  leader: LocalizedText;
+  leaderTitle?: LocalizedText;
+  ideology?: LocalizedText;
+  foundedYear?: number;
+  headquarters?: LocalizedText;
+  controlledArea?: LocalizedText;
+  militaryStrength?: {
+    troops: number;
+    description: LocalizedText;
+  };
+  population?: number;
+  status: "ruling" | "opposition" | "insurgent" | "underground" | "allied" | "rival";
+  relationship: LocalizedText;
+  description: LocalizedText;
+  keyFigures?: {
+    name: LocalizedText;
+    title: LocalizedText;
+    role: LocalizedText;
+  }[];
+}
+
+export interface AIModel {
+  name: LocalizedText;
+  developer: LocalizedText;
+  releaseYear: number;
+  capabilities: LocalizedText;
+}
+
+export interface AICompany {
+  name: LocalizedText;
+  valuation?: LocalizedText;
+  keyProducts: LocalizedText;
+  founded?: number;
+  headquarters?: LocalizedText;
+}
+
+export interface AIKeyFigure {
+  name: LocalizedText;
+  title: LocalizedText;
+  affiliation: LocalizedText;
+  contribution: LocalizedText;
+}
+
+export interface AISector {
+  level: number;
+  policy: LocalizedText;
+  regulatoryStance: LocalizedText;
+  investmentScale: LocalizedText;
+  keyModels: AIModel[];
+  leadingCompanies: AICompany[];
+  keyFigures: AIKeyFigure[];
+  researchFocus: LocalizedText;
+  computeInfrastructure: LocalizedText;
+  talentPool: LocalizedText;
+  globalRanking?: LocalizedText;
+  outlook: LocalizedText;
+}
 
 export interface Region {
   id: string;
   name: LocalizedText;
   territoryId: string;
   territoryScale: "xs" | "sm" | "md" | "lg" | "xl";
+  geometry?: GeoJSON.Geometry;
 
   civilization: {
     name: LocalizedText;
@@ -211,6 +276,8 @@ export interface Region {
     infrastructure?: LocalizedText;
   };
 
+  aiSector?: AISector;
+
   assessment: {
     strengths: LocalizedText;
     weaknesses: LocalizedText;
@@ -219,6 +286,7 @@ export interface Region {
 
   status: RegionStatus;
   description: LocalizedText;
+  factions?: Faction[];
 }
 
 export interface WorldState {

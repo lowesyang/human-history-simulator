@@ -13,6 +13,10 @@ import {
 } from "@/lib/db";
 import { generateChangelog } from "@/lib/changelog";
 import { extractWarsFromEvents } from "@/lib/war-extractor";
+import {
+  findClosestSnapshotYear,
+  mergeSnapshotGeometry,
+} from "@/lib/geo-snapshots";
 import type { WorldState, HistoricalEvent, Region, War } from "@/lib/types";
 
 export async function POST(request: NextRequest) {
@@ -147,7 +151,15 @@ export async function POST(request: NextRequest) {
                 tokenFlushTimer = setTimeout(flushTokens, 80);
               }
             },
-            warsForOrchestrate
+            warsForOrchestrate,
+            (regionIds) => {
+              if (tokenFlushTimer) {
+                clearTimeout(tokenFlushTimer);
+                tokenFlushTimer = null;
+              }
+              flushTokens();
+              sendSSE(controller, "llm_region_done", { regionIds });
+            }
           );
 
           if (tokenFlushTimer) {
@@ -164,6 +176,17 @@ export async function POST(request: NextRequest) {
 
           const lastEvent = pendingEvents[pendingEvents.length - 1];
           const newSnapshotId = uuidv4();
+
+          const prevSnapshotYear = findClosestSnapshotYear(
+            currentState.timestamp.year
+          );
+          const newSnapshotYear = findClosestSnapshotYear(targetYear);
+          if (newSnapshotYear !== prevSnapshotYear) {
+            mergeSnapshotGeometry(
+              result.regions as Region[],
+              newSnapshotYear
+            );
+          }
 
           insertSnapshot(
             newSnapshotId,

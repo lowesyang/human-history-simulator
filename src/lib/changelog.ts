@@ -212,6 +212,45 @@ function inferSentiment(value: unknown): ChangeSentiment {
   return "neutral";
 }
 
+const ENUM_DISPLAY: Record<string, LocalizedText> = {
+  // RegionStatus
+  thriving: { zh: "繁荣", en: "Thriving" },
+  stable: { zh: "稳定", en: "Stable" },
+  declining: { zh: "衰落", en: "Declining" },
+  conflict: { zh: "冲突", en: "Conflict" },
+  collapsed: { zh: "崩溃", en: "Collapsed" },
+  // TerritoryScale
+  xs: { zh: "微型", en: "Tiny" },
+  sm: { zh: "小型", en: "Small" },
+  md: { zh: "中型", en: "Medium" },
+  lg: { zh: "大型", en: "Large" },
+  xl: { zh: "超大", en: "Very Large" },
+  // CivilizationType
+  empire: { zh: "帝国", en: "Empire" },
+  kingdom: { zh: "王国", en: "Kingdom" },
+  city_state: { zh: "城邦", en: "City-State" },
+  tribal: { zh: "部落", en: "Tribal" },
+  nomadic: { zh: "游牧", en: "Nomadic" },
+  trade_network: { zh: "贸易网络", en: "Trade Network" },
+  theocracy: { zh: "神权政体", en: "Theocracy" },
+  republic: { zh: "共和国", en: "Republic" },
+  // GovernmentForm
+  absolute_monarchy: { zh: "君主专制", en: "Absolute Monarchy" },
+  feudal_monarchy: { zh: "封建君主制", en: "Feudal Monarchy" },
+  constitutional_monarchy: { zh: "君主立宪制", en: "Constitutional Monarchy" },
+  theocratic_monarchy: { zh: "神权君主制", en: "Theocratic Monarchy" },
+  oligarchy: { zh: "寡头制", en: "Oligarchy" },
+  aristocratic_republic: { zh: "贵族共和制", en: "Aristocratic Republic" },
+  democracy: { zh: "民主制", en: "Democracy" },
+  tribal_council: { zh: "部落议事会", en: "Tribal Council" },
+  military_dictatorship: { zh: "军事独裁", en: "Military Dictatorship" },
+  colonial_administration: { zh: "殖民行政", en: "Colonial Administration" },
+  communist_state: { zh: "共产主义国家", en: "Communist State" },
+  federal_republic: { zh: "联邦共和制", en: "Federal Republic" },
+  confederation: { zh: "邦联制", en: "Confederation" },
+  other: { zh: "其他", en: "Other" },
+};
+
 function formatChangeValue(value: unknown): LocalizedText {
   if (value === null) {
     return { zh: "已清除", en: "Cleared" };
@@ -230,25 +269,26 @@ function formatChangeValue(value: unknown): LocalizedText {
   }
 
   if (typeof value === "string") {
-    if (value.startsWith("=")) {
-      const display = value.slice(1);
-      return { zh: display, en: display };
-    }
-    return { zh: value, en: value };
+    const raw = value.startsWith("=") ? value.slice(1) : value;
+    const enumDisplay = ENUM_DISPLAY[raw];
+    if (enumDisplay) return enumDisplay;
+    return { zh: raw, en: raw };
   }
 
   if (typeof value === "object" && value !== null) {
     const obj = value as Record<string, unknown>;
     if (typeof obj.amount === "number") {
       const sign = obj.amount > 0 ? "+" : "";
-      const zhParts: string[] = [`${sign}${fmt(obj.amount)}`];
-      const enParts: string[] = [`${sign}${fmt(obj.amount)}`];
-      if (typeof obj.goldKg === "number") {
+      const unitZh = isLocalizedText(obj.unit) ? ` ${(obj.unit as Record<string, string>).zh}` : "";
+      const unitEn = isLocalizedText(obj.unit) ? ` ${(obj.unit as Record<string, string>).en}` : "";
+      const zhParts: string[] = [`${sign}${fmt(obj.amount)}${unitZh}`];
+      const enParts: string[] = [`${sign}${fmt(obj.amount)}${unitEn}`];
+      if (typeof obj.goldKg === "number" && obj.goldKg !== 0) {
         const gs = obj.goldKg > 0 ? "+" : "";
         zhParts.push(`${gs}${fmt(obj.goldKg)}kg 黄金`);
         enParts.push(`${gs}${fmt(obj.goldKg)}kg gold`);
       }
-      if (typeof obj.silverKg === "number") {
+      if (typeof obj.silverKg === "number" && obj.silverKg !== 0) {
         const ss = obj.silverKg > 0 ? "+" : "";
         zhParts.push(`${ss}${fmt(obj.silverKg)}kg 白银`);
         enParts.push(`${ss}${fmt(obj.silverKg)}kg silver`);

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getEvents, getFrontier, getOriginTime, deletePendingEvents } from "@/lib/db";
+import { getEvents, getFrontier, getOriginTime, deletePendingEvents, getCurrentEraId } from "@/lib/db";
 
 export async function GET(request: NextRequest) {
   try {
@@ -12,8 +12,9 @@ export async function GET(request: NextRequest) {
     const events = getEvents(statusFilter ?? undefined);
     const frontier = getFrontier();
     const originTime = getOriginTime();
+    const eraId = getCurrentEraId();
 
-    return NextResponse.json({ events, frontier, originTime });
+    return NextResponse.json({ events, frontier, originTime, eraId });
   } catch (error) {
     console.error("Events API error:", error);
     return NextResponse.json(

@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { Region } from "@/lib/types";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
+import ExplainButton from "@/components/ExplainButton";
 import type { ChangeEntry, ChangeSentiment } from "@/lib/changelog";
 
 const SENTIMENT_COLORS: Record<ChangeSentiment, string> = {
@@ -55,6 +56,7 @@ export default function HistoryTab({ region }: { region: Region }) {
         description: regionEntry.description,
         changes: regionEntry.changes,
         timestamp: log.timestamp,
+        regionName: region.name[locale],
       };
     })
     .filter(Boolean)
@@ -74,7 +76,7 @@ export default function HistoryTab({ region }: { region: Region }) {
         {regionLogs.length} {t("history.records")}
       </div>
       {regionLogs.map((log, idx) => (
-        <EpochBlock key={idx} log={log!} locale={locale} t={t} localized={localized} />
+        <EpochBlock key={idx} log={log!} locale={locale} t={t} localized={localized} regionId={region.id} />
       ))}
     </div>
   );
@@ -85,6 +87,7 @@ function EpochBlock({
   locale,
   t,
   localized,
+  regionId,
 }: {
   log: {
     targetYear: number;
@@ -95,10 +98,12 @@ function EpochBlock({
     description?: { zh: string; en: string };
     changes: ChangeEntry[];
     timestamp: string;
+    regionName: string;
   };
   locale: "zh" | "en";
   t: (key: string) => string;
   localized: (text: { zh: string; en: string } | undefined) => string;
+  regionId: string;
 }) {
   const [expanded, setExpanded] = useState(true);
 
@@ -110,23 +115,29 @@ function EpochBlock({
       ? `公元${log.targetYear}年`
       : `${log.targetYear} CE`;
 
+  const epochContext = {
+    year: log.targetYear,
+    era: localized(log.era),
+    eventTitles: log.events.map((e) => localized(e.title)),
+  };
+
   return (
     <div className="rounded border border-border-subtle overflow-hidden">
       {/* Epoch header */}
       <div
         className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-bg-tertiary/50 transition-colors"
         onClick={() => setExpanded(!expanded)}
-        style={{ borderLeft: `3px solid ${log.isDirect ? "#c9a84c" : "#6b5f4e"}` }}
+        style={{ borderLeft: `3px solid ${log.isDirect ? "#c9a84c" : "#8a7d6a"}` }}
       >
         <span className="text-xs text-text-muted">{expanded ? "▾" : "▸"}</span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-accent-gold">{yearStr}</span>
             <span
-              className="text-xs px-1 py-0.5 rounded"
+              className="text-xs px-1 py-0.5 rounded whitespace-nowrap"
               style={{
                 background: log.isDirect ? "rgba(201, 168, 76, 0.2)" : "rgba(107, 95, 78, 0.2)",
-                color: log.isDirect ? "#c9a84c" : "#6b5f4e",
+                color: log.isDirect ? "#c9a84c" : "#8a7d6a",
               }}
             >
               {log.isDirect ? t("log.directlyAffected") : t("log.indirectlyAffected")}
@@ -171,19 +182,35 @@ function EpochBlock({
               </div>
             )}
             {log.changes.map((change, i) => (
-              <div key={i} className="flex items-start gap-2 px-3 py-2">
-                <span className="text-xs mt-0.5 shrink-0">
-                  {CATEGORY_ICONS[change.category] || "•"}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-text-secondary">
-                    {localized(change.label)}
-                  </div>
-                  <div
-                    className={`leading-relaxed break-words mt-0.5${SENTIMENT_COLORS[change.sentiment] ? "" : " text-text-muted"}`}
-                    style={SENTIMENT_COLORS[change.sentiment] ? { color: SENTIMENT_COLORS[change.sentiment] } : undefined}
-                  >
-                    {localized(change.detail)}
+              <div key={i} className="px-3 py-2">
+                <div className="flex items-start gap-2">
+                  <span className="text-xs mt-0.5 shrink-0">
+                    {CATEGORY_ICONS[change.category] || "•"}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-semibold text-text-secondary">
+                        {localized(change.label)}
+                      </span>
+                      <ExplainButton
+                        locale={locale}
+                        regionName={log.regionName}
+                        regionId={regionId}
+                        year={epochContext.year}
+                        era={epochContext.era}
+                        eventTitles={epochContext.eventTitles}
+                        changeLabel={localized(change.label)}
+                        changeDetail={localized(change.detail)}
+                        changeSentiment={change.sentiment}
+                        regionDescription={localized(log.description)}
+                      />
+                    </div>
+                    <div
+                      className={`leading-relaxed break-words mt-0.5${SENTIMENT_COLORS[change.sentiment] ? "" : " text-text-primary"}`}
+                      style={SENTIMENT_COLORS[change.sentiment] ? { color: SENTIMENT_COLORS[change.sentiment] } : undefined}
+                    >
+                      {localized(change.detail)}
+                    </div>
                   </div>
                 </div>
               </div>

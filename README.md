@@ -8,19 +8,19 @@
 
 > _If you had the power to rewrite history, where would you take humanity?_
 
-**Human History Simulator** is a civilization simulation powered by an LLM-based multi-agent system as its historical reasoning engine. Choose from **19 eras** spanning **3,600 years**, from the Bronze Age forges of 1600 BCE to the digital networks of 2000 CE, and set **1,400+ civilizations** in motion on an interactive world map. Each civilization is a deeply modeled entity tracking **100+ state fields**: GDP, military strength, literacy, trade routes, cultural output, and far more. Every turn, the multi-agent engine weaves new events, computes state transitions, and reshapes the geopolitical landscape. No two playthroughs are ever the same.
+**Human History Simulator** is a civilization simulation powered by an LLM-based multi-agent system as its historical reasoning engine. Choose from **20 eras** spanning **3,600+ years**, from the Bronze Age forges of 1600 BCE through the rise and fall of empires to the AI revolution of 2023 CE, and set **1,400+ civilizations** in motion on an interactive world map. Each civilization is a deeply modeled entity tracking **100+ state fields**: GDP, military strength, literacy, trade routes, cultural output, and far more. Every turn, the multi-agent engine weaves new events, computes state transitions, and reshapes the geopolitical landscape. No two playthroughs are ever the same.
 
 <p align="center">
   <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
 </p>
 
-Territory boundaries are drawn from **47 real historical GeoJSON snapshots** (2000 BCE – 2010 CE) built on open academic basemaps: actual scholarly boundary data, not approximations. Wars redraw borders. Trade routes shift wealth across continents. Plagues decimate populations. Inventions ignite revolutions. Every mutation is logged at field-level granularity, giving you a god's-eye view of cause and effect across millennia. Same starting conditions, endlessly divergent histories.
+Territory boundaries are drawn from **47 real historical GeoJSON snapshots** (2000 BCE – 2010 CE) built on open academic basemaps: actual scholarly boundary data, not approximations. Wars redraw borders. Trade routes shift wealth across continents. Plagues decimate populations. Inventions ignite revolutions. The newest era, **AI Age (2023)**, drops you into the dawn of the artificial intelligence revolution: the foundation model race, chip export controls, AI regulation battles, and the geopolitical realignment they trigger. Every mutation is logged at field-level granularity, giving you a god's-eye view of cause and effect across millennia. Same starting conditions, endlessly divergent histories.
 
 [English](./README.md) · [中文](./README.zh-CN.md)
 
 ## Highlights
 
-- **[19 Historical Eras](#supported-eras)** covering Bronze Age through Modern World, each seeded with historically accurate civilizations, rulers, and geopolitical configurations.
+- **[20 Historical Eras](#supported-eras)** covering Bronze Age through the AI Age, each seeded with historically accurate civilizations, rulers, and geopolitical configurations.
 - **1,400+ Civilizations** including empires, kingdoms, city-states, tribes, and trade networks, with 60 to 100 regions simulated per era.
 - **Multi-Agent Evolution** where an AI orchestrator clusters regions, generates events, and computes per-field state transitions across economy, military, diplomacy, culture, and more.
 - **Real Historical Boundaries** from 47 GeoJSON boundary snapshots sourced from open academic basemaps, spanning 4,000 years of territorial change.
@@ -33,19 +33,31 @@ Territory boundaries are drawn from **47 real historical GeoJSON snapshots** (20
 
 ## How It Works
 
-Each time you advance the clock, the simulation runs a multi-stage pipeline:
+History doesn't happen in isolation. A war in one region sends refugees across borders, disrupts trade routes, and emboldens rivals on the other side of the continent. The simulation engine is designed around this principle: **everything is connected**.
 
-1. **Event Generation** — AI produces historically grounded events (wars, inventions, treaties, disasters, migrations) for the upcoming period. You can also inject custom events for alternative history scenarios.
+### The Simulation Loop
 
-2. **Region Clustering** — The orchestrator builds a relation graph from event co-occurrence, war belligerents, and territory proximity, then extracts connected components via BFS. Related civilizations are grouped together; isolated ones are batched separately.
+When you press play or advance the clock, three things happen in sequence:
 
-3. **Historian Agents** — Each group is dispatched to specialized LLM prompts: **Direct** (full impact for event-affected regions), **Indirect** (ripple effects for neighbors), or **Independent** (internal evolution for isolated regions). Up to 10 groups run in parallel with auto-retry.
+1. **Events shape the world.** The engine looks at the upcoming events on your timeline and asks: which civilizations are affected? A famine in Egypt, a trade treaty between Venice and Constantinople, a Mongol invasion sweeping across Central Asia. Each event names the regions it touches and the kind of change it brings.
 
-4. **State Transitions** — The LLM returns compact JSON diffs (dot-notation field deltas), not full snapshots. The engine applies relative deltas, absolute sets, and auto-calculated fields to produce the next world state.
+2. **Civilizations respond together.** Regions that share the same events, fight the same wars, or border each other are grouped and reasoned about as a whole. This ensures that when the Ottoman Empire expands, the Byzantine reaction, Egyptian trade shifts, and Venetian diplomatic maneuvers are all computed in the same context, not in isolation. Regions with no connection to current events evolve on their own internal logic.
 
-5. **War Extraction** — A dedicated analyzer extracts structured conflict data from war events — belligerents, causes, advantages, impact — and tracks wars across epochs.
+3. **The world updates.** Every change, from a population shift to a new ruler to a GDP fluctuation, is recorded as a precise field-level delta. Nothing is overwritten wholesale. You can trace exactly what changed, why, and how it rippled outward, all visible in the History tab and Evolution Log.
 
-6. **Evolution Logging** — Per-epoch changelogs record every field-level mutation, powering the History tab and Evolution Log panel.
+### Where Do Events Come From?
+
+Before the simulation can move forward, it needs to know **what happens next**. Events enter the timeline through three channels:
+
+- **Prebuilt historical events.** Each era ships with a curated set of real, documented events. When you start the Bronze Age, you'll see the fall of Mycenae, the Sea Peoples' invasions, and the rise of the Zhou Dynasty already queued up, grounding the simulation in real history from the first turn.
+
+- **AI-generated events.** Click "Generate Real Historical Events" and the AI will research the current world state, consider which regions exist and what has happened recently, then produce documented historical events for the years ahead. Events stream into the "Upcoming Events" panel in real time as they're generated.
+
+- **Your own "what-if" events.** Write any scenario you want: "The printing press is invented 500 years early," "A plague wipes out 30% of Rome's population," or "China discovers the Americas in 1421." Custom events are treated exactly like real ones by the engine, letting you reshape history and watch the consequences unfold.
+
+### The Design Philosophy
+
+The core idea is simple: **the AI doesn't write a story; it computes consequences.** Given a set of events and the current state of every civilization, the engine figures out what would plausibly happen next across dozens of dimensions simultaneously. The result feels emergent rather than scripted, because it is. Two playthroughs of the same era will diverge almost immediately, not because of randomness, but because small differences in event timing and sequencing cascade through interconnected systems in unpredictable ways.
 
 ## Getting Started
 
@@ -80,7 +92,7 @@ LLM_MAX_GROUP_SIZE=10
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — pick an era and start simulating.
+Open [http://localhost:3000](http://localhost:3000), pick an era and start simulating.
 
 ## Scripts
 
@@ -96,49 +108,64 @@ Open [http://localhost:3000](http://localhost:3000) — pick an era and start si
 
 ## Supported Eras
 
-|     | Era                       | Year     | Description                                                                                                                |
-| --- | ------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
-| 🏺  | **Bronze Age**            | 1600 BCE | Shang Dynasty founded, Babylonian Empire at peak, Egyptian New Kingdom rising, Mycenaean civilization flourishing          |
-| ⚔️  | **Iron Age**              | 800 BCE  | Late Western Zhou, Assyrian Empire dominant, Greek city-states emerging, Phoenicians trading across Mediterranean          |
-| 🧘  | **Axial Age**             | 500 BCE  | Age of Confucius and Laozi, Persian Empire at peak, Greek democracy established, Buddha teaching in India                  |
-| 🏛️  | **Hellenistic Period**    | 323 BCE  | Alexander the Great just died, empire fragmenting, Warring States era in China, Maurya Empire unifying India               |
-| 👑  | **Qin-Han & Rome**        | 221 BCE  | Qin Shi Huang unifies China, Roman Republic expanding, Punic Wars ongoing, Maurya Empire at peak                           |
-| 🛣️  | **Twin Empires**          | 100 CE   | Eastern Han at peak, Roman Empire under Trajan, Silk Road thriving, Kushan Empire bridging East and West                   |
-| 🐉  | **Three Kingdoms**        | 220 CE   | Wei, Shu, Wu competing, Roman Empire in Third Century Crisis, Sassanid Persia rising, Gupta Empire emerging                |
-| 🏚️  | **Fall of Rome**          | 476 CE   | Western Roman Empire fallen, Northern and Southern Dynasties in China, Byzantine Empire endures, barbarian kingdoms emerge |
-| 🌸  | **Tang Golden Age**       | 750 CE   | Tang Dynasty at apex before An Lushan Rebellion, Abbasid Caliphate just established, Carolingian Empire emerging           |
-| ⚜️  | **Age of Crusades**       | 1200 CE  | Southern Song in China, Mongol Empire about to rise, Crusades continuing, Kamakura Shogunate in Japan                      |
-| 🏇  | **Mongol Empire**         | 1280 CE  | Yuan Dynasty rules China, Mongol Empire spans Eurasia, Marco Polo visits China, Delhi Sultanate resists Mongols            |
-| 🎨  | **Renaissance**           | 1500 CE  | Ming Dynasty thriving, Ottoman Empire at peak, European Renaissance, Age of Exploration begins                             |
-| 🔭  | **Early Modern Period**   | 1648 CE  | Thirty Years' War ends, Westphalian system established, early Qing Dynasty, Scientific Revolution underway                 |
-| 💡  | **Age of Enlightenment**  | 1750 CE  | Qing Dynasty Qianlong era, European Enlightenment at peak, eve of French Revolution, Industrial Revolution beginning       |
-| 🏭  | **Industrial Revolution** | 1840 CE  | Opium War begins, Victorian Britain, Industrial Revolution transforming the world, Japan approaching Meiji Restoration     |
-| 🌍  | **Age of Imperialism**    | 1900 CE  | British Empire at zenith, USA rising, Meiji Japan industrialized, Scramble for Africa complete                             |
-| 💥  | **World War Era**         | 1939 CE  | WWII begins, Nazi Germany expanding, Japan invading China, Soviet Union preparing, USA neutral but soon to join            |
-| ☢️  | **Cold War Era**          | 1962 CE  | Cuban Missile Crisis, US-Soviet confrontation, decolonization wave, Space Race intensifying                                |
-| 🌐  | **Modern World**          | 2000 CE  | Turn of millennium, Internet age dawning, globalization accelerating, China joining WTO                                    |
+|     | Era                       | Year     | Description                                                                                                                                         |
+| --- | ------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🏺  | **Bronze Age**            | 1600 BCE | Shang Dynasty founded, Babylonian Empire at peak, Egyptian New Kingdom rising, Mycenaean civilization flourishing                                   |
+| ⚔️  | **Iron Age**              | 800 BCE  | Late Western Zhou, Assyrian Empire dominant, Greek city-states emerging, Phoenicians trading across Mediterranean                                   |
+| 🧘  | **Axial Age**             | 500 BCE  | Age of Confucius and Laozi, Persian Empire at peak, Greek democracy established, Buddha teaching in India                                           |
+| 🏛️  | **Hellenistic Period**    | 323 BCE  | Alexander the Great just died, empire fragmenting, Warring States era in China, Maurya Empire unifying India                                        |
+| 👑  | **Qin-Han & Rome**        | 221 BCE  | Qin Shi Huang unifies China, Roman Republic expanding, Punic Wars ongoing, Maurya Empire at peak                                                    |
+| 🛣️  | **Twin Empires**          | 100 CE   | Eastern Han at peak, Roman Empire under Trajan, Silk Road thriving, Kushan Empire bridging East and West                                            |
+| 🐉  | **Three Kingdoms**        | 220 CE   | Wei, Shu, Wu competing, Roman Empire in Third Century Crisis, Sassanid Persia rising, Gupta Empire emerging                                         |
+| 🏚️  | **Fall of Rome**          | 476 CE   | Western Roman Empire fallen, Northern and Southern Dynasties in China, Byzantine Empire endures, barbarian kingdoms emerge                          |
+| 🌸  | **Tang Golden Age**       | 750 CE   | Tang Dynasty at apex before An Lushan Rebellion, Abbasid Caliphate just established, Carolingian Empire emerging                                    |
+| ⚜️  | **Age of Crusades**       | 1200 CE  | Southern Song in China, Mongol Empire about to rise, Crusades continuing, Kamakura Shogunate in Japan                                               |
+| 🏇  | **Mongol Empire**         | 1280 CE  | Yuan Dynasty rules China, Mongol Empire spans Eurasia, Marco Polo visits China, Delhi Sultanate resists Mongols                                     |
+| 🎨  | **Renaissance**           | 1500 CE  | Ming Dynasty thriving, Ottoman Empire at peak, European Renaissance, Age of Exploration begins                                                      |
+| 🔭  | **Early Modern Period**   | 1648 CE  | Thirty Years' War ends, Westphalian system established, early Qing Dynasty, Scientific Revolution underway                                          |
+| 💡  | **Age of Enlightenment**  | 1750 CE  | Qing Dynasty Qianlong era, European Enlightenment at peak, eve of French Revolution, Industrial Revolution beginning                                |
+| 🏭  | **Industrial Revolution** | 1840 CE  | Opium War begins, Victorian Britain, Industrial Revolution transforming the world, Japan approaching Meiji Restoration                              |
+| 🌍  | **Age of Imperialism**    | 1900 CE  | British Empire at zenith, USA rising, Meiji Japan industrialized, Scramble for Africa complete                                                      |
+| 💥  | **World War Era**         | 1939 CE  | WWII begins, Nazi Germany expanding, Japan invading China, Soviet Union preparing, USA neutral but soon to join                                     |
+| ☢️  | **Cold War Era**          | 1962 CE  | Cuban Missile Crisis, US-Soviet confrontation, decolonization wave, Space Race intensifying                                                         |
+| 🌐  | **Modern World**          | 2000 CE  | Turn of millennium, Internet age dawning, globalization accelerating, China joining WTO                                                             |
+| 🤖  | **AI Age**                | 2023 CE  | ChatGPT ignites AI revolution, foundation model race in full swing, chip export controls reshape supply chains, nations racing to set AI strategies |
 
 ## Roadmap
 
-- [ ] **Smarter Simulation Engine**: Optimize historical progression efficiency and add tunable parameters like _contingency_ (chance of unexpected events) and _determinism_ (weight of structural forces) to shape the balance between chaos and inevitability.
-- [ ] **Richer Civilization Profiles**: Deepen per-civilization data with more granular fields: social structure, religious influence, artistic movements, infrastructure, and more.
+**Engine & Controls**
+
+- [ ] **Tunable Simulation Engine**: Optimize progression efficiency and expose a control panel for shaping how history unfolds — adjust _contingency_ vs. _determinism_ to set the balance between butterfly effects and structural forces, tune event-category weights (war, diplomacy, trade, tech, culture, disaster) to amplify or suppress specific drivers, and compare divergence across parallel runs to see exactly where and why timelines split.
+- [ ] **Flexible Custom Events**: Make "what-if" injection more expressive: chain events together, set preconditions, and craft elaborate alternate-history scenarios with branching consequences.
+- [ ] **Live State Editor**: Directly modify any civilization's state at any point in time — tweak GDP, swap rulers, redraw alliances, adjust military strength — and watch the engine propagate consequences forward.
+
+**Content & Data**
+
+- [ ] **Deeper Civilization Profiles**: Enrich per-civilization modeling with finer-grained dimensions: social structure, religious influence, artistic movements, philosophical currents, collective morale, infrastructure, and more — making culture and spirit first-class simulation axes alongside economics and military.
+- [ ] **Historical Economics & Asset Tracking**: Ground each era's economy in real research — trade volumes, monetary systems, taxation, debt, wealth distribution — and model key asset trajectories (gold, silver, grain, oil, land, proto-equity instruments) as interactive trend charts that evolve alongside the simulation.
 - [ ] **Broader Historical Coverage**: Surface overlooked but historically significant states, tribes, and regions on the map. The ones textbooks forget, but history remembers.
-- [ ] **War Impact Visualization**: Go beyond event logs and visualize the ripple effects of conflict on borders, population, economy, and power balance in real time.
-- [ ] **Flexible Custom Events**: Make "what-if" injection more expressive and fun: chain events, set preconditions, and craft elaborate alternate history scenarios.
-- [ ] **Future Era Projection**: Extend the timeline beyond the present and let the engine speculate on humanity's next chapters: 2050, 2100, and beyond.
-- [ ] **Perspective Mode**: Step into the shoes of a national leader. See the world through the strategic lens of any civilization: their threats, opportunities, alliances, and blind spots.
-- [ ] **Skill-Based Agent Integration**: Expose the simulator as a set of Skills so that autonomous agents from platforms like OpenClaw can take over the human role: selecting eras, injecting events, making strategic decisions, and driving the simulation forward without manual interaction.
-- [ ] **Historical Economics & Finance Data**: Integrate more accurate per-era economic and financial data — trade volumes, monetary systems, taxation structures, debt levels, and wealth distribution — to ground each civilization's economy in real historical research.
-- [ ] **Core Asset Price Tracking**: Model the historical trajectories of key assets across eras: commodities (gold, silver, grain, oil), land values, and proto-equity instruments, visualized as interactive trend charts that evolve alongside the simulation.
-- [ ] **Spiritual & Cultural Civilization Index**: Assess and quantify the state of humanity's intellectual and spiritual life in each era — philosophical movements, religious influence, artistic output, scientific thought, and collective morale — as a first-class simulation dimension.
-- [ ] **Contingency vs. Determinism Monitor**: Add fine-grained tracking that compares historical contingency (butterfly-effect events, unlikely outcomes) against structural determinism (geographic, economic, demographic forces), with side-by-side divergence analysis across parallel runs.
-- [ ] **Live State Editor**: Allow direct modification of any civilization's state at any point in time — tweak GDP, change a ruler, redraw an alliance, adjust military strength — and watch the engine propagate consequences forward.
+- [ ] **Future Era Projection**: Push the timeline beyond the AI Age — 2030, 2050, 2100 and further — and let the engine speculate on AGI, autonomous weapons, space colonization, climate tipping points, and the global order they reshape.
+
+**Gameplay Modes**
+
+- [ ] **Historical Scenarios**: Deep-dive into pivotal turning points through curated packs that advance **month by month**. Let players experience decisions, crises, and cascading consequences at a granular, almost first-person level, and observe how local shocks reshape the global balance of power. Prioritize five thematic tracks:
+  - **Politics**: Glorious Revolution (1688-1689), French Revolution (1789-1799), American War of Independence (1775-1783), Xinhai Revolution (1911-1912), Meiji Restoration (1868-1877)
+  - **Nature**: Black Death spread across Eurasia (1347-1353), the Tambora eruption and the "Year Without a Summer" (1815-1816), Yellow River course shifts and North China famine cascades (1855-1879)
+  - **Humanities**: Renaissance city networks (1450-1520), Reformation vs. Counter-Reformation (1517-1648), Enlightenment salons and print diffusion (1715-1789)
+  - **Technology**: steam-engine diffusion and railway races (1769-1914), telegraph-era global information networks (1837-1914), early nuclear-age arms and diplomacy (1945-1968)
+  - **Finance**: Tulip Mania (1636-1637), the South Sea and Mississippi bubbles (1720), the Great Depression with gold-standard shocks (1929-1933), the Asian Financial Crisis (1997-1998)
+- [ ] **Perspective Mode**: Step into the shoes of a national leader. See the world through any civilization's strategic lens — threats, opportunities, alliances, and blind spots — and make decisions that ripple outward.
+- [ ] **War Impact Visualization**: Go beyond event logs — visualize in real time how conflict redraws borders, shifts populations, disrupts economies, and tilts the balance of power.
+
+**Integration**
+
+- [ ] **Skill-Based Agent Integration**: Expose the simulator as a set of Skills so autonomous agents (e.g. from OpenClaw) can take over the human role — selecting eras, injecting events, making strategic decisions, and driving the simulation forward without manual interaction.
 
 ## Acknowledgments
 
-- **[aourednik/historical-basemaps](https://github.com/aourednik/historical-basemaps)** — Open-source historical world map boundaries (GeoJSON) from 2000 BCE to 2010 CE by André Ourednik. This project's territory visualization is built upon these academic basemaps, simplified and matched to our internal region system. We are deeply grateful for this invaluable open dataset that makes historical boundary rendering possible.
-- **[OpenRouter](https://openrouter.ai/)** — Unified LLM API gateway that powers the simulation engine.
-- **[MapLibre GL](https://maplibre.org/)** — Open-source map rendering library.
+- **[aourednik/historical-basemaps](https://github.com/aourednik/historical-basemaps)**: Open-source historical world map boundaries (GeoJSON) from 2000 BCE to 2010 CE by André Ourednik. This project's territory visualization is built upon these academic basemaps, simplified and matched to our internal region system. We are deeply grateful for this invaluable open dataset that makes historical boundary rendering possible.
+- **[OpenRouter](https://openrouter.ai/)**: Unified LLM API gateway that powers the simulation engine.
+- **[MapLibre GL](https://maplibre.org/)**: Open-source map rendering library.
 
 ## Contributing
 

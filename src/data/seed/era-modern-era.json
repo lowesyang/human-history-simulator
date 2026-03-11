@@ -1808,7 +1808,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 9,
         "era": {
           "zh": "现代世界",
           "en": "Modern World"
@@ -1816,6 +1816,28 @@
         "keyInnovations": {
           "zh": "高密度半导体制造、消费电子、小型化精密机械、混合材料、工业机器人、高速铁路系统、汽车制造工艺、移动通信、光学仪器与先进生产管理体系是日本在2000年前后的关键技术优势。",
           "en": "High-density semiconductor production, consumer electronics, miniaturized precision machinery, advanced materials, industrial robotics, high-speed rail systems, automobile manufacturing techniques, mobile communications, optical instruments, and advanced production management systems were among Japan's key technological strengths around 2000."
+        },
+        "sectors": {
+          "electronics": {
+            "zh": "消费电子全球霸主：索尼PlayStation 2即将发售引爆游戏市场，松下、东芝、夏普在电视和家电领域全球领先。日本消费电子品牌在全球享有最高声誉。但'失落的十年'已过大半，泡沫经济崩溃的影响仍在持续。",
+            "en": "Global consumer electronics leader: Sony PlayStation 2 is about to launch, igniting the gaming market; Panasonic, Toshiba, Sharp lead globally in TVs and home appliances. Japanese consumer electronics brands enjoy the highest global reputation. But most of the 'Lost Decade' has passed, with bubble economy collapse effects persisting."
+          },
+          "automotive": {
+            "zh": "汽车工业全球第一梯队：丰田精益生产体系（TPS）是全球制造业标杆，普锐斯（1997年上市）开创混合动力先河。本田、日产在全球市场份额持续扩大。日本汽车以可靠性和燃油经济性著称，正在蚕食底特律三巨头的市场。",
+            "en": "Top-tier global automotive industry: Toyota Production System (TPS) is the global manufacturing benchmark; Prius (launched 1997) pioneered hybrid vehicles. Honda, Nissan continue expanding global market share. Japanese cars, renowned for reliability and fuel efficiency, are steadily eroding Detroit's Big Three market share."
+          },
+          "semiconductors": {
+            "zh": "半导体产业仍强但在衰退：NEC、东芝、日立在DRAM领域曾全球称霸，但90年代已被韩国三星超越。半导体设备（东京电子、尼康）和材料（信越化学）仍保持全球领先。日本正从半导体制造商向设备材料供应商角色转型。",
+            "en": "Semiconductor industry still strong but declining: NEC, Toshiba, Hitachi once dominated global DRAM but were overtaken by Samsung in the 1990s. Semiconductor equipment (TEL, Nikon) and materials (Shin-Etsu) remain globally leading. Japan is transitioning from chip manufacturer to equipment/materials supplier role."
+          },
+          "roboticsAndAutomation": {
+            "zh": "工业机器人全球领导者：发那科、安川电机已确立全球工业机器人市场霸主地位。索尼AIBO机器狗（1999年发售）和本田ASIMO人形机器人代表消费级机器人技术最前沿。'机器人大国'形象深入人心。",
+            "en": "Global industrial robotics leader: FANUC and Yaskawa have established dominance in the global industrial robot market. Sony's AIBO robot dog (1999) and Honda's ASIMO humanoid represent the frontier of consumer robotics. Japan's 'Robot Kingdom' image is firmly established."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的日本仍是全球科技第二强国，在消费电子、汽车、工业机器人、半导体设备材料领域保持全球领先。但'失落的十年'已严重削弱科技投资动力，互联网和软件领域明显落后于美国——i-mode虽开创移动互联网但未能国际化。半导体制造霸权已失。日本科技正从'全面领先'向'细分领域隐形冠军'模式转变。",
+          "en": "Japan in 2000 remains the world's second tech power, leading globally in consumer electronics, automotive, industrial robotics, and semiconductor equipment/materials. But the 'Lost Decade' has severely weakened tech investment momentum; internet and software clearly lag the US — i-mode pioneered mobile internet but failed to internationalize. Semiconductor manufacturing dominance has been lost. Japan's tech is transitioning from 'across-the-board leadership' to a 'hidden champions in niches' model."
         }
       },
       "assessment": {
@@ -2670,7 +2692,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 6,
         "era": {
           "zh": "现代世界",
           "en": "Modern World"
@@ -2678,6 +2700,28 @@
         "keyInnovations": {
           "zh": "重点发展领域包括互联网与电信扩张、移动通信、消费电子制造、高速数据网络建设、卫星与航天计划、杂交水稻、生物技术、核电、长距离输电和大型基础设施工程；同时仍依赖从发达国家引进大量核心技术",
           "en": "Key areas of development included internet and telecommunications expansion, mobile communications, consumer electronics manufacturing, high-speed data networks, satellite and space programs, hybrid rice, biotechnology, nuclear power, long-distance power transmission, and major infrastructure engineering, although the country still relied heavily on imported core technologies from developed states"
+        },
+        "sectors": {
+          "telecom": {
+            "zh": "电信产业高速发展：华为和中兴通讯正快速崛起，从农村市场向城市和国际市场扩张。中国移动用户数激增，固定电话和手机覆盖率快速提高。但核心芯片和通信标准仍依赖西方技术。",
+            "en": "Telecom industry rapidly developing: Huawei and ZTE are rising fast, expanding from rural to urban and international markets. Mobile subscribers are surging with rapid growth in telephone and cellphone coverage. But core chips and communication standards still depend on Western technology."
+          },
+          "manufacturing": {
+            "zh": "'世界工厂'初成：加入WTO在即（2001年），中国正成为全球制造业转移的最大目的地。珠三角和长三角制造业集群快速发展，以劳动密集型出口制造为主。但自主技术含量极低，处于全球价值链底端。",
+            "en": "'World's factory' taking shape: with WTO accession imminent (2001), China is becoming the largest destination for global manufacturing transfers. Pearl River Delta and Yangtze River Delta manufacturing clusters develop rapidly, dominated by labor-intensive export manufacturing. But indigenous technology content is extremely low, at the bottom of the global value chain."
+          },
+          "spaceAndAerospace": {
+            "zh": "航天起步：长征系列火箭已具备可靠发射能力，神舟一号无人飞船1999年成功飞行。但载人航天和深空探测尚在准备阶段，整体技术水平落后美俄数十年。",
+            "en": "Space program in early stages: Long March rocket series has reliable launch capability; Shenzhou-1 uncrewed spacecraft successfully flew in 1999. But crewed spaceflight and deep space exploration are still in preparation, overall technology decades behind the US and Russia."
+          },
+          "internet": {
+            "zh": "互联网萌芽期：网民约2250万人（仅占人口1.7%），新浪、搜狐、网易'三大门户'刚在美国上市或即将上市。电子商务几乎空白，阿里巴巴1999年刚刚成立。但中国互联网的爆发式增长即将到来。",
+            "en": "Internet in nascent stage: ~22.5 million internet users (only 1.7% of population); Sina, Sohu, NetEase 'three portals' recently or about to IPO in the US. E-commerce is virtually nonexistent; Alibaba was just founded in 1999. But explosive internet growth is imminent."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的中国科技整体处于追赶早期阶段，自主创新能力薄弱，核心技术高度依赖引进。'世界工厂'模式正在成型但附加值极低。互联网和电信产业刚起步但增长潜力巨大。航天取得初步成果。中国科技的真正腾飞要等到2010年代，但2000年前后加入WTO、深度融入全球化为后来的科技追赶奠定了基础。",
+          "en": "China's tech in 2000 is in the early catch-up stage overall, with weak indigenous innovation and high dependence on imported core technology. The 'world's factory' model is forming but with extremely low added value. Internet and telecom are just starting but have enormous growth potential. Space achieves preliminary results. China's real tech takeoff awaits the 2010s, but WTO accession and deep globalization integration around 2000 laid the foundation for the later tech catch-up."
         }
       },
       "assessment": {
@@ -3629,7 +3673,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 6,
         "era": {
           "zh": "现代世界",
           "en": "Modern World"
@@ -3637,6 +3681,28 @@
         "keyInnovations": {
           "zh": "印度在2000年前后具有卫星发射与遥感能力、核技术、弹道导弹计划、制药与仿制药生产、绿色革命农业技术以及快速崛起的软件开发和IT服务产业。班加罗尔、海得拉巴和浦那等城市成为科技与外包中心。",
           "en": "Around 2000 India possessed satellite launch and remote sensing capabilities, nuclear technology, ballistic missile programs, pharmaceutical and generic drug production, Green Revolution agricultural techniques, and a rapidly rising software development and IT services sector. Cities such as Bengaluru, Hyderabad, and Pune were becoming major technology and outsourcing hubs."
+        },
+        "sectors": {
+          "itServices": {
+            "zh": "IT服务外包产业崛起：班加罗尔、海德拉巴等城市正成为全球IT外包中心。Infosys、TCS、Wipro因Y2K修复需求获得大量订单，确立了印度IT服务的全球地位。但产业以低端编程外包为主，原创技术研发能力极弱。",
+            "en": "IT outsourcing industry rising: Bangalore, Hyderabad and other cities are becoming global IT outsourcing centers. Infosys, TCS, Wipro received massive Y2K remediation orders, establishing India's global IT services position. But the industry is dominated by low-end coding outsourcing with extremely weak original tech R&D."
+          },
+          "spaceAndAerospace": {
+            "zh": "航天计划稳步推进：ISRO已具备可靠的卫星发射能力（PSLV火箭），在气象卫星和遥感技术方面服务国家需求。但与美俄中相比，航天预算和技术水平差距巨大。",
+            "en": "Space program progressing steadily: ISRO has reliable satellite launch capability (PSLV rockets), serving national needs in weather and remote sensing satellites. But compared to the US, Russia, and China, the gap in space budget and technology is enormous."
+          },
+          "pharmaceuticals": {
+            "zh": "仿制药产业快速发展：印度药企利用专利法漏洞大规模生产廉价仿制药，为发展中国家提供可负担的药品。但创新药研发几乎空白。",
+            "en": "Generic pharma industry developing rapidly: Indian drug companies exploit patent law gaps to mass-produce affordable generic drugs for developing countries. But innovative drug R&D is virtually nonexistent."
+          },
+          "nuclearTechnology": {
+            "zh": "核技术具有一定实力：1998年成功进行核武器试验（波克兰-II），证明核武能力。核电在探索中但规模很小。但核试验导致西方制裁，制约了科技合作。",
+            "en": "Some nuclear capability: successfully conducted nuclear weapons tests in 1998 (Pokhran-II), demonstrating nuclear weapons capability. Nuclear power is being explored but at small scale. But nuclear tests triggered Western sanctions, constraining tech cooperation."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的印度科技以IT服务外包为唯一亮点，Y2K危机的意外红利确立了印度IT的全球地位。但整体科技水平落后，基础设施薄弱，互联网普及率极低（不到0.5%）。核试验带来安全能力但也招致制裁。印度科技的未来取决于能否将IT服务优势转化为自主创新能力。",
+          "en": "India's tech in 2000 has IT services outsourcing as its sole highlight, with the unexpected Y2K dividend establishing India's global IT position. But overall tech level is behind, infrastructure is weak, and internet penetration is extremely low (<0.5%). Nuclear tests brought security capability but also sanctions. India's tech future depends on whether it can convert IT services advantages into indigenous innovation."
         }
       },
       "assessment": {
@@ -7066,7 +7132,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "信息化与后工业时代",
           "en": "Information and post-industrial age"
@@ -7074,6 +7140,28 @@
         "keyInnovations": {
           "zh": "空客航空航天、核能技术、TGV高速铁路、阿丽亚娜火箭",
           "en": "Airbus aerospace, nuclear technology, TGV, Ariane rockets"
+        },
+        "sectors": {
+          "aerospaceAndDefense": {
+            "zh": "航空航天全球强国：空客（EADS/空中客车）与波音分庭抗礼，A320系列销量快速增长。达索阵风战斗机刚开始交付。阿丽亚娜5号运载火箭是商业航天发射的主力。核潜艇和独立核威慑能力维持大国地位。",
+            "en": "Global aerospace powerhouse: Airbus (EADS) rivals Boeing with rapidly growing A320 sales. Dassault's Rafale fighter begins delivery. Ariane 5 is the mainstay of commercial space launch. Nuclear submarines and independent nuclear deterrent maintain great-power status."
+          },
+          "nuclearEnergy": {
+            "zh": "核能全球领先：法国约76%电力来自核能，全球最高比例。法马通（Framatome）和法国电力（EDF）构建了全球最成熟的核电运营体系。正在筹划下一代反应堆（EPR）。",
+            "en": "Global nuclear energy leader: ~76% of France's electricity comes from nuclear, the world's highest. Framatome and EDF have built the world's most mature nuclear power operation system. Planning next-generation reactors (EPR)."
+          },
+          "telecom": {
+            "zh": "电信创新活跃：法国电信（现Orange）在欧洲移动市场占重要份额。法国Minitel（80年代就推出的电子信息服务）是互联网前身的先驱，但反而延缓了法国对互联网的拥抱。",
+            "en": "Active telecom innovation: France Télécom (now Orange) holds important European mobile market share. France's Minitel (electronic information service launched in the 1980s) was a precursor to the internet, but paradoxically delayed France's embrace of the web."
+          },
+          "highSpeedRail": {
+            "zh": "高速铁路全球标杆：TGV是全球高铁的先驱和标杆，1981年投入运营以来不断拓展网络。法国高铁技术出口到韩国等国家。阿尔斯通是全球主要轨道交通制造商。",
+            "en": "Global high-speed rail benchmark: TGV is the pioneer and benchmark of global HSR, continuously expanding its network since 1981. French HSR technology was exported to South Korea and other countries. Alstom is a major global rail transit manufacturer."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的法国科技以航空航天（空客）和核能为双支柱，在欧洲保持技术领先地位。TGV高铁是全球标杆。但在互联网和软件领域明显落后于美国——Minitel的历史遗产反而成为拥抱互联网的障碍。法国科技的特点是'国家主导的重工业技术强、市场驱动的数字技术弱'。",
+          "en": "France in 2000 has aerospace (Airbus) and nuclear energy as twin tech pillars, maintaining European leadership. TGV is the global HSR benchmark. But clearly behind the US in internet and software — Minitel's legacy paradoxically became a barrier to embracing the web. France's tech is characterized by 'strong state-led heavy industrial tech, weak market-driven digital tech.'"
         }
       },
       "assessment": {
@@ -7577,7 +7665,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "信息化与后工业时代",
           "en": "Information and post-industrial age"
@@ -7585,6 +7673,28 @@
         "keyInnovations": {
           "zh": "汽车工程、精密机械、化工技术、SAP企业软件",
           "en": "Automotive engineering, precision machinery, chemical technology, SAP enterprise software"
+        },
+        "sectors": {
+          "automotiveAndIndustrial": {
+            "zh": "汽车与工业技术全球标杆：大众、宝马、奔驰、保时捷在全球高端汽车市场无可匹敌。西门子在工业自动化和电力设备领域全球领先。博世已是全球最大汽车零部件供应商。'德国制造'品牌享誉全球。",
+            "en": "Global benchmark in automotive and industrial tech: VW, BMW, Mercedes, Porsche are unmatched in the global premium car market. Siemens leads globally in industrial automation and power equipment. Bosch is already the world's largest automotive parts supplier. 'Made in Germany' is a globally trusted brand."
+          },
+          "chemicalsAndMaterials": {
+            "zh": "化工产业全球第一梯队：巴斯夫、拜耳、赫希斯特（即将被重组）是全球化工巨头。德国化工产业从染料起步，已发展成全球最完整的化工体系。但环保法规日益严格。",
+            "en": "Top-tier global chemicals: BASF, Bayer, Hoechst (about to be restructured) are global chemical giants. Germany's chemical industry, starting from dyes, has developed into the world's most complete chemical system. But environmental regulations are tightening."
+          },
+          "precisionEngineering": {
+            "zh": "精密工程'隐形冠军'：德国中小企业在机床、光学（蔡司）、医疗器械、测量工具等细分市场全球占主导。这些'隐形冠军'企业数量全球最多，构成德国经济的隐藏支柱。",
+            "en": "Precision engineering 'hidden champions': German Mittelstand firms dominate global niches in machine tools, optics (Zeiss), medical devices, and measurement tools. Germany has the world's most 'hidden champion' companies, forming a hidden pillar of its economy."
+          },
+          "renewableEnergy": {
+            "zh": "可再生能源政策先驱：2000年德国通过《可再生能源法》（EEG），开创上网电价补贴机制，成为全球可再生能源政策的标杆。风电装机快速增长。但太阳能面板制造业尚处早期。",
+            "en": "Renewable energy policy pioneer: Germany passed the Renewable Energy Sources Act (EEG) in 2000, creating the feed-in tariff mechanism that became the global benchmark for renewable energy policy. Wind power installations grow rapidly. But solar panel manufacturing is still in early stages."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的德国是全球制造业技术的标杆，汽车、化工、精密工程构成无可匹敌的工业体系。刚完成统一十年的德国正在消化东西合并的成本，但'隐形冠军'企业群确保了技术竞争力。可再生能源法开创了全球先例。但在互联网和软件领域严重落后，SAP是唯一具有全球影响力的软件企业。德国科技的核心优势在于工程制造而非数字创新。",
+          "en": "Germany in 2000 is the global benchmark for manufacturing technology; automotive, chemicals, and precision engineering form an unmatched industrial system. A decade after reunification, Germany is still digesting unification costs, but the 'hidden champion' cluster ensures tech competitiveness. The Renewable Energy Act sets a global precedent. But severely behind in internet and software — SAP is the only globally influential software company. Germany's core tech advantage lies in engineering and manufacturing, not digital innovation."
         }
       },
       "assessment": {
@@ -7998,7 +8108,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "信息化与后工业时代",
           "en": "Information and post-industrial age"
@@ -8006,6 +8116,28 @@
         "keyInnovations": {
           "zh": "金融科技、制药、航空发动机（罗尔斯罗伊斯）、ARM芯片架构",
           "en": "Fintech, pharmaceuticals, aero engines (Rolls-Royce), ARM chip architecture"
+        },
+        "sectors": {
+          "financeAndFintech": {
+            "zh": "金融服务与金融科技先驱：伦敦城是全球两大金融中心之一，外汇交易量全球第一。英国银行业正经历数字化初期转型。但互联网泡沫的冲击同样波及伦敦金融城。",
+            "en": "Financial services and fintech pioneer: the City of London is one of the world's two major financial centers, #1 in global forex trading. UK banking is undergoing early digital transformation. But the dot-com bubble impact also affects the City."
+          },
+          "biotechAndPharma": {
+            "zh": "生物医药全球前列：阿斯利康和葛兰素威康（即将合并为GSK）是全球制药巨头。剑桥和伦敦生物科技集群正在形成。多莉羊（1996年）证明了英国在生物科技基础研究方面的实力。",
+            "en": "Top-tier global biopharma: AstraZeneca and Glaxo Wellcome (about to merge into GSK) are global pharma giants. Cambridge and London biotech clusters are forming. Dolly the sheep (1996) demonstrated UK strength in biotech basic research."
+          },
+          "defenseAndAerospace": {
+            "zh": "国防科技欧洲第一：BAE Systems刚由英国航太和马可尼电子系统合并成立（1999年），成为欧洲最大国防公司。罗尔斯-罗伊斯航空发动机全球前三。参与台风战斗机和JSF（后来的F-35）项目。",
+            "en": "European leader in defense tech: BAE Systems just formed from the merger of British Aerospace and Marconi (1999), becoming Europe's largest defense company. Rolls-Royce aero-engines rank top-3 globally. Participates in Typhoon and JSF (later F-35) programs."
+          },
+          "telecom": {
+            "zh": "电信产业领先：沃达丰是全球最大移动运营商之一，2000年收购曼内斯曼成为当时全球最大企业并购。ARM芯片架构已开始在移动设备中崭露头角。",
+            "en": "Leading telecom industry: Vodafone is one of the world's largest mobile operators; its 2000 acquisition of Mannesmann was the largest corporate takeover at the time. ARM chip architecture is beginning to emerge in mobile devices."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的英国处于布莱尔'酷不列颠'时代，经济高度依赖金融服务和创意产业。科技方面在生物医药、国防航空、电信领域保持欧洲领先。ARM已种下日后移动芯片霸权的种子。但制造业空心化趋势明显，互联网和软件产业远落后于美国。英国科技的核心优势在于知识产权和金融-科技交叉领域。",
+          "en": "The UK in 2000 is in Blair's 'Cool Britannia' era, with the economy heavily dependent on financial services and creative industries. In tech, it maintains European leadership in biopharma, defense aerospace, and telecom. ARM has already planted the seeds of future mobile chip dominance. But manufacturing hollowing-out is evident, and internet/software industries far lag the US. The UK's core tech advantage lies in IP and the finance-tech nexus."
         }
       },
       "assessment": {
@@ -9285,10 +9417,28 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 9,
         "keyInnovations": {
           "zh": "CERN粒子物理、ETH苏黎世研究、精密工程",
           "en": "CERN particle physics, ETH Zurich research, precision engineering"
+        },
+        "sectors": {
+          "pharmaAndBiotech": {
+            "zh": "制药产业全球顶级：诺华和罗氏（均总部巴塞尔）是全球最大制药企业之一。瑞士制药业研发投入占GDP比例全球最高。巴塞尔地区是欧洲最重要的生物医药集群。",
+            "en": "Top-tier global pharma: Novartis and Roche (both HQ Basel) are among the world's largest pharmaceutical companies. Swiss pharma R&D spending as GDP share is the world's highest. The Basel region is Europe's most important biopharma cluster."
+          },
+          "precisionInstruments": {
+            "zh": "精密仪器与钟表全球标杆：瑞士钟表业（百达翡丽、劳力士、Swatch集团）全球无可匹敌。在科学仪器、精密测量领域同样世界级。CERN（欧洲核子研究组织）位于日内瓦。",
+            "en": "Global benchmark in precision instruments and watches: Swiss watchmaking (Patek Philippe, Rolex, Swatch Group) is globally unmatched. Also world-class in scientific instruments and precision measurement. CERN is located in Geneva."
+          },
+          "financialServices": {
+            "zh": "金融科技基础深厚：瑞士银行业（UBS、瑞士信贷）全球领先，银行保密制度吸引全球资本。金融技术基础设施成熟，为后来金融科技发展奠定基础。",
+            "en": "Deep financial tech foundation: Swiss banking (UBS, Credit Suisse) leads globally; banking secrecy attracts global capital. Mature financial technology infrastructure lays groundwork for future fintech development."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的瑞士以制药、精密仪器和金融服务为科技三大支柱，诺华和罗氏使瑞士在全球制药业举足轻重。CERN粒子物理研究是全球基础科学最重要的实验室。ETH苏黎世研究水平全球前五。瑞士科技的特点是'小规模、高精度、高附加值'。",
+          "en": "Switzerland in 2000 has pharma, precision instruments, and financial services as three tech pillars; Novartis and Roche give Switzerland outsized influence in global pharma. CERN is the world's most important basic science laboratory for particle physics. ETH Zurich ranks in the global top 5. Swiss tech is characterized by 'small scale, high precision, high added value.'"
         }
       },
       "assessment": {
@@ -10070,7 +10220,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 10,
         "era": {
           "zh": "现代世界",
           "en": "Modern World"
@@ -10078,6 +10228,32 @@
         "keyInnovations": {
           "zh": "互联网商业化、个人电脑普及、微处理器与软件产业、全球卫星定位系统民用扩展、隐形战机与精确制导武器、生物技术进展、航天工程、移动通信与电子商务的快速兴起，使其在信息时代初期居于全球技术中心地位",
           "en": "The commercialization of the internet, widespread personal computing, microprocessors and software industries, civilian expansion of GPS, stealth aircraft and precision-guided weapons, advances in biotechnology, aerospace engineering, and the rapid rise of mobile communications and e-commerce placed it at the center of the early information age"
+        },
+        "sectors": {
+          "internetAndSoftware": {
+            "zh": "互联网与软件产业全球绝对中心：2000年正值互联网泡沫顶峰，纳斯达克指数3月达到5048点历史高位。微软、英特尔、思科、甲骨文、Sun Microsystems统治企业IT。雅虎、AOL、亚马逊、eBay引领消费互联网。Google刚起步，Napster引爆数字音乐革命。但泡沫即将破裂——大量互联网创业公司将在一年内倒闭。",
+            "en": "The absolute global center of internet and software: 2000 marks the peak of the dot-com bubble with NASDAQ hitting a historic 5,048 in March. Microsoft, Intel, Cisco, Oracle, Sun Microsystems dominate enterprise IT. Yahoo, AOL, Amazon, eBay lead the consumer internet. Google is just getting started; Napster ignites the digital music revolution. But the bubble is about to burst — many internet startups will collapse within a year."
+          },
+          "semiconductors": {
+            "zh": "半导体产业全球主导：英特尔奔腾III/IV处理器统治PC芯片市场，德州仪器、AMD、摩托罗拉在各自领域占重要份额。但半导体制造已开始向亚洲（台湾、韩国）转移。EDA工具和芯片设计IP仍完全由美国控制。",
+            "en": "Global semiconductor dominance: Intel Pentium III/IV processors dominate the PC chip market; TI, AMD, Motorola hold important shares in their segments. But semiconductor manufacturing is already shifting to Asia (Taiwan, Korea). EDA tools and chip design IP remain entirely US-controlled."
+          },
+          "spaceAndAerospace": {
+            "zh": "航天航空无可匹敌：NASA运营国际空间站并持续火星探测，波音与洛马主导全球航天发射与国防航空。F-22隐身战机即将服役，B-2轰炸机代表全球最高军事航空技术。GPS系统由美国独家运营，尚无竞争对手。",
+            "en": "Unmatched space and aerospace: NASA operates the ISS and continues Mars exploration; Boeing and Lockheed Martin dominate global space launch and defense aviation. The F-22 stealth fighter is about to enter service; the B-2 bomber represents the world's highest military aviation technology. GPS is exclusively US-operated with no competitors."
+          },
+          "biotechAndPharma": {
+            "zh": "生物科技革命前夜：人类基因组计划即将在2000年宣布草图完成。辉瑞、默克、强生等制药巨头全球领先。基因泰克和安进开创生物制药产业。生物技术股在纳斯达克估值飙升。",
+            "en": "On the eve of the biotech revolution: the Human Genome Project is about to announce its draft completion in 2000. Pfizer, Merck, J&J and other pharma giants lead globally. Genentech and Amgen pioneer the biopharmaceutical industry. Biotech stocks surge on NASDAQ."
+          },
+          "telecom": {
+            "zh": "电信技术全球领先：2G/3G网络快速部署，AT&T、Verizon主导美国市场。高通CDMA技术正成为全球移动通信标准之一。光纤通信基础设施大规模建设，但电信投资过热将随互联网泡沫一同崩溃。",
+            "en": "Global telecom leadership: 2G/3G networks rapidly deploy; AT&T and Verizon dominate the US market. Qualcomm's CDMA technology is becoming a global mobile communications standard. Massive fiber optic infrastructure buildout, but telecom overinvestment will crash alongside the internet bubble."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的美国处于冷战后'单极时刻'的科技巅峰，在互联网、软件、半导体、航天、生物医药、军事技术等几乎所有前沿领域保持压倒性领先。硅谷是全球唯一的互联网创新中心。但互联网泡沫的破裂即将到来，将重塑科技产业格局。同时，全球化正将制造业加速向亚洲转移，这一趋势的长期影响尚未被充分认识。",
+          "en": "The US in 2000 stands at the technological zenith of the post-Cold War 'unipolar moment,' maintaining overwhelming leadership in virtually all frontier fields: internet, software, semiconductors, space, biopharma, and military tech. Silicon Valley is the world's sole internet innovation center. But the dot-com bubble burst is imminent, about to reshape the tech landscape. Meanwhile, globalization is accelerating manufacturing's shift to Asia — the long-term impact of this trend is not yet fully appreciated."
         }
       },
       "assessment": {
@@ -12844,6 +13020,24 @@
         "keyInnovations": {
           "zh": "矿业技术、医学研究、远程教育、环境科学、卫星与通信应用。",
           "en": "Mining technology, medical research, distance education, environmental science, and satellite and communications applications."
+        },
+        "sectors": {
+          "miningTech": {
+            "zh": "采矿科技全球领先：BHP和力拓在采矿自动化和资源勘探技术方面走在前沿。澳大利亚矿业工程教育和研究全球最强。CSIROmining研发活跃。",
+            "en": "Global mining tech leader: BHP and Rio Tinto are at the frontier of mining automation and resource exploration. Australian mining engineering education and research are the world's strongest. CSIRO mining R&D is active."
+          },
+          "biotechAndMedical": {
+            "zh": "生物医药有亮点：CSL在血液制品领域全球领先，Cochlear人工耳蜗技术全球第一。澳大利亚医学研究（Walter and Eliza Hall Institute等）在免疫学领域有世界级贡献。",
+            "en": "Biotech highlights: CSL leads globally in blood products; Cochlear's cochlear implant technology is #1 globally. Australian medical research (Walter and Eliza Hall Institute etc.) makes world-class contributions in immunology."
+          },
+          "telecom": {
+            "zh": "电信基础设施挑战大：地广人稀使电信覆盖成本极高。Wi-Fi技术（802.11标准核心贡献来自CSIRO）是澳大利亚对全球科技最重要的贡献之一。",
+            "en": "Telecom infrastructure challenges: vast territory with sparse population makes coverage extremely costly. Wi-Fi technology (key 802.11 standard contributions from CSIRO) is one of Australia's most important global tech contributions."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的澳大利亚科技以矿业技术和生物医药为核心竞争力，CSIRO对Wi-Fi的贡献是全球最重要的科技成果之一。但人口规模和地理位置限制了科技产业的多样化发展，在互联网、软件和半导体方面缺乏全球竞争力。",
+          "en": "Australia in 2000 has mining tech and biopharma as core competencies; CSIRO's Wi-Fi contribution is among the world's most important tech achievements. But population size and geography limit tech industry diversification, lacking global competitiveness in internet, software, and semiconductors."
         }
       },
       "assessment": {
@@ -14697,6 +14891,28 @@
         "keyInnovations": {
           "zh": "核心创新包括宽带网络普及、半导体制造、移动通信、显示器技术、汽车工程与大型船舶建造。",
           "en": "Core innovations included broadband diffusion, semiconductor manufacturing, mobile communications, display technology, automotive engineering, and large-scale shipbuilding."
+        },
+        "sectors": {
+          "semiconductors": {
+            "zh": "存储芯片已确立全球霸主地位：三星电子在1990年代超越日本厂商成为全球DRAM第一，亚洲金融危机后进一步巩固优势。SK海力士（原现代电子）紧随其后。韩国半导体出口是国家经济复苏的关键引擎。",
+            "en": "Memory chip global leadership established: Samsung Electronics surpassed Japanese manufacturers in the 1990s to become #1 in global DRAM; further consolidated after the Asian financial crisis. SK Hynix (formerly Hyundai Electronics) follows closely. Korean semiconductor exports are a key engine of national economic recovery."
+          },
+          "electronics": {
+            "zh": "消费电子全球新贵：三星和LG在电视、显示面板领域快速追赶日本品牌。三星CDMA手机在韩国国内市场占主导。但在全球品牌认知度上仍落后于索尼、松下等日本品牌。",
+            "en": "Rising global consumer electronics player: Samsung and LG rapidly catch up to Japanese brands in TVs and display panels. Samsung CDMA phones dominate the domestic market. But global brand recognition still lags behind Japanese brands like Sony and Panasonic."
+          },
+          "internetAndBroadband": {
+            "zh": "宽带互联网全球最普及：韩国是全球宽带普及率最高的国家，网吧（PC房）文化催生全球领先的电子竞技产业。StarCraft成为国民级电竞游戏。数字生活方式全球最前沿。",
+            "en": "World's highest broadband penetration: South Korea leads globally in broadband adoption; PC bang (internet cafe) culture spawns the world's leading esports industry. StarCraft becomes a national esport. Digital lifestyle is at the global frontier."
+          },
+          "shipbuilding": {
+            "zh": "造船业全球第一：现代重工、大宇造船、三星重工在全球造船订单量超越日本，成为世界最大造船国。高附加值船舶（LNG船、大型油轮）占主导。",
+            "en": "World's #1 in shipbuilding: Hyundai Heavy Industries, Daewoo, Samsung Heavy Industries surpass Japan in global shipbuilding orders, becoming the world's largest shipbuilding nation. High-value vessels (LNG carriers, VLCCs) dominate."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的韩国刚从1997-98年亚洲金融危机中恢复，科技产业在危机后迎来结构性升级——三星在半导体和电子领域的全球地位大幅跃升，造船业超越日本成为世界第一。韩国宽带互联网普及率全球领先，数字文化走在前沿。但经济高度依赖财阀体制，产业集中度风险明显。",
+          "en": "South Korea in 2000 has just recovered from the 1997-98 Asian financial crisis, with its tech industry undergoing structural upgrading — Samsung's global position in semiconductors and electronics has leaped forward; shipbuilding overtakes Japan to rank world #1. Korea leads globally in broadband penetration with frontier digital culture. But the economy is highly dependent on the chaebol system with obvious concentration risk."
         }
       },
       "assessment": {
@@ -60876,6 +61092,24 @@
         "infrastructure": {
           "zh": "",
           "en": ""
+        },
+        "sectors": {
+          "militaryTech": {
+            "zh": "军事技术保持苏联遗产：S-300防空系统出口全球，苏霍伊和米格战斗机仍有国际市场。核武库仍全球最大。但军事技术维护经费严重不足，1990年代的军事衰退仍在延续。库尔斯克号核潜艇沉没事故（2000年8月）暴露军事装备老化问题。",
+            "en": "Military tech maintains Soviet legacy: S-300 air defense exported globally; Sukhoi and MiG fighters still have international markets. Nuclear arsenal remains world's largest. But military maintenance funding is severely insufficient; 1990s military decline continues. The Kursk submarine disaster (August 2000) exposed equipment aging problems."
+          },
+          "spaceAndAerospace": {
+            "zh": "航天仍具重要能力：联盟号载人飞船和质子号火箭仍是国际空间站的主要运输工具。GLONASS导航系统维持运行但资金紧张。但航天预算大幅缩减，新型号开发停滞。",
+            "en": "Space maintains important capabilities: Soyuz crewed spacecraft and Proton rockets remain primary ISS transport vehicles. GLONASS navigation is maintained but underfunded. But space budget dramatically reduced with new model development stalled."
+          },
+          "nuclearEnergy": {
+            "zh": "核能技术仍有积累：继承苏联核工业体系，在核反应堆技术和核燃料处理方面有深厚经验。开始探索核能出口市场。但切尔诺贝利的阴影和安全标准争议仍在。",
+            "en": "Nuclear energy retains accumulated knowledge: inheriting the Soviet nuclear industrial system with deep experience in reactor technology and fuel processing. Beginning to explore nuclear energy export markets. But Chernobyl's shadow and safety standards debates persist."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的俄罗斯科技正经历苏联解体后最艰难的时期。军事和航天技术在苏联遗产基础上勉强维持，但资金严重不足导致装备老化和人才流失。民用科技几乎空白——互联网和IT产业远落后于西方。普京刚刚上台（1999年12月代理总统），俄罗斯科技的复苏要等到石油收入恢复后才能实现。",
+          "en": "Russia's tech in 2000 is experiencing its most difficult post-Soviet period. Military and space technology barely survive on Soviet legacy with severely insufficient funding causing equipment aging and brain drain. Civilian tech is virtually blank — internet and IT far behind the West. Putin has just come to power (acting president December 1999); Russian tech recovery awaits the restoration of oil revenues."
         }
       },
       "diplomacy": {
@@ -62851,6 +63085,24 @@
         "infrastructure": {
           "zh": "",
           "en": ""
+        },
+        "sectors": {
+          "semiconductorBackend": {
+            "zh": "半导体制造重镇：特许半导体（后被格芯收购）是亚洲主要晶圆代工厂之一。大量跨国半导体公司在新加坡设有封测和制造基地。半导体是新加坡最大出口产品之一。",
+            "en": "Semiconductor manufacturing hub: Chartered Semiconductor (later acquired by GlobalFoundries) is a major Asian foundry. Many multinational semiconductor firms have OSAT and manufacturing bases in Singapore. Semiconductors are among Singapore's largest exports."
+          },
+          "portAndLogistics": {
+            "zh": "全球港口与物流科技中心：新加坡港是全球最繁忙港口之一，港口自动化和物流管理技术全球领先。航空枢纽（樟宜机场）同样世界顶级。",
+            "en": "Global port and logistics tech hub: Singapore Port is among the world's busiest; port automation and logistics management technology lead globally. Aviation hub (Changi Airport) is equally world-class."
+          },
+          "biomedical": {
+            "zh": "生物医药产业起步：政府投资建设启奥生物医药城（Biopolis，2003年完工），吸引跨国制药企业设立研发中心。生命科学被确定为国家战略增长领域。",
+            "en": "Biomedical industry starting: government invests in Biopolis (completed 2003) to attract multinational pharma R&D centers. Life sciences designated as a national strategic growth area."
+          }
+        },
+        "overallAssessment": {
+          "zh": "2000年的新加坡科技以半导体制造和港口物流为核心，正从劳动密集型向知识密集型经济转型。政府'科技走廊'战略系统性培育新兴产业。作为弹丸小国，新加坡在科技上的策略是'做全球供应链关键节点'而非追求全产业链自主。",
+          "en": "Singapore in 2000 centers tech on semiconductor manufacturing and port logistics, transitioning from labor-intensive to knowledge-intensive economy. The government's 'Tech Corridor' strategy systematically nurtures emerging industries. As a tiny city-state, Singapore's tech strategy is 'be a critical node in the global supply chain' rather than pursuing full-chain autonomy."
         }
       },
       "diplomacy": {

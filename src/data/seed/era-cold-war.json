@@ -609,6 +609,24 @@
         "keyInnovations": {
           "zh": "洲际弹道导弹、航天发射技术、人造卫星、载人航天、核反应堆、喷气航空、防空导弹、大型水电工程、重型机械与电子计算设备",
           "en": "Intercontinental ballistic missiles, space launch technology, artificial satellites, human spaceflight, nuclear reactors, jet aviation, surface-to-air missiles, large hydroelectric works, heavy machinery, and electronic computing equipment"
+        },
+        "sectors": {
+          "spaceAndMissile": {
+            "zh": "太空竞赛暂时领先：1957年发射人类首颗人造卫星，1961年加加林成为首位进入太空的人类。科罗廖夫领导的火箭设计局是苏联太空成就的核心。R-7洲际弹道导弹既是航天运载工具也是核威慑武器。但登月计划组织混乱，内部路线争论将导致最终失败。",
+            "en": "Temporarily leading the space race: launched the first artificial satellite in 1957; Gagarin became the first human in space in 1961. Korolev's rocket design bureau is the core of Soviet space achievements. The R-7 ICBM serves both as a space launch vehicle and nuclear deterrent. But the Moon program is organizationally chaotic; internal disputes will ultimately lead to failure."
+          },
+          "nuclearTechnology": {
+            "zh": "核武器技术全球前沿：1961年试爆'沙皇炸弹'（5000万吨TNT当量），是人类历史上最大核爆炸。核弹头数量约3300枚并在快速增长。核动力潜艇和破冰船技术发展中。",
+            "en": "Frontier nuclear weapons technology: detonated the 'Tsar Bomba' in 1961 (50 megatons TNT equivalent), the largest nuclear explosion in human history. Nuclear warhead count ~3,300 and growing rapidly. Nuclear-powered submarine and icebreaker technology developing."
+          },
+          "heavyIndustry": {
+            "zh": "重工业产能巨大：钢铁、重型机械、坦克生产能力位居世界前列。T-55坦克大量出口第三世界。但轻工业和消费品技术严重落后，计划经济体制抑制了民用技术创新。电子和计算机技术落后于美国。",
+            "en": "Enormous heavy industrial capacity: steel, heavy machinery, and tank production rank among the world's top. T-55 tanks are exported massively to the Third World. But light industry and consumer tech severely lag; the planned economy suppresses civilian tech innovation. Electronics and computing lag behind the US."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的苏联在太空和核武器领域暂时领先或与美国并驾齐驱，沙皇炸弹和加加林太空飞行展示了苏联科技的巅峰成就。但科技发展严重偏向军事和重工业，民用技术和消费品生产远落后于西方。计划经济体制限制了技术创新的灵活性。半导体和计算机技术的差距将在未来数十年愈加扩大。",
+          "en": "The USSR in 1962 temporarily leads or matches the US in space and nuclear weapons; Tsar Bomba and Gagarin's flight showcase Soviet tech at its peak. But tech development is severely biased toward military and heavy industry; civilian technology and consumer production far lag the West. The planned economy limits innovation flexibility. The semiconductor and computing gap will widen enormously in coming decades."
         }
       },
       "assessment": {
@@ -1587,6 +1605,28 @@
         "keyInnovations": {
           "zh": "洲际弹道导弹、核潜艇、喷气航空、电子计算机、集成电路初期应用、通信卫星、民用喷气客机、高速公路网络、农业机械化和载人航天计划",
           "en": "Intercontinental ballistic missiles, nuclear submarines, jet aviation, electronic computers, early integrated circuit applications, communications satellites, civilian jet airliners, the interstate highway network, agricultural mechanization, and crewed spaceflight programs"
+        },
+        "sectors": {
+          "spaceAndMissile": {
+            "zh": "太空竞赛全力推进：肯尼迪1961年宣布登月目标，NASA阿波罗计划大规模投入。但苏联在太空竞赛中暂时领先（首颗卫星、首位宇航员）。洲际弹道导弹（民兵、大力神）构成核威慑基础。古巴导弹危机正将世界推向核战争边缘。",
+            "en": "Space race in full swing: Kennedy's 1961 Moon pledge drives massive NASA Apollo program investment. But the USSR temporarily leads in the space race (first satellite, first cosmonaut). ICBMs (Minuteman, Titan) form the nuclear deterrence backbone. The Cuban Missile Crisis is pushing the world to the brink of nuclear war."
+          },
+          "electronicsAndComputers": {
+            "zh": "电子与计算机技术全球主导：IBM大型机统治商用计算市场，仙童半导体和德州仪器开创集成电路时代。贝尔实验室在晶体管和激光技术上持续突破。ARPA（后来的DARPA）刚开始资助将催生互联网的研究项目。",
+            "en": "Global dominance in electronics and computers: IBM mainframes dominate commercial computing; Fairchild Semiconductor and Texas Instruments pioneer the integrated circuit era. Bell Labs continues breakthroughs in transistors and lasers. ARPA (later DARPA) begins funding research that will eventually create the internet."
+          },
+          "nuclearTechnology": {
+            "zh": "核技术全球最先进：拥有超过27,000枚核弹头，核三位一体（陆基/潜射/空基）体系完备。核动力航母（企业号，1961年服役）和核潜艇技术领先全球。民用核电开始商业化运营。",
+            "en": "World's most advanced nuclear technology: possesses over 27,000 nuclear warheads with complete nuclear triad (land/sea/air). Nuclear-powered carrier (USS Enterprise, 1961) and nuclear submarine technology lead globally. Civilian nuclear power begins commercial operation."
+          },
+          "aviationAndDefense": {
+            "zh": "航空与国防工业无与伦比：B-52战略轰炸机、F-4幽灵战斗机、U-2侦察机代表最高航空技术水平。波音707开启喷气式民航时代。军工复合体规模全球最大——艾森豪威尔刚卸任时警告了其巨大影响力。",
+            "en": "Unmatched aviation and defense industry: B-52 strategic bombers, F-4 Phantom fighters, U-2 spy planes represent the highest aviation technology. Boeing 707 inaugurates the jet airliner era. The military-industrial complex is the world's largest — Eisenhower's farewell warning about its influence was just delivered."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的美国处于冷战科技竞赛的关键时刻。虽然太空竞赛暂时落后苏联，但在计算机、电子、核技术和航空工业方面保持全面领先。集成电路的发明和阿波罗计划将在60年代下半叶产出巨大的技术红利。美国科技的核心优势在于军民两用技术的转化能力和私营企业的创新活力。",
+          "en": "The US in 1962 is at a critical juncture in the Cold War tech race. Though temporarily behind the USSR in space, it maintains comprehensive leadership in computers, electronics, nuclear technology, and aviation. Integrated circuits and the Apollo program will yield enormous tech dividends in the latter 1960s. America's core tech advantage lies in military-civilian tech conversion and private-sector innovation dynamism."
         }
       },
       "assessment": {
@@ -3125,6 +3165,24 @@
         "keyInnovations": {
           "zh": "关键技术和创新包括高炉炼钢与连续轧制改进、大型商船与油轮建造、晶体管收音机和家电量产、精密光学与相机制造、合成纤维、工业自动化、火力发电扩建，以及东海道新干线和高速公路体系的规划建设。日本正在通过引进、改良和规模化生产形成独特的技术赶超模式。",
           "en": "Key technologies and innovations included improved blast-furnace steelmaking and rolling, construction of large merchant ships and tankers, mass production of transistor radios and home appliances, precision optics and camera manufacturing, synthetic fibers, industrial automation, expansion of thermal power generation, and the planning and construction of the Tōkaidō Shinkansen and expressway network. Japan was developing a distinctive catch-up model based on importation, adaptation, and scaled manufacturing."
+        },
+        "sectors": {
+          "electronics": {
+            "zh": "消费电子崛起：索尼晶体管收音机（1955年起）开创日本电子产品出口先河。东京通信工业（索尼前身）和松下正快速攀升。新干线（1964年通车）正在建设中，将成为全球高速铁路先驱。日本电子产业正从模仿向创新转型。",
+            "en": "Consumer electronics rising: Sony's transistor radio (from 1955) pioneered Japanese electronics exports. Tokyo Tsushin Kogyo (Sony's predecessor) and Matsushita are rapidly ascending. The Shinkansen (opening 1964) is under construction, destined to become the global HSR pioneer. Japanese electronics are transitioning from imitation to innovation."
+          },
+          "automotive": {
+            "zh": "汽车工业高速发展：丰田、日产正从小型车起步进军国际市场。丰田生产方式（TPS）精益制造体系正在成型。日本汽车产量快速增长但尚未对欧美构成重大威胁。本田从摩托车制造商转向汽车。",
+            "en": "Auto industry in rapid development: Toyota and Nissan are entering international markets starting with small cars. Toyota Production System (TPS) lean manufacturing is taking shape. Japanese car production grows rapidly but doesn't yet pose a major threat to Western automakers. Honda transitions from motorcycles to automobiles."
+          },
+          "shipbuilding": {
+            "zh": "造船业即将登顶：日本造船产量在1950年代快速追赶英国，即将在1960年代超越成为世界第一造船国。三菱重工、川崎重工等在大型油轮建造方面极具竞争力。",
+            "en": "Shipbuilding about to reach #1: Japanese shipbuilding rapidly caught up to Britain in the 1950s, about to surpass it in the 1960s to become the world's #1. Mitsubishi Heavy Industries, Kawasaki and others are highly competitive in large tanker construction."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的日本正处于经济奇迹的起飞阶段，从战后废墟中崛起的消费电子、汽车和造船工业即将在1960-70年代横扫全球市场。新干线的建设象征着日本从'模仿者'向'创新者'的转变。丰田生产方式将重新定义全球制造业标准。但在基础科学和军事技术方面受和平宪法约束和冷战格局限制。",
+          "en": "Japan in 1962 is at the takeoff stage of its economic miracle; consumer electronics, automotive, and shipbuilding industries rising from postwar ruins are about to sweep global markets in the 1960s-70s. Shinkansen construction symbolizes Japan's transition from 'imitator' to 'innovator.' TPS will redefine global manufacturing standards. But constrained in basic science and military tech by the peace constitution and Cold War framework."
         }
       },
       "assessment": {
@@ -18664,6 +18722,16 @@
         "keyInnovations": {
           "zh": "关键进展包括滴灌与高效灌溉实验、荒地农垦、军用通信与情报整合、喷气机维护能力、沙漠开发工程、国家输水系统建设以及核研究基础设施的发展",
           "en": "Key advances included experimental drip and efficient irrigation methods, land reclamation, integrated military communications and intelligence, jet maintenance capability, desert development projects, construction of the National Water Carrier, and the growth of nuclear research infrastructure"
+        },
+        "sectors": {
+          "defenseAndAgriculture": {
+            "zh": "国防与农业科技独特优势：以色列国防军和摩萨德在军事技术和情报方面极为先进。滴灌技术（即将由奈坦菲姆公司商业化）将革命性改变干旱地区农业。魏兹曼科学研究所和希伯来大学是中东最强的研究机构。以色列正秘密发展核武器（迪莫纳核设施）。",
+            "en": "Unique defense and agricultural tech advantages: IDF and Mossad are extremely advanced in military technology and intelligence. Drip irrigation (about to be commercialized by Netafim) will revolutionize arid-zone agriculture. Weizmann Institute and Hebrew University are the Middle East's strongest research institutions. Israel is secretly developing nuclear weapons (Dimona facility)."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的以色列虽然建国仅14年，但已在国防技术和农业科技方面展现出令人瞩目的创新能力。滴灌技术和沙漠农业改造是以色列对全球农业科技的重大贡献。但以色列科技的核心驱动力是生存压力——被敌对国家包围的地缘现实迫使以色列必须在军事和农业技术上寻求突破性创新。",
+          "en": "Israel in 1962, though only 14 years old, already demonstrates remarkable innovation in defense technology and agricultural science. Drip irrigation and desert agriculture transformation are major Israeli contributions to global agricultural technology. But Israel's core tech driver is survival pressure — surrounded by hostile nations, Israel is compelled to seek breakthrough innovations in military and agricultural technology."
         }
       },
       "assessment": {
@@ -24398,6 +24466,16 @@
         "keyInnovations": {
           "zh": "深井采矿技术、黄金精炼、煤化工、铁路与港口工程、农业机械化、电力基础设施、喷气航空维护能力和现代化人口登记与行政管理系统较为发达；科技能力主要服务于工业化、资源开发和国家管控。",
           "en": "Advanced capabilities existed in deep-level mining, gold refining, coal chemistry, railway and port engineering, agricultural mechanization, power infrastructure, jet aircraft maintenance, and modern population registration and administrative systems; technological capacity primarily served industrialization, resource extraction, and state control."
+        },
+        "sectors": {
+          "miningTech": {
+            "zh": "采矿技术世界领先：南非在深层金矿和钻石开采方面技术全球最先进。德比尔斯（钻石）和安格鲁阿美（黄金）集团掌握世界级矿业技术。深井采矿（超过3000米深度）技术独步全球。但种族隔离制度严重限制了科技人才的发展。",
+            "en": "World-leading mining technology: South Africa has the world's most advanced deep-level gold and diamond mining technology. De Beers (diamonds) and Anglo American (gold) command world-class mining tech. Ultra-deep mining (exceeding 3,000m depth) technology is globally unmatched. But apartheid severely limits scientific talent development."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的南非凭借采矿技术在特定领域达到世界顶级水平，但种族隔离制度造成了科技发展的结构性障碍——大量非白人人口被排除在高等教育和技术培训之外。南非正在秘密推进核武器计划（最终于1979年完成），但国际制裁将日益限制技术进口。",
+          "en": "South Africa in 1962 reaches world-class levels in specific domains through mining technology, but apartheid creates structural barriers to tech development — the vast non-white population is excluded from higher education and technical training. South Africa is secretly advancing a nuclear weapons program (completed 1979), but international sanctions will increasingly limit technology imports."
         }
       },
       "assessment": {
@@ -26920,6 +26998,20 @@
         "keyInnovations": {
           "zh": "核武器与核能研究、喷气式航空、超音速试验、导弹计划、现代高速铁路前期技术积累、汽车工业规模化生产、电视广播扩张、化工与电子工业发展",
           "en": "Nuclear weapons and nuclear power research, jet aviation, supersonic experimentation, missile programs, preliminary technological accumulation for later high-speed rail, mass automobile production, expansion of television broadcasting, and growth in the chemical and electronics industries"
+        },
+        "sectors": {
+          "nuclearAndAerospace": {
+            "zh": "核技术与航空航天自主发展：戴高乐坚持独立核威慑，1960年首次核试验成功。法国核电计划启动。达索公司幻影III战斗机性能世界前列。协和号超音速客机（与英国合作）正在研发中。法国航天计划独立于美苏体系之外。",
+            "en": "Independent nuclear and aerospace development: de Gaulle insists on an independent nuclear deterrent; first nuclear test in 1960. French nuclear power program launches. Dassault's Mirage III fighter performs at world-class level. Concorde supersonic airliner (with Britain) is in development. French space program operates independently of US/Soviet systems."
+          },
+          "highSpeedRail": {
+            "zh": "铁路技术欧洲领先：法国国铁（SNCF）正在研究高速铁路技术，为后来的TGV奠定基础。电气化铁路网络覆盖广泛。",
+            "en": "European railway leader: SNCF is researching high-speed rail technology, laying the groundwork for the future TGV. Electrified railway network covers extensively."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的法国在戴高乐领导下追求科技自主，独立核力量和航空航天工业是核心。幻影III战斗机出口成功证明法国军事技术的国际竞争力。但整体工业产能不如美苏两超，计算机和电子领域落后。法国科技战略的独特之处在于拒绝依附任何超级大国，坚持'第三条道路'。",
+          "en": "France in 1962 pursues tech autonomy under de Gaulle; independent nuclear forces and aerospace are the core. Mirage III export success proves French military tech's international competitiveness. But overall industrial capacity falls short of the US/USSR superpowers; computers and electronics lag. France's unique tech strategy is refusing dependence on either superpower, insisting on a 'third way.'"
         }
       },
       "assessment": {
@@ -27798,6 +27890,20 @@
         "keyInnovations": {
           "zh": "关键技术优势包括高质量汽车与发动机、化工与制药、机床、工业自动化、电气工程、喷气航空维修能力、现代高速公路网络与高效率工业组织方式",
           "en": "Key technological strengths included high-quality automobiles and engines, chemicals and pharmaceuticals, machine tools, industrial automation, electrical engineering, jet aviation maintenance capability, a modern autobahn network, and highly efficient industrial organization"
+        },
+        "sectors": {
+          "automotiveAndIndustrial": {
+            "zh": "汽车与工业复兴奇迹：大众甲壳虫成为全球最畅销汽车之一，梅赛德斯和宝马重建高端品牌。西门子在电气工程和工业设备领域恢复全球地位。'莱茵河奇迹'使西德工业产出超过战前水平。克虏伯重建钢铁产业。",
+            "en": "Automotive and industrial revival miracle: VW Beetle becomes one of the world's best-selling cars; Mercedes and BMW rebuild premium brands. Siemens restores global position in electrical engineering and industrial equipment. The 'Rhine Miracle' pushes West German industrial output above prewar levels. Krupp rebuilds the steel industry."
+          },
+          "chemicalsAndPharma": {
+            "zh": "化工与制药恢复世界级水平：IG法本拆分后的拜耳、赫希斯特、巴斯夫各自发展成全球化工巨头。德国制药和精细化工传统迅速恢复。但核技术和军事工业受到盟国限制。",
+            "en": "Chemicals and pharma restored to world-class: post-IG Farben breakup, Bayer, Hoechst, BASF each develop into global chemical giants. German pharma and fine chemical traditions quickly recover. But nuclear and military industries remain restricted by Allied constraints."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的西德经历了战后最惊人的经济复兴，汽车和化工产业重新达到世界顶级水平。'经济奇迹'的核心驱动力是马歇尔计划、货币改革和德国工程传统的复兴。但作为冷战前线国家和战败国，军事和核技术受到严格限制。计算机和航天领域尚未涉足。西德科技的特点是'民用工业强、军事技术受限'。",
+          "en": "West Germany in 1962 has achieved the most stunning postwar economic revival; automotive and chemical industries are back at world-class level. The 'Economic Miracle' was driven by the Marshall Plan, currency reform, and revival of the German engineering tradition. But as a Cold War frontline state and defeated power, military and nuclear tech are strictly restricted. Computing and space are not yet engaged. West German tech is characterized by 'strong civilian industry, restricted military tech.'"
         }
       },
       "assessment": {
@@ -30063,6 +30169,20 @@
         "keyInnovations": {
           "zh": "高速公路建设、量产小汽车、家用电器普及、石化与合成材料、喷气航空、工业设计、机床制造、电视广播扩张以及国家主导的能源与重工业体系。1962年电力工业国有化也是关键制度创新之一。",
           "en": "Key innovations included motorway construction, mass-produced small automobiles, widespread household appliances, petrochemicals and synthetic materials, jet aviation, industrial design, machine-tool production, expanding television broadcasting, and state-led energy and heavy industrial systems. The 1962 nationalization of the electricity industry was also a major institutional innovation."
+        },
+        "sectors": {
+          "automotiveAndDesign": {
+            "zh": "汽车与工业设计全球知名：菲亚特是意大利最大的工业集团，菲亚特500（'Cinquecento'）是意大利经济奇迹的象征。法拉利和兰博基尼在跑车领域代表最高技术和设计水平。意大利设计美学影响全球工业产品。",
+            "en": "Globally renowned automotive and design: Fiat is Italy's largest industrial group; the Fiat 500 symbolizes the Italian economic miracle. Ferrari and Lamborghini represent the highest tech and design in sports cars. Italian design aesthetics influence global industrial products."
+          },
+          "petroleumEngineering": {
+            "zh": "石油工业国有化成功：ENI（国家碳化氢公司）在马泰伊领导下打破了'七姐妹'石油巨头的垄断，与中东和非洲产油国建立了新型合作关系。石油化工技术快速发展。",
+            "en": "Successful nationalized petroleum: ENI under Mattei breaks the 'Seven Sisters' oil cartel monopoly, establishing new cooperative relationships with Middle Eastern and African oil states. Petrochemical technology develops rapidly."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的意大利正经历'经济奇迹'，汽车工业（菲亚特）、设计美学和石油工业（ENI）是核心竞争力。意大利科技的独特之处在于将工程技术与艺术设计完美融合——法拉利跑车和菲亚特小车分别代表了这一传统的两个极端。但南北经济差距巨大，基础科学研究投入不足。",
+          "en": "Italy in 1962 is experiencing its 'Economic Miracle'; automotive (Fiat), design aesthetics, and petroleum (ENI) are core competencies. Italy's tech uniqueness lies in perfectly fusing engineering with artistic design — Ferrari and Fiat 500 represent the two extremes of this tradition. But the north-south economic gap is vast, and basic science research investment is insufficient."
         }
       },
       "assessment": {
@@ -34911,6 +35031,20 @@
         "keyInnovations": {
           "zh": "喷气式战斗机设计、雷达与防空网络、先进钢铁和轴承制造、汽车工程、纸浆造纸工艺、水电开发、电信设备、社会住房工程和公共卫生管理体系",
           "en": "Jet fighter design, radar and air-defense networks, advanced steel and bearing production, automotive engineering, pulp and paper processing, hydroelectric development, telecommunications equipment, social housing engineering, and public health administration systems"
+        },
+        "sectors": {
+          "defenseIndustry": {
+            "zh": "国防工业自主且先进：萨博（SAAB）J35'龙'（Draken）战斗机是世界上第一种实用双三角翼战斗机，性能接近超级大国水平。博福斯防空炮全球知名。瑞典坚持武装中立，自主研发几乎全部军事装备。",
+            "en": "Autonomous and advanced defense industry: Saab J35 Draken is the world's first practical double-delta wing fighter, performance approaching superpower level. Bofors anti-aircraft guns are world-renowned. Sweden maintains armed neutrality, independently developing nearly all military equipment."
+          },
+          "automotiveAndIndustrial": {
+            "zh": "汽车与工业发展成熟：沃尔沃和萨博汽车以安全性和北欧设计著称。爱立信在电信设备领域崛起。ABB（阿西亚-布朗-勃法瑞）在电力和自动化领域全球领先。",
+            "en": "Mature automotive and industrial development: Volvo and Saab cars are renowned for safety and Nordic design. Ericsson rises in telecommunications equipment. ASEA (later ABB) leads globally in power and automation."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的瑞典以中立国身份发展出令人瞩目的自主国防工业和民用工业体系。萨博战斗机、博福斯火炮和沃尔沃汽车证明小国也能在尖端技术领域达到世界水平。瑞典的社会民主模式将'福利国家'与'技术创新'成功结合。",
+          "en": "Sweden in 1962 has developed an impressive autonomous defense and civilian industrial system as a neutral nation. Saab fighters, Bofors guns, and Volvo cars prove that small nations can achieve world-class levels in cutting-edge technology. Sweden's social democratic model successfully combines 'welfare state' with 'technological innovation.'"
         }
       },
       "assessment": {
@@ -60903,6 +61037,16 @@
         "keyInnovations": {
           "zh": "Avro Arrow喷气拦截机项目（已取消）、CANDU重水核反应堆、北美防空司令部（NORAD）雷达系统、加拿大臂前身的航空航天技术、纸浆造纸和矿业现代化技术、泛加高速公路网络建设",
           "en": "Avro Arrow jet interceptor project (cancelled), CANDU heavy water nuclear reactor, NORAD radar systems, precursor aerospace technologies to the Canadarm, pulp/paper and mining modernization, Trans-Canada Highway construction"
+        },
+        "sectors": {
+          "nuclearAndEnergy": {
+            "zh": "核技术与能源工业有独特优势：加拿大CANDU重水堆是世界独特的核反应堆设计，不需要浓缩铀。水力发电规模全球前列。石油和矿产资源开采技术先进。但1959年阿夫罗箭（Avro Arrow）先进战斗机项目被取消是加拿大航空工业的重大挫折。",
+            "en": "Unique nuclear and energy advantages: Canada's CANDU heavy water reactor is a unique nuclear design not requiring enriched uranium. Hydroelectric power generation ranks globally. Oil and mining technology is advanced. But the 1959 Avro Arrow advanced fighter cancellation was a major setback for Canadian aviation."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1962年的加拿大在核技术（CANDU反应堆）和资源开采方面有独特优势。但作为美国的邻国和盟友，加拿大在国防工业上日益依赖美国——阿夫罗箭项目的取消象征着加拿大放弃了独立发展尖端军事技术的雄心。加拿大科技的特点是'资源技术强、独立军工弱'。",
+          "en": "Canada in 1962 has unique advantages in nuclear technology (CANDU) and resource extraction. But as the US neighbor and ally, Canada increasingly depends on America for defense — the Avro Arrow cancellation symbolizes abandoning ambitions for independent advanced military tech. Canadian tech is characterized by 'strong resource technology, weak independent defense industry.'"
         }
       },
       "assessment": {

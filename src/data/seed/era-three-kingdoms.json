@@ -616,19 +616,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "曹丕", "en": "Cao Pi" },
-              "title": { "zh": "魏文帝", "en": "Emperor Wen of Wei" },
-              "role": { "zh": "开国皇帝，推行禅代与九品中正制", "en": "Founding emperor, implemented abdication transition and the Nine Ranks system" }
+              "name": {
+                "zh": "曹丕",
+                "en": "Cao Pi"
+              },
+              "title": {
+                "zh": "魏文帝",
+                "en": "Emperor Wen of Wei"
+              },
+              "role": {
+                "zh": "开国皇帝，推行禅代与九品中正制",
+                "en": "Founding emperor, implemented abdication transition and the Nine Ranks system"
+              }
             },
             {
-              "name": { "zh": "曹真", "en": "Cao Zhen" },
-              "title": { "zh": "镇西将军", "en": "General Who Guards the West" },
-              "role": { "zh": "曹氏宗族军事核心，西线统帅", "en": "Military core of the Cao clan, commander of the western front" }
+              "name": {
+                "zh": "曹真",
+                "en": "Cao Zhen"
+              },
+              "title": {
+                "zh": "镇西将军",
+                "en": "General Who Guards the West"
+              },
+              "role": {
+                "zh": "曹氏宗族军事核心，西线统帅",
+                "en": "Military core of the Cao clan, commander of the western front"
+              }
             },
             {
-              "name": { "zh": "曹休", "en": "Cao Xiu" },
-              "title": { "zh": "征东将军", "en": "General Who Conquers the East" },
-              "role": { "zh": "宗室军事骨干，负责东线对吴防御", "en": "Key clan military leader, responsible for the eastern front against Wu" }
+              "name": {
+                "zh": "曹休",
+                "en": "Cao Xiu"
+              },
+              "title": {
+                "zh": "征东将军",
+                "en": "General Who Conquers the East"
+              },
+              "role": {
+                "zh": "宗室军事骨干，负责东线对吴防御",
+                "en": "Key clan military leader, responsible for the eastern front against Wu"
+              }
             }
           ]
         },
@@ -666,19 +693,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "司马懿", "en": "Sima Yi" },
-              "title": { "zh": "尚书仆射", "en": "Vice President of the Imperial Secretariat" },
-              "role": { "zh": "司马氏家族领袖，暗中积蓄夺权资本", "en": "Head of the Sima clan, covertly accumulating the capital for seizure of power" }
+              "name": {
+                "zh": "司马懿",
+                "en": "Sima Yi"
+              },
+              "title": {
+                "zh": "尚书仆射",
+                "en": "Vice President of the Imperial Secretariat"
+              },
+              "role": {
+                "zh": "司马氏家族领袖，暗中积蓄夺权资本",
+                "en": "Head of the Sima clan, covertly accumulating the capital for seizure of power"
+              }
             },
             {
-              "name": { "zh": "司马师", "en": "Sima Shi" },
-              "title": { "zh": "（此时年幼）", "en": "(still young at this time)" },
-              "role": { "zh": "司马懿长子，未来将继承并扩大司马氏权力", "en": "Sima Yi's eldest son, destined to inherit and expand Sima power" }
+              "name": {
+                "zh": "司马师",
+                "en": "Sima Shi"
+              },
+              "title": {
+                "zh": "（此时年幼）",
+                "en": "(still young at this time)"
+              },
+              "role": {
+                "zh": "司马懿长子，未来将继承并扩大司马氏权力",
+                "en": "Sima Yi's eldest son, destined to inherit and expand Sima power"
+              }
             },
             {
-              "name": { "zh": "司马昭", "en": "Sima Zhao" },
-              "title": { "zh": "（此时年幼）", "en": "(still young at this time)" },
-              "role": { "zh": "司马懿次子，日后掌控曹魏朝政", "en": "Sima Yi's second son, who would later dominate the Cao Wei court" }
+              "name": {
+                "zh": "司马昭",
+                "en": "Sima Zhao"
+              },
+              "title": {
+                "zh": "（此时年幼）",
+                "en": "(still young at this time)"
+              },
+              "role": {
+                "zh": "司马懿次子，日后掌控曹魏朝政",
+                "en": "Sima Yi's second son, who would later dominate the Cao Wei court"
+              }
             }
           ]
         },
@@ -716,19 +770,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "陈群", "en": "Chen Qun" },
-              "title": { "zh": "尚书令", "en": "President of the Imperial Secretariat" },
-              "role": { "zh": "九品中正制设计者，曹魏制度建设核心人物", "en": "Architect of the Nine Ranks system, core figure in Cao Wei institutional development" }
+              "name": {
+                "zh": "陈群",
+                "en": "Chen Qun"
+              },
+              "title": {
+                "zh": "尚书令",
+                "en": "President of the Imperial Secretariat"
+              },
+              "role": {
+                "zh": "九品中正制设计者，曹魏制度建设核心人物",
+                "en": "Architect of the Nine Ranks system, core figure in Cao Wei institutional development"
+              }
             },
             {
-              "name": { "zh": "华歆", "en": "Hua Xin" },
-              "title": { "zh": "司徒", "en": "Minister over the Masses" },
-              "role": { "zh": "元老重臣，参与禅代大典并维护新朝秩序", "en": "Senior minister involved in the abdication ceremony and maintaining new dynastic order" }
+              "name": {
+                "zh": "华歆",
+                "en": "Hua Xin"
+              },
+              "title": {
+                "zh": "司徒",
+                "en": "Minister over the Masses"
+              },
+              "role": {
+                "zh": "元老重臣，参与禅代大典并维护新朝秩序",
+                "en": "Senior minister involved in the abdication ceremony and maintaining new dynastic order"
+              }
             },
             {
-              "name": { "zh": "王朗", "en": "Wang Lang" },
-              "title": { "zh": "司空", "en": "Minister of Works" },
-              "role": { "zh": "经学名臣，负责礼制与法律建设", "en": "Classical scholar-official overseeing ritual and legal construction" }
+              "name": {
+                "zh": "王朗",
+                "en": "Wang Lang"
+              },
+              "title": {
+                "zh": "司空",
+                "en": "Minister of Works"
+              },
+              "role": {
+                "zh": "经学名臣，负责礼制与法律建设",
+                "en": "Classical scholar-official overseeing ritual and legal construction"
+              }
             }
           ]
         }
@@ -1361,19 +1442,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "埃拉伽巴路斯", "en": "Elagabalus" },
-              "title": { "zh": "皇帝", "en": "Emperor" },
-              "role": { "zh": "塞维鲁末期皇帝，引入叙利亚太阳神崇拜", "en": "Late Severan emperor who introduced Syrian sun worship" }
+              "name": {
+                "zh": "埃拉伽巴路斯",
+                "en": "Elagabalus"
+              },
+              "title": {
+                "zh": "皇帝",
+                "en": "Emperor"
+              },
+              "role": {
+                "zh": "塞维鲁末期皇帝，引入叙利亚太阳神崇拜",
+                "en": "Late Severan emperor who introduced Syrian sun worship"
+              }
             },
             {
-              "name": { "zh": "尤利娅·梅萨", "en": "Julia Maesa" },
-              "title": { "zh": "奥古斯塔", "en": "Augusta" },
-              "role": { "zh": "太后级幕后操纵者，维系塞维鲁血统延续", "en": "Matriarch and behind-the-scenes power broker maintaining Severan dynastic continuity" }
+              "name": {
+                "zh": "尤利娅·梅萨",
+                "en": "Julia Maesa"
+              },
+              "title": {
+                "zh": "奥古斯塔",
+                "en": "Augusta"
+              },
+              "role": {
+                "zh": "太后级幕后操纵者，维系塞维鲁血统延续",
+                "en": "Matriarch and behind-the-scenes power broker maintaining Severan dynastic continuity"
+              }
             },
             {
-              "name": { "zh": "亚历山大·塞维鲁", "en": "Alexander Severus" },
-              "title": { "zh": "凯撒（继承人）", "en": "Caesar (heir)" },
-              "role": { "zh": "被培养为继任者，将于222年继位", "en": "Groomed as successor, to take the throne in 222" }
+              "name": {
+                "zh": "亚历山大·塞维鲁",
+                "en": "Alexander Severus"
+              },
+              "title": {
+                "zh": "凯撒（继承人）",
+                "en": "Caesar (heir)"
+              },
+              "role": {
+                "zh": "被培养为继任者，将于222年继位",
+                "en": "Groomed as successor, to take the throne in 222"
+              }
             }
           ]
         },
@@ -1411,14 +1519,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "卡修斯·狄奥", "en": "Cassius Dio" },
-              "title": { "zh": "元老、执政官", "en": "Senator and Consul" },
-              "role": { "zh": "著名史学家，记录塞维鲁时代衰落", "en": "Celebrated historian documenting the Severan-era decline" }
+              "name": {
+                "zh": "卡修斯·狄奥",
+                "en": "Cassius Dio"
+              },
+              "title": {
+                "zh": "元老、执政官",
+                "en": "Senator and Consul"
+              },
+              "role": {
+                "zh": "著名史学家，记录塞维鲁时代衰落",
+                "en": "Celebrated historian documenting the Severan-era decline"
+              }
             },
             {
-              "name": { "zh": "乌尔比安", "en": "Ulpian" },
-              "title": { "zh": "大法官", "en": "Praetorian Prefect" },
-              "role": { "zh": "杰出法学家，试图以法治约束军权", "en": "Eminent jurist who attempted to constrain military power through law" }
+              "name": {
+                "zh": "乌尔比安",
+                "en": "Ulpian"
+              },
+              "title": {
+                "zh": "大法官",
+                "en": "Praetorian Prefect"
+              },
+              "role": {
+                "zh": "杰出法学家，试图以法治约束军权",
+                "en": "Eminent jurist who attempted to constrain military power through law"
+              }
             }
           ]
         },
@@ -1456,14 +1582,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "马克西米努斯·色雷克斯", "en": "Maximinus Thrax" },
-              "title": { "zh": "军团指挥官", "en": "Legion Commander" },
-              "role": { "zh": "未来将成为首位「兵营皇帝」（235年），标志三世纪危机开始", "en": "Future first 'barracks emperor' (235), marking the start of the Third Century Crisis" }
+              "name": {
+                "zh": "马克西米努斯·色雷克斯",
+                "en": "Maximinus Thrax"
+              },
+              "title": {
+                "zh": "军团指挥官",
+                "en": "Legion Commander"
+              },
+              "role": {
+                "zh": "未来将成为首位「兵营皇帝」（235年），标志三世纪危机开始",
+                "en": "Future first 'barracks emperor' (235), marking the start of the Third Century Crisis"
+              }
             },
             {
-              "name": { "zh": "近卫军统领", "en": "Praetorian Prefect" },
-              "title": { "zh": "禁卫军长官", "en": "Commander of the Praetorian Guard" },
-              "role": { "zh": "首都军事力量最高指挥官，废立皇帝的关键角色", "en": "Supreme commander of capital military forces, key role in making and unmaking emperors" }
+              "name": {
+                "zh": "近卫军统领",
+                "en": "Praetorian Prefect"
+              },
+              "title": {
+                "zh": "禁卫军长官",
+                "en": "Commander of the Praetorian Guard"
+              },
+              "role": {
+                "zh": "首都军事力量最高指挥官，废立皇帝的关键角色",
+                "en": "Supreme commander of capital military forces, key role in making and unmaking emperors"
+              }
             }
           ]
         }
@@ -2678,19 +2822,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "孙权", "en": "Sun Quan" },
-              "title": { "zh": "吴王", "en": "King of Wu" },
-              "role": { "zh": "最高统治者，总揽军政外交全局", "en": "Supreme ruler overseeing all military, civil, and diplomatic affairs" }
+              "name": {
+                "zh": "孙权",
+                "en": "Sun Quan"
+              },
+              "title": {
+                "zh": "吴王",
+                "en": "King of Wu"
+              },
+              "role": {
+                "zh": "最高统治者，总揽军政外交全局",
+                "en": "Supreme ruler overseeing all military, civil, and diplomatic affairs"
+              }
             },
             {
-              "name": { "zh": "吕蒙", "en": "Lü Meng" },
-              "title": { "zh": "南郡太守", "en": "Governor of Nan Commandery" },
-              "role": { "zh": "夺取荆州的关键军事统帅", "en": "Key military commander in the seizure of Jingzhou" }
+              "name": {
+                "zh": "吕蒙",
+                "en": "Lü Meng"
+              },
+              "title": {
+                "zh": "南郡太守",
+                "en": "Governor of Nan Commandery"
+              },
+              "role": {
+                "zh": "夺取荆州的关键军事统帅",
+                "en": "Key military commander in the seizure of Jingzhou"
+              }
             },
             {
-              "name": { "zh": "诸葛瑾", "en": "Zhuge Jin" },
-              "title": { "zh": "左将军", "en": "General of the Left" },
-              "role": { "zh": "重要外交使臣与孙权亲信", "en": "Key diplomatic envoy and trusted confidant of Sun Quan" }
+              "name": {
+                "zh": "诸葛瑾",
+                "en": "Zhuge Jin"
+              },
+              "title": {
+                "zh": "左将军",
+                "en": "General of the Left"
+              },
+              "role": {
+                "zh": "重要外交使臣与孙权亲信",
+                "en": "Key diplomatic envoy and trusted confidant of Sun Quan"
+              }
             }
           ]
         },
@@ -2728,19 +2899,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "陆逊", "en": "Lu Xun" },
-              "title": { "zh": "镇西将军", "en": "General Who Guards the West" },
-              "role": { "zh": "江东士族最杰出的军事与政治领袖", "en": "The most outstanding military and political leader of the Jiangdong gentry" }
+              "name": {
+                "zh": "陆逊",
+                "en": "Lu Xun"
+              },
+              "title": {
+                "zh": "镇西将军",
+                "en": "General Who Guards the West"
+              },
+              "role": {
+                "zh": "江东士族最杰出的军事与政治领袖",
+                "en": "The most outstanding military and political leader of the Jiangdong gentry"
+              }
             },
             {
-              "name": { "zh": "顾雍", "en": "Gu Yong" },
-              "title": { "zh": "丞相", "en": "Chancellor" },
-              "role": { "zh": "吴国首席文官，以谦抑沉稳著称", "en": "Wu's chief civil official, known for modesty and steadiness" }
+              "name": {
+                "zh": "顾雍",
+                "en": "Gu Yong"
+              },
+              "title": {
+                "zh": "丞相",
+                "en": "Chancellor"
+              },
+              "role": {
+                "zh": "吴国首席文官，以谦抑沉稳著称",
+                "en": "Wu's chief civil official, known for modesty and steadiness"
+              }
             },
             {
-              "name": { "zh": "朱桓", "en": "Zhu Huan" },
-              "title": { "zh": "奋威将军", "en": "General of Inspiring Might" },
-              "role": { "zh": "地方军事将领，朱氏家族代表", "en": "Local military commander and representative of the Zhu family" }
+              "name": {
+                "zh": "朱桓",
+                "en": "Zhu Huan"
+              },
+              "title": {
+                "zh": "奋威将军",
+                "en": "General of Inspiring Might"
+              },
+              "role": {
+                "zh": "地方军事将领，朱氏家族代表",
+                "en": "Local military commander and representative of the Zhu family"
+              }
             }
           ]
         },
@@ -2778,19 +2976,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "张昭", "en": "Zhang Zhao" },
-              "title": { "zh": "绥远将军", "en": "General Who Pacifies the Distant" },
-              "role": { "zh": "北方流亡士人领袖，吴国元老重臣", "en": "Leader of the northern émigrés, senior statesman of Wu" }
+              "name": {
+                "zh": "张昭",
+                "en": "Zhang Zhao"
+              },
+              "title": {
+                "zh": "绥远将军",
+                "en": "General Who Pacifies the Distant"
+              },
+              "role": {
+                "zh": "北方流亡士人领袖，吴国元老重臣",
+                "en": "Leader of the northern émigrés, senior statesman of Wu"
+              }
             },
             {
-              "name": { "zh": "步骘", "en": "Bu Zhi" },
-              "title": { "zh": "交州刺史", "en": "Inspector of Jiao Province" },
-              "role": { "zh": "南方拓殖与边疆治理的关键人物", "en": "Key figure in southern colonization and frontier governance" }
+              "name": {
+                "zh": "步骘",
+                "en": "Bu Zhi"
+              },
+              "title": {
+                "zh": "交州刺史",
+                "en": "Inspector of Jiao Province"
+              },
+              "role": {
+                "zh": "南方拓殖与边疆治理的关键人物",
+                "en": "Key figure in southern colonization and frontier governance"
+              }
             },
             {
-              "name": { "zh": "严畯", "en": "Yan Jun" },
-              "title": { "zh": "骑都尉", "en": "Cavalry Commander" },
-              "role": { "zh": "经学家与行政官员", "en": "Classical scholar and administrative official" }
+              "name": {
+                "zh": "严畯",
+                "en": "Yan Jun"
+              },
+              "title": {
+                "zh": "骑都尉",
+                "en": "Cavalry Commander"
+              },
+              "role": {
+                "zh": "经学家与行政官员",
+                "en": "Classical scholar and administrative official"
+              }
             }
           ]
         }
@@ -3416,19 +3641,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "诸葛亮", "en": "Zhuge Liang" },
-              "title": { "zh": "丞相", "en": "Chancellor" },
-              "role": { "zh": "总揽军政大权，主持内政与北伐战略", "en": "Supreme civil-military authority, overseeing domestic governance and Northern Expedition strategy" }
+              "name": {
+                "zh": "诸葛亮",
+                "en": "Zhuge Liang"
+              },
+              "title": {
+                "zh": "丞相",
+                "en": "Chancellor"
+              },
+              "role": {
+                "zh": "总揽军政大权，主持内政与北伐战略",
+                "en": "Supreme civil-military authority, overseeing domestic governance and Northern Expedition strategy"
+              }
             },
             {
-              "name": { "zh": "蒋琬", "en": "Jiang Wan" },
-              "title": { "zh": "尚书郎", "en": "Secretariat Official" },
-              "role": { "zh": "诸葛亮重点培养的文官接班人，负责后方政务", "en": "Zhuge Liang's designated civil successor, handling rear administration" }
+              "name": {
+                "zh": "蒋琬",
+                "en": "Jiang Wan"
+              },
+              "title": {
+                "zh": "尚书郎",
+                "en": "Secretariat Official"
+              },
+              "role": {
+                "zh": "诸葛亮重点培养的文官接班人，负责后方政务",
+                "en": "Zhuge Liang's designated civil successor, handling rear administration"
+              }
             },
             {
-              "name": { "zh": "费祎", "en": "Fei Yi" },
-              "title": { "zh": "昭信校尉", "en": "Colonel of Trusted Communication" },
-              "role": { "zh": "外交联络与朝政协调的年轻干才", "en": "A young talent in diplomatic liaison and court coordination" }
+              "name": {
+                "zh": "费祎",
+                "en": "Fei Yi"
+              },
+              "title": {
+                "zh": "昭信校尉",
+                "en": "Colonel of Trusted Communication"
+              },
+              "role": {
+                "zh": "外交联络与朝政协调的年轻干才",
+                "en": "A young talent in diplomatic liaison and court coordination"
+              }
             }
           ]
         },
@@ -3466,19 +3718,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "关羽", "en": "Guan Yu" },
-              "title": { "zh": "前将军", "en": "General of the Van" },
-              "role": { "zh": "荆州守将（已于219年败亡），荆州派精神象征", "en": "Commander of Jingzhou (fell in 219), spiritual symbol of the Jingzhou faction" }
+              "name": {
+                "zh": "关羽",
+                "en": "Guan Yu"
+              },
+              "title": {
+                "zh": "前将军",
+                "en": "General of the Van"
+              },
+              "role": {
+                "zh": "荆州守将（已于219年败亡），荆州派精神象征",
+                "en": "Commander of Jingzhou (fell in 219), spiritual symbol of the Jingzhou faction"
+              }
             },
             {
-              "name": { "zh": "张飞", "en": "Zhang Fei" },
-              "title": { "zh": "车骑将军", "en": "General of Chariots and Cavalry" },
-              "role": { "zh": "核心军事将领，驻守阆中", "en": "Key military commander, stationed at Langzhong" }
+              "name": {
+                "zh": "张飞",
+                "en": "Zhang Fei"
+              },
+              "title": {
+                "zh": "车骑将军",
+                "en": "General of Chariots and Cavalry"
+              },
+              "role": {
+                "zh": "核心军事将领，驻守阆中",
+                "en": "Key military commander, stationed at Langzhong"
+              }
             },
             {
-              "name": { "zh": "赵云", "en": "Zhao Yun" },
-              "title": { "zh": "翊军将军", "en": "General Who Guards the Army" },
-              "role": { "zh": "刘备亲信将领，兼具战场勇武与政治审慎", "en": "Liu Bei's trusted general, combining battlefield valor with political prudence" }
+              "name": {
+                "zh": "赵云",
+                "en": "Zhao Yun"
+              },
+              "title": {
+                "zh": "翊军将军",
+                "en": "General Who Guards the Army"
+              },
+              "role": {
+                "zh": "刘备亲信将领，兼具战场勇武与政治审慎",
+                "en": "Liu Bei's trusted general, combining battlefield valor with political prudence"
+              }
             }
           ]
         },
@@ -3516,19 +3795,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "黄权", "en": "Huang Quan" },
-              "title": { "zh": "治中从事", "en": "Administrative Advisor" },
-              "role": { "zh": "益州本土实力派代表，后在夷陵之战中降魏", "en": "Representative of the local power elite, later surrendered to Wei during the Yiling campaign" }
+              "name": {
+                "zh": "黄权",
+                "en": "Huang Quan"
+              },
+              "title": {
+                "zh": "治中从事",
+                "en": "Administrative Advisor"
+              },
+              "role": {
+                "zh": "益州本土实力派代表，后在夷陵之战中降魏",
+                "en": "Representative of the local power elite, later surrendered to Wei during the Yiling campaign"
+              }
             },
             {
-              "name": { "zh": "谯周", "en": "Qiao Zhou" },
-              "title": { "zh": "劝学从事", "en": "Advisor for Education" },
-              "role": { "zh": "经学名儒，后期力主与曹魏议和", "en": "Classical scholar who later strongly advocated peace with Cao Wei" }
+              "name": {
+                "zh": "谯周",
+                "en": "Qiao Zhou"
+              },
+              "title": {
+                "zh": "劝学从事",
+                "en": "Advisor for Education"
+              },
+              "role": {
+                "zh": "经学名儒，后期力主与曹魏议和",
+                "en": "Classical scholar who later strongly advocated peace with Cao Wei"
+              }
             },
             {
-              "name": { "zh": "张裔", "en": "Zhang Yi" },
-              "title": { "zh": "益州从事", "en": "Yi Province Advisor" },
-              "role": { "zh": "本地行政干才，连接中央与地方治理", "en": "Capable local administrator bridging central and regional governance" }
+              "name": {
+                "zh": "张裔",
+                "en": "Zhang Yi"
+              },
+              "title": {
+                "zh": "益州从事",
+                "en": "Yi Province Advisor"
+              },
+              "role": {
+                "zh": "本地行政干才，连接中央与地方治理",
+                "en": "Capable local administrator bridging central and regional governance"
+              }
             }
           ]
         }
@@ -14293,6 +14599,16 @@
         "keyInnovations": {
           "zh": "成熟的红海航运组织、区域性铸币体系、石碑与巨石建筑工程、高地农业整合、跨山地与海港物流网络，以及多区域贸易管理能力。",
           "en": "Advanced Red Sea maritime organization, a regional coinage system, stelae and megalithic construction engineering, integrated highland agriculture, cross-highland and port logistics networks, and effective management of multi-regional trade."
+        },
+        "sectors": {
+          "architectureAndTrade": {
+            "zh": "石碑建筑与国际贸易枢纽：阿克苏姆王国修建了世界上最高的独石石碑（方尖碑），高达33米，展示了先进的石材加工和工程技术。阿杜利斯港是红海最重要的贸易港口之一，连接罗马帝国和印度洋贸易网络。",
+            "en": "Stele architecture and international trade hub: the Kingdom of Aksum erected the world's tallest monolithic stelae (obelisks), up to 33m tall, demonstrating advanced stone-working and engineering. The port of Adulis is one of the Red Sea's most important trade ports, connecting the Roman Empire and Indian Ocean trade networks."
+          }
+        },
+        "overallAssessment": {
+          "zh": "公元220年的阿克苏姆王国是东非最先进的文明，石碑建筑工程和国际贸易网络展示了其技术和组织能力。阿杜利斯港使阿克苏姆成为连接地中海与印度洋世界的关键枢纽。阿克苏姆即将成为最早皈依基督教的非洲王国之一。",
+          "en": "The Kingdom of Aksum in 220 CE is East Africa's most advanced civilization; stele engineering and international trade networks demonstrate its technological and organizational capability. The port of Adulis makes Aksum a key hub connecting Mediterranean and Indian Ocean worlds. Aksum will soon become one of the earliest African kingdoms to adopt Christianity."
         }
       },
       "assessment": {

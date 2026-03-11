@@ -1685,49 +1685,177 @@
       "factions": [
         {
           "id": "bahri_mamluk_dynasty",
-          "name": { "zh": "拜赫里马穆鲁克统治王朝", "en": "Bahri Mamluk Ruling Dynasty" },
+          "name": {
+            "zh": "拜赫里马穆鲁克统治王朝",
+            "en": "Bahri Mamluk Ruling Dynasty"
+          },
           "type": "other",
-          "leader": { "zh": "曼苏尔·盖拉温", "en": "Sultan Al-Mansur Qalawun" },
-          "leaderTitle": { "zh": "苏丹", "en": "Sultan" },
-          "ideology": { "zh": "军事奴隶精英统治、圣战与伊斯兰正统", "en": "Military slave elite rule, jihad, and Sunni Islamic orthodoxy" },
-          "headquarters": { "zh": "开罗城堡", "en": "Cairo Citadel" },
+          "leader": {
+            "zh": "曼苏尔·盖拉温",
+            "en": "Sultan Al-Mansur Qalawun"
+          },
+          "leaderTitle": {
+            "zh": "苏丹",
+            "en": "Sultan"
+          },
+          "ideology": {
+            "zh": "军事奴隶精英统治、圣战与伊斯兰正统",
+            "en": "Military slave elite rule, jihad, and Sunni Islamic orthodoxy"
+          },
+          "headquarters": {
+            "zh": "开罗城堡",
+            "en": "Cairo Citadel"
+          },
           "status": "ruling",
-          "relationship": { "zh": "拜赫里马穆鲁克是苏丹国的统治核心。盖拉温苏丹通过军事才能和政治手腕巩固了权力，继承了拜伯尔斯开创的马穆鲁克军事体制。他领导苏丹国对抗蒙古伊儿汗国的入侵，同时推进驱逐十字军残余势力的战略。", "en": "The Bahri Mamluks were the ruling core of the sultanate. Sultan Qalawun consolidated power through military prowess and political skill, inheriting the Mamluk military system established by Baybars. He led the sultanate against Mongol Ilkhanid invasions while advancing the strategy of expelling the remaining Crusader forces." },
-          "description": { "zh": "拜赫里马穆鲁克王朝得名于尼罗河（巴赫尔）上的军营，由突厥裔军事奴隶（马穆鲁克）构成的精英军事集团。1250年他们推翻了阿尤布王朝，建立了独特的军事奴隶苏丹国。盖拉温（在位1279-1290）是这一时期最杰出的苏丹之一，他出身钦察突厥马穆鲁克，通过军中晋升和宫廷政变登上苏丹宝座。盖拉温在1281年的霍姆斯战役中击败蒙古军队，延续了艾因贾鲁特战役以来马穆鲁克阻挡蒙古西进的光荣传统。他同时开展对十字军据点的系统攻击，为其子哈利勒最终攻陷阿卡（1291）铺平了道路。盖拉温还建立了完善的马穆鲁克征购和培训制度，从黑海地区大量购入钦察突厥青年作为新血液，确保军事精英的持续更新。", "en": "The Bahri Mamluk dynasty took its name from the Nile River (Bahr) barracks and consisted of a Turkic military slave (Mamluk) elite. In 1250 they overthrew the Ayyubid dynasty, establishing a unique military slave sultanate. Qalawun (r. 1279–1290) was one of the era's most outstanding sultans—a Kipchak Turkic Mamluk who rose through military ranks and court coups to seize the sultanate. His victory at the Battle of Homs in 1281 defeated a Mongol invasion, continuing the proud Mamluk tradition of checking Mongol westward expansion since the Battle of Ain Jalut. He simultaneously conducted systematic attacks on Crusader strongholds, paving the way for his son Khalil's final capture of Acre (1291). Qalawun also established a sophisticated system for purchasing and training Mamluks, importing large numbers of Kipchak Turkic youths from the Black Sea region to ensure continuous renewal of the military elite." },
+          "relationship": {
+            "zh": "拜赫里马穆鲁克是苏丹国的统治核心。盖拉温苏丹通过军事才能和政治手腕巩固了权力，继承了拜伯尔斯开创的马穆鲁克军事体制。他领导苏丹国对抗蒙古伊儿汗国的入侵，同时推进驱逐十字军残余势力的战略。",
+            "en": "The Bahri Mamluks were the ruling core of the sultanate. Sultan Qalawun consolidated power through military prowess and political skill, inheriting the Mamluk military system established by Baybars. He led the sultanate against Mongol Ilkhanid invasions while advancing the strategy of expelling the remaining Crusader forces."
+          },
+          "description": {
+            "zh": "拜赫里马穆鲁克王朝得名于尼罗河（巴赫尔）上的军营，由突厥裔军事奴隶（马穆鲁克）构成的精英军事集团。1250年他们推翻了阿尤布王朝，建立了独特的军事奴隶苏丹国。盖拉温（在位1279-1290）是这一时期最杰出的苏丹之一，他出身钦察突厥马穆鲁克，通过军中晋升和宫廷政变登上苏丹宝座。盖拉温在1281年的霍姆斯战役中击败蒙古军队，延续了艾因贾鲁特战役以来马穆鲁克阻挡蒙古西进的光荣传统。他同时开展对十字军据点的系统攻击，为其子哈利勒最终攻陷阿卡（1291）铺平了道路。盖拉温还建立了完善的马穆鲁克征购和培训制度，从黑海地区大量购入钦察突厥青年作为新血液，确保军事精英的持续更新。",
+            "en": "The Bahri Mamluk dynasty took its name from the Nile River (Bahr) barracks and consisted of a Turkic military slave (Mamluk) elite. In 1250 they overthrew the Ayyubid dynasty, establishing a unique military slave sultanate. Qalawun (r. 1279–1290) was one of the era's most outstanding sultans—a Kipchak Turkic Mamluk who rose through military ranks and court coups to seize the sultanate. His victory at the Battle of Homs in 1281 defeated a Mongol invasion, continuing the proud Mamluk tradition of checking Mongol westward expansion since the Battle of Ain Jalut. He simultaneously conducted systematic attacks on Crusader strongholds, paving the way for his son Khalil's final capture of Acre (1291). Qalawun also established a sophisticated system for purchasing and training Mamluks, importing large numbers of Kipchak Turkic youths from the Black Sea region to ensure continuous renewal of the military elite."
+          },
           "keyFigures": [
-            { "name": { "zh": "曼苏尔·盖拉温", "en": "Al-Mansur Qalawun" }, "title": { "zh": "苏丹", "en": "Sultan" }, "role": { "zh": "马穆鲁克苏丹国全盛期的统治者，击败蒙古入侵", "en": "Ruler during the Mamluk Sultanate's zenith, defeated Mongol invasion" } },
-            { "name": { "zh": "阿什拉夫·哈利勒", "en": "Al-Ashraf Khalil" }, "title": { "zh": "苏丹继承人", "en": "Heir to the Sultanate" }, "role": { "zh": "盖拉温之子，后攻陷阿卡终结十字军国家", "en": "Qalawun's son, later captured Acre and ended the Crusader states" } }
+            {
+              "name": {
+                "zh": "曼苏尔·盖拉温",
+                "en": "Al-Mansur Qalawun"
+              },
+              "title": {
+                "zh": "苏丹",
+                "en": "Sultan"
+              },
+              "role": {
+                "zh": "马穆鲁克苏丹国全盛期的统治者，击败蒙古入侵",
+                "en": "Ruler during the Mamluk Sultanate's zenith, defeated Mongol invasion"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿什拉夫·哈利勒",
+                "en": "Al-Ashraf Khalil"
+              },
+              "title": {
+                "zh": "苏丹继承人",
+                "en": "Heir to the Sultanate"
+              },
+              "role": {
+                "zh": "盖拉温之子，后攻陷阿卡终结十字军国家",
+                "en": "Qalawun's son, later captured Acre and ended the Crusader states"
+              }
+            }
           ]
         },
         {
           "id": "ulema_establishment",
-          "name": { "zh": "乌里玛宗教学者阶层", "en": "Ulema Establishment" },
+          "name": {
+            "zh": "乌里玛宗教学者阶层",
+            "en": "Ulema Establishment"
+          },
           "type": "religious",
-          "leader": { "zh": "爱资哈尔大学学者", "en": "Scholars of Al-Azhar" },
-          "leaderTitle": { "zh": "大穆夫提与首席法官", "en": "Grand Mufti and Chief Qadi" },
-          "ideology": { "zh": "沙里亚法治、逊尼正统与宗教教育", "en": "Sharia governance, Sunni orthodoxy, and religious education" },
-          "headquarters": { "zh": "开罗爱资哈尔清真寺", "en": "Al-Azhar Mosque, Cairo" },
+          "leader": {
+            "zh": "爱资哈尔大学学者",
+            "en": "Scholars of Al-Azhar"
+          },
+          "leaderTitle": {
+            "zh": "大穆夫提与首席法官",
+            "en": "Grand Mufti and Chief Qadi"
+          },
+          "ideology": {
+            "zh": "沙里亚法治、逊尼正统与宗教教育",
+            "en": "Sharia governance, Sunni orthodoxy, and religious education"
+          },
+          "headquarters": {
+            "zh": "开罗爱资哈尔清真寺",
+            "en": "Al-Azhar Mosque, Cairo"
+          },
           "status": "allied",
-          "relationship": { "zh": "乌里玛学者阶层为马穆鲁克政权提供了至关重要的宗教合法性。马穆鲁克苏丹作为军事奴隶出身的统治者，自身缺乏传统的世俗合法性基础，因此格外依赖宗教学者的认可。乌里玛通过宣讲、法律裁决和教育体系为苏丹国的统治背书，作为回报获得了宗教事务的广泛自主权。", "en": "The ulema provided crucial religious legitimacy for the Mamluk regime. As rulers of military slave origin, Mamluk sultans lacked traditional secular legitimacy and thus relied heavily on endorsement from religious scholars. The ulema legitimized the sultanate's rule through sermons, legal rulings, and the educational system, receiving broad autonomy in religious affairs in return." },
-          "description": { "zh": "乌里玛（伊斯兰宗教学者）在马穆鲁克苏丹国中扮演着不可或缺的角色。1258年蒙古人摧毁巴格达后，开罗成为逊尼伊斯兰世界的文化和宗教中心。爱资哈尔清真寺和附属学校是当时伊斯兰世界最重要的学术机构之一。乌里玛负责司法、教育和宗教事务，四大逊尼法学派（哈纳菲、马利基、沙菲仪、罕百里）均在开罗设有首席法官。他们主导了沙里亚法的解释和执行，维护了社会道德秩序。在政治上，乌里玛与苏丹形成了微妙的共生关系——苏丹需要他们提供宗教合法性，他们则需要苏丹的政治保护和财政支持。这一时期的著名学者如纳瓦维和伊本·泰米叶等人，对伊斯兰法学和神学产生了深远影响。", "en": "The ulema (Islamic religious scholars) played an indispensable role in the Mamluk Sultanate. After the Mongol destruction of Baghdad in 1258, Cairo became the cultural and religious center of the Sunni Islamic world. Al-Azhar Mosque and its affiliated schools were among the most important academic institutions in the Islamic world. The ulema administered justice, education, and religious affairs, with chief judges from all four Sunni law schools (Hanafi, Maliki, Shafi'i, Hanbali) established in Cairo. They controlled the interpretation and enforcement of Sharia law and maintained the social moral order. Politically, the ulema formed a subtle symbiotic relationship with the sultan—he needed their religious legitimacy, while they needed his political protection and financial support. Notable scholars of this period, such as al-Nawawi and Ibn Taymiyyah, profoundly influenced Islamic jurisprudence and theology." },
+          "relationship": {
+            "zh": "乌里玛学者阶层为马穆鲁克政权提供了至关重要的宗教合法性。马穆鲁克苏丹作为军事奴隶出身的统治者，自身缺乏传统的世俗合法性基础，因此格外依赖宗教学者的认可。乌里玛通过宣讲、法律裁决和教育体系为苏丹国的统治背书，作为回报获得了宗教事务的广泛自主权。",
+            "en": "The ulema provided crucial religious legitimacy for the Mamluk regime. As rulers of military slave origin, Mamluk sultans lacked traditional secular legitimacy and thus relied heavily on endorsement from religious scholars. The ulema legitimized the sultanate's rule through sermons, legal rulings, and the educational system, receiving broad autonomy in religious affairs in return."
+          },
+          "description": {
+            "zh": "乌里玛（伊斯兰宗教学者）在马穆鲁克苏丹国中扮演着不可或缺的角色。1258年蒙古人摧毁巴格达后，开罗成为逊尼伊斯兰世界的文化和宗教中心。爱资哈尔清真寺和附属学校是当时伊斯兰世界最重要的学术机构之一。乌里玛负责司法、教育和宗教事务，四大逊尼法学派（哈纳菲、马利基、沙菲仪、罕百里）均在开罗设有首席法官。他们主导了沙里亚法的解释和执行，维护了社会道德秩序。在政治上，乌里玛与苏丹形成了微妙的共生关系——苏丹需要他们提供宗教合法性，他们则需要苏丹的政治保护和财政支持。这一时期的著名学者如纳瓦维和伊本·泰米叶等人，对伊斯兰法学和神学产生了深远影响。",
+            "en": "The ulema (Islamic religious scholars) played an indispensable role in the Mamluk Sultanate. After the Mongol destruction of Baghdad in 1258, Cairo became the cultural and religious center of the Sunni Islamic world. Al-Azhar Mosque and its affiliated schools were among the most important academic institutions in the Islamic world. The ulema administered justice, education, and religious affairs, with chief judges from all four Sunni law schools (Hanafi, Maliki, Shafi'i, Hanbali) established in Cairo. They controlled the interpretation and enforcement of Sharia law and maintained the social moral order. Politically, the ulema formed a subtle symbiotic relationship with the sultan—he needed their religious legitimacy, while they needed his political protection and financial support. Notable scholars of this period, such as al-Nawawi and Ibn Taymiyyah, profoundly influenced Islamic jurisprudence and theology."
+          },
           "keyFigures": [
-            { "name": { "zh": "纳瓦维", "en": "Al-Nawawi" }, "title": { "zh": "伊斯兰法学大师", "en": "Master of Islamic Jurisprudence" }, "role": { "zh": "沙菲仪学派最重要的学者之一，编纂圣训集", "en": "One of the most important Shafi'i scholars, compiled hadith collections" } },
-            { "name": { "zh": "伊本·泰米叶", "en": "Ibn Taymiyyah" }, "title": { "zh": "罕百里派学者", "en": "Hanbali Scholar" }, "role": { "zh": "激进改革派神学家，主张回归原初伊斯兰", "en": "Radical reformist theologian, advocated return to original Islam" } }
+            {
+              "name": {
+                "zh": "纳瓦维",
+                "en": "Al-Nawawi"
+              },
+              "title": {
+                "zh": "伊斯兰法学大师",
+                "en": "Master of Islamic Jurisprudence"
+              },
+              "role": {
+                "zh": "沙菲仪学派最重要的学者之一，编纂圣训集",
+                "en": "One of the most important Shafi'i scholars, compiled hadith collections"
+              }
+            },
+            {
+              "name": {
+                "zh": "伊本·泰米叶",
+                "en": "Ibn Taymiyyah"
+              },
+              "title": {
+                "zh": "罕百里派学者",
+                "en": "Hanbali Scholar"
+              },
+              "role": {
+                "zh": "激进改革派神学家，主张回归原初伊斯兰",
+                "en": "Radical reformist theologian, advocated return to original Islam"
+              }
+            }
           ]
         },
         {
           "id": "abbasid_caliphate_cairo",
-          "name": { "zh": "开罗阿拔斯哈里发", "en": "Displaced Abbasid Caliphate in Cairo" },
+          "name": {
+            "zh": "开罗阿拔斯哈里发",
+            "en": "Displaced Abbasid Caliphate in Cairo"
+          },
           "type": "other",
-          "leader": { "zh": "哈基姆一世", "en": "Al-Hakim I" },
-          "leaderTitle": { "zh": "哈里发", "en": "Caliph" },
-          "ideology": { "zh": "哈里发正统继承权与伊斯兰世界精神领袖", "en": "Caliphal legitimate succession and spiritual leadership of the Islamic world" },
-          "headquarters": { "zh": "开罗", "en": "Cairo" },
+          "leader": {
+            "zh": "哈基姆一世",
+            "en": "Al-Hakim I"
+          },
+          "leaderTitle": {
+            "zh": "哈里发",
+            "en": "Caliph"
+          },
+          "ideology": {
+            "zh": "哈里发正统继承权与伊斯兰世界精神领袖",
+            "en": "Caliphal legitimate succession and spiritual leadership of the Islamic world"
+          },
+          "headquarters": {
+            "zh": "开罗",
+            "en": "Cairo"
+          },
           "status": "allied",
-          "relationship": { "zh": "开罗的阿拔斯哈里发是马穆鲁克苏丹精心维护的政治工具。哈里发本人没有实际权力，但他的存在为马穆鲁克政权提供了无可替代的宗教-政治合法性。苏丹在就职时接受哈里发的正式认可，这一仪式使马穆鲁克政权在整个伊斯兰世界中享有特殊地位。", "en": "The Abbasid caliph in Cairo was a carefully maintained political instrument of the Mamluk sultan. The caliph himself held no real power, but his presence provided the Mamluk regime with irreplaceable religio-political legitimacy. Sultans received the caliph's formal endorsement upon accession, a ceremony that gave the Mamluk regime a special status throughout the Islamic world." },
-          "description": { "zh": "1258年蒙古人攻陷巴格达、处死末代巴格达哈里发后，阿拔斯王朝似乎已经终结。但马穆鲁克苏丹拜伯尔斯敏锐地抓住机会，于1261年迎接一位自称阿拔斯王族后裔的人物至开罗，册封他为新任哈里发。这位'影子哈里发'及其后继者虽然没有任何实际政治或军事权力，但其存在具有深远的象征意义——它宣告了逊尼伊斯兰世界正统精神权威的延续，并将这一权威牢牢绑定在马穆鲁克苏丹国身上。1280年在位的哈基姆一世是开罗阿拔斯哈里发系列中的第二位，他的主要职能是出席各种宗教仪式、为苏丹的即位和重大决策提供宗教背书。这一制度一直持续到1517年奥斯曼帝国征服埃及为止，此后哈里发头衔转移至奥斯曼苏丹手中。", "en": "After the Mongols captured Baghdad and executed the last Baghdad caliph in 1258, the Abbasid dynasty appeared to have ended. But Sultan Baybars astutely seized the opportunity, welcoming a man claiming Abbasid royal descent to Cairo in 1261 and investing him as the new caliph. This 'shadow caliph' and his successors held no actual political or military power, but their presence carried profound symbolic significance—it proclaimed the continuation of the Sunni Islamic world's orthodox spiritual authority and firmly bound that authority to the Mamluk Sultanate. Al-Hakim I, in office in 1280, was the second in the Cairo Abbasid caliph line, whose primary functions were attending religious ceremonies and providing religious endorsement for the sultan's accession and major decisions. This institution persisted until the Ottoman conquest of Egypt in 1517, after which the caliphal title transferred to the Ottoman sultans." },
+          "relationship": {
+            "zh": "开罗的阿拔斯哈里发是马穆鲁克苏丹精心维护的政治工具。哈里发本人没有实际权力，但他的存在为马穆鲁克政权提供了无可替代的宗教-政治合法性。苏丹在就职时接受哈里发的正式认可，这一仪式使马穆鲁克政权在整个伊斯兰世界中享有特殊地位。",
+            "en": "The Abbasid caliph in Cairo was a carefully maintained political instrument of the Mamluk sultan. The caliph himself held no real power, but his presence provided the Mamluk regime with irreplaceable religio-political legitimacy. Sultans received the caliph's formal endorsement upon accession, a ceremony that gave the Mamluk regime a special status throughout the Islamic world."
+          },
+          "description": {
+            "zh": "1258年蒙古人攻陷巴格达、处死末代巴格达哈里发后，阿拔斯王朝似乎已经终结。但马穆鲁克苏丹拜伯尔斯敏锐地抓住机会，于1261年迎接一位自称阿拔斯王族后裔的人物至开罗，册封他为新任哈里发。这位'影子哈里发'及其后继者虽然没有任何实际政治或军事权力，但其存在具有深远的象征意义——它宣告了逊尼伊斯兰世界正统精神权威的延续，并将这一权威牢牢绑定在马穆鲁克苏丹国身上。1280年在位的哈基姆一世是开罗阿拔斯哈里发系列中的第二位，他的主要职能是出席各种宗教仪式、为苏丹的即位和重大决策提供宗教背书。这一制度一直持续到1517年奥斯曼帝国征服埃及为止，此后哈里发头衔转移至奥斯曼苏丹手中。",
+            "en": "After the Mongols captured Baghdad and executed the last Baghdad caliph in 1258, the Abbasid dynasty appeared to have ended. But Sultan Baybars astutely seized the opportunity, welcoming a man claiming Abbasid royal descent to Cairo in 1261 and investing him as the new caliph. This 'shadow caliph' and his successors held no actual political or military power, but their presence carried profound symbolic significance—it proclaimed the continuation of the Sunni Islamic world's orthodox spiritual authority and firmly bound that authority to the Mamluk Sultanate. Al-Hakim I, in office in 1280, was the second in the Cairo Abbasid caliph line, whose primary functions were attending religious ceremonies and providing religious endorsement for the sultan's accession and major decisions. This institution persisted until the Ottoman conquest of Egypt in 1517, after which the caliphal title transferred to the Ottoman sultans."
+          },
           "keyFigures": [
-            { "name": { "zh": "哈基姆一世", "en": "Al-Hakim I" }, "title": { "zh": "哈里发", "en": "Caliph" }, "role": { "zh": "开罗第二任影子哈里发，为马穆鲁克政权提供宗教合法性", "en": "Second shadow caliph in Cairo, provided religious legitimacy for the Mamluk regime" } }
+            {
+              "name": {
+                "zh": "哈基姆一世",
+                "en": "Al-Hakim I"
+              },
+              "title": {
+                "zh": "哈里发",
+                "en": "Caliph"
+              },
+              "role": {
+                "zh": "开罗第二任影子哈里发，为马穆鲁克政权提供宗教合法性",
+                "en": "Second shadow caliph in Cairo, provided religious legitimacy for the Mamluk regime"
+              }
+            }
           ]
         }
       ]
@@ -2956,51 +3084,205 @@
       "factions": [
         {
           "id": "kublai_imperial_faction",
-          "name": { "zh": "忽必烈皇帝集团", "en": "Kublai Khan's Imperial Faction" },
+          "name": {
+            "zh": "忽必烈皇帝集团",
+            "en": "Kublai Khan's Imperial Faction"
+          },
           "type": "other",
-          "leader": { "zh": "忽必烈", "en": "Kublai Khan" },
-          "leaderTitle": { "zh": "大元皇帝·蒙古大汗", "en": "Emperor of the Great Yuan and Great Khan of the Mongols" },
-          "ideology": { "zh": "蒙汉融合治理、佛教护法、帝国大一统", "en": "Mongol-Chinese synthesis in governance, Buddhist patronage, imperial unification" },
-          "headquarters": { "zh": "大都（今北京）", "en": "Dadu (modern Beijing)" },
+          "leader": {
+            "zh": "忽必烈",
+            "en": "Kublai Khan"
+          },
+          "leaderTitle": {
+            "zh": "大元皇帝·蒙古大汗",
+            "en": "Emperor of the Great Yuan and Great Khan of the Mongols"
+          },
+          "ideology": {
+            "zh": "蒙汉融合治理、佛教护法、帝国大一统",
+            "en": "Mongol-Chinese synthesis in governance, Buddhist patronage, imperial unification"
+          },
+          "headquarters": {
+            "zh": "大都（今北京）",
+            "en": "Dadu (modern Beijing)"
+          },
           "status": "ruling",
-          "relationship": { "zh": "忽必烈集团是元朝的绝对核心。忽必烈以蒙古大汗兼中原皇帝的双重身份统治帝国，推行蒙汉并用的治国方略，大力扩建大都、疏浚大运河、发行纸钞、护持藏传佛教。他的统治集团融合了蒙古宗王、色目人（西域人）官僚和部分归附的汉人世侯。", "en": "Kublai's faction was the absolute center of Yuan power. Ruling as both Great Khan of the Mongols and Emperor of China, Kublai pursued a dual Mongol-Chinese governing strategy, expanding Dadu, dredging the Grand Canal, issuing paper currency, and patronizing Tibetan Buddhism. His ruling circle blended Mongol princes, Semu (Central Asian) bureaucrats, and some Chinese warlord families who had submitted." },
-          "description": { "zh": "忽必烈（1215-1294）是成吉思汗之孙、托雷之子，1260年自立为大汗，1271年正式建立元朝。他是蒙古帝国历史上最具转型意义的统治者，将游牧征服帝国逐步改造为以中国为核心的定居帝国。忽必烈定都大都（今北京），建造壮丽的皇宫和城市规划，并将大运河延伸至大都以便南粮北运。他推行全国性纸币制度（交钞和中统钞），建立行省制度管理广袤领土，并大力扶持藏传佛教，任命八思巴为帝师，创制蒙古新字。然而他两次远征日本均告失败，对缅甸和爪哇的军事行动也收效有限。他的统治面临来自蒙古保守派和汉族士大夫的双重压力，是一位在文明交融中艰难平衡的伟大君主。", "en": "Kublai Khan (1215–1294), grandson of Chinggis Khan and son of Tolui, declared himself Great Khan in 1260 and formally established the Yuan dynasty in 1271. He was the most transformative ruler in Mongol imperial history, gradually converting a nomadic conquest empire into a sedentary state centered on China. Kublai made Dadu (modern Beijing) his capital, constructing magnificent palaces and urban infrastructure, and extended the Grand Canal to transport southern grain northward. He implemented a national paper currency system (Jiaochao and Zhongtong notes), established the provincial system to administer vast territories, and strongly patronized Tibetan Buddhism, appointing Phags-pa as Imperial Preceptor and commissioning a new Mongol script. His two invasions of Japan both ended in failure, and military campaigns against Burma and Java yielded limited results. His rule faced dual pressures from Mongol conservatives and Chinese scholar-officials, making him a great sovereign struggling to balance civilizational synthesis." },
+          "relationship": {
+            "zh": "忽必烈集团是元朝的绝对核心。忽必烈以蒙古大汗兼中原皇帝的双重身份统治帝国，推行蒙汉并用的治国方略，大力扩建大都、疏浚大运河、发行纸钞、护持藏传佛教。他的统治集团融合了蒙古宗王、色目人（西域人）官僚和部分归附的汉人世侯。",
+            "en": "Kublai's faction was the absolute center of Yuan power. Ruling as both Great Khan of the Mongols and Emperor of China, Kublai pursued a dual Mongol-Chinese governing strategy, expanding Dadu, dredging the Grand Canal, issuing paper currency, and patronizing Tibetan Buddhism. His ruling circle blended Mongol princes, Semu (Central Asian) bureaucrats, and some Chinese warlord families who had submitted."
+          },
+          "description": {
+            "zh": "忽必烈（1215-1294）是成吉思汗之孙、托雷之子，1260年自立为大汗，1271年正式建立元朝。他是蒙古帝国历史上最具转型意义的统治者，将游牧征服帝国逐步改造为以中国为核心的定居帝国。忽必烈定都大都（今北京），建造壮丽的皇宫和城市规划，并将大运河延伸至大都以便南粮北运。他推行全国性纸币制度（交钞和中统钞），建立行省制度管理广袤领土，并大力扶持藏传佛教，任命八思巴为帝师，创制蒙古新字。然而他两次远征日本均告失败，对缅甸和爪哇的军事行动也收效有限。他的统治面临来自蒙古保守派和汉族士大夫的双重压力，是一位在文明交融中艰难平衡的伟大君主。",
+            "en": "Kublai Khan (1215–1294), grandson of Chinggis Khan and son of Tolui, declared himself Great Khan in 1260 and formally established the Yuan dynasty in 1271. He was the most transformative ruler in Mongol imperial history, gradually converting a nomadic conquest empire into a sedentary state centered on China. Kublai made Dadu (modern Beijing) his capital, constructing magnificent palaces and urban infrastructure, and extended the Grand Canal to transport southern grain northward. He implemented a national paper currency system (Jiaochao and Zhongtong notes), established the provincial system to administer vast territories, and strongly patronized Tibetan Buddhism, appointing Phags-pa as Imperial Preceptor and commissioning a new Mongol script. His two invasions of Japan both ended in failure, and military campaigns against Burma and Java yielded limited results. His rule faced dual pressures from Mongol conservatives and Chinese scholar-officials, making him a great sovereign struggling to balance civilizational synthesis."
+          },
           "keyFigures": [
-            { "name": { "zh": "忽必烈", "en": "Kublai Khan" }, "title": { "zh": "大元皇帝", "en": "Emperor of Great Yuan" }, "role": { "zh": "元朝创建者，推行蒙汉融合治国", "en": "Founder of the Yuan dynasty, pursued Mongol-Chinese synthesis" } },
-            { "name": { "zh": "八思巴", "en": "Phags-pa" }, "title": { "zh": "帝师", "en": "Imperial Preceptor" }, "role": { "zh": "藏传佛教萨迦派领袖，创制蒙古新字", "en": "Leader of Sakya Tibetan Buddhism, created the new Mongol script" } },
-            { "name": { "zh": "阿合马", "en": "Ahmad Fanakati" }, "title": { "zh": "中书平章政事", "en": "Grand Councillor" }, "role": { "zh": "色目人财政大臣，主管元朝财税改革", "en": "Semu financial minister, oversaw Yuan fiscal reforms" } }
+            {
+              "name": {
+                "zh": "忽必烈",
+                "en": "Kublai Khan"
+              },
+              "title": {
+                "zh": "大元皇帝",
+                "en": "Emperor of Great Yuan"
+              },
+              "role": {
+                "zh": "元朝创建者，推行蒙汉融合治国",
+                "en": "Founder of the Yuan dynasty, pursued Mongol-Chinese synthesis"
+              }
+            },
+            {
+              "name": {
+                "zh": "八思巴",
+                "en": "Phags-pa"
+              },
+              "title": {
+                "zh": "帝师",
+                "en": "Imperial Preceptor"
+              },
+              "role": {
+                "zh": "藏传佛教萨迦派领袖，创制蒙古新字",
+                "en": "Leader of Sakya Tibetan Buddhism, created the new Mongol script"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿合马",
+                "en": "Ahmad Fanakati"
+              },
+              "title": {
+                "zh": "中书平章政事",
+                "en": "Grand Councillor"
+              },
+              "role": {
+                "zh": "色目人财政大臣，主管元朝财税改革",
+                "en": "Semu financial minister, oversaw Yuan fiscal reforms"
+              }
+            }
           ]
         },
         {
           "id": "mongol_military_aristocracy",
-          "name": { "zh": "蒙古军事贵族", "en": "Mongol Military Aristocracy" },
+          "name": {
+            "zh": "蒙古军事贵族",
+            "en": "Mongol Military Aristocracy"
+          },
           "type": "other",
-          "leader": { "zh": "蒙古宗王与那颜", "en": "Mongol Princes and Noyans" },
-          "leaderTitle": { "zh": "宗王·那颜", "en": "Princes and Noyans" },
-          "ideology": { "zh": "维护草原传统与蒙古至上地位", "en": "Preserving steppe traditions and Mongol supremacy" },
-          "headquarters": { "zh": "上都（开平）", "en": "Shangdu (Xanadu)" },
+          "leader": {
+            "zh": "蒙古宗王与那颜",
+            "en": "Mongol Princes and Noyans"
+          },
+          "leaderTitle": {
+            "zh": "宗王·那颜",
+            "en": "Princes and Noyans"
+          },
+          "ideology": {
+            "zh": "维护草原传统与蒙古至上地位",
+            "en": "Preserving steppe traditions and Mongol supremacy"
+          },
+          "headquarters": {
+            "zh": "上都（开平）",
+            "en": "Shangdu (Xanadu)"
+          },
           "status": "allied",
-          "relationship": { "zh": "蒙古军事贵族是元朝统治的武力基石，但他们与忽必烈的汉化路线存在深层矛盾。这些草原传统的捍卫者希望维持蒙古人的特权地位和游牧习俗，对忽必烈采用中原制度、重用色目人和部分汉人深感不满，但在军事利益的纽带下仍与皇权保持合作。", "en": "The Mongol military aristocracy was the armed backbone of Yuan rule, yet harbored deep tensions with Kublai's sinicization policies. As defenders of steppe traditions, they sought to maintain Mongol privilege and nomadic customs, resenting Kublai's adoption of Chinese institutions and employment of Semu and some Chinese officials, but remained allied with imperial power through shared military interests." },
-          "description": { "zh": "蒙古军事贵族由成吉思汗以来的黄金家族宗王、千户长后裔和功臣那颜家族构成，是蒙古帝国征服世界的核心力量。在元朝体制下，他们享有法律特权——蒙古人犯罪不受汉法审判，拥有大量牧地和赐田，世袭军事指挥权。许多蒙古贵族仍然保持半游牧生活方式，每年随皇帝在大都和上都之间迁移。他们对忽必烈推行科举、重用儒生和色目官僚的政策心存疑虑，认为这会侵蚀蒙古人的统治根基。早先海都等西北宗王的叛乱正是这种不满的极端表现。蒙古贵族在四等人制度中居于最高等级，但随着帝国日趋定居化和官僚化，他们的传统优势正在被行政能力更强的群体所稀释。", "en": "The Mongol military aristocracy comprised Golden Family princes descended from Chinggis Khan, descendants of commanders of thousands, and meritorious noyan families—the core force behind the Mongol world conquest. Under the Yuan system, they enjoyed legal privileges: Mongols were exempt from Chinese law, possessed vast pastures and granted estates, and held hereditary military commands. Many Mongol nobles maintained semi-nomadic lifestyles, migrating annually with the emperor between Dadu and Shangdu. They viewed Kublai's promotion of civil service examinations, employment of Confucian scholars, and reliance on Semu bureaucrats with suspicion, fearing erosion of Mongol ruling foundations. The earlier rebellion of Qaidu and other northwestern princes exemplified this discontent in extreme form. The Mongol nobility ranked highest in the four-class system, but as the empire became increasingly sedentary and bureaucratized, their traditional advantages were being diluted by groups with stronger administrative capabilities." },
+          "relationship": {
+            "zh": "蒙古军事贵族是元朝统治的武力基石，但他们与忽必烈的汉化路线存在深层矛盾。这些草原传统的捍卫者希望维持蒙古人的特权地位和游牧习俗，对忽必烈采用中原制度、重用色目人和部分汉人深感不满，但在军事利益的纽带下仍与皇权保持合作。",
+            "en": "The Mongol military aristocracy was the armed backbone of Yuan rule, yet harbored deep tensions with Kublai's sinicization policies. As defenders of steppe traditions, they sought to maintain Mongol privilege and nomadic customs, resenting Kublai's adoption of Chinese institutions and employment of Semu and some Chinese officials, but remained allied with imperial power through shared military interests."
+          },
+          "description": {
+            "zh": "蒙古军事贵族由成吉思汗以来的黄金家族宗王、千户长后裔和功臣那颜家族构成，是蒙古帝国征服世界的核心力量。在元朝体制下，他们享有法律特权——蒙古人犯罪不受汉法审判，拥有大量牧地和赐田，世袭军事指挥权。许多蒙古贵族仍然保持半游牧生活方式，每年随皇帝在大都和上都之间迁移。他们对忽必烈推行科举、重用儒生和色目官僚的政策心存疑虑，认为这会侵蚀蒙古人的统治根基。早先海都等西北宗王的叛乱正是这种不满的极端表现。蒙古贵族在四等人制度中居于最高等级，但随着帝国日趋定居化和官僚化，他们的传统优势正在被行政能力更强的群体所稀释。",
+            "en": "The Mongol military aristocracy comprised Golden Family princes descended from Chinggis Khan, descendants of commanders of thousands, and meritorious noyan families—the core force behind the Mongol world conquest. Under the Yuan system, they enjoyed legal privileges: Mongols were exempt from Chinese law, possessed vast pastures and granted estates, and held hereditary military commands. Many Mongol nobles maintained semi-nomadic lifestyles, migrating annually with the emperor between Dadu and Shangdu. They viewed Kublai's promotion of civil service examinations, employment of Confucian scholars, and reliance on Semu bureaucrats with suspicion, fearing erosion of Mongol ruling foundations. The earlier rebellion of Qaidu and other northwestern princes exemplified this discontent in extreme form. The Mongol nobility ranked highest in the four-class system, but as the empire became increasingly sedentary and bureaucratized, their traditional advantages were being diluted by groups with stronger administrative capabilities."
+          },
           "keyFigures": [
-            { "name": { "zh": "伯颜", "en": "Bayan" }, "title": { "zh": "丞相", "en": "Grand Chancellor" }, "role": { "zh": "灭南宋统帅，蒙古军事传统的杰出代表", "en": "Commander who conquered Southern Song, outstanding representative of Mongol military tradition" } },
-            { "name": { "zh": "那木罕", "en": "Nomukhan" }, "title": { "zh": "北安王", "en": "Prince of Beiping" }, "role": { "zh": "忽必烈之子，负责北方草原防务", "en": "Kublai's son, responsible for northern steppe defense" } }
+            {
+              "name": {
+                "zh": "伯颜",
+                "en": "Bayan"
+              },
+              "title": {
+                "zh": "丞相",
+                "en": "Grand Chancellor"
+              },
+              "role": {
+                "zh": "灭南宋统帅，蒙古军事传统的杰出代表",
+                "en": "Commander who conquered Southern Song, outstanding representative of Mongol military tradition"
+              }
+            },
+            {
+              "name": {
+                "zh": "那木罕",
+                "en": "Nomukhan"
+              },
+              "title": {
+                "zh": "北安王",
+                "en": "Prince of Beiping"
+              },
+              "role": {
+                "zh": "忽必烈之子，负责北方草原防务",
+                "en": "Kublai's son, responsible for northern steppe defense"
+              }
+            }
           ]
         },
         {
           "id": "chinese_confucian_bureaucrats",
-          "name": { "zh": "汉人儒臣集团", "en": "Chinese Confucian Bureaucrats" },
+          "name": {
+            "zh": "汉人儒臣集团",
+            "en": "Chinese Confucian Bureaucrats"
+          },
           "type": "other",
-          "leader": { "zh": "汉人儒学士大夫", "en": "Chinese Confucian Scholar-Officials" },
-          "leaderTitle": { "zh": "儒臣", "en": "Confucian Officials" },
-          "ideology": { "zh": "儒家治国理政、恢复科举与文官制度", "en": "Confucian governance, restoration of civil service examinations" },
-          "headquarters": { "zh": "大都及江南各地", "en": "Dadu and the Jiangnan region" },
+          "leader": {
+            "zh": "汉人儒学士大夫",
+            "en": "Chinese Confucian Scholar-Officials"
+          },
+          "leaderTitle": {
+            "zh": "儒臣",
+            "en": "Confucian Officials"
+          },
+          "ideology": {
+            "zh": "儒家治国理政、恢复科举与文官制度",
+            "en": "Confucian governance, restoration of civil service examinations"
+          },
+          "headquarters": {
+            "zh": "大都及江南各地",
+            "en": "Dadu and the Jiangnan region"
+          },
           "status": "rival",
-          "relationship": { "zh": "汉人儒臣在元朝体制中处于矛盾地位。他们中的一部分人接受了元朝统治的现实，试图通过在体制内服务来推动儒家理念的实施；但他们在四等人制度中地位低下，科举被长期搁置，仕途受阻，对蒙古和色目人的特权深感不平。他们与皇权的关系是被动合作中夹杂着深层抵触。", "en": "Chinese Confucian bureaucrats occupied an ambivalent position within the Yuan system. Some accepted Yuan rule as reality and sought to promote Confucian principles through service within the system. Yet they ranked low in the four-class hierarchy, civil service examinations were long suspended, career paths were blocked, and they deeply resented Mongol and Semu privileges. Their relationship with imperial power was one of passive cooperation mixed with underlying resistance." },
-          "description": { "zh": "汉人儒臣集团代表了中国士大夫传统在异族统治下的艰难存续。南宋灭亡后，大量江南文人学者面临是否出仕新朝的道德困境。一些人选择隐居不仕以示忠于旧朝，但更多人在现实压力下逐渐接受了为元朝服务。忽必烈虽然重视儒学的治国功能，先后起用许衡、刘秉忠等汉儒顾问，但始终未能真正恢复唐宋以来的科举取士制度（直到1315年才正式恢复）。儒臣们在中书省和地方行省中担任次要职位，往往受制于蒙古人和色目人上司。他们持续呼吁恢复科举、减轻赋税、抑制色目人财政官僚的权力，并努力在学术和教育领域维系儒学传统。赵孟頫等文人虽在艺术文化上取得杰出成就，但在政治上仍处于边缘化状态。", "en": "The Chinese Confucian bureaucrats represented the difficult survival of China's scholar-official tradition under foreign rule. After the fall of the Southern Song, many Jiangnan literati faced the moral dilemma of whether to serve the new dynasty. Some chose to live in seclusion to demonstrate loyalty to the old order, but more gradually accepted service to the Yuan under practical pressures. Though Kublai valued Confucianism's governing utility and appointed Chinese Confucian advisors like Xu Heng and Liu Bingzhong, he never truly restored the civil service examination system that had been central since the Tang and Song (formal restoration came only in 1315). Confucian officials held subordinate positions in the Central Secretariat and provincial administrations, often under Mongol and Semu superiors. They continuously advocated for restoring examinations, reducing taxes, curbing the power of Semu fiscal bureaucrats, and preserving Confucian scholarly and educational traditions. Literati like Zhao Mengfu achieved outstanding cultural and artistic accomplishments but remained politically marginalized." },
+          "relationship": {
+            "zh": "汉人儒臣在元朝体制中处于矛盾地位。他们中的一部分人接受了元朝统治的现实，试图通过在体制内服务来推动儒家理念的实施；但他们在四等人制度中地位低下，科举被长期搁置，仕途受阻，对蒙古和色目人的特权深感不平。他们与皇权的关系是被动合作中夹杂着深层抵触。",
+            "en": "Chinese Confucian bureaucrats occupied an ambivalent position within the Yuan system. Some accepted Yuan rule as reality and sought to promote Confucian principles through service within the system. Yet they ranked low in the four-class hierarchy, civil service examinations were long suspended, career paths were blocked, and they deeply resented Mongol and Semu privileges. Their relationship with imperial power was one of passive cooperation mixed with underlying resistance."
+          },
+          "description": {
+            "zh": "汉人儒臣集团代表了中国士大夫传统在异族统治下的艰难存续。南宋灭亡后，大量江南文人学者面临是否出仕新朝的道德困境。一些人选择隐居不仕以示忠于旧朝，但更多人在现实压力下逐渐接受了为元朝服务。忽必烈虽然重视儒学的治国功能，先后起用许衡、刘秉忠等汉儒顾问，但始终未能真正恢复唐宋以来的科举取士制度（直到1315年才正式恢复）。儒臣们在中书省和地方行省中担任次要职位，往往受制于蒙古人和色目人上司。他们持续呼吁恢复科举、减轻赋税、抑制色目人财政官僚的权力，并努力在学术和教育领域维系儒学传统。赵孟頫等文人虽在艺术文化上取得杰出成就，但在政治上仍处于边缘化状态。",
+            "en": "The Chinese Confucian bureaucrats represented the difficult survival of China's scholar-official tradition under foreign rule. After the fall of the Southern Song, many Jiangnan literati faced the moral dilemma of whether to serve the new dynasty. Some chose to live in seclusion to demonstrate loyalty to the old order, but more gradually accepted service to the Yuan under practical pressures. Though Kublai valued Confucianism's governing utility and appointed Chinese Confucian advisors like Xu Heng and Liu Bingzhong, he never truly restored the civil service examination system that had been central since the Tang and Song (formal restoration came only in 1315). Confucian officials held subordinate positions in the Central Secretariat and provincial administrations, often under Mongol and Semu superiors. They continuously advocated for restoring examinations, reducing taxes, curbing the power of Semu fiscal bureaucrats, and preserving Confucian scholarly and educational traditions. Literati like Zhao Mengfu achieved outstanding cultural and artistic accomplishments but remained politically marginalized."
+          },
           "keyFigures": [
-            { "name": { "zh": "许衡", "en": "Xu Heng" }, "title": { "zh": "国子监祭酒", "en": "Chancellor of the Imperial Academy" }, "role": { "zh": "元初最重要的儒学顾问，推动儒学教育制度化", "en": "Most important Confucian advisor of early Yuan, promoted institutionalization of Confucian education" } },
-            { "name": { "zh": "赵孟頫", "en": "Zhao Mengfu" }, "title": { "zh": "翰林学士", "en": "Hanlin Academician" }, "role": { "zh": "宋朝宗室后裔，元朝最杰出的书画家和文臣", "en": "Song imperial descendant, Yuan's most outstanding calligrapher-painter and literary official" } }
+            {
+              "name": {
+                "zh": "许衡",
+                "en": "Xu Heng"
+              },
+              "title": {
+                "zh": "国子监祭酒",
+                "en": "Chancellor of the Imperial Academy"
+              },
+              "role": {
+                "zh": "元初最重要的儒学顾问，推动儒学教育制度化",
+                "en": "Most important Confucian advisor of early Yuan, promoted institutionalization of Confucian education"
+              }
+            },
+            {
+              "name": {
+                "zh": "赵孟頫",
+                "en": "Zhao Mengfu"
+              },
+              "title": {
+                "zh": "翰林学士",
+                "en": "Hanlin Academician"
+              },
+              "role": {
+                "zh": "宋朝宗室后裔，元朝最杰出的书画家和文臣",
+                "en": "Song imperial descendant, Yuan's most outstanding calligrapher-painter and literary official"
+              }
+            }
           ]
         }
       ]
@@ -4189,50 +4471,191 @@
       "factions": [
         {
           "id": "palaiologan_dynasty",
-          "name": { "zh": "巴列奥略王朝", "en": "Palaiologan Dynasty" },
+          "name": {
+            "zh": "巴列奥略王朝",
+            "en": "Palaiologan Dynasty"
+          },
           "type": "other",
-          "leader": { "zh": "米海尔八世·巴列奥略", "en": "Michael VIII Palaiologos" },
-          "leaderTitle": { "zh": "罗马人的皇帝与独裁者", "en": "Emperor and Autocrat of the Romans" },
-          "ideology": { "zh": "帝国复兴、外交均衡与西方联合", "en": "Imperial restoration, diplomatic balancing, and union with the West" },
-          "headquarters": { "zh": "君士坦丁堡", "en": "Constantinople" },
+          "leader": {
+            "zh": "米海尔八世·巴列奥略",
+            "en": "Michael VIII Palaiologos"
+          },
+          "leaderTitle": {
+            "zh": "罗马人的皇帝与独裁者",
+            "en": "Emperor and Autocrat of the Romans"
+          },
+          "ideology": {
+            "zh": "帝国复兴、外交均衡与西方联合",
+            "en": "Imperial restoration, diplomatic balancing, and union with the West"
+          },
+          "headquarters": {
+            "zh": "君士坦丁堡",
+            "en": "Constantinople"
+          },
           "status": "ruling",
-          "relationship": { "zh": "巴列奥略王朝于1261年收复君士坦丁堡，结束了拉丁帝国的统治，标志着拜占庭帝国的复辟。米海尔八世通过精妙的外交手段——包括与热那亚结盟、推动里昂教会联合——在西方和东方势力间艰难维持帝国的生存。", "en": "The Palaiologan dynasty recaptured Constantinople in 1261, ending the Latin Empire and restoring Byzantine rule. Michael VIII maintained the empire's survival through sophisticated diplomacy—including the Genoese alliance and the Union of Lyon—while navigating between Western and Eastern powers." },
-          "description": { "zh": "米海尔八世·巴列奥略是拜占庭帝国最后一个王朝的创始人，1261年他利用拉丁帝国的虚弱，联合热那亚人成功收复君士坦丁堡。他面临的最大威胁是西西里的安茹王朝查理一世企图重建拉丁帝国的野心。为化解此威胁，米海尔在1274年接受了里昂教会联合，承认教皇权威，但此举遭到国内东正教会和民众的强烈反对。他还通过资助西西里晚祷事件(1282)成功瓦解了安茹的入侵计划。然而帝国领土已大为缩小，财政窘迫，军事力量有限，不得不依赖外交和雇佣军维持生存。巴列奥略时代虽在文化上开创了'巴列奥略文艺复兴'，但帝国的实力已今非昔比。", "en": "Michael VIII Palaiologos founded the last Byzantine dynasty, exploiting Latin Empire weakness and allying with Genoa to recapture Constantinople in 1261. His greatest threat was Charles of Anjou's ambition to restore the Latin Empire. To counter this, Michael accepted the Union of Lyon in 1274, recognizing papal authority—a deeply unpopular move domestically among the Orthodox Church and populace. He also funded the Sicilian Vespers (1282), which successfully dismantled Charles's invasion plans. Yet the empire's territory was greatly reduced, finances strained, and military capacity limited, forcing reliance on diplomacy and mercenaries. Though the Palaiologan era produced a cultural 'Palaiologan Renaissance,' the empire's power was a shadow of its former self." },
+          "relationship": {
+            "zh": "巴列奥略王朝于1261年收复君士坦丁堡，结束了拉丁帝国的统治，标志着拜占庭帝国的复辟。米海尔八世通过精妙的外交手段——包括与热那亚结盟、推动里昂教会联合——在西方和东方势力间艰难维持帝国的生存。",
+            "en": "The Palaiologan dynasty recaptured Constantinople in 1261, ending the Latin Empire and restoring Byzantine rule. Michael VIII maintained the empire's survival through sophisticated diplomacy—including the Genoese alliance and the Union of Lyon—while navigating between Western and Eastern powers."
+          },
+          "description": {
+            "zh": "米海尔八世·巴列奥略是拜占庭帝国最后一个王朝的创始人，1261年他利用拉丁帝国的虚弱，联合热那亚人成功收复君士坦丁堡。他面临的最大威胁是西西里的安茹王朝查理一世企图重建拉丁帝国的野心。为化解此威胁，米海尔在1274年接受了里昂教会联合，承认教皇权威，但此举遭到国内东正教会和民众的强烈反对。他还通过资助西西里晚祷事件(1282)成功瓦解了安茹的入侵计划。然而帝国领土已大为缩小，财政窘迫，军事力量有限，不得不依赖外交和雇佣军维持生存。巴列奥略时代虽在文化上开创了'巴列奥略文艺复兴'，但帝国的实力已今非昔比。",
+            "en": "Michael VIII Palaiologos founded the last Byzantine dynasty, exploiting Latin Empire weakness and allying with Genoa to recapture Constantinople in 1261. His greatest threat was Charles of Anjou's ambition to restore the Latin Empire. To counter this, Michael accepted the Union of Lyon in 1274, recognizing papal authority—a deeply unpopular move domestically among the Orthodox Church and populace. He also funded the Sicilian Vespers (1282), which successfully dismantled Charles's invasion plans. Yet the empire's territory was greatly reduced, finances strained, and military capacity limited, forcing reliance on diplomacy and mercenaries. Though the Palaiologan era produced a cultural 'Palaiologan Renaissance,' the empire's power was a shadow of its former self."
+          },
           "keyFigures": [
-            { "name": { "zh": "米海尔八世·巴列奥略", "en": "Michael VIII Palaiologos" }, "title": { "zh": "皇帝", "en": "Emperor" }, "role": { "zh": "帝国复辟者，精通外交权术", "en": "Restorer of the empire, master diplomat" } },
-            { "name": { "zh": "安德洛尼卡二世", "en": "Andronikos II" }, "title": { "zh": "共治皇帝", "en": "Co-Emperor" }, "role": { "zh": "米海尔之子，继承人，后来废除里昂联合", "en": "Michael's son and heir, later repudiated the Union of Lyon" } }
+            {
+              "name": {
+                "zh": "米海尔八世·巴列奥略",
+                "en": "Michael VIII Palaiologos"
+              },
+              "title": {
+                "zh": "皇帝",
+                "en": "Emperor"
+              },
+              "role": {
+                "zh": "帝国复辟者，精通外交权术",
+                "en": "Restorer of the empire, master diplomat"
+              }
+            },
+            {
+              "name": {
+                "zh": "安德洛尼卡二世",
+                "en": "Andronikos II"
+              },
+              "title": {
+                "zh": "共治皇帝",
+                "en": "Co-Emperor"
+              },
+              "role": {
+                "zh": "米海尔之子，继承人，后来废除里昂联合",
+                "en": "Michael's son and heir, later repudiated the Union of Lyon"
+              }
+            }
           ]
         },
         {
           "id": "aristocratic_magnates",
-          "name": { "zh": "贵族大地主集团", "en": "Aristocratic Land Magnates" },
+          "name": {
+            "zh": "贵族大地主集团",
+            "en": "Aristocratic Land Magnates"
+          },
           "type": "other",
-          "leader": { "zh": "各省军事贵族家族", "en": "Provincial Military Aristocratic Families" },
-          "leaderTitle": { "zh": "地方豪族", "en": "Provincial Magnates" },
-          "ideology": { "zh": "地方自治与大土地所有制", "en": "Provincial autonomy and large-scale land ownership" },
-          "headquarters": { "zh": "色雷斯与马其顿各省", "en": "Thrace and Macedonian provinces" },
+          "leader": {
+            "zh": "各省军事贵族家族",
+            "en": "Provincial Military Aristocratic Families"
+          },
+          "leaderTitle": {
+            "zh": "地方豪族",
+            "en": "Provincial Magnates"
+          },
+          "ideology": {
+            "zh": "地方自治与大土地所有制",
+            "en": "Provincial autonomy and large-scale land ownership"
+          },
+          "headquarters": {
+            "zh": "色雷斯与马其顿各省",
+            "en": "Thrace and Macedonian provinces"
+          },
           "status": "rival",
-          "relationship": { "zh": "地方贵族大地主是帝国统治的双刃剑。他们提供了军事人才和地方治理能力，但同时通过积累土地侵蚀了自由农民阶层和国家税基。这些家族常与皇室联姻，在宫廷中拥有巨大影响力，但也时常挑战中央权威。", "en": "Provincial aristocratic magnates were a double-edged sword for imperial rule. They provided military talent and local governance capacity but simultaneously eroded the free peasantry and the state's tax base through land accumulation. These families frequently intermarried with the imperial house and wielded enormous influence at court while periodically challenging central authority." },
-          "description": { "zh": "拜占庭帝国晚期的贵族大地主集团是一个由军事世家和地方豪门构成的松散利益群体。复辟后的帝国中，坎塔库泽诺斯、杜卡斯、菲兰特罗佩诺斯等家族控制着色雷斯、马其顿和爱琴海岛屿的大片土地。他们通过普罗尼亚（军事采邑）制度获得土地使用权，逐渐将这些临时性授予转化为世袭财产。自由小农的持续减少削弱了帝国的征兵和税收基础，而这些大家族的私人武装力量却在增长。在政治上，他们与巴列奥略皇室既合作又竞争，构成了帝国内部最重要的政治力量之一，他们的忠诚度往往取决于皇帝能否满足其利益诉求。", "en": "The aristocratic land magnates of late Byzantium were a loose interest group of military families and provincial grandees. In the restored empire, families like the Kantakouzenoi, Doukai, and Philanthropenoi controlled vast estates across Thrace, Macedonia, and the Aegean islands. Through the pronoia (military fief) system they obtained land grants, gradually converting these temporary concessions into hereditary property. The steady decline of free smallholders weakened the empire's recruitment and tax base, while these great families' private armed forces grew. Politically, they both cooperated and competed with the Palaiologan court, forming one of the empire's most significant internal forces, with their loyalty contingent on the emperor's ability to satisfy their interests." },
+          "relationship": {
+            "zh": "地方贵族大地主是帝国统治的双刃剑。他们提供了军事人才和地方治理能力，但同时通过积累土地侵蚀了自由农民阶层和国家税基。这些家族常与皇室联姻，在宫廷中拥有巨大影响力，但也时常挑战中央权威。",
+            "en": "Provincial aristocratic magnates were a double-edged sword for imperial rule. They provided military talent and local governance capacity but simultaneously eroded the free peasantry and the state's tax base through land accumulation. These families frequently intermarried with the imperial house and wielded enormous influence at court while periodically challenging central authority."
+          },
+          "description": {
+            "zh": "拜占庭帝国晚期的贵族大地主集团是一个由军事世家和地方豪门构成的松散利益群体。复辟后的帝国中，坎塔库泽诺斯、杜卡斯、菲兰特罗佩诺斯等家族控制着色雷斯、马其顿和爱琴海岛屿的大片土地。他们通过普罗尼亚（军事采邑）制度获得土地使用权，逐渐将这些临时性授予转化为世袭财产。自由小农的持续减少削弱了帝国的征兵和税收基础，而这些大家族的私人武装力量却在增长。在政治上，他们与巴列奥略皇室既合作又竞争，构成了帝国内部最重要的政治力量之一，他们的忠诚度往往取决于皇帝能否满足其利益诉求。",
+            "en": "The aristocratic land magnates of late Byzantium were a loose interest group of military families and provincial grandees. In the restored empire, families like the Kantakouzenoi, Doukai, and Philanthropenoi controlled vast estates across Thrace, Macedonia, and the Aegean islands. Through the pronoia (military fief) system they obtained land grants, gradually converting these temporary concessions into hereditary property. The steady decline of free smallholders weakened the empire's recruitment and tax base, while these great families' private armed forces grew. Politically, they both cooperated and competed with the Palaiologan court, forming one of the empire's most significant internal forces, with their loyalty contingent on the emperor's ability to satisfy their interests."
+          },
           "keyFigures": [
-            { "name": { "zh": "阿莱克修斯·菲兰特罗佩诺斯", "en": "Alexios Philanthropenos" }, "title": { "zh": "军事统帅", "en": "Military Commander" }, "role": { "zh": "小亚细亚地区杰出将领，后因叛乱被捕", "en": "Outstanding general in Asia Minor, later arrested for rebellion" } },
-            { "name": { "zh": "约翰·坎塔库泽诺斯家族", "en": "Kantakouzenos Family" }, "title": { "zh": "贵族世家", "en": "Noble House" }, "role": { "zh": "色雷斯地区最富有的贵族家族之一，后出一位皇帝", "en": "One of the wealthiest noble families in Thrace, later produced an emperor" } }
+            {
+              "name": {
+                "zh": "阿莱克修斯·菲兰特罗佩诺斯",
+                "en": "Alexios Philanthropenos"
+              },
+              "title": {
+                "zh": "军事统帅",
+                "en": "Military Commander"
+              },
+              "role": {
+                "zh": "小亚细亚地区杰出将领，后因叛乱被捕",
+                "en": "Outstanding general in Asia Minor, later arrested for rebellion"
+              }
+            },
+            {
+              "name": {
+                "zh": "约翰·坎塔库泽诺斯家族",
+                "en": "Kantakouzenos Family"
+              },
+              "title": {
+                "zh": "贵族世家",
+                "en": "Noble House"
+              },
+              "role": {
+                "zh": "色雷斯地区最富有的贵族家族之一，后出一位皇帝",
+                "en": "One of the wealthiest noble families in Thrace, later produced an emperor"
+              }
+            }
           ]
         },
         {
           "id": "hesychast_movement",
-          "name": { "zh": "静修主义运动", "en": "Hesychast Movement" },
+          "name": {
+            "zh": "静修主义运动",
+            "en": "Hesychast Movement"
+          },
           "type": "religious",
-          "leader": { "zh": "阿索斯山修士团体", "en": "Mount Athos Monastic Communities" },
-          "leaderTitle": { "zh": "修道院长老", "en": "Monastic Elders" },
-          "ideology": { "zh": "神秘主义东正教神学，反对拉丁联合", "en": "Mystical Orthodox theology, opposition to Latin Union" },
-          "headquarters": { "zh": "阿索斯山", "en": "Mount Athos" },
+          "leader": {
+            "zh": "阿索斯山修士团体",
+            "en": "Mount Athos Monastic Communities"
+          },
+          "leaderTitle": {
+            "zh": "修道院长老",
+            "en": "Monastic Elders"
+          },
+          "ideology": {
+            "zh": "神秘主义东正教神学，反对拉丁联合",
+            "en": "Mystical Orthodox theology, opposition to Latin Union"
+          },
+          "headquarters": {
+            "zh": "阿索斯山",
+            "en": "Mount Athos"
+          },
           "status": "allied",
-          "relationship": { "zh": "静修派代表了拜占庭东正教中最虔诚和保守的力量。他们坚决反对米海尔八世的里昂教会联合政策，认为与罗马的妥协是对正统信仰的背叛。静修派虽非政治组织，但通过其深厚的民间影响力和修道院网络，对帝国宗教政策产生了重要制衡作用。", "en": "The Hesychasts represented the most devout and conservative force within Byzantine Orthodoxy. They firmly opposed Michael VIII's Union of Lyon policy, viewing any compromise with Rome as a betrayal of the true faith. Though not a political organization, the Hesychasts exerted significant counterbalancing influence on imperial religious policy through their deep popular appeal and monastic networks." },
-          "description": { "zh": "静修主义（Hesychasm）是东正教神秘主义传统中的核心修行方式，强调通过内在祈祷、静默冥想和心灵净化来直接体验神圣之光。虽然格里高利·帕拉马斯——静修主义最伟大的神学家——要到14世纪中叶才系统阐述其教义，但1280年代的阿索斯山修道院群已经是这一传统的重要中心。静修派修士反对米海尔八世为对抗安茹威胁而推行的里昂联合（1274），视其为对东正教信仰完整性的严重威胁。他们在民众中享有崇高的精神权威，修道院也是抵制拉丁化的文化堡垒。当安德洛尼卡二世继位后废除里昂联合时，很大程度上是回应了以静修派为代表的东正教民意。这一运动后来深刻塑造了拜占庭晚期的精神文化面貌。", "en": "Hesychasm was a central spiritual practice within the Orthodox mystical tradition, emphasizing direct experience of divine light through inner prayer, silent contemplation, and purification of the heart. Although Gregory Palamas—Hesychasm's greatest theologian—would not systematically articulate its doctrines until the mid-14th century, the monastic communities on Mount Athos were already a vital center of this tradition in the 1280s. Hesychast monks opposed Michael VIII's Union of Lyon (1274), adopted to counter the Angevin threat, viewing it as a grave threat to Orthodox doctrinal integrity. They commanded deep spiritual authority among the populace, and the monasteries served as cultural bastions against Latinization. When Andronikos II later repudiated the Union upon succeeding his father, he was largely responding to Orthodox popular sentiment led by the Hesychasts. This movement would profoundly shape the spiritual and cultural landscape of late Byzantium." },
+          "relationship": {
+            "zh": "静修派代表了拜占庭东正教中最虔诚和保守的力量。他们坚决反对米海尔八世的里昂教会联合政策，认为与罗马的妥协是对正统信仰的背叛。静修派虽非政治组织，但通过其深厚的民间影响力和修道院网络，对帝国宗教政策产生了重要制衡作用。",
+            "en": "The Hesychasts represented the most devout and conservative force within Byzantine Orthodoxy. They firmly opposed Michael VIII's Union of Lyon policy, viewing any compromise with Rome as a betrayal of the true faith. Though not a political organization, the Hesychasts exerted significant counterbalancing influence on imperial religious policy through their deep popular appeal and monastic networks."
+          },
+          "description": {
+            "zh": "静修主义（Hesychasm）是东正教神秘主义传统中的核心修行方式，强调通过内在祈祷、静默冥想和心灵净化来直接体验神圣之光。虽然格里高利·帕拉马斯——静修主义最伟大的神学家——要到14世纪中叶才系统阐述其教义，但1280年代的阿索斯山修道院群已经是这一传统的重要中心。静修派修士反对米海尔八世为对抗安茹威胁而推行的里昂联合（1274），视其为对东正教信仰完整性的严重威胁。他们在民众中享有崇高的精神权威，修道院也是抵制拉丁化的文化堡垒。当安德洛尼卡二世继位后废除里昂联合时，很大程度上是回应了以静修派为代表的东正教民意。这一运动后来深刻塑造了拜占庭晚期的精神文化面貌。",
+            "en": "Hesychasm was a central spiritual practice within the Orthodox mystical tradition, emphasizing direct experience of divine light through inner prayer, silent contemplation, and purification of the heart. Although Gregory Palamas—Hesychasm's greatest theologian—would not systematically articulate its doctrines until the mid-14th century, the monastic communities on Mount Athos were already a vital center of this tradition in the 1280s. Hesychast monks opposed Michael VIII's Union of Lyon (1274), adopted to counter the Angevin threat, viewing it as a grave threat to Orthodox doctrinal integrity. They commanded deep spiritual authority among the populace, and the monasteries served as cultural bastions against Latinization. When Andronikos II later repudiated the Union upon succeeding his father, he was largely responding to Orthodox popular sentiment led by the Hesychasts. This movement would profoundly shape the spiritual and cultural landscape of late Byzantium."
+          },
           "keyFigures": [
-            { "name": { "zh": "阿索斯山修道院长老", "en": "Elders of Mount Athos" }, "title": { "zh": "修道院长", "en": "Abbots" }, "role": { "zh": "东正教修道传统的守护者，反拉丁联合运动的精神领袖", "en": "Guardians of the Orthodox monastic tradition, spiritual leaders of the anti-Latin Union movement" } },
-            { "name": { "zh": "君士坦丁堡牧首约翰十一世", "en": "Patriarch John XI Bekkos" }, "title": { "zh": "君士坦丁堡牧首", "en": "Patriarch of Constantinople" }, "role": { "zh": "支持里昂联合的牧首，被静修派视为对手", "en": "Patriarch who supported the Union of Lyon, viewed as an adversary by the Hesychasts" } }
+            {
+              "name": {
+                "zh": "阿索斯山修道院长老",
+                "en": "Elders of Mount Athos"
+              },
+              "title": {
+                "zh": "修道院长",
+                "en": "Abbots"
+              },
+              "role": {
+                "zh": "东正教修道传统的守护者，反拉丁联合运动的精神领袖",
+                "en": "Guardians of the Orthodox monastic tradition, spiritual leaders of the anti-Latin Union movement"
+              }
+            },
+            {
+              "name": {
+                "zh": "君士坦丁堡牧首约翰十一世",
+                "en": "Patriarch John XI Bekkos"
+              },
+              "title": {
+                "zh": "君士坦丁堡牧首",
+                "en": "Patriarch of Constantinople"
+              },
+              "role": {
+                "zh": "支持里昂联合的牧首，被静修派视为对手",
+                "en": "Patriarch who supported the Union of Lyon, viewed as an adversary by the Hesychasts"
+              }
+            }
           ]
         }
       ]
@@ -4832,50 +5255,191 @@
       "factions": [
         {
           "id": "habsburg_faction",
-          "name": { "zh": "哈布斯堡崛起势力", "en": "Habsburg Rising Power" },
+          "name": {
+            "zh": "哈布斯堡崛起势力",
+            "en": "Habsburg Rising Power"
+          },
           "type": "other",
-          "leader": { "zh": "鲁道夫一世", "en": "Rudolf I of Habsburg" },
-          "leaderTitle": { "zh": "罗马人的国王", "en": "King of the Romans" },
-          "ideology": { "zh": "王朝扩张与王室领地整合", "en": "Dynastic expansion and consolidation of crown lands" },
-          "headquarters": { "zh": "维也纳", "en": "Vienna" },
+          "leader": {
+            "zh": "鲁道夫一世",
+            "en": "Rudolf I of Habsburg"
+          },
+          "leaderTitle": {
+            "zh": "罗马人的国王",
+            "en": "King of the Romans"
+          },
+          "ideology": {
+            "zh": "王朝扩张与王室领地整合",
+            "en": "Dynastic expansion and consolidation of crown lands"
+          },
+          "headquarters": {
+            "zh": "维也纳",
+            "en": "Vienna"
+          },
           "status": "ruling",
-          "relationship": { "zh": "哈布斯堡家族通过1273年选举获得王位，鲁道夫一世致力于将奥地利、施蒂里亚等公国纳入家族世袭领地，奠定哈布斯堡数百年霸业的基础。作为帝国名义最高统治者，鲁道夫需在诸侯间维持微妙平衡。", "en": "The Habsburgs gained the throne through the 1273 election. Rudolf I worked to consolidate Austria, Styria, and other duchies as hereditary family domains, laying the foundation for centuries of Habsburg dominance. As nominal head of the empire, Rudolf had to maintain a delicate balance among the princes." },
-          "description": { "zh": "鲁道夫一世是哈布斯堡家族第一位成为德意志国王的成员，1273年由选侯推举上位，结束了大空位时代的混乱。他于1278年在马希菲尔德战役中击败波希米亚国王奥托卡二世，夺取奥地利和施蒂里亚公国，将其转化为哈布斯堡家族的世袭领地。鲁道夫虽未能获得教皇加冕为皇帝，但通过务实的领土扩张政策，成功将哈布斯堡从瑞士小贵族提升为帝国最重要的王朝之一。他的统治标志着帝国从大空位时期的无序向有限秩序恢复的转折。", "en": "Rudolf I was the first Habsburg to become German King, elected in 1273 to end the chaos of the Great Interregnum. His decisive victory over Ottokar II of Bohemia at the Battle on the Marchfeld in 1278 secured Austria and Styria as hereditary Habsburg lands. Though he never received papal coronation as Emperor, Rudolf's pragmatic territorial policies transformed the Habsburgs from minor Swiss nobles into one of the empire's most important dynasties. His reign marked the transition from the disorder of the Interregnum toward a limited restoration of imperial order." },
+          "relationship": {
+            "zh": "哈布斯堡家族通过1273年选举获得王位，鲁道夫一世致力于将奥地利、施蒂里亚等公国纳入家族世袭领地，奠定哈布斯堡数百年霸业的基础。作为帝国名义最高统治者，鲁道夫需在诸侯间维持微妙平衡。",
+            "en": "The Habsburgs gained the throne through the 1273 election. Rudolf I worked to consolidate Austria, Styria, and other duchies as hereditary family domains, laying the foundation for centuries of Habsburg dominance. As nominal head of the empire, Rudolf had to maintain a delicate balance among the princes."
+          },
+          "description": {
+            "zh": "鲁道夫一世是哈布斯堡家族第一位成为德意志国王的成员，1273年由选侯推举上位，结束了大空位时代的混乱。他于1278年在马希菲尔德战役中击败波希米亚国王奥托卡二世，夺取奥地利和施蒂里亚公国，将其转化为哈布斯堡家族的世袭领地。鲁道夫虽未能获得教皇加冕为皇帝，但通过务实的领土扩张政策，成功将哈布斯堡从瑞士小贵族提升为帝国最重要的王朝之一。他的统治标志着帝国从大空位时期的无序向有限秩序恢复的转折。",
+            "en": "Rudolf I was the first Habsburg to become German King, elected in 1273 to end the chaos of the Great Interregnum. His decisive victory over Ottokar II of Bohemia at the Battle on the Marchfeld in 1278 secured Austria and Styria as hereditary Habsburg lands. Though he never received papal coronation as Emperor, Rudolf's pragmatic territorial policies transformed the Habsburgs from minor Swiss nobles into one of the empire's most important dynasties. His reign marked the transition from the disorder of the Interregnum toward a limited restoration of imperial order."
+          },
           "keyFigures": [
-            { "name": { "zh": "鲁道夫一世", "en": "Rudolf I" }, "title": { "zh": "罗马人的国王", "en": "King of the Romans" }, "role": { "zh": "哈布斯堡家族首位德意志国王，奠定家族霸业基础", "en": "First Habsburg German King, laid the foundation of the dynasty's power" } },
-            { "name": { "zh": "阿尔布雷希特一世", "en": "Albert I" }, "title": { "zh": "奥地利公爵", "en": "Duke of Austria" }, "role": { "zh": "鲁道夫之子，继承奥地利领地并日后继位为国王", "en": "Rudolf's son, inherited Austrian lands and later became King" } }
+            {
+              "name": {
+                "zh": "鲁道夫一世",
+                "en": "Rudolf I"
+              },
+              "title": {
+                "zh": "罗马人的国王",
+                "en": "King of the Romans"
+              },
+              "role": {
+                "zh": "哈布斯堡家族首位德意志国王，奠定家族霸业基础",
+                "en": "First Habsburg German King, laid the foundation of the dynasty's power"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿尔布雷希特一世",
+                "en": "Albert I"
+              },
+              "title": {
+                "zh": "奥地利公爵",
+                "en": "Duke of Austria"
+              },
+              "role": {
+                "zh": "鲁道夫之子，继承奥地利领地并日后继位为国王",
+                "en": "Rudolf's son, inherited Austrian lands and later became King"
+              }
+            }
           ]
         },
         {
           "id": "prince_electors",
-          "name": { "zh": "选侯诸侯集团", "en": "Prince-Electors" },
+          "name": {
+            "zh": "选侯诸侯集团",
+            "en": "Prince-Electors"
+          },
           "type": "other",
-          "leader": { "zh": "美因茨大主教", "en": "Archbishop of Mainz" },
-          "leaderTitle": { "zh": "帝国大书记官·选帝侯", "en": "Archchancellor and Elector" },
-          "ideology": { "zh": "诸侯自治与选举君主制", "en": "Princely autonomy and elective monarchy" },
-          "headquarters": { "zh": "美因茨", "en": "Mainz" },
+          "leader": {
+            "zh": "美因茨大主教",
+            "en": "Archbishop of Mainz"
+          },
+          "leaderTitle": {
+            "zh": "帝国大书记官·选帝侯",
+            "en": "Archchancellor and Elector"
+          },
+          "ideology": {
+            "zh": "诸侯自治与选举君主制",
+            "en": "Princely autonomy and elective monarchy"
+          },
+          "headquarters": {
+            "zh": "美因茨",
+            "en": "Mainz"
+          },
           "status": "rival",
-          "relationship": { "zh": "选侯集团是帝国政治的核心权力掣肘，他们通过选举国王的特权确保王权不会过度集中。选侯们对鲁道夫一世扩大哈布斯堡领地的野心心存警惕，经常利用选举权和帝国议会来限制皇权。", "en": "The Prince-Electors were the central check on imperial power, using their exclusive right to elect the king to prevent excessive centralization. They watched Rudolf I's Habsburg territorial ambitions warily and frequently leveraged electoral politics and the Imperial Diet to constrain royal authority." },
-          "description": { "zh": "选帝侯制度是神圣罗马帝国最独特的政治机制之一。七大选侯——三位教会选侯（美因茨、科隆、特里尔大主教）和四位世俗选侯（波希米亚国王、莱茵-普法尔茨伯爵、萨克森公爵、勃兰登堡边疆伯爵）——掌握着选举德意志国王的专属权力。大空位时代（1254-1273）的经验使诸侯们更加坚定地维护自治权，他们有意选择相对弱小的鲁道夫正是为了防止出现另一个强势的施陶芬式皇帝。选侯们各自拥有独立的领地、军队、铸币权和司法权，构成了帝国去中心化治理的基石。", "en": "The electoral college was one of the Holy Roman Empire's most distinctive political institutions. The seven Electors—three ecclesiastical (the Archbishops of Mainz, Cologne, and Trier) and four secular (the King of Bohemia, Count Palatine of the Rhine, Duke of Saxony, and Margrave of Brandenburg)—held the exclusive power to choose the German King. The experience of the Great Interregnum (1254–1273) reinforced the princes' determination to defend their autonomy; they deliberately chose the relatively weak Rudolf precisely to prevent another powerful Hohenstaufen-style emperor. Each Elector maintained independent territories, armies, minting rights, and judicial authority, forming the cornerstone of the empire's decentralized governance." },
+          "relationship": {
+            "zh": "选侯集团是帝国政治的核心权力掣肘，他们通过选举国王的特权确保王权不会过度集中。选侯们对鲁道夫一世扩大哈布斯堡领地的野心心存警惕，经常利用选举权和帝国议会来限制皇权。",
+            "en": "The Prince-Electors were the central check on imperial power, using their exclusive right to elect the king to prevent excessive centralization. They watched Rudolf I's Habsburg territorial ambitions warily and frequently leveraged electoral politics and the Imperial Diet to constrain royal authority."
+          },
+          "description": {
+            "zh": "选帝侯制度是神圣罗马帝国最独特的政治机制之一。七大选侯——三位教会选侯（美因茨、科隆、特里尔大主教）和四位世俗选侯（波希米亚国王、莱茵-普法尔茨伯爵、萨克森公爵、勃兰登堡边疆伯爵）——掌握着选举德意志国王的专属权力。大空位时代（1254-1273）的经验使诸侯们更加坚定地维护自治权，他们有意选择相对弱小的鲁道夫正是为了防止出现另一个强势的施陶芬式皇帝。选侯们各自拥有独立的领地、军队、铸币权和司法权，构成了帝国去中心化治理的基石。",
+            "en": "The electoral college was one of the Holy Roman Empire's most distinctive political institutions. The seven Electors—three ecclesiastical (the Archbishops of Mainz, Cologne, and Trier) and four secular (the King of Bohemia, Count Palatine of the Rhine, Duke of Saxony, and Margrave of Brandenburg)—held the exclusive power to choose the German King. The experience of the Great Interregnum (1254–1273) reinforced the princes' determination to defend their autonomy; they deliberately chose the relatively weak Rudolf precisely to prevent another powerful Hohenstaufen-style emperor. Each Elector maintained independent territories, armies, minting rights, and judicial authority, forming the cornerstone of the empire's decentralized governance."
+          },
           "keyFigures": [
-            { "name": { "zh": "维尔纳·冯·埃普施泰因", "en": "Werner von Eppstein" }, "title": { "zh": "美因茨大主教", "en": "Archbishop of Mainz" }, "role": { "zh": "帝国首席选侯，主持国王选举", "en": "Leading Elector, presided over royal elections" } },
-            { "name": { "zh": "齐格弗里德·冯·韦斯特堡", "en": "Siegfried von Westerburg" }, "title": { "zh": "科隆大主教", "en": "Archbishop of Cologne" }, "role": { "zh": "教会选侯之一，维护莱茵兰教会势力", "en": "One of the ecclesiastical Electors, defended Rhenish Church interests" } }
+            {
+              "name": {
+                "zh": "维尔纳·冯·埃普施泰因",
+                "en": "Werner von Eppstein"
+              },
+              "title": {
+                "zh": "美因茨大主教",
+                "en": "Archbishop of Mainz"
+              },
+              "role": {
+                "zh": "帝国首席选侯，主持国王选举",
+                "en": "Leading Elector, presided over royal elections"
+              }
+            },
+            {
+              "name": {
+                "zh": "齐格弗里德·冯·韦斯特堡",
+                "en": "Siegfried von Westerburg"
+              },
+              "title": {
+                "zh": "科隆大主教",
+                "en": "Archbishop of Cologne"
+              },
+              "role": {
+                "zh": "教会选侯之一，维护莱茵兰教会势力",
+                "en": "One of the ecclesiastical Electors, defended Rhenish Church interests"
+              }
+            }
           ]
         },
         {
           "id": "papal_party",
-          "name": { "zh": "教皇派", "en": "Papal Party" },
+          "name": {
+            "zh": "教皇派",
+            "en": "Papal Party"
+          },
           "type": "religious",
-          "leader": { "zh": "教皇尼古拉三世", "en": "Pope Nicholas III" },
-          "leaderTitle": { "zh": "罗马教皇", "en": "Pope" },
-          "ideology": { "zh": "教皇至上权与教会对世俗权力的监督", "en": "Papal supremacy and ecclesiastical oversight of secular power" },
-          "headquarters": { "zh": "罗马", "en": "Rome" },
+          "leader": {
+            "zh": "教皇尼古拉三世",
+            "en": "Pope Nicholas III"
+          },
+          "leaderTitle": {
+            "zh": "罗马教皇",
+            "en": "Pope"
+          },
+          "ideology": {
+            "zh": "教皇至上权与教会对世俗权力的监督",
+            "en": "Papal supremacy and ecclesiastical oversight of secular power"
+          },
+          "headquarters": {
+            "zh": "罗马",
+            "en": "Rome"
+          },
           "status": "opposition",
-          "relationship": { "zh": "教皇派延续了叙任权之争以来教会对帝国皇权的制衡传统。教皇拒绝为鲁道夫一世加冕为皇帝，同时在意大利事务上积极扩张教廷世俗权力，与帝国在意大利北部的名义管辖权形成持续张力。", "en": "The Papal party continued the tradition of ecclesiastical checks on imperial power dating back to the Investiture Controversy. The Pope refused to crown Rudolf I as Emperor while actively expanding papal temporal power in Italian affairs, creating ongoing tension with the empire's nominal jurisdiction over northern Italy." },
-          "description": { "zh": "教皇派代表了中世纪欧洲最根本的政治张力之一——教权与皇权的对立。自格里高利七世与亨利四世的叙任权之争以来，教皇始终坚持对皇帝的道德和政治监督权。1280年在位的尼古拉三世出身罗马奥尔西尼家族，是一位精明的政治家，他利用帝国皇权的虚弱来扩大教廷在意大利的世俗领地和政治影响力。教皇派在帝国内部的支持者主要集中在教会诸侯和意大利归尔甫派城市中，他们主张教皇对皇帝拥有最终的精神权威，并反对任何试图恢复霍亨施陶芬时代强势皇权的企图。", "en": "The Papal party represented one of medieval Europe's most fundamental political tensions—the rivalry between papal and imperial authority. Since the Investiture Controversy between Gregory VII and Henry IV, popes consistently asserted moral and political oversight of emperors. Nicholas III, pope in 1280 and a member of the Roman Orsini family, was a shrewd politician who exploited imperial weakness to expand papal temporal domains and political influence in Italy. Papal supporters within the empire were concentrated among ecclesiastical princes and Italian Guelph cities, asserting the pope's ultimate spiritual authority over the emperor and opposing any attempt to restore the strong imperial power of the Hohenstaufen era." },
+          "relationship": {
+            "zh": "教皇派延续了叙任权之争以来教会对帝国皇权的制衡传统。教皇拒绝为鲁道夫一世加冕为皇帝，同时在意大利事务上积极扩张教廷世俗权力，与帝国在意大利北部的名义管辖权形成持续张力。",
+            "en": "The Papal party continued the tradition of ecclesiastical checks on imperial power dating back to the Investiture Controversy. The Pope refused to crown Rudolf I as Emperor while actively expanding papal temporal power in Italian affairs, creating ongoing tension with the empire's nominal jurisdiction over northern Italy."
+          },
+          "description": {
+            "zh": "教皇派代表了中世纪欧洲最根本的政治张力之一——教权与皇权的对立。自格里高利七世与亨利四世的叙任权之争以来，教皇始终坚持对皇帝的道德和政治监督权。1280年在位的尼古拉三世出身罗马奥尔西尼家族，是一位精明的政治家，他利用帝国皇权的虚弱来扩大教廷在意大利的世俗领地和政治影响力。教皇派在帝国内部的支持者主要集中在教会诸侯和意大利归尔甫派城市中，他们主张教皇对皇帝拥有最终的精神权威，并反对任何试图恢复霍亨施陶芬时代强势皇权的企图。",
+            "en": "The Papal party represented one of medieval Europe's most fundamental political tensions—the rivalry between papal and imperial authority. Since the Investiture Controversy between Gregory VII and Henry IV, popes consistently asserted moral and political oversight of emperors. Nicholas III, pope in 1280 and a member of the Roman Orsini family, was a shrewd politician who exploited imperial weakness to expand papal temporal domains and political influence in Italy. Papal supporters within the empire were concentrated among ecclesiastical princes and Italian Guelph cities, asserting the pope's ultimate spiritual authority over the emperor and opposing any attempt to restore the strong imperial power of the Hohenstaufen era."
+          },
           "keyFigures": [
-            { "name": { "zh": "尼古拉三世", "en": "Nicholas III" }, "title": { "zh": "罗马教皇", "en": "Pope" }, "role": { "zh": "积极扩张教廷世俗权力，抵制皇权干预意大利事务", "en": "Actively expanded papal temporal power, resisted imperial interference in Italian affairs" } },
-            { "name": { "zh": "马丁四世", "en": "Martin IV" }, "title": { "zh": "枢机主教（后任教皇）", "en": "Cardinal (later Pope)" }, "role": { "zh": "法国出身的高级教士，代表亲安茹教廷势力", "en": "French-born senior cleric, representing the pro-Angevin papal faction" } }
+            {
+              "name": {
+                "zh": "尼古拉三世",
+                "en": "Nicholas III"
+              },
+              "title": {
+                "zh": "罗马教皇",
+                "en": "Pope"
+              },
+              "role": {
+                "zh": "积极扩张教廷世俗权力，抵制皇权干预意大利事务",
+                "en": "Actively expanded papal temporal power, resisted imperial interference in Italian affairs"
+              }
+            },
+            {
+              "name": {
+                "zh": "马丁四世",
+                "en": "Martin IV"
+              },
+              "title": {
+                "zh": "枢机主教（后任教皇）",
+                "en": "Cardinal (later Pope)"
+              },
+              "role": {
+                "zh": "法国出身的高级教士，代表亲安茹教廷势力",
+                "en": "French-born senior cleric, representing the pro-Angevin papal faction"
+              }
+            }
           ]
         }
       ]
@@ -8065,7 +8629,7 @@
             "zh": "银克/人",
             "en": "grams of silver per person"
           },
-          "goldKg": 0.000012,
+          "goldKg": 1.2e-05,
           "silverKg": 0.012
         },
         "gdpDescription": {
@@ -48363,6 +48927,16 @@
         "keyInnovations": {
           "zh": "阿森纳造船厂的流水线造船、穆拉诺玻璃工艺、先进航海术、银行和保险制度、公共债券制度。",
           "en": "Arsenal assembly-line shipbuilding, Murano glassmaking, advanced navigation, banking and insurance systems, public bond system."
+        },
+        "sectors": {
+          "navalAndTrade": {
+            "zh": "海运与贸易技术地中海领先：威尼斯兵工厂已成为地中海最大的造船设施。威尼斯商船队连接东西方贸易，马可·波罗正从中国归来（1295年回到威尼斯）。威尼斯玻璃制造（穆拉诺岛）和造船技术在地中海独占鳌头。",
+            "en": "Mediterranean-leading maritime and trade technology: the Venice Arsenal is the Mediterranean's largest shipbuilding facility. Venetian merchant fleets connect East-West trade; Marco Polo is returning from China (arriving Venice 1295). Venetian glassmaking (Murano) and shipbuilding technology lead the Mediterranean."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1280年的威尼斯是地中海贸易和造船技术的中心。兵工厂的标准化生产管理远超同时代任何欧洲国家。威尼斯的商业网络延伸至蒙古帝国和中国（马可·波罗）。但欧洲整体技术水平在此时仍远落后于中国和伊斯兰世界。",
+          "en": "Venice in 1280 is the center of Mediterranean trade and shipbuilding technology. The Arsenal's standardized production management far surpasses any contemporary European country. Venice's commercial network extends to the Mongol Empire and China (Marco Polo). But overall European technology still lags far behind China and the Islamic world."
         }
       },
       "assessment": {

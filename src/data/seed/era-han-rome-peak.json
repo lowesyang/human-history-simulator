@@ -3217,7 +3217,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "铁器时代晚期的古典帝国高峰",
           "en": "Late Iron Age classical imperial high point"
@@ -3225,6 +3225,24 @@
         "keyInnovations": {
           "zh": "成熟的铸铁与锻铁技术、强弩体系、纸的早期应用、精细漆器和丝织、标准化度量衡、道路驿传网络、天文仪器与改进的水利农业技术构成东汉技术优势",
           "en": "Advanced cast and wrought iron technology, sophisticated crossbow systems, early use of paper, fine lacquer and silk production, standardized weights and measures, road and courier networks, astronomical instruments, and improved hydraulic and agricultural methods formed key Eastern Han technological strengths"
+        },
+        "sectors": {
+          "metallurgyAndAgriculture": {
+            "zh": "冶铁与农业技术全球最先进：东汉的冶铁技术远超同期任何文明——高炉炼铁和炒钢法使中国钢铁产量全球最大。铁制农具（铁犁、铁锄）普及率远高于罗马。水排（水力鼓风机）用于冶铁，是人类最早利用水力进行工业生产的实例之一。",
+            "en": "World's most advanced metallurgy and agriculture: Eastern Han iron technology far surpasses any contemporary civilization — blast furnace smelting and puddling processes make China the world's largest steel producer. Iron agricultural tools (plows, hoes) are far more prevalent than in Rome. The water-powered bellows (shui pai) for iron smelting is among humanity's earliest uses of water power for industrial production."
+          },
+          "printingAndPaper": {
+            "zh": "造纸术正在革命性发展：蔡伦（约105年）改进造纸术，使纸张成为廉价、高效的书写材料。这一发明将在数百年后传播至全球，彻底改变人类知识传播方式。同时期罗马帝国仍使用昂贵的莎草纸和羊皮纸。",
+            "en": "Papermaking undergoing revolutionary development: Cai Lun (~105 CE) improves papermaking, making paper an inexpensive, efficient writing material. This invention will spread globally over the centuries, fundamentally transforming human knowledge dissemination. The contemporary Roman Empire still uses expensive papyrus and parchment."
+          },
+          "engineeringAndInfrastructure": {
+            "zh": "工程与基础设施规模宏大：东汉继承并维护了从秦始皇到汉武帝建设的道路网络、长城和灌溉系统。张衡发明了地动仪（约132年）和浑天仪，代表古代最先进的天文和地震观测技术。",
+            "en": "Grand-scale engineering and infrastructure: Eastern Han maintains road networks, the Great Wall, and irrigation systems built from Qin Shi Huang to Emperor Wu. Zhang Heng invented the seismoscope (~132 CE) and armillary sphere, representing antiquity's most advanced astronomical and seismic observation technology."
+          }
+        },
+        "overallAssessment": {
+          "zh": "公元100年的东汉在冶铁、造纸和工程技术方面是全球最先进的文明。高炉炼铁技术领先欧洲一千多年，蔡伦改进的造纸术将改变人类文明进程。张衡的地动仪和浑天仪展示了中国古代科学的精妙。东汉与罗马帝国是'双帝国时代'的科技双子星——中国在冶金和造纸方面领先，罗马在建筑工程和军事组织方面领先，两大文明通过丝绸之路间接交流技术和产品。",
+          "en": "Eastern Han in 100 CE is the world's most technologically advanced civilization in metallurgy, papermaking, and engineering. Blast furnace technology leads Europe by over a millennium; Cai Lun's improved papermaking will transform human civilization. Zhang Heng's seismoscope and armillary sphere showcase the refinement of ancient Chinese science. Eastern Han and Rome are the 'Twin Empire Era's' tech twin stars — China leads in metallurgy and papermaking, Rome in architectural engineering and military organization, with both civilizations indirectly exchanging technology and products via the Silk Road."
         }
       },
       "assessment": {
@@ -14648,7 +14666,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "古典时代高峰期",
           "en": "High Classical Era"
@@ -14656,6 +14674,20 @@
         "keyInnovations": {
           "zh": "成熟的混凝土建筑、拱券与穹顶工程、长距离引水道、标准化道路网、里程与驿站体系、复杂攻城器械、法律行政文书制度、玻璃制造和大型港口仓储系统构成其技术优势。",
           "en": "Its technological strengths included mature concrete construction, arch and dome engineering, long-distance aqueducts, a standardized road network with milestones and posting stations, sophisticated siege machines, legal-administrative documentation systems, glass production, and large-scale port and warehousing infrastructure."
+        },
+        "sectors": {
+          "architectureAndEngineering": {
+            "zh": "建筑与工程技术登峰造极：罗马帝国的建筑工程在公元100年达到巅峰——罗马斗兽场（80年竣工）可容纳5万观众，万神殿（即将于118-128年重建）的穹顶将保持世界最大混凝土穹顶纪录近两千年。水渠系统日供水量达100万立方米。罗马道路网络总长超过8万公里。",
+            "en": "Architecture and engineering at their zenith: Roman Empire construction peaks around 100 CE — the Colosseum (completed 80 CE) seats 50,000; the Pantheon (to be rebuilt 118-128) dome will hold the record as the world's largest concrete dome for nearly two millennia. Aqueduct systems deliver 1 million cubic meters of water daily. The Roman road network exceeds 80,000 km."
+          },
+          "militaryOrganization": {
+            "zh": "军事组织与工程全球最完善：罗马军团体制在图拉真时代（98-117年）达到巅峰。每支军团都是自给自足的军事-工程单位，能修建道路、桥梁、堡垒和供水系统。罗马军事工程（攻城术、防御工事、军营建设）标准化程度无与伦比。",
+            "en": "Most refined military organization and engineering globally: the Roman legion system peaks under Trajan (98-117 CE). Each legion is a self-sufficient military-engineering unit capable of building roads, bridges, forts, and water systems. Roman military engineering (siege warfare, fortifications, camp construction) is standardized to an unmatched degree."
+          }
+        },
+        "overallAssessment": {
+          "zh": "公元100年的罗马帝国在建筑工程和军事组织方面达到古代世界的最高峰。斗兽场、万神殿、水渠和道路网络展示了无与伦比的工程能力。但罗马的技术优势集中在'应用工程'而非'基础科学'——与同时期的中国相比，罗马在冶金和造纸方面明显落后。罗马工程的真正奇迹在于其规模和标准化——这是一个靠组织能力而非技术创新建立霸权的帝国。",
+          "en": "The Roman Empire in 100 CE reaches antiquity's highest peak in architectural engineering and military organization. The Colosseum, Pantheon, aqueducts, and road networks demonstrate unmatched engineering capability. But Roman tech advantage concentrates on 'applied engineering' rather than 'basic science' — compared to contemporary China, Rome clearly lags in metallurgy and papermaking. Roman engineering's true marvel lies in its scale and standardization — this is an empire built on organizational capability rather than technological innovation."
         }
       },
       "assessment": {

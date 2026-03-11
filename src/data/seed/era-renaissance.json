@@ -2966,6 +2966,24 @@
         "keyInnovations": {
           "zh": "成熟的木版印刷与书籍流通、先进的瓷器烧造技术、广泛使用的火药兵器、水利工程与大运河运输管理、精细丝织与棉纺工艺、天文历法传统、城市手工业组织以及大规模官僚文书体系构成明代技术优势",
           "en": "Key Ming strengths included mature woodblock printing and book circulation, advanced porcelain firing techniques, widespread gunpowder weaponry, hydraulic engineering and Grand Canal transport management, refined silk and cotton manufacturing, established traditions of astronomy and calendrical science, sophisticated urban craft organization, and a large-scale bureaucratic documentation system"
+        },
+        "sectors": {
+          "porcelainAndSilk": {
+            "zh": "瓷器与丝绸全球最高水平：景德镇官窑青花瓷是全球最受追捧的奢侈品。丝绸织造技术精湛，通过海上丝绸之路大量出口。中国手工业产出占全球总量的很大比例。",
+            "en": "World's highest-level porcelain and silk: Jingdezhen imperial kiln blue-and-white porcelain is the world's most sought-after luxury good. Silk weaving technology is superb, exported massively via the Maritime Silk Road. Chinese handicraft output accounts for a large share of the global total."
+          },
+          "navigationAndShipbuilding": {
+            "zh": "造船与航海技术曾领先世界：郑和宝船（1405-1433年远航）代表15世纪全球最先进的造船技术，船长约120米。但1433年后海禁政策终止了远洋探索。到1500年，明朝已主动放弃海洋技术优势。",
+            "en": "Shipbuilding and navigation once world-leading: Zheng He's treasure ships (1405-1433 voyages) represented the 15th century's most advanced shipbuilding, ~120m in length. But the 1433 sea ban ended oceanic exploration. By 1500, the Ming Dynasty has voluntarily abandoned its maritime technology advantage."
+          },
+          "printingAndPaper": {
+            "zh": "印刷与造纸技术历史最久：活字印刷（毕昇11世纪发明）和木版印刷广泛应用。但中文字符数量庞大使活字印刷效率不如拉丁字母。造纸术和火药虽源于中国，但应用创新已不如欧洲。",
+            "en": "Longest history in printing and papermaking: movable type (Bi Sheng, 11th century) and woodblock printing widely used. But the vast number of Chinese characters makes movable type less efficient than with Latin alphabets. Though papermaking and gunpowder originated in China, application innovation now lags Europe."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1500年的明朝在传统手工业（瓷器、丝绸、茶叶）和农业技术上仍是全球最先进的文明之一。但一个关键转折已经发生：郑和下西洋被终止后，中国主动放弃了海洋探索，而同时期的葡萄牙和西班牙正开启大航海时代。火药、指南针、印刷术等中国发明在欧洲被创造性地应用于军事和知识传播，中国却未能实现同等程度的技术转化。这一'大分流'的种子正在此时种下。",
+          "en": "The Ming Dynasty in 1500 is still one of the world's most advanced civilizations in traditional crafts (porcelain, silk, tea) and agriculture. But a critical turning point has occurred: after Zheng He's voyages were terminated, China voluntarily abandoned ocean exploration, just as Portugal and Spain were launching the Age of Discovery. Gunpowder, compass, and printing — Chinese inventions — are being creatively applied in Europe for military and knowledge dissemination, while China fails to achieve comparable technological conversion. The seeds of the 'Great Divergence' are being planted."
         }
       },
       "assessment": {
@@ -2990,51 +3008,205 @@
       "factions": [
         {
           "id": "imperial_eunuch_faction",
-          "name": { "zh": "宫廷宦官集团", "en": "Imperial Eunuch Faction" },
+          "name": {
+            "zh": "宫廷宦官集团",
+            "en": "Imperial Eunuch Faction"
+          },
           "type": "other",
-          "leader": { "zh": "司礼监太监", "en": "Director of Ceremonies" },
-          "leaderTitle": { "zh": "司礼监掌印太监", "en": "Chief Eunuch of the Directorate of Ceremonies" },
-          "ideology": { "zh": "皇权代理、特务政治与内廷专权", "en": "Imperial proxy power, secret police politics, and inner court dominance" },
-          "headquarters": { "zh": "北京紫禁城", "en": "Forbidden City, Beijing" },
+          "leader": {
+            "zh": "司礼监太监",
+            "en": "Director of Ceremonies"
+          },
+          "leaderTitle": {
+            "zh": "司礼监掌印太监",
+            "en": "Chief Eunuch of the Directorate of Ceremonies"
+          },
+          "ideology": {
+            "zh": "皇权代理、特务政治与内廷专权",
+            "en": "Imperial proxy power, secret police politics, and inner court dominance"
+          },
+          "headquarters": {
+            "zh": "北京紫禁城",
+            "en": "Forbidden City, Beijing"
+          },
           "status": "ruling",
-          "relationship": { "zh": "宦官集团是明朝中后期皇权运作的核心代理人。由于皇帝深居宫禁，宦官成为天子与外廷之间的关键中介。他们掌控司礼监（批红权）、东厂和锦衣卫等特务机构，对朝政拥有巨大影响力。弘治帝（孝宗）虽试图限制宦官权力，但制度性的宦官干政机制已根深蒂固。", "en": "The eunuch faction served as the core proxy agents of imperial power in the mid-to-late Ming. As emperors were secluded deep within the palace, eunuchs became crucial intermediaries between the Son of Heaven and the outer court. They controlled the Directorate of Ceremonies (with the power to countersign memorials), the Eastern Depot (Dongchang), and the Embroidered Uniform Guard (Jinyiwei) secret police, wielding enormous influence over governance. Though the Hongzhi Emperor (Xiaozong) tried to limit eunuch power, the institutional mechanisms of eunuch interference were deeply entrenched." },
-          "description": { "zh": "明朝宦官干政是中国古代政治史上最突出的现象之一。自永乐帝设立东厂以来，宦官逐渐从宫廷服务人员发展为掌握实际政治权力的集团。司礼监太监拥有'批红'权——即代替皇帝在内阁票拟上批示的权力，这使他们在制度上获得了与内阁分庭抗礼的地位。东厂和锦衣卫是明朝的两大特务机构，分别由宦官和武官掌管，负责监视官员、侦缉异见。王振（正统朝）、汪直（成化朝）、刘瑾（正德朝）等权宦先后专权乱政。弘治帝（在位1487-1505）是明朝难得的贤君，他大幅裁减宦官参政的范围，信任内阁大臣，致力于恢复文官主导的正常政治秩序。然而他的改革未能从制度上根除宦官干政的根源——只要皇帝深居内廷的格局不变，宦官作为皇帝与外廷之间的桥梁角色就不可能被完全取代。弘治帝死后不久，其子正德帝即重新重用宦官刘瑾，证明了这一制度弊病的顽固性。", "en": "Ming eunuch interference in politics was one of the most prominent phenomena in Chinese political history. Since the Yongle Emperor established the Eastern Depot, eunuchs gradually evolved from palace servants into a group wielding real political power. The Chief Eunuch of the Directorate of Ceremonies held the 'vermillion brush' power—countersigning memorials on behalf of the emperor—giving them institutional parity with the Grand Secretariat. The Eastern Depot and Embroidered Uniform Guard were the Ming's two major secret police agencies, run by eunuchs and military officers respectively, tasked with surveillance of officials and suppression of dissent. Power-wielding eunuchs like Wang Zhen (Zhengtong reign), Wang Zhi (Chenghua reign), and Liu Jin (Zhengde reign) successively dominated and corrupted governance. The Hongzhi Emperor (r. 1487–1505) was a rare wise ruler of the Ming who significantly curtailed eunuch political participation, trusted Grand Secretariat ministers, and worked to restore normal civilian-led governance. Yet his reforms could not institutionally eradicate the root cause of eunuch interference—as long as emperors remained secluded in the inner palace, the eunuch role as bridge between emperor and outer court could never be fully eliminated. Shortly after Hongzhi's death, his son the Zhengde Emperor re-empowered the eunuch Liu Jin, proving the stubbornness of this institutional defect." },
+          "relationship": {
+            "zh": "宦官集团是明朝中后期皇权运作的核心代理人。由于皇帝深居宫禁，宦官成为天子与外廷之间的关键中介。他们掌控司礼监（批红权）、东厂和锦衣卫等特务机构，对朝政拥有巨大影响力。弘治帝（孝宗）虽试图限制宦官权力，但制度性的宦官干政机制已根深蒂固。",
+            "en": "The eunuch faction served as the core proxy agents of imperial power in the mid-to-late Ming. As emperors were secluded deep within the palace, eunuchs became crucial intermediaries between the Son of Heaven and the outer court. They controlled the Directorate of Ceremonies (with the power to countersign memorials), the Eastern Depot (Dongchang), and the Embroidered Uniform Guard (Jinyiwei) secret police, wielding enormous influence over governance. Though the Hongzhi Emperor (Xiaozong) tried to limit eunuch power, the institutional mechanisms of eunuch interference were deeply entrenched."
+          },
+          "description": {
+            "zh": "明朝宦官干政是中国古代政治史上最突出的现象之一。自永乐帝设立东厂以来，宦官逐渐从宫廷服务人员发展为掌握实际政治权力的集团。司礼监太监拥有'批红'权——即代替皇帝在内阁票拟上批示的权力，这使他们在制度上获得了与内阁分庭抗礼的地位。东厂和锦衣卫是明朝的两大特务机构，分别由宦官和武官掌管，负责监视官员、侦缉异见。王振（正统朝）、汪直（成化朝）、刘瑾（正德朝）等权宦先后专权乱政。弘治帝（在位1487-1505）是明朝难得的贤君，他大幅裁减宦官参政的范围，信任内阁大臣，致力于恢复文官主导的正常政治秩序。然而他的改革未能从制度上根除宦官干政的根源——只要皇帝深居内廷的格局不变，宦官作为皇帝与外廷之间的桥梁角色就不可能被完全取代。弘治帝死后不久，其子正德帝即重新重用宦官刘瑾，证明了这一制度弊病的顽固性。",
+            "en": "Ming eunuch interference in politics was one of the most prominent phenomena in Chinese political history. Since the Yongle Emperor established the Eastern Depot, eunuchs gradually evolved from palace servants into a group wielding real political power. The Chief Eunuch of the Directorate of Ceremonies held the 'vermillion brush' power—countersigning memorials on behalf of the emperor—giving them institutional parity with the Grand Secretariat. The Eastern Depot and Embroidered Uniform Guard were the Ming's two major secret police agencies, run by eunuchs and military officers respectively, tasked with surveillance of officials and suppression of dissent. Power-wielding eunuchs like Wang Zhen (Zhengtong reign), Wang Zhi (Chenghua reign), and Liu Jin (Zhengde reign) successively dominated and corrupted governance. The Hongzhi Emperor (r. 1487–1505) was a rare wise ruler of the Ming who significantly curtailed eunuch political participation, trusted Grand Secretariat ministers, and worked to restore normal civilian-led governance. Yet his reforms could not institutionally eradicate the root cause of eunuch interference—as long as emperors remained secluded in the inner palace, the eunuch role as bridge between emperor and outer court could never be fully eliminated. Shortly after Hongzhi's death, his son the Zhengde Emperor re-empowered the eunuch Liu Jin, proving the stubbornness of this institutional defect."
+          },
           "keyFigures": [
-            { "name": { "zh": "李广", "en": "Li Guang" }, "title": { "zh": "司礼监太监", "en": "Director of Ceremonies" }, "role": { "zh": "弘治朝有影响力的宦官，虽受限但仍保持一定势力", "en": "Influential eunuch of the Hongzhi reign, limited but still maintained certain power" } },
-            { "name": { "zh": "汪直", "en": "Wang Zhi" }, "title": { "zh": "西厂提督（前朝）", "en": "Director of the Western Depot (previous reign)" }, "role": { "zh": "成化朝权宦，代表宦官专权的典型案例", "en": "Powerful eunuch of the Chenghua reign, a classic case of eunuch dominance" } }
+            {
+              "name": {
+                "zh": "李广",
+                "en": "Li Guang"
+              },
+              "title": {
+                "zh": "司礼监太监",
+                "en": "Director of Ceremonies"
+              },
+              "role": {
+                "zh": "弘治朝有影响力的宦官，虽受限但仍保持一定势力",
+                "en": "Influential eunuch of the Hongzhi reign, limited but still maintained certain power"
+              }
+            },
+            {
+              "name": {
+                "zh": "汪直",
+                "en": "Wang Zhi"
+              },
+              "title": {
+                "zh": "西厂提督（前朝）",
+                "en": "Director of the Western Depot (previous reign)"
+              },
+              "role": {
+                "zh": "成化朝权宦，代表宦官专权的典型案例",
+                "en": "Powerful eunuch of the Chenghua reign, a classic case of eunuch dominance"
+              }
+            }
           ]
         },
         {
           "id": "confucian_scholar_officials",
-          "name": { "zh": "儒臣文官集团", "en": "Confucian Scholar-Official Faction" },
+          "name": {
+            "zh": "儒臣文官集团",
+            "en": "Confucian Scholar-Official Faction"
+          },
           "type": "other",
-          "leader": { "zh": "内阁大学士", "en": "Grand Secretaries" },
-          "leaderTitle": { "zh": "内阁首辅", "en": "Senior Grand Secretary" },
-          "ideology": { "zh": "儒家治国、反宦官、科举制度与文官主政", "en": "Confucian governance, anti-eunuch, civil service examination system, and civilian government" },
-          "headquarters": { "zh": "北京·内阁与六部", "en": "Grand Secretariat and Six Ministries, Beijing" },
+          "leader": {
+            "zh": "内阁大学士",
+            "en": "Grand Secretaries"
+          },
+          "leaderTitle": {
+            "zh": "内阁首辅",
+            "en": "Senior Grand Secretary"
+          },
+          "ideology": {
+            "zh": "儒家治国、反宦官、科举制度与文官主政",
+            "en": "Confucian governance, anti-eunuch, civil service examination system, and civilian government"
+          },
+          "headquarters": {
+            "zh": "北京·内阁与六部",
+            "en": "Grand Secretariat and Six Ministries, Beijing"
+          },
           "status": "rival",
-          "relationship": { "zh": "儒臣文官集团是明朝行政体系的中坚力量，也是宦官集团的天然对手。他们通过科举制度选拔产生，以内阁和六部为核心运作帝国日常行政。弘治帝对儒臣的信任使这一时期成为明朝文官政治的黄金时代，但儒臣与宦官之间的结构性对立从未真正消除。", "en": "The Confucian scholar-official faction was the backbone of Ming administration and the natural adversary of the eunuch faction. Selected through the civil service examination system, they operated imperial governance through the Grand Secretariat and Six Ministries. The Hongzhi Emperor's trust in Confucian officials made this period a golden age of Ming civilian governance, yet the structural antagonism between scholar-officials and eunuchs was never truly resolved." },
-          "description": { "zh": "明朝的儒臣文官集团通过科举考试进入仕途，构成了帝国行政的核心骨干。内阁（大学士制度）自永乐朝设立以来逐渐成为事实上的中枢决策机构，内阁首辅的权力在某些时期堪比丞相。弘治朝是明代文官政治最为健康的时期之一：内阁大学士刘健、谢迁、李东阳等人受到皇帝充分信任，得以推行务实的改革政策——整顿吏治、减轻赋税、清理冗员。六部尚书制度运转良好，都察院的言官系统也能正常发挥监察功能。然而文官集团内部并非铁板一块：理学正统派与后来的王阳明心学派之间存在深刻的哲学分歧；南北地域矛盾、科举同年关系网络、师生门户等也造成了复杂的派系格局。科举制度虽然确保了人才的制度性选拔，但八股文取士的僵化形式也日益受到批评。总体而言，弘治朝的文官政治代表了明朝制度设计的理想状态，但这种理想状态高度依赖于皇帝个人的明智与自制。", "en": "The Ming Confucian scholar-official faction entered government through the civil service examinations, forming the core of imperial administration. The Grand Secretariat (Grand Secretary system), established in the Yongle reign, gradually became the de facto central decision-making body, with the Senior Grand Secretary's power sometimes rivaling that of a prime minister. The Hongzhi reign was one of the healthiest periods for Ming civilian governance: Grand Secretaries Liu Jian, Xie Qian, and Li Dongyang enjoyed full imperial trust, enabling pragmatic reforms—rectifying bureaucratic discipline, reducing taxes, and clearing redundant officials. The Six Ministries operated well, and the Censorate's remonstrance system functioned normally. Yet the civil service was not monolithic: deep philosophical divisions existed between Neo-Confucian orthodoxy and the later Wang Yangming school of mind; north-south regional tensions, examination-year networks, and teacher-student factional ties created complex factionalism. Though the examination system ensured institutional talent selection, its rigid eight-legged essay format drew increasing criticism. Overall, Hongzhi-era civilian governance represented the ideal state of Ming institutional design, but this ideal was highly dependent on the emperor's personal wisdom and self-restraint." },
+          "relationship": {
+            "zh": "儒臣文官集团是明朝行政体系的中坚力量，也是宦官集团的天然对手。他们通过科举制度选拔产生，以内阁和六部为核心运作帝国日常行政。弘治帝对儒臣的信任使这一时期成为明朝文官政治的黄金时代，但儒臣与宦官之间的结构性对立从未真正消除。",
+            "en": "The Confucian scholar-official faction was the backbone of Ming administration and the natural adversary of the eunuch faction. Selected through the civil service examination system, they operated imperial governance through the Grand Secretariat and Six Ministries. The Hongzhi Emperor's trust in Confucian officials made this period a golden age of Ming civilian governance, yet the structural antagonism between scholar-officials and eunuchs was never truly resolved."
+          },
+          "description": {
+            "zh": "明朝的儒臣文官集团通过科举考试进入仕途，构成了帝国行政的核心骨干。内阁（大学士制度）自永乐朝设立以来逐渐成为事实上的中枢决策机构，内阁首辅的权力在某些时期堪比丞相。弘治朝是明代文官政治最为健康的时期之一：内阁大学士刘健、谢迁、李东阳等人受到皇帝充分信任，得以推行务实的改革政策——整顿吏治、减轻赋税、清理冗员。六部尚书制度运转良好，都察院的言官系统也能正常发挥监察功能。然而文官集团内部并非铁板一块：理学正统派与后来的王阳明心学派之间存在深刻的哲学分歧；南北地域矛盾、科举同年关系网络、师生门户等也造成了复杂的派系格局。科举制度虽然确保了人才的制度性选拔，但八股文取士的僵化形式也日益受到批评。总体而言，弘治朝的文官政治代表了明朝制度设计的理想状态，但这种理想状态高度依赖于皇帝个人的明智与自制。",
+            "en": "The Ming Confucian scholar-official faction entered government through the civil service examinations, forming the core of imperial administration. The Grand Secretariat (Grand Secretary system), established in the Yongle reign, gradually became the de facto central decision-making body, with the Senior Grand Secretary's power sometimes rivaling that of a prime minister. The Hongzhi reign was one of the healthiest periods for Ming civilian governance: Grand Secretaries Liu Jian, Xie Qian, and Li Dongyang enjoyed full imperial trust, enabling pragmatic reforms—rectifying bureaucratic discipline, reducing taxes, and clearing redundant officials. The Six Ministries operated well, and the Censorate's remonstrance system functioned normally. Yet the civil service was not monolithic: deep philosophical divisions existed between Neo-Confucian orthodoxy and the later Wang Yangming school of mind; north-south regional tensions, examination-year networks, and teacher-student factional ties created complex factionalism. Though the examination system ensured institutional talent selection, its rigid eight-legged essay format drew increasing criticism. Overall, Hongzhi-era civilian governance represented the ideal state of Ming institutional design, but this ideal was highly dependent on the emperor's personal wisdom and self-restraint."
+          },
           "keyFigures": [
-            { "name": { "zh": "刘健", "en": "Liu Jian" }, "title": { "zh": "内阁首辅", "en": "Senior Grand Secretary" }, "role": { "zh": "弘治朝最重要的文臣领袖，辅佐皇帝推行善政", "en": "Most important civilian leader of the Hongzhi reign, assisted the emperor in benevolent governance" } },
-            { "name": { "zh": "李东阳", "en": "Li Dongyang" }, "title": { "zh": "内阁大学士", "en": "Grand Secretary" }, "role": { "zh": "弘治至正德朝重臣，文学与政治双重领袖", "en": "Senior minister from Hongzhi to Zhengde reigns, leader in both literature and politics" } },
-            { "name": { "zh": "谢迁", "en": "Xie Qian" }, "title": { "zh": "内阁大学士", "en": "Grand Secretary" }, "role": { "zh": "弘治朝三位阁臣之一，以直谏著称", "en": "One of three Grand Secretaries in the Hongzhi reign, known for forthright counsel" } }
+            {
+              "name": {
+                "zh": "刘健",
+                "en": "Liu Jian"
+              },
+              "title": {
+                "zh": "内阁首辅",
+                "en": "Senior Grand Secretary"
+              },
+              "role": {
+                "zh": "弘治朝最重要的文臣领袖，辅佐皇帝推行善政",
+                "en": "Most important civilian leader of the Hongzhi reign, assisted the emperor in benevolent governance"
+              }
+            },
+            {
+              "name": {
+                "zh": "李东阳",
+                "en": "Li Dongyang"
+              },
+              "title": {
+                "zh": "内阁大学士",
+                "en": "Grand Secretary"
+              },
+              "role": {
+                "zh": "弘治至正德朝重臣，文学与政治双重领袖",
+                "en": "Senior minister from Hongzhi to Zhengde reigns, leader in both literature and politics"
+              }
+            },
+            {
+              "name": {
+                "zh": "谢迁",
+                "en": "Xie Qian"
+              },
+              "title": {
+                "zh": "内阁大学士",
+                "en": "Grand Secretary"
+              },
+              "role": {
+                "zh": "弘治朝三位阁臣之一，以直谏著称",
+                "en": "One of three Grand Secretaries in the Hongzhi reign, known for forthright counsel"
+              }
+            }
           ]
         },
         {
           "id": "wang_yangming_school",
-          "name": { "zh": "阳明心学", "en": "Wang Yangming School" },
+          "name": {
+            "zh": "阳明心学",
+            "en": "Wang Yangming School"
+          },
           "type": "other",
-          "leader": { "zh": "陈献章（白沙先生）", "en": "Chen Xianzhang (Master Baisha)" },
-          "leaderTitle": { "zh": "心学先驱", "en": "Pioneer of the School of Mind" },
-          "ideology": { "zh": "知行合一、致良知与挑战朱熹理学正统", "en": "Unity of knowledge and action, innate moral knowledge, challenging Zhu Xi Neo-Confucian orthodoxy" },
-          "headquarters": { "zh": "江西及南方各地书院", "en": "Academies across Jiangxi and the southern provinces" },
+          "leader": {
+            "zh": "陈献章（白沙先生）",
+            "en": "Chen Xianzhang (Master Baisha)"
+          },
+          "leaderTitle": {
+            "zh": "心学先驱",
+            "en": "Pioneer of the School of Mind"
+          },
+          "ideology": {
+            "zh": "知行合一、致良知与挑战朱熹理学正统",
+            "en": "Unity of knowledge and action, innate moral knowledge, challenging Zhu Xi Neo-Confucian orthodoxy"
+          },
+          "headquarters": {
+            "zh": "江西及南方各地书院",
+            "en": "Academies across Jiangxi and the southern provinces"
+          },
           "status": "opposition",
-          "relationship": { "zh": "心学思潮在1500年前后正处于萌发期，尚未形成完整的学派体系。陈献章等先驱学者挑战了朱熹理学的官方正统地位，主张通过内心直觉而非外在格物来追求道德真知。这一思想运动虽然在政治上处于边缘，但预示了即将到来的王阳明对儒学的革命性重构。", "en": "The School of Mind was in its germinal phase around 1500, not yet a fully formed school. Pioneer scholars like Chen Xianzhang challenged the official orthodoxy of Zhu Xi Neo-Confucianism, advocating pursuit of moral truth through inner intuition rather than external investigation of things. Though politically marginal, this intellectual movement foreshadowed Wang Yangming's coming revolutionary reconstruction of Confucianism." },
-          "description": { "zh": "1500年前后，中国儒学正经历一场深刻的思想变革。自南宋以来，朱熹的理学（'程朱理学'）一直是科举考试和官方学术的正统。朱熹强调'格物致知'——通过研究外在事物来获得知识和道德修养。然而从明代中期开始，一些学者开始质疑这种方法论的有效性。陈献章（1428-1500），广东新会白沙人，是心学运动最重要的先驱之一。他主张'学贵自得'，强调内心的自我省察和直觉体悟，而非仅仅依靠经典注疏。他的学说虽然在当时未获官方认可，甚至受到理学正统派的批评，但在南方知识界引起了广泛共鸣。王阳明（1472-1529）虽在1500年时尚为年轻官员，但他日后提出的'致良知'和'知行合一'学说正是在陈献章等人开辟的思想路径上发展而来。心学运动不仅是哲学革新，更蕴含着对僵化科举体制和官僚主义的深层批判——它呼唤一种更加自主、更加注重实践的知识观和道德观。", "en": "Around 1500, Chinese Confucianism was undergoing a profound intellectual transformation. Since the Southern Song, Zhu Xi's Neo-Confucianism ('Cheng-Zhu Learning') had been the orthodoxy for examinations and official scholarship. Zhu Xi emphasized 'investigating things to extend knowledge'—acquiring knowledge and moral cultivation through studying external phenomena. From the mid-Ming onward, however, some scholars began questioning this methodology's effectiveness. Chen Xianzhang (1428–1500) of Baisha, Xinhui, Guangdong, was one of the School of Mind's most important precursors. He advocated 'learning values self-attainment,' emphasizing inner self-reflection and intuitive understanding rather than mere reliance on classical commentaries. Though his teachings received no official endorsement and were even criticized by Neo-Confucian orthodoxy, they resonated widely among southern intellectuals. Wang Yangming (1472–1529), still a young official in 1500, would later develop his doctrines of 'extending innate moral knowledge' and 'unity of knowledge and action' precisely along the intellectual path opened by Chen Xianzhang and others. The School of Mind was not merely philosophical innovation but contained a deep critique of the rigid examination system and bureaucratism—it called for a more autonomous, more practice-oriented epistemology and moral vision." },
+          "relationship": {
+            "zh": "心学思潮在1500年前后正处于萌发期，尚未形成完整的学派体系。陈献章等先驱学者挑战了朱熹理学的官方正统地位，主张通过内心直觉而非外在格物来追求道德真知。这一思想运动虽然在政治上处于边缘，但预示了即将到来的王阳明对儒学的革命性重构。",
+            "en": "The School of Mind was in its germinal phase around 1500, not yet a fully formed school. Pioneer scholars like Chen Xianzhang challenged the official orthodoxy of Zhu Xi Neo-Confucianism, advocating pursuit of moral truth through inner intuition rather than external investigation of things. Though politically marginal, this intellectual movement foreshadowed Wang Yangming's coming revolutionary reconstruction of Confucianism."
+          },
+          "description": {
+            "zh": "1500年前后，中国儒学正经历一场深刻的思想变革。自南宋以来，朱熹的理学（'程朱理学'）一直是科举考试和官方学术的正统。朱熹强调'格物致知'——通过研究外在事物来获得知识和道德修养。然而从明代中期开始，一些学者开始质疑这种方法论的有效性。陈献章（1428-1500），广东新会白沙人，是心学运动最重要的先驱之一。他主张'学贵自得'，强调内心的自我省察和直觉体悟，而非仅仅依靠经典注疏。他的学说虽然在当时未获官方认可，甚至受到理学正统派的批评，但在南方知识界引起了广泛共鸣。王阳明（1472-1529）虽在1500年时尚为年轻官员，但他日后提出的'致良知'和'知行合一'学说正是在陈献章等人开辟的思想路径上发展而来。心学运动不仅是哲学革新，更蕴含着对僵化科举体制和官僚主义的深层批判——它呼唤一种更加自主、更加注重实践的知识观和道德观。",
+            "en": "Around 1500, Chinese Confucianism was undergoing a profound intellectual transformation. Since the Southern Song, Zhu Xi's Neo-Confucianism ('Cheng-Zhu Learning') had been the orthodoxy for examinations and official scholarship. Zhu Xi emphasized 'investigating things to extend knowledge'—acquiring knowledge and moral cultivation through studying external phenomena. From the mid-Ming onward, however, some scholars began questioning this methodology's effectiveness. Chen Xianzhang (1428–1500) of Baisha, Xinhui, Guangdong, was one of the School of Mind's most important precursors. He advocated 'learning values self-attainment,' emphasizing inner self-reflection and intuitive understanding rather than mere reliance on classical commentaries. Though his teachings received no official endorsement and were even criticized by Neo-Confucian orthodoxy, they resonated widely among southern intellectuals. Wang Yangming (1472–1529), still a young official in 1500, would later develop his doctrines of 'extending innate moral knowledge' and 'unity of knowledge and action' precisely along the intellectual path opened by Chen Xianzhang and others. The School of Mind was not merely philosophical innovation but contained a deep critique of the rigid examination system and bureaucratism—it called for a more autonomous, more practice-oriented epistemology and moral vision."
+          },
           "keyFigures": [
-            { "name": { "zh": "陈献章", "en": "Chen Xianzhang" }, "title": { "zh": "白沙先生", "en": "Master Baisha" }, "role": { "zh": "心学先驱，明代最早系统挑战朱熹理学的学者", "en": "Pioneer of the School of Mind, earliest Ming scholar to systematically challenge Zhu Xi orthodoxy" } },
-            { "name": { "zh": "王阳明", "en": "Wang Yangming" }, "title": { "zh": "年轻官员（日后为心学集大成者）", "en": "Young Official (later the culminating thinker of the School of Mind)" }, "role": { "zh": "1500年时尚为青年，日后创立'致良知'学说改变中国思想史", "en": "Still a youth in 1500, later founded the 'innate moral knowledge' doctrine that transformed Chinese intellectual history" } }
+            {
+              "name": {
+                "zh": "陈献章",
+                "en": "Chen Xianzhang"
+              },
+              "title": {
+                "zh": "白沙先生",
+                "en": "Master Baisha"
+              },
+              "role": {
+                "zh": "心学先驱，明代最早系统挑战朱熹理学的学者",
+                "en": "Pioneer of the School of Mind, earliest Ming scholar to systematically challenge Zhu Xi orthodoxy"
+              }
+            },
+            {
+              "name": {
+                "zh": "王阳明",
+                "en": "Wang Yangming"
+              },
+              "title": {
+                "zh": "年轻官员（日后为心学集大成者）",
+                "en": "Young Official (later the culminating thinker of the School of Mind)"
+              },
+              "role": {
+                "zh": "1500年时尚为青年，日后创立'致良知'学说改变中国思想史",
+                "en": "Still a youth in 1500, later founded the 'innate moral knowledge' doctrine that transformed Chinese intellectual history"
+              }
+            }
           ]
         }
       ]
@@ -15964,49 +16136,177 @@
       "factions": [
         {
           "id": "valois_monarchy",
-          "name": { "zh": "瓦卢瓦王朝", "en": "Valois Monarchy" },
+          "name": {
+            "zh": "瓦卢瓦王朝",
+            "en": "Valois Monarchy"
+          },
           "type": "other",
-          "leader": { "zh": "路易十二", "en": "Louis XII" },
-          "leaderTitle": { "zh": "法兰西国王", "en": "King of France" },
-          "ideology": { "zh": "王权集中、文艺复兴赞助与意大利扩张", "en": "Royal centralization, Renaissance patronage, and Italian expansion" },
-          "headquarters": { "zh": "布卢瓦", "en": "Blois" },
+          "leader": {
+            "zh": "路易十二",
+            "en": "Louis XII"
+          },
+          "leaderTitle": {
+            "zh": "法兰西国王",
+            "en": "King of France"
+          },
+          "ideology": {
+            "zh": "王权集中、文艺复兴赞助与意大利扩张",
+            "en": "Royal centralization, Renaissance patronage, and Italian expansion"
+          },
+          "headquarters": {
+            "zh": "布卢瓦",
+            "en": "Blois"
+          },
           "status": "ruling",
-          "relationship": { "zh": "路易十二作为瓦卢瓦-奥尔良旁支登上王位，继续推进前任查理八世开创的意大利战争政策。他以'人民之父'的美誉著称，推行减税和司法改革，同时大力扩展法国在意大利的势力范围。瓦卢瓦王室在其治下进一步巩固了对法兰西的中央集权统治。", "en": "Louis XII ascended the throne as a member of the Valois-Orléans cadet branch, continuing the Italian War policies initiated by his predecessor Charles VIII. Known as 'Father of the People' for his tax reductions and judicial reforms, he simultaneously expanded French influence in Italy. The Valois crown further consolidated centralized rule over France during his reign." },
-          "description": { "zh": "路易十二（1462-1515）是法国瓦卢瓦王朝的第十二位国王，1498年即位后迅速展现出精明的内政能力和雄心勃勃的外交战略。他是前国王查理八世的远房堂兄，通过奥尔良家族的继承权获得王位。路易十二因减轻税负、改革司法制度而赢得了'人民之父'的称号。在外交上，他继承了法国对那不勒斯和米兰的王位宣称权——通过其祖母维斯孔蒂家族的血统声称拥有米兰公国的继承权。1499年他成功征服米兰，驱逐了斯福尔扎家族；1501年又与西班牙的费迪南合谋瓜分那不勒斯王国，但两国随后因分赃不均而反目。路易十二是文艺复兴艺术和建筑的积极赞助者，布卢瓦城堡在其治下得到华丽扩建。然而意大利战争最终消耗了大量法国资源，未能取得持久的领土成果。", "en": "Louis XII (1462–1515) was the twelfth Valois king of France, quickly demonstrating shrewd domestic capability and ambitious foreign strategy after his 1498 accession. A distant cousin of the previous king Charles VIII, he gained the throne through the Orléans family's succession rights. Louis XII earned the title 'Father of the People' for reducing taxes and reforming the judicial system. In foreign policy, he inherited French claims to Naples and Milan—asserting rights to the Duchy of Milan through his grandmother's Visconti lineage. In 1499 he successfully conquered Milan, expelling the Sforza family; in 1501 he conspired with Ferdinand of Spain to partition the Kingdom of Naples, though the two later fell out over the division. Louis XII was an active patron of Renaissance art and architecture, with the Château de Blois magnificently expanded under his rule. Yet the Italian Wars ultimately consumed vast French resources without achieving lasting territorial gains." },
+          "relationship": {
+            "zh": "路易十二作为瓦卢瓦-奥尔良旁支登上王位，继续推进前任查理八世开创的意大利战争政策。他以'人民之父'的美誉著称，推行减税和司法改革，同时大力扩展法国在意大利的势力范围。瓦卢瓦王室在其治下进一步巩固了对法兰西的中央集权统治。",
+            "en": "Louis XII ascended the throne as a member of the Valois-Orléans cadet branch, continuing the Italian War policies initiated by his predecessor Charles VIII. Known as 'Father of the People' for his tax reductions and judicial reforms, he simultaneously expanded French influence in Italy. The Valois crown further consolidated centralized rule over France during his reign."
+          },
+          "description": {
+            "zh": "路易十二（1462-1515）是法国瓦卢瓦王朝的第十二位国王，1498年即位后迅速展现出精明的内政能力和雄心勃勃的外交战略。他是前国王查理八世的远房堂兄，通过奥尔良家族的继承权获得王位。路易十二因减轻税负、改革司法制度而赢得了'人民之父'的称号。在外交上，他继承了法国对那不勒斯和米兰的王位宣称权——通过其祖母维斯孔蒂家族的血统声称拥有米兰公国的继承权。1499年他成功征服米兰，驱逐了斯福尔扎家族；1501年又与西班牙的费迪南合谋瓜分那不勒斯王国，但两国随后因分赃不均而反目。路易十二是文艺复兴艺术和建筑的积极赞助者，布卢瓦城堡在其治下得到华丽扩建。然而意大利战争最终消耗了大量法国资源，未能取得持久的领土成果。",
+            "en": "Louis XII (1462–1515) was the twelfth Valois king of France, quickly demonstrating shrewd domestic capability and ambitious foreign strategy after his 1498 accession. A distant cousin of the previous king Charles VIII, he gained the throne through the Orléans family's succession rights. Louis XII earned the title 'Father of the People' for reducing taxes and reforming the judicial system. In foreign policy, he inherited French claims to Naples and Milan—asserting rights to the Duchy of Milan through his grandmother's Visconti lineage. In 1499 he successfully conquered Milan, expelling the Sforza family; in 1501 he conspired with Ferdinand of Spain to partition the Kingdom of Naples, though the two later fell out over the division. Louis XII was an active patron of Renaissance art and architecture, with the Château de Blois magnificently expanded under his rule. Yet the Italian Wars ultimately consumed vast French resources without achieving lasting territorial gains."
+          },
           "keyFigures": [
-            { "name": { "zh": "路易十二", "en": "Louis XII" }, "title": { "zh": "法兰西国王", "en": "King of France" }, "role": { "zh": "'人民之父'，推行内政改革与意大利扩张", "en": "'Father of the People,' pursued domestic reform and Italian expansion" } },
-            { "name": { "zh": "乔治·德·安布瓦兹", "en": "Georges d'Amboise" }, "title": { "zh": "首席大臣·鲁昂大主教", "en": "Chief Minister and Archbishop of Rouen" }, "role": { "zh": "路易十二最信任的大臣，主导法国内政外交", "en": "Louis XII's most trusted minister, directed French domestic and foreign policy" } }
+            {
+              "name": {
+                "zh": "路易十二",
+                "en": "Louis XII"
+              },
+              "title": {
+                "zh": "法兰西国王",
+                "en": "King of France"
+              },
+              "role": {
+                "zh": "'人民之父'，推行内政改革与意大利扩张",
+                "en": "'Father of the People,' pursued domestic reform and Italian expansion"
+              }
+            },
+            {
+              "name": {
+                "zh": "乔治·德·安布瓦兹",
+                "en": "Georges d'Amboise"
+              },
+              "title": {
+                "zh": "首席大臣·鲁昂大主教",
+                "en": "Chief Minister and Archbishop of Rouen"
+              },
+              "role": {
+                "zh": "路易十二最信任的大臣，主导法国内政外交",
+                "en": "Louis XII's most trusted minister, directed French domestic and foreign policy"
+              }
+            }
           ]
         },
         {
           "id": "great_feudal_lords",
-          "name": { "zh": "大封建领主", "en": "Great Feudal Lords" },
+          "name": {
+            "zh": "大封建领主",
+            "en": "Great Feudal Lords"
+          },
           "type": "other",
-          "leader": { "zh": "波旁公爵等血亲王公", "en": "Duke of Bourbon and other Princes of the Blood" },
-          "leaderTitle": { "zh": "血亲王公", "en": "Princes of the Blood" },
-          "ideology": { "zh": "封建自治与贵族传统特权", "en": "Feudal autonomy and traditional aristocratic privileges" },
-          "headquarters": { "zh": "各大封地", "en": "Various great fiefdoms" },
+          "leader": {
+            "zh": "波旁公爵等血亲王公",
+            "en": "Duke of Bourbon and other Princes of the Blood"
+          },
+          "leaderTitle": {
+            "zh": "血亲王公",
+            "en": "Princes of the Blood"
+          },
+          "ideology": {
+            "zh": "封建自治与贵族传统特权",
+            "en": "Feudal autonomy and traditional aristocratic privileges"
+          },
+          "headquarters": {
+            "zh": "各大封地",
+            "en": "Various great fiefdoms"
+          },
           "status": "rival",
-          "relationship": { "zh": "大封建领主是法国王权集中过程中最主要的内部阻力。波旁、奥尔良等血亲王公虽然在百年战争后实力大减，但仍控制着广大封地，拥有独立的武装和司法权。路易十二作为曾经的奥尔良公爵，深知大贵族的力量和危险性，在笼络与牵制之间小心平衡。", "en": "The great feudal lords were the primary internal obstacle to French royal centralization. Though princes of the blood like the Bourbon and Orléans families had been greatly weakened after the Hundred Years' War, they still controlled vast fiefdoms with independent armed forces and judicial rights. Louis XII, himself a former Duke of Orléans, was well aware of the great nobles' power and danger, carefully balancing co-optation with constraint." },
-          "description": { "zh": "法国的大封建领主以波旁家族为首，还包括阿朗松、阿马尼亚克等传统封建大家族。百年战争期间，这些贵族曾建立'公益联盟'等组织公然对抗王权（如1465年的公益联盟之战）。路易十一通过精明的分化瓦解策略大幅削弱了大贵族势力，查理八世和路易十二延续了这一集权路线。然而到1500年，波旁公爵仍然是法国最大的封地领主之一，其领地横跨中部法国多个省份。血亲王公在法律上享有王位继承权，这赋予了他们特殊的政治地位——他们可以在国王无嗣时继承王位，因此始终是王权的潜在挑战者。此外，布列塔尼虽然通过联姻并入法国（1491年），但其贵族仍保持着强烈的地方认同。这些大封建领主的存在使法国的集权进程远未完成，为后来弗朗索瓦一世时期波旁叛乱等事件埋下了伏笔。", "en": "France's great feudal lords were led by the Bourbon family and included traditional feudal houses like the Alençon and Armagnac. During the Hundred Years' War, these nobles had formed organizations like the League of the Public Weal to openly resist royal authority (as in the 1465 War of the Public Weal). Louis XI greatly weakened the great nobility through shrewd divide-and-conquer tactics, and Charles VIII and Louis XII continued this centralizing approach. Yet by 1500, the Duke of Bourbon remained one of France's largest territorial lords, with fiefdoms spanning multiple central French provinces. Princes of the blood legally held succession rights, giving them a special political status—they could inherit the throne if the king had no heir, making them perpetual potential challengers to royal authority. Additionally, Brittany, though incorporated through marriage (1491), retained strong local noble identity. The persistence of these great feudal lords meant French centralization was far from complete, foreshadowing later events like the Bourbon rebellion under Francis I." },
+          "relationship": {
+            "zh": "大封建领主是法国王权集中过程中最主要的内部阻力。波旁、奥尔良等血亲王公虽然在百年战争后实力大减，但仍控制着广大封地，拥有独立的武装和司法权。路易十二作为曾经的奥尔良公爵，深知大贵族的力量和危险性，在笼络与牵制之间小心平衡。",
+            "en": "The great feudal lords were the primary internal obstacle to French royal centralization. Though princes of the blood like the Bourbon and Orléans families had been greatly weakened after the Hundred Years' War, they still controlled vast fiefdoms with independent armed forces and judicial rights. Louis XII, himself a former Duke of Orléans, was well aware of the great nobles' power and danger, carefully balancing co-optation with constraint."
+          },
+          "description": {
+            "zh": "法国的大封建领主以波旁家族为首，还包括阿朗松、阿马尼亚克等传统封建大家族。百年战争期间，这些贵族曾建立'公益联盟'等组织公然对抗王权（如1465年的公益联盟之战）。路易十一通过精明的分化瓦解策略大幅削弱了大贵族势力，查理八世和路易十二延续了这一集权路线。然而到1500年，波旁公爵仍然是法国最大的封地领主之一，其领地横跨中部法国多个省份。血亲王公在法律上享有王位继承权，这赋予了他们特殊的政治地位——他们可以在国王无嗣时继承王位，因此始终是王权的潜在挑战者。此外，布列塔尼虽然通过联姻并入法国（1491年），但其贵族仍保持着强烈的地方认同。这些大封建领主的存在使法国的集权进程远未完成，为后来弗朗索瓦一世时期波旁叛乱等事件埋下了伏笔。",
+            "en": "France's great feudal lords were led by the Bourbon family and included traditional feudal houses like the Alençon and Armagnac. During the Hundred Years' War, these nobles had formed organizations like the League of the Public Weal to openly resist royal authority (as in the 1465 War of the Public Weal). Louis XI greatly weakened the great nobility through shrewd divide-and-conquer tactics, and Charles VIII and Louis XII continued this centralizing approach. Yet by 1500, the Duke of Bourbon remained one of France's largest territorial lords, with fiefdoms spanning multiple central French provinces. Princes of the blood legally held succession rights, giving them a special political status—they could inherit the throne if the king had no heir, making them perpetual potential challengers to royal authority. Additionally, Brittany, though incorporated through marriage (1491), retained strong local noble identity. The persistence of these great feudal lords meant French centralization was far from complete, foreshadowing later events like the Bourbon rebellion under Francis I."
+          },
           "keyFigures": [
-            { "name": { "zh": "皮埃尔·德·波旁", "en": "Pierre de Bourbon" }, "title": { "zh": "波旁公爵·法兰西摄政", "en": "Duke of Bourbon and Regent of France" }, "role": { "zh": "波旁家族首领，曾任查理八世的摄政", "en": "Head of the Bourbon family, former regent for Charles VIII" } },
-            { "name": { "zh": "夏尔·德·波旁", "en": "Charles de Bourbon" }, "title": { "zh": "波旁公爵继承人", "en": "Heir to the Duchy of Bourbon" }, "role": { "zh": "下一代波旁公爵，后在弗朗索瓦一世时叛逃", "en": "Next Duke of Bourbon, later defected under Francis I" } }
+            {
+              "name": {
+                "zh": "皮埃尔·德·波旁",
+                "en": "Pierre de Bourbon"
+              },
+              "title": {
+                "zh": "波旁公爵·法兰西摄政",
+                "en": "Duke of Bourbon and Regent of France"
+              },
+              "role": {
+                "zh": "波旁家族首领，曾任查理八世的摄政",
+                "en": "Head of the Bourbon family, former regent for Charles VIII"
+              }
+            },
+            {
+              "name": {
+                "zh": "夏尔·德·波旁",
+                "en": "Charles de Bourbon"
+              },
+              "title": {
+                "zh": "波旁公爵继承人",
+                "en": "Heir to the Duchy of Bourbon"
+              },
+              "role": {
+                "zh": "下一代波旁公爵，后在弗朗索瓦一世时叛逃",
+                "en": "Next Duke of Bourbon, later defected under Francis I"
+              }
+            }
           ]
         },
         {
           "id": "parlements_legal",
-          "name": { "zh": "高等法院与法律阶层", "en": "Parlements and Legal Establishment" },
+          "name": {
+            "zh": "高等法院与法律阶层",
+            "en": "Parlements and Legal Establishment"
+          },
           "type": "other",
-          "leader": { "zh": "巴黎高等法院首席院长", "en": "First President of the Parlement of Paris" },
-          "leaderTitle": { "zh": "首席院长", "en": "First President" },
-          "ideology": { "zh": "法律至上、高卢自主教会主义与司法独立", "en": "Rule of law, Gallicanism, and judicial independence" },
-          "headquarters": { "zh": "巴黎·西岱岛司法宫", "en": "Palais de Justice, Île de la Cité, Paris" },
+          "leader": {
+            "zh": "巴黎高等法院首席院长",
+            "en": "First President of the Parlement of Paris"
+          },
+          "leaderTitle": {
+            "zh": "首席院长",
+            "en": "First President"
+          },
+          "ideology": {
+            "zh": "法律至上、高卢自主教会主义与司法独立",
+            "en": "Rule of law, Gallicanism, and judicial independence"
+          },
+          "headquarters": {
+            "zh": "巴黎·西岱岛司法宫",
+            "en": "Palais de Justice, Île de la Cité, Paris"
+          },
           "status": "opposition",
-          "relationship": { "zh": "高等法院是法国最重要的司法和准立法机构，拥有注册王室敕令的权力——未经高等法院注册的敕令在法律上不具效力。这一权力使高等法院成为王权的制度性制衡力量。法院的法官们倾向于维护法律传统和高卢教会的独立性，时常对王室的财政和宗教政策提出异议。", "en": "The Parlements were France's most important judicial and quasi-legislative institutions, holding the power to register royal edicts—unregistered edicts were legally invalid. This power made the Parlements an institutional check on royal authority. The judges tended to defend legal tradition and the independence of the Gallican Church, frequently challenging royal fiscal and religious policies." },
-          "description": { "zh": "法国高等法院（Parlement）并非现代意义上的议会，而是最高司法机构。巴黎高等法院是其中最重要的一个，此外还有图卢兹、波尔多、格勒诺布尔等地方高等法院。法院由受过罗马法和教会法训练的专业法官（'长袍贵族'）组成，他们的职位可以世袭买卖。高等法院最重要的政治权力是'谏议权'（droit de remontrance）——当他们认为王室敕令违反基本法律或习惯法时，可以拒绝注册并提出书面异议。虽然国王可以通过亲临法院举行'御座听证会'（lit de justice）强制注册，但这一做法政治成本很高。高等法院还是高卢教会自主主义（Gallicanisme）的坚定支持者，主张法国教会应保持相对于罗马教廷的独立性。在1500年前后，高等法院与路易十二的关系总体协调——国王的司法改革赢得了法官们的好感——但制度性的张力始终存在。", "en": "The French Parlements were not parliaments in the modern sense but rather supreme judicial institutions. The Parlement of Paris was the most important, alongside regional parlements in Toulouse, Bordeaux, Grenoble, and elsewhere. Staffed by professional judges (noblesse de robe) trained in Roman and canon law, whose offices could be inherited or purchased. The Parlements' most significant political power was the 'right of remonstrance' (droit de remontrance)—when they judged royal edicts to violate fundamental law or customary law, they could refuse registration and submit written objections. Though the king could force registration by personally presiding at a 'lit de justice,' this carried high political costs. The Parlements were also staunch supporters of Gallicanism, asserting that the French Church should maintain independence from the Roman papacy. Around 1500, relations between the Parlements and Louis XII were generally harmonious—the king's judicial reforms won judges' favor—but institutional tension always persisted." },
+          "relationship": {
+            "zh": "高等法院是法国最重要的司法和准立法机构，拥有注册王室敕令的权力——未经高等法院注册的敕令在法律上不具效力。这一权力使高等法院成为王权的制度性制衡力量。法院的法官们倾向于维护法律传统和高卢教会的独立性，时常对王室的财政和宗教政策提出异议。",
+            "en": "The Parlements were France's most important judicial and quasi-legislative institutions, holding the power to register royal edicts—unregistered edicts were legally invalid. This power made the Parlements an institutional check on royal authority. The judges tended to defend legal tradition and the independence of the Gallican Church, frequently challenging royal fiscal and religious policies."
+          },
+          "description": {
+            "zh": "法国高等法院（Parlement）并非现代意义上的议会，而是最高司法机构。巴黎高等法院是其中最重要的一个，此外还有图卢兹、波尔多、格勒诺布尔等地方高等法院。法院由受过罗马法和教会法训练的专业法官（'长袍贵族'）组成，他们的职位可以世袭买卖。高等法院最重要的政治权力是'谏议权'（droit de remontrance）——当他们认为王室敕令违反基本法律或习惯法时，可以拒绝注册并提出书面异议。虽然国王可以通过亲临法院举行'御座听证会'（lit de justice）强制注册，但这一做法政治成本很高。高等法院还是高卢教会自主主义（Gallicanisme）的坚定支持者，主张法国教会应保持相对于罗马教廷的独立性。在1500年前后，高等法院与路易十二的关系总体协调——国王的司法改革赢得了法官们的好感——但制度性的张力始终存在。",
+            "en": "The French Parlements were not parliaments in the modern sense but rather supreme judicial institutions. The Parlement of Paris was the most important, alongside regional parlements in Toulouse, Bordeaux, Grenoble, and elsewhere. Staffed by professional judges (noblesse de robe) trained in Roman and canon law, whose offices could be inherited or purchased. The Parlements' most significant political power was the 'right of remonstrance' (droit de remontrance)—when they judged royal edicts to violate fundamental law or customary law, they could refuse registration and submit written objections. Though the king could force registration by personally presiding at a 'lit de justice,' this carried high political costs. The Parlements were also staunch supporters of Gallicanism, asserting that the French Church should maintain independence from the Roman papacy. Around 1500, relations between the Parlements and Louis XII were generally harmonious—the king's judicial reforms won judges' favor—but institutional tension always persisted."
+          },
           "keyFigures": [
-            { "name": { "zh": "巴黎高等法院首席院长", "en": "First President of the Parlement of Paris" }, "title": { "zh": "首席院长", "en": "First President" }, "role": { "zh": "法国最高司法官员，王室敕令注册的守门人", "en": "France's highest judicial officer, gatekeeper for royal edict registration" } }
+            {
+              "name": {
+                "zh": "巴黎高等法院首席院长",
+                "en": "First President of the Parlement of Paris"
+              },
+              "title": {
+                "zh": "首席院长",
+                "en": "First President"
+              },
+              "role": {
+                "zh": "法国最高司法官员，王室敕令注册的守门人",
+                "en": "France's highest judicial officer, gatekeeper for royal edict registration"
+              }
+            }
           ]
         }
       ]
@@ -16593,6 +16893,20 @@
         "keyInnovations": {
           "zh": "关键优势包括大型火炮铸造、火绳枪步兵制度、攻城工程、地中海桨帆舰建造、精密文书档案管理和结合伊斯兰与拜占庭传统的城市基础设施建设。",
           "en": "Key strengths included large-scale cannon casting, matchlock infantry organization, siege engineering, Mediterranean galley construction, sophisticated chancery recordkeeping, and urban infrastructure drawing on both Islamic and Byzantine traditions."
+        },
+        "sectors": {
+          "militaryTechnology": {
+            "zh": "军事技术欧亚领先：奥斯曼帝国拥有当时最先进的攻城炮技术，乌尔班大炮在1453年攻破君士坦丁堡城墙改写历史。禁卫军（耶尼切里）是全球最早的常备职业军队之一。火器应用水平高于大多数欧洲国家。",
+            "en": "Eurasian military technology leader: the Ottoman Empire possesses the era's most advanced siege artillery; Orban's great cannon breached Constantinople's walls in 1453, rewriting history. Janissaries are among the world's earliest standing professional armies. Firearms usage exceeds most European states."
+          },
+          "architectureAndEngineering": {
+            "zh": "建筑与工程宏伟：锡南大师（即将活跃）将设计苏莱曼清真寺等伊斯兰建筑杰作。奥斯曼水利工程和城市供水系统技术先进。伊斯坦布尔大巴扎是全球最大的室内市场。",
+            "en": "Grand architecture and engineering: Master Sinan (about to become active) will design Islamic architectural masterpieces including the Süleymaniye Mosque. Ottoman hydraulic engineering and urban water supply systems are technologically advanced. Istanbul's Grand Bazaar is the world's largest covered market."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1500年的奥斯曼帝国正处于苏莱曼大帝时代（即将到来）的巅峰前夜，在军事技术和建筑工程方面领先欧亚。攻城炮和常备军体制是其军事优势的核心。但奥斯曼帝国对印刷术持保守态度（直到18世纪才允许土耳其语印刷），这将成为长期科技停滞的关键因素之一。",
+          "en": "The Ottoman Empire in 1500 is on the eve of its zenith under Suleiman the Magnificent (imminent), leading Eurasia in military technology and architectural engineering. Siege artillery and the standing army system are the core of its military advantage. But the Ottoman conservative attitude toward printing (Turkish-language printing not permitted until the 18th century) will become a key factor in long-term technological stagnation."
         }
       },
       "assessment": {
@@ -16617,49 +16931,177 @@
       "factions": [
         {
           "id": "sultan_court",
-          "name": { "zh": "苏丹宫廷", "en": "Sultan's Court" },
+          "name": {
+            "zh": "苏丹宫廷",
+            "en": "Sultan's Court"
+          },
           "type": "other",
-          "leader": { "zh": "巴耶济德二世", "en": "Bayezid II" },
-          "leaderTitle": { "zh": "苏丹", "en": "Sultan" },
-          "ideology": { "zh": "中央集权、德夫希尔梅制度与逊尼正统", "en": "Centralized administration, devshirme system, and Sunni orthodoxy" },
-          "headquarters": { "zh": "君士坦丁堡·托普卡帕宫", "en": "Topkapi Palace, Constantinople" },
+          "leader": {
+            "zh": "巴耶济德二世",
+            "en": "Bayezid II"
+          },
+          "leaderTitle": {
+            "zh": "苏丹",
+            "en": "Sultan"
+          },
+          "ideology": {
+            "zh": "中央集权、德夫希尔梅制度与逊尼正统",
+            "en": "Centralized administration, devshirme system, and Sunni orthodoxy"
+          },
+          "headquarters": {
+            "zh": "君士坦丁堡·托普卡帕宫",
+            "en": "Topkapi Palace, Constantinople"
+          },
           "status": "ruling",
-          "relationship": { "zh": "巴耶济德二世是征服者穆罕默德二世之子，1481年在与弟弟杰姆的继承战争中获胜即位。与其父的激进扩张主义不同，巴耶济德采取相对保守温和的治国路线，注重内政建设和逊尼正统。他通过德夫希尔梅制度持续招募基督徒男孩充实帝国行政和军事体系，维持了奥斯曼独特的精英培养机制。", "en": "Bayezid II, son of Mehmed the Conqueror, took the throne in 1481 after winning the succession war against his brother Jem. Unlike his father's aggressive expansionism, Bayezid pursued a relatively conservative and moderate governing approach, focusing on domestic administration and Sunni orthodoxy. He continued recruiting Christian boys through the devshirme system to replenish the imperial administrative and military apparatus, maintaining the Ottoman Empire's distinctive elite cultivation mechanism." },
-          "description": { "zh": "巴耶济德二世（1447-1512）是奥斯曼帝国第八任苏丹，在位期间（1481-1512）帝国处于从征服期向巩固期的过渡阶段。他在继位之初就面临弟弟杰姆苏丹的叛乱，杰姆出逃至基督教欧洲后成为西方要挟奥斯曼的人质。巴耶济德以虔诚著称，大力赞助清真寺、经学院和苏菲道堂的建设，伊斯坦布尔在其治下成为伊斯兰世界的文化重镇。他的行政体系以大维齐尔为核心，帝国divan（御前会议）定期处理帝国事务。然而到1500年前后，他的统治权威开始受到挑战——三个儿子之间的继承竞争日趋激烈，特别是最具野心的塞利姆对父亲的温和路线深感不满。奥斯曼帝国在此期间虽未大举扩张，但通过海军建设和贸易控制巩固了地中海东部的霸权地位。", "en": "Bayezid II (1447–1512) was the eighth Ottoman sultan, ruling during a transitional period (1481–1512) from conquest to consolidation. He faced his brother Jem Sultan's rebellion immediately upon succession; Jem's flight to Christian Europe made him a hostage Western powers used to pressure the Ottomans. Known for piety, Bayezid generously patronized mosques, madrasas, and Sufi lodges, making Istanbul a cultural center of the Islamic world. His administrative system centered on the Grand Vizier, with the Imperial Divan regularly conducting state business. By around 1500, however, his authority was increasingly challenged—succession competition among his three sons intensified, especially from the most ambitious, Selim, who deeply resented his father's moderate approach. Though the empire did not expand significantly during this period, it consolidated its eastern Mediterranean hegemony through naval construction and trade control." },
+          "relationship": {
+            "zh": "巴耶济德二世是征服者穆罕默德二世之子，1481年在与弟弟杰姆的继承战争中获胜即位。与其父的激进扩张主义不同，巴耶济德采取相对保守温和的治国路线，注重内政建设和逊尼正统。他通过德夫希尔梅制度持续招募基督徒男孩充实帝国行政和军事体系，维持了奥斯曼独特的精英培养机制。",
+            "en": "Bayezid II, son of Mehmed the Conqueror, took the throne in 1481 after winning the succession war against his brother Jem. Unlike his father's aggressive expansionism, Bayezid pursued a relatively conservative and moderate governing approach, focusing on domestic administration and Sunni orthodoxy. He continued recruiting Christian boys through the devshirme system to replenish the imperial administrative and military apparatus, maintaining the Ottoman Empire's distinctive elite cultivation mechanism."
+          },
+          "description": {
+            "zh": "巴耶济德二世（1447-1512）是奥斯曼帝国第八任苏丹，在位期间（1481-1512）帝国处于从征服期向巩固期的过渡阶段。他在继位之初就面临弟弟杰姆苏丹的叛乱，杰姆出逃至基督教欧洲后成为西方要挟奥斯曼的人质。巴耶济德以虔诚著称，大力赞助清真寺、经学院和苏菲道堂的建设，伊斯坦布尔在其治下成为伊斯兰世界的文化重镇。他的行政体系以大维齐尔为核心，帝国divan（御前会议）定期处理帝国事务。然而到1500年前后，他的统治权威开始受到挑战——三个儿子之间的继承竞争日趋激烈，特别是最具野心的塞利姆对父亲的温和路线深感不满。奥斯曼帝国在此期间虽未大举扩张，但通过海军建设和贸易控制巩固了地中海东部的霸权地位。",
+            "en": "Bayezid II (1447–1512) was the eighth Ottoman sultan, ruling during a transitional period (1481–1512) from conquest to consolidation. He faced his brother Jem Sultan's rebellion immediately upon succession; Jem's flight to Christian Europe made him a hostage Western powers used to pressure the Ottomans. Known for piety, Bayezid generously patronized mosques, madrasas, and Sufi lodges, making Istanbul a cultural center of the Islamic world. His administrative system centered on the Grand Vizier, with the Imperial Divan regularly conducting state business. By around 1500, however, his authority was increasingly challenged—succession competition among his three sons intensified, especially from the most ambitious, Selim, who deeply resented his father's moderate approach. Though the empire did not expand significantly during this period, it consolidated its eastern Mediterranean hegemony through naval construction and trade control."
+          },
           "keyFigures": [
-            { "name": { "zh": "巴耶济德二世", "en": "Bayezid II" }, "title": { "zh": "苏丹", "en": "Sultan" }, "role": { "zh": "奥斯曼帝国保守派统治者，注重内政与宗教建设", "en": "Conservative Ottoman ruler, focused on domestic affairs and religious construction" } },
-            { "name": { "zh": "赫尔塞克扎德·艾哈迈德帕夏", "en": "Hersekzade Ahmed Pasha" }, "title": { "zh": "大维齐尔", "en": "Grand Vizier" }, "role": { "zh": "波斯尼亚裔德夫希尔梅出身的首席大臣", "en": "Chief minister of Bosnian devshirme origin" } }
+            {
+              "name": {
+                "zh": "巴耶济德二世",
+                "en": "Bayezid II"
+              },
+              "title": {
+                "zh": "苏丹",
+                "en": "Sultan"
+              },
+              "role": {
+                "zh": "奥斯曼帝国保守派统治者，注重内政与宗教建设",
+                "en": "Conservative Ottoman ruler, focused on domestic affairs and religious construction"
+              }
+            },
+            {
+              "name": {
+                "zh": "赫尔塞克扎德·艾哈迈德帕夏",
+                "en": "Hersekzade Ahmed Pasha"
+              },
+              "title": {
+                "zh": "大维齐尔",
+                "en": "Grand Vizier"
+              },
+              "role": {
+                "zh": "波斯尼亚裔德夫希尔梅出身的首席大臣",
+                "en": "Chief minister of Bosnian devshirme origin"
+              }
+            }
           ]
         },
         {
           "id": "janissary_corps",
-          "name": { "zh": "禁卫军团", "en": "Janissary Corps" },
+          "name": {
+            "zh": "禁卫军团",
+            "en": "Janissary Corps"
+          },
           "type": "other",
-          "leader": { "zh": "禁卫军统帅（阿加）", "en": "Janissary Agha" },
-          "leaderTitle": { "zh": "耶尼切里阿加", "en": "Yeniçeri Ağası" },
-          "ideology": { "zh": "军事精英特权与贝克塔什苏菲传统", "en": "Military elite privilege and Bektashi Sufi tradition" },
-          "headquarters": { "zh": "君士坦丁堡禁卫军营地", "en": "Janissary Barracks, Constantinople" },
+          "leader": {
+            "zh": "禁卫军统帅（阿加）",
+            "en": "Janissary Agha"
+          },
+          "leaderTitle": {
+            "zh": "耶尼切里阿加",
+            "en": "Yeniçeri Ağası"
+          },
+          "ideology": {
+            "zh": "军事精英特权与贝克塔什苏菲传统",
+            "en": "Military elite privilege and Bektashi Sufi tradition"
+          },
+          "headquarters": {
+            "zh": "君士坦丁堡禁卫军营地",
+            "en": "Janissary Barracks, Constantinople"
+          },
           "status": "allied",
-          "relationship": { "zh": "禁卫军是奥斯曼帝国最精锐的常备军事力量，也是帝国政治的关键角色。他们通过德夫希尔梅制度从基督徒少年中征选训练而成，理论上完全效忠苏丹。然而到15世纪末，禁卫军已开始发展自身的机构利益和政治影响力，成为苏丹即位和废黜过程中不可忽视的力量。", "en": "The Janissaries were the Ottoman Empire's most elite standing military force and key political players. Recruited and trained from Christian boys through the devshirme system, they were theoretically loyal solely to the sultan. By the late 15th century, however, the Janissaries had begun developing institutional interests and political influence, becoming an indispensable force in the process of enthroning and deposing sultans." },
-          "description": { "zh": "禁卫军（耶尼切里）是奥斯曼帝国最独特的军事制度之一，由通过德夫希尔梅（'少年征募'）制度从巴尔干基督徒家庭征选的少年组成，经过严格的伊斯兰教育和军事训练后成为帝国最精锐的步兵力量。到1500年左右，禁卫军兵力约为一万至一万二千人，配备当时最先进的火器，是欧洲最早的常备火枪部队之一。禁卫军信奉贝克塔什教团的苏菲伊斯兰传统，形成了独特的军事-宗教文化。在政治上，禁卫军的即位赏赐（cülus bahşişi）已成为苏丹登基的惯例——新苏丹必须向禁卫军发放大量赏金以换取效忠。这种惯例使禁卫军逐渐获得了'造王者'的角色。在巴耶济德二世统治期间，禁卫军总体上保持了对苏丹的忠诚，但在即将到来的继承危机中，他们的立场将成为决定性因素。", "en": "The Janissaries (Yeniçeri) were one of the Ottoman Empire's most distinctive military institutions, composed of boys conscripted from Balkan Christian families through the devshirme ('child levy') system. After rigorous Islamic education and military training, they became the empire's most elite infantry. By around 1500, the Janissary Corps numbered ten to twelve thousand, equipped with the most advanced firearms of the era, among Europe's earliest standing musket forces. They followed the Bektashi Sufi order's Islamic tradition, forming a unique military-religious culture. Politically, the accession bonus (cülus bahşişi) had become customary—new sultans were required to distribute large sums to the Janissaries in exchange for loyalty. This practice gradually gave them the role of 'kingmakers.' During Bayezid II's reign, the Janissaries generally remained loyal, but their stance would prove decisive in the coming succession crisis." },
+          "relationship": {
+            "zh": "禁卫军是奥斯曼帝国最精锐的常备军事力量，也是帝国政治的关键角色。他们通过德夫希尔梅制度从基督徒少年中征选训练而成，理论上完全效忠苏丹。然而到15世纪末，禁卫军已开始发展自身的机构利益和政治影响力，成为苏丹即位和废黜过程中不可忽视的力量。",
+            "en": "The Janissaries were the Ottoman Empire's most elite standing military force and key political players. Recruited and trained from Christian boys through the devshirme system, they were theoretically loyal solely to the sultan. By the late 15th century, however, the Janissaries had begun developing institutional interests and political influence, becoming an indispensable force in the process of enthroning and deposing sultans."
+          },
+          "description": {
+            "zh": "禁卫军（耶尼切里）是奥斯曼帝国最独特的军事制度之一，由通过德夫希尔梅（'少年征募'）制度从巴尔干基督徒家庭征选的少年组成，经过严格的伊斯兰教育和军事训练后成为帝国最精锐的步兵力量。到1500年左右，禁卫军兵力约为一万至一万二千人，配备当时最先进的火器，是欧洲最早的常备火枪部队之一。禁卫军信奉贝克塔什教团的苏菲伊斯兰传统，形成了独特的军事-宗教文化。在政治上，禁卫军的即位赏赐（cülus bahşişi）已成为苏丹登基的惯例——新苏丹必须向禁卫军发放大量赏金以换取效忠。这种惯例使禁卫军逐渐获得了'造王者'的角色。在巴耶济德二世统治期间，禁卫军总体上保持了对苏丹的忠诚，但在即将到来的继承危机中，他们的立场将成为决定性因素。",
+            "en": "The Janissaries (Yeniçeri) were one of the Ottoman Empire's most distinctive military institutions, composed of boys conscripted from Balkan Christian families through the devshirme ('child levy') system. After rigorous Islamic education and military training, they became the empire's most elite infantry. By around 1500, the Janissary Corps numbered ten to twelve thousand, equipped with the most advanced firearms of the era, among Europe's earliest standing musket forces. They followed the Bektashi Sufi order's Islamic tradition, forming a unique military-religious culture. Politically, the accession bonus (cülus bahşişi) had become customary—new sultans were required to distribute large sums to the Janissaries in exchange for loyalty. This practice gradually gave them the role of 'kingmakers.' During Bayezid II's reign, the Janissaries generally remained loyal, but their stance would prove decisive in the coming succession crisis."
+          },
           "keyFigures": [
-            { "name": { "zh": "禁卫军阿加", "en": "Janissary Agha" }, "title": { "zh": "禁卫军总司令", "en": "Commander-in-Chief of the Janissaries" }, "role": { "zh": "禁卫军最高指挥官，直接向苏丹负责", "en": "Supreme commander of the Janissaries, directly answerable to the sultan" } }
+            {
+              "name": {
+                "zh": "禁卫军阿加",
+                "en": "Janissary Agha"
+              },
+              "title": {
+                "zh": "禁卫军总司令",
+                "en": "Commander-in-Chief of the Janissaries"
+              },
+              "role": {
+                "zh": "禁卫军最高指挥官，直接向苏丹负责",
+                "en": "Supreme commander of the Janissaries, directly answerable to the sultan"
+              }
+            }
           ]
         },
         {
           "id": "prince_selim_faction",
-          "name": { "zh": "塞利姆王子派系", "en": "Prince Selim Faction" },
+          "name": {
+            "zh": "塞利姆王子派系",
+            "en": "Prince Selim Faction"
+          },
           "type": "other",
-          "leader": { "zh": "塞利姆", "en": "Selim" },
-          "leaderTitle": { "zh": "特拉布宗总督·王子", "en": "Governor of Trabzon and Prince" },
-          "ideology": { "zh": "军事扩张主义、反萨法维与积极逊尼政策", "en": "Military expansionism, anti-Safavid stance, and active Sunni policy" },
-          "headquarters": { "zh": "特拉布宗", "en": "Trabzon" },
+          "leader": {
+            "zh": "塞利姆",
+            "en": "Selim"
+          },
+          "leaderTitle": {
+            "zh": "特拉布宗总督·王子",
+            "en": "Governor of Trabzon and Prince"
+          },
+          "ideology": {
+            "zh": "军事扩张主义、反萨法维与积极逊尼政策",
+            "en": "Military expansionism, anti-Safavid stance, and active Sunni policy"
+          },
+          "headquarters": {
+            "zh": "特拉布宗",
+            "en": "Trabzon"
+          },
           "status": "rival",
-          "relationship": { "zh": "塞利姆是巴耶济德二世三子中最具野心和军事才能的一位。他对父亲的温和保守路线深感不满，尤其批评巴耶济德对波斯萨法维王朝在安纳托利亚东部扩张什叶派影响力的放任态度。塞利姆积极联络禁卫军和边境军事力量，为夺取皇位做准备。", "en": "Selim was the most ambitious and militarily talented of Bayezid II's three sons. He deeply resented his father's moderate conservative approach, particularly criticizing Bayezid's tolerance of the Safavid dynasty's expansion of Shiite influence in eastern Anatolia. Selim actively courted the Janissaries and frontier military forces, preparing to seize the throne." },
-          "description": { "zh": "塞利姆（1470-1520，后为塞利姆一世'冷酷者'）是巴耶济德二世最小的儿子，也是三位竞争继承权的王子中最危险的一位。他的两个兄弟——艾哈迈德（安纳托利亚总督）和科尔库特（安塔利亚总督）——分别代表了行政派和文艺派路线，而塞利姆则代表了激进的军事扩张路线。作为特拉布宗总督，塞利姆驻守帝国东北前线，直面波斯萨法维王朝伊斯玛仪一世在安纳托利亚的什叶派宣传活动和军事威胁。他认为父亲的不作为正在让帝国面临从内部被什叶派瓦解的危险。1500年前后，三子之间的继承竞争已公开化，塞利姆通过展示军事才能和对逊尼正统的坚定承诺来赢得禁卫军的支持。1512年他最终发动政变迫使父亲退位，随后在查尔迪兰战役（1514）中击败萨法维波斯，并在1516-1517年征服马穆鲁克埃及，将帝国领土扩大一倍。", "en": "Selim (1470–1520, later Selim I 'the Grim') was Bayezid II's youngest son and the most dangerous among the three princes competing for succession. His two brothers—Ahmed (Governor of Anatolia) and Korkut (Governor of Antalya)—represented administrative and literary approaches respectively, while Selim embodied radical military expansionism. As Governor of Trabzon, Selim was stationed at the empire's northeastern frontier, directly confronting the Safavid Shah Ismail I's Shiite proselytizing and military threats in Anatolia. He believed his father's inaction was allowing the empire to be undermined from within by Shiite subversion. By around 1500, the succession competition among the three sons had become open, with Selim winning Janissary support by demonstrating military prowess and firm commitment to Sunni orthodoxy. In 1512 he ultimately staged a coup forcing his father's abdication, then defeated Safavid Persia at Chaldiran (1514) and conquered Mamluk Egypt in 1516–1517, doubling the empire's territory." },
+          "relationship": {
+            "zh": "塞利姆是巴耶济德二世三子中最具野心和军事才能的一位。他对父亲的温和保守路线深感不满，尤其批评巴耶济德对波斯萨法维王朝在安纳托利亚东部扩张什叶派影响力的放任态度。塞利姆积极联络禁卫军和边境军事力量，为夺取皇位做准备。",
+            "en": "Selim was the most ambitious and militarily talented of Bayezid II's three sons. He deeply resented his father's moderate conservative approach, particularly criticizing Bayezid's tolerance of the Safavid dynasty's expansion of Shiite influence in eastern Anatolia. Selim actively courted the Janissaries and frontier military forces, preparing to seize the throne."
+          },
+          "description": {
+            "zh": "塞利姆（1470-1520，后为塞利姆一世'冷酷者'）是巴耶济德二世最小的儿子，也是三位竞争继承权的王子中最危险的一位。他的两个兄弟——艾哈迈德（安纳托利亚总督）和科尔库特（安塔利亚总督）——分别代表了行政派和文艺派路线，而塞利姆则代表了激进的军事扩张路线。作为特拉布宗总督，塞利姆驻守帝国东北前线，直面波斯萨法维王朝伊斯玛仪一世在安纳托利亚的什叶派宣传活动和军事威胁。他认为父亲的不作为正在让帝国面临从内部被什叶派瓦解的危险。1500年前后，三子之间的继承竞争已公开化，塞利姆通过展示军事才能和对逊尼正统的坚定承诺来赢得禁卫军的支持。1512年他最终发动政变迫使父亲退位，随后在查尔迪兰战役（1514）中击败萨法维波斯，并在1516-1517年征服马穆鲁克埃及，将帝国领土扩大一倍。",
+            "en": "Selim (1470–1520, later Selim I 'the Grim') was Bayezid II's youngest son and the most dangerous among the three princes competing for succession. His two brothers—Ahmed (Governor of Anatolia) and Korkut (Governor of Antalya)—represented administrative and literary approaches respectively, while Selim embodied radical military expansionism. As Governor of Trabzon, Selim was stationed at the empire's northeastern frontier, directly confronting the Safavid Shah Ismail I's Shiite proselytizing and military threats in Anatolia. He believed his father's inaction was allowing the empire to be undermined from within by Shiite subversion. By around 1500, the succession competition among the three sons had become open, with Selim winning Janissary support by demonstrating military prowess and firm commitment to Sunni orthodoxy. In 1512 he ultimately staged a coup forcing his father's abdication, then defeated Safavid Persia at Chaldiran (1514) and conquered Mamluk Egypt in 1516–1517, doubling the empire's territory."
+          },
           "keyFigures": [
-            { "name": { "zh": "塞利姆", "en": "Selim" }, "title": { "zh": "特拉布宗总督·王子", "en": "Governor of Trabzon and Prince" }, "role": { "zh": "野心勃勃的继承人，未来的'冷酷者'塞利姆一世", "en": "Ambitious heir, the future Selim I 'the Grim'" } },
-            { "name": { "zh": "艾哈迈德王子", "en": "Prince Ahmed" }, "title": { "zh": "安纳托利亚总督·王子", "en": "Governor of Anatolia and Prince" }, "role": { "zh": "塞利姆的主要竞争对手，巴耶济德最初属意的继承人", "en": "Selim's main rival, Bayezid's initially preferred successor" } }
+            {
+              "name": {
+                "zh": "塞利姆",
+                "en": "Selim"
+              },
+              "title": {
+                "zh": "特拉布宗总督·王子",
+                "en": "Governor of Trabzon and Prince"
+              },
+              "role": {
+                "zh": "野心勃勃的继承人，未来的'冷酷者'塞利姆一世",
+                "en": "Ambitious heir, the future Selim I 'the Grim'"
+              }
+            },
+            {
+              "name": {
+                "zh": "艾哈迈德王子",
+                "en": "Prince Ahmed"
+              },
+              "title": {
+                "zh": "安纳托利亚总督·王子",
+                "en": "Governor of Anatolia and Prince"
+              },
+              "role": {
+                "zh": "塞利姆的主要竞争对手，巴耶济德最初属意的继承人",
+                "en": "Selim's main rival, Bayezid's initially preferred successor"
+              }
+            }
           ]
         }
       ]
@@ -18443,6 +18885,20 @@
         "keyInnovations": {
           "zh": "改进型火炮与火绳枪运用、远洋航海技术、地图绘制、天文导航、海船设计、堡垒工程与官僚文书制度均取得显著进步，尤其在远洋航行组织方面迅速追赶并接近葡萄牙水平",
           "en": "Important advances appeared in the use of improved artillery and arquebuses, oceanic navigation, cartography, astronomical piloting, ship design, fortification engineering, and bureaucratic record keeping, especially in the organization of long-distance voyages where Spain was rapidly catching up to Portugal"
+        },
+        "sectors": {
+          "navigationAndExploration": {
+            "zh": "航海与探险技术前沿：哥伦布1492年发现新大陆，西班牙成为大航海时代的两大先锋之一。航海技术（星盘、十字杆、卡拉克帆船）和地图制图学快速发展。麦哲伦即将于1519年启程环球航行。",
+            "en": "Frontier navigation and exploration: Columbus's 1492 discovery of the New World makes Spain one of the two pioneers of the Age of Discovery. Navigation technology (astrolabe, cross-staff, carrack ships) and cartography advance rapidly. Magellan will depart for circumnavigation in 1519."
+          },
+          "militaryTechnology": {
+            "zh": "军事技术欧洲前列：西班牙方阵（tercio）是16世纪初欧洲最强陆军战术体系。火绳枪与长矛兵配合的战术创新领先。格拉纳达攻城战（1492年）展示了先进的攻城技术。",
+            "en": "European military technology leader: the Spanish tercio is early 16th century Europe's most powerful army tactical system. Tactical innovation combining arquebusiers and pikemen leads. The siege of Granada (1492) demonstrated advanced siege technology."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1500年的西班牙凭借航海探险和军事技术正在开创一个全球帝国。哥伦布发现新大陆和即将到来的征服美洲将改变世界格局。但西班牙的科技优势主要集中在军事和航海领域，在制造业和科学研究方面落后于意大利城邦和即将崛起的北欧。新大陆的金银流入将在短期内带来巨大财富，但长期将导致'荷兰病'式的制造业衰退。",
+          "en": "Spain in 1500 is creating a global empire through naval exploration and military technology. Columbus's discovery and the coming conquest of the Americas will reshape the world order. But Spain's tech advantage concentrates on military and navigation; it lags Italian city-states and the rising northern Europeans in manufacturing and scientific research. New World gold and silver will bring enormous short-term wealth but long-term 'Dutch Disease' manufacturing decline."
         }
       },
       "assessment": {
@@ -18467,51 +18923,205 @@
       "factions": [
         {
           "id": "catholic_monarchs",
-          "name": { "zh": "天主教双王", "en": "Catholic Monarchs" },
+          "name": {
+            "zh": "天主教双王",
+            "en": "Catholic Monarchs"
+          },
           "type": "other",
-          "leader": { "zh": "费迪南二世", "en": "Ferdinand II of Aragon" },
-          "leaderTitle": { "zh": "阿拉贡国王·卡斯蒂利亚摄政", "en": "King of Aragon and Regent of Castile" },
-          "ideology": { "zh": "王权集中、天主教统一与海外殖民扩张", "en": "Royal centralization, Catholic unity, and overseas colonial expansion" },
-          "headquarters": { "zh": "托莱多与萨拉戈萨", "en": "Toledo and Zaragoza" },
+          "leader": {
+            "zh": "费迪南二世",
+            "en": "Ferdinand II of Aragon"
+          },
+          "leaderTitle": {
+            "zh": "阿拉贡国王·卡斯蒂利亚摄政",
+            "en": "King of Aragon and Regent of Castile"
+          },
+          "ideology": {
+            "zh": "王权集中、天主教统一与海外殖民扩张",
+            "en": "Royal centralization, Catholic unity, and overseas colonial expansion"
+          },
+          "headquarters": {
+            "zh": "托莱多与萨拉戈萨",
+            "en": "Toledo and Zaragoza"
+          },
           "status": "ruling",
-          "relationship": { "zh": "费迪南与伊莎贝拉的联姻（1469）创造了西班牙统一的基础。1504年伊莎贝拉去世后，费迪南以卡斯蒂利亚摄政的身份继续统治，同时巩固西班牙在新世界和地中海的扩张。天主教双王建立了宗教裁判所、完成了收复失地运动、资助了哥伦布的航行，开创了西班牙的黄金时代。", "en": "The marriage of Ferdinand and Isabella (1469) created the foundation for Spanish unification. After Isabella's death in 1504, Ferdinand continued to rule as regent of Castile while consolidating Spain's expansion in the New World and Mediterranean. The Catholic Monarchs established the Inquisition, completed the Reconquista, funded Columbus's voyages, and inaugurated Spain's Golden Age." },
-          "description": { "zh": "费迪南二世（1452-1516）和伊莎贝拉一世（1451-1504）是西班牙历史上最重要的君主对。他们通过联姻将卡斯蒂利亚和阿拉贡两个王国联合起来，奠定了统一西班牙的基础。1492年他们完成了光复运动的最后一步——攻陷格拉纳达，结束了伊比利亚半岛近八百年的穆斯林统治。同年，他们资助哥伦布横渡大西洋，开启了西班牙殖民帝国的建设。他们建立的宗教裁判所成为强制推行宗教统一的工具——1492年驱逐犹太人、后又迫害摩尔人。伊莎贝拉于1504年去世后，费迪南继续以摄政身份掌权，并在1500年前后的意大利战争中与法国争夺那不勒斯。费迪南被马基雅维利视为理想君主的范例，以其精明的外交手腕和无情的政治计算著称。", "en": "Ferdinand II (1452–1516) and Isabella I (1451–1504) were the most important royal couple in Spanish history. Through their marriage they united the kingdoms of Castile and Aragon, laying the foundation for a unified Spain. In 1492 they completed the final step of the Reconquista—the fall of Granada—ending nearly eight centuries of Muslim rule on the Iberian Peninsula. That same year, they funded Columbus's transatlantic voyage, launching Spain's colonial empire. Their Inquisition became an instrument for enforcing religious uniformity—expelling Jews in 1492 and later persecuting Moors. After Isabella's death in 1504, Ferdinand continued to rule as regent and competed with France for Naples in the Italian Wars. Ferdinand was regarded by Machiavelli as a model prince, renowned for shrewd diplomacy and ruthless political calculation." },
+          "relationship": {
+            "zh": "费迪南与伊莎贝拉的联姻（1469）创造了西班牙统一的基础。1504年伊莎贝拉去世后，费迪南以卡斯蒂利亚摄政的身份继续统治，同时巩固西班牙在新世界和地中海的扩张。天主教双王建立了宗教裁判所、完成了收复失地运动、资助了哥伦布的航行，开创了西班牙的黄金时代。",
+            "en": "The marriage of Ferdinand and Isabella (1469) created the foundation for Spanish unification. After Isabella's death in 1504, Ferdinand continued to rule as regent of Castile while consolidating Spain's expansion in the New World and Mediterranean. The Catholic Monarchs established the Inquisition, completed the Reconquista, funded Columbus's voyages, and inaugurated Spain's Golden Age."
+          },
+          "description": {
+            "zh": "费迪南二世（1452-1516）和伊莎贝拉一世（1451-1504）是西班牙历史上最重要的君主对。他们通过联姻将卡斯蒂利亚和阿拉贡两个王国联合起来，奠定了统一西班牙的基础。1492年他们完成了光复运动的最后一步——攻陷格拉纳达，结束了伊比利亚半岛近八百年的穆斯林统治。同年，他们资助哥伦布横渡大西洋，开启了西班牙殖民帝国的建设。他们建立的宗教裁判所成为强制推行宗教统一的工具——1492年驱逐犹太人、后又迫害摩尔人。伊莎贝拉于1504年去世后，费迪南继续以摄政身份掌权，并在1500年前后的意大利战争中与法国争夺那不勒斯。费迪南被马基雅维利视为理想君主的范例，以其精明的外交手腕和无情的政治计算著称。",
+            "en": "Ferdinand II (1452–1516) and Isabella I (1451–1504) were the most important royal couple in Spanish history. Through their marriage they united the kingdoms of Castile and Aragon, laying the foundation for a unified Spain. In 1492 they completed the final step of the Reconquista—the fall of Granada—ending nearly eight centuries of Muslim rule on the Iberian Peninsula. That same year, they funded Columbus's transatlantic voyage, launching Spain's colonial empire. Their Inquisition became an instrument for enforcing religious uniformity—expelling Jews in 1492 and later persecuting Moors. After Isabella's death in 1504, Ferdinand continued to rule as regent and competed with France for Naples in the Italian Wars. Ferdinand was regarded by Machiavelli as a model prince, renowned for shrewd diplomacy and ruthless political calculation."
+          },
           "keyFigures": [
-            { "name": { "zh": "费迪南二世", "en": "Ferdinand II" }, "title": { "zh": "阿拉贡国王", "en": "King of Aragon" }, "role": { "zh": "天主教双王之一，西班牙统一与扩张的主导者", "en": "One of the Catholic Monarchs, architect of Spanish unification and expansion" } },
-            { "name": { "zh": "伊莎贝拉一世", "en": "Isabella I" }, "title": { "zh": "卡斯蒂利亚女王（已故）", "en": "Queen of Castile (deceased)" }, "role": { "zh": "1504年去世，其遗产奠定了西班牙帝国基础", "en": "Died 1504, her legacy laid the foundation of the Spanish Empire" } },
-            { "name": { "zh": "贡萨洛·德·科尔多瓦", "en": "Gonzalo de Córdoba" }, "title": { "zh": "大统帅", "en": "El Gran Capitán" }, "role": { "zh": "西班牙最杰出的军事指挥官，征服意大利南部", "en": "Spain's greatest military commander, conquered southern Italy" } }
+            {
+              "name": {
+                "zh": "费迪南二世",
+                "en": "Ferdinand II"
+              },
+              "title": {
+                "zh": "阿拉贡国王",
+                "en": "King of Aragon"
+              },
+              "role": {
+                "zh": "天主教双王之一，西班牙统一与扩张的主导者",
+                "en": "One of the Catholic Monarchs, architect of Spanish unification and expansion"
+              }
+            },
+            {
+              "name": {
+                "zh": "伊莎贝拉一世",
+                "en": "Isabella I"
+              },
+              "title": {
+                "zh": "卡斯蒂利亚女王（已故）",
+                "en": "Queen of Castile (deceased)"
+              },
+              "role": {
+                "zh": "1504年去世，其遗产奠定了西班牙帝国基础",
+                "en": "Died 1504, her legacy laid the foundation of the Spanish Empire"
+              }
+            },
+            {
+              "name": {
+                "zh": "贡萨洛·德·科尔多瓦",
+                "en": "Gonzalo de Córdoba"
+              },
+              "title": {
+                "zh": "大统帅",
+                "en": "El Gran Capitán"
+              },
+              "role": {
+                "zh": "西班牙最杰出的军事指挥官，征服意大利南部",
+                "en": "Spain's greatest military commander, conquered southern Italy"
+              }
+            }
           ]
         },
         {
           "id": "castilian_grandees",
-          "name": { "zh": "卡斯蒂利亚大贵族", "en": "Grandees of Castile" },
+          "name": {
+            "zh": "卡斯蒂利亚大贵族",
+            "en": "Grandees of Castile"
+          },
           "type": "other",
-          "leader": { "zh": "卡斯蒂利亚高级贵族", "en": "Senior Castilian Nobility" },
-          "leaderTitle": { "zh": "大贵族", "en": "Grandees" },
-          "ideology": { "zh": "封建特权、贵族自治与反集权", "en": "Feudal privileges, aristocratic autonomy, and anti-centralization" },
-          "headquarters": { "zh": "卡斯蒂利亚各地庄园", "en": "Castilian estates across the realm" },
+          "leader": {
+            "zh": "卡斯蒂利亚高级贵族",
+            "en": "Senior Castilian Nobility"
+          },
+          "leaderTitle": {
+            "zh": "大贵族",
+            "en": "Grandees"
+          },
+          "ideology": {
+            "zh": "封建特权、贵族自治与反集权",
+            "en": "Feudal privileges, aristocratic autonomy, and anti-centralization"
+          },
+          "headquarters": {
+            "zh": "卡斯蒂利亚各地庄园",
+            "en": "Castilian estates across the realm"
+          },
           "status": "rival",
-          "relationship": { "zh": "卡斯蒂利亚大贵族是西班牙传统权力结构的支柱，但天主教双王的集权政策严重侵蚀了他们的政治自主权。伊莎贝拉通过设立皇家评议会、收回领地特许权、控制骑士团团长职位等手段削弱了贵族权力。大贵族虽然不满，但因收复失地运动和海外殖民带来的新利益而暂时妥协。", "en": "The Castilian grandees were pillars of Spain's traditional power structure, but the Catholic Monarchs' centralization policies seriously eroded their political autonomy. Isabella weakened noble power through establishing the Royal Council, revoking territorial franchises, and controlling the masterships of military orders. Though resentful, the grandees temporarily acquiesced because of new opportunities from the Reconquista and overseas colonization." },
-          "description": { "zh": "卡斯蒂利亚大贵族（Grandeza）是西班牙最高等级的世袭贵族，包括门多萨、恩里克斯、阿尔瓦、贝纳文特等显赫家族。在天主教双王之前的混乱时期（特别是恩里克四世统治期间），大贵族享有近乎独立的领地权力，控制着大片土地和私人武装。伊莎贝拉即位后系统性地削弱了贵族特权：她收回了被贵族侵占的王室领地，将三大骑士团（圣地亚哥、卡拉特拉瓦、阿尔坎塔拉）的团长职位归并王室，设立了直接听命于王室的巡回法官制度，并在各城市建立皇家代表。然而贵族仍然控制着卡斯蒂利亚大部分农业土地，在军事和社会地位上依然举足轻重。他们对费迪南在伊莎贝拉死后的摄政地位心存疑虑，部分贵族倾向于支持伊莎贝拉的女婿——哈布斯堡的腓力（美男子）的继承权。", "en": "The Castilian grandees (Grandeza) were Spain's highest hereditary nobility, including illustrious houses like the Mendoza, Enríquez, Alba, and Benavente. During the chaotic pre-Catholic Monarchs period (especially under Henry IV), grandees enjoyed near-independent territorial power, controlling vast lands and private armies. After Isabella's accession, she systematically weakened noble privileges: she reclaimed crown lands usurped by nobles, merged the masterships of the three great military orders (Santiago, Calatrava, Alcántara) into the crown, established a system of itinerant royal judges, and placed royal representatives in cities. Yet the nobility still controlled most of Castile's agricultural land and remained crucial in military and social standing. They harbored doubts about Ferdinand's regency after Isabella's death, with some nobles favoring the succession claims of Isabella's son-in-law, Philip the Handsome of Habsburg." },
+          "relationship": {
+            "zh": "卡斯蒂利亚大贵族是西班牙传统权力结构的支柱，但天主教双王的集权政策严重侵蚀了他们的政治自主权。伊莎贝拉通过设立皇家评议会、收回领地特许权、控制骑士团团长职位等手段削弱了贵族权力。大贵族虽然不满，但因收复失地运动和海外殖民带来的新利益而暂时妥协。",
+            "en": "The Castilian grandees were pillars of Spain's traditional power structure, but the Catholic Monarchs' centralization policies seriously eroded their political autonomy. Isabella weakened noble power through establishing the Royal Council, revoking territorial franchises, and controlling the masterships of military orders. Though resentful, the grandees temporarily acquiesced because of new opportunities from the Reconquista and overseas colonization."
+          },
+          "description": {
+            "zh": "卡斯蒂利亚大贵族（Grandeza）是西班牙最高等级的世袭贵族，包括门多萨、恩里克斯、阿尔瓦、贝纳文特等显赫家族。在天主教双王之前的混乱时期（特别是恩里克四世统治期间），大贵族享有近乎独立的领地权力，控制着大片土地和私人武装。伊莎贝拉即位后系统性地削弱了贵族特权：她收回了被贵族侵占的王室领地，将三大骑士团（圣地亚哥、卡拉特拉瓦、阿尔坎塔拉）的团长职位归并王室，设立了直接听命于王室的巡回法官制度，并在各城市建立皇家代表。然而贵族仍然控制着卡斯蒂利亚大部分农业土地，在军事和社会地位上依然举足轻重。他们对费迪南在伊莎贝拉死后的摄政地位心存疑虑，部分贵族倾向于支持伊莎贝拉的女婿——哈布斯堡的腓力（美男子）的继承权。",
+            "en": "The Castilian grandees (Grandeza) were Spain's highest hereditary nobility, including illustrious houses like the Mendoza, Enríquez, Alba, and Benavente. During the chaotic pre-Catholic Monarchs period (especially under Henry IV), grandees enjoyed near-independent territorial power, controlling vast lands and private armies. After Isabella's accession, she systematically weakened noble privileges: she reclaimed crown lands usurped by nobles, merged the masterships of the three great military orders (Santiago, Calatrava, Alcántara) into the crown, established a system of itinerant royal judges, and placed royal representatives in cities. Yet the nobility still controlled most of Castile's agricultural land and remained crucial in military and social standing. They harbored doubts about Ferdinand's regency after Isabella's death, with some nobles favoring the succession claims of Isabella's son-in-law, Philip the Handsome of Habsburg."
+          },
           "keyFigures": [
-            { "name": { "zh": "门多萨家族", "en": "House of Mendoza" }, "title": { "zh": "因凡塔多公爵", "en": "Duke of Infantado" }, "role": { "zh": "卡斯蒂利亚最富有的贵族家族之一", "en": "One of Castile's wealthiest noble families" } },
-            { "name": { "zh": "法德里克·恩里克斯", "en": "Fadrique Enríquez" }, "title": { "zh": "卡斯蒂利亚海军上将", "en": "Admiral of Castile" }, "role": { "zh": "世袭海军统帅家族，费迪南的外祖父家族", "en": "Hereditary naval command family, Ferdinand's maternal grandfather's house" } }
+            {
+              "name": {
+                "zh": "门多萨家族",
+                "en": "House of Mendoza"
+              },
+              "title": {
+                "zh": "因凡塔多公爵",
+                "en": "Duke of Infantado"
+              },
+              "role": {
+                "zh": "卡斯蒂利亚最富有的贵族家族之一",
+                "en": "One of Castile's wealthiest noble families"
+              }
+            },
+            {
+              "name": {
+                "zh": "法德里克·恩里克斯",
+                "en": "Fadrique Enríquez"
+              },
+              "title": {
+                "zh": "卡斯蒂利亚海军上将",
+                "en": "Admiral of Castile"
+              },
+              "role": {
+                "zh": "世袭海军统帅家族，费迪南的外祖父家族",
+                "en": "Hereditary naval command family, Ferdinand's maternal grandfather's house"
+              }
+            }
           ]
         },
         {
           "id": "church_inquisition",
-          "name": { "zh": "教会与宗教裁判所", "en": "Church and Inquisition" },
+          "name": {
+            "zh": "教会与宗教裁判所",
+            "en": "Church and Inquisition"
+          },
           "type": "religious",
-          "leader": { "zh": "弗朗西斯科·希梅内斯·德·西斯内罗斯", "en": "Francisco Ximénez de Cisneros" },
-          "leaderTitle": { "zh": "托莱多大主教·卡斯蒂利亚首席主教", "en": "Archbishop of Toledo and Primate of Castile" },
-          "ideology": { "zh": "天主教正统、宗教统一与异端清除", "en": "Catholic orthodoxy, religious uniformity, and extirpation of heresy" },
-          "headquarters": { "zh": "托莱多", "en": "Toledo" },
+          "leader": {
+            "zh": "弗朗西斯科·希梅内斯·德·西斯内罗斯",
+            "en": "Francisco Ximénez de Cisneros"
+          },
+          "leaderTitle": {
+            "zh": "托莱多大主教·卡斯蒂利亚首席主教",
+            "en": "Archbishop of Toledo and Primate of Castile"
+          },
+          "ideology": {
+            "zh": "天主教正统、宗教统一与异端清除",
+            "en": "Catholic orthodoxy, religious uniformity, and extirpation of heresy"
+          },
+          "headquarters": {
+            "zh": "托莱多",
+            "en": "Toledo"
+          },
           "status": "allied",
-          "relationship": { "zh": "教会与宗教裁判所是天主教双王政策的忠实执行者和意识形态支柱。西斯内罗斯大主教兼具宗教热忱和政治能力，他推行的宗教统一政策（包括强制改宗穆斯林）与王室利益高度一致。宗教裁判所不仅是宗教工具，更成为王室控制社会、压制异见的政治手段。", "en": "The Church and Inquisition were faithful executors and ideological pillars of the Catholic Monarchs' policies. Archbishop Cisneros combined religious zeal with political ability; his religious uniformity policies (including forced conversion of Muslims) aligned closely with royal interests. The Inquisition was not merely a religious tool but became a political instrument for royal social control and suppression of dissent." },
-          "description": { "zh": "西班牙宗教裁判所（成立于1478年）是天主教双王最具争议的遗产之一。它最初针对被怀疑秘密保持犹太教信仰的改宗者（conversos），后来扩展到摩尔人改宗者（moriscos）和各种异端。第一任大审判官托马斯·德·托尔克马达（任期1483-1498）以严酷著称，在其任期内数千人被处以火刑。1500年前后，弗朗西斯科·希梅内斯·德·西斯内罗斯已成为西班牙教会最有权势的人物。这位方济各会修士出身的大主教是一位复杂的人物：他一方面推行严格的修会改革和学术事业（创办阿尔卡拉大学、主持编纂多语种《圣经》），另一方面在格拉纳达强制推行穆斯林改宗，焚毁阿拉伯语书籍。宗教裁判所的存在确保了西班牙成为欧洲宗教最为划一的国家，但也造成了大量知识和文化损失，并驱逐了犹太人和穆斯林这两个在经济和学术上颇有贡献的群体。", "en": "The Spanish Inquisition (established 1478) was one of the Catholic Monarchs' most controversial legacies. Initially targeting conversos suspected of secretly practicing Judaism, it later expanded to Morisco converts and various heretics. The first Grand Inquisitor, Tomás de Torquemada (1483–1498), was notorious for severity, with thousands burned at the stake during his tenure. By around 1500, Francisco Ximénez de Cisneros had become the most powerful figure in the Spanish Church. This archbishop of Franciscan origins was a complex figure: he implemented strict monastic reforms and scholarly projects (founding the University of Alcalá, overseeing the Complutensian Polyglot Bible) while simultaneously forcing Muslim conversion in Granada and burning Arabic books. The Inquisition ensured Spain became Europe's most religiously uniform state but also caused immense intellectual and cultural loss, expelling Jews and Muslims—two groups that had contributed significantly to the economy and scholarship." },
+          "relationship": {
+            "zh": "教会与宗教裁判所是天主教双王政策的忠实执行者和意识形态支柱。西斯内罗斯大主教兼具宗教热忱和政治能力，他推行的宗教统一政策（包括强制改宗穆斯林）与王室利益高度一致。宗教裁判所不仅是宗教工具，更成为王室控制社会、压制异见的政治手段。",
+            "en": "The Church and Inquisition were faithful executors and ideological pillars of the Catholic Monarchs' policies. Archbishop Cisneros combined religious zeal with political ability; his religious uniformity policies (including forced conversion of Muslims) aligned closely with royal interests. The Inquisition was not merely a religious tool but became a political instrument for royal social control and suppression of dissent."
+          },
+          "description": {
+            "zh": "西班牙宗教裁判所（成立于1478年）是天主教双王最具争议的遗产之一。它最初针对被怀疑秘密保持犹太教信仰的改宗者（conversos），后来扩展到摩尔人改宗者（moriscos）和各种异端。第一任大审判官托马斯·德·托尔克马达（任期1483-1498）以严酷著称，在其任期内数千人被处以火刑。1500年前后，弗朗西斯科·希梅内斯·德·西斯内罗斯已成为西班牙教会最有权势的人物。这位方济各会修士出身的大主教是一位复杂的人物：他一方面推行严格的修会改革和学术事业（创办阿尔卡拉大学、主持编纂多语种《圣经》），另一方面在格拉纳达强制推行穆斯林改宗，焚毁阿拉伯语书籍。宗教裁判所的存在确保了西班牙成为欧洲宗教最为划一的国家，但也造成了大量知识和文化损失，并驱逐了犹太人和穆斯林这两个在经济和学术上颇有贡献的群体。",
+            "en": "The Spanish Inquisition (established 1478) was one of the Catholic Monarchs' most controversial legacies. Initially targeting conversos suspected of secretly practicing Judaism, it later expanded to Morisco converts and various heretics. The first Grand Inquisitor, Tomás de Torquemada (1483–1498), was notorious for severity, with thousands burned at the stake during his tenure. By around 1500, Francisco Ximénez de Cisneros had become the most powerful figure in the Spanish Church. This archbishop of Franciscan origins was a complex figure: he implemented strict monastic reforms and scholarly projects (founding the University of Alcalá, overseeing the Complutensian Polyglot Bible) while simultaneously forcing Muslim conversion in Granada and burning Arabic books. The Inquisition ensured Spain became Europe's most religiously uniform state but also caused immense intellectual and cultural loss, expelling Jews and Muslims—two groups that had contributed significantly to the economy and scholarship."
+          },
           "keyFigures": [
-            { "name": { "zh": "弗朗西斯科·希梅内斯·德·西斯内罗斯", "en": "Francisco Ximénez de Cisneros" }, "title": { "zh": "托莱多大主教", "en": "Archbishop of Toledo" }, "role": { "zh": "西班牙教会领袖，兼具改革者和宗教强硬派双重角色", "en": "Leader of the Spanish Church, embodying both reformer and religious hardliner" } },
-            { "name": { "zh": "迭戈·德·德萨", "en": "Diego de Deza" }, "title": { "zh": "大审判官", "en": "Grand Inquisitor" }, "role": { "zh": "继托尔克马达后的宗教裁判所领导者", "en": "Successor to Torquemada as leader of the Inquisition" } }
+            {
+              "name": {
+                "zh": "弗朗西斯科·希梅内斯·德·西斯内罗斯",
+                "en": "Francisco Ximénez de Cisneros"
+              },
+              "title": {
+                "zh": "托莱多大主教",
+                "en": "Archbishop of Toledo"
+              },
+              "role": {
+                "zh": "西班牙教会领袖，兼具改革者和宗教强硬派双重角色",
+                "en": "Leader of the Spanish Church, embodying both reformer and religious hardliner"
+              }
+            },
+            {
+              "name": {
+                "zh": "迭戈·德·德萨",
+                "en": "Diego de Deza"
+              },
+              "title": {
+                "zh": "大审判官",
+                "en": "Grand Inquisitor"
+              },
+              "role": {
+                "zh": "继托尔克马达后的宗教裁判所领导者",
+                "en": "Successor to Torquemada as leader of the Inquisition"
+              }
+            }
           ]
         }
       ]
@@ -20164,6 +20774,20 @@
         "keyInnovations": {
           "zh": "威尼斯的关键优势在于兵工厂的大规模造船组织、先进海图与导航知识、铸炮技术、玻璃制造、印刷出版与金融文书体系。其行政档案管理、复式簿记运用和海上保险实践也十分成熟。",
           "en": "Venice's key strengths lay in the large-scale shipbuilding organization of the Arsenal, advanced charting and navigational knowledge, cannon founding, glassmaking, printing, and financial documentation. Its archival administration, use of double-entry bookkeeping, and maritime insurance practices were also highly developed."
+        },
+        "sectors": {
+          "navalAndMaritime": {
+            "zh": "造船与航海技术地中海最强：威尼斯兵工厂（Arsenale）是欧洲最大的工业设施，可日产一艘战舰，采用流水线式生产管理。桨帆战舰（加莱塞船）技术领先。航海地图和航海仪器制造精良。",
+            "en": "Strongest naval and maritime tech in the Mediterranean: the Venice Arsenal is Europe's largest industrial facility, capable of producing one warship per day using assembly-line management. Galley technology leads. Nautical charts and navigation instruments are finely crafted."
+          },
+          "glassAndCrafts": {
+            "zh": "玻璃与精密工艺全球领先：穆拉诺岛玻璃制造是欧洲最先进的精密手工业，生产镜子、透镜和彩色玻璃。威尼斯工匠的保密制度极严。印刷业发达，阿尔杜斯·马努提乌斯创立的威尼斯印刷所是欧洲最重要的出版中心。",
+            "en": "World-leading glass and precision crafts: Murano glass manufacturing is Europe's most advanced precision handicraft, producing mirrors, lenses, and colored glass. Venetian artisan secrecy is extreme. Printing flourishes — Aldus Manutius's Venetian press is Europe's most important publishing center."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1500年的威尼斯是地中海世界的技术高地，兵工厂的流水线生产管理可视为工业革命的早期先驱。穆拉诺玻璃和威尼斯印刷业代表欧洲最精密的手工业技术。但威尼斯正面临大航海时代带来的地缘挑战——新航路使地中海贸易的战略地位下降，葡萄牙人绕过好望角直达亚洲将动摇威尼斯的商业基础。",
+          "en": "Venice in 1500 is the technological high ground of the Mediterranean; the Arsenal's assembly-line production management can be seen as an early precursor to the Industrial Revolution. Murano glass and Venetian printing represent Europe's most precise handicraft technology. But Venice faces the geopolitical challenge of the Age of Discovery — new sea routes diminish Mediterranean trade's strategic importance; Portugal's Cape route to Asia will shake Venice's commercial foundations."
         }
       },
       "assessment": {
@@ -21371,51 +21995,205 @@
       "factions": [
         {
           "id": "borgia_papacy",
-          "name": { "zh": "波吉亚教廷", "en": "Borgia Papacy" },
+          "name": {
+            "zh": "波吉亚教廷",
+            "en": "Borgia Papacy"
+          },
           "type": "other",
-          "leader": { "zh": "教皇亚历山大六世", "en": "Pope Alexander VI" },
-          "leaderTitle": { "zh": "罗马教皇", "en": "Pope" },
-          "ideology": { "zh": "家族利益至上、世俗权力扩张与政治操纵", "en": "Family interest above all, temporal power expansion, and political manipulation" },
-          "headquarters": { "zh": "梵蒂冈宫", "en": "Vatican Palace" },
+          "leader": {
+            "zh": "教皇亚历山大六世",
+            "en": "Pope Alexander VI"
+          },
+          "leaderTitle": {
+            "zh": "罗马教皇",
+            "en": "Pope"
+          },
+          "ideology": {
+            "zh": "家族利益至上、世俗权力扩张与政治操纵",
+            "en": "Family interest above all, temporal power expansion, and political manipulation"
+          },
+          "headquarters": {
+            "zh": "梵蒂冈宫",
+            "en": "Vatican Palace"
+          },
           "status": "ruling",
-          "relationship": { "zh": "波吉亚家族在亚历山大六世（罗德里戈·波吉亚）的领导下掌控着教廷。他通过贿选获得教皇之位后，将裙带关系发挥到极致——任命儿子切萨雷·波吉亚为枢机主教、后又支持其组建军队征服罗马涅地区。波吉亚教廷以其腐败、暗杀和权谋著称，却也是文艺复兴艺术的重要赞助者。", "en": "The Borgia family controlled the papacy under Alexander VI (Rodrigo Borgia). After obtaining the papal throne through bribery, he elevated nepotism to extremes—appointing his son Cesare Borgia as cardinal, then supporting his military conquest of the Romagna. The Borgia papacy was notorious for corruption, assassination, and intrigue, yet was also a significant patron of Renaissance art." },
-          "description": { "zh": "亚历山大六世（1431-1503）出身西班牙裔波吉亚（博尔哈）家族，1492年通过大规模贿赂当选教皇，是文艺复兴时期最具争议的教皇之一。他公然蓄养情妇、承认私生子女，并将教廷资源无度地用于家族扩张。其子切萨雷·波吉亚是马基雅维利《君主论》中理想君主的原型，以残忍和精明著称，试图在意大利中部建立波吉亚王国。亚历山大六世的另一项重大决策是1493年发布的教皇子午线谕令，在西班牙和葡萄牙之间划分新世界。尽管他的教皇任期充满丑闻，但他也委托平图里乔为梵蒂冈绘制壁画，并在罗马城市建设方面有所投入。波吉亚教廷的腐败成为日后宗教改革运动批判罗马教廷的重要依据。", "en": "Alexander VI (1431–1503), born into the Spanish Borgia (Borja) family, was elected pope in 1492 through massive bribery and remains one of the most controversial popes of the Renaissance. He openly kept mistresses, acknowledged his illegitimate children, and lavished papal resources on family aggrandizement. His son Cesare Borgia became the model for Machiavelli's ideal prince in 'The Prince,' renowned for cruelty and cunning, attempting to carve out a Borgia kingdom in central Italy. Another major decision was the 1493 papal bull establishing the Line of Demarcation between Spain and Portugal in the New World. Despite his scandal-ridden pontificate, he commissioned Pinturicchio to paint Vatican frescoes and invested in Roman urban development. The corruption of the Borgia papacy became a key rallying point for the later Protestant Reformation's critique of the Roman Church." },
+          "relationship": {
+            "zh": "波吉亚家族在亚历山大六世（罗德里戈·波吉亚）的领导下掌控着教廷。他通过贿选获得教皇之位后，将裙带关系发挥到极致——任命儿子切萨雷·波吉亚为枢机主教、后又支持其组建军队征服罗马涅地区。波吉亚教廷以其腐败、暗杀和权谋著称，却也是文艺复兴艺术的重要赞助者。",
+            "en": "The Borgia family controlled the papacy under Alexander VI (Rodrigo Borgia). After obtaining the papal throne through bribery, he elevated nepotism to extremes—appointing his son Cesare Borgia as cardinal, then supporting his military conquest of the Romagna. The Borgia papacy was notorious for corruption, assassination, and intrigue, yet was also a significant patron of Renaissance art."
+          },
+          "description": {
+            "zh": "亚历山大六世（1431-1503）出身西班牙裔波吉亚（博尔哈）家族，1492年通过大规模贿赂当选教皇，是文艺复兴时期最具争议的教皇之一。他公然蓄养情妇、承认私生子女，并将教廷资源无度地用于家族扩张。其子切萨雷·波吉亚是马基雅维利《君主论》中理想君主的原型，以残忍和精明著称，试图在意大利中部建立波吉亚王国。亚历山大六世的另一项重大决策是1493年发布的教皇子午线谕令，在西班牙和葡萄牙之间划分新世界。尽管他的教皇任期充满丑闻，但他也委托平图里乔为梵蒂冈绘制壁画，并在罗马城市建设方面有所投入。波吉亚教廷的腐败成为日后宗教改革运动批判罗马教廷的重要依据。",
+            "en": "Alexander VI (1431–1503), born into the Spanish Borgia (Borja) family, was elected pope in 1492 through massive bribery and remains one of the most controversial popes of the Renaissance. He openly kept mistresses, acknowledged his illegitimate children, and lavished papal resources on family aggrandizement. His son Cesare Borgia became the model for Machiavelli's ideal prince in 'The Prince,' renowned for cruelty and cunning, attempting to carve out a Borgia kingdom in central Italy. Another major decision was the 1493 papal bull establishing the Line of Demarcation between Spain and Portugal in the New World. Despite his scandal-ridden pontificate, he commissioned Pinturicchio to paint Vatican frescoes and invested in Roman urban development. The corruption of the Borgia papacy became a key rallying point for the later Protestant Reformation's critique of the Roman Church."
+          },
           "keyFigures": [
-            { "name": { "zh": "亚历山大六世", "en": "Alexander VI" }, "title": { "zh": "罗马教皇", "en": "Pope" }, "role": { "zh": "波吉亚家族教皇，以裙带关系和政治权谋著称", "en": "Borgia family pope, notorious for nepotism and political intrigue" } },
-            { "name": { "zh": "切萨雷·波吉亚", "en": "Cesare Borgia" }, "title": { "zh": "瓦伦蒂诺公爵·枢机主教", "en": "Duke of Valentinois and Cardinal" }, "role": { "zh": "教皇之子，军事征服者，马基雅维利笔下的理想君主", "en": "Pope's son, military conqueror, Machiavelli's model prince" } },
-            { "name": { "zh": "卢克雷齐亚·波吉亚", "en": "Lucrezia Borgia" }, "title": { "zh": "费拉拉公爵夫人", "en": "Duchess of Ferrara" }, "role": { "zh": "教皇之女，通过联姻成为波吉亚家族外交工具", "en": "Pope's daughter, used as a diplomatic instrument through strategic marriages" } }
+            {
+              "name": {
+                "zh": "亚历山大六世",
+                "en": "Alexander VI"
+              },
+              "title": {
+                "zh": "罗马教皇",
+                "en": "Pope"
+              },
+              "role": {
+                "zh": "波吉亚家族教皇，以裙带关系和政治权谋著称",
+                "en": "Borgia family pope, notorious for nepotism and political intrigue"
+              }
+            },
+            {
+              "name": {
+                "zh": "切萨雷·波吉亚",
+                "en": "Cesare Borgia"
+              },
+              "title": {
+                "zh": "瓦伦蒂诺公爵·枢机主教",
+                "en": "Duke of Valentinois and Cardinal"
+              },
+              "role": {
+                "zh": "教皇之子，军事征服者，马基雅维利笔下的理想君主",
+                "en": "Pope's son, military conqueror, Machiavelli's model prince"
+              }
+            },
+            {
+              "name": {
+                "zh": "卢克雷齐亚·波吉亚",
+                "en": "Lucrezia Borgia"
+              },
+              "title": {
+                "zh": "费拉拉公爵夫人",
+                "en": "Duchess of Ferrara"
+              },
+              "role": {
+                "zh": "教皇之女，通过联姻成为波吉亚家族外交工具",
+                "en": "Pope's daughter, used as a diplomatic instrument through strategic marriages"
+              }
+            }
           ]
         },
         {
           "id": "reform_cardinals",
-          "name": { "zh": "改革派枢机团", "en": "Reform Cardinals" },
+          "name": {
+            "zh": "改革派枢机团",
+            "en": "Reform Cardinals"
+          },
           "type": "religious",
-          "leader": { "zh": "改革派高级教士", "en": "Reformist Senior Clergy" },
-          "leaderTitle": { "zh": "枢机主教", "en": "Cardinals" },
-          "ideology": { "zh": "教会道德改革、反腐败与教义纯正", "en": "Ecclesiastical moral reform, anti-corruption, and doctrinal purity" },
-          "headquarters": { "zh": "罗马各教堂", "en": "Various Roman churches" },
+          "leader": {
+            "zh": "改革派高级教士",
+            "en": "Reformist Senior Clergy"
+          },
+          "leaderTitle": {
+            "zh": "枢机主教",
+            "en": "Cardinals"
+          },
+          "ideology": {
+            "zh": "教会道德改革、反腐败与教义纯正",
+            "en": "Ecclesiastical moral reform, anti-corruption, and doctrinal purity"
+          },
+          "headquarters": {
+            "zh": "罗马各教堂",
+            "en": "Various Roman churches"
+          },
           "status": "opposition",
-          "relationship": { "zh": "改革派枢机团代表了教会内部对波吉亚教廷腐败的道德反对力量。他们虽然无力直接挑战教皇权威，但通过布道、著述和私下联络，为日后的反宗教改革运动积蓄了力量。萨沃纳罗拉在佛罗伦萨的改革布道虽以悲剧收场，却激励了更多教会内部改革者。", "en": "The reform cardinals represented the moral opposition to Borgia papal corruption from within the Church. Though unable to directly challenge papal authority, they accumulated momentum for the later Counter-Reformation through preaching, writing, and private networking. Savonarola's reform preaching in Florence, though ending in tragedy, inspired more internal Church reformers." },
-          "description": { "zh": "在波吉亚教廷的阴影下，一批有良知的枢机主教和高级教士开始酝酿教会改革。他们目睹了亚历山大六世公然出售圣职、纵容家族腐败的丑闻，深感教会正在偏离基督教信仰的核心价值。虽然1500年时正式的反宗教改革运动尚未开始，但改革的种子已经播下。1494-1498年佛罗伦萨多明我会修士萨沃纳罗拉的激进改革运动，虽以火刑告终，却深刻震撼了意大利社会。在教廷内部，一些枢机主教私下讨论召开大公会议来约束教皇权力的可能性。西班牙的希梅内斯·德·西斯内罗斯大主教已在伊比利亚半岛推行严格的修会改革。这些分散的改革力量虽然尚未形成统一运动，但预示着16世纪席卷欧洲的宗教改革浪潮。", "en": "Under the shadow of the Borgia papacy, a group of conscientious cardinals and senior clergy began preparing for Church reform. Witnessing Alexander VI's open sale of offices and toleration of family corruption, they felt the Church was straying from the core values of Christian faith. Though the formal Counter-Reformation had not yet begun by 1500, the seeds of reform were sown. The radical reform movement of the Dominican friar Savonarola in Florence (1494–1498), though ending at the stake, profoundly shook Italian society. Within the Curia, some cardinals privately discussed the possibility of convening a general council to constrain papal power. In Spain, Archbishop Ximénez de Cisneros was already implementing strict monastic reforms on the Iberian Peninsula. These dispersed reform forces had not yet coalesced into a unified movement but foreshadowed the Reformation waves that would sweep Europe in the 16th century." },
+          "relationship": {
+            "zh": "改革派枢机团代表了教会内部对波吉亚教廷腐败的道德反对力量。他们虽然无力直接挑战教皇权威，但通过布道、著述和私下联络，为日后的反宗教改革运动积蓄了力量。萨沃纳罗拉在佛罗伦萨的改革布道虽以悲剧收场，却激励了更多教会内部改革者。",
+            "en": "The reform cardinals represented the moral opposition to Borgia papal corruption from within the Church. Though unable to directly challenge papal authority, they accumulated momentum for the later Counter-Reformation through preaching, writing, and private networking. Savonarola's reform preaching in Florence, though ending in tragedy, inspired more internal Church reformers."
+          },
+          "description": {
+            "zh": "在波吉亚教廷的阴影下，一批有良知的枢机主教和高级教士开始酝酿教会改革。他们目睹了亚历山大六世公然出售圣职、纵容家族腐败的丑闻，深感教会正在偏离基督教信仰的核心价值。虽然1500年时正式的反宗教改革运动尚未开始，但改革的种子已经播下。1494-1498年佛罗伦萨多明我会修士萨沃纳罗拉的激进改革运动，虽以火刑告终，却深刻震撼了意大利社会。在教廷内部，一些枢机主教私下讨论召开大公会议来约束教皇权力的可能性。西班牙的希梅内斯·德·西斯内罗斯大主教已在伊比利亚半岛推行严格的修会改革。这些分散的改革力量虽然尚未形成统一运动，但预示着16世纪席卷欧洲的宗教改革浪潮。",
+            "en": "Under the shadow of the Borgia papacy, a group of conscientious cardinals and senior clergy began preparing for Church reform. Witnessing Alexander VI's open sale of offices and toleration of family corruption, they felt the Church was straying from the core values of Christian faith. Though the formal Counter-Reformation had not yet begun by 1500, the seeds of reform were sown. The radical reform movement of the Dominican friar Savonarola in Florence (1494–1498), though ending at the stake, profoundly shook Italian society. Within the Curia, some cardinals privately discussed the possibility of convening a general council to constrain papal power. In Spain, Archbishop Ximénez de Cisneros was already implementing strict monastic reforms on the Iberian Peninsula. These dispersed reform forces had not yet coalesced into a unified movement but foreshadowed the Reformation waves that would sweep Europe in the 16th century."
+          },
           "keyFigures": [
-            { "name": { "zh": "吉罗拉莫·萨沃纳罗拉", "en": "Girolamo Savonarola" }, "title": { "zh": "多明我会修士", "en": "Dominican Friar" }, "role": { "zh": "佛罗伦萨激进改革者，抨击教廷腐败，1498年被处火刑", "en": "Radical reformer in Florence, denounced papal corruption, burned at the stake in 1498" } },
-            { "name": { "zh": "弗朗西斯科·希梅内斯·德·西斯内罗斯", "en": "Francisco Ximénez de Cisneros" }, "title": { "zh": "托莱多大主教", "en": "Archbishop of Toledo" }, "role": { "zh": "西班牙教会改革领袖，推行修会纪律改革", "en": "Leader of Spanish Church reform, implemented monastic discipline reforms" } }
+            {
+              "name": {
+                "zh": "吉罗拉莫·萨沃纳罗拉",
+                "en": "Girolamo Savonarola"
+              },
+              "title": {
+                "zh": "多明我会修士",
+                "en": "Dominican Friar"
+              },
+              "role": {
+                "zh": "佛罗伦萨激进改革者，抨击教廷腐败，1498年被处火刑",
+                "en": "Radical reformer in Florence, denounced papal corruption, burned at the stake in 1498"
+              }
+            },
+            {
+              "name": {
+                "zh": "弗朗西斯科·希梅内斯·德·西斯内罗斯",
+                "en": "Francisco Ximénez de Cisneros"
+              },
+              "title": {
+                "zh": "托莱多大主教",
+                "en": "Archbishop of Toledo"
+              },
+              "role": {
+                "zh": "西班牙教会改革领袖，推行修会纪律改革",
+                "en": "Leader of Spanish Church reform, implemented monastic discipline reforms"
+              }
+            }
           ]
         },
         {
           "id": "della_rovere_faction",
-          "name": { "zh": "德拉·罗维雷派系", "en": "Della Rovere Faction" },
+          "name": {
+            "zh": "德拉·罗维雷派系",
+            "en": "Della Rovere Faction"
+          },
           "type": "other",
-          "leader": { "zh": "朱利亚诺·德拉·罗维雷", "en": "Giuliano della Rovere" },
-          "leaderTitle": { "zh": "圣伯多禄锁链堂枢机主教", "en": "Cardinal of San Pietro in Vincoli" },
-          "ideology": { "zh": "反波吉亚、教廷军事力量建设与世俗权威恢复", "en": "Anti-Borgia, papal military power building, and restoration of temporal authority" },
-          "headquarters": { "zh": "罗马·圣伯多禄锁链堂", "en": "San Pietro in Vincoli, Rome" },
+          "leader": {
+            "zh": "朱利亚诺·德拉·罗维雷",
+            "en": "Giuliano della Rovere"
+          },
+          "leaderTitle": {
+            "zh": "圣伯多禄锁链堂枢机主教",
+            "en": "Cardinal of San Pietro in Vincoli"
+          },
+          "ideology": {
+            "zh": "反波吉亚、教廷军事力量建设与世俗权威恢复",
+            "en": "Anti-Borgia, papal military power building, and restoration of temporal authority"
+          },
+          "headquarters": {
+            "zh": "罗马·圣伯多禄锁链堂",
+            "en": "San Pietro in Vincoli, Rome"
+          },
           "status": "rival",
-          "relationship": { "zh": "德拉·罗维雷是波吉亚在教廷内最危险的对手。朱利亚诺枢机主教是前教皇西克斯图斯四世的侄子，在1492年教皇选举中败给罗德里戈·波吉亚后，成为波吉亚家族不共戴天的仇敌。他流亡法国，积极联络各方势力图谋推翻波吉亚，最终在1503年当选为教皇尤利乌斯二世。", "en": "The della Rovere were the Borgias' most dangerous rivals within the Curia. Cardinal Giuliano, nephew of the former Pope Sixtus IV, became the Borgias' implacable enemy after losing the 1492 papal election to Rodrigo Borgia. He went into exile in France, actively networking with various powers to overthrow the Borgias, and ultimately became Pope Julius II in 1503." },
-          "description": { "zh": "德拉·罗维雷家族是15世纪末教廷政治中最重要的家族势力之一。家族权力源自西克斯图斯四世（在位1471-1484），他的侄子朱利亚诺·德拉·罗维雷在1492年教皇选举中是亚历山大六世的主要竞争者。败选后，朱利亚诺认定选举被波吉亚的贿赂所玷污，拒绝接受结果，流亡至法国国王查理八世的宫廷。他在那里积极推动法国入侵意大利，部分动机就是要推翻波吉亚。朱利亚诺拥有强大的个人魅力和政治野心，他在教廷中的盟友遍布多个枢机主教团派系。1503年亚历山大六世去世后，经过短暂的庇护三世教皇过渡期，朱利亚诺终于当选为尤利乌斯二世，成为文艺复兴时期最具军事色彩的教皇——他亲自率军征战、委托米开朗基罗绘制西斯廷礼拜堂天顶画、奠定了圣伯多禄大殿重建计划。", "en": "The della Rovere family was one of the most significant dynastic forces in late 15th-century papal politics. The family's power originated with Sixtus IV (r. 1471–1484), whose nephew Giuliano della Rovere was Alexander VI's principal rival in the 1492 papal election. After losing, Giuliano declared the election tainted by Borgia bribery, refused to accept the result, and went into exile at the court of French King Charles VIII. There he actively promoted the French invasion of Italy, partly motivated by desire to overthrow the Borgias. Giuliano possessed formidable personal charisma and political ambition, with allies across multiple cardinal factions within the Curia. After Alexander VI's death in 1503, following a brief transition under Pius III, Giuliano was finally elected as Julius II, becoming the most militarily active pope of the Renaissance—personally leading armies in battle, commissioning Michelangelo to paint the Sistine Chapel ceiling, and initiating the reconstruction of St. Peter's Basilica." },
+          "relationship": {
+            "zh": "德拉·罗维雷是波吉亚在教廷内最危险的对手。朱利亚诺枢机主教是前教皇西克斯图斯四世的侄子，在1492年教皇选举中败给罗德里戈·波吉亚后，成为波吉亚家族不共戴天的仇敌。他流亡法国，积极联络各方势力图谋推翻波吉亚，最终在1503年当选为教皇尤利乌斯二世。",
+            "en": "The della Rovere were the Borgias' most dangerous rivals within the Curia. Cardinal Giuliano, nephew of the former Pope Sixtus IV, became the Borgias' implacable enemy after losing the 1492 papal election to Rodrigo Borgia. He went into exile in France, actively networking with various powers to overthrow the Borgias, and ultimately became Pope Julius II in 1503."
+          },
+          "description": {
+            "zh": "德拉·罗维雷家族是15世纪末教廷政治中最重要的家族势力之一。家族权力源自西克斯图斯四世（在位1471-1484），他的侄子朱利亚诺·德拉·罗维雷在1492年教皇选举中是亚历山大六世的主要竞争者。败选后，朱利亚诺认定选举被波吉亚的贿赂所玷污，拒绝接受结果，流亡至法国国王查理八世的宫廷。他在那里积极推动法国入侵意大利，部分动机就是要推翻波吉亚。朱利亚诺拥有强大的个人魅力和政治野心，他在教廷中的盟友遍布多个枢机主教团派系。1503年亚历山大六世去世后，经过短暂的庇护三世教皇过渡期，朱利亚诺终于当选为尤利乌斯二世，成为文艺复兴时期最具军事色彩的教皇——他亲自率军征战、委托米开朗基罗绘制西斯廷礼拜堂天顶画、奠定了圣伯多禄大殿重建计划。",
+            "en": "The della Rovere family was one of the most significant dynastic forces in late 15th-century papal politics. The family's power originated with Sixtus IV (r. 1471–1484), whose nephew Giuliano della Rovere was Alexander VI's principal rival in the 1492 papal election. After losing, Giuliano declared the election tainted by Borgia bribery, refused to accept the result, and went into exile at the court of French King Charles VIII. There he actively promoted the French invasion of Italy, partly motivated by desire to overthrow the Borgias. Giuliano possessed formidable personal charisma and political ambition, with allies across multiple cardinal factions within the Curia. After Alexander VI's death in 1503, following a brief transition under Pius III, Giuliano was finally elected as Julius II, becoming the most militarily active pope of the Renaissance—personally leading armies in battle, commissioning Michelangelo to paint the Sistine Chapel ceiling, and initiating the reconstruction of St. Peter's Basilica."
+          },
           "keyFigures": [
-            { "name": { "zh": "朱利亚诺·德拉·罗维雷", "en": "Giuliano della Rovere" }, "title": { "zh": "枢机主教（后为教皇尤利乌斯二世）", "en": "Cardinal (later Pope Julius II)" }, "role": { "zh": "波吉亚宿敌，后成为'战士教皇'", "en": "Borgia arch-rival, later became the 'Warrior Pope'" } },
-            { "name": { "zh": "弗朗切斯科·马里亚·德拉·罗维雷", "en": "Francesco Maria della Rovere" }, "title": { "zh": "乌尔比诺公爵", "en": "Duke of Urbino" }, "role": { "zh": "朱利亚诺的侄子，掌控教廷在罗马涅的军事力量", "en": "Giuliano's nephew, controlled papal military forces in the Romagna" } }
+            {
+              "name": {
+                "zh": "朱利亚诺·德拉·罗维雷",
+                "en": "Giuliano della Rovere"
+              },
+              "title": {
+                "zh": "枢机主教（后为教皇尤利乌斯二世）",
+                "en": "Cardinal (later Pope Julius II)"
+              },
+              "role": {
+                "zh": "波吉亚宿敌，后成为'战士教皇'",
+                "en": "Borgia arch-rival, later became the 'Warrior Pope'"
+              }
+            },
+            {
+              "name": {
+                "zh": "弗朗切斯科·马里亚·德拉·罗维雷",
+                "en": "Francesco Maria della Rovere"
+              },
+              "title": {
+                "zh": "乌尔比诺公爵",
+                "en": "Duke of Urbino"
+              },
+              "role": {
+                "zh": "朱利亚诺的侄子，掌控教廷在罗马涅的军事力量",
+                "en": "Giuliano's nephew, controlled papal military forces in the Romagna"
+              }
+            }
           ]
         }
       ]

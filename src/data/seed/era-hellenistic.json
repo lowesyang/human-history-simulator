@@ -1876,7 +1876,7 @@
             "zh": "阿提卡银德拉克马",
             "en": "Attic silver drachmae"
           },
-          "goldKg": 0.000025,
+          "goldKg": 2.5e-05,
           "silverKg": 0.0262
         },
         "gdpDescription": {
@@ -4787,6 +4787,20 @@
         "keyInnovations": {
           "zh": "关键能力不在孤立发明，而在制度化应用：军团与盟邦联合动员、标准化营地与道路工程、殖民据点网络、城墙与排水建设、青铜和铁器制造，以及将伊特鲁里亚与希腊技术转化为共和国家能力的本领",
           "en": "The key advances lay less in isolated inventions than in institutionalized application: combined Roman-allied mobilization, standardized camp and road engineering, colonial strongpoint networks, wall and drainage construction, bronze and iron manufacture, and the capacity to convert Etruscan and Greek techniques into republican state power"
+        },
+        "sectors": {
+          "engineeringAndInfrastructure": {
+            "zh": "工程与基础设施建设能力突出：罗马道路（阿庇安大道，前312年建成）和水渠系统展示了罗马人卓越的工程组织能力。虽然在科学理论上不如希腊，但罗马人在实用工程方面无与伦比。拱券和混凝土技术正在发展中。",
+            "en": "Outstanding engineering and infrastructure: Roman roads (Appian Way, built 312 BCE) and aqueduct systems demonstrate Romans' excellent engineering organization. Though inferior to the Greeks in scientific theory, Romans are unmatched in practical engineering. Arch and concrete technology is developing."
+          },
+          "militaryOrganization": {
+            "zh": "军事组织古代最高效：罗马军团体制（操练队形、标准化装备、工程兵能力）是古代世界最系统化的军事组织。每支军团都能独立修建营地、道路和桥梁。罗马军事工程能力是其扩张的技术基础。",
+            "en": "Most efficient military organization in antiquity: the Roman legion system (drill formations, standardized equipment, engineering capability) is the most systematized military organization in the ancient world. Each legion can independently build camps, roads, and bridges. Roman military engineering capability is the technological foundation of its expansion."
+          }
+        },
+        "overallAssessment": {
+          "zh": "公元前323年的罗马共和国在科学和文化上远不如希腊世界，但在实用工程和军事组织方面已展现出独特优势。罗马道路和水渠系统将在未来数个世纪发展为古代世界最宏伟的基础设施网络。罗马的技术核心不在理论创新，而在于将已有技术大规模、标准化地应用于军事和城市建设。",
+          "en": "The Roman Republic in 323 BCE is far inferior to the Greek world in science and culture, but already shows unique advantages in practical engineering and military organization. Roman roads and aqueducts will develop into the ancient world's grandest infrastructure network over the coming centuries. Rome's tech core lies not in theoretical innovation but in large-scale, standardized application of existing technology for military and urban construction."
         }
       },
       "assessment": {
@@ -7036,7 +7050,7 @@
             "zh": "克白银当量",
             "en": "grams of silver equivalent"
           },
-          "goldKg": 0.000006,
+          "goldKg": 6e-06,
           "silverKg": 0.006
         },
         "gdpDescription": {
@@ -28860,7 +28874,7 @@
             "zh": "银克当量/人",
             "en": "grams of silver equivalent per person"
           },
-          "goldKg": 0.000006,
+          "goldKg": 6e-06,
           "silverKg": 0.006
         },
         "gdpDescription": {
@@ -44649,6 +44663,20 @@
         "keyInnovations": {
           "zh": "亚历山大里亚正在成为世界科技中心：图书馆和缪斯宫汇聚各地学者，法罗斯灯塔设计中，尼罗河灌溉系统改良，大型战舰建造技术和托勒密铸币体系的建立。",
           "en": "Alexandria was becoming a world scientific center: the Library and Mouseion gathering scholars from everywhere, the Pharos Lighthouse under design, Nile irrigation system improvements, large warship construction technology, and the establishment of the Ptolemaic coinage system."
+        },
+        "sectors": {
+          "scienceAndLearning": {
+            "zh": "科学与学术中心：亚历山大港将成为古代世界最伟大的学术中心。亚历山大图书馆（即将建立）将收藏古代世界最全面的知识。缪斯宫（Mouseion）将吸引欧几里得、阿基米德等最伟大的学者。埃拉托色尼将在此首次准确计算地球周长。",
+            "en": "Science and learning center: Alexandria will become the ancient world's greatest academic center. The Library of Alexandria (about to be established) will house the most comprehensive collection of ancient knowledge. The Mouseion will attract the greatest scholars including Euclid and Archimedes. Eratosthenes will first accurately calculate Earth's circumference here."
+          },
+          "irrigationAndAgriculture": {
+            "zh": "灌溉与农业技术古老而高效：尼罗河灌溉体系经数千年完善，是古代世界最高效的农业体系。阿基米得螺旋泵（即将发明）将进一步提升灌溉效率。法尤姆绿洲的排水工程展示了先进的水利技术。",
+            "en": "Ancient and efficient irrigation and agriculture: the Nile irrigation system, refined over millennia, is the ancient world's most efficient agricultural system. The Archimedean screw (about to be invented) will further improve irrigation efficiency. Faiyum Oasis drainage engineering demonstrates advanced hydraulic technology."
+          }
+        },
+        "overallAssessment": {
+          "zh": "公元前323年的托勒密埃及继承了亚历山大帝国的科学遗产和埃及数千年的农业工程传统。亚历山大港将在未来数世纪成为古代世界的科学首都——几何学、天文学、地理学、医学的最重要突破将在这里诞生。古埃及的灌溉体系则为这一切提供了经济基础。",
+          "en": "Ptolemaic Egypt in 323 BCE inherits Alexander's empire's scientific legacy and Egypt's millennia-old agricultural engineering tradition. Alexandria will become the ancient world's science capital for centuries — the most important breakthroughs in geometry, astronomy, geography, and medicine will be born here. Ancient Egypt's irrigation system provides the economic foundation for all of this."
         }
       },
       "assessment": {

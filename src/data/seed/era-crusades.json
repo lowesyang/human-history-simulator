@@ -2439,6 +2439,28 @@
         "keyInnovations": {
           "zh": "成熟的雕版印刷、广泛纸币流通、先进造船与海舶设计、罗盘航海应用、精密瓷器烧造、深耕水稻农业、链泵与水利机械、早期火药兵器、发达的数学天文与药物知识",
           "en": "Mature woodblock printing, widespread paper currency, advanced shipbuilding and oceangoing vessel design, navigational compass use, high-fired porcelain production, intensive wet-rice agriculture, chain pumps and hydraulic machinery, early gunpowder weaponry, and sophisticated mathematical, astronomical, and medical knowledge"
+        },
+        "sectors": {
+          "gunpowderAndWeaponry": {
+            "zh": "火药武器全球最先进：南宋是全球最早大规模使用火药武器的文明。突火枪（原始火铳）、震天雷（爆炸弹）、火箭等火药兵器已在对金、蒙古的战争中广泛使用。但火器尚处原始阶段，尚不能完全取代冷兵器。",
+            "en": "World's most advanced gunpowder weapons: the Southern Song is the first civilization to use gunpowder weapons at scale. Fire lances (proto-firearms), thunder crash bombs (explosive shells), and rockets are widely used in wars against Jin and Mongol forces. But firearms are still primitive and cannot fully replace cold weapons."
+          },
+          "navalAndShipbuilding": {
+            "zh": "造船与航海技术全球领先：南宋远洋船舶（福船）使用水密隔舱、指南针导航，载重量和航海能力远超同期欧洲船只。泉州是全球最繁忙的港口，海上丝绸之路贸易鼎盛。",
+            "en": "World-leading naval and shipbuilding: Southern Song ocean-going vessels (Fujian ships) use watertight compartments and compass navigation, with carrying capacity and seaworthiness far exceeding contemporary European ships. Quanzhou is the world's busiest port; Maritime Silk Road trade flourishes."
+          },
+          "printingAndPaper": {
+            "zh": "印刷技术全球最先进：毕昇活字印刷术已发明（11世纪），铜活字和木活字印刷广泛应用。书籍产量远超同期欧洲（欧洲此时仍使用手抄本）。纸币（交子、会子）的使用是人类金融史上的重大创新。",
+            "en": "World's most advanced printing: Bi Sheng's movable type invented (11th century); copper and wooden movable type widely used. Book production far exceeds contemporary Europe (still using manuscripts). Paper money (jiaozi, huizi) usage is a major innovation in human financial history."
+          },
+          "agricultureAndIrrigation": {
+            "zh": "农业技术全球最高产：占城稻引进后实现一年两熟至三熟。梯田灌溉体系和水车技术精密。南宋以全国约半数领土养活了全球最大的城市人口，临安（杭州）人口超百万。",
+            "en": "World's most productive agriculture: Champa rice introduction enables two to three harvests per year. Terrace irrigation systems and waterwheel technology are refined. The Southern Song feeds the world's largest urban population on about half the country's territory; Lin'an (Hangzhou) population exceeds one million."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1200年的南宋是全球科技最先进的文明：火药武器、活字印刷、指南针航海、纸币制度——'四大发明'中的三项在此时期达到应用高峰。造船和航海技术远超欧洲，农业产量全球最高。但南宋面临蒙古帝国的致命军事压力，先进技术未能转化为足够的军事优势。历史的讽刺在于，这些中国发明传播到欧洲后，将在数百年后被用于彻底改变全球力量格局。",
+          "en": "The Southern Song in 1200 is the world's most technologically advanced civilization: gunpowder weapons, movable type, compass navigation, paper money — three of the 'Four Great Inventions' reach their application peak in this period. Shipbuilding and navigation far surpass Europe; agricultural output is the world's highest. But the Southern Song faces fatal military pressure from the Mongol Empire; advanced technology fails to translate into sufficient military advantage. History's irony: these Chinese inventions, once transmitted to Europe, will be used to completely reshape global power dynamics centuries later."
         }
       },
       "assessment": {

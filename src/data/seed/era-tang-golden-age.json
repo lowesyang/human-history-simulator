@@ -492,7 +492,7 @@
         }
       },
       "technology": {
-        "level": 3,
+        "level": 9,
         "era": {
           "zh": "中古东亚高峰期",
           "en": "High medieval East Asian apex"
@@ -500,6 +500,28 @@
         "keyInnovations": {
           "zh": "雕版印刷初兴，造纸技术成熟，天文历法、医学、本草、土木工程与陶瓷烧造均居世界前列。",
           "en": "Woodblock printing was emerging, papermaking was mature, and astronomy, calendrics, medicine, materia medica, civil engineering, and ceramic firing ranked among the most advanced in the world."
+        },
+        "sectors": {
+          "porcelainAndSilk": {
+            "zh": "瓷器与丝绸技术全球领先：唐三彩（三彩釉陶）是中国陶瓷技术的杰出代表，远销中东和欧洲。丝绸织造技术达到新高度，锦、绫、罗等高级面料通过丝绸之路畅销西方。长沙窑率先使用釉下彩技术，开创陶瓷装饰新纪元。",
+            "en": "World-leading porcelain and silk: Tang Sancai (tri-color glazed pottery) is a crowning achievement of Chinese ceramics, exported to the Middle East and Europe. Silk weaving reaches new heights, with brocade, damask, and gauze sold extensively westward via the Silk Road. Changsha kilns pioneer underglaze painting, inaugurating a new era in ceramic decoration."
+          },
+          "printingAndPaper": {
+            "zh": "印刷与造纸术传播全球：雕版印刷术在唐代广泛应用，世界现存最早的印刷品《金刚经》（868年）即为唐代作品。造纸术经怛罗斯之战（751年）传入阿拉伯世界，开始改变人类文明进程。宣纸等高级纸张制造技术成熟。",
+            "en": "Printing and papermaking spreading globally: woodblock printing is widely applied in Tang China; the world's oldest surviving printed work, the Diamond Sutra (868), is a Tang product. Papermaking technology transmits to the Arab world via the Battle of Talas (751), beginning to transform human civilization. High-quality papers like Xuan paper reach maturity."
+          },
+          "agriculturalTechnology": {
+            "zh": "农业技术精密高效：曲辕犁的改良大幅提升耕作效率。筒车（水力灌溉装置）广泛使用。占城稻早期品种开始引进。大运河与灌溉体系使江南成为'天下粮仓'。唐代人口峰值约8000万，农业体系养活了当时全球最大规模的人口。",
+            "en": "Precise and efficient agriculture: the improved curved-shaft plow dramatically increases farming efficiency. Water-wheel irrigation devices (tongche) are widely used. Early Champa rice varieties begin to be introduced. The Grand Canal and irrigation systems make Jiangnan the 'granary of the empire.' Tang population peaks at ~80 million, with agriculture feeding the world's largest population."
+          },
+          "militaryTechnology": {
+            "zh": "军事技术处于转型期：唐朝早期府兵制是世界上最高效的军事动员体系之一。火药配方在唐代已出现于炼丹术文献中（尚未军事化）。陌刀步兵和重装骑兵战术成熟。但安史之乱（755年）正在动摇帝国军事基础。",
+            "en": "Military technology in transition: the early Tang fubing system is one of the world's most efficient military mobilization systems. Gunpowder formulas appear in Tang-era alchemical texts (not yet militarized). Infantry sword tactics (modao) and heavy cavalry are mature. But the An Lushan Rebellion (755) is shaking the empire's military foundations."
+          }
+        },
+        "overallAssessment": {
+          "zh": "750年的唐朝是全球科技最先进的文明之一，在瓷器、丝绸、印刷、造纸和农业技术上全面领先。唐朝的技术成就通过丝绸之路影响了整个欧亚大陆——造纸术在怛罗斯之战后传入伊斯兰世界，最终传到欧洲，是改变人类历史的关键技术传播事件。火药配方已在炼丹文献中出现，将在数百年后改变全球战争方式。但安史之乱标志着唐朝科技黄金时代的终结。",
+          "en": "Tang China in 750 is one of the world's most technologically advanced civilizations, comprehensively leading in porcelain, silk, printing, papermaking, and agricultural technology. Tang achievements influenced all of Eurasia through the Silk Road — papermaking transmitted to the Islamic world after the Battle of Talas, eventually reaching Europe, a pivotal technology transfer event in human history. Gunpowder formulas appear in alchemical texts, destined to transform global warfare centuries later. But the An Lushan Rebellion marks the end of Tang's technological golden age."
         }
       },
       "assessment": {
@@ -556,19 +578,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "杨国忠", "en": "Yang Guozhong" },
-              "title": { "zh": "右相", "en": "Right Chancellor" },
-              "role": { "zh": "唐朝宰相，杨贵妃堂兄，朝政实际操控者", "en": "Tang chancellor, Yang Guifei's cousin, de facto controller of court politics" }
+              "name": {
+                "zh": "杨国忠",
+                "en": "Yang Guozhong"
+              },
+              "title": {
+                "zh": "右相",
+                "en": "Right Chancellor"
+              },
+              "role": {
+                "zh": "唐朝宰相，杨贵妃堂兄，朝政实际操控者",
+                "en": "Tang chancellor, Yang Guifei's cousin, de facto controller of court politics"
+              }
             },
             {
-              "name": { "zh": "杨贵妃", "en": "Yang Guifei" },
-              "title": { "zh": "贵妃", "en": "Imperial Consort" },
-              "role": { "zh": "唐玄宗宠妃，杨氏家族权势的根源", "en": "Emperor Xuanzong's beloved consort, the root of the Yang family's political power" }
+              "name": {
+                "zh": "杨贵妃",
+                "en": "Yang Guifei"
+              },
+              "title": {
+                "zh": "贵妃",
+                "en": "Imperial Consort"
+              },
+              "role": {
+                "zh": "唐玄宗宠妃，杨氏家族权势的根源",
+                "en": "Emperor Xuanzong's beloved consort, the root of the Yang family's political power"
+              }
             },
             {
-              "name": { "zh": "杨国忠幕僚", "en": "Yang Guozhong's Staff" },
-              "title": { "zh": "宰相幕府", "en": "Chancellor's Staff" },
-              "role": { "zh": "协助杨国忠掌控朝政与财政", "en": "Assisted Yang Guozhong in controlling court politics and finances" }
+              "name": {
+                "zh": "杨国忠幕僚",
+                "en": "Yang Guozhong's Staff"
+              },
+              "title": {
+                "zh": "宰相幕府",
+                "en": "Chancellor's Staff"
+              },
+              "role": {
+                "zh": "协助杨国忠掌控朝政与财政",
+                "en": "Assisted Yang Guozhong in controlling court politics and finances"
+              }
             }
           ]
         },
@@ -606,19 +655,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "安禄山", "en": "An Lushan" },
-              "title": { "zh": "三镇节度使", "en": "Military Governor of Three Circuits" },
-              "role": { "zh": "东北最强藩镇军阀，即将发动安史之乱", "en": "The most powerful northeastern warlord, about to launch the An Lushan Rebellion" }
+              "name": {
+                "zh": "安禄山",
+                "en": "An Lushan"
+              },
+              "title": {
+                "zh": "三镇节度使",
+                "en": "Military Governor of Three Circuits"
+              },
+              "role": {
+                "zh": "东北最强藩镇军阀，即将发动安史之乱",
+                "en": "The most powerful northeastern warlord, about to launch the An Lushan Rebellion"
+              }
             },
             {
-              "name": { "zh": "史思明", "en": "Shi Siming" },
-              "title": { "zh": "平卢军副使", "en": "Deputy Commissioner of Pinglu" },
-              "role": { "zh": "安禄山核心部将，后继承叛军领导权", "en": "An Lushan's core subordinate, who would later inherit rebel leadership" }
+              "name": {
+                "zh": "史思明",
+                "en": "Shi Siming"
+              },
+              "title": {
+                "zh": "平卢军副使",
+                "en": "Deputy Commissioner of Pinglu"
+              },
+              "role": {
+                "zh": "安禄山核心部将，后继承叛军领导权",
+                "en": "An Lushan's core subordinate, who would later inherit rebel leadership"
+              }
             },
             {
-              "name": { "zh": "安庆绪", "en": "An Qingxu" },
-              "title": { "zh": "安禄山之子", "en": "Son of An Lushan" },
-              "role": { "zh": "安禄山继承人，后弑父夺位", "en": "An Lushan's heir, who later killed his father to seize power" }
+              "name": {
+                "zh": "安庆绪",
+                "en": "An Qingxu"
+              },
+              "title": {
+                "zh": "安禄山之子",
+                "en": "Son of An Lushan"
+              },
+              "role": {
+                "zh": "安禄山继承人，后弑父夺位",
+                "en": "An Lushan's heir, who later killed his father to seize power"
+              }
             }
           ]
         },
@@ -656,14 +732,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "陈希烈", "en": "Chen Xilie" },
-              "title": { "zh": "左相", "en": "Left Chancellor" },
-              "role": { "zh": "李林甫旧部，维持朝政行政运转", "en": "Li Linfu associate, maintaining administrative government operations" }
+              "name": {
+                "zh": "陈希烈",
+                "en": "Chen Xilie"
+              },
+              "title": {
+                "zh": "左相",
+                "en": "Left Chancellor"
+              },
+              "role": {
+                "zh": "李林甫旧部，维持朝政行政运转",
+                "en": "Li Linfu associate, maintaining administrative government operations"
+              }
             },
             {
-              "name": { "zh": "李林甫", "en": "Li Linfu" },
-              "title": { "zh": "已故右相", "en": "Late Right Chancellor" },
-              "role": { "zh": "唐玄宗朝最有影响力的宰相（已故），其官僚体系影响延续", "en": "Most influential chancellor of Xuanzong's reign (deceased), whose bureaucratic system continued to shape governance" }
+              "name": {
+                "zh": "李林甫",
+                "en": "Li Linfu"
+              },
+              "title": {
+                "zh": "已故右相",
+                "en": "Late Right Chancellor"
+              },
+              "role": {
+                "zh": "唐玄宗朝最有影响力的宰相（已故），其官僚体系影响延续",
+                "en": "Most influential chancellor of Xuanzong's reign (deceased), whose bureaucratic system continued to shape governance"
+              }
             }
           ]
         },
@@ -701,19 +795,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "颜真卿", "en": "Yan Zhenqing" },
-              "title": { "zh": "平原太守", "en": "Governor of Pingyuan" },
-              "role": { "zh": "儒学清流领袖，安史之乱中率先在河北组织抵抗", "en": "Leader of the Confucian faction, first to organize resistance in Hebei during the An Lushan Rebellion" }
+              "name": {
+                "zh": "颜真卿",
+                "en": "Yan Zhenqing"
+              },
+              "title": {
+                "zh": "平原太守",
+                "en": "Governor of Pingyuan"
+              },
+              "role": {
+                "zh": "儒学清流领袖，安史之乱中率先在河北组织抵抗",
+                "en": "Leader of the Confucian faction, first to organize resistance in Hebei during the An Lushan Rebellion"
+              }
             },
             {
-              "name": { "zh": "张巡", "en": "Zhang Xun" },
-              "title": { "zh": "真源县令", "en": "Magistrate of Zhenyuan" },
-              "role": { "zh": "忠义文官典范，后在睢阳保卫战中殉国", "en": "Model of loyal civilian official, later martyred during the Defense of Suiyang" }
+              "name": {
+                "zh": "张巡",
+                "en": "Zhang Xun"
+              },
+              "title": {
+                "zh": "真源县令",
+                "en": "Magistrate of Zhenyuan"
+              },
+              "role": {
+                "zh": "忠义文官典范，后在睢阳保卫战中殉国",
+                "en": "Model of loyal civilian official, later martyred during the Defense of Suiyang"
+              }
             },
             {
-              "name": { "zh": "颜杲卿", "en": "Yan Gaoqing" },
-              "title": { "zh": "常山太守", "en": "Governor of Changshan" },
-              "role": { "zh": "颜真卿从兄，率先在常山起兵抗叛，壮烈牺牲", "en": "Yan Zhenqing's cousin, first to raise loyalist forces at Changshan, heroically martyred" }
+              "name": {
+                "zh": "颜杲卿",
+                "en": "Yan Gaoqing"
+              },
+              "title": {
+                "zh": "常山太守",
+                "en": "Governor of Changshan"
+              },
+              "role": {
+                "zh": "颜真卿从兄，率先在常山起兵抗叛，壮烈牺牲",
+                "en": "Yan Zhenqing's cousin, first to raise loyalist forces at Changshan, heroically martyred"
+              }
             }
           ]
         }
@@ -1328,14 +1449,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "赤松德赞", "en": "Trisong Detsen" },
-              "title": { "zh": "赞普", "en": "Tsenpo" },
-              "role": { "zh": "吐蕃帝国最高统治者，佛教护法王", "en": "Supreme ruler of the Tibetan Empire and Buddhist dharma king" }
+              "name": {
+                "zh": "赤松德赞",
+                "en": "Trisong Detsen"
+              },
+              "title": {
+                "zh": "赞普",
+                "en": "Tsenpo"
+              },
+              "role": {
+                "zh": "吐蕃帝国最高统治者，佛教护法王",
+                "en": "Supreme ruler of the Tibetan Empire and Buddhist dharma king"
+              }
             },
             {
-              "name": { "zh": "尚结赞", "en": "Shang Gyaltsen" },
-              "title": { "zh": "大论", "en": "Chief Minister" },
-              "role": { "zh": "吐蕃首席大臣，辅佐赞普处理军政事务", "en": "Tibet's chief minister, assisting the tsenpo in military and political affairs" }
+              "name": {
+                "zh": "尚结赞",
+                "en": "Shang Gyaltsen"
+              },
+              "title": {
+                "zh": "大论",
+                "en": "Chief Minister"
+              },
+              "role": {
+                "zh": "吐蕃首席大臣，辅佐赞普处理军政事务",
+                "en": "Tibet's chief minister, assisting the tsenpo in military and political affairs"
+              }
             }
           ]
         },
@@ -1373,14 +1512,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "寂护", "en": "Shantarakshita" },
-              "title": { "zh": "堪布", "en": "Khenpo" },
-              "role": { "zh": "桑耶寺首任住持，藏传佛教奠基者", "en": "First abbot of Samye Monastery and founder of Tibetan Buddhist institutional tradition" }
+              "name": {
+                "zh": "寂护",
+                "en": "Shantarakshita"
+              },
+              "title": {
+                "zh": "堪布",
+                "en": "Khenpo"
+              },
+              "role": {
+                "zh": "桑耶寺首任住持，藏传佛教奠基者",
+                "en": "First abbot of Samye Monastery and founder of Tibetan Buddhist institutional tradition"
+              }
             },
             {
-              "name": { "zh": "莲花生", "en": "Padmasambhava" },
-              "title": { "zh": "密宗大师", "en": "Tantric Master" },
-              "role": { "zh": "受邀入藏降伏本地神灵，为佛教传播扫除障碍", "en": "Invited to Tibet to subdue local spirits and clear obstacles for Buddhist propagation" }
+              "name": {
+                "zh": "莲花生",
+                "en": "Padmasambhava"
+              },
+              "title": {
+                "zh": "密宗大师",
+                "en": "Tantric Master"
+              },
+              "role": {
+                "zh": "受邀入藏降伏本地神灵，为佛教传播扫除障碍",
+                "en": "Invited to Tibet to subdue local spirits and clear obstacles for Buddhist propagation"
+              }
             }
           ]
         },
@@ -1418,14 +1575,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "玛尚·仲巴杰", "en": "Mashang Zhongpaje" },
-              "title": { "zh": "大论", "en": "Chief Minister" },
-              "role": { "zh": "苯教贵族集团领袖，反佛运动的核心组织者", "en": "Leader of the Bon aristocratic faction and core organizer of anti-Buddhist resistance" }
+              "name": {
+                "zh": "玛尚·仲巴杰",
+                "en": "Mashang Zhongpaje"
+              },
+              "title": {
+                "zh": "大论",
+                "en": "Chief Minister"
+              },
+              "role": {
+                "zh": "苯教贵族集团领袖，反佛运动的核心组织者",
+                "en": "Leader of the Bon aristocratic faction and core organizer of anti-Buddhist resistance"
+              }
             },
             {
-              "name": { "zh": "达扎路恭", "en": "Takdra Lukhong" },
-              "title": { "zh": "贵族将军", "en": "Aristocratic General" },
-              "role": { "zh": "掌握军事力量的苯教贵族，威胁王室佛教政策", "en": "A Bon aristocrat with military power, threatening the royal Buddhist policy" }
+              "name": {
+                "zh": "达扎路恭",
+                "en": "Takdra Lukhong"
+              },
+              "title": {
+                "zh": "贵族将军",
+                "en": "Aristocratic General"
+              },
+              "role": {
+                "zh": "掌握军事力量的苯教贵族，威胁王室佛教政策",
+                "en": "A Bon aristocrat with military power, threatening the royal Buddhist policy"
+              }
             }
           ]
         }
@@ -10194,7 +10369,7 @@
         }
       },
       "technology": {
-        "level": 6,
+        "level": 7,
         "era": {
           "zh": "早期中世纪晚期古典传承阶段",
           "en": "Early Medieval era with strong late antique continuities"
@@ -10202,6 +10377,20 @@
         "keyInnovations": {
           "zh": "关键能力在于继承并整合倭马亚与萨珊式财政簿记、驿传通信、灌溉管理、铸币体系与跨区域军需调度；真正的阿拔斯学术与技术高峰尚未到来",
           "en": "Its key strengths lay in inheriting and integrating Umayyad and Sasanian-style fiscal bookkeeping, postal communications, irrigation management, coinage, and interregional military logistics; the great Abbasid scholarly and technological florescence still lay ahead"
+        },
+        "sectors": {
+          "scienceAndLearning": {
+            "zh": "伊斯兰科学即将进入黄金时代：阿拔斯王朝将在巴格达建立'智慧之家'（约830年），成为中世纪世界最伟大的学术中心。阿拉伯学者将翻译并保存大量希腊、波斯和印度科学文献。代数学（花拉子米，约820年）和光学（海什木，约1000年）等开创性研究即将诞生。",
+            "en": "Islamic science about to enter its Golden Age: the Abbasid Caliphate will establish the House of Wisdom in Baghdad (~830), the medieval world's greatest academic center. Arab scholars will translate and preserve vast Greek, Persian, and Indian scientific texts. Pioneering research in algebra (al-Khwarizmi, ~820) and optics (Ibn al-Haytham, ~1000) is forthcoming."
+          },
+          "irrigationAndAgriculture": {
+            "zh": "灌溉与农业技术融合东西方：阿拉伯帝国整合了美索不达米亚、波斯和埃及的灌溉传统，创造了先进的农业水利体系。坎儿井（地下引水渠道）技术传播至新征服地区。引进并传播了柑橘、棉花、蔗糖等作物。",
+            "en": "Irrigation and agriculture fusing East and West: the Arab Empire integrates Mesopotamian, Persian, and Egyptian irrigation traditions, creating advanced agricultural hydraulic systems. Qanat (underground water channel) technology spreads to newly conquered regions. Citrus, cotton, and sugarcane are introduced and disseminated."
+          }
+        },
+        "overallAssessment": {
+          "zh": "750年的阿拔斯革命政权刚刚取代倭马亚王朝，正站在伊斯兰科学黄金时代的门槛上。巴格达将成为全球知识和技术的汇聚中心——希腊哲学、印度数学、波斯工程、中国造纸术将在这里融合创新。阿拉伯数字（实为印度数字的阿拉伯传播版本）、代数学和现代光学将从这里传向欧洲。阿拔斯时代的科技成就是人类文明的桥梁。",
+          "en": "The Abbasid revolutionary regime in 750 has just replaced the Umayyads, standing on the threshold of the Islamic Golden Age of Science. Baghdad will become the global center of knowledge and technology — Greek philosophy, Indian mathematics, Persian engineering, and Chinese papermaking will converge and innovate here. Arabic numerals (actually Indian numerals transmitted via Arabs), algebra, and modern optics will spread from here to Europe. Abbasid-era scientific achievements are bridges of human civilization."
         }
       },
       "assessment": {
@@ -10258,19 +10447,46 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "阿布·阿拔斯", "en": "Abu al-Abbas al-Saffah" },
-              "title": { "zh": "哈里发", "en": "Caliph" },
-              "role": { "zh": "阿拔斯王朝开国哈里发，推翻倭马亚统治", "en": "Founding caliph of the Abbasid dynasty, overthrew Umayyad rule" }
+              "name": {
+                "zh": "阿布·阿拔斯",
+                "en": "Abu al-Abbas al-Saffah"
+              },
+              "title": {
+                "zh": "哈里发",
+                "en": "Caliph"
+              },
+              "role": {
+                "zh": "阿拔斯王朝开国哈里发，推翻倭马亚统治",
+                "en": "Founding caliph of the Abbasid dynasty, overthrew Umayyad rule"
+              }
             },
             {
-              "name": { "zh": "曼苏尔", "en": "Abu Ja'far al-Mansur" },
-              "title": { "zh": "继承人", "en": "Heir" },
-              "role": { "zh": "阿布·阿拔斯之弟，未来将建设巴格达并巩固阿拔斯帝国", "en": "Brother of Abu al-Abbas, destined to build Baghdad and consolidate the Abbasid empire" }
+              "name": {
+                "zh": "曼苏尔",
+                "en": "Abu Ja'far al-Mansur"
+              },
+              "title": {
+                "zh": "继承人",
+                "en": "Heir"
+              },
+              "role": {
+                "zh": "阿布·阿拔斯之弟，未来将建设巴格达并巩固阿拔斯帝国",
+                "en": "Brother of Abu al-Abbas, destined to build Baghdad and consolidate the Abbasid empire"
+              }
             },
             {
-              "name": { "zh": "阿布·穆斯林", "en": "Abu Muslim" },
-              "title": { "zh": "呼罗珊革命军统帅", "en": "Commander of the Khurasani Revolutionary Army" },
-              "role": { "zh": "革命运动的军事领袖，推翻倭马亚的关键执行者", "en": "Military leader of the revolution and key executor of the Umayyad overthrow" }
+              "name": {
+                "zh": "阿布·穆斯林",
+                "en": "Abu Muslim"
+              },
+              "title": {
+                "zh": "呼罗珊革命军统帅",
+                "en": "Commander of the Khurasani Revolutionary Army"
+              },
+              "role": {
+                "zh": "革命运动的军事领袖，推翻倭马亚的关键执行者",
+                "en": "Military leader of the revolution and key executor of the Umayyad overthrow"
+              }
             }
           ]
         },
@@ -10308,14 +10524,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "阿布·穆斯林", "en": "Abu Muslim" },
-              "title": { "zh": "呼罗珊总督", "en": "Governor of Khurasan" },
-              "role": { "zh": "革命军最高统帅，推翻倭马亚的军事核心人物", "en": "Supreme commander of the revolutionary army and military core of the Umayyad overthrow" }
+              "name": {
+                "zh": "阿布·穆斯林",
+                "en": "Abu Muslim"
+              },
+              "title": {
+                "zh": "呼罗珊总督",
+                "en": "Governor of Khurasan"
+              },
+              "role": {
+                "zh": "革命军最高统帅，推翻倭马亚的军事核心人物",
+                "en": "Supreme commander of the revolutionary army and military core of the Umayyad overthrow"
+              }
             },
             {
-              "name": { "zh": "卡赫塔巴·伊本·沙比卜", "en": "Qahtaba ibn Shabib" },
-              "title": { "zh": "革命军先锋将领", "en": "Vanguard Commander of the Revolution" },
-              "role": { "zh": "率领革命军从呼罗珊突入伊拉克的关键将领", "en": "Key commander who led the revolutionary army's breakthrough from Khurasan into Iraq" }
+              "name": {
+                "zh": "卡赫塔巴·伊本·沙比卜",
+                "en": "Qahtaba ibn Shabib"
+              },
+              "title": {
+                "zh": "革命军先锋将领",
+                "en": "Vanguard Commander of the Revolution"
+              },
+              "role": {
+                "zh": "率领革命军从呼罗珊突入伊拉克的关键将领",
+                "en": "Key commander who led the revolutionary army's breakthrough from Khurasan into Iraq"
+              }
             }
           ]
         },
@@ -10353,9 +10587,18 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "阿卜杜勒·拉赫曼一世", "en": "Abd al-Rahman I" },
-              "title": { "zh": "未来科尔多瓦埃米尔", "en": "Future Emir of Córdoba" },
-              "role": { "zh": "倭马亚王族唯一重要幸存者，将在安达卢西亚重建倭马亚政权", "en": "The sole important Umayyad survivor, destined to rebuild an Umayyad polity in Al-Andalus" }
+              "name": {
+                "zh": "阿卜杜勒·拉赫曼一世",
+                "en": "Abd al-Rahman I"
+              },
+              "title": {
+                "zh": "未来科尔多瓦埃米尔",
+                "en": "Future Emir of Córdoba"
+              },
+              "role": {
+                "zh": "倭马亚王族唯一重要幸存者，将在安达卢西亚重建倭马亚政权",
+                "en": "The sole important Umayyad survivor, destined to rebuild an Umayyad polity in Al-Andalus"
+              }
             }
           ]
         }
@@ -10900,6 +11143,20 @@
         "keyInnovations": {
           "zh": "希腊火海战技术、成熟的军区动员体系、复杂的国家财政记录、坚固城防工程、拱顶与大型蓄水设施维护、精细金币铸造与帝国邮驿情报网络",
           "en": "Greek fire naval warfare technology, the mature theme mobilization system, sophisticated state fiscal record-keeping, strong fortification engineering, maintenance of vaulted and large-scale cistern infrastructure, fine gold minting, and an imperial post-intelligence network"
+        },
+        "sectors": {
+          "militaryTechnology": {
+            "zh": "希腊火——古代最强秘密武器：拜占庭帝国独占'希腊火'（液态燃烧剂喷射武器）技术，在海战中几乎无敌。城防工程（君士坦丁堡三重城墙）在公元750年仍是世界最坚固的防御体系。",
+            "en": "Greek Fire — antiquity's most powerful secret weapon: the Byzantine Empire exclusively possesses 'Greek Fire' (liquid incendiary projection weapon), nearly invincible in naval warfare. Fortification engineering (Constantinople's triple walls) remains the world's most formidable defensive system in 750 CE."
+          },
+          "architectureAndEngineering": {
+            "zh": "建筑与工程继承罗马传统：圣索菲亚大教堂（537年建成）是当时世界最大的穹顶建筑，工程技术领先千年。水渠、下水道和城市基础设施体系继承并发展了罗马工程遗产。",
+            "en": "Architecture and engineering inheriting Roman tradition: Hagia Sophia (completed 537) is the world's largest domed building, engineering technology a millennium ahead. Aqueducts, sewers, and urban infrastructure systems inherit and develop the Roman engineering legacy."
+          }
+        },
+        "overallAssessment": {
+          "zh": "750年的拜占庭帝国是地中海世界技术最先进的文明，希腊火和君士坦丁堡城防体系使其在军事技术上拥有独特优势。圣索菲亚大教堂代表了古代建筑工程的最高成就。但帝国正面临阿拉伯帝国的全面挑战，领土大幅缩小。拜占庭的技术优势在于防御而非进攻，这将使其维持近七个世纪的生存。",
+          "en": "The Byzantine Empire in 750 is the Mediterranean world's most technologically advanced civilization; Greek Fire and Constantinople's defenses give it unique military-technological advantages. Hagia Sophia represents the highest achievement of ancient architectural engineering. But the Empire faces the full challenge of the Arab Empire, with territory greatly reduced. Byzantine tech advantage lies in defense rather than offense, enabling its survival for nearly seven more centuries."
         }
       },
       "assessment": {
@@ -10956,14 +11213,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "君士坦丁五世", "en": "Constantine V" },
-              "title": { "zh": "巴西琉斯", "en": "Basileus" },
-              "role": { "zh": "皇帝兼最高军事统帅，圣像破坏运动的坚定推行者", "en": "Emperor and supreme military commander, firm enforcer of Iconoclasm" }
+              "name": {
+                "zh": "君士坦丁五世",
+                "en": "Constantine V"
+              },
+              "title": {
+                "zh": "巴西琉斯",
+                "en": "Basileus"
+              },
+              "role": {
+                "zh": "皇帝兼最高军事统帅，圣像破坏运动的坚定推行者",
+                "en": "Emperor and supreme military commander, firm enforcer of Iconoclasm"
+              }
             },
             {
-              "name": { "zh": "利奥四世", "en": "Leo IV" },
-              "title": { "zh": "共治皇帝", "en": "Co-Emperor" },
-              "role": { "zh": "君士坦丁五世之子，被立为共治皇帝确保王朝延续", "en": "Son of Constantine V, proclaimed co-emperor to ensure dynastic continuity" }
+              "name": {
+                "zh": "利奥四世",
+                "en": "Leo IV"
+              },
+              "title": {
+                "zh": "共治皇帝",
+                "en": "Co-Emperor"
+              },
+              "role": {
+                "zh": "君士坦丁五世之子，被立为共治皇帝确保王朝延续",
+                "en": "Son of Constantine V, proclaimed co-emperor to ensure dynastic continuity"
+              }
             }
           ]
         },
@@ -11001,14 +11276,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "大马士革的约翰", "en": "John of Damascus" },
-              "title": { "zh": "神学家", "en": "Theologian" },
-              "role": { "zh": "圣像崇拜神学的系统阐述者（在帝国境外的阿拉伯领土写作）", "en": "Systematic theologian of icon veneration (writing from Arab-held territory outside the empire)" }
+              "name": {
+                "zh": "大马士革的约翰",
+                "en": "John of Damascus"
+              },
+              "title": {
+                "zh": "神学家",
+                "en": "Theologian"
+              },
+              "role": {
+                "zh": "圣像崇拜神学的系统阐述者（在帝国境外的阿拉伯领土写作）",
+                "en": "Systematic theologian of icon veneration (writing from Arab-held territory outside the empire)"
+              }
             },
             {
-              "name": { "zh": "斯图狄奥斯修道院修士", "en": "Monks of the Stoudios Monastery" },
-              "title": { "zh": "修道院团体", "en": "Monastic community" },
-              "role": { "zh": "君士坦丁堡最有影响力的修道院，圣像崇拜派的组织核心", "en": "Constantinople's most influential monastery and organizational core of the Iconodule movement" }
+              "name": {
+                "zh": "斯图狄奥斯修道院修士",
+                "en": "Monks of the Stoudios Monastery"
+              },
+              "title": {
+                "zh": "修道院团体",
+                "en": "Monastic community"
+              },
+              "role": {
+                "zh": "君士坦丁堡最有影响力的修道院，圣像崇拜派的组织核心",
+                "en": "Constantinople's most influential monastery and organizational core of the Iconodule movement"
+              }
             }
           ]
         },
@@ -11046,14 +11339,32 @@
           },
           "keyFigures": [
             {
-              "name": { "zh": "安纳托利亚军区总督", "en": "Strategos of the Anatolikon" },
-              "title": { "zh": "军区总督", "en": "Strategos" },
-              "role": { "zh": "帝国最重要的军区指挥官，负责安纳托利亚核心区防御", "en": "Commander of the empire's most important theme, responsible for defending the Anatolian core" }
+              "name": {
+                "zh": "安纳托利亚军区总督",
+                "en": "Strategos of the Anatolikon"
+              },
+              "title": {
+                "zh": "军区总督",
+                "en": "Strategos"
+              },
+              "role": {
+                "zh": "帝国最重要的军区指挥官，负责安纳托利亚核心区防御",
+                "en": "Commander of the empire's most important theme, responsible for defending the Anatolian core"
+              }
             },
             {
-              "name": { "zh": "色雷斯军区总督", "en": "Strategos of the Thrakesion" },
-              "title": { "zh": "军区总督", "en": "Strategos" },
-              "role": { "zh": "统辖西安纳托利亚军事与行政", "en": "Overseeing military and administration in western Anatolia" }
+              "name": {
+                "zh": "色雷斯军区总督",
+                "en": "Strategos of the Thrakesion"
+              },
+              "title": {
+                "zh": "军区总督",
+                "en": "Strategos"
+              },
+              "role": {
+                "zh": "统辖西安纳托利亚军事与行政",
+                "en": "Overseeing military and administration in western Anatolia"
+              }
             }
           ]
         }
@@ -26679,7 +26990,7 @@
             "zh": "银克当量/人",
             "en": "grams of silver equivalent per person"
           },
-          "goldKg": 0.000007,
+          "goldKg": 7e-06,
           "silverKg": 0.007
         },
         "gdpDescription": {

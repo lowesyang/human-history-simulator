@@ -1939,6 +1939,20 @@
         "keyInnovations": {
           "zh": "铁路网扩展、电报与电话、近代兵工厂、蒸汽轮船、近代纺织机械、现代银行制度、师范与大学教育、港口改良、近代造船与兵器生产、卫生制度和警察体系",
           "en": "Railway expansion, telegraph and telephone networks, modern arsenals, steam shipping, modern textile machinery, a modern banking system, teacher-training and university education, port improvement, modern shipbuilding and arms production, public health institutions, and a modern police system"
+        },
+        "sectors": {
+          "militaryModernization": {
+            "zh": "军事近代化成效显著：1895年甲午战争击败清朝，证明明治维新军事改革成功。日本海军以英国皇家海军为师，建造了世界级战舰（三笠号即将参加1905年日俄战争）。陆军以普鲁士为范本全面改革。",
+            "en": "Highly effective military modernization: the 1895 Sino-Japanese War victory proved Meiji military reform success. The Japanese Navy models itself on the Royal Navy, building world-class warships (Mikasa about to participate in the 1905 Russo-Japanese War). The Army comprehensively reformed on the Prussian model."
+          },
+          "industrialization": {
+            "zh": "工业化快速推进：政府主导的'殖产兴业'政策建立了现代纺织、造船和采矿工业。八幡制铁所（1901年投产）标志日本钢铁工业起步。但工业规模与欧美差距仍然巨大，核心技术和设备依赖进口。",
+            "en": "Rapid industrialization: government-led 'promote industry' policies established modern textile, shipbuilding, and mining industries. Yawata Steel Works (operational 1901) marks the start of Japanese steel. But industrial scale still vastly behind the West, with core technology and equipment dependent on imports."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1900年的日本是亚洲唯一成功实现近代化的国家，军事技术已达到欧洲二流强国水平。即将到来的日俄战争（1904-05年）胜利将震惊世界，证明非西方国家可以击败欧洲大国。但工业化仍处早期，核心技术依赖引进。日本的独特成就在于仅用30余年完成了欧洲数百年的军事近代化进程。",
+          "en": "Japan in 1900 is Asia's only successfully modernized nation, with military technology reaching second-tier European power level. The upcoming Russo-Japanese War (1904-05) victory will stun the world, proving a non-Western nation can defeat a European great power. But industrialization is still early-stage with core tech dependent on imports. Japan's unique achievement is completing in just 30+ years the military modernization that took Europe centuries."
         }
       },
       "assessment": {
@@ -9531,6 +9545,20 @@
         "keyInnovations": {
           "zh": "西伯利亚大铁路建设、巴库石油工业、现代钢铁联合企业、无烟火药与现代火炮、国家银行金融体系、金本位货币稳定、铁路动员规划与大规模重工业发展。",
           "en": "Construction of the Trans-Siberian Railway, the Baku oil industry, modern integrated steel enterprises, smokeless powder and modern artillery, State Bank financial structures, gold-standard monetary stabilization, railway mobilization planning, and large-scale heavy industrial growth."
+        },
+        "sectors": {
+          "railwayAndInfrastructure": {
+            "zh": "铁路工程雄心壮志：西伯利亚大铁路（1891年开工）是人类历史上最宏伟的铁路工程，全长9000余公里，即将于1904年完工。铁路建设推动了俄国钢铁和采矿工业发展。但技术和资金大量依赖法国和比利时。",
+            "en": "Ambitious railway engineering: the Trans-Siberian Railway (begun 1891) is history's grandest railway project, over 9,000 km, nearing completion in 1904. Railway construction drives Russian steel and mining development. But technology and capital heavily depend on France and Belgium."
+          },
+          "heavyIndustry": {
+            "zh": "重工业发展中但落后于西欧：维特伯爵推动的工业化政策使俄国钢铁产量快速增长，巴库油田产量全球第一。但工业化严重依赖外国投资和技术。军工产业有实力但效率低下——1905年日俄战争将暴露其军事技术短板。",
+            "en": "Heavy industry developing but behind Western Europe: Count Witte's industrialization policies drive rapid steel output growth; Baku oil field output is the world's highest. But industrialization heavily depends on foreign investment and technology. Arms industry has strength but is inefficient — the 1905 Russo-Japanese War will expose military tech shortcomings."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1900年的俄罗斯帝国正在经历大规模工业化，西伯利亚大铁路和巴库石油是其最重要的技术成就。但俄国工业化是'国家主导、外资依赖'的模式——法国资本和西欧技术是发展的关键支撑。与西欧的技术差距在军事领域尤为明显，日俄战争的失败将证明数量优势无法弥补技术差距。",
+          "en": "The Russian Empire in 1900 is undergoing massive industrialization; the Trans-Siberian Railway and Baku oil are its most important tech achievements. But Russian industrialization follows a 'state-led, foreign-dependent' model — French capital and Western European technology are critical supports. The technology gap with Western Europe is especially apparent in military affairs; the Russo-Japanese War defeat will prove that numerical advantage cannot compensate for the technology gap."
         }
       },
       "assessment": {
@@ -10874,6 +10902,20 @@
         "keyInnovations": {
           "zh": "电力照明与城市电网、地铁与现代交通、钢铁与化工工艺、速射火炮、摄影与电影先驱、电话和电报网络、内燃机研究、航空实验以及现代公共卫生工程",
           "en": "Electric lighting and urban power grids, metro and modern transport systems, steel and chemical processes, quick-firing artillery, pioneering photography and cinema, telephone and telegraph networks, internal combustion research, aviation experiments, and modern public health engineering"
+        },
+        "sectors": {
+          "scienceAndMedicine": {
+            "zh": "科学与医学欧洲前列：巴斯德的微生物学和疫苗研究（狂犬疫苗1885年）使法国在生物医学领域全球领先。居里夫妇正在进行放射性研究（1903年将获诺贝尔奖）。法国科学院和巴斯德研究所是全球重要科研机构。",
+            "en": "European leader in science and medicine: Pasteur's microbiology and vaccine research (rabies vaccine 1885) makes France a global leader in biomedicine. The Curies are conducting radioactivity research (Nobel Prize in 1903). The French Academy of Sciences and Pasteur Institute are globally important research institutions."
+          },
+          "automotiveAndAviation": {
+            "zh": "汽车与航空工业先驱：法国是汽车工业的发源地之一，标致和雷诺已开始生产汽车。法国在早期航空领域活跃——热气球技术领先，飞机研发正在起步。1900年巴黎世博会展示了法国的技术实力和文化影响力。",
+            "en": "Automotive and aviation pioneer: France is one of the birthplaces of the auto industry; Peugeot and Renault have begun car production. France is active in early aviation — balloon technology leads, airplane R&D is starting. The 1900 Paris Exposition showcases French technological strength and cultural influence."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1900年的法国在科学研究（巴斯德微生物学、居里夫妇放射性研究）和汽车/航空先驱方面位居世界前列。但工业产能不如英国和德国，重化工业发展受制于资源不足。法国科技的核心优势在于基础科学研究和创新性强，但将科研成果转化为工业产能的能力弱于德国。殖民帝国（北非、印度支那）主要贡献原材料而非技术发展。",
+          "en": "France in 1900 ranks among the world's top in scientific research (Pasteur's microbiology, Curie radioactivity) and automotive/aviation pioneering. But industrial capacity falls short of Britain and Germany; heavy industry is constrained by resource limitations. France's core tech advantage is strong basic science research and innovation, but its ability to convert research into industrial capacity is weaker than Germany's. The colonial empire (North Africa, Indochina) mainly contributes raw materials rather than tech development."
         }
       },
       "assessment": {
@@ -12341,6 +12383,24 @@
         "keyInnovations": {
           "zh": "化学染料与合成工业、电气工程、现代钢铁冶金、柴油与内燃机研究、精密光学、无线电前沿实验、现代总参谋与铁路动员体系、装甲舰与重炮制造",
           "en": "Chemical dyes and synthetic industry, electrical engineering, modern steel metallurgy, diesel and internal combustion research, precision optics, early wireless experimentation, the modern general staff and railway mobilization system, and the manufacture of armored warships and heavy artillery"
+        },
+        "sectors": {
+          "chemicalsAndPharmaceuticals": {
+            "zh": "化工与制药全球第一：拜耳（阿司匹林1899年上市）、赫希斯特、巴斯夫组成全球最强化工产业集群。合成染料、炸药和药品领域德国占全球市场的90%以上。哈伯正在研究固氮技术。",
+            "en": "Global #1 in chemicals and pharmaceuticals: Bayer (aspirin launched 1899), Hoechst, BASF form the world's strongest chemical cluster. Germany holds over 90% of global synthetic dye, explosive, and pharmaceutical markets. Haber is researching nitrogen fixation."
+          },
+          "electricalEngineering": {
+            "zh": "电气工程全球领先：西门子和AEG（通用电气公司）在发电机、电力输配、电气化铁路方面全球领先。德国电气产业规模已超越英国。",
+            "en": "Global electrical engineering leader: Siemens and AEG lead globally in generators, power transmission, and electrified railways. Germany's electrical industry has surpassed Britain in scale."
+          },
+          "scientificResearch": {
+            "zh": "基础科学研究全球最强：1900年前后德国大学体系（洪堡模式）是全球学术标杆。普朗克1900年提出量子理论，伦琴发现X射线（1895年），科赫确立细菌学基础。德国拥有全球最多的诺贝尔科学奖得主。",
+            "en": "World's strongest basic science research: the German university system (Humboldt model) around 1900 is the global academic benchmark. Planck proposes quantum theory in 1900; Röntgen discovers X-rays (1895); Koch establishes bacteriology. Germany has the most Nobel science laureates globally."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1900年的德意志帝国在化工、电气和基础科学三个领域已超越英国成为全球科技最强国之一。化工产业垄断全球染料和药品市场，大学研究体系培养了量子力学和细菌学等划时代发现。海军建设（提尔皮茨计划）正与英国展开军备竞赛。但在海军传统和全球金融体系方面仍不及英国。德国科技的崛起是二十世纪最重要的地缘科技事件之一。",
+          "en": "The German Empire in 1900 has surpassed Britain in chemicals, electrical engineering, and basic science to become one of the world's strongest tech powers. The chemical industry monopolizes global dye and pharmaceutical markets; the university research system has produced epoch-making discoveries in quantum mechanics and bacteriology. Naval buildup (Tirpitz Plan) is in an arms race with Britain. But still inferior in naval tradition and the global financial system. Germany's tech rise is one of the most important geo-technological events of the 20th century."
         }
       },
       "assessment": {
@@ -13209,6 +13269,24 @@
         "keyInnovations": {
           "zh": "蒸汽轮船、钢制远洋舰、海底电报电缆、铁路网络、贝塞麦与西门子炼钢法、现代纺织机械、城市下水道工程、电灯、电话、冷藏运输与大规模工业造船",
           "en": "Steamships, steel ocean-going warships, submarine telegraph cables, railway networks, Bessemer and Siemens steelmaking, modern textile machinery, urban sewer engineering, electric lighting, the telephone, refrigerated transport, and large-scale industrial shipbuilding"
+        },
+        "sectors": {
+          "navalTechnology": {
+            "zh": "海军技术全球霸主：皇家海军实行'两强标准'（舰队规模超过第二和第三大海军之和），无畏舰（Dreadnought，即将于1906年下水）将革命性改变海战。阿姆斯特朗和维克斯是全球最大军舰制造商。海底电缆网络使英国掌控全球通信。",
+            "en": "Global naval technology hegemon: Royal Navy maintains 'Two-Power Standard'; HMS Dreadnought (launching 1906) will revolutionize naval warfare. Armstrong and Vickers are the world's largest warship builders. Submarine cable networks give Britain control of global communications."
+          },
+          "industrialAndEngineering": {
+            "zh": "工业革命发源地但领先优势正在缩小：虽然蒸汽机、纺织机械和铁路技术由英国开创，但德国和美国在钢铁、化工和电气领域已经追赶甚至超越。英国工业正面临'先发劣势'——设备老化、投资不足。",
+            "en": "Industrial Revolution birthplace but lead narrowing: though steam engines, textile machinery, and railways were British inventions, Germany and the US have caught up or overtaken in steel, chemicals, and electrical engineering. British industry faces 'first-mover disadvantage' — aging equipment, underinvestment."
+          },
+          "financialInfrastructure": {
+            "zh": "全球金融体系核心：伦敦城是全球金融中心，英镑是世界储备货币，金本位制由英国主导。劳合社保险市场、伦敦金属交易所等机构定义全球商业规则。",
+            "en": "Core of the global financial system: the City of London is the world financial center; sterling is the world reserve currency; the gold standard is British-led. Lloyd's insurance market, London Metal Exchange and other institutions define global commercial rules."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1900年的大英帝国仍是全球科技的领导者，但领先优势正在快速缩小。海军技术和全球金融体系仍无可匹敌，但工业技术已被德国（化工、电气）和美国（钢铁、大规模生产）超越。英国科技面临'帝国过度扩张'和'工业老化'的双重挑战，新兴技术领域（电气、化工、汽车）的投资不足将在20世纪上半叶显现后果。",
+          "en": "The British Empire in 1900 remains the global tech leader, but its lead is rapidly narrowing. Naval technology and the global financial system are still unmatched, but industrial tech has been overtaken by Germany (chemicals, electrical) and the US (steel, mass production). British tech faces dual challenges of 'imperial overstretch' and 'industrial aging'; underinvestment in emerging technologies (electrical, chemical, automotive) will show consequences in the first half of the 20th century."
         }
       },
       "assessment": {
@@ -28710,6 +28788,20 @@
         "keyInnovations": {
           "zh": "关键技术包括大规模钢铁生产、电气照明与动力系统、电话、电报、打字机、缝纫机、机械化农业设备、现代石油提炼、铁路调度体系、冷藏运输、城市高层建筑技术和新式钢铁战舰。美国在爱迪生体系、电气工业、企业管理和流水化生产组织方面尤其领先。",
           "en": "Key technologies included mass steel production, electric lighting and power systems, telephones, telegraphs, typewriters, sewing machines, mechanized agricultural equipment, modern petroleum refining, railroad dispatch systems, refrigerated transport, urban high-rise construction, and modern steel warships. The United States was particularly advanced in Edison-system electrification, the electrical industry, corporate management, and increasingly systematized mass production."
+        },
+        "sectors": {
+          "massProduction": {
+            "zh": "大规模生产体系全球领先：美国发明了可互换零件和流水线生产理念（惠特尼、福特即将实现）。钢铁产量1890年代已超过英国（卡内基钢铁）。石油工业（洛克菲勒标准石油）全球垄断。爱迪生的电力系统和贝尔的电话网络正改变日常生活。",
+            "en": "Global leader in mass production: America invented interchangeable parts and assembly line concepts (Whitney; Ford about to realize them). Steel output surpassed Britain in the 1890s (Carnegie Steel). Oil industry (Rockefeller's Standard Oil) holds a global monopoly. Edison's electrical systems and Bell's telephone networks are transforming daily life."
+          },
+          "inventionAndInnovation": {
+            "zh": "发明创新活力最强：爱迪生实验室开创了'工业化发明'模式。电灯、留声机、电影放映机、电话等美国发明正在改变世界。莱特兄弟正在研究动力飞行（1903年将首飞）。特斯拉和威斯汀豪斯推广交流电系统。",
+            "en": "Most dynamic invention and innovation: Edison's lab pioneered 'industrialized invention.' Electric light, phonograph, motion pictures, telephone — American inventions are changing the world. The Wright brothers are researching powered flight (first flight in 1903). Tesla and Westinghouse promote AC electrical systems."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1900年的美国工业产能已跃居世界第一，大规模生产和发明创新是其核心优势。但在基础科学和军事技术方面仍落后于欧洲——美国大学尚未达到德国水平，海军规模远不如英国。美国科技的独特之处在于将发明与商业化完美结合，创造了爱迪生、贝尔、卡内基等'发明家-企业家'模式。二十世纪将是美国科技霸权的世纪。",
+          "en": "The US in 1900 has the world's #1 industrial capacity; mass production and invention are its core advantages. But basic science and military tech still lag Europe — US universities haven't reached German levels; the navy is far smaller than Britain's. America's tech uniqueness lies in perfectly combining invention with commercialization, creating the Edison/Bell/Carnegie 'inventor-entrepreneur' model. The 20th century will be the century of American tech hegemony."
         }
       },
       "assessment": {

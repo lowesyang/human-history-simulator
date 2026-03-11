@@ -3070,7 +3070,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "AI时代",
           "en": "AI Age"
@@ -3078,6 +3078,28 @@
         "keyInnovations": {
           "zh": "空客航空航天、核能技术、TGV高速铁路、阿丽亚娜火箭",
           "en": "Airbus aerospace, nuclear technology, TGV, Ariane rockets"
+        },
+        "sectors": {
+          "aiAndMathematics": {
+            "zh": "AI研究欧洲领先：Mistral AI在2023年异军突起，成为欧洲最重要的大模型创业公司，开源模型获得全球关注。法国拥有顶尖数学传统（菲尔兹奖得主数量全球第二），为AI理论研究提供深厚基础。INRIA研究所在AI领域具有重要影响力。",
+            "en": "European AI research leader: Mistral AI emerged as a breakout star in 2023, becoming Europe's most important LLM startup with open-source models gaining global attention. France's top mathematics tradition (second-most Fields Medal winners) provides deep foundations for AI theoretical research. INRIA holds significant influence in AI."
+          },
+          "aerospaceAndDefense": {
+            "zh": "航空航天与国防全球强国：空客（总部图卢兹）与波音双寡头垄断全球民航客机市场。达索航空（阵风战斗机）、泰雷兹、赛峰集团在军事航空与航电领域欧洲领先。阿丽亚娜航天是欧洲最主要的运载火箭供应商。法国拥有独立核威慑能力。",
+            "en": "Global aerospace and defense powerhouse: Airbus (HQ Toulouse) and Boeing form a duopoly in the global commercial aircraft market. Dassault Aviation (Rafale), Thales, and Safran lead European military aviation and avionics. Arianespace is Europe's main launch vehicle provider. France maintains an independent nuclear deterrent."
+          },
+          "nuclearEnergy": {
+            "zh": "核能技术全球领先：法国约70%电力来自核能，比例全球最高。EDF运营全球最大核电机组群，法马通（Framatome）在核反应堆技术领域全球领先。正推进新一代EPR2核电站建设。",
+            "en": "Global leader in nuclear energy: ~70% of France's electricity comes from nuclear, the highest ratio globally. EDF operates the world's largest nuclear fleet; Framatome leads globally in reactor technology. New-generation EPR2 nuclear plants are under development."
+          },
+          "luxuryAndCreativeTech": {
+            "zh": "奢侈品与创意科技融合：LVMH、Kering、Hermès等奢侈品集团正积极拥抱数字化与AI。巴黎'Station F'是全球最大创业园区。法国在数字税和科技监管（GDPR推动者之一）方面引领欧洲。",
+            "en": "Luxury and creative tech convergence: LVMH, Kering, Hermès and other luxury groups actively embrace digitalization and AI. Paris's Station F is the world's largest startup campus. France leads Europe in digital taxation and tech regulation (as a key GDPR proponent)."
+          }
+        },
+        "overallAssessment": {
+          "zh": "法国科技以'航空航天+核能+AI研究+数学传统'为核心竞争力。Mistral AI的崛起使法国成为欧洲AI的领军力量。空客和核能技术构成工业科技支柱。但与美中相比，风险投资规模不足，科技巨头匮乏，劳动力市场灵活性低，制约了创业生态的发展。法国在'科技主权'议题上立场鲜明，既希望发展本土科技力量，又在监管上保持严格。",
+          "en": "France's tech competitiveness centers on 'aerospace + nuclear energy + AI research + mathematical tradition.' Mistral AI's rise makes France the leading European AI force. Airbus and nuclear technology form industrial tech pillars. But compared to the US and China, VC scale is insufficient, tech giants are scarce, and labor market rigidity constrains the startup ecosystem. France takes a strong stance on 'tech sovereignty,' seeking to develop domestic tech capabilities while maintaining strict regulation."
         }
       },
       "assessment": {
@@ -3590,7 +3612,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "AI时代",
           "en": "AI Age"
@@ -3598,6 +3620,28 @@
         "keyInnovations": {
           "zh": "汽车工程、精密机械、化工技术、SAP企业软件",
           "en": "Automotive engineering, precision machinery, chemical technology, SAP enterprise software"
+        },
+        "sectors": {
+          "automotiveAndIndustrial": {
+            "zh": "全球汽车与工业4.0强国：大众、宝马、奔驰（梅赛德斯）在全球高端汽车市场占主导。但电动化转型面临中国比亚迪等品牌的激烈竞争，2023年中国超越德国成为全球第二大汽车出口国。西门子在工业自动化领域全球领先，'工业4.0'概念由德国提出。博世在汽车零部件和物联网领域全球最大。",
+            "en": "Global automotive and Industry 4.0 powerhouse: VW, BMW, Mercedes dominate the global premium car market. But EV transition faces fierce competition from Chinese brands like BYD; China surpassed Germany as the world's #2 car exporter in 2023. Siemens leads globally in industrial automation; 'Industry 4.0' was a German concept. Bosch is the world's largest automotive parts and IoT supplier."
+          },
+          "chemicalsAndMaterials": {
+            "zh": "化工与先进材料全球第一梯队：巴斯夫（BASF）是全球最大化工企业，拜耳在农化与制药领域全球领先，科思创在高性能材料领域创新活跃。但天然气价格飙升（俄乌战争影响）严重冲击能源密集型化工产业竞争力。",
+            "en": "Top-tier in global chemicals and advanced materials: BASF is the world's largest chemical company; Bayer leads in agrochemicals and pharma; Covestro innovates in high-performance materials. But surging natural gas prices (Russia-Ukraine war impact) severely hurt the competitiveness of energy-intensive chemical industries."
+          },
+          "precisionEngineering": {
+            "zh": "精密工程与隐形冠军：德国拥有全球最多的'隐形冠军'企业（约1300家），在机床、光学仪器、医疗设备、测量工具等细分领域全球领先。蔡司（光学）、通快（激光）、库卡（工业机器人，现属美的）等企业技术壁垒极高。",
+            "en": "Precision engineering and hidden champions: Germany has the world's most 'hidden champions' (~1,300 firms) leading globally in machine tools, optical instruments, medical devices, and measurement tools. Zeiss (optics), TRUMPF (lasers), KUKA (industrial robots, now owned by Midea) have extremely high technology barriers."
+          },
+          "renewableEnergy": {
+            "zh": "可再生能源转型先锋：德国'能源转型'（Energiewende）是全球最激进的能源政策之一，2023年可再生能源发电占比超50%。但关闭核电后面临电力供应稳定性挑战，且风电和太阳能设备制造已被中国主导。",
+            "en": "Renewable energy transition pioneer: Germany's Energiewende is among the world's most aggressive energy policies; renewables exceeded 50% of electricity generation in 2023. But faces power supply stability challenges after nuclear phase-out, and wind/solar equipment manufacturing is now dominated by China."
+          }
+        },
+        "overallAssessment": {
+          "zh": "德国科技以'制造业+化工+精密工程'为根基，拥有全球最完整的工业技术体系和最多的隐形冠军企业。但正面临三重转型挑战：电动化冲击传统汽车工业、能源转型推高工业成本、数字化与AI领域明显落后。德国科技的核心矛盾是'工业时代的王者如何适应数字时代'——在AI、云计算、平台经济方面几乎没有全球竞争者。若不能解决能源成本和数字化短板，可能面临'去工业化'风险。",
+          "en": "Germany's tech is rooted in 'manufacturing + chemicals + precision engineering,' with the world's most complete industrial technology system and most hidden champion firms. But it faces a triple transition challenge: electrification disrupting traditional automotive, energy transition raising industrial costs, and clearly lagging in digitalization and AI. Germany's core tech dilemma is 'how the king of the industrial era adapts to the digital era' — it has virtually no global competitors in AI, cloud computing, or platform economy. Without solving energy costs and digital shortfalls, it risks 'deindustrialization.'"
         }
       },
       "assessment": {
@@ -3909,7 +3953,25 @@
         }
       },
       "technology": {
-        "level": 5
+        "level": 9,
+        "sectors": {
+          "semiconductors": {
+            "zh": "光刻机技术全球垄断：ASML是全球唯一EUV光刻机供应商，其设备是制造7nm以下先进芯片的绝对必需品。ASML市值超3000亿欧元，是欧洲最有价值的科技公司。荷兰在美国压力下对中国实施光刻机出口管制，成为全球芯片博弈的关键节点。",
+            "en": "Global monopoly in lithography: ASML is the sole global EUV lithography supplier; its machines are absolutely essential for manufacturing sub-7nm advanced chips. ASML market cap exceeds €300 billion, making it Europe's most valuable tech company. Under US pressure, the Netherlands restricts lithography exports to China, becoming a critical node in the global chip game."
+          },
+          "agritech": {
+            "zh": "农业科技全球领先：荷兰是全球第二大农产品出口国（仅次于美国），温室技术、精准农业、种子育种技术全球最先进。瓦赫宁根大学是全球最顶尖的农业研究机构。",
+            "en": "Global agritech leader: the Netherlands is the world's #2 agricultural exporter (after the US); greenhouse technology, precision agriculture, and seed breeding are the world's most advanced. Wageningen University is the global top agricultural research institution."
+          },
+          "waterManagement": {
+            "zh": "水利工程全球标杆：三分之一国土低于海平面的荷兰在水利工程、防洪技术方面积累数百年经验。Delta Works是人类历史上最宏伟的防洪工程之一。荷兰水利技术在全球气候适应领域需求日增。",
+            "en": "Global water management benchmark: with one-third of its territory below sea level, the Netherlands has centuries of accumulated expertise in water engineering and flood protection. Delta Works is one of humanity's most impressive flood defense systems. Dutch water technology is in growing global demand for climate adaptation."
+          }
+        },
+        "overallAssessment": {
+          "zh": "荷兰科技的核心价值远超其国土面积：ASML的EUV光刻机垄断使荷兰成为全球半导体供应链最关键的节点之一，战略地位仅次于台积电。农业科技使荷兰以弹丸之地成为全球第二大农产品出口国，水利工程更是数百年积累的国家核心竞争力。在欧洲科技版图中，荷兰的影响力远超其体量。",
+          "en": "The Netherlands' tech value far exceeds its territory: ASML's EUV lithography monopoly makes it one of the most critical nodes in the global semiconductor supply chain, second in strategic importance only to TSMC. Agritech makes this tiny nation the world's #2 agricultural exporter; water engineering is a centuries-old national core competency. In Europe's tech landscape, the Netherlands' influence far exceeds its size."
+        }
       },
       "assessment": {
         "strengths": {
@@ -4208,7 +4270,7 @@
         }
       },
       "technology": {
-        "level": 5
+        "level": 7
       },
       "assessment": {
         "strengths": {
@@ -4500,7 +4562,7 @@
         }
       },
       "technology": {
-        "level": 5
+        "level": 8
       },
       "assessment": {
         "strengths": {
@@ -4803,10 +4865,28 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 9,
         "keyInnovations": {
           "zh": "CERN粒子物理、ETH苏黎世研究、精密工程",
           "en": "CERN particle physics, ETH Zurich research, precision engineering"
+        },
+        "sectors": {
+          "pharmaAndBiotech": {
+            "zh": "制药产业全球顶级：诺华（全球第4大药企）和罗氏（全球最大生物制药企业之一）均总部巴塞尔。2023年瑞士制药出口超1000亿瑞郎，是瑞士最大出口产业。巴塞尔地区是欧洲最重要的生物医药集群。",
+            "en": "Top-tier global pharma: Novartis (#4 global pharma) and Roche (one of the world's largest biopharma firms) are both HQ in Basel. Swiss pharma exports exceeded CHF 100 billion in 2023, making it Switzerland's largest export industry. The Basel region is Europe's most important biopharma cluster."
+          },
+          "precisionInstruments": {
+            "zh": "精密仪器与钟表全球标杆：瑞士钟表业（劳力士、Swatch集团、百达翡丽）全球无可匹敌。ABB在工业自动化和机器人领域全球领先。在科学仪器和精密测量领域同样世界级。",
+            "en": "Global precision instruments and watch benchmark: Swiss watchmaking (Rolex, Swatch Group, Patek Philippe) is globally unmatched. ABB leads globally in industrial automation and robotics. Also world-class in scientific instruments and precision measurement."
+          },
+          "fundamentalResearch": {
+            "zh": "基础科学研究全球顶尖：CERN（欧洲核子研究组织）位于日内瓦，是全球粒子物理学最重要的实验室。ETH苏黎世是全球排名前五的理工大学，人均诺贝尔奖得主数量全球第一。瑞士人均研发投入全球最高之一。",
+            "en": "World-class fundamental research: CERN in Geneva is the world's most important particle physics laboratory. ETH Zurich is a global top-5 technical university with the world's highest Nobel laureates per capita. Swiss per-capita R&D spending is among the world's highest."
+          }
+        },
+        "overallAssessment": {
+          "zh": "瑞士科技以制药、精密仪器和基础科学研究为三大支柱。诺华和罗氏使瑞士在全球制药业举足轻重，CERN和ETH苏黎世确保其在基础科学领域的全球顶级地位。瑞士科技的核心特征是「小规模、高精度、高附加值」——在人口仅约900万的体量下，产出全球不成比例的科技创新。",
+          "en": "Switzerland's tech rests on three pillars: pharma, precision instruments, and fundamental research. Novartis and Roche give it outsized influence in global pharma; CERN and ETH Zurich ensure top-tier global status in basic science. Swiss tech is characterized by \"small scale, high precision, high added value\" — producing disproportionate tech innovation from a population of only ~9 million."
         }
       },
       "assessment": {
@@ -5497,6 +5577,32 @@
         "infrastructure": {
           "zh": "新干线高铁网、先进制造工厂，AI数据中心建设加速",
           "en": "Shinkansen HSR network, advanced manufacturing plants, accelerating AI data center construction"
+        },
+        "sectors": {
+          "semiconductors": {
+            "zh": "半导体设备与材料领域全球不可替代：东京电子（TEL）、迪斯科（DISCO）在半导体制造设备市场占据关键份额，信越化学、SUMCO在硅晶圆领域全球领先。光刻胶（JSR、东京应化）与特种化学品形成'隐形冠军'集群。但在芯片设计与先进制程制造方面已落后于台湾和韩国，Rapidus试图重建2nm制造能力。",
+            "en": "Irreplaceable globally in semiconductor equipment and materials: Tokyo Electron (TEL) and DISCO hold critical market share in manufacturing equipment; Shin-Etsu and SUMCO lead globally in silicon wafers. Photoresists (JSR, Tokyo Ohka) and specialty chemicals form a 'hidden champion' cluster. But chip design and advanced-node manufacturing have fallen behind Taiwan and South Korea; Rapidus attempts to rebuild 2nm manufacturing capability."
+          },
+          "roboticsAndAutomation": {
+            "zh": "工业机器人全球霸主：发那科（FANUC）、安川电机、川崎重工、不二越占全球工业机器人市场超50%份额。协作机器人、精密传感器、工厂自动化系统全球领先。丰田、本田在人形机器人研究领域有深厚积累，软银Pepper开创服务机器人市场。",
+            "en": "Global leader in industrial robotics: FANUC, Yaskawa, Kawasaki, and Nachi hold over 50% of the global industrial robot market. Collaborative robots, precision sensors, and factory automation systems lead globally. Toyota and Honda have deep experience in humanoid robot research; SoftBank's Pepper pioneered the service robot market."
+          },
+          "automotive": {
+            "zh": "全球汽车工业强国：丰田连续多年全球销量第一，在混合动力（HEV）技术上积累最深。但在纯电动车转型上落后于中国和特斯拉，被批评'电动化转型迟缓'。氢燃料电池技术（丰田Mirai）走在前沿但市场接受度有限。日产、本田、马自达等面临中国品牌在东南亚市场的激烈竞争。",
+            "en": "Global automotive powerhouse: Toyota consistently ranks #1 in global sales and has the deepest HEV technology accumulation. But it lags behind China and Tesla in the BEV transition, criticized for 'slow electrification.' Hydrogen fuel cell technology (Toyota Mirai) leads but has limited market acceptance. Nissan, Honda, Mazda face intense competition from Chinese brands in Southeast Asian markets."
+          },
+          "materialsScience": {
+            "zh": "先进材料领域全球领先：碳纤维（东丽、帝人）、特种钢材、功能性薄膜、精密陶瓷（京瓷）等构成日本制造业的'底层优势'。这些材料广泛应用于航空、半导体、新能源等高端产业，形成难以替代的供应链地位。",
+            "en": "Global leader in advanced materials: carbon fiber (Toray, Teijin), specialty steels, functional films, and precision ceramics (Kyocera) form Japan's 'foundational manufacturing advantage.' These materials are widely used in aerospace, semiconductors, and new energy, creating an irreplaceable supply chain position."
+          },
+          "quantumComputing": {
+            "zh": "量子计算研究活跃：富士通与理化学研究所合作开发超导量子计算机，NTT推进光量子计算路线。日本政府2022年制定量子技术创新战略，目标2030年建成大规模量子计算平台。但整体进度落后于美中两国。",
+            "en": "Active quantum computing research: Fujitsu and RIKEN collaborate on superconducting quantum computers; NTT advances photonic quantum computing. The Japanese government formulated a quantum technology innovation strategy in 2022, targeting a large-scale quantum computing platform by 2030. But overall progress lags behind the US and China."
+          }
+        },
+        "overallAssessment": {
+          "zh": "日本科技实力以'精密制造+材料+设备'三角为核心，在半导体设备材料、工业机器人、先进材料、精密仪器等领域保持全球不可替代地位。但在数字经济、AI软件、云计算等'软科技'方面明显落后，大语言模型发展滞后。汽车产业面临电动化转型阵痛。日本科技呈现'硬件强软件弱'的结构性特征，需要在数字化转型中找到新的增长极。",
+          "en": "Japan's tech strength centers on a 'precision manufacturing + materials + equipment' triangle, maintaining irreplaceable global positions in semiconductor equipment/materials, industrial robotics, advanced materials, and precision instruments. But it clearly lags in 'soft tech' like digital economy, AI software, and cloud computing, with LLM development behind. The auto industry faces EV transition pains. Japan exhibits a structural 'strong hardware, weak software' pattern and needs new growth drivers in digital transformation."
         }
       },
       "aiSector": {
@@ -6433,6 +6539,28 @@
         "infrastructure": {
           "zh": "数字基础设施快速发展（India Stack）、5G网络加速部署、太空发射能力（ISRO）、但农村互联网覆盖仍有差距。",
           "en": "Rapidly developing digital infrastructure (India Stack), accelerating 5G deployment, space launch capability (ISRO), though rural internet coverage gaps remain."
+        },
+        "sectors": {
+          "itServices": {
+            "zh": "全球IT服务外包第一大国：TCS、Infosys、Wipro、HCL Tech等IT巨头年营收合计超2000亿美元，服务全球500强企业的数字化转型。班加罗尔为全球第二大科技中心。但在自主产品与原创技术方面仍薄弱，主要以服务输出为主。",
+            "en": "The world's largest IT services outsourcing nation: TCS, Infosys, Wipro, HCL Tech and other IT giants have combined annual revenue exceeding $200 billion, serving Fortune 500 digital transformation. Bangalore is the world's second-largest tech hub. But still weak in proprietary products and original technology, primarily focused on service exports."
+          },
+          "spaceAndAerospace": {
+            "zh": "航天领域性价比极高：ISRO以极低成本完成月船三号（Chandrayaan-3）成功着陆月球南极，成为第四个实现月球软着陆的国家。火星轨道任务（MOM）成本仅7400万美元。商业航天起步，Skyroot Aerospace成为首家发射火箭的印度私营公司。但在载人航天和深空探测方面仍处起步阶段。",
+            "en": "Extremely cost-effective space program: ISRO achieved Chandrayaan-3's successful south pole lunar landing at remarkably low cost, becoming the fourth country to soft-land on the Moon. The Mars Orbiter Mission (MOM) cost only $74 million. Commercial space begins with Skyroot Aerospace becoming India's first private rocket launcher. But crewed spaceflight and deep space exploration are still in early stages."
+          },
+          "digitalPayments": {
+            "zh": "数字支付基础设施全球标杆：统一支付接口（UPI）2023年处理交易超1170亿笔，覆盖3亿+用户，成为全球最大实时数字支付系统。Aadhaar生物识别系统覆盖13亿人口，构成全球最大数字身份基础设施。印度数字公共基础设施（India Stack）模式被多国效仿。",
+            "en": "Global benchmark in digital payment infrastructure: UPI processed over 117 billion transactions in 2023 covering 300M+ users, becoming the world's largest real-time digital payment system. Aadhaar biometric system covers 1.3 billion people, forming the world's largest digital identity infrastructure. The India Stack model is emulated by multiple countries."
+          },
+          "pharmaceuticals": {
+            "zh": "全球最大仿制药出口国：印度被称为'世界药房'，仿制药出口占全球约20%。太阳制药、瑞迪博士实验室等企业在全球仿制药市场占重要地位。但在创新药研发方面投入不足，生物科技产业仍在追赶阶段。",
+            "en": "The world's largest generic drug exporter: India is called the 'pharmacy of the world,' with generic drug exports accounting for ~20% of the global market. Sun Pharma, Dr. Reddy's Laboratories hold important positions globally. But investment in innovative drug R&D is insufficient, with the biotech industry still catching up."
+          }
+        },
+        "overallAssessment": {
+          "zh": "印度科技呈现'IT服务强、硬科技弱'的鲜明特征。在IT服务外包和数字支付基础设施方面具有全球领先优势，ISRO航天计划以极低成本取得瞩目成就。但在半导体制造、先进制造、AI基础研究等硬科技领域与中美差距巨大。凭借14亿人口的庞大市场和大量英语技术人才，印度有潜力成为AI时代的重要力量，但需要大规模基础设施投资和教育体系升级。",
+          "en": "India's tech exhibits a distinct 'strong IT services, weak hard tech' pattern. It has globally leading advantages in IT services outsourcing and digital payment infrastructure; ISRO's space program achieves remarkable results at minimal cost. But the gap with the US and China is huge in semiconductors, advanced manufacturing, and foundational AI research. With a massive 1.4-billion market and abundant English-speaking tech talent, India has potential to become a significant force in the AI era, but needs massive infrastructure investment and education system upgrades."
         }
       },
       "aiSector": {
@@ -7051,6 +7179,28 @@
         "infrastructure": {
           "zh": "",
           "en": ""
+        },
+        "sectors": {
+          "militaryTech": {
+            "zh": "军事技术仍具大国水平：S-400/S-500防空系统全球领先，高超音速武器（匕首、先锋）已实战部署，核武库规模全球最大（约5580枚弹头）。但乌克兰战争暴露常规武器精确打击能力与西方差距明显，无人机严重依赖伊朗供应。苏霍伊战机出口仍有市场但后勤保障能力下降。",
+            "en": "Military tech still at major-power level: S-400/S-500 air defense systems lead globally; hypersonic weapons (Kinzhal, Avangard) are combat-deployed; nuclear arsenal is the world's largest (~5,580 warheads). But the Ukraine war exposed significant gaps in conventional precision strike capability versus the West, with severe drone dependence on Iran. Sukhoi fighter exports still have a market but logistics support capability has declined."
+          },
+          "nuclearEnergy": {
+            "zh": "核能技术全球输出者：Rosatom是全球最大核电站出口商，在建/在运海外核电项目遍布土耳其、埃及、印度、孟加拉等国。浮动核电站技术全球首创。但西方制裁正逐步侵蚀其技术供应链。",
+            "en": "Global nuclear energy technology exporter: Rosatom is the world's largest nuclear power plant exporter with ongoing/operational overseas projects in Turkey, Egypt, India, Bangladesh, etc. First in the world to deploy floating nuclear power plants. But Western sanctions are gradually eroding its technology supply chain."
+          },
+          "spaceAndAerospace": {
+            "zh": "航天能力衰退中：联盟号火箭仍可靠但技术老化，GLONASS导航系统维持运行。但SpaceX等商业航天的崛起使俄罗斯失去国际空间站载人运输垄断。制裁限制了航天器电子元件获取。新型火箭（安加拉）进度滞后。",
+            "en": "Declining space capability: Soyuz rockets remain reliable but aging; GLONASS navigation system is maintained. But SpaceX's rise ended Russia's ISS crew transport monopoly. Sanctions restrict access to spacecraft electronics. The new Angara rocket program lags behind schedule."
+          },
+          "cyberWarfare": {
+            "zh": "网络战能力全球前三：国家级黑客组织（APT28/APT29）具有高度复杂的网络攻击能力，在信息战和网络间谍活动中表现活跃。Yandex在俄语AI和搜索领域占主导，但顶尖AI人才大量流失海外。",
+            "en": "Top-3 global cyber warfare capability: state-sponsored hacker groups (APT28/APT29) possess highly sophisticated cyber attack capabilities, active in information warfare and cyber espionage. Yandex dominates Russian-language AI and search, but top AI talent is massively emigrating abroad."
+          }
+        },
+        "overallAssessment": {
+          "zh": "俄罗斯科技呈'军工强、民用弱、制裁加速衰退'的格局。在核武器、防空系统、核能出口等军事及国家安全领域保持大国水平，但民用科技严重落后——几乎没有全球竞争力的消费电子、半导体或互联网平台企业。乌克兰战争和西方全面制裁正加速科技脱钩，AI人才外流严重，长期科技竞争力堪忧。",
+          "en": "Russia's tech exhibits a 'strong military-industrial, weak civilian, sanctions-accelerated decline' pattern. It maintains major-power level in nuclear weapons, air defense, and nuclear energy exports, but civilian tech is severely behind — virtually no globally competitive consumer electronics, semiconductor, or internet platform companies. The Ukraine war and comprehensive Western sanctions are accelerating tech decoupling, with severe AI talent drain threatening long-term competitiveness."
         }
       },
       "diplomacy": {
@@ -7809,6 +7959,24 @@
         "infrastructure": {
           "zh": "世界级AI研究机构（Mila/Vector Institute/Amii）、主要云服务商加拿大区域、扩展中的政府支持计算基础设施。",
           "en": "World-class AI research institutions (Mila/Vector Institute/Amii), major cloud providers' Canadian regions, expanding government-supported compute infrastructure."
+        },
+        "sectors": {
+          "aiResearch": {
+            "zh": "AI基础研究全球顶尖：蒙特利尔（Mila研究所、约书亚·本吉奥）、多伦多（Vector研究所、杰弗里·辛顿）、埃德蒙顿（Amii研究所、理查德·萨顿）构成'AI三角'，培养了大量顶尖AI人才。Cohere（企业级LLM）是加拿大最重要的AI创业公司。但人才大量流向美国，商业化能力不及硅谷。",
+            "en": "World-class AI foundational research: Montreal (Mila, Yoshua Bengio), Toronto (Vector Institute, Geoffrey Hinton), Edmonton (Amii, Richard Sutton) form the 'AI Triangle,' training vast numbers of top AI researchers. Cohere (enterprise LLM) is Canada's most important AI startup. But talent heavily migrates to the US, with commercialization capability behind Silicon Valley."
+          },
+          "naturalResources": {
+            "zh": "资源科技全球领先：油砂开采技术（阿尔伯塔）、采矿自动化、木材工程等领域技术成熟。加拿大是全球最大钾肥出口国和重要铀矿供应商。但资源依赖型经济面临能源转型压力。",
+            "en": "Leading natural resource technology: oil sands extraction (Alberta), mining automation, and wood engineering have mature technologies. Canada is the world's largest potash exporter and a major uranium supplier. But the resource-dependent economy faces energy transition pressures."
+          },
+          "quantumComputing": {
+            "zh": "量子计算早期领跑者：D-Wave Systems是全球首家商用量子计算机公司（量子退火路线），Xanadu推进光量子计算。滑铁卢大学量子计算研究所全球知名。但商业规模化落后于IBM、Google。",
+            "en": "Early quantum computing leader: D-Wave Systems was the world's first commercial quantum computer company (quantum annealing); Xanadu advances photonic quantum computing. University of Waterloo's quantum computing institute is globally renowned. But commercial scaling lags behind IBM and Google."
+          }
+        },
+        "overallAssessment": {
+          "zh": "加拿大科技以AI基础研究和自然资源技术为双核心，拥有全球顶尖的AI学术人才培养体系。量子计算和清洁能源技术也有亮点。但最大挑战是'人才南流'——大量科技人才被美国吸引，本土商业化生态不够强大。与美国经济高度融合既是优势也是局限。",
+          "en": "Canada's tech centers on AI foundational research and natural resource technology, with a world-class AI academic talent pipeline. Quantum computing and clean energy tech are also highlights. But the biggest challenge is 'brain drain south' — massive tech talent attracted to the US, with insufficient domestic commercialization ecosystem. Deep economic integration with the US is both an advantage and a limitation."
         }
       },
       "aiSector": {
@@ -8753,6 +8921,20 @@
         "infrastructure": {
           "zh": "新竹科学园区为全球半导体之都，台南科学园区3纳米晶圆厂集群，高铁连接产业走廊",
           "en": "Hsinchu Science Park as the world's semiconductor capital, Tainan Science Park 3nm fab cluster, HSR connecting the industrial corridor"
+        },
+        "sectors": {
+          "semiconductors": {
+            "zh": "全球半导体制造绝对中心：台积电（TSMC）占全球先进制程（7nm以下）晶圆代工超90%市场份额，3nm量产全球领先。联发科（MediaTek）在中端手机芯片设计领域全球第二。日月光（ASE）为全球最大封测厂。台湾半导体产业链完整度和技术深度无可匹敌，被称为'硅盾'——其战略价值使台海安全成为全球关注焦点。",
+            "en": "The absolute center of global semiconductor manufacturing: TSMC holds over 90% of advanced-node (sub-7nm) foundry market share, leading globally in 3nm mass production. MediaTek ranks #2 globally in mid-range mobile chip design. ASE is the world's largest OSAT firm. Taiwan's semiconductor supply chain completeness and technological depth are unmatched, known as the 'Silicon Shield' — its strategic value makes Taiwan Strait security a global focal point."
+          },
+          "ictAndElectronics": {
+            "zh": "ICT硬件制造重镇：鸿海（富士康）为全球最大电子代工企业，广达、仁宝在笔记本代工领域占主导。台达电子在电源与散热方案领域全球领先。AI服务器供应链中，台湾ODM厂商（广达、纬颖）占据关键位置。",
+            "en": "Major ICT hardware manufacturing hub: Hon Hai (Foxconn) is the world's largest electronics contract manufacturer; Quanta and Compal dominate notebook ODM. Delta Electronics leads globally in power and thermal solutions. In the AI server supply chain, Taiwan ODMs (Quanta, Wistron) hold critical positions."
+          }
+        },
+        "overallAssessment": {
+          "zh": "台湾科技高度集中于半导体产业，台积电的全球先进制程垄断地位使台湾成为全球科技供应链最关键的单点。这既是巨大优势也是地缘政治风险源——美中日欧都在推动半导体供应链多元化，台积电在美日设厂分散风险。ICT代工和AI服务器供应链同样具有全球战略地位。但在软件、AI模型、生物科技等领域相对薄弱，产业过度集中于半导体的结构性风险不容忽视。",
+          "en": "Taiwan's tech is highly concentrated in semiconductors. TSMC's global advanced-node monopoly makes Taiwan the most critical single point in the global tech supply chain. This is both a massive advantage and a geopolitical risk source — the US, China, Japan, and Europe all push for semiconductor supply chain diversification, with TSMC building fabs in the US and Japan to mitigate risk. ICT contract manufacturing and AI server supply chains also hold global strategic positions. But relatively weak in software, AI models, and biotech, with the structural risk of over-concentration in semiconductors not to be ignored."
         }
       },
       "aiSector": {
@@ -9552,6 +9734,20 @@
         "keyInnovations": {
           "zh": "大规模油田开发、海水淡化、石化工业、现代机场与通信网络",
           "en": "Large-scale oilfield development, desalination, petrochemicals, and modern airport and communications networks"
+        },
+        "sectors": {
+          "digitalTransformation": {
+            "zh": "数字化转型雄心勃勃：'2030愿景'推动从石油经济向数字经济转型，NEOM智慧城市项目投资超5000亿美元（虽进度争议不断）。沙特主权基金PIF大规模投资全球科技（投资Lucid Motors、任天堂等）。但本土科技创新能力极弱，几乎完全依赖外国技术和人才。",
+            "en": "Ambitious digital transformation: Vision 2030 drives transition from oil economy to digital economy; NEOM smart city project investment exceeds $500 billion (though progress is debated). PIF sovereign fund invests massively in global tech (Lucid Motors, Nintendo, etc.). But domestic tech innovation is extremely weak, almost entirely dependent on foreign technology and talent."
+          },
+          "energyTech": {
+            "zh": "石油开采技术成熟但可再生能源起步：沙特阿美（Aramco）是全球最大石油公司，在油气开采、炼化技术方面经验丰富。2023年宣布大规模太阳能计划，但可再生能源占比仍极低。",
+            "en": "Mature oil extraction tech but renewable energy just starting: Saudi Aramco is the world's largest oil company with deep expertise in oil/gas extraction and refining. Announced massive solar plans in 2023, but renewable energy share remains extremely low."
+          }
+        },
+        "overallAssessment": {
+          "zh": "沙特科技呈'有钱但无创新'的典型资源国格局。凭借石油财富进行大规模科技投资，但本土科技研发能力极弱，核心依赖外国技术引进和人才引入。NEOM等超级项目愿景宏大但执行存疑。长远来看，能否在石油时代结束前建立起自主科技能力，是沙特经济转型成败的关键。",
+          "en": "Saudi tech exhibits a typical resource-nation pattern of 'wealthy but not innovative.' It makes massive tech investments via oil wealth, but domestic R&D capability is extremely weak, fundamentally relying on foreign technology and talent import. Mega-projects like NEOM have grand visions but questionable execution. Whether it can build autonomous tech capability before the oil era ends is key to Saudi economic transformation."
         }
       },
       "assessment": {
@@ -15070,6 +15266,24 @@
         "infrastructure": {
           "zh": "",
           "en": ""
+        },
+        "sectors": {
+          "fintechAndFinancial": {
+            "zh": "亚洲金融科技枢纽：新加坡是东南亚最大金融中心，Grab、Sea Group（Shopee）总部所在地。数字银行牌照制度全球领先，区块链与数字资产监管框架清晰。新加坡金融管理局（MAS）在央行数字货币（CBDC）实验中走在前列。",
+            "en": "Asian fintech hub: Singapore is Southeast Asia's largest financial center, home to Grab and Sea Group (Shopee). Its digital banking license regime leads globally; blockchain and digital asset regulatory frameworks are clear. MAS is at the forefront of CBDC experimentation."
+          },
+          "semiconductorBackend": {
+            "zh": "半导体后端制造重镇：拥有全球约5%的晶圆代工产能（格芯新加坡厂）和重要封测产业。在半导体设备精密零部件方面有一定优势。政府积极投资半导体研发以维持供应链关键节点地位。",
+            "en": "Semiconductor backend manufacturing hub: holds ~5% of global foundry capacity (GlobalFoundries Singapore fab) and significant OSAT industry. Has advantages in precision semiconductor equipment components. The government actively invests in semiconductor R&D to maintain its role as a critical supply chain node."
+          },
+          "biomedical": {
+            "zh": "生物医药制造与研发中心：辉瑞、诺华、赛诺菲等跨国药企在新加坡设立亚太研发和制造基地。启奥生物医药城（Biopolis）汇聚大量生命科学研究机构。A*STAR在生物信息学和精准医疗领域有重要贡献。",
+            "en": "Biomedical manufacturing and R&D center: Pfizer, Novartis, Sanofi and other MNCs establish APAC R&D and manufacturing bases in Singapore. Biopolis hosts numerous life science research institutions. A*STAR makes significant contributions in bioinformatics and precision medicine."
+          }
+        },
+        "overallAssessment": {
+          "zh": "新加坡以弹丸之地构建了亚洲最先进的科技创新生态之一。在金融科技、半导体制造、生物医药三个领域均占据区域枢纽地位。政府'智慧国家'战略系统性推进数字化转型。但人口仅约590万，缺乏规模化市场，科技企业天花板明显。核心价值在于开放的营商环境、法治体系和连接东西方的枢纽定位。",
+          "en": "Singapore has built one of Asia's most advanced tech innovation ecosystems on a tiny city-state. It holds regional hub status in fintech, semiconductor manufacturing, and biomedicine. The government's 'Smart Nation' strategy systematically advances digital transformation. But with a population of only ~5.9 million, it lacks a scaled market, with clear ceilings for tech companies. Its core value lies in its open business environment, rule of law, and hub position connecting East and West."
         }
       },
       "diplomacy": {
@@ -22933,6 +23147,24 @@
         "infrastructure": {
           "zh": "",
           "en": ""
+        },
+        "sectors": {
+          "telecom": {
+            "zh": "电信技术全球巨头：爱立信（Ericsson）是全球5G基础设施三大供应商之一（与华为、诺基亚并列），在美国和欧洲5G部署中扮演关键角色。",
+            "en": "Global telecom giant: Ericsson is one of the three global 5G infrastructure suppliers (alongside Huawei and Nokia), playing a critical role in US and European 5G deployment."
+          },
+          "cleanTechAndAuto": {
+            "zh": "清洁科技与电动汽车创新活跃：沃尔沃汽车（吉利旗下）全面转型电动化，Northvolt建设欧洲最大电池工厂，H2 Green Steel推进绿色钢铁生产。瑞典在碳中和路径上是全球最激进的国家之一。",
+            "en": "Active clean tech and EV innovation: Volvo Cars (Geely-owned) commits to full electrification; Northvolt builds Europe's largest battery factory; H2 Green Steel advances green steel production. Sweden is among the world's most aggressive countries on the carbon-neutral path."
+          },
+          "gamingAndDigital": {
+            "zh": "游戏与数字创意产业全球影响力大：Spotify（全球最大音乐流媒体）、King（Candy Crush）、Mojang（Minecraft）、Paradox Interactive等均诞生于瑞典。斯德哥尔摩人均独角兽数量仅次于硅谷。",
+            "en": "Massive global influence in gaming and digital creative industries: Spotify (world's largest music streaming), King (Candy Crush), Mojang (Minecraft), Paradox Interactive all originated in Sweden. Stockholm has the second-highest unicorns per capita after Silicon Valley."
+          }
+        },
+        "overallAssessment": {
+          "zh": "瑞典科技以'电信+清洁科技+数字创意'为核心，在人均创新指数上全球领先。爱立信在5G、Spotify在流媒体、Northvolt在电池领域各有全球影响力。创业生态在欧洲仅次于伦敦。但市场规模有限（人口仅1040万），科技企业成长到一定规模后往往被收购或外迁。",
+          "en": "Sweden's tech centers on 'telecom + clean tech + digital creative,' leading globally in per-capita innovation metrics. Ericsson in 5G, Spotify in streaming, and Northvolt in batteries each have global influence. Its startup ecosystem is second only to London in Europe. But market size is limited (population ~10.4M), and tech companies at scale are often acquired or relocate."
         }
       },
       "diplomacy": {
@@ -33219,6 +33451,20 @@
         "infrastructure": {
           "zh": "北部一流、南部有待改善。",
           "en": "Northern first-class; southern needs improvement."
+        },
+        "sectors": {
+          "automotiveAndDesign": {
+            "zh": "超级跑车与工业设计全球标杆：法拉利、兰博基尼（大众旗下）、玛莎拉蒂在超豪华汽车领域无可替代。意大利设计传统延伸至机械、家具、时尚等领域，工业设计美学全球影响力深远。",
+            "en": "Global benchmark in supercars and industrial design: Ferrari, Lamborghini (VW Group), Maserati are irreplaceable in ultra-luxury automotive. Italian design tradition extends to machinery, furniture, and fashion, with deep global influence in industrial design aesthetics."
+          },
+          "aerospaceAndDefense": {
+            "zh": "航空航天与国防有实力：莱昂纳多（Leonardo）是欧洲第三大国防企业，在直升机（AW系列）、航电和网络安全方面全球有竞争力。参与欧洲GCAP六代机项目（与英日合作）。",
+            "en": "Capable aerospace and defense: Leonardo is Europe's third-largest defense firm, globally competitive in helicopters (AW series), avionics, and cybersecurity. Participates in the European GCAP sixth-gen fighter project (with UK and Japan)."
+          }
+        },
+        "overallAssessment": {
+          "zh": "意大利科技以'高端制造+设计美学+中小企业集群'为特色，在超级跑车、机械制造、航空航天等领域全球有竞争力。但在数字经济和AI方面严重落后，缺乏全球级科技巨头，研发投入不足。经济增长缓慢和高公债限制了科技投资空间。意大利科技的独特优势在于'小而精'的制造业传统，但需要加速数字化转型。",
+          "en": "Italy's tech features 'high-end manufacturing + design aesthetics + SME clusters,' globally competitive in supercars, mechanical manufacturing, and aerospace. But severely behind in digital economy and AI, lacking global tech giants with insufficient R&D spending. Slow economic growth and high public debt limit tech investment space. Italy's unique advantage lies in its 'small but exquisite' manufacturing tradition, but it needs accelerated digital transformation."
         }
       },
       "diplomacy": {
@@ -55817,6 +56063,20 @@
         "infrastructure": {
           "zh": "北部工业走廊较好，玛雅列车推进中，数字鸿沟仍存。",
           "en": "Northern industrial corridor well-developed; Maya Train advancing; digital divide persists."
+        },
+        "sectors": {
+          "manufacturing": {
+            "zh": "近岸外包制造业枢纽：受中美脱钩和'友岸外包'（nearshoring）趋势驱动，墨西哥正成为全球制造业转移的最大受益者之一。汽车制造（GM、大众、丰田在墨设厂）和电子代工产业快速扩张。但自主研发能力弱，主要承接中低端制造。",
+            "en": "Nearshoring manufacturing hub: driven by US-China decoupling and nearshoring trends, Mexico is becoming one of the biggest beneficiaries of global manufacturing shifts. Auto manufacturing (GM, VW, Toyota plants) and electronics contract manufacturing are rapidly expanding. But indigenous R&D is weak, primarily handling low-to-mid-end manufacturing."
+          },
+          "fintechAndDigital": {
+            "zh": "拉美第二大金融科技市场：Bitso（加密货币交易所）、Clip（移动支付）等本土科技独角兽涌现。但互联网普及率和数字基础设施落后于巴西。",
+            "en": "LatAm's second-largest fintech market: domestic tech unicorns like Bitso (crypto exchange) and Clip (mobile payments) are emerging. But internet penetration and digital infrastructure lag behind Brazil."
+          }
+        },
+        "overallAssessment": {
+          "zh": "墨西哥科技的最大机遇在于地理位置优势带来的'近岸外包'红利，正快速承接从中国转移的制造业产能。但自主创新能力薄弱，科技研发投入占GDP比例不到0.3%（远低于OECD平均2.7%），高等教育和基础科学投入严重不足。若能抓住制造业转移窗口期同时提升研发能力，有望实现跨越式发展。",
+          "en": "Mexico's biggest tech opportunity is the nearshoring dividend from its geographic advantage, rapidly absorbing manufacturing capacity shifting from China. But indigenous innovation is weak, with R&D spending below 0.3% of GDP (far below OECD's 2.7% average), and higher education and basic science investment severely insufficient. If it can seize the manufacturing transfer window while upgrading R&D, it may achieve leapfrog development."
         }
       },
       "aiSector": {
@@ -56412,7 +56672,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 6,
         "era": {
           "zh": "数字经济与金融科技领先期",
           "en": "Digital economy and fintech leadership era"
@@ -56424,6 +56684,24 @@
         "infrastructure": {
           "zh": "城市数字基础设施较好，5G推进中，农村与亚马逊数字鸿沟大。",
           "en": "Urban digital infra fairly developed; 5G advancing; rural/Amazon digital divide large."
+        },
+        "sectors": {
+          "agritech": {
+            "zh": "农业科技全球领先：巴西农业研究公司（Embrapa）在热带农业技术上全球权威，推动巴西成为全球最大大豆和牛肉出口国。精准农业、无人机喷洒、卫星监测等农业科技应用快速发展。",
+            "en": "Global agritech leader: Embrapa is the world authority on tropical agriculture, driving Brazil to become the world's largest soybean and beef exporter. Precision agriculture, drone spraying, and satellite monitoring are rapidly developing."
+          },
+          "fintechAndDigital": {
+            "zh": "金融科技拉美领先：Nubank是全球最大独立数字银行（用户超8000万），PIX即时支付系统日均处理超1亿笔交易。巴西是拉丁美洲最大的科技创业市场。但数字基础设施和AI领域与发达国家差距仍大。",
+            "en": "Latin America's fintech leader: Nubank is the world's largest independent digital bank (80M+ users); PIX instant payment system processes over 100 million daily transactions. Brazil is LatAm's largest tech startup market. But digital infrastructure and AI still significantly lag developed nations."
+          },
+          "deepSeaOil": {
+            "zh": "深海石油开采技术全球前列：巴西国家石油公司（Petrobras）在超深水盐下层油气开采技术上全球领先，海上钻井深度可达7000米以上。",
+            "en": "Global leader in deep-sea oil extraction: Petrobras leads globally in ultra-deepwater pre-salt oil/gas extraction, with offshore drilling reaching depths over 7,000 meters."
+          }
+        },
+        "overallAssessment": {
+          "zh": "巴西科技在农业科技和金融科技两个领域表现突出，Embrapa和Nubank是各自领域的全球标杆。深海油气技术同样世界级。但在半导体、AI、高端制造等硬科技领域严重落后，基础科学研究投入不足，人才外流问题突出。作为拉美最大经济体，巴西科技发展的主要障碍是基础设施不足、教育质量参差和宏观经济不稳定。",
+          "en": "Brazil's tech excels in agritech and fintech — Embrapa and Nubank are global benchmarks in their respective fields. Deep-sea oil tech is also world-class. But severely behind in semiconductors, AI, and advanced manufacturing; basic science R&D investment is insufficient with significant brain drain. As LatAm's largest economy, Brazil's main tech development obstacles are infrastructure gaps, uneven education quality, and macroeconomic instability."
         }
       },
       "aiSector": {
@@ -64545,6 +64823,24 @@
         "keyInnovations": {
           "zh": "矿业技术、医学研究、远程教育、环境科学、卫星与通信应用。",
           "en": "Mining technology, medical research, distance education, environmental science, and satellite and communications applications."
+        },
+        "sectors": {
+          "miningTech": {
+            "zh": "采矿科技全球领先：力拓（Rio Tinto）、必和必拓（BHP）、Fortescue等矿业巨头在自动化采矿、无人驾驶矿车、远程操控技术方面全球最先进。西澳皮尔巴拉铁矿区实现了全球最大规模的矿山自动化运营。",
+            "en": "Global leader in mining technology: Rio Tinto, BHP, Fortescue lead globally in automated mining, autonomous haul trucks, and remote operation. Western Australia's Pilbara iron ore region has achieved the world's largest-scale automated mining operations."
+          },
+          "biotechAndMedical": {
+            "zh": "生物医药研究实力强：CSL是全球血液制品和疫苗巨头，Cochlear（人工耳蜗）技术全球领先。墨尔本和悉尼的医学研究机构在免疫学和传染病领域有杰出贡献。",
+            "en": "Strong biotech and medical research: CSL is a global leader in blood products and vaccines; Cochlear leads globally in cochlear implant technology. Melbourne and Sydney medical research institutions have outstanding contributions in immunology and infectious diseases."
+          },
+          "renewableEnergy": {
+            "zh": "可再生能源与氢能潜力巨大：拥有全球最丰富的太阳能和风能资源之一。正大力发展绿色氢能出口战略，Fortescue Future Industries计划成为全球最大绿色氢能供应商。但化石燃料出口（煤炭、天然气）仍是经济支柱，能源转型面临产业利益博弈。",
+            "en": "Massive renewable energy and hydrogen potential: has among the world's richest solar and wind resources. Aggressively developing green hydrogen export strategy; Fortescue Future Industries plans to become the world's largest green hydrogen supplier. But fossil fuel exports (coal, natural gas) remain economic pillars, with energy transition facing industrial interest tensions."
+          }
+        },
+        "overallAssessment": {
+          "zh": "澳大利亚科技以矿业自动化技术和生物医药为亮点，在采矿机器人化、血液制品、医疗器械等领域全球领先。绿色氢能战略潜力巨大。但人口规模限制了科技生态多样性，在AI、半导体、软件等领域缺乏全球级企业，科技人才向美国流失。与美国（AUKUS）和日本的安全科技合作正在深化。",
+          "en": "Australia's tech highlights are mining automation and biopharma, leading globally in mining robotics, blood products, and medical devices. Green hydrogen strategy holds massive potential. But population size limits tech ecosystem diversity, lacking global-tier companies in AI, semiconductors, and software, with tech talent draining to the US. Security-tech cooperation with the US (AUKUS) and Japan is deepening."
         }
       },
       "assessment": {
@@ -67828,7 +68124,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 8,
         "era": {
           "zh": "AI时代",
           "en": "AI Age"
@@ -67836,6 +68132,32 @@
         "keyInnovations": {
           "zh": "金融科技、制药、航空发动机（罗尔斯罗伊斯）、ARM芯片架构",
           "en": "Fintech, pharmaceuticals, aero engines (Rolls-Royce), ARM chip architecture"
+        },
+        "sectors": {
+          "aiAndDeepTech": {
+            "zh": "AI研究全球第三极：DeepMind（Alphabet旗下，总部伦敦）是全球最顶尖AI实验室之一，AlphaFold在蛋白质结构预测领域实现革命性突破。伦敦是欧洲最大AI创业生态，Stability AI（Stable Diffusion）、Wayve（自动驾驶）等独角兽涌现。但AI商业化规模落后于美中。",
+            "en": "Third pole of global AI research: DeepMind (Alphabet, HQ London) is among the world's top AI labs; AlphaFold achieved revolutionary breakthroughs in protein structure prediction. London is Europe's largest AI startup ecosystem, spawning unicorns like Stability AI and Wayve. But AI commercialization scale lags behind the US and China."
+          },
+          "fintech": {
+            "zh": "全球金融科技中心：伦敦是与纽约并列的全球金融中心，Revolut、Wise、Monzo等数字银行和支付平台引领欧洲金融科技。但脱欧后部分金融服务迁往欧盟。",
+            "en": "Global fintech hub: London rivals New York as a global financial center; Revolut, Wise, Monzo and other digital banks and payment platforms lead European fintech. But post-Brexit, some financial services have relocated to the EU."
+          },
+          "biotechAndPharma": {
+            "zh": "生物医药传统强国：阿斯利康、GSK为全球制药巨头，牛津-阿斯利康新冠疫苗全球分发超30亿剂。剑桥和伦敦形成欧洲最大生物科技集群。基因组学研究（Sanger研究所）全球领先。",
+            "en": "Traditional biopharma powerhouse: AstraZeneca and GSK are global pharma giants; the Oxford-AstraZeneca COVID vaccine distributed over 3 billion doses globally. Cambridge and London form Europe's largest biotech cluster. Genomics research (Sanger Institute) leads globally."
+          },
+          "defenseAndAerospace": {
+            "zh": "国防科技欧洲领先：BAE Systems是欧洲最大国防承包商，罗尔斯-罗伊斯在航空发动机领域全球前三。参与F-35、台风战斗机和AUKUS核潜艇项目。但国防预算占GDP比低于2%目标。",
+            "en": "European leader in defense tech: BAE Systems is Europe's largest defense contractor; Rolls-Royce ranks top-3 globally in aero-engines. Participates in F-35, Typhoon, and AUKUS nuclear submarine programs. But defense spending remains below the 2% GDP target."
+          },
+          "semiconductors": {
+            "zh": "芯片设计IP全球垄断：ARM（软银旗下，总部剑桥）的芯片架构授权覆盖全球99%智能手机、大量IoT设备和数据中心芯片。Imagination Technologies在GPU IP领域有影响力。但英国本土没有先进芯片制造能力。",
+            "en": "Global monopoly in chip design IP: ARM (SoftBank, HQ Cambridge) architecture licenses cover 99% of global smartphones and vast IoT and data center chips. Imagination Technologies has influence in GPU IP. But the UK has no domestic advanced chip manufacturing capability."
+          }
+        },
+        "overallAssessment": {
+          "zh": "英国科技以'AI研究+金融科技+生物医药+芯片设计IP'为四大支柱，DeepMind和ARM是全球科技版图中不可忽视的力量。伦敦是欧洲最大科技创业中心。但脱欧后面临人才流动受限和市场准入挑战，本土科技巨头稀缺（核心资产多被美日资本收购），制造业空心化问题突出。英国科技的核心优势在于知识产权和研究能力，而非规模化制造。",
+          "en": "UK tech rests on four pillars: AI research + fintech + biopharma + chip design IP. DeepMind and ARM are forces that cannot be ignored on the global tech map. London is Europe's largest tech startup hub. But post-Brexit it faces talent mobility restrictions and market access challenges; domestic tech giants are scarce (core assets largely acquired by US/Japanese capital); manufacturing hollowing-out is prominent. The UK's core tech advantage lies in IP and research capability, not scaled manufacturing."
         }
       },
       "assessment": {
@@ -69581,6 +69903,20 @@
         "keyInnovations": {
           "zh": "电子金融结算、现代集装箱港口、地铁网络、移动通信、宽带互联网和高密度城市工程技术。",
           "en": "Electronic financial settlement, modern container port systems, metro networks, mobile telecommunications, broadband internet, and high-density urban engineering technologies."
+        },
+        "sectors": {
+          "fintech": {
+            "zh": "国际金融与科技交汇中心：香港证券交易所是亚洲第三大，虚拟银行和数字资产交易监管框架领先亚洲。但金融科技创业生态不如新加坡活跃。Web3和加密货币监管采取相对开放态度。",
+            "en": "International finance-tech nexus: HKEX is Asia's third-largest; virtual banking and digital asset regulatory frameworks lead in Asia. But fintech startup ecosystem is less vibrant than Singapore. Takes a relatively open approach to Web3 and crypto regulation."
+          },
+          "aiResearch": {
+            "zh": "AI学术研究有优势：香港大学、香港中文大学、香港科技大学在AI研究领域具有国际影响力。商汤科技（联合创始人汤晓鸥为港中大教授）从香港起步发展为AI巨头。但科技产业化能力不足，大部分AI企业以大湾区为腹地。",
+            "en": "AI academic research strengths: HKU, CUHK, HKUST have international influence in AI research. SenseTime (co-founder Tang Xiao'ou was a CUHK professor) grew from Hong Kong into an AI giant. But tech industrialization capability is insufficient, with most AI companies using the Greater Bay Area as hinterland."
+          }
+        },
+        "overallAssessment": {
+          "zh": "香港科技以金融科技和AI学术研究为亮点，作为国际金融中心的地位为科技融资提供便利。但本土科技产业规模有限，高房价和有限的土地抑制了硬件制造和研发空间拓展。在大湾区融合框架下，香港正尝试与深圳形成'前店后厂'的科技协同模式。",
+          "en": "Hong Kong's tech highlights are fintech and AI academic research; its status as an international financial center facilitates tech financing. But domestic tech industry scale is limited; high property prices and limited land constrain hardware manufacturing and R&D space. Under the Greater Bay Area integration framework, Hong Kong is attempting a 'front office-back factory' tech synergy model with Shenzhen."
         }
       },
       "assessment": {
@@ -72082,7 +72418,26 @@
         "description": {
           "zh": "全球领先的科技创新中心。",
           "en": "Global leader in tech innovation."
-        }
+        },
+        "sectors": {
+          "cybersecurity": {
+            "zh": "网络安全全球第一梯队：Check Point、CyberArk、Wiz等企业构成全球最强网络安全产业集群之一。以色列军事情报单位（8200部队）培养的人才大量流入科技创业。2023年Wiz估值超过100亿美元。",
+            "en": "Top-tier global cybersecurity: Check Point, CyberArk, Wiz and others form one of the world's strongest cybersecurity industry clusters. Talent trained by Israel's military intelligence (Unit 8200) massively flows into tech startups. Wiz reached over $10 billion valuation in 2023."
+          },
+          "defenseTech": {
+            "zh": "国防科技全球领先：'铁穹'防空系统实战验证，以色列航空工业（IAI）、拉斐尔先进防务在无人机、导弹和电子战领域全球最先进。军事科技成果向民用领域的转化率极高。",
+            "en": "Global defense tech leader: Iron Dome air defense system combat-proven; IAI and Rafael Advanced Defense Systems are among the world's most advanced in drones, missiles, and electronic warfare. Military-to-civilian tech conversion rate is extremely high."
+          },
+          "agritechAndWater": {
+            "zh": "农业科技与水技术全球标杆：滴灌技术发明国，Netafim全球领先。海水淡化技术使以色列在极端缺水环境下实现水资源自给。精准农业和生物农药技术领先。",
+            "en": "Global benchmark in agritech and water technology: birthplace of drip irrigation; Netafim leads globally. Desalination technology enables water self-sufficiency in an extremely arid environment. Precision agriculture and biopesticide technologies lead."
+          }
+        },
+        "overallAssessment": {
+          "zh": "以色列是全球人均研发投入最高的国家，以'网络安全+国防科技+农业水利科技'三位一体构成独特科技优势。8200部队-科技创业的人才管道是全球独一无二的创新引擎。但2023年加沙冲突和国内政治危机给科技产业带来不确定性，部分投资者开始观望。以色列科技的核心特征是'小国大创新'——在人口仅950万的体量下产出全球不成比例的科技影响力。",
+          "en": "Israel has the world's highest per-capita R&D spending, with a unique tech advantage built on 'cybersecurity + defense tech + agri-water tech.' The Unit 8200-to-startup talent pipeline is a globally unique innovation engine. But the 2023 Gaza conflict and domestic political crisis create uncertainty for the tech industry, with some investors becoming cautious. Israel's core tech characteristic is 'small nation, big innovation' — producing disproportionate global tech impact from a population of only 9.5 million."
+        },
+        "level": 9
       },
       "diplomacy": {
         "allies": [
@@ -72615,6 +72970,32 @@
         "keyInnovations": {
           "zh": "核心创新包括宽带网络普及、半导体制造、移动通信、显示器技术、汽车工程与大型船舶建造。",
           "en": "Core innovations included broadband diffusion, semiconductor manufacturing, mobile communications, display technology, automotive engineering, and large-scale shipbuilding."
+        },
+        "sectors": {
+          "semiconductors": {
+            "zh": "存储芯片全球霸主：三星电子和SK海力士合计占据全球DRAM市场超70%、NAND Flash超50%份额。三星在先进逻辑制程（3nm GAA）追赶台积电。但在EDA工具、半导体设备方面仍依赖美日供应链。HBM（高带宽内存）因AI训练需求爆发成为增长引擎。",
+            "en": "Global memory chip leader: Samsung and SK Hynix together hold over 70% of global DRAM and over 50% of NAND Flash markets. Samsung pursues TSMC in advanced logic nodes (3nm GAA). But still relies on US/Japan supply chains for EDA tools and equipment. HBM (High Bandwidth Memory) becomes a growth engine driven by AI training demand."
+          },
+          "displayAndElectronics": {
+            "zh": "显示面板与消费电子全球领先：三星在OLED面板市场占主导，LG Display在大尺寸OLED领域领先。但LCD市场已被中国京东方、华星光电等超越。三星Galaxy系列智能手机全球市场份额第一，但面临中国品牌低端市场蚕食。",
+            "en": "Global leader in display panels and consumer electronics: Samsung dominates the OLED panel market; LG Display leads in large-format OLED. But LCD market has been surpassed by Chinese firms BOE and CSOT. Samsung Galaxy smartphones rank #1 globally but face erosion from Chinese brands in the low-end market."
+          },
+          "batteryAndEV": {
+            "zh": "动力电池全球第二梯队：LG新能源、三星SDI、SK On在全球动力电池市场与中国宁德时代、比亚迪竞争。韩国企业在三元锂电池技术上有优势，但磷酸铁锂路线被中国主导。现代起亚在电动车领域发展迅速，Ioniq 5/6系列获全球好评。",
+            "en": "Second-tier global battery player: LG Energy Solution, Samsung SDI, SK On compete globally with China's CATL and BYD. Korean firms have advantages in ternary lithium battery technology, but the LFP route is dominated by China. Hyundai-Kia develops rapidly in EVs, with Ioniq 5/6 series receiving global acclaim."
+          },
+          "entertainment": {
+            "zh": "文化科技产业全球影响力巨大：K-pop、韩剧通过Netflix等平台实现全球传播，成为文化软实力标杆。游戏产业（NCsoft、Nexon、Krafton）在PC和移动端均有全球级产品。但AI时代面临内容生成方式变革的挑战。",
+            "en": "Massive global cultural tech influence: K-pop and K-drama achieve global reach via Netflix, becoming cultural soft power benchmarks. The gaming industry (NCsoft, Nexon, Krafton) has globally competitive products on PC and mobile. But faces challenges from AI-era content generation shifts."
+          },
+          "shipbuilding": {
+            "zh": "全球造船业三强之一：韩华海洋（原大宇造船）、HD韩国造船海洋（原现代重工）、三星重工在高附加值船舶（LNG运输船、超大型集装箱船）领域全球领先，LNG船订单份额超70%。",
+            "en": "One of the top three in global shipbuilding: Hanwha Ocean (formerly DSME), HD Korea Shipbuilding (formerly HHI), and Samsung Heavy Industries lead globally in high-value vessels (LNG carriers, ultra-large containerships) with over 70% of LNG carrier orders."
+          }
+        },
+        "overallAssessment": {
+          "zh": "韩国科技以'半导体+显示+电池'三大支柱为核心，在存储芯片、OLED面板等领域保持全球领先。HBM因AI需求爆发成为新的增长引擎。但面临中国在面板、电池领域的全面追赶，芯片设计与制造设备仍依赖美日。经济高度依赖三星、SK等少数财阀，产业结构集中度风险较高。文化科技产业全球影响力持续扩大，成为软实力增长新亮点。",
+          "en": "South Korea's tech centers on 'semiconductors + display + batteries,' maintaining global leadership in memory chips and OLED panels. HBM becomes a new growth engine from AI demand. But faces comprehensive catch-up from China in displays and batteries, while chip design and equipment still depend on the US/Japan. The economy is highly dependent on few chaebols like Samsung and SK, posing concentration risk. Cultural tech industry continues expanding its global influence as a new soft power highlight."
         }
       },
       "assessment": {

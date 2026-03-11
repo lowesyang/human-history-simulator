@@ -2701,7 +2701,7 @@
         }
       },
       "technology": {
-        "level": 5,
+        "level": 7,
         "era": {
           "zh": "秦汉之际铁器时代帝国形成期",
           "en": "Iron Age imperial formation era of Qin-Han China"
@@ -2709,6 +2709,20 @@
         "keyInnovations": {
           "zh": "郡县制全国推广、书同文、度量衡统一、半两钱标准化、驰道与交通网、成熟弩机、标准化兵器生产、户籍与文书行政技术，以及大规模工程组织能力。",
           "en": "Empire-wide extension of the commandery-county system, script standardization, common weights and measures, standard Banliang coinage, imperial highways and transport networks, advanced crossbow mechanisms, standardized weapon production, household-registration and documentary administrative techniques, and the organizational capacity for very large public works."
+        },
+        "sectors": {
+          "engineeringAndInfrastructure": {
+            "zh": "工程与基础设施全球最大规模：秦始皇统一后启动了人类历史上最宏伟的基建工程——长城（连接并扩展既有城墙）、驰道（标准化道路网络）、灵渠（沟通长江和珠江水系）。秦兵马俑展示了大规模标准化制造能力。度量衡和文字的统一是史无前例的标准化工程。",
+            "en": "World's largest-scale engineering and infrastructure: after unification, Qin Shi Huang launches history's grandest infrastructure projects — the Great Wall (connecting and extending existing walls), imperial highways (standardized road network), Lingqu Canal (connecting Yangtze and Pearl River systems). The Terracotta Army demonstrates large-scale standardized manufacturing. Unification of weights, measures, and writing is an unprecedented standardization feat."
+          },
+          "militaryTechnology": {
+            "zh": "军事技术和组织最高效：秦军的弩机是当时世界最先进的远程武器，零部件标准化可互换——比西方'可互换零件'概念早两千年。秦军编制和奖惩制度（军功爵制）是古代世界最系统化的军事体制。",
+            "en": "Most efficient military technology and organization: Qin crossbows are the era's most advanced ranged weapons, with standardized interchangeable parts — predating the Western 'interchangeable parts' concept by two millennia. Qin army organization and the military merit rank system are the ancient world's most systematized military institutions."
+          }
+        },
+        "overallAssessment": {
+          "zh": "公元前221年的秦帝国在大规模工程建设和军事标准化方面达到了古代世界的巅峰。长城、驰道、灵渠和兵马俑展示了一个中央集权国家将技术大规模、标准化应用的惊人能力。弩机的零部件标准化生产可能是人类历史上最早的'标准化制造'实践。但秦帝国的技术应用高度服务于军事和控制目的，民生技术发展相对有限。帝国的暴政式动员在15年内耗尽了国力。",
+          "en": "The Qin Empire in 221 BCE reaches antiquity's zenith in large-scale engineering and military standardization. The Great Wall, highways, Lingqu Canal, and Terracotta Army demonstrate a centralized state's stunning ability to apply technology at scale. Crossbow parts standardization may be humanity's earliest 'standardized manufacturing' practice. But Qin tech application is highly focused on military and control purposes; civilian tech development is relatively limited. The empire's brutal mobilization exhausted national strength within 15 years."
         }
       },
       "assessment": {
@@ -2837,7 +2851,7 @@
             "en": "The former six-states nobility was the greatest potential subversive force within the Qin Empire. Though Qin had relocated royal families to Xianyang for surveillance and confiscated weapons, the vast local social networks still harbored countless aristocratic descendants and discontented local elites secretly plotting restoration."
           },
           "description": {
-            "zh": "赵、魏、楚、齐、韩、燕六国虽已亡国，但其贵族血脉、社会网络和文化记忆并未消失。秦始皇虽然将六国王族强制迁往咸阳附近居住、收缴民间武器并推行郡县制，但在广阔的帝国腹地，旧贵族后裔仍拥有深厚的地方影响力。楚国遗民的反秦情绪尤为强烈——\u201c楚虽三户，亡秦必楚\u201d的谣言广泛流传。项氏家族（项梁、项羽）正在楚地秘密积蓄力量，张良等韩国遗臣也在策划行刺。六国旧贵族的复辟意愿在秦始皇在世时被严厉的法治与强大的军事力量所压制，但一旦帝国中枢出现权力真空，这些潜伏的力量将迅速汇聚为颠覆浪潮，最终导致秦帝国在短短十五年内覆灭。",
+            "zh": "赵、魏、楚、齐、韩、燕六国虽已亡国，但其贵族血脉、社会网络和文化记忆并未消失。秦始皇虽然将六国王族强制迁往咸阳附近居住、收缴民间武器并推行郡县制，但在广阔的帝国腹地，旧贵族后裔仍拥有深厚的地方影响力。楚国遗民的反秦情绪尤为强烈——“楚虽三户，亡秦必楚”的谣言广泛流传。项氏家族（项梁、项羽）正在楚地秘密积蓄力量，张良等韩国遗臣也在策划行刺。六国旧贵族的复辟意愿在秦始皇在世时被严厉的法治与强大的军事力量所压制，但一旦帝国中枢出现权力真空，这些潜伏的力量将迅速汇聚为颠覆浪潮，最终导致秦帝国在短短十五年内覆灭。",
             "en": "Though the six states of Zhao, Wei, Chu, Qi, Han, and Yan had been destroyed, their aristocratic bloodlines, social networks, and cultural memories had not vanished. While Qin Shi Huang forcibly relocated royal families near Xianyang, confiscated civilian weapons, and imposed the commandery-county system, aristocratic descendants still wielded deep local influence across the vast imperial hinterland. Anti-Qin sentiment was strongest among Chu remnants — the saying 'Though Chu has but three households, it is Chu that shall destroy Qin' circulated widely. The Xiang family (Xiang Liang, Xiang Yu) was secretly building strength in Chu territory, while Han loyalists like Zhang Liang plotted assassination. The restorationist ambitions of the six-states nobility were suppressed during Qin Shi Huang's lifetime by rigorous law enforcement and overwhelming military power, but once a power vacuum appeared at the imperial center, these latent forces would rapidly converge into a wave of subversion, ultimately destroying the Qin Empire within a mere fifteen years."
           },
           "keyFigures": [
@@ -2900,7 +2914,7 @@
             "en": "Confucian scholars were the intellectual opponents of the Qin Empire's Legalist line. Some served as court erudites and openly advocated restoring feudalism, while many more secretly preserved classics and transmitted learning among the people, forming a cultural resistance against Legalist rule."
           },
           "description": {
-            "zh": "儒家学说自孔子以来已传承近三百年，在齐鲁地区拥有最深厚的根基。秦统一后，朝廷设置七十余位博士作为学术顾问，其中不少是儒生。然而当淳于越等儒家博士在朝堂上公开反对郡县制、主张恢复分封时，引发了与李斯的激烈论争。李斯据此上书建议焚书，除秦国史记、医药卜筮和农业技术书籍外，私藏诗书百家语者皆处以极刑。传说中的\u201c坑儒\u201d事件（前212年）更使儒家遭受空前打击。然而焚书坑儒并未消灭儒学——大量经典被学者口耳相传或藏于墙壁之中保存下来。儒家学者对秦朝暴政的道德批判成为日后反秦运动的重要思想资源，而汉朝建立后儒学的全面复兴证明了文化传统的韧性远超一时的政治暴力。",
+            "zh": "儒家学说自孔子以来已传承近三百年，在齐鲁地区拥有最深厚的根基。秦统一后，朝廷设置七十余位博士作为学术顾问，其中不少是儒生。然而当淳于越等儒家博士在朝堂上公开反对郡县制、主张恢复分封时，引发了与李斯的激烈论争。李斯据此上书建议焚书，除秦国史记、医药卜筮和农业技术书籍外，私藏诗书百家语者皆处以极刑。传说中的“坑儒”事件（前212年）更使儒家遭受空前打击。然而焚书坑儒并未消灭儒学——大量经典被学者口耳相传或藏于墙壁之中保存下来。儒家学者对秦朝暴政的道德批判成为日后反秦运动的重要思想资源，而汉朝建立后儒学的全面复兴证明了文化传统的韧性远超一时的政治暴力。",
             "en": "Confucianism had been transmitted for nearly three hundred years since Confucius, with its deepest roots in the Qi-Lu region. After unification, the Qin court appointed over seventy erudites as academic advisors, many of them Confucians. However, when Confucian erudites like Chunyu Yue openly opposed the commandery-county system and advocated restoring feudalism at court, it triggered a fierce debate with Li Si. Li Si memorialized the throne recommending the burning of books, decreeing that all who privately kept the Odes, Documents, or writings of the hundred schools should face extreme punishment, with exceptions only for Qin historical records, medical, divinatory, and agricultural texts. The legendary 'burying of scholars' incident (212 BCE) dealt Confucianism an unprecedented blow. Yet the burning and burying did not destroy Confucianism — vast numbers of classics were preserved through oral transmission or hidden in walls. Confucian moral critique of Qin tyranny became an important intellectual resource for the later anti-Qin movement, and the comprehensive Confucian revival after the Han dynasty's establishment demonstrated that cultural traditions are far more resilient than momentary political violence."
           },
           "keyFigures": [
@@ -4138,7 +4152,7 @@
             "zh": "银克当量/人",
             "en": "grams of silver equivalent per person"
           },
-          "goldKg": 0.000018,
+          "goldKg": 1.8e-05,
           "silverKg": 0.018
         },
         "gdpDescription": {
@@ -6077,7 +6091,7 @@
             "zh": "银克/人/年",
             "en": "grams of silver per person per year"
           },
-          "goldKg": 0.00003,
+          "goldKg": 3e-05,
           "silverKg": 0.03
         },
         "gdpDescription": {
@@ -15399,7 +15413,7 @@
             "en": "The senatorial establishment was the power core of the Roman Republic, represented by hereditary aristocratic families like the Fabii and Scipiones. They controlled state affairs through patronage networks, religious authority, and magistrate elections, though internal divisions existed between the cautious Fabian strategy and the aggressive expansionist Scipionic approach to foreign policy."
           },
           "description": {
-            "zh": "在公元前221年前后，罗马元老院正处于权力的巅峰期。第一次布匿战争的胜利使罗马获得了西西里、撒丁和科西嘉，元老院对地中海事务的影响力急剧扩大。费边·马克西穆斯代表了元老院中谨慎务实的一派——他在后来的第二次布匿战争中因采取消耗战略而获得\u201c延误者\u201d（Cunctator）的称号。元老院通过年度政务官选举、行省分配和军事指挥权的授予维持对国家的控制。西庇阿家族则代表了更积极进取的扩张路线。元老院贵族之间的竞争虽然激烈，但仍在共和制度框架内运作——凯旋式的荣耀、显赫的姓氏和对国家的贡献是政治晋升的基本资本。",
+            "zh": "在公元前221年前后，罗马元老院正处于权力的巅峰期。第一次布匿战争的胜利使罗马获得了西西里、撒丁和科西嘉，元老院对地中海事务的影响力急剧扩大。费边·马克西穆斯代表了元老院中谨慎务实的一派——他在后来的第二次布匿战争中因采取消耗战略而获得“延误者”（Cunctator）的称号。元老院通过年度政务官选举、行省分配和军事指挥权的授予维持对国家的控制。西庇阿家族则代表了更积极进取的扩张路线。元老院贵族之间的竞争虽然激烈，但仍在共和制度框架内运作——凯旋式的荣耀、显赫的姓氏和对国家的贡献是政治晋升的基本资本。",
             "en": "Around 221 BCE, the Roman Senate was at the height of its power. Victory in the First Punic War had won Rome Sicily, Sardinia, and Corsica, dramatically expanding senatorial influence over Mediterranean affairs. Fabius Maximus represented the cautious and pragmatic faction within the Senate — he would later earn the sobriquet 'Cunctator' (Delayer) for his attrition strategy during the Second Punic War. The Senate maintained control of the state through annual magistrate elections, provincial assignments, and the granting of military command. The Scipio family represented a more aggressively expansionist approach. Competition among senatorial aristocrats was fierce but still operated within the republican institutional framework — triumphal glory, illustrious family names, and contributions to the state were the fundamental currency of political advancement."
           },
           "keyFigures": [
@@ -15427,7 +15441,7 @@
                 "en": "Consul"
               },
               "role": {
-                "zh": "西庇阿家族当代代表，其子将成为击败汉尼拔的\u201c阿非利加的征服者\u201d",
+                "zh": "西庇阿家族当代代表，其子将成为击败汉尼拔的“阿非利加的征服者”",
                 "en": "Contemporary head of the Scipio family, whose son would become Scipio Africanus the conqueror of Hannibal"
               }
             }
@@ -15553,7 +15567,7 @@
                 "en": "Five-time Consul"
               },
               "role": {
-                "zh": "赢得最高军事荣誉\u201c丰盈战利品\u201d（spolia opima）的传奇将领",
+                "zh": "赢得最高军事荣誉“丰盈战利品”（spolia opima）的传奇将领",
                 "en": "Legendary general who won the supreme military honor of spolia opima"
               }
             }
@@ -24764,7 +24778,7 @@
             "zh": "银克当量",
             "en": "grams of silver equivalent"
           },
-          "goldKg": 0.000012,
+          "goldKg": 1.2e-05,
           "silverKg": 0.012
         },
         "gdpDescription": {

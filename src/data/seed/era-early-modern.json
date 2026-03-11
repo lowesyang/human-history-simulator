@@ -1159,50 +1159,191 @@
       "factions": [
         {
           "id": "mughal_imperial_court",
-          "name": { "zh": "帝国宫廷", "en": "Imperial Court" },
+          "name": {
+            "zh": "帝国宫廷",
+            "en": "Imperial Court"
+          },
           "type": "other",
-          "leader": { "zh": "沙贾汗", "en": "Shah Jahan" },
-          "leaderTitle": { "zh": "帕迪沙赫（万王之王）", "en": "Padshah (King of Kings)" },
-          "ideology": { "zh": "波斯化伊斯兰君主制，帖木儿-莫卧儿皇权正统，以壮丽建筑与宫廷文化彰显天威", "en": "Persianate Islamic monarchy, Timurid-Mughal imperial legitimacy, and projection of divine majesty through grand architecture and court culture" },
-          "headquarters": { "zh": "沙贾汗纳巴德（德里）/ 阿格拉", "en": "Shahjahanabad (Delhi) / Agra" },
+          "leader": {
+            "zh": "沙贾汗",
+            "en": "Shah Jahan"
+          },
+          "leaderTitle": {
+            "zh": "帕迪沙赫（万王之王）",
+            "en": "Padshah (King of Kings)"
+          },
+          "ideology": {
+            "zh": "波斯化伊斯兰君主制，帖木儿-莫卧儿皇权正统，以壮丽建筑与宫廷文化彰显天威",
+            "en": "Persianate Islamic monarchy, Timurid-Mughal imperial legitimacy, and projection of divine majesty through grand architecture and court culture"
+          },
+          "headquarters": {
+            "zh": "沙贾汗纳巴德（德里）/ 阿格拉",
+            "en": "Shahjahanabad (Delhi) / Agra"
+          },
           "status": "ruling",
-          "relationship": { "zh": "沙贾汗作为莫卧儿帝国的绝对核心，掌握军政大权与财政资源。宫廷通过曼萨卜达里体系将所有贵族纳入皇权轨道，但1648年皇帝健康问题已引发诸子继位暗流。", "en": "Shah Jahan stood as the absolute center of the Mughal Empire, commanding military, administrative, and fiscal power. The court bound all nobility into the imperial orbit through the mansabdari system, yet by 1648 the emperor's health concerns had already set succession rivalries in motion among his sons." },
-          "description": { "zh": "沙贾汗在位期间（1628—1658）是莫卧儿帝国建筑与文化成就的巅峰时代。泰姬陵、红堡和贾玛清真寺等宏伟建筑相继兴建，德里新城沙贾汗纳巴德落成。帝国财政充盈，对外贸易繁荣，朝廷汇集波斯、突厥、印度各族精英。然而帝国内部已出现隐患：高昂的建筑支出、德干战争的持续消耗，以及四位皇子达拉·舒科、沙舒贾、奥朗则布和穆拉德·巴克什之间日益激烈的继位竞争，为不久后的内战埋下了伏笔。", "en": "The reign of Shah Jahan (1628–1658) marked the pinnacle of Mughal architectural and cultural achievement. Monumental projects including the Taj Mahal, the Red Fort, and the Jama Masjid were constructed, and the new capital Shahjahanabad was completed at Delhi. Imperial revenues were abundant, overseas trade flourished, and the court gathered Persian, Turkic, and Indian elites. Yet underlying strains had appeared: the immense cost of building programs, the ongoing drain of Deccan campaigns, and the intensifying rivalry among four princes—Dara Shikoh, Shah Shuja, Aurangzeb, and Murad Bakhsh—were laying the groundwork for civil war." },
+          "relationship": {
+            "zh": "沙贾汗作为莫卧儿帝国的绝对核心，掌握军政大权与财政资源。宫廷通过曼萨卜达里体系将所有贵族纳入皇权轨道，但1648年皇帝健康问题已引发诸子继位暗流。",
+            "en": "Shah Jahan stood as the absolute center of the Mughal Empire, commanding military, administrative, and fiscal power. The court bound all nobility into the imperial orbit through the mansabdari system, yet by 1648 the emperor's health concerns had already set succession rivalries in motion among his sons."
+          },
+          "description": {
+            "zh": "沙贾汗在位期间（1628—1658）是莫卧儿帝国建筑与文化成就的巅峰时代。泰姬陵、红堡和贾玛清真寺等宏伟建筑相继兴建，德里新城沙贾汗纳巴德落成。帝国财政充盈，对外贸易繁荣，朝廷汇集波斯、突厥、印度各族精英。然而帝国内部已出现隐患：高昂的建筑支出、德干战争的持续消耗，以及四位皇子达拉·舒科、沙舒贾、奥朗则布和穆拉德·巴克什之间日益激烈的继位竞争，为不久后的内战埋下了伏笔。",
+            "en": "The reign of Shah Jahan (1628–1658) marked the pinnacle of Mughal architectural and cultural achievement. Monumental projects including the Taj Mahal, the Red Fort, and the Jama Masjid were constructed, and the new capital Shahjahanabad was completed at Delhi. Imperial revenues were abundant, overseas trade flourished, and the court gathered Persian, Turkic, and Indian elites. Yet underlying strains had appeared: the immense cost of building programs, the ongoing drain of Deccan campaigns, and the intensifying rivalry among four princes—Dara Shikoh, Shah Shuja, Aurangzeb, and Murad Bakhsh—were laying the groundwork for civil war."
+          },
           "keyFigures": [
-            { "name": { "zh": "沙贾汗", "en": "Shah Jahan" }, "title": { "zh": "帕迪沙赫", "en": "Padshah" }, "role": { "zh": "莫卧儿皇帝，帝国最高统治者", "en": "Mughal emperor and supreme ruler of the empire" } },
-            { "name": { "zh": "萨达拉·汗", "en": "Sadullah Khan" }, "title": { "zh": "帝国首相（瓦基尔）", "en": "Grand Vizier (Vakil)" }, "role": { "zh": "帝国行政首脑，辅佐皇帝处理日常政务", "en": "Head of imperial administration, assisting the emperor in daily governance" } }
+            {
+              "name": {
+                "zh": "沙贾汗",
+                "en": "Shah Jahan"
+              },
+              "title": {
+                "zh": "帕迪沙赫",
+                "en": "Padshah"
+              },
+              "role": {
+                "zh": "莫卧儿皇帝，帝国最高统治者",
+                "en": "Mughal emperor and supreme ruler of the empire"
+              }
+            },
+            {
+              "name": {
+                "zh": "萨达拉·汗",
+                "en": "Sadullah Khan"
+              },
+              "title": {
+                "zh": "帝国首相（瓦基尔）",
+                "en": "Grand Vizier (Vakil)"
+              },
+              "role": {
+                "zh": "帝国行政首脑，辅佐皇帝处理日常政务",
+                "en": "Head of imperial administration, assisting the emperor in daily governance"
+              }
+            }
           ]
         },
         {
           "id": "mughal_aurangzeb_faction",
-          "name": { "zh": "奥朗则布派系", "en": "Prince Aurangzeb Faction" },
+          "name": {
+            "zh": "奥朗则布派系",
+            "en": "Prince Aurangzeb Faction"
+          },
           "type": "other",
-          "leader": { "zh": "奥朗则布", "en": "Aurangzeb" },
-          "leaderTitle": { "zh": "皇子 / 德干总督", "en": "Imperial Prince / Viceroy of the Deccan" },
-          "ideology": { "zh": "逊尼派伊斯兰正统，强调教法治国、军事扩张与帝国纪律", "en": "Sunni Islamic orthodoxy emphasizing sharia governance, military expansion, and imperial discipline" },
-          "headquarters": { "zh": "奥朗加巴德（德干）", "en": "Aurangabad (Deccan)" },
+          "leader": {
+            "zh": "奥朗则布",
+            "en": "Aurangzeb"
+          },
+          "leaderTitle": {
+            "zh": "皇子 / 德干总督",
+            "en": "Imperial Prince / Viceroy of the Deccan"
+          },
+          "ideology": {
+            "zh": "逊尼派伊斯兰正统，强调教法治国、军事扩张与帝国纪律",
+            "en": "Sunni Islamic orthodoxy emphasizing sharia governance, military expansion, and imperial discipline"
+          },
+          "headquarters": {
+            "zh": "奥朗加巴德（德干）",
+            "en": "Aurangabad (Deccan)"
+          },
           "status": "rival",
-          "relationship": { "zh": "奥朗则布作为沙贾汗第三子，长期担任德干总督，积累了丰富的军事与行政经验。他暗中结盟军中将领与正统乌里玛，对达拉·舒科的继位前景深感不满，正在为夺取皇位积蓄力量。", "en": "As Shah Jahan's third son, Aurangzeb served as viceroy of the Deccan for an extended period, gaining deep military and administrative experience. He secretly cultivated alliances among army commanders and orthodox ulama, harboring strong opposition to Dara Shikoh's succession prospects and building strength for a bid for the throne." },
-          "description": { "zh": "奥朗则布（1618—1707）是莫卧儿帝国最具争议的皇子之一。他在德干的军事生涯使其成为帝国最能干的指挥官，曾多次率军征讨比贾布尔与戈尔康达苏丹国。他的政治立场偏向逊尼正统派，主张恢复伊斯兰教法在帝国治理中的核心地位，与兄长达拉·舒科的宽容路线形成鲜明对比。在1657—1659年的继位战争中，奥朗则布凭借军事才能与政治谋略先后击败三位兄弟，囚禁父亲沙贾汗，登基为帝。他此后近五十年的统治深刻改变了莫卧儿帝国的走向。", "en": "Aurangzeb (1618–1707) was one of the most controversial Mughal princes. His military career in the Deccan made him the empire's most capable commander, and he led multiple campaigns against the Bijapur and Golconda sultanates. Politically he leaned toward Sunni orthodoxy, advocating the restoration of Islamic sharia as the central pillar of governance, in stark contrast to his elder brother Dara Shikoh's syncretism. During the succession war of 1657–1659, Aurangzeb leveraged military skill and political cunning to defeat his three brothers, imprison his father Shah Jahan, and seize the throne. His nearly fifty-year reign would profoundly reshape the trajectory of the Mughal Empire." },
+          "relationship": {
+            "zh": "奥朗则布作为沙贾汗第三子，长期担任德干总督，积累了丰富的军事与行政经验。他暗中结盟军中将领与正统乌里玛，对达拉·舒科的继位前景深感不满，正在为夺取皇位积蓄力量。",
+            "en": "As Shah Jahan's third son, Aurangzeb served as viceroy of the Deccan for an extended period, gaining deep military and administrative experience. He secretly cultivated alliances among army commanders and orthodox ulama, harboring strong opposition to Dara Shikoh's succession prospects and building strength for a bid for the throne."
+          },
+          "description": {
+            "zh": "奥朗则布（1618—1707）是莫卧儿帝国最具争议的皇子之一。他在德干的军事生涯使其成为帝国最能干的指挥官，曾多次率军征讨比贾布尔与戈尔康达苏丹国。他的政治立场偏向逊尼正统派，主张恢复伊斯兰教法在帝国治理中的核心地位，与兄长达拉·舒科的宽容路线形成鲜明对比。在1657—1659年的继位战争中，奥朗则布凭借军事才能与政治谋略先后击败三位兄弟，囚禁父亲沙贾汗，登基为帝。他此后近五十年的统治深刻改变了莫卧儿帝国的走向。",
+            "en": "Aurangzeb (1618–1707) was one of the most controversial Mughal princes. His military career in the Deccan made him the empire's most capable commander, and he led multiple campaigns against the Bijapur and Golconda sultanates. Politically he leaned toward Sunni orthodoxy, advocating the restoration of Islamic sharia as the central pillar of governance, in stark contrast to his elder brother Dara Shikoh's syncretism. During the succession war of 1657–1659, Aurangzeb leveraged military skill and political cunning to defeat his three brothers, imprison his father Shah Jahan, and seize the throne. His nearly fifty-year reign would profoundly reshape the trajectory of the Mughal Empire."
+          },
           "keyFigures": [
-            { "name": { "zh": "奥朗则布", "en": "Aurangzeb" }, "title": { "zh": "皇子", "en": "Prince" }, "role": { "zh": "德干总督，未来的莫卧儿皇帝", "en": "Viceroy of the Deccan and future Mughal emperor" } },
-            { "name": { "zh": "米尔·朱姆拉", "en": "Mir Jumla" }, "title": { "zh": "将军", "en": "General" }, "role": { "zh": "奥朗则布麾下名将，原戈尔康达重臣", "en": "A renowned general under Aurangzeb, formerly a powerful Golconda minister" } }
+            {
+              "name": {
+                "zh": "奥朗则布",
+                "en": "Aurangzeb"
+              },
+              "title": {
+                "zh": "皇子",
+                "en": "Prince"
+              },
+              "role": {
+                "zh": "德干总督，未来的莫卧儿皇帝",
+                "en": "Viceroy of the Deccan and future Mughal emperor"
+              }
+            },
+            {
+              "name": {
+                "zh": "米尔·朱姆拉",
+                "en": "Mir Jumla"
+              },
+              "title": {
+                "zh": "将军",
+                "en": "General"
+              },
+              "role": {
+                "zh": "奥朗则布麾下名将，原戈尔康达重臣",
+                "en": "A renowned general under Aurangzeb, formerly a powerful Golconda minister"
+              }
+            }
           ]
         },
         {
           "id": "mughal_dara_shikoh_faction",
-          "name": { "zh": "达拉·舒科派系", "en": "Dara Shikoh Faction" },
+          "name": {
+            "zh": "达拉·舒科派系",
+            "en": "Dara Shikoh Faction"
+          },
           "type": "other",
-          "leader": { "zh": "达拉·舒科", "en": "Dara Shikoh" },
-          "leaderTitle": { "zh": "皇子 / 皇太子", "en": "Imperial Prince / Crown Prince" },
-          "ideology": { "zh": "伊斯兰-印度教融合哲学，苏菲神秘主义，文艺庇护，宽容治国", "en": "Syncretic Islam-Hindu philosophy, Sufi mysticism, patronage of arts and letters, and tolerant governance" },
-          "headquarters": { "zh": "德里", "en": "Delhi" },
+          "leader": {
+            "zh": "达拉·舒科",
+            "en": "Dara Shikoh"
+          },
+          "leaderTitle": {
+            "zh": "皇子 / 皇太子",
+            "en": "Imperial Prince / Crown Prince"
+          },
+          "ideology": {
+            "zh": "伊斯兰-印度教融合哲学，苏菲神秘主义，文艺庇护，宽容治国",
+            "en": "Syncretic Islam-Hindu philosophy, Sufi mysticism, patronage of arts and letters, and tolerant governance"
+          },
+          "headquarters": {
+            "zh": "德里",
+            "en": "Delhi"
+          },
           "status": "rival",
-          "relationship": { "zh": "达拉·舒科作为沙贾汗最宠爱的长子，被视为皇位的首选继承人，常伴帝侧参与朝政。他的文化融合理念获得苏菲学者和部分开明贵族支持，但因缺乏实战经验和性格骄傲而在军事贵族中树敌甚多。", "en": "As Shah Jahan's favored eldest son, Dara Shikoh was regarded as the preferred heir and regularly attended court affairs at the emperor's side. His cultural syncretism won support from Sufi scholars and some progressive nobles, but his lack of battlefield experience and proud temperament alienated much of the military aristocracy." },
-          "description": { "zh": "达拉·舒科（1615—1659）是莫卧儿历史上最具文化理想主义色彩的皇子。他深研苏菲神秘主义与吠檀多哲学，著有《两洋交汇》等比较宗教著作，试图在伊斯兰教与印度教之间搭建哲学桥梁。他召集学者将奥义书翻译为波斯文，庇护画师、诗人与音乐家，在德里营造了一个融合东西方智慧的文化圈。然而他的治国能力远不及其文化造诣——军事经验匮乏，对权力政治缺乏敏锐判断，且其宗教融合立场遭到正统乌里玛的强烈反对。在继位战争中他虽拥有父皇的支持与京师资源，却接连战败于奥朗则布，最终被捕处死。", "en": "Dara Shikoh (1615–1659) was the most culturally idealistic prince in Mughal history. He immersed himself in Sufi mysticism and Vedanta philosophy, composing comparative religious works such as Majma ul-Bahrain (The Meeting of Two Oceans), and sought to build a philosophical bridge between Islam and Hinduism. He commissioned the translation of the Upanishads into Persian and patronized painters, poets, and musicians, cultivating an intellectual circle in Delhi that blended Eastern and Western wisdom. Yet his political acumen lagged far behind his cultural achievements—he lacked military experience, misjudged power politics, and his syncretic religious stance provoked fierce opposition from orthodox ulama. Despite his father's backing and the resources of the capital, he suffered successive defeats at Aurangzeb's hands and was ultimately captured and executed." },
+          "relationship": {
+            "zh": "达拉·舒科作为沙贾汗最宠爱的长子，被视为皇位的首选继承人，常伴帝侧参与朝政。他的文化融合理念获得苏菲学者和部分开明贵族支持，但因缺乏实战经验和性格骄傲而在军事贵族中树敌甚多。",
+            "en": "As Shah Jahan's favored eldest son, Dara Shikoh was regarded as the preferred heir and regularly attended court affairs at the emperor's side. His cultural syncretism won support from Sufi scholars and some progressive nobles, but his lack of battlefield experience and proud temperament alienated much of the military aristocracy."
+          },
+          "description": {
+            "zh": "达拉·舒科（1615—1659）是莫卧儿历史上最具文化理想主义色彩的皇子。他深研苏菲神秘主义与吠檀多哲学，著有《两洋交汇》等比较宗教著作，试图在伊斯兰教与印度教之间搭建哲学桥梁。他召集学者将奥义书翻译为波斯文，庇护画师、诗人与音乐家，在德里营造了一个融合东西方智慧的文化圈。然而他的治国能力远不及其文化造诣——军事经验匮乏，对权力政治缺乏敏锐判断，且其宗教融合立场遭到正统乌里玛的强烈反对。在继位战争中他虽拥有父皇的支持与京师资源，却接连战败于奥朗则布，最终被捕处死。",
+            "en": "Dara Shikoh (1615–1659) was the most culturally idealistic prince in Mughal history. He immersed himself in Sufi mysticism and Vedanta philosophy, composing comparative religious works such as Majma ul-Bahrain (The Meeting of Two Oceans), and sought to build a philosophical bridge between Islam and Hinduism. He commissioned the translation of the Upanishads into Persian and patronized painters, poets, and musicians, cultivating an intellectual circle in Delhi that blended Eastern and Western wisdom. Yet his political acumen lagged far behind his cultural achievements—he lacked military experience, misjudged power politics, and his syncretic religious stance provoked fierce opposition from orthodox ulama. Despite his father's backing and the resources of the capital, he suffered successive defeats at Aurangzeb's hands and was ultimately captured and executed."
+          },
           "keyFigures": [
-            { "name": { "zh": "达拉·舒科", "en": "Dara Shikoh" }, "title": { "zh": "皇子", "en": "Prince" }, "role": { "zh": "皇位首选继承人，哲学家与文艺庇护者", "en": "Favored heir to the throne, philosopher, and patron of arts" } },
-            { "name": { "zh": "贾汉阿拉公主", "en": "Princess Jahanara" }, "title": { "zh": "帝国第一公主", "en": "First Princess of the Empire" }, "role": { "zh": "达拉·舒科之妹，在宫廷中为其争取支持", "en": "Dara Shikoh's sister, who leveraged her court influence on his behalf" } }
+            {
+              "name": {
+                "zh": "达拉·舒科",
+                "en": "Dara Shikoh"
+              },
+              "title": {
+                "zh": "皇子",
+                "en": "Prince"
+              },
+              "role": {
+                "zh": "皇位首选继承人，哲学家与文艺庇护者",
+                "en": "Favored heir to the throne, philosopher, and patron of arts"
+              }
+            },
+            {
+              "name": {
+                "zh": "贾汉阿拉公主",
+                "en": "Princess Jahanara"
+              },
+              "title": {
+                "zh": "帝国第一公主",
+                "en": "First Princess of the Empire"
+              },
+              "role": {
+                "zh": "达拉·舒科之妹，在宫廷中为其争取支持",
+                "en": "Dara Shikoh's sister, who leveraged her court influence on his behalf"
+              }
+            }
           ]
         }
       ]
@@ -1813,52 +1954,219 @@
       "factions": [
         {
           "id": "qing_manchu_imperial",
-          "name": { "zh": "满洲皇权派", "en": "Manchu Imperial Faction" },
+          "name": {
+            "zh": "满洲皇权派",
+            "en": "Manchu Imperial Faction"
+          },
           "type": "other",
-          "leader": { "zh": "多尔衮（摄政王）/ 顺治帝", "en": "Dorgon (Prince Regent) / Emperor Shunzhi" },
-          "leaderTitle": { "zh": "摄政王 / 皇帝", "en": "Prince Regent / Emperor" },
-          "ideology": { "zh": "满洲征服王朝正统，八旗军政一体，薙发令与旗人特权维护，兼纳明制以治天下", "en": "Manchu conquest-dynasty legitimacy, banner system integration of military and governance, enforcement of the queue order and banner privileges, combined with adoption of Ming institutions to govern China" },
-          "headquarters": { "zh": "北京紫禁城", "en": "Forbidden City, Beijing" },
+          "leader": {
+            "zh": "多尔衮（摄政王）/ 顺治帝",
+            "en": "Dorgon (Prince Regent) / Emperor Shunzhi"
+          },
+          "leaderTitle": {
+            "zh": "摄政王 / 皇帝",
+            "en": "Prince Regent / Emperor"
+          },
+          "ideology": {
+            "zh": "满洲征服王朝正统，八旗军政一体，薙发令与旗人特权维护，兼纳明制以治天下",
+            "en": "Manchu conquest-dynasty legitimacy, banner system integration of military and governance, enforcement of the queue order and banner privileges, combined with adoption of Ming institutions to govern China"
+          },
+          "headquarters": {
+            "zh": "北京紫禁城",
+            "en": "Forbidden City, Beijing"
+          },
           "status": "ruling",
-          "relationship": { "zh": "多尔衮作为摄政王掌握实权，顺治帝尚年幼。满洲皇族通过议政王大臣会议与八旗体系控制帝国核心权力，推行薙发令、圈地政策等确保满洲统治地位的关键举措。", "en": "Dorgon wielded real power as prince regent while the young Shunzhi Emperor remained under tutelage. The Manchu imperial clan controlled core power through the Deliberative Council of Princes and Ministers and the banner system, implementing the queue order and land confiscation policies to secure Manchu dominance." },
-          "description": { "zh": "1644年清军入关后，多尔衮以摄政王身份主持全局，是清初实际上的最高决策者。他指挥八旗与绿营大军南下，镇压李自成、张献忠残部及南明诸政权。同时推行一系列强制性同化政策，尤以薙发令（剃发留辫）最为激烈，引发了江南等地的大规模抗清运动。八旗制度作为满洲统治的核心支柱，兼具军事编制、社会组织与政治分配功能，确保旗人在新帝国中的特权地位。1648年清廷已控制中国大部分地区，但西南、东南沿海与台湾海峡仍有激烈抵抗。", "en": "After the Qing armies entered China proper in 1644, Dorgon as prince regent directed all major affairs and was the de facto supreme decision-maker of the early Qing. He commanded banner and Green Standard forces southward, suppressing the remnants of Li Zicheng, Zhang Xianzhong, and the Southern Ming regimes. Simultaneously he enforced a series of coercive assimilation policies, most notoriously the queue order (mandatory head-shaving and queue-wearing), which provoked massive anti-Qing resistance in Jiangnan and elsewhere. The banner system served as the core pillar of Manchu rule, combining military organization, social structure, and political allocation to guarantee bannermen's privileged status in the new empire. By 1648 the Qing controlled most of China, though fierce resistance persisted in the southwest, the southeast coast, and the Taiwan Strait." },
+          "relationship": {
+            "zh": "多尔衮作为摄政王掌握实权，顺治帝尚年幼。满洲皇族通过议政王大臣会议与八旗体系控制帝国核心权力，推行薙发令、圈地政策等确保满洲统治地位的关键举措。",
+            "en": "Dorgon wielded real power as prince regent while the young Shunzhi Emperor remained under tutelage. The Manchu imperial clan controlled core power through the Deliberative Council of Princes and Ministers and the banner system, implementing the queue order and land confiscation policies to secure Manchu dominance."
+          },
+          "description": {
+            "zh": "1644年清军入关后，多尔衮以摄政王身份主持全局，是清初实际上的最高决策者。他指挥八旗与绿营大军南下，镇压李自成、张献忠残部及南明诸政权。同时推行一系列强制性同化政策，尤以薙发令（剃发留辫）最为激烈，引发了江南等地的大规模抗清运动。八旗制度作为满洲统治的核心支柱，兼具军事编制、社会组织与政治分配功能，确保旗人在新帝国中的特权地位。1648年清廷已控制中国大部分地区，但西南、东南沿海与台湾海峡仍有激烈抵抗。",
+            "en": "After the Qing armies entered China proper in 1644, Dorgon as prince regent directed all major affairs and was the de facto supreme decision-maker of the early Qing. He commanded banner and Green Standard forces southward, suppressing the remnants of Li Zicheng, Zhang Xianzhong, and the Southern Ming regimes. Simultaneously he enforced a series of coercive assimilation policies, most notoriously the queue order (mandatory head-shaving and queue-wearing), which provoked massive anti-Qing resistance in Jiangnan and elsewhere. The banner system served as the core pillar of Manchu rule, combining military organization, social structure, and political allocation to guarantee bannermen's privileged status in the new empire. By 1648 the Qing controlled most of China, though fierce resistance persisted in the southwest, the southeast coast, and the Taiwan Strait."
+          },
           "keyFigures": [
-            { "name": { "zh": "多尔衮", "en": "Dorgon" }, "title": { "zh": "摄政王", "en": "Prince Regent" }, "role": { "zh": "清初实际最高统治者，主持入关后的军政大局", "en": "De facto supreme ruler of early Qing, directing military and political affairs after entering China" } },
-            { "name": { "zh": "顺治帝（福临）", "en": "Emperor Shunzhi (Fulin)" }, "title": { "zh": "皇帝", "en": "Emperor" }, "role": { "zh": "清朝入关后第一位皇帝，年幼时由多尔衮摄政", "en": "First Qing emperor to rule from Beijing, under Dorgon's regency during his minority" } },
-            { "name": { "zh": "济尔哈朗", "en": "Jirgalang" }, "title": { "zh": "辅政王", "en": "Co-Regent Prince" }, "role": { "zh": "辅助摄政，但实权逊于多尔衮", "en": "Co-regent with less actual power than Dorgon" } }
+            {
+              "name": {
+                "zh": "多尔衮",
+                "en": "Dorgon"
+              },
+              "title": {
+                "zh": "摄政王",
+                "en": "Prince Regent"
+              },
+              "role": {
+                "zh": "清初实际最高统治者，主持入关后的军政大局",
+                "en": "De facto supreme ruler of early Qing, directing military and political affairs after entering China"
+              }
+            },
+            {
+              "name": {
+                "zh": "顺治帝（福临）",
+                "en": "Emperor Shunzhi (Fulin)"
+              },
+              "title": {
+                "zh": "皇帝",
+                "en": "Emperor"
+              },
+              "role": {
+                "zh": "清朝入关后第一位皇帝，年幼时由多尔衮摄政",
+                "en": "First Qing emperor to rule from Beijing, under Dorgon's regency during his minority"
+              }
+            },
+            {
+              "name": {
+                "zh": "济尔哈朗",
+                "en": "Jirgalang"
+              },
+              "title": {
+                "zh": "辅政王",
+                "en": "Co-Regent Prince"
+              },
+              "role": {
+                "zh": "辅助摄政，但实权逊于多尔衮",
+                "en": "Co-regent with less actual power than Dorgon"
+              }
+            }
           ]
         },
         {
           "id": "qing_chinese_collaborators",
-          "name": { "zh": "汉人降官合作派", "en": "Chinese Collaborator Officials" },
+          "name": {
+            "zh": "汉人降官合作派",
+            "en": "Chinese Collaborator Officials"
+          },
           "type": "other",
-          "leader": { "zh": "洪承畴", "en": "Hong Chengchou" },
-          "leaderTitle": { "zh": "大学士 / 经略大臣", "en": "Grand Secretary / Commissioner-General" },
-          "ideology": { "zh": "务实合作主义，以明朝制度经验服务新朝，换取权位与地方安定", "en": "Pragmatic collaborationism, leveraging Ming institutional expertise to serve the new dynasty in exchange for status and local stability" },
-          "headquarters": { "zh": "南京 / 各省驻地", "en": "Nanjing / various provincial seats" },
+          "leader": {
+            "zh": "洪承畴",
+            "en": "Hong Chengchou"
+          },
+          "leaderTitle": {
+            "zh": "大学士 / 经略大臣",
+            "en": "Grand Secretary / Commissioner-General"
+          },
+          "ideology": {
+            "zh": "务实合作主义，以明朝制度经验服务新朝，换取权位与地方安定",
+            "en": "Pragmatic collaborationism, leveraging Ming institutional expertise to serve the new dynasty in exchange for status and local stability"
+          },
+          "headquarters": {
+            "zh": "南京 / 各省驻地",
+            "en": "Nanjing / various provincial seats"
+          },
           "status": "allied",
-          "relationship": { "zh": "降清汉官是满洲皇权的重要合作者。他们凭借对中国地方政务、科举体系和文官传统的深厚理解，帮助清廷迅速建立有效统治。清廷给予他们高官厚禄以换取忠诚，但始终保持满汉之间的权力不对等。", "en": "Surrendered Han officials were crucial collaborators with Manchu imperial power. Drawing on their deep understanding of Chinese local governance, the examination system, and civil-service traditions, they helped the Qing court rapidly establish effective rule. The court rewarded them with high offices and generous emoluments in exchange for loyalty, while always maintaining an asymmetry of power between Manchu and Han." },
-          "description": { "zh": "以洪承畴为代表的降清汉官群体，在清初政权建设中发挥了不可替代的作用。洪承畴原为明朝蓟辽总督，1642年松锦之战被俘后降清，此后成为清廷经略南方的核心策划者。他建议清廷采取怀柔与镇压并用的策略，利用旧明官僚体系迅速恢复地方行政。其他重要降官还包括范文程、宁完我等辽东旧人，以及大量在南下过程中易帜的明朝地方官员与将领。这些人帮助清廷将明朝的六部体制、科举取士和地方官制完整移植到新朝，使满洲征服者能够以相对少数的旗人统治庞大的汉人社会。", "en": "The group of surrendered Han officials represented by Hong Chengchou played an irreplaceable role in early Qing state-building. Hong, a former Ming governor-general of Ji-Liao, was captured after the Battle of Songshan-Jinzhou in 1642 and submitted to the Qing, thereafter becoming the chief strategist for pacifying the south. He advised the court to combine conciliation with suppression and to utilize the existing Ming bureaucratic system to rapidly restore local administration. Other important collaborators included Fan Wencheng and Ning Wanwo from Liaodong, as well as numerous Ming local officials and commanders who defected during the southern campaigns. These men helped transplant the Ming Six Ministries system, civil examination recruitment, and local officialdom wholesale into the new dynasty, enabling the Manchu conquerors to govern the vast Han Chinese population with a relatively small number of bannermen." },
+          "relationship": {
+            "zh": "降清汉官是满洲皇权的重要合作者。他们凭借对中国地方政务、科举体系和文官传统的深厚理解，帮助清廷迅速建立有效统治。清廷给予他们高官厚禄以换取忠诚，但始终保持满汉之间的权力不对等。",
+            "en": "Surrendered Han officials were crucial collaborators with Manchu imperial power. Drawing on their deep understanding of Chinese local governance, the examination system, and civil-service traditions, they helped the Qing court rapidly establish effective rule. The court rewarded them with high offices and generous emoluments in exchange for loyalty, while always maintaining an asymmetry of power between Manchu and Han."
+          },
+          "description": {
+            "zh": "以洪承畴为代表的降清汉官群体，在清初政权建设中发挥了不可替代的作用。洪承畴原为明朝蓟辽总督，1642年松锦之战被俘后降清，此后成为清廷经略南方的核心策划者。他建议清廷采取怀柔与镇压并用的策略，利用旧明官僚体系迅速恢复地方行政。其他重要降官还包括范文程、宁完我等辽东旧人，以及大量在南下过程中易帜的明朝地方官员与将领。这些人帮助清廷将明朝的六部体制、科举取士和地方官制完整移植到新朝，使满洲征服者能够以相对少数的旗人统治庞大的汉人社会。",
+            "en": "The group of surrendered Han officials represented by Hong Chengchou played an irreplaceable role in early Qing state-building. Hong, a former Ming governor-general of Ji-Liao, was captured after the Battle of Songshan-Jinzhou in 1642 and submitted to the Qing, thereafter becoming the chief strategist for pacifying the south. He advised the court to combine conciliation with suppression and to utilize the existing Ming bureaucratic system to rapidly restore local administration. Other important collaborators included Fan Wencheng and Ning Wanwo from Liaodong, as well as numerous Ming local officials and commanders who defected during the southern campaigns. These men helped transplant the Ming Six Ministries system, civil examination recruitment, and local officialdom wholesale into the new dynasty, enabling the Manchu conquerors to govern the vast Han Chinese population with a relatively small number of bannermen."
+          },
           "keyFigures": [
-            { "name": { "zh": "洪承畴", "en": "Hong Chengchou" }, "title": { "zh": "太保 / 经略", "en": "Grand Protector / Commissioner-General" }, "role": { "zh": "主持南方军务与安抚工作的降清重臣", "en": "Leading surrendered official directing southern military pacification and conciliation" } },
-            { "name": { "zh": "范文程", "en": "Fan Wencheng" }, "title": { "zh": "内秘书院大学士", "en": "Grand Secretary of the Inner Secretariat" }, "role": { "zh": "清初汉人首席谋臣，参与制定入关后各项重大政策", "en": "Chief Han advisor in the early Qing, involved in formulating major policies after entering China" } }
+            {
+              "name": {
+                "zh": "洪承畴",
+                "en": "Hong Chengchou"
+              },
+              "title": {
+                "zh": "太保 / 经略",
+                "en": "Grand Protector / Commissioner-General"
+              },
+              "role": {
+                "zh": "主持南方军务与安抚工作的降清重臣",
+                "en": "Leading surrendered official directing southern military pacification and conciliation"
+              }
+            },
+            {
+              "name": {
+                "zh": "范文程",
+                "en": "Fan Wencheng"
+              },
+              "title": {
+                "zh": "内秘书院大学士",
+                "en": "Grand Secretary of the Inner Secretariat"
+              },
+              "role": {
+                "zh": "清初汉人首席谋臣，参与制定入关后各项重大政策",
+                "en": "Chief Han advisor in the early Qing, involved in formulating major policies after entering China"
+              }
+            }
           ]
         },
         {
           "id": "qing_southern_ming_loyalists",
-          "name": { "zh": "南明忠义势力", "en": "Southern Ming Loyalists" },
+          "name": {
+            "zh": "南明忠义势力",
+            "en": "Southern Ming Loyalists"
+          },
           "type": "other",
-          "leader": { "zh": "郑成功（国姓爷）", "en": "Zheng Chenggong (Koxinga)" },
-          "leaderTitle": { "zh": "延平王 / 招讨大将军", "en": "Prince of Yanping / Grand Marshal" },
-          "ideology": { "zh": "明朝正统复辟，反清复明，华夷之辨与汉族民族抗争", "en": "Restoration of Ming legitimacy, anti-Qing resistance, Hua-Yi distinction and Han ethnic struggle" },
-          "headquarters": { "zh": "厦门 / 金门（东南沿海）", "en": "Xiamen / Kinmen (southeast coast)" },
+          "leader": {
+            "zh": "郑成功（国姓爷）",
+            "en": "Zheng Chenggong (Koxinga)"
+          },
+          "leaderTitle": {
+            "zh": "延平王 / 招讨大将军",
+            "en": "Prince of Yanping / Grand Marshal"
+          },
+          "ideology": {
+            "zh": "明朝正统复辟，反清复明，华夷之辨与汉族民族抗争",
+            "en": "Restoration of Ming legitimacy, anti-Qing resistance, Hua-Yi distinction and Han ethnic struggle"
+          },
+          "headquarters": {
+            "zh": "厦门 / 金门（东南沿海）",
+            "en": "Xiamen / Kinmen (southeast coast)"
+          },
           "status": "insurgent",
-          "relationship": { "zh": "南明忠义势力是清廷统一中国的最大障碍。郑成功以东南沿海为基地，控制海上贸易与军事力量，拒绝清廷多次招降。他奉南明永历帝为正朔，以明朝忠臣自居，在闽粤沿海发动多次反攻，是清初最具威胁的抗清力量。", "en": "Southern Ming loyalist forces constituted the greatest obstacle to Qing unification of China. Zheng Chenggong used the southeast coast as his base, controlling maritime trade and military power while rejecting repeated Qing overtures for surrender. He recognized the Southern Ming Yongli Emperor as the legitimate sovereign and styled himself a loyal Ming subject, launching multiple counteroffensives along the Fujian and Guangdong coasts and representing the most formidable anti-Qing threat of the early period." },
-          "description": { "zh": "郑成功（1624—1662）是明末清初最具传奇色彩的抗清领袖。其父郑芝龙为东南沿海海商—海盗集团首领，降清后郑成功拒绝归附，以「国姓爷」之名号召反清。他以厦门、金门为根据地，建立了强大的海上武装力量，控制东亚海上贸易网络，以贸易收入供养数万精锐水陆军。1648年前后他已崭露头角，此后势力不断壮大。除郑成功外，南明各地还有永历朝廷在西南的抵抗、张煌言在浙东的游击以及散布各地的反清秘密组织。这些力量虽彼此联络有限、难以统一指挥，但共同构成了对清廷长达近二十年的持续威胁，并深刻影响了清初的军事部署与海防政策。", "en": "Zheng Chenggong (1624–1662) was the most legendary anti-Qing leader of the Ming-Qing transition. His father Zheng Zhilong headed a powerful maritime merchant-pirate network along the southeast coast; after Zhilong surrendered to the Qing, Chenggong refused to submit and rallied resistance under the honorific 'Koxinga' (Lord of the Imperial Surname). Based at Xiamen and Kinmen, he built a formidable naval force, controlled East Asian maritime trade networks, and funded tens of thousands of elite land and sea troops with commercial revenues. By around 1648 he had already risen to prominence and continued to grow in strength. Beyond Zheng Chenggong, Southern Ming resistance included the Yongli court's stand in the southwest, Zhang Huangyan's guerrilla operations in eastern Zhejiang, and scattered anti-Qing secret organizations. Though poorly coordinated and rarely unified in command, together these forces posed a sustained threat to the Qing for nearly two decades and profoundly shaped early Qing military deployment and coastal defense policy." },
+          "relationship": {
+            "zh": "南明忠义势力是清廷统一中国的最大障碍。郑成功以东南沿海为基地，控制海上贸易与军事力量，拒绝清廷多次招降。他奉南明永历帝为正朔，以明朝忠臣自居，在闽粤沿海发动多次反攻，是清初最具威胁的抗清力量。",
+            "en": "Southern Ming loyalist forces constituted the greatest obstacle to Qing unification of China. Zheng Chenggong used the southeast coast as his base, controlling maritime trade and military power while rejecting repeated Qing overtures for surrender. He recognized the Southern Ming Yongli Emperor as the legitimate sovereign and styled himself a loyal Ming subject, launching multiple counteroffensives along the Fujian and Guangdong coasts and representing the most formidable anti-Qing threat of the early period."
+          },
+          "description": {
+            "zh": "郑成功（1624—1662）是明末清初最具传奇色彩的抗清领袖。其父郑芝龙为东南沿海海商—海盗集团首领，降清后郑成功拒绝归附，以「国姓爷」之名号召反清。他以厦门、金门为根据地，建立了强大的海上武装力量，控制东亚海上贸易网络，以贸易收入供养数万精锐水陆军。1648年前后他已崭露头角，此后势力不断壮大。除郑成功外，南明各地还有永历朝廷在西南的抵抗、张煌言在浙东的游击以及散布各地的反清秘密组织。这些力量虽彼此联络有限、难以统一指挥，但共同构成了对清廷长达近二十年的持续威胁，并深刻影响了清初的军事部署与海防政策。",
+            "en": "Zheng Chenggong (1624–1662) was the most legendary anti-Qing leader of the Ming-Qing transition. His father Zheng Zhilong headed a powerful maritime merchant-pirate network along the southeast coast; after Zhilong surrendered to the Qing, Chenggong refused to submit and rallied resistance under the honorific 'Koxinga' (Lord of the Imperial Surname). Based at Xiamen and Kinmen, he built a formidable naval force, controlled East Asian maritime trade networks, and funded tens of thousands of elite land and sea troops with commercial revenues. By around 1648 he had already risen to prominence and continued to grow in strength. Beyond Zheng Chenggong, Southern Ming resistance included the Yongli court's stand in the southwest, Zhang Huangyan's guerrilla operations in eastern Zhejiang, and scattered anti-Qing secret organizations. Though poorly coordinated and rarely unified in command, together these forces posed a sustained threat to the Qing for nearly two decades and profoundly shaped early Qing military deployment and coastal defense policy."
+          },
           "keyFigures": [
-            { "name": { "zh": "郑成功", "en": "Zheng Chenggong (Koxinga)" }, "title": { "zh": "延平王", "en": "Prince of Yanping" }, "role": { "zh": "东南沿海抗清主力领袖，明朝忠臣", "en": "Leader of the main anti-Qing resistance on the southeast coast, Ming loyalist" } },
-            { "name": { "zh": "永历帝", "en": "Yongli Emperor" }, "title": { "zh": "皇帝（南明）", "en": "Emperor (Southern Ming)" }, "role": { "zh": "南明最后一位皇帝，在西南维持流亡朝廷", "en": "Last Southern Ming emperor, maintaining a court-in-exile in the southwest" } },
-            { "name": { "zh": "张煌言", "en": "Zhang Huangyan" }, "title": { "zh": "兵部尚书（南明）", "en": "Minister of War (Southern Ming)" }, "role": { "zh": "浙东抗清游击领袖", "en": "Guerrilla leader of anti-Qing resistance in eastern Zhejiang" } }
+            {
+              "name": {
+                "zh": "郑成功",
+                "en": "Zheng Chenggong (Koxinga)"
+              },
+              "title": {
+                "zh": "延平王",
+                "en": "Prince of Yanping"
+              },
+              "role": {
+                "zh": "东南沿海抗清主力领袖，明朝忠臣",
+                "en": "Leader of the main anti-Qing resistance on the southeast coast, Ming loyalist"
+              }
+            },
+            {
+              "name": {
+                "zh": "永历帝",
+                "en": "Yongli Emperor"
+              },
+              "title": {
+                "zh": "皇帝（南明）",
+                "en": "Emperor (Southern Ming)"
+              },
+              "role": {
+                "zh": "南明最后一位皇帝，在西南维持流亡朝廷",
+                "en": "Last Southern Ming emperor, maintaining a court-in-exile in the southwest"
+              }
+            },
+            {
+              "name": {
+                "zh": "张煌言",
+                "en": "Zhang Huangyan"
+              },
+              "title": {
+                "zh": "兵部尚书（南明）",
+                "en": "Minister of War (Southern Ming)"
+              },
+              "role": {
+                "zh": "浙东抗清游击领袖",
+                "en": "Guerrilla leader of anti-Qing resistance in eastern Zhejiang"
+              }
+            }
           ]
         }
       ]
@@ -2483,50 +2791,191 @@
       "factions": [
         {
           "id": "tokugawa_bakufu",
-          "name": { "zh": "德川幕府", "en": "Tokugawa Bakufu" },
+          "name": {
+            "zh": "德川幕府",
+            "en": "Tokugawa Bakufu"
+          },
           "type": "other",
-          "leader": { "zh": "德川家光", "en": "Tokugawa Iemitsu" },
-          "leaderTitle": { "zh": "征夷大将军", "en": "Shogun" },
-          "ideology": { "zh": "武家政权正统，锁国体制（海禁），参勤交代制，士农工商身分秩序", "en": "Warrior-government legitimacy, sakoku (national seclusion) policy, sankin-kōtai attendance system, and the samurai-peasant-artisan-merchant status hierarchy" },
-          "headquarters": { "zh": "江户城", "en": "Edo Castle" },
+          "leader": {
+            "zh": "德川家光",
+            "en": "Tokugawa Iemitsu"
+          },
+          "leaderTitle": {
+            "zh": "征夷大将军",
+            "en": "Shogun"
+          },
+          "ideology": {
+            "zh": "武家政权正统，锁国体制（海禁），参勤交代制，士农工商身分秩序",
+            "en": "Warrior-government legitimacy, sakoku (national seclusion) policy, sankin-kōtai attendance system, and the samurai-peasant-artisan-merchant status hierarchy"
+          },
+          "headquarters": {
+            "zh": "江户城",
+            "en": "Edo Castle"
+          },
           "status": "ruling",
-          "relationship": { "zh": "德川将军家作为全日本的实际统治者，通过幕藩体制控制二百余藩。家光在位期间确立了参勤交代制度、锁国政策与基督教禁令，将幕府权威推至顶峰。谱代大名与旗本构成幕府的政治基干，占据老中等核心职位。", "en": "The Tokugawa shogunal house ruled Japan in practice through the bakuhan system controlling over two hundred domains. Under Iemitsu, the sankin-kōtai system, sakoku policy, and Christian ban were firmly established, pushing bakufu authority to its zenith. Fudai daimyo and direct retainers (hatamoto) formed the political backbone, holding key offices such as rōjū." },
-          "description": { "zh": "德川家光（1604—1651）是江户幕府第三代将军，也是巩固德川霸权体制的关键人物。他于1635年颁布武家诸法度修订版，正式确立参勤交代制度，要求各大名定期轮流驻江户，妻儿留质于江户，从而有效控制地方藩主的政治与经济自主权。1639年完成锁国政策，除长崎出岛的荷兰商馆与中国贸易外，基本断绝与外国的往来。1637—1638年镇压岛原之乱后，彻底禁绝基督教，并建立寺请制度强化社会控制。幕府通过天领（直辖地）收入、金银矿产与城市控制维持庞大财政，同时以京都所司代监视天皇朝廷。至1648年，德川幕府的统治体制已基本定型，开启了日本近两百年的和平时代。", "en": "Tokugawa Iemitsu (1604–1651), the third shogun, was the pivotal figure in consolidating the Tokugawa hegemonic order. In 1635 he issued the revised Buke Shohatto, formally codifying the sankin-kōtai system that required daimyo to reside alternately in Edo while leaving their families as permanent hostages, effectively constraining the political and economic autonomy of domain lords. By 1639 he completed the sakoku policy, severing nearly all foreign contact except for the Dutch trading post at Dejima in Nagasaki and limited Chinese trade. After crushing the Shimabara Rebellion of 1637–1638, he banned Christianity entirely and established the temple-registration (terauke) system to strengthen social control. The bakufu sustained its finances through income from tenryō (shogunal lands), gold and silver mines, and control of major cities, while monitoring the imperial court in Kyoto through the Kyoto Deputy. By 1648 the Tokugawa governing framework was essentially complete, inaugurating nearly two centuries of peace in Japan." },
+          "relationship": {
+            "zh": "德川将军家作为全日本的实际统治者，通过幕藩体制控制二百余藩。家光在位期间确立了参勤交代制度、锁国政策与基督教禁令，将幕府权威推至顶峰。谱代大名与旗本构成幕府的政治基干，占据老中等核心职位。",
+            "en": "The Tokugawa shogunal house ruled Japan in practice through the bakuhan system controlling over two hundred domains. Under Iemitsu, the sankin-kōtai system, sakoku policy, and Christian ban were firmly established, pushing bakufu authority to its zenith. Fudai daimyo and direct retainers (hatamoto) formed the political backbone, holding key offices such as rōjū."
+          },
+          "description": {
+            "zh": "德川家光（1604—1651）是江户幕府第三代将军，也是巩固德川霸权体制的关键人物。他于1635年颁布武家诸法度修订版，正式确立参勤交代制度，要求各大名定期轮流驻江户，妻儿留质于江户，从而有效控制地方藩主的政治与经济自主权。1639年完成锁国政策，除长崎出岛的荷兰商馆与中国贸易外，基本断绝与外国的往来。1637—1638年镇压岛原之乱后，彻底禁绝基督教，并建立寺请制度强化社会控制。幕府通过天领（直辖地）收入、金银矿产与城市控制维持庞大财政，同时以京都所司代监视天皇朝廷。至1648年，德川幕府的统治体制已基本定型，开启了日本近两百年的和平时代。",
+            "en": "Tokugawa Iemitsu (1604–1651), the third shogun, was the pivotal figure in consolidating the Tokugawa hegemonic order. In 1635 he issued the revised Buke Shohatto, formally codifying the sankin-kōtai system that required daimyo to reside alternately in Edo while leaving their families as permanent hostages, effectively constraining the political and economic autonomy of domain lords. By 1639 he completed the sakoku policy, severing nearly all foreign contact except for the Dutch trading post at Dejima in Nagasaki and limited Chinese trade. After crushing the Shimabara Rebellion of 1637–1638, he banned Christianity entirely and established the temple-registration (terauke) system to strengthen social control. The bakufu sustained its finances through income from tenryō (shogunal lands), gold and silver mines, and control of major cities, while monitoring the imperial court in Kyoto through the Kyoto Deputy. By 1648 the Tokugawa governing framework was essentially complete, inaugurating nearly two centuries of peace in Japan."
+          },
           "keyFigures": [
-            { "name": { "zh": "德川家光", "en": "Tokugawa Iemitsu" }, "title": { "zh": "征夷大将军", "en": "Shogun" }, "role": { "zh": "江户幕府第三代将军，锁国体制的确立者", "en": "Third Tokugawa shogun who established the sakoku system" } },
-            { "name": { "zh": "松平信纲", "en": "Matsudaira Nobutsuna" }, "title": { "zh": "老中", "en": "Senior Councillor (Rōjū)" }, "role": { "zh": "幕府首席老中，镇压岛原之乱的指挥者", "en": "Chief senior councillor and commander of the suppression of the Shimabara Rebellion" } }
+            {
+              "name": {
+                "zh": "德川家光",
+                "en": "Tokugawa Iemitsu"
+              },
+              "title": {
+                "zh": "征夷大将军",
+                "en": "Shogun"
+              },
+              "role": {
+                "zh": "江户幕府第三代将军，锁国体制的确立者",
+                "en": "Third Tokugawa shogun who established the sakoku system"
+              }
+            },
+            {
+              "name": {
+                "zh": "松平信纲",
+                "en": "Matsudaira Nobutsuna"
+              },
+              "title": {
+                "zh": "老中",
+                "en": "Senior Councillor (Rōjū)"
+              },
+              "role": {
+                "zh": "幕府首席老中，镇压岛原之乱的指挥者",
+                "en": "Chief senior councillor and commander of the suppression of the Shimabara Rebellion"
+              }
+            }
           ]
         },
         {
           "id": "tokugawa_tozama_daimyo",
-          "name": { "zh": "外样大名势力", "en": "Tozama Daimyō" },
+          "name": {
+            "zh": "外样大名势力",
+            "en": "Tozama Daimyō"
+          },
           "type": "other",
-          "leader": { "zh": "岛津光久（萨摩藩主）", "en": "Shimazu Mitsuhisa (Lord of Satsuma)" },
-          "leaderTitle": { "zh": "萨摩藩主", "en": "Lord of Satsuma Domain" },
-          "ideology": { "zh": "藩国自主，领地治权独立，对幕府集权的不满与潜在抗衡", "en": "Domain autonomy, independent lordship, resentment of and latent resistance to bakufu centralization" },
-          "headquarters": { "zh": "�的�的鹿儿岛（萨摩）/ 萩（长州）/ 高知（土佐）", "en": "Kagoshima (Satsuma) / Hagi (Chōshū) / Kōchi (Tosa)" },
+          "leader": {
+            "zh": "岛津光久（萨摩藩主）",
+            "en": "Shimazu Mitsuhisa (Lord of Satsuma)"
+          },
+          "leaderTitle": {
+            "zh": "萨摩藩主",
+            "en": "Lord of Satsuma Domain"
+          },
+          "ideology": {
+            "zh": "藩国自主，领地治权独立，对幕府集权的不满与潜在抗衡",
+            "en": "Domain autonomy, independent lordship, resentment of and latent resistance to bakufu centralization"
+          },
+          "headquarters": {
+            "zh": "�的�的鹿儿岛（萨摩）/ 萩（长州）/ 高知（土佐）",
+            "en": "Kagoshima (Satsuma) / Hagi (Chōshū) / Kōchi (Tosa)"
+          },
           "status": "rival",
-          "relationship": { "zh": "外样大名是关原合战中站在西军一方或中立的诸藩后裔，被排除在幕府核心权力之外。虽然他们领有广大领地和丰厚石高，但无法出任老中等幕政要职。参勤交代与领地监察对其构成巨大经济负担和政治约束，内心积累了对德川霸权的深层不满。", "en": "Tozama daimyo were descendants of domains that had sided with the Western Army or remained neutral at the Battle of Sekigahara, and were excluded from the bakufu's core power structure. Despite holding extensive territories and high kokudaka, they could not serve in senior posts such as rōjū. Sankin-kōtai and domain surveillance imposed heavy economic burdens and political constraints, breeding deep underlying resentment of Tokugawa hegemony." },
-          "description": { "zh": "外样大名是江户幕府政治格局中最重要的潜在异质力量。以萨摩藩岛津氏、长州藩毛利氏、土佐藩山内氏、加贺藩前田氏等为代表，他们虽表面服从幕府权威，但始终保持较强的藩政独立性。萨摩藩实际控制琉球王国并从事对外贸易，拥有独特的武士训练传统和地方文化认同；长州藩在本州西端保持着强大的军事潜力。这些藩国在各自领地内实行相当自主的行政、财政和司法制度，培养了浓厚的地方忠诚意识。1648年时这些藩国尚无公开反抗幕府的举动，但两百年后正是萨摩、长州、土佐等外样藩联合推翻了幕府，完成了明治维新。", "en": "Tozama daimyo represented the most significant latent heterodox force in the Edo political order. Led by houses such as the Shimazu of Satsuma, the Mōri of Chōshū, the Yamauchi of Tosa, and the Maeda of Kaga, they outwardly submitted to bakufu authority while maintaining considerable domain autonomy. Satsuma effectively controlled the Ryukyu Kingdom and engaged in overseas trade, possessing a distinctive warrior training tradition and strong regional cultural identity; Chōshū at the western tip of Honshū maintained formidable military potential. These domains operated substantially independent administrative, fiscal, and judicial systems within their territories, fostering deep local loyalties. In 1648 these domains showed no overt defiance of the bakufu, yet two centuries later it would be precisely the tozama domains of Satsuma, Chōshū, and Tosa that would overthrow the shogunate and carry out the Meiji Restoration." },
+          "relationship": {
+            "zh": "外样大名是关原合战中站在西军一方或中立的诸藩后裔，被排除在幕府核心权力之外。虽然他们领有广大领地和丰厚石高，但无法出任老中等幕政要职。参勤交代与领地监察对其构成巨大经济负担和政治约束，内心积累了对德川霸权的深层不满。",
+            "en": "Tozama daimyo were descendants of domains that had sided with the Western Army or remained neutral at the Battle of Sekigahara, and were excluded from the bakufu's core power structure. Despite holding extensive territories and high kokudaka, they could not serve in senior posts such as rōjū. Sankin-kōtai and domain surveillance imposed heavy economic burdens and political constraints, breeding deep underlying resentment of Tokugawa hegemony."
+          },
+          "description": {
+            "zh": "外样大名是江户幕府政治格局中最重要的潜在异质力量。以萨摩藩岛津氏、长州藩毛利氏、土佐藩山内氏、加贺藩前田氏等为代表，他们虽表面服从幕府权威，但始终保持较强的藩政独立性。萨摩藩实际控制琉球王国并从事对外贸易，拥有独特的武士训练传统和地方文化认同；长州藩在本州西端保持着强大的军事潜力。这些藩国在各自领地内实行相当自主的行政、财政和司法制度，培养了浓厚的地方忠诚意识。1648年时这些藩国尚无公开反抗幕府的举动，但两百年后正是萨摩、长州、土佐等外样藩联合推翻了幕府，完成了明治维新。",
+            "en": "Tozama daimyo represented the most significant latent heterodox force in the Edo political order. Led by houses such as the Shimazu of Satsuma, the Mōri of Chōshū, the Yamauchi of Tosa, and the Maeda of Kaga, they outwardly submitted to bakufu authority while maintaining considerable domain autonomy. Satsuma effectively controlled the Ryukyu Kingdom and engaged in overseas trade, possessing a distinctive warrior training tradition and strong regional cultural identity; Chōshū at the western tip of Honshū maintained formidable military potential. These domains operated substantially independent administrative, fiscal, and judicial systems within their territories, fostering deep local loyalties. In 1648 these domains showed no overt defiance of the bakufu, yet two centuries later it would be precisely the tozama domains of Satsuma, Chōshū, and Tosa that would overthrow the shogunate and carry out the Meiji Restoration."
+          },
           "keyFigures": [
-            { "name": { "zh": "岛津光久", "en": "Shimazu Mitsuhisa" }, "title": { "zh": "萨摩藩主", "en": "Lord of Satsuma" }, "role": { "zh": "日本最大外样藩的藩主，控制琉球贸易", "en": "Lord of Japan's largest tozama domain, controlling the Ryukyu trade" } },
-            { "name": { "zh": "毛利秀就", "en": "Mōri Hidenari" }, "title": { "zh": "长州藩主", "en": "Lord of Chōshū" }, "role": { "zh": "本州西端大藩的藩主，关原西军后裔", "en": "Lord of the major domain at Honshū's western tip, heir to the Western Army legacy" } }
+            {
+              "name": {
+                "zh": "岛津光久",
+                "en": "Shimazu Mitsuhisa"
+              },
+              "title": {
+                "zh": "萨摩藩主",
+                "en": "Lord of Satsuma"
+              },
+              "role": {
+                "zh": "日本最大外样藩的藩主，控制琉球贸易",
+                "en": "Lord of Japan's largest tozama domain, controlling the Ryukyu trade"
+              }
+            },
+            {
+              "name": {
+                "zh": "毛利秀就",
+                "en": "Mōri Hidenari"
+              },
+              "title": {
+                "zh": "长州藩主",
+                "en": "Lord of Chōshū"
+              },
+              "role": {
+                "zh": "本州西端大藩的藩主，关原西军后裔",
+                "en": "Lord of the major domain at Honshū's western tip, heir to the Western Army legacy"
+              }
+            }
           ]
         },
         {
           "id": "tokugawa_imperial_court",
-          "name": { "zh": "天皇朝廷派", "en": "Imperial Court Faction" },
+          "name": {
+            "zh": "天皇朝廷派",
+            "en": "Imperial Court Faction"
+          },
           "type": "other",
-          "leader": { "zh": "后光明天皇", "en": "Emperor Go-Kōmyō" },
-          "leaderTitle": { "zh": "天皇", "en": "Emperor" },
-          "ideology": { "zh": "皇室正统与文化权威，儒学与和歌传统，象征性至尊地位的维护", "en": "Imperial legitimacy and cultural authority, Confucian and waka literary traditions, maintenance of symbolic supremacy" },
-          "headquarters": { "zh": "京都御所", "en": "Kyoto Imperial Palace" },
+          "leader": {
+            "zh": "后光明天皇",
+            "en": "Emperor Go-Kōmyō"
+          },
+          "leaderTitle": {
+            "zh": "天皇",
+            "en": "Emperor"
+          },
+          "ideology": {
+            "zh": "皇室正统与文化权威，儒学与和歌传统，象征性至尊地位的维护",
+            "en": "Imperial legitimacy and cultural authority, Confucian and waka literary traditions, maintenance of symbolic supremacy"
+          },
+          "headquarters": {
+            "zh": "京都御所",
+            "en": "Kyoto Imperial Palace"
+          },
           "status": "opposition",
-          "relationship": { "zh": "天皇与京都公家贵族名义上是日本最高权威的来源，将军的统治正当性在形式上仍需天皇敕任。但在实际政治中，幕府通过�的禁中并公家诸法度严格限制朝廷活动，天皇的权力被局限于礼仪、学术与文化领域，政治上几乎完全受制于幕府。", "en": "The emperor and Kyoto court nobility were nominally the source of Japan's highest authority, and the shogun's legitimacy still formally depended on imperial appointment. In practice, however, the bakufu severely restricted court activities through the Kinchū narabini Kuge Shohatto, confining the emperor's role to ceremony, scholarship, and culture, leaving the throne almost entirely subordinate to the bakufu politically." },
-          "description": { "zh": "京都朝廷在江户时代是一个政治权力极度萎缩但文化象征意义极高的存在。后光明天皇（1633—1654）在位期间，朝廷的政治活动被严格限制在幕府划定的范围内——禁中并公家诸法度规定天皇应以学问为业，禁止干预政务。朝廷的年度经费由幕府拨给，公家贵族的婚姻和官位须经幕府同意。然而天皇仍保有几项不可替代的功能：授予将军以征夷大将军称号，主持重大祭祀与年号制定，以及作为和歌、书道、学术的最高庇护者维系日本文化传统。这种「政治无权但文化至尊」的格局一直延续到幕末。正是这份被搁置的正统权威，在两百年后成为倒幕运动「尊王攘夷」旗号的思想根基。", "en": "The Kyoto court in the Edo period was an entity of drastically diminished political power yet immense cultural symbolism. During the reign of Emperor Go-Kōmyō (1633–1654), court political activity was strictly confined within limits set by the bakufu—the Kinchū narabini Kuge Shohatto stipulated that the emperor should devote himself to scholarship and refrain from political intervention. The court's annual budget was allocated by the bakufu, and noble marriages and court appointments required shogunal approval. Yet the emperor retained several irreplaceable functions: conferring the title of Sei-i Taishōgun upon the shogun, presiding over major rituals and era-name promulgation, and serving as supreme patron of waka poetry, calligraphy, and scholarship to sustain Japan's cultural heritage. This pattern of 'political powerlessness but cultural supremacy' persisted until the bakumatsu era. It was precisely this shelved legitimate authority that would become the ideological foundation for the 'revere the emperor, expel the barbarians' rallying cry of the overthrow movement two centuries later." },
+          "relationship": {
+            "zh": "天皇与京都公家贵族名义上是日本最高权威的来源，将军的统治正当性在形式上仍需天皇敕任。但在实际政治中，幕府通过�的禁中并公家诸法度严格限制朝廷活动，天皇的权力被局限于礼仪、学术与文化领域，政治上几乎完全受制于幕府。",
+            "en": "The emperor and Kyoto court nobility were nominally the source of Japan's highest authority, and the shogun's legitimacy still formally depended on imperial appointment. In practice, however, the bakufu severely restricted court activities through the Kinchū narabini Kuge Shohatto, confining the emperor's role to ceremony, scholarship, and culture, leaving the throne almost entirely subordinate to the bakufu politically."
+          },
+          "description": {
+            "zh": "京都朝廷在江户时代是一个政治权力极度萎缩但文化象征意义极高的存在。后光明天皇（1633—1654）在位期间，朝廷的政治活动被严格限制在幕府划定的范围内——禁中并公家诸法度规定天皇应以学问为业，禁止干预政务。朝廷的年度经费由幕府拨给，公家贵族的婚姻和官位须经幕府同意。然而天皇仍保有几项不可替代的功能：授予将军以征夷大将军称号，主持重大祭祀与年号制定，以及作为和歌、书道、学术的最高庇护者维系日本文化传统。这种「政治无权但文化至尊」的格局一直延续到幕末。正是这份被搁置的正统权威，在两百年后成为倒幕运动「尊王攘夷」旗号的思想根基。",
+            "en": "The Kyoto court in the Edo period was an entity of drastically diminished political power yet immense cultural symbolism. During the reign of Emperor Go-Kōmyō (1633–1654), court political activity was strictly confined within limits set by the bakufu—the Kinchū narabini Kuge Shohatto stipulated that the emperor should devote himself to scholarship and refrain from political intervention. The court's annual budget was allocated by the bakufu, and noble marriages and court appointments required shogunal approval. Yet the emperor retained several irreplaceable functions: conferring the title of Sei-i Taishōgun upon the shogun, presiding over major rituals and era-name promulgation, and serving as supreme patron of waka poetry, calligraphy, and scholarship to sustain Japan's cultural heritage. This pattern of 'political powerlessness but cultural supremacy' persisted until the bakumatsu era. It was precisely this shelved legitimate authority that would become the ideological foundation for the 'revere the emperor, expel the barbarians' rallying cry of the overthrow movement two centuries later."
+          },
           "keyFigures": [
-            { "name": { "zh": "后光明天皇", "en": "Emperor Go-Kōmyō" }, "title": { "zh": "天皇", "en": "Emperor" }, "role": { "zh": "日本名义最高元首，京都朝廷的象征核心", "en": "Nominal supreme head of Japan and symbolic center of the Kyoto court" } },
-            { "name": { "zh": "九条道房", "en": "Kujō Michifusa" }, "title": { "zh": "关白", "en": "Regent (Kampaku)" }, "role": { "zh": "公家贵族首席，朝廷日常事务的名义主持者", "en": "Chief of court nobility and nominal presiding figure in daily court affairs" } }
+            {
+              "name": {
+                "zh": "后光明天皇",
+                "en": "Emperor Go-Kōmyō"
+              },
+              "title": {
+                "zh": "天皇",
+                "en": "Emperor"
+              },
+              "role": {
+                "zh": "日本名义最高元首，京都朝廷的象征核心",
+                "en": "Nominal supreme head of Japan and symbolic center of the Kyoto court"
+              }
+            },
+            {
+              "name": {
+                "zh": "九条道房",
+                "en": "Kujō Michifusa"
+              },
+              "title": {
+                "zh": "关白",
+                "en": "Regent (Kampaku)"
+              },
+              "role": {
+                "zh": "公家贵族首席，朝廷日常事务的名义主持者",
+                "en": "Chief of court nobility and nominal presiding figure in daily court affairs"
+              }
+            }
           ]
         }
       ]
@@ -9164,50 +9613,191 @@
       "factions": [
         {
           "id": "ottoman_sultanate",
-          "name": { "zh": "苏丹朝廷", "en": "Sultanate" },
+          "name": {
+            "zh": "苏丹朝廷",
+            "en": "Sultanate"
+          },
           "type": "other",
-          "leader": { "zh": "苏丹穆罕默德四世", "en": "Sultan Mehmed IV" },
-          "leaderTitle": { "zh": "苏丹", "en": "Sultan" },
-          "ideology": { "zh": "奥斯曼王朝正统，伊斯兰苏丹制，通过科普律吕大维齐尔恢复帝国秩序与军事荣光", "en": "Ottoman dynastic legitimacy, Islamic sultanate, restoration of imperial order and military glory through the Köprülü grand viziers" },
-          "headquarters": { "zh": "君士坦丁堡（托普卡帕宫）", "en": "Constantinople (Topkapi Palace)" },
+          "leader": {
+            "zh": "苏丹穆罕默德四世",
+            "en": "Sultan Mehmed IV"
+          },
+          "leaderTitle": {
+            "zh": "苏丹",
+            "en": "Sultan"
+          },
+          "ideology": {
+            "zh": "奥斯曼王朝正统，伊斯兰苏丹制，通过科普律吕大维齐尔恢复帝国秩序与军事荣光",
+            "en": "Ottoman dynastic legitimacy, Islamic sultanate, restoration of imperial order and military glory through the Köprülü grand viziers"
+          },
+          "headquarters": {
+            "zh": "君士坦丁堡（托普卡帕宫）",
+            "en": "Constantinople (Topkapi Palace)"
+          },
           "status": "ruling",
-          "relationship": { "zh": "穆罕默德四世即位时年仅七岁，宫廷政局动荡不安。经历一系列无能的大维齐尔后，1656年起科普律吕家族大维齐尔开始掌权，厉行整顿吏治、恢复军事纪律，使帝国重新走上强化之路。苏丹本人热衷狩猎，将政务大权委托给科普律吕大维齐尔。", "en": "Mehmed IV ascended the throne at age seven amid great court turmoil. After a succession of incompetent grand viziers, the Köprülü family assumed the grand vizierate from 1656, rigorously reforming administration and restoring military discipline to set the empire on a path of reinvigoration. The sultan himself was devoted to hunting and delegated governmental power largely to the Köprülü grand viziers." },
-          "description": { "zh": "穆罕默德四世（1642—1693）在1648年即位时面对的是一个危机四伏的帝国：财政枯竭、军队哗变频繁、克里特战争久拖不决、地方叛乱此起彼伏。其父苏丹易卜拉欣因暴政被废杀，幼主登基后宫廷由太后和近侍集团操控。这一危局直到科普律吕·穆罕默德帕夏于1656年出任大维齐尔后才根本扭转。科普律吕家族此后连续三代担任大维齐尔，实施了大规模的财政、军事和行政改革：严惩贪腐官员、整顿耶尼切里军纪、重新确立中央对行省的控制权。在科普律吕改革下，奥斯曼帝国一度恢复扩张势头，发动了对威尼斯属克里特的最终攻势和1683年的维也纳之围。但苏丹个人对政务缺乏兴趣，帝国的实际走向在很大程度上取决于大维齐尔的才能。", "en": "When Mehmed IV (1642–1693) ascended the throne in 1648, he inherited an empire in deep crisis: exhausted finances, frequent military mutinies, a protracted Cretan War, and provincial rebellions erupting in succession. His father Sultan Ibrahim had been deposed and executed for tyranny, and after the young sultan's accession the court was dominated by the queen mother and palace favorites. This crisis was not fundamentally reversed until Köprülü Mehmed Pasha assumed the grand vizierate in 1656. The Köprülü family then held the grand vizierate for three successive generations, implementing sweeping fiscal, military, and administrative reforms: severely punishing corrupt officials, disciplining the Janissaries, and reasserting central control over the provinces. Under the Köprülü reforms, the Ottoman Empire temporarily regained its expansionist momentum, launching the final offensive against Venetian Crete and the 1683 Siege of Vienna. Yet the sultan's personal disinterest in governance meant the empire's actual trajectory depended heavily on the capabilities of the grand vizier." },
+          "relationship": {
+            "zh": "穆罕默德四世即位时年仅七岁，宫廷政局动荡不安。经历一系列无能的大维齐尔后，1656年起科普律吕家族大维齐尔开始掌权，厉行整顿吏治、恢复军事纪律，使帝国重新走上强化之路。苏丹本人热衷狩猎，将政务大权委托给科普律吕大维齐尔。",
+            "en": "Mehmed IV ascended the throne at age seven amid great court turmoil. After a succession of incompetent grand viziers, the Köprülü family assumed the grand vizierate from 1656, rigorously reforming administration and restoring military discipline to set the empire on a path of reinvigoration. The sultan himself was devoted to hunting and delegated governmental power largely to the Köprülü grand viziers."
+          },
+          "description": {
+            "zh": "穆罕默德四世（1642—1693）在1648年即位时面对的是一个危机四伏的帝国：财政枯竭、军队哗变频繁、克里特战争久拖不决、地方叛乱此起彼伏。其父苏丹易卜拉欣因暴政被废杀，幼主登基后宫廷由太后和近侍集团操控。这一危局直到科普律吕·穆罕默德帕夏于1656年出任大维齐尔后才根本扭转。科普律吕家族此后连续三代担任大维齐尔，实施了大规模的财政、军事和行政改革：严惩贪腐官员、整顿耶尼切里军纪、重新确立中央对行省的控制权。在科普律吕改革下，奥斯曼帝国一度恢复扩张势头，发动了对威尼斯属克里特的最终攻势和1683年的维也纳之围。但苏丹个人对政务缺乏兴趣，帝国的实际走向在很大程度上取决于大维齐尔的才能。",
+            "en": "When Mehmed IV (1642–1693) ascended the throne in 1648, he inherited an empire in deep crisis: exhausted finances, frequent military mutinies, a protracted Cretan War, and provincial rebellions erupting in succession. His father Sultan Ibrahim had been deposed and executed for tyranny, and after the young sultan's accession the court was dominated by the queen mother and palace favorites. This crisis was not fundamentally reversed until Köprülü Mehmed Pasha assumed the grand vizierate in 1656. The Köprülü family then held the grand vizierate for three successive generations, implementing sweeping fiscal, military, and administrative reforms: severely punishing corrupt officials, disciplining the Janissaries, and reasserting central control over the provinces. Under the Köprülü reforms, the Ottoman Empire temporarily regained its expansionist momentum, launching the final offensive against Venetian Crete and the 1683 Siege of Vienna. Yet the sultan's personal disinterest in governance meant the empire's actual trajectory depended heavily on the capabilities of the grand vizier."
+          },
           "keyFigures": [
-            { "name": { "zh": "穆罕默德四世", "en": "Mehmed IV" }, "title": { "zh": "苏丹", "en": "Sultan" }, "role": { "zh": "奥斯曼帝国苏丹，幼年即位，后以狩猎闻名", "en": "Ottoman sultan who ascended as a child and became known for his passion for hunting" } },
-            { "name": { "zh": "科普律吕·穆罕默德帕夏", "en": "Köprülü Mehmed Pasha" }, "title": { "zh": "大维齐尔", "en": "Grand Vizier" }, "role": { "zh": "科普律吕改革的开创者，恢复帝国秩序的关键人物", "en": "Founder of the Köprülü reform era and key figure in restoring imperial order" } }
+            {
+              "name": {
+                "zh": "穆罕默德四世",
+                "en": "Mehmed IV"
+              },
+              "title": {
+                "zh": "苏丹",
+                "en": "Sultan"
+              },
+              "role": {
+                "zh": "奥斯曼帝国苏丹，幼年即位，后以狩猎闻名",
+                "en": "Ottoman sultan who ascended as a child and became known for his passion for hunting"
+              }
+            },
+            {
+              "name": {
+                "zh": "科普律吕·穆罕默德帕夏",
+                "en": "Köprülü Mehmed Pasha"
+              },
+              "title": {
+                "zh": "大维齐尔",
+                "en": "Grand Vizier"
+              },
+              "role": {
+                "zh": "科普律吕改革的开创者，恢复帝国秩序的关键人物",
+                "en": "Founder of the Köprülü reform era and key figure in restoring imperial order"
+              }
+            }
           ]
         },
         {
           "id": "ottoman_janissary_corps",
-          "name": { "zh": "耶尼切里军团", "en": "Janissary Corps" },
+          "name": {
+            "zh": "耶尼切里军团",
+            "en": "Janissary Corps"
+          },
           "type": "other",
-          "leader": { "zh": "耶尼切里阿迦（军团统领）", "en": "Agha of the Janissaries" },
-          "leaderTitle": { "zh": "耶尼切里阿迦", "en": "Agha of the Janissaries" },
-          "ideology": { "zh": "军团特权维护，反对削减军饷与编制改革，利用政治影响力干预朝政", "en": "Defense of corps privileges, opposition to pay cuts and organizational reform, leveraging political influence to intervene in court politics" },
-          "headquarters": { "zh": "君士坦丁堡（耶尼切里营地）", "en": "Constantinople (Janissary barracks)" },
+          "leader": {
+            "zh": "耶尼切里阿迦（军团统领）",
+            "en": "Agha of the Janissaries"
+          },
+          "leaderTitle": {
+            "zh": "耶尼切里阿迦",
+            "en": "Agha of the Janissaries"
+          },
+          "ideology": {
+            "zh": "军团特权维护，反对削减军饷与编制改革，利用政治影响力干预朝政",
+            "en": "Defense of corps privileges, opposition to pay cuts and organizational reform, leveraging political influence to intervene in court politics"
+          },
+          "headquarters": {
+            "zh": "君士坦丁堡（耶尼切里营地）",
+            "en": "Constantinople (Janissary barracks)"
+          },
           "status": "rival",
-          "relationship": { "zh": "耶尼切里军团从原本忠于苏丹的精锐奴隶步兵，蜕变为一支高度政治化的武装力量。他们频繁发动兵变胁迫朝廷更换大维齐尔甚至废立苏丹，1648年苏丹易卜拉欣的被废即与耶尼切里的压力密切相关。军团坚决抵制任何削弱其特权的改革。", "en": "The Janissary Corps had devolved from elite slave infantry loyal to the sultan into a highly politicized armed force. They frequently staged mutinies to coerce the court into replacing grand viziers or even deposing sultans—the 1648 overthrow of Sultan Ibrahim was closely linked to Janissary pressure. The corps fiercely resisted any reforms that threatened their privileges." },
-          "description": { "zh": "耶尼切里军团是奥斯曼帝国历史最悠久、最具标志性的军事力量，起源于14世纪的基督徒少年征召（德夫希尔梅）制度。到17世纪中叶，德夫希尔梅制度已名存实亡，耶尼切里身份日益世袭化，军团成员兼营商业手工业，战斗力严重下降。然而他们在君士坦丁堡拥有强大的政治影响力，控制首都治安与市场秩序，并以武力威胁干预宫廷政治。1648年穆罕默德四世即位前后的政局动荡中，耶尼切里多次发动骚乱和兵变，勒索赏赐、杀害大臣。他们的存在是帝国改革的最大内部障碍之一——任何触动其利益的改革者都面临被推翻甚至被杀的风险。科普律吕大维齐尔不得不在严厉打击与谨慎安抚之间寻找平衡。", "en": "The Janissary Corps was the oldest and most iconic military force of the Ottoman Empire, originating from the 14th-century devshirme system of recruiting Christian boys. By the mid-17th century, the devshirme system had become moribund in practice; Janissary status was increasingly hereditary, members engaged in commerce and crafts, and combat effectiveness had seriously declined. Yet they wielded formidable political influence in Constantinople, controlling the capital's policing and market order and using armed force to intervene in palace politics. During the political turmoil surrounding Mehmed IV's accession in 1648, the Janissaries staged multiple riots and mutinies, extorting bonuses and killing ministers. Their existence constituted one of the greatest internal obstacles to imperial reform—any reformer who touched their interests risked overthrow or assassination. The Köprülü grand viziers had to navigate carefully between harsh crackdowns and cautious conciliation." },
+          "relationship": {
+            "zh": "耶尼切里军团从原本忠于苏丹的精锐奴隶步兵，蜕变为一支高度政治化的武装力量。他们频繁发动兵变胁迫朝廷更换大维齐尔甚至废立苏丹，1648年苏丹易卜拉欣的被废即与耶尼切里的压力密切相关。军团坚决抵制任何削弱其特权的改革。",
+            "en": "The Janissary Corps had devolved from elite slave infantry loyal to the sultan into a highly politicized armed force. They frequently staged mutinies to coerce the court into replacing grand viziers or even deposing sultans—the 1648 overthrow of Sultan Ibrahim was closely linked to Janissary pressure. The corps fiercely resisted any reforms that threatened their privileges."
+          },
+          "description": {
+            "zh": "耶尼切里军团是奥斯曼帝国历史最悠久、最具标志性的军事力量，起源于14世纪的基督徒少年征召（德夫希尔梅）制度。到17世纪中叶，德夫希尔梅制度已名存实亡，耶尼切里身份日益世袭化，军团成员兼营商业手工业，战斗力严重下降。然而他们在君士坦丁堡拥有强大的政治影响力，控制首都治安与市场秩序，并以武力威胁干预宫廷政治。1648年穆罕默德四世即位前后的政局动荡中，耶尼切里多次发动骚乱和兵变，勒索赏赐、杀害大臣。他们的存在是帝国改革的最大内部障碍之一——任何触动其利益的改革者都面临被推翻甚至被杀的风险。科普律吕大维齐尔不得不在严厉打击与谨慎安抚之间寻找平衡。",
+            "en": "The Janissary Corps was the oldest and most iconic military force of the Ottoman Empire, originating from the 14th-century devshirme system of recruiting Christian boys. By the mid-17th century, the devshirme system had become moribund in practice; Janissary status was increasingly hereditary, members engaged in commerce and crafts, and combat effectiveness had seriously declined. Yet they wielded formidable political influence in Constantinople, controlling the capital's policing and market order and using armed force to intervene in palace politics. During the political turmoil surrounding Mehmed IV's accession in 1648, the Janissaries staged multiple riots and mutinies, extorting bonuses and killing ministers. Their existence constituted one of the greatest internal obstacles to imperial reform—any reformer who touched their interests risked overthrow or assassination. The Köprülü grand viziers had to navigate carefully between harsh crackdowns and cautious conciliation."
+          },
           "keyFigures": [
-            { "name": { "zh": "耶尼切里阿迦", "en": "Agha of the Janissaries" }, "title": { "zh": "军团统领", "en": "Corps Commander" }, "role": { "zh": "耶尼切里军团最高指挥官，在朝政中具有举足轻重的影响力", "en": "Supreme commander of the Janissary Corps, wielding crucial influence in court politics" } },
-            { "name": { "zh": "贝克塔什教团长老", "en": "Bektashi Order Elders" }, "title": { "zh": "教团领袖", "en": "Order Leaders" }, "role": { "zh": "耶尼切里精神导师与宗教纽带，苏菲派贝克塔什教团与军团关系密切", "en": "Spiritual guides and religious bond of the Janissaries; the Sufi Bektashi order was closely linked to the corps" } }
+            {
+              "name": {
+                "zh": "耶尼切里阿迦",
+                "en": "Agha of the Janissaries"
+              },
+              "title": {
+                "zh": "军团统领",
+                "en": "Corps Commander"
+              },
+              "role": {
+                "zh": "耶尼切里军团最高指挥官，在朝政中具有举足轻重的影响力",
+                "en": "Supreme commander of the Janissary Corps, wielding crucial influence in court politics"
+              }
+            },
+            {
+              "name": {
+                "zh": "贝克塔什教团长老",
+                "en": "Bektashi Order Elders"
+              },
+              "title": {
+                "zh": "教团领袖",
+                "en": "Order Leaders"
+              },
+              "role": {
+                "zh": "耶尼切里精神导师与宗教纽带，苏菲派贝克塔什教团与军团关系密切",
+                "en": "Spiritual guides and religious bond of the Janissaries; the Sufi Bektashi order was closely linked to the corps"
+              }
+            }
           ]
         },
         {
           "id": "ottoman_provincial_notables",
-          "name": { "zh": "地方显贵（阿扬）", "en": "Provincial Notables (Ayan)" },
+          "name": {
+            "zh": "地方显贵（阿扬）",
+            "en": "Provincial Notables (Ayan)"
+          },
           "type": "other",
-          "leader": { "zh": "各省显贵（无统一领袖）", "en": "Various provincial notables (no unified leader)" },
-          "leaderTitle": { "zh": "阿扬 / 贝伊", "en": "Ayan / Bey" },
-          "ideology": { "zh": "地方自治与利益保护，以包税权和土地控制维持家族势力，抵制中央过度干预", "en": "Local autonomy and interest protection, maintaining family power through tax-farming rights and land control, resisting excessive central interference" },
-          "headquarters": { "zh": "各省城市与庄园（安纳托利亚、巴尔干、阿拉伯诸省）", "en": "Provincial cities and estates (Anatolia, Balkans, Arab provinces)" },
+          "leader": {
+            "zh": "各省显贵（无统一领袖）",
+            "en": "Various provincial notables (no unified leader)"
+          },
+          "leaderTitle": {
+            "zh": "阿扬 / 贝伊",
+            "en": "Ayan / Bey"
+          },
+          "ideology": {
+            "zh": "地方自治与利益保护，以包税权和土地控制维持家族势力，抵制中央过度干预",
+            "en": "Local autonomy and interest protection, maintaining family power through tax-farming rights and land control, resisting excessive central interference"
+          },
+          "headquarters": {
+            "zh": "各省城市与庄园（安纳托利亚、巴尔干、阿拉伯诸省）",
+            "en": "Provincial cities and estates (Anatolia, Balkans, Arab provinces)"
+          },
           "status": "rival",
-          "relationship": { "zh": "地方显贵是奥斯曼帝国行省权力结构中日益重要的力量。他们通过包税权、大地产和与中央官员的庇护关系积累财富与权势，在地方行政、税收和军事动员中发挥实际主导作用。中央对他们既依赖又忌惮，科普律吕改革试图重新收紧中央控制，但收效参差不齐。", "en": "Provincial notables were an increasingly important force in the Ottoman provincial power structure. They accumulated wealth and power through tax-farming rights, large estates, and patronage relationships with central officials, playing a de facto leading role in local administration, taxation, and military mobilization. The center both depended on and feared them; the Köprülü reforms attempted to reassert central control, but with uneven results." },
-          "description": { "zh": "阿扬（ayân）指17世纪以降在奥斯曼各行省崛起的地方权力人物群体。随着帝国中央权威的波动和蒂马尔骑兵制度的衰落，包税制（iltizâm）日益成为帝国财政的主要工具，而能够承包大额税源的地方显贵因此迅速壮大。他们在安纳托利亚、巴尔干、叙利亚、伊拉克和埃及等地建立了世袭性的地方权力网络，控制税收、司法调解和民兵武装，与中央派遣的总督和法官形成复杂的合作—竞争关系。在巴尔干地区，基督徒和穆斯林显贵同样活跃；在阿拉伯行省，部族酋长和宗教领袖往往兼具阿扬身份。这一群体的壮大标志着奥斯曼帝国从集中化帝国向分权化权力格局的长期演变，其趋势在18—19世纪进一步加速。", "en": "The ayan (ayân) were a class of local power figures who rose across Ottoman provinces from the 17th century onward. As central authority fluctuated and the timar cavalry system declined, tax-farming (iltizâm) became the empire's primary fiscal instrument, and local notables capable of contracting large tax revenues grew rapidly in power. They established hereditary local power networks in Anatolia, the Balkans, Syria, Iraq, Egypt, and elsewhere, controlling taxation, judicial mediation, and militia forces while developing complex cooperative-competitive relationships with centrally appointed governors and judges. In the Balkans, both Christian and Muslim notables were active; in the Arab provinces, tribal chiefs and religious leaders often doubled as ayan. The rise of this class marked the Ottoman Empire's long-term evolution from a centralized empire toward a more decentralized power structure, a trend that accelerated further in the 18th and 19th centuries." },
+          "relationship": {
+            "zh": "地方显贵是奥斯曼帝国行省权力结构中日益重要的力量。他们通过包税权、大地产和与中央官员的庇护关系积累财富与权势，在地方行政、税收和军事动员中发挥实际主导作用。中央对他们既依赖又忌惮，科普律吕改革试图重新收紧中央控制，但收效参差不齐。",
+            "en": "Provincial notables were an increasingly important force in the Ottoman provincial power structure. They accumulated wealth and power through tax-farming rights, large estates, and patronage relationships with central officials, playing a de facto leading role in local administration, taxation, and military mobilization. The center both depended on and feared them; the Köprülü reforms attempted to reassert central control, but with uneven results."
+          },
+          "description": {
+            "zh": "阿扬（ayân）指17世纪以降在奥斯曼各行省崛起的地方权力人物群体。随着帝国中央权威的波动和蒂马尔骑兵制度的衰落，包税制（iltizâm）日益成为帝国财政的主要工具，而能够承包大额税源的地方显贵因此迅速壮大。他们在安纳托利亚、巴尔干、叙利亚、伊拉克和埃及等地建立了世袭性的地方权力网络，控制税收、司法调解和民兵武装，与中央派遣的总督和法官形成复杂的合作—竞争关系。在巴尔干地区，基督徒和穆斯林显贵同样活跃；在阿拉伯行省，部族酋长和宗教领袖往往兼具阿扬身份。这一群体的壮大标志着奥斯曼帝国从集中化帝国向分权化权力格局的长期演变，其趋势在18—19世纪进一步加速。",
+            "en": "The ayan (ayân) were a class of local power figures who rose across Ottoman provinces from the 17th century onward. As central authority fluctuated and the timar cavalry system declined, tax-farming (iltizâm) became the empire's primary fiscal instrument, and local notables capable of contracting large tax revenues grew rapidly in power. They established hereditary local power networks in Anatolia, the Balkans, Syria, Iraq, Egypt, and elsewhere, controlling taxation, judicial mediation, and militia forces while developing complex cooperative-competitive relationships with centrally appointed governors and judges. In the Balkans, both Christian and Muslim notables were active; in the Arab provinces, tribal chiefs and religious leaders often doubled as ayan. The rise of this class marked the Ottoman Empire's long-term evolution from a centralized empire toward a more decentralized power structure, a trend that accelerated further in the 18th and 19th centuries."
+          },
           "keyFigures": [
-            { "name": { "zh": "阿布哈奈菲赞德家族", "en": "Abuhanefi-zade Family" }, "title": { "zh": "安纳托利亚显贵", "en": "Anatolian Notables" }, "role": { "zh": "安纳托利亚地方望族，以包税与土地控制维持区域影响力", "en": "An Anatolian notable family maintaining regional influence through tax-farming and land control" } },
-            { "name": { "zh": "法赫鲁丁二世后裔", "en": "Heirs of Fakhr al-Din II" }, "title": { "zh": "黎巴嫩山区贵族", "en": "Mount Lebanon Nobility" }, "role": { "zh": "黎巴嫩德鲁兹领主家族，地方自治传统深厚", "en": "Lebanese Druze lordly family with deep traditions of local autonomy" } }
+            {
+              "name": {
+                "zh": "阿布哈奈菲赞德家族",
+                "en": "Abuhanefi-zade Family"
+              },
+              "title": {
+                "zh": "安纳托利亚显贵",
+                "en": "Anatolian Notables"
+              },
+              "role": {
+                "zh": "安纳托利亚地方望族，以包税与土地控制维持区域影响力",
+                "en": "An Anatolian notable family maintaining regional influence through tax-farming and land control"
+              }
+            },
+            {
+              "name": {
+                "zh": "法赫鲁丁二世后裔",
+                "en": "Heirs of Fakhr al-Din II"
+              },
+              "title": {
+                "zh": "黎巴嫩山区贵族",
+                "en": "Mount Lebanon Nobility"
+              },
+              "role": {
+                "zh": "黎巴嫩德鲁兹领主家族，地方自治传统深厚",
+                "en": "Lebanese Druze lordly family with deep traditions of local autonomy"
+              }
+            }
           ]
         }
       ]
@@ -12675,53 +13265,233 @@
       "factions": [
         {
           "id": "france_mazarin_faction",
-          "name": { "zh": "马扎然枢机派", "en": "Cardinal Mazarin Faction" },
+          "name": {
+            "zh": "马扎然枢机派",
+            "en": "Cardinal Mazarin Faction"
+          },
           "type": "other",
-          "leader": { "zh": "朱尔·马扎然枢机", "en": "Cardinal Jules Mazarin" },
-          "leaderTitle": { "zh": "首席大臣", "en": "Chief Minister" },
-          "ideology": { "zh": "绝对君主制建设，王权高于一切等级特权，威斯特伐利亚外交体系，法国欧洲霸权", "en": "Absolute monarchy-building, royal power above all estate privileges, Westphalian diplomatic order, and French European hegemony" },
-          "headquarters": { "zh": "巴黎（枢机宫）", "en": "Paris (Palais Mazarin)" },
+          "leader": {
+            "zh": "朱尔·马扎然枢机",
+            "en": "Cardinal Jules Mazarin"
+          },
+          "leaderTitle": {
+            "zh": "首席大臣",
+            "en": "Chief Minister"
+          },
+          "ideology": {
+            "zh": "绝对君主制建设，王权高于一切等级特权，威斯特伐利亚外交体系，法国欧洲霸权",
+            "en": "Absolute monarchy-building, royal power above all estate privileges, Westphalian diplomatic order, and French European hegemony"
+          },
+          "headquarters": {
+            "zh": "巴黎（枢机宫）",
+            "en": "Paris (Palais Mazarin)"
+          },
           "status": "ruling",
-          "relationship": { "zh": "马扎然作为黎塞留的继承者，在安娜太后摄政期间掌握法国实际权力。他成功主导了威斯特伐利亚和约谈判，为法国赢得阿尔萨斯等领土和欧洲政治主导权。但其集权政策和外国出身引发了贵族和高等法院的强烈不满，直接导致投石党之乱的爆发。", "en": "As Richelieu's successor, Mazarin held real power in France during Anne of Austria's regency. He successfully directed the Peace of Westphalia negotiations, securing Alsace and European political primacy for France. However, his centralizing policies and foreign birth provoked fierce resentment from the nobility and sovereign courts, directly precipitating the outbreak of the Fronde." },
-          "description": { "zh": "朱尔·马扎然（1602—1661）是意大利裔法国政治家与枢机主教，黎塞留临终推荐的继承人。1643年路易十三去世后，他在摄政太后奥地利的安娜支持下成为首席大臣，继续推行黎塞留的中央集权路线与反哈布斯堡外交战略。1648年他主导完成了威斯特伐利亚和约的谈判，确立了法国作为欧洲首要强国的地位。然而同年巴黎高等法院拒绝登记新税令，拉开了投石党之乱的序幕。马扎然在1648—1653年的动乱中两度被迫出逃巴黎，但始终保持对年轻路易十四的影响力，最终成功平定叛乱。他培养了路易十四的绝对主义执政理念，为「太阳王」时代奠定了政治基础。马扎然同时也是著名的艺术收藏家和庇护者，积累了惊人的个人财富。", "en": "Jules Mazarin (1602–1661) was an Italian-born French statesman and cardinal, recommended as successor by Richelieu on his deathbed. After Louis XIII's death in 1643, he became chief minister with the support of regent queen Anne of Austria, continuing Richelieu's centralizing policies and anti-Habsburg diplomatic strategy. In 1648 he directed the completion of the Peace of Westphalia negotiations, establishing France as Europe's foremost power. Yet that same year the Parlement of Paris refused to register new tax edicts, triggering the Fronde. Mazarin was twice forced to flee Paris during the 1648–1653 upheavals but maintained his influence over the young Louis XIV throughout, ultimately succeeding in suppressing the rebellion. He shaped Louis XIV's absolutist governing philosophy, laying the political foundation for the Sun King's era. Mazarin was also a notable art collector and patron who accumulated enormous personal wealth." },
+          "relationship": {
+            "zh": "马扎然作为黎塞留的继承者，在安娜太后摄政期间掌握法国实际权力。他成功主导了威斯特伐利亚和约谈判，为法国赢得阿尔萨斯等领土和欧洲政治主导权。但其集权政策和外国出身引发了贵族和高等法院的强烈不满，直接导致投石党之乱的爆发。",
+            "en": "As Richelieu's successor, Mazarin held real power in France during Anne of Austria's regency. He successfully directed the Peace of Westphalia negotiations, securing Alsace and European political primacy for France. However, his centralizing policies and foreign birth provoked fierce resentment from the nobility and sovereign courts, directly precipitating the outbreak of the Fronde."
+          },
+          "description": {
+            "zh": "朱尔·马扎然（1602—1661）是意大利裔法国政治家与枢机主教，黎塞留临终推荐的继承人。1643年路易十三去世后，他在摄政太后奥地利的安娜支持下成为首席大臣，继续推行黎塞留的中央集权路线与反哈布斯堡外交战略。1648年他主导完成了威斯特伐利亚和约的谈判，确立了法国作为欧洲首要强国的地位。然而同年巴黎高等法院拒绝登记新税令，拉开了投石党之乱的序幕。马扎然在1648—1653年的动乱中两度被迫出逃巴黎，但始终保持对年轻路易十四的影响力，最终成功平定叛乱。他培养了路易十四的绝对主义执政理念，为「太阳王」时代奠定了政治基础。马扎然同时也是著名的艺术收藏家和庇护者，积累了惊人的个人财富。",
+            "en": "Jules Mazarin (1602–1661) was an Italian-born French statesman and cardinal, recommended as successor by Richelieu on his deathbed. After Louis XIII's death in 1643, he became chief minister with the support of regent queen Anne of Austria, continuing Richelieu's centralizing policies and anti-Habsburg diplomatic strategy. In 1648 he directed the completion of the Peace of Westphalia negotiations, establishing France as Europe's foremost power. Yet that same year the Parlement of Paris refused to register new tax edicts, triggering the Fronde. Mazarin was twice forced to flee Paris during the 1648–1653 upheavals but maintained his influence over the young Louis XIV throughout, ultimately succeeding in suppressing the rebellion. He shaped Louis XIV's absolutist governing philosophy, laying the political foundation for the Sun King's era. Mazarin was also a notable art collector and patron who accumulated enormous personal wealth."
+          },
           "keyFigures": [
-            { "name": { "zh": "马扎然枢机", "en": "Cardinal Mazarin" }, "title": { "zh": "首席大臣", "en": "Chief Minister" }, "role": { "zh": "法国实际最高执政者，黎塞留路线的延续者", "en": "De facto supreme governor of France, continuator of Richelieu's policies" } },
-            { "name": { "zh": "奥地利的安娜", "en": "Anne of Austria" }, "title": { "zh": "摄政太后", "en": "Queen Regent" }, "role": { "zh": "路易十四之母，以摄政身份支持马扎然执政", "en": "Mother of Louis XIV, supporting Mazarin's governance as regent" } },
-            { "name": { "zh": "路易十四", "en": "Louis XIV" }, "title": { "zh": "法兰西国王（未成年）", "en": "King of France (minor)" }, "role": { "zh": "年幼国王，马扎然的学生，未来的太阳王", "en": "Young king, Mazarin's pupil, and future Sun King" } }
+            {
+              "name": {
+                "zh": "马扎然枢机",
+                "en": "Cardinal Mazarin"
+              },
+              "title": {
+                "zh": "首席大臣",
+                "en": "Chief Minister"
+              },
+              "role": {
+                "zh": "法国实际最高执政者，黎塞留路线的延续者",
+                "en": "De facto supreme governor of France, continuator of Richelieu's policies"
+              }
+            },
+            {
+              "name": {
+                "zh": "奥地利的安娜",
+                "en": "Anne of Austria"
+              },
+              "title": {
+                "zh": "摄政太后",
+                "en": "Queen Regent"
+              },
+              "role": {
+                "zh": "路易十四之母，以摄政身份支持马扎然执政",
+                "en": "Mother of Louis XIV, supporting Mazarin's governance as regent"
+              }
+            },
+            {
+              "name": {
+                "zh": "路易十四",
+                "en": "Louis XIV"
+              },
+              "title": {
+                "zh": "法兰西国王（未成年）",
+                "en": "King of France (minor)"
+              },
+              "role": {
+                "zh": "年幼国王，马扎然的学生，未来的太阳王",
+                "en": "Young king, Mazarin's pupil, and future Sun King"
+              }
+            }
           ]
         },
         {
           "id": "france_frondeurs",
-          "name": { "zh": "投石党人", "en": "Frondeurs" },
+          "name": {
+            "zh": "投石党人",
+            "en": "Frondeurs"
+          },
           "type": "other",
-          "leader": { "zh": "孔代亲王 / 巴黎高等法院", "en": "Prince de Condé / Parlement of Paris" },
-          "leaderTitle": { "zh": "亲王 / 高等法院首席院长", "en": "Prince of the Blood / First President of the Parlement" },
-          "ideology": { "zh": "反对马扎然集权，维护贵族与高等法院传统特权，抵制新税与王权扩张", "en": "Opposition to Mazarin's centralization, defense of traditional noble and parlementaire privileges, resistance to new taxes and royal power expansion" },
-          "headquarters": { "zh": "巴黎（高等法院）/ 各地贵族庄园", "en": "Paris (Parlement) / various noble estates" },
+          "leader": {
+            "zh": "孔代亲王 / 巴黎高等法院",
+            "en": "Prince de Condé / Parlement of Paris"
+          },
+          "leaderTitle": {
+            "zh": "亲王 / 高等法院首席院长",
+            "en": "Prince of the Blood / First President of the Parlement"
+          },
+          "ideology": {
+            "zh": "反对马扎然集权，维护贵族与高等法院传统特权，抵制新税与王权扩张",
+            "en": "Opposition to Mazarin's centralization, defense of traditional noble and parlementaire privileges, resistance to new taxes and royal power expansion"
+          },
+          "headquarters": {
+            "zh": "巴黎（高等法院）/ 各地贵族庄园",
+            "en": "Paris (Parlement) / various noble estates"
+          },
           "status": "insurgent",
-          "relationship": { "zh": "投石党是1648—1653年间反对马扎然集权统治的异质性联盟，包括巴黎高等法院法官、大贵族如孔代亲王和贡迪红衣主教、以及巴黎市民。他们各怀目的——高等法院要求限制王权、贵族争夺权力、市民反对重税——但都以反对马扎然为共同旗帜。", "en": "The Fronde was a heterogeneous alliance opposing Mazarin's centralizing rule from 1648 to 1653, comprising Parlement magistrates, great nobles such as the Prince de Condé and Cardinal de Retz, and Parisian citizens. They pursued different goals—the Parlement sought to limit royal power, the nobles competed for influence, and citizens opposed heavy taxation—but united under the banner of opposition to Mazarin." },
-          "description": { "zh": "投石党之乱（La Fronde, 1648—1653）是法国走向绝对主义过程中最严重的内部危机。它分为两个阶段：高等法院投石党（1648—1649）和亲王投石党（1650—1653）。第一阶段由巴黎高等法院发起，法官们以英国议会限制王权为榜样，要求废除国务委员专权、限制逮捕权和新税征收，引发了巴黎市民的广泛支持与街垒战。第二阶段以孔代亲王路易二世为首的大贵族叛乱为主，孔代以三十年战争英雄的军事威望挑战马扎然权威，一度与西班牙联盟并占据波尔多等城市。投石党最终失败的原因在于各派利益矛盾无法调和——贵族们相互猜忌，高等法院害怕无政府状态，市民厌倦了战乱。投石党的失败深刻影响了年轻路易十四的政治观念，使他此后坚定推行绝对主义，迁都凡尔赛以远离巴黎的叛乱传统。", "en": "The Fronde (1648–1653) was the most serious internal crisis in France's path toward absolutism. It unfolded in two phases: the Fronde of the Parlement (1648–1649) and the Fronde of the Princes (1650–1653). The first phase was initiated by the Parlement of Paris, whose magistrates, inspired by the English Parliament's challenge to royal authority, demanded abolition of intendants' arbitrary powers, limits on arrest authority, and constraints on new taxation, triggering widespread popular support and barricade warfare in Paris. The second phase centered on a rebellion by great nobles led by Louis II, Prince de Condé, who leveraged his military prestige as a Thirty Years' War hero to challenge Mazarin's authority, at one point allying with Spain and seizing Bordeaux and other cities. The Fronde ultimately failed because the conflicting interests of its factions proved irreconcilable—nobles mistrusted each other, the Parlement feared anarchy, and citizens grew weary of disorder. The Fronde's failure profoundly shaped the young Louis XIV's political outlook, reinforcing his commitment to absolutism and his later decision to relocate the court to Versailles, far from Paris's rebellious traditions." },
+          "relationship": {
+            "zh": "投石党是1648—1653年间反对马扎然集权统治的异质性联盟，包括巴黎高等法院法官、大贵族如孔代亲王和贡迪红衣主教、以及巴黎市民。他们各怀目的——高等法院要求限制王权、贵族争夺权力、市民反对重税——但都以反对马扎然为共同旗帜。",
+            "en": "The Fronde was a heterogeneous alliance opposing Mazarin's centralizing rule from 1648 to 1653, comprising Parlement magistrates, great nobles such as the Prince de Condé and Cardinal de Retz, and Parisian citizens. They pursued different goals—the Parlement sought to limit royal power, the nobles competed for influence, and citizens opposed heavy taxation—but united under the banner of opposition to Mazarin."
+          },
+          "description": {
+            "zh": "投石党之乱（La Fronde, 1648—1653）是法国走向绝对主义过程中最严重的内部危机。它分为两个阶段：高等法院投石党（1648—1649）和亲王投石党（1650—1653）。第一阶段由巴黎高等法院发起，法官们以英国议会限制王权为榜样，要求废除国务委员专权、限制逮捕权和新税征收，引发了巴黎市民的广泛支持与街垒战。第二阶段以孔代亲王路易二世为首的大贵族叛乱为主，孔代以三十年战争英雄的军事威望挑战马扎然权威，一度与西班牙联盟并占据波尔多等城市。投石党最终失败的原因在于各派利益矛盾无法调和——贵族们相互猜忌，高等法院害怕无政府状态，市民厌倦了战乱。投石党的失败深刻影响了年轻路易十四的政治观念，使他此后坚定推行绝对主义，迁都凡尔赛以远离巴黎的叛乱传统。",
+            "en": "The Fronde (1648–1653) was the most serious internal crisis in France's path toward absolutism. It unfolded in two phases: the Fronde of the Parlement (1648–1649) and the Fronde of the Princes (1650–1653). The first phase was initiated by the Parlement of Paris, whose magistrates, inspired by the English Parliament's challenge to royal authority, demanded abolition of intendants' arbitrary powers, limits on arrest authority, and constraints on new taxation, triggering widespread popular support and barricade warfare in Paris. The second phase centered on a rebellion by great nobles led by Louis II, Prince de Condé, who leveraged his military prestige as a Thirty Years' War hero to challenge Mazarin's authority, at one point allying with Spain and seizing Bordeaux and other cities. The Fronde ultimately failed because the conflicting interests of its factions proved irreconcilable—nobles mistrusted each other, the Parlement feared anarchy, and citizens grew weary of disorder. The Fronde's failure profoundly shaped the young Louis XIV's political outlook, reinforcing his commitment to absolutism and his later decision to relocate the court to Versailles, far from Paris's rebellious traditions."
+          },
           "keyFigures": [
-            { "name": { "zh": "孔代亲王（大孔代）", "en": "Prince de Condé (le Grand Condé)" }, "title": { "zh": "亲王", "en": "Prince of the Blood" }, "role": { "zh": "三十年战争名将，亲王投石党的领袖", "en": "Renowned Thirty Years' War general and leader of the Fronde of the Princes" } },
-            { "name": { "zh": "贡迪红衣主教（雷兹）", "en": "Cardinal de Retz (Gondi)" }, "title": { "zh": "巴黎副主教 / 枢机", "en": "Coadjutor Archbishop of Paris / Cardinal" }, "role": { "zh": "投石党中的煽动者与阴谋家，擅长操纵巴黎舆论", "en": "Agitator and intriguer within the Fronde, skilled at manipulating Parisian public opinion" } },
-            { "name": { "zh": "马蒂厄·莫莱", "en": "Mathieu Molé" }, "title": { "zh": "高等法院首席院长", "en": "First President of the Parlement" }, "role": { "zh": "高等法院投石党的代表性人物，主张限制王权但反对暴力", "en": "Representative figure of the parlementaire Fronde, advocating limits on royal power but opposing violence" } }
+            {
+              "name": {
+                "zh": "孔代亲王（大孔代）",
+                "en": "Prince de Condé (le Grand Condé)"
+              },
+              "title": {
+                "zh": "亲王",
+                "en": "Prince of the Blood"
+              },
+              "role": {
+                "zh": "三十年战争名将，亲王投石党的领袖",
+                "en": "Renowned Thirty Years' War general and leader of the Fronde of the Princes"
+              }
+            },
+            {
+              "name": {
+                "zh": "贡迪红衣主教（雷兹）",
+                "en": "Cardinal de Retz (Gondi)"
+              },
+              "title": {
+                "zh": "巴黎副主教 / 枢机",
+                "en": "Coadjutor Archbishop of Paris / Cardinal"
+              },
+              "role": {
+                "zh": "投石党中的煽动者与阴谋家，擅长操纵巴黎舆论",
+                "en": "Agitator and intriguer within the Fronde, skilled at manipulating Parisian public opinion"
+              }
+            },
+            {
+              "name": {
+                "zh": "马蒂厄·莫莱",
+                "en": "Mathieu Molé"
+              },
+              "title": {
+                "zh": "高等法院首席院长",
+                "en": "First President of the Parlement"
+              },
+              "role": {
+                "zh": "高等法院投石党的代表性人物，主张限制王权但反对暴力",
+                "en": "Representative figure of the parlementaire Fronde, advocating limits on royal power but opposing violence"
+              }
+            }
           ]
         },
         {
           "id": "france_jansenist_movement",
-          "name": { "zh": "冉森主义运动", "en": "Jansenist Movement" },
+          "name": {
+            "zh": "冉森主义运动",
+            "en": "Jansenist Movement"
+          },
           "type": "religious",
-          "leader": { "zh": "安东尼·阿尔诺", "en": "Antoine Arnauld" },
-          "leaderTitle": { "zh": "神学领袖", "en": "Theological Leader" },
-          "ideology": { "zh": "奥古斯丁主义严格恩宠论，反对耶稣会宽松道德神学，强调个人虔诚与教会纯洁", "en": "Augustinian rigorism on grace, opposition to Jesuit lax moral theology, emphasis on personal piety and church purity" },
-          "headquarters": { "zh": "波尔-罗亚尔修道院", "en": "Port-Royal Abbey" },
+          "leader": {
+            "zh": "安东尼·阿尔诺",
+            "en": "Antoine Arnauld"
+          },
+          "leaderTitle": {
+            "zh": "神学领袖",
+            "en": "Theological Leader"
+          },
+          "ideology": {
+            "zh": "奥古斯丁主义严格恩宠论，反对耶稣会宽松道德神学，强调个人虔诚与教会纯洁",
+            "en": "Augustinian rigorism on grace, opposition to Jesuit lax moral theology, emphasis on personal piety and church purity"
+          },
+          "headquarters": {
+            "zh": "波尔-罗亚尔修道院",
+            "en": "Port-Royal Abbey"
+          },
           "status": "opposition",
-          "relationship": { "zh": "冉森主义者在宗教上挑战耶稣会的神学霸权，在政治上与部分高等法院法官和知识精英结成同盟。马扎然与王权将冉森主义视为潜在的分裂力量，但1648年时尚未对其发动全面压制。冉森主义与投石党运动存在部分人员和思想上的交集。", "en": "Jansenists challenged the Jesuits' theological dominance on the religious front and allied with some parlementaire magistrates and intellectual elites on the political front. Mazarin and the crown regarded Jansenism as a potential divisive force, though full-scale suppression had not yet begun by 1648. Jansenism shared some personnel and intellectual connections with the Fronde movement." },
-          "description": { "zh": "冉森主义（Jansénisme）是17世纪法国天主教内部最重要的神学与文化运动之一，源于荷兰神学家科尼利厄斯·冉森对奥古斯丁恩宠论的激进诠释。波尔-罗亚尔修道院是运动的精神中心，院长安热利克·阿尔诺修女将修道院改造为严格苦行的虔诚社区。安东尼·阿尔诺（「大阿尔诺」）作为冉森派首席神学家，发表了大量反对耶稣会宽松告解实践的论著。运动吸引了法国最杰出的知识分子——布莱兹·帕斯卡尔的《致外省人书》（1656—1657）是攻击耶稣会决疑论的经典之作。冉森主义强调人性堕落、神圣恩宠的不可抗拒性和预定论色彩，在天主教框架内呈现出类似加尔文主义的严肃气质。这一运动不仅是神学争论，更触及法国社会深层问题——教会自主权与教皇权威的关系、宗教虔诚与世俗享乐的对立、知识精英与权力中心的紧张关系——其影响贯穿整个17和18世纪。", "en": "Jansenism (Jansénisme) was one of the most important theological and cultural movements within 17th-century French Catholicism, originating from Dutch theologian Cornelius Jansen's radical interpretation of Augustinian doctrine on grace. Port-Royal Abbey served as the movement's spiritual center, where Abbess Angélique Arnauld transformed the convent into a community of rigorous piety and asceticism. Antoine Arnauld ('le Grand Arnauld'), as the chief Jansenist theologian, published numerous works opposing Jesuit lax confessional practices. The movement attracted France's finest intellectuals—Blaise Pascal's Provincial Letters (1656–1657) became a classic attack on Jesuit casuistry. Jansenism emphasized human depravity, the irresistibility of divine grace, and a predestinarian outlook that gave it a quasi-Calvinist severity within the Catholic framework. The movement was not merely a theological dispute but touched on deep-seated tensions in French society—the relationship between church autonomy and papal authority, the opposition between religious austerity and worldly pleasure, and the strained relationship between intellectual elites and power centers—and its influence pervaded the entire 17th and 18th centuries." },
+          "relationship": {
+            "zh": "冉森主义者在宗教上挑战耶稣会的神学霸权，在政治上与部分高等法院法官和知识精英结成同盟。马扎然与王权将冉森主义视为潜在的分裂力量，但1648年时尚未对其发动全面压制。冉森主义与投石党运动存在部分人员和思想上的交集。",
+            "en": "Jansenists challenged the Jesuits' theological dominance on the religious front and allied with some parlementaire magistrates and intellectual elites on the political front. Mazarin and the crown regarded Jansenism as a potential divisive force, though full-scale suppression had not yet begun by 1648. Jansenism shared some personnel and intellectual connections with the Fronde movement."
+          },
+          "description": {
+            "zh": "冉森主义（Jansénisme）是17世纪法国天主教内部最重要的神学与文化运动之一，源于荷兰神学家科尼利厄斯·冉森对奥古斯丁恩宠论的激进诠释。波尔-罗亚尔修道院是运动的精神中心，院长安热利克·阿尔诺修女将修道院改造为严格苦行的虔诚社区。安东尼·阿尔诺（「大阿尔诺」）作为冉森派首席神学家，发表了大量反对耶稣会宽松告解实践的论著。运动吸引了法国最杰出的知识分子——布莱兹·帕斯卡尔的《致外省人书》（1656—1657）是攻击耶稣会决疑论的经典之作。冉森主义强调人性堕落、神圣恩宠的不可抗拒性和预定论色彩，在天主教框架内呈现出类似加尔文主义的严肃气质。这一运动不仅是神学争论，更触及法国社会深层问题——教会自主权与教皇权威的关系、宗教虔诚与世俗享乐的对立、知识精英与权力中心的紧张关系——其影响贯穿整个17和18世纪。",
+            "en": "Jansenism (Jansénisme) was one of the most important theological and cultural movements within 17th-century French Catholicism, originating from Dutch theologian Cornelius Jansen's radical interpretation of Augustinian doctrine on grace. Port-Royal Abbey served as the movement's spiritual center, where Abbess Angélique Arnauld transformed the convent into a community of rigorous piety and asceticism. Antoine Arnauld ('le Grand Arnauld'), as the chief Jansenist theologian, published numerous works opposing Jesuit lax confessional practices. The movement attracted France's finest intellectuals—Blaise Pascal's Provincial Letters (1656–1657) became a classic attack on Jesuit casuistry. Jansenism emphasized human depravity, the irresistibility of divine grace, and a predestinarian outlook that gave it a quasi-Calvinist severity within the Catholic framework. The movement was not merely a theological dispute but touched on deep-seated tensions in French society—the relationship between church autonomy and papal authority, the opposition between religious austerity and worldly pleasure, and the strained relationship between intellectual elites and power centers—and its influence pervaded the entire 17th and 18th centuries."
+          },
           "keyFigures": [
-            { "name": { "zh": "安东尼·阿尔诺", "en": "Antoine Arnauld" }, "title": { "zh": "神学博士", "en": "Doctor of Theology" }, "role": { "zh": "冉森主义首席神学家，波尔-罗亚尔运动的知识领袖", "en": "Chief Jansenist theologian and intellectual leader of the Port-Royal movement" } },
-            { "name": { "zh": "布莱兹·帕斯卡尔", "en": "Blaise Pascal" }, "title": { "zh": "数学家 / 哲学家", "en": "Mathematician / Philosopher" }, "role": { "zh": "冉森主义最著名的知识分子同情者，《致外省人书》作者", "en": "Most famous intellectual sympathizer of Jansenism, author of the Provincial Letters" } },
-            { "name": { "zh": "安热利克·阿尔诺修女", "en": "Mère Angélique Arnauld" }, "title": { "zh": "波尔-罗亚尔修道院院长", "en": "Abbess of Port-Royal" }, "role": { "zh": "修道院改革者，冉森主义精神生活的核心人物", "en": "Convent reformer and central figure in Jansenist spiritual life" } }
+            {
+              "name": {
+                "zh": "安东尼·阿尔诺",
+                "en": "Antoine Arnauld"
+              },
+              "title": {
+                "zh": "神学博士",
+                "en": "Doctor of Theology"
+              },
+              "role": {
+                "zh": "冉森主义首席神学家，波尔-罗亚尔运动的知识领袖",
+                "en": "Chief Jansenist theologian and intellectual leader of the Port-Royal movement"
+              }
+            },
+            {
+              "name": {
+                "zh": "布莱兹·帕斯卡尔",
+                "en": "Blaise Pascal"
+              },
+              "title": {
+                "zh": "数学家 / 哲学家",
+                "en": "Mathematician / Philosopher"
+              },
+              "role": {
+                "zh": "冉森主义最著名的知识分子同情者，《致外省人书》作者",
+                "en": "Most famous intellectual sympathizer of Jansenism, author of the Provincial Letters"
+              }
+            },
+            {
+              "name": {
+                "zh": "安热利克·阿尔诺修女",
+                "en": "Mère Angélique Arnauld"
+              },
+              "title": {
+                "zh": "波尔-罗亚尔修道院院长",
+                "en": "Abbess of Port-Royal"
+              },
+              "role": {
+                "zh": "修道院改革者，冉森主义精神生活的核心人物",
+                "en": "Convent reformer and central figure in Jansenist spiritual life"
+              }
+            }
           ]
         }
       ]
@@ -14472,6 +15242,24 @@
         "keyInnovations": {
           "zh": "远洋商船与战舰设计、风车动力工业化应用、精密地图与海图、金融票据与股份制度、海事保险、火器操典、光学镜片与显微镜制作、排水与堤防工程",
           "en": "Ocean-going merchantman and warship design, industrial application of windmill power, precise cartography and sea charts, financial paper and joint-stock organization, marine insurance, firearm drill systems, optical lens and microscope production, and drainage and dike engineering"
+        },
+        "sectors": {
+          "navalAndMaritime": {
+            "zh": "海军与航海技术全球领先：荷兰东印度公司（VOC）拥有全球最大的商船队。荷兰造船业（弗利辛根、阿姆斯特丹造船厂）效率全球最高，弗鲁伊特型商船是当时最经济的远洋船只。荷兰海军在三次英荷战争中证明实力。",
+            "en": "Global naval and maritime leader: the VOC (Dutch East India Company) has the world's largest merchant fleet. Dutch shipbuilding (Flushing, Amsterdam yards) is the world's most efficient; the fluyt merchantman is the era's most economical ocean vessel. The Dutch Navy proves its strength in three Anglo-Dutch Wars."
+          },
+          "opticsAndScience": {
+            "zh": "光学与科学仪器先驱：列文虎克发明显微镜（约1670年代），惠更斯改进望远镜和钟表。荷兰是地图制图学（布劳地图集）和航海仪器制造中心。莱顿大学是欧洲重要的科学研究机构。",
+            "en": "Optics and scientific instruments pioneer: Leeuwenhoek invents the microscope (~1670s); Huygens improves telescopes and clocks. The Netherlands is the center of cartography (Blaeu Atlas) and navigation instruments. Leiden University is a major European scientific institution."
+          },
+          "financialInnovation": {
+            "zh": "金融创新全球最先进：阿姆斯特丹证券交易所（1602年）是世界首个股票交易所。阿姆斯特丹银行创立了现代银行体系雏形。荷兰发明了期货、期权等金融工具。",
+            "en": "Most advanced financial innovation globally: the Amsterdam Stock Exchange (1602) is the world's first stock exchange. The Bank of Amsterdam creates the prototype of modern banking. The Dutch invent financial instruments like futures and options."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1648年的荷兰共和国正处于'黄金时代'巅峰，在航海、光学、金融创新和科学研究方面全球领先。VOC是人类历史上第一家跨国公司，荷兰金融体系是现代资本主义的雏形。但荷兰的弱点在于国土和人口太小，无法维持长期的军事优势——英法两大强国的崛起将终结荷兰的全球霸权。",
+          "en": "The Dutch Republic in 1648 is at the peak of its 'Golden Age,' leading globally in navigation, optics, financial innovation, and scientific research. The VOC is history's first multinational corporation; the Dutch financial system is the prototype of modern capitalism. But the Netherlands' weakness is its small territory and population, unable to sustain long-term military advantage — the rise of England and France will end Dutch global hegemony."
         }
       },
       "assessment": {
@@ -15069,6 +15857,20 @@
         "keyInnovations": {
           "zh": "改进的火器操练制度、较成熟的财政征收文书体系、活跃的印刷舆论网络、远洋航海技术、地图学、煤炭利用扩大以及实验自然哲学的早期发展。英格兰在军政组织和商业金融工具方面尤其显示出近代化趋势。",
           "en": "Key developments included improved firearms drill systems, more mature documentary methods of fiscal extraction, an active print-public sphere, oceanic navigation techniques, cartography, expanding coal use, and early experimental natural philosophy. England showed especially strong modernizing tendencies in military-administrative organization and commercial-financial instruments."
+        },
+        "sectors": {
+          "navalTechnology": {
+            "zh": "海军技术快速崛起：克伦威尔的'航海条例'（1651年）推动英国海军快速扩张。英国造船技术从荷兰学习并快速改进。第一次英荷战争（1652-54年）证明英国海军已成为欧洲海上强国。",
+            "en": "Rapidly rising naval technology: Cromwell's Navigation Acts (1651) drive rapid English naval expansion. English shipbuilding learns from and rapidly improves upon Dutch techniques. The First Anglo-Dutch War (1652-54) proves England a European naval power."
+          },
+          "scientificRevolution": {
+            "zh": "科学革命萌芽：牛顿即将在数十年后发表《自然哲学的数学原理》。罗伯特·波义耳的化学研究和罗伯特·胡克的显微镜研究正开展中。皇家学会即将成立（1660年）。英国正从'科学输入国'转变为'科学输出国'。",
+            "en": "Scientific Revolution emerging: Newton will publish Principia in decades. Robert Boyle's chemistry and Robert Hooke's microscopy are underway. The Royal Society is about to be founded (1660). England is transitioning from 'science importer' to 'science exporter.'"
+          }
+        },
+        "overallAssessment": {
+          "zh": "1648年的英国正处于从中等强国向全球大国转型的关键时期。海军力量快速增长，科学革命的种子正在播种。克伦威尔的军事和航海政策为日后大英帝国的崛起奠定基础。但内战的创伤和政治动荡暂时抑制了经济和技术发展。",
+          "en": "England in 1648 is at a critical transition from a mid-tier power to a global one. Naval power is growing rapidly; seeds of the Scientific Revolution are being planted. Cromwell's military and navigation policies lay foundations for the future British Empire. But Civil War trauma and political turmoil temporarily suppress economic and technological development."
         }
       },
       "assessment": {
@@ -16981,6 +17783,20 @@
         "keyInnovations": {
           "zh": "关键优势包括铜铁冶炼与出口工业、国家档案和统计管理、火器步兵战术改革、机动炮兵、棱堡要塞体系、改良战舰建造与北方寒地军需组织。瑞典并非欧洲最富技术创新的国家，但在将资源、行政和军事技术整合为国家力量方面表现极强。",
           "en": "Key strengths included copper and iron metallurgy for export industry, state archival and statistical administration, reformed firearms infantry tactics, mobile artillery, bastion fortification systems, improved warship construction, and northern military logistics. Sweden was not Europe's single most innovative state, but it excelled at integrating resources, administration, and military technique into state power."
+        },
+        "sectors": {
+          "militaryInnovation": {
+            "zh": "军事创新欧洲领先：古斯塔夫二世（阿道夫）的军事改革彻底改变了欧洲战争方式——轻型火炮的机动运用、线式战术和混合兵种编制。瑞典军队被视为三十年战争中最具创新性的军事力量。瑞典铜和铁矿资源支撑军工产业。",
+            "en": "European military innovation leader: Gustavus Adolphus's reforms revolutionized European warfare — mobile light artillery, linear tactics, and combined arms formations. The Swedish army is considered the Thirty Years' War's most innovative military force. Swedish copper and iron resources support the arms industry."
+          },
+          "miningAndMetallurgy": {
+            "zh": "采矿与冶金技术先进：法伦铜矿是当时欧洲最大的铜矿，瑞典是全球最大的铜出口国和重要的铁出口国。先进的矿井排水和冶炼技术使瑞典成为欧洲的金属供应中心。",
+            "en": "Advanced mining and metallurgy: the Falun copper mine is Europe's largest; Sweden is the world's largest copper exporter and a major iron exporter. Advanced mine drainage and smelting technology makes Sweden Europe's metal supply center."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1648年的瑞典帝国凭借军事创新和矿业资源成为欧洲大国。古斯塔夫·阿道夫的军事改革影响了此后两个世纪的欧洲战争方式。但瑞典人口稀少（约150万），帝国扩张过度——波罗的海帝国的维持成本远超国力。这一矛盾将在1700年大北方战争中暴露。",
+          "en": "The Swedish Empire in 1648 became a European great power through military innovation and mining resources. Gustavus Adolphus's military reforms influenced European warfare for two centuries. But Sweden's sparse population (~1.5 million) means imperial overreach — Baltic Empire maintenance costs far exceed national capacity. This contradiction will be exposed in the 1700 Great Northern War."
         }
       },
       "assessment": {

@@ -634,6 +634,20 @@
         "keyInnovations": {
           "zh": "大规模电气化、拖拉机化农业装备、现代坦克设计、高强度装甲钢、航空发动机制造、地下铁路工程、无线电与重型机械体系。苏联在火箭研究、数学、物理和工程教育上也奠定了后续突破基础。",
           "en": "Large-scale electrification, tractorized agricultural equipment, modern tank design, high-strength armored steel, aircraft engine manufacturing, metro construction, radio systems, and heavy machinery complexes. The USSR also laid foundations for later breakthroughs in rocketry, mathematics, physics, and engineering education."
+        },
+        "sectors": {
+          "heavyIndustry": {
+            "zh": "重工业产能巨大但质量参差：斯大林五年计划使苏联钢铁产量跃居世界前列，拖拉机厂可快速转产坦克。T-34坦克正在研发中，将成为二战最优秀坦克之一。但'大清洗'严重削弱了军事技术人才和指挥层。",
+            "en": "Massive heavy industrial capacity but uneven quality: Stalin's Five-Year Plans propelled Soviet steel output to world-leading levels; tractor factories can rapidly convert to tank production. The T-34 is in development and will become one of WWII's finest tanks. But the Great Purge severely weakened military-technical talent and command structure."
+          },
+          "militaryTech": {
+            "zh": "军事技术潜力巨大但受创：喀秋莎火箭炮（BM-13）研发中，将成为苏军标志性武器。IL-2攻击机设计中。但大清洗导致大量军事科学家和工程师被处决或流放，军事技术创新严重受阻。芬兰冬季战争（1939-40）将暴露苏军技术和训练上的严重缺陷。",
+            "en": "Enormous military tech potential but damaged: Katyusha rocket launchers (BM-13) in development, destined to become an iconic Soviet weapon. IL-2 ground attack aircraft in design. But the Great Purge saw masses of military scientists and engineers executed or exiled, severely hindering innovation. The Winter War against Finland (1939-40) will expose serious Soviet military technology and training deficiencies."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1939年的苏联拥有庞大的重工业基础和巨大的军事技术潜力，但'大清洗'造成的人才断层严重削弱了科技创新能力。苏联科技的核心优势在于'数量压倒质量'的动员能力和将民用工业快速转产军用的体制优势。T-34和喀秋莎将成为战争转折点的关键武器，但这些成果要到1941年后才能充分展现。",
+          "en": "The USSR in 1939 has a massive heavy industrial base and enormous military tech potential, but the Great Purge created a devastating talent gap that severely weakened innovation. Soviet tech's core advantage lies in 'quantity over quality' mobilization capability and the systemic ability to rapidly convert civilian industry to military production. The T-34 and Katyusha will become pivotal war-turning weapons, but these achievements won't fully materialize until after 1941."
         }
       },
       "assessment": {
@@ -1546,6 +1560,24 @@
         "keyInnovations": {
           "zh": "关键技术包括链式本土雷达系统、综合防空指挥、全金属单翼战斗机、航空发动机改进、海军声呐与无线电、密码分析能力、先进船坞工程、电网扩展和大规模工业标准化生产。",
           "en": "Key technologies included the Chain Home radar network, integrated air-defense command, all-metal monoplane fighters, improved aero engines, naval sonar and radio, cryptanalytic capabilities, advanced dockyard engineering, expanding electrical grids, and large-scale standardized industrial production."
+        },
+        "sectors": {
+          "radarAndIntelligence": {
+            "zh": "雷达与情报技术全球领先：英国率先建成实用化雷达预警网络（Chain Home），将在不列颠空战中发挥决定性作用。布莱切利园密码破解中心汇聚全球顶尖数学家（图灵等），恩尼格玛破译改变战争进程。",
+            "en": "Global leader in radar and intelligence: Britain first deployed an operational radar early warning network (Chain Home), which will prove decisive in the Battle of Britain. Bletchley Park codebreaking center gathers the world's top mathematicians (Turing et al.); Enigma decryption will alter the course of the war."
+          },
+          "navalAndAerospace": {
+            "zh": "海军与航空技术世界前列：皇家海军仍是全球最大海军之一，航母战术应用领先。喷火式和飓风式战斗机将在不列颠空战中证明价值。罗尔斯-罗伊斯梅林引擎是盟军最重要的航空发动机之一。但陆军装甲技术落后于德国。",
+            "en": "World-class naval and aerospace tech: the Royal Navy remains one of the world's largest; carrier warfare tactics lead. Spitfire and Hurricane fighters will prove their worth in the Battle of Britain. Rolls-Royce Merlin is one of the Allies' most important aero-engines. But army armored technology lags behind Germany."
+          },
+          "nuclearResearch": {
+            "zh": "核物理研究处于前沿：英国MAUD委员会率先确认原子弹的可行性，但因战争资源压力将核研究成果移交美国曼哈顿计划。弗里施-派尔斯备忘录（1940年）是核武器可行性的关键文件。",
+            "en": "Frontier nuclear physics research: the British MAUD Committee first confirmed atomic bomb feasibility, but wartime resource pressures led to transferring nuclear research to the US Manhattan Project. The Frisch-Peierls Memorandum (1940) is the key document on nuclear weapons feasibility."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1939年的英国科技以雷达、情报技术和海空力量为核心优势。Chain Home雷达网和布莱切利园密码破解将成为二战中最具战略意义的科技贡献。罗尔斯-罗伊斯发动机技术支撑盟军空中力量。但工业产能不如美国和德国，需要依赖大英帝国全球资源网络和美国援助来维持战争能力。",
+          "en": "Britain's tech in 1939 centers on radar, intelligence, and naval-air power. Chain Home radar and Bletchley Park codebreaking will become WWII's most strategically significant tech contributions. Rolls-Royce engine technology underpins Allied air power. But industrial capacity falls short of the US and Germany, requiring the British Empire's global resource network and US aid to sustain the war effort."
         }
       },
       "assessment": {
@@ -3276,6 +3308,20 @@
         "keyInnovations": {
           "zh": "法国在航空工程、汽车制造、坦克设计、重炮、无线电、电气化、化工、医学和电影技术方面具有重要成就；同时拥有马奇诺防线等大规模现代防御工程，以及成熟的铁路与城市基础设施体系",
           "en": "France achieved important advances in aeronautical engineering, automobile manufacturing, tank design, heavy artillery, radio, electrification, chemicals, medicine, and film technology; it also possessed large-scale modern defensive works such as the Maginot Line, along with mature rail and urban infrastructure systems"
+        },
+        "sectors": {
+          "militaryEngineering": {
+            "zh": "军事工程有实力但理念过时：马奇诺防线代表最先进的要塞工程技术，但防御理念停留在一战。索玛S-35和B1重型坦克在装甲和火力上不逊于德国坦克，但战术运用分散且通信指挥落后。",
+            "en": "Capable military engineering but outdated doctrine: the Maginot Line represents the most advanced fortress engineering, but its defensive concept is stuck in WWI. Somua S35 and B1 heavy tanks match German tanks in armor and firepower, but tactical deployment is dispersed with poor communications and command."
+          },
+          "aviationAndAuto": {
+            "zh": "航空与汽车工业有基础：雷诺和雪铁龙在汽车制造领域有实力。但航空工业因1936年国有化改革而产能混乱，战斗机产量严重不足。莫拉纳-索尔尼MS.406等战斗机性能落后于梅塞施密特Bf-109。",
+            "en": "Aviation and auto industry has foundations: Renault and Citroën have automotive manufacturing strength. But aviation industry capacity is disrupted by 1936 nationalization reforms, with severely insufficient fighter production. MS.406 and other fighters underperform the Bf-109."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1939年的法国拥有世界级的要塞工程和重型坦克，但军事理念停留在一战思维。工业产能虽可观但动员效率低下。航空工业的国有化改革导致产能混乱。法国科技的悲剧在于硬件不差但软件（战术理念、指挥通信、动员体制）严重落后于德国，这将导致1940年的灾难性败退。",
+          "en": "France in 1939 has world-class fortress engineering and heavy tanks, but military doctrine is stuck in WWI thinking. Industrial capacity is substantial but mobilization efficiency is low. Aviation nationalization reforms caused production chaos. France's tech tragedy is that hardware wasn't inferior but software (tactics, command communications, mobilization systems) severely lagged Germany — leading to the catastrophic 1940 defeat."
         }
       },
       "assessment": {
@@ -4116,6 +4162,24 @@
         "keyInnovations": {
           "zh": "关键技术优势包括先进化工、合成燃料与合成橡胶、现代高速公路体系、无线电通信、战术空地协同、装甲兵运用、精密机械与光学工业，以及高水平的工业工程组织能力",
           "en": "Key technological strengths included advanced chemistry, synthetic fuel and rubber, a modern autobahn system, radio communications, tactical air-ground coordination, armored warfare application, precision machinery and optics, and highly developed industrial engineering capacity"
+        },
+        "sectors": {
+          "militaryEngineering": {
+            "zh": "军事工程全球前沿：闪击战理论与装甲集群战术革新现代战争形态。虎式坦克、Me-262喷气式战斗机（研发中）、V-2弹道导弹（研发中）代表尖端军事技术。但战略轰炸能力不如英美，核武器研发（海森堡项目）进展远落后于美国曼哈顿计划。",
+            "en": "Frontier military engineering: Blitzkrieg theory and armored group tactics revolutionize modern warfare. Tiger tanks, Me-262 jet fighters (in development), V-2 ballistic missiles (in development) represent cutting-edge military tech. But strategic bombing capability lags behind Britain/US; nuclear weapons R&D (Heisenberg project) far behind the US Manhattan Project."
+          },
+          "chemicalsAndIndustrial": {
+            "zh": "化工与合成材料全球领先：IG法本（I.G. Farben）是全球最大化工企业，合成橡胶（丁纳橡胶）和合成燃料技术缓解了资源封锁压力。克虏伯钢铁和蒂森集团构成强大的重工业基础。哈伯-博施法固氮技术在农业和军事上均至关重要。",
+            "en": "Global leader in chemicals and synthetic materials: IG Farben is the world's largest chemical company; synthetic rubber (Buna) and synthetic fuel technologies alleviate resource blockade pressures. Krupp and Thyssen form a powerful heavy industrial base. Haber-Bosch nitrogen fixation is critical for both agriculture and military."
+          },
+          "opticsAndPrecision": {
+            "zh": "光学与精密仪器世界顶级：蔡司光学瞄准镜、恩尼格玛密码机、高精度机床制造体现德国精密工程传统。但密码技术将被英国图灵团队破解。",
+            "en": "World-class optics and precision instruments: Zeiss optical sights, Enigma cipher machines, and high-precision machine tools embody the German precision engineering tradition. But Enigma will be broken by Turing's team at Bletchley Park."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1939年的德国拥有全球最先进的军事工程和化工技术，闪击战理论将在战争初期取得惊人胜利。但战略资源（石油、稀有金属）严重不足，合成替代品难以完全弥补。核武器研发方向错误将成为致命短板。德国科技虽然精锐但缺乏持久战所需的资源工业深度。",
+          "en": "Germany in 1939 possesses the world's most advanced military engineering and chemical technology; Blitzkrieg will achieve stunning early victories. But critical strategic resource shortages (oil, rare metals) cannot be fully compensated by synthetics. Misdirected nuclear research will prove a fatal weakness. German tech is elite but lacks the resource-industrial depth needed for a protracted war."
         }
       },
       "assessment": {
@@ -8835,6 +8899,16 @@
         "keyInnovations": {
           "zh": "大规模水电开发、远程铁路与港口体系、纸浆造纸工业、镍和有色金属冶炼、无线电广播、寒带工程经验、训练航空体系，以及逐步转向军用车辆、舰艇与飞机生产的工业能力",
           "en": "Large-scale hydroelectric development, long-distance rail and port systems, pulp and paper industry, nickel and non-ferrous metal smelting, radio broadcasting, cold-climate engineering experience, aviation training systems, and an industrial capacity increasingly shifting toward the production of military vehicles, ships, and aircraft"
+        },
+        "sectors": {
+          "industrialAndResources": {
+            "zh": "工业与资源开发能力强：加拿大在小麦生产、矿产（镍、铝）和林业方面全球领先。战时将成为大英帝国最重要的军工后勤基地——大英联邦航空训练计划（BCATP）将在加拿大训练超过13万名飞行员。加拿大的工业产能将在战争中急剧扩张。",
+            "en": "Strong industrial and resource development: Canada leads globally in wheat, minerals (nickel, aluminum), and forestry. Will become the British Empire's most important military-industrial logistics base in wartime — the BCATP will train over 130,000 pilots in Canada. Canadian industrial capacity will expand dramatically during the war."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1939年的加拿大作为大英帝国的自治领，拥有丰富的自然资源和快速增长的工业能力。战争将使加拿大从'资源出口国'转变为'军工强国'——镍、铝等战略物资和大规模飞行员训练是加拿大对盟军胜利的关键贡献。加拿大科技的战时发展将为战后成为独立的工业化国家奠定基础。",
+          "en": "Canada in 1939, as a British Empire dominion, has abundant natural resources and rapidly growing industrial capability. The war will transform Canada from 'resource exporter' to 'military-industrial power' — strategic materials (nickel, aluminum) and large-scale pilot training are Canada's key contributions to Allied victory. Wartime tech development will lay foundations for postwar emergence as an independent industrialized nation."
         }
       },
       "assessment": {
@@ -10139,6 +10213,24 @@
         "keyInnovations": {
           "zh": "美国在汽车流水线、大规模电气化、航空制造、无线电广播、电影工业、石油化工、合成材料、农业机械化、摩天楼结构、电话网络和工业标准化方面处于世界先进水平。1939年前后雷达、电子、长程轰炸机、精密机床与大规模军工转换能力正迅速发展。",
           "en": "The United States stood at the forefront in automotive assembly lines, mass electrification, aircraft manufacture, radio broadcasting, the film industry, petrochemicals, synthetic materials, agricultural mechanization, skyscraper construction, telephone networks, and industrial standardization. Around 1939 radar, electronics, long-range bombers, precision machine tools, and the capacity for large-scale military-industrial conversion were developing rapidly."
+        },
+        "sectors": {
+          "industrialCapacity": {
+            "zh": "工业产能全球最大：美国拥有全球最大的钢铁、汽车和石油产业。福特、通用汽车的大规模生产体系将在战时转产军事装备，成为'民主国家的兵工厂'。但1939年军工产能尚未动员，军队规模仅世界第18位。",
+            "en": "World's largest industrial capacity: the US has the world's largest steel, automotive, and oil industries. Ford and GM's mass production systems will convert to military equipment in wartime, becoming the 'Arsenal of Democracy.' But in 1939, military-industrial capacity is not yet mobilized; army size ranks only 18th globally."
+          },
+          "aviationAndEngineering": {
+            "zh": "航空工业快速发展：波音、洛克希德、道格拉斯等航空公司正在研发新一代飞机。B-17轰炸机代表美国战略轰炸理念。但战斗机技术暂时落后于欧洲（梅塞施密特Bf-109、喷火式）。",
+            "en": "Rapidly developing aviation: Boeing, Lockheed, Douglas are developing next-generation aircraft. The B-17 bomber represents American strategic bombing doctrine. But fighter technology temporarily lags behind Europe (Bf-109, Spitfire)."
+          },
+          "nuclearResearch": {
+            "zh": "核物理研究力量集结中：爱因斯坦1939年8月致信罗斯福警告德国可能研制原子弹，直接推动曼哈顿计划的筹备。大量欧洲流亡物理学家（费米、西拉德、特勒等）汇聚美国，使美国核研究人才全球最强。",
+            "en": "Nuclear physics research forces assembling: Einstein's August 1939 letter to Roosevelt warning of German atomic bomb potential directly spurs Manhattan Project preparations. Masses of European émigré physicists (Fermi, Szilard, Teller) converge on the US, giving it the world's strongest nuclear research talent."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1939年的美国拥有全球最大的工业产能但军事力量尚未动员。核物理人才储备因欧洲流亡科学家涌入而达到全球最强。一旦战争机器全面启动（1941年后），美国的工业产能将转化为压倒性的军事优势——飞机、坦克、舰船的产量将超过所有交战国总和。曼哈顿计划将在6年内改变人类历史。",
+          "en": "The US in 1939 has the world's largest industrial capacity but its military is not yet mobilized. Nuclear physics talent is the world's strongest thanks to European émigré scientists. Once the war machine fully activates (post-1941), US industrial capacity will translate into overwhelming military advantage — aircraft, tank, and ship production will exceed all belligerents combined. The Manhattan Project will change human history within 6 years."
         }
       },
       "assessment": {
@@ -11581,6 +11673,20 @@
         "keyInnovations": {
           "zh": "航母舰队运用、九六式与零式战机研发路径、长矛鱼雷技术、现代造船、军用无线电、化学工业、铁路电气化与精密机械制造",
           "en": "Carrier fleet operations, the development path leading to aircraft such as the Type 96 and Zero, Long Lance torpedo technology, modern shipbuilding, military radio, chemical industry, railway electrification, and precision machinery manufacturing"
+        },
+        "sectors": {
+          "navalTechnology": {
+            "zh": "海军技术世界前列：日本海军航空兵实力全球顶尖，零式战斗机（研发中）将成为太平洋战争初期最优秀的舰载战斗机。大和级战列舰（建造中）代表战列舰技术巅峰。航母机动部队战术领先全球。",
+            "en": "World-class naval technology: Japanese naval aviation is among the world's best; the Zero fighter (in development) will become the Pacific War's early-stage premier carrier fighter. Yamato-class battleships (under construction) represent the zenith of battleship technology. Carrier strike force tactics lead globally."
+          },
+          "opticsAndInstruments": {
+            "zh": "光学仪器精密：日本光学（后来的尼康）为海军提供精密瞄准镜和测距仪。精密光学制造能力为战后相机和电子产业奠定基础。",
+            "en": "Precise optical instruments: Nippon Kogaku (later Nikon) provides precision targeting optics and rangefinders for the Navy. Precision optical manufacturing capability lays the foundation for post-war camera and electronics industries."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1939年的日本在海军航空技术方面达到世界顶级水平，零式战斗机和航母战术将在太平洋战争初期取得惊人战果。但工业产能远不如美国（钢铁产量仅为美国1/10），石油几乎完全依赖进口。一旦美国工业机器全面运转，日本将无法在消耗战中维持。科技短板在于电子和雷达技术明显落后于英美。",
+          "en": "Japan in 1939 achieves world-class naval aviation technology; the Zero and carrier tactics will produce stunning early Pacific War results. But industrial capacity is far inferior to the US (steel output only 1/10th). Oil is almost entirely imported. Once US industry fully mobilizes, Japan cannot sustain a war of attrition. Key tech weakness: electronics and radar clearly behind Britain/US."
         }
       },
       "assessment": {

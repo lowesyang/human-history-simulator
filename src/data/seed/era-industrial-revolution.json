@@ -16654,6 +16654,20 @@
         "keyInnovations": {
           "zh": "铁路建设、焦炭炼铁与近代煤铁工业、系统化矿业技术、现代参谋制度、测绘与统计行政、洪堡式大学科研体系、电报试验与机械制造能力的扩张",
           "en": "Railway construction, coke-based iron production and modern coal-iron industry, systematized mining techniques, the modern general staff system, cartographic and statistical administration, the Humboldtian university-research model, telegraph experimentation, and expanding mechanical manufacturing capacity"
+        },
+        "sectors": {
+          "militaryReform": {
+            "zh": "军事教育与改革领先欧陆：普鲁士总参谋部体制是全球最先进的军事组织。克虏伯钢铁开始生产铸钢大炮（将在1866年和1870年战争中证明威力）。后膛装填步枪技术领先。普鲁士军事学院培养体系被各国效仿。",
+            "en": "Leading continental military education and reform: the Prussian General Staff system is the world's most advanced military organization. Krupp begins producing cast-steel cannons (to prove decisive in 1866 and 1870 wars). Breech-loading rifle technology leads. The Prussian military academy system is emulated globally."
+          },
+          "educationAndScience": {
+            "zh": "教育与科学体系欧洲最强：洪堡大学改革（1810年）创立了现代研究型大学模式。普鲁士识字率全欧最高。化学和物理研究在德语大学蓬勃发展。关税同盟（Zollverein）正推动德意志经济统合。",
+            "en": "Europe's strongest education and science system: Humboldt's university reform (1810) created the modern research university model. Prussian literacy rates are Europe's highest. Chemistry and physics research flourishes in German-speaking universities. The Zollverein customs union drives German economic integration."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1840年的普鲁士虽然工业化程度远不如英国，但在军事组织和教育科学体系方面已建立显著优势。克虏伯钢铁和总参谋部体制将在30年后统一德意志。洪堡大学模式将使德国在19世纪后半叶成为全球科学研究中心。普鲁士的核心竞争力不在工厂数量，而在制度创新和人才培养。",
+          "en": "Prussia in 1840, though far less industrialized than Britain, has established significant advantages in military organization and education-science systems. Krupp steel and the General Staff system will unify Germany in 30 years. The Humboldt university model will make Germany the global science research center in the latter 19th century. Prussia's core competitiveness lies not in factory count but in institutional innovation and talent cultivation."
         }
       },
       "assessment": {
@@ -17497,6 +17511,20 @@
         "keyInnovations": {
           "zh": "蒸汽机在矿业、纺织和交通中的应用不断扩大；铁路建设开始成网；冶金、机械制造和化学加工逐步发展；电报尚处早期阶段。法国在桥梁、公路、炮兵制造、丝织机械、精密工艺与理工教育方面具有突出实力。",
           "en": "The application of steam power in mining, textiles, and transport continued to expand; railway building was beginning to form networks; metallurgy, machine production, and chemical processing were developing steadily; telegraphy remained at an early stage. France possessed notable strengths in bridges, roads, artillery manufacture, silk machinery, precision crafts, and technical education."
+        },
+        "sectors": {
+          "scienceAndEngineering": {
+            "zh": "科学与工程教育领先欧陆：巴黎综合理工学院（Polytechnique，1794年创立）培养了大量工程师和科学家，是法国科技发展的人才基础。拉瓦锡化学革命的遗产使法国化学研究领先。达盖尔1839年发明摄影术轰动世界。",
+            "en": "Continental leader in science and engineering education: École Polytechnique (founded 1794) trains masses of engineers and scientists, forming the talent base for French tech. Lavoisier's chemistry revolution legacy keeps French chemistry research leading. Daguerre's 1839 invention of photography stuns the world."
+          },
+          "railwayAndInfrastructure": {
+            "zh": "铁路与基础设施建设追赶英国：法国1837年开通第一条铁路（巴黎-圣日耳曼），铁路网络快速扩张但规模仍不到英国一半。法国的优势在于铁路工程的系统规划（中央集权体制推动统一标准）。",
+            "en": "Railway and infrastructure catching up to Britain: France opened its first railway in 1837 (Paris-Saint-Germain); the rail network expands rapidly but is still less than half of Britain's. France's advantage is systematic railway planning (centralized governance promoting unified standards)."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1840年的法国是仅次于英国的第二工业化国家，但与英国的差距仍然显著（蒸汽机数量不到英国1/5）。法国的优势在于科学教育体系和创新能力——摄影术的发明、化学研究的领先证明法国在'基础科学到应用创新'的链条上有独特优势。但法国大革命和拿破仑战争的政治动荡延缓了工业化进程。",
+          "en": "France in 1840 is the second most industrialized nation after Britain, but the gap remains significant (steam engine count less than 1/5 of Britain's). France's advantage lies in its scientific education system and innovation — photography's invention and chemistry research leadership prove France has unique strengths in the 'basic science to applied innovation' chain. But political turmoil from the Revolution and Napoleonic Wars delayed industrialization."
         }
       },
       "assessment": {
@@ -18961,6 +18989,24 @@
         "keyInnovations": {
           "zh": "关键创新包括高压与改良蒸汽机、机械纺织、焦炭炼铁、铁路机车、电报的早期实用化、现代船坞工程、精密机床与大规模煤炭采掘。英国在铁路建设、蒸汽航运、工厂制度、金融票据与海军后勤技术方面处于世界领先地位。",
           "en": "Key innovations included high-pressure and improved steam engines, mechanized textile production, coke-fueled iron smelting, railway locomotion, early practical telegraphy, modern dock engineering, precision machine tools, and large-scale coal extraction. Britain stood at the world forefront in railway building, steam navigation, factory organization, financial paper instruments, and naval logistical technology."
+        },
+        "sectors": {
+          "steamAndMachinery": {
+            "zh": "蒸汽动力与机械制造全球绝对领先：瓦特改良蒸汽机已广泛应用于采矿、纺织和运输。英国拥有全球一半以上的蒸汽机。大不列颠号蒸汽铁船（1843年下水）代表造船技术巅峰。机床制造（莫兹利车床）是工业革命的核心使能技术。",
+            "en": "Absolute global leader in steam power and machinery: Watt's improved steam engine is widely used in mining, textiles, and transport. Britain possesses over half the world's steam engines. SS Great Britain (launching 1843) represents the pinnacle of shipbuilding. Machine tool manufacturing (Maudslay lathe) is the core enabling technology of the Industrial Revolution."
+          },
+          "railwayAndTransport": {
+            "zh": "铁路技术开创者：1830年利物浦-曼彻斯特铁路开通以来，英国铁路网络快速扩张。铁路工程（隧道、桥梁、车站）带动了钢铁、煤炭和工程设计等相关产业。铁路技术正向全球输出。",
+            "en": "Railway technology pioneer: since the 1830 Liverpool-Manchester Railway, Britain's rail network expands rapidly. Railway engineering (tunnels, bridges, stations) drives steel, coal, and engineering design. Railway technology is being exported worldwide."
+          },
+          "textileIndustry": {
+            "zh": "纺织工业全球垄断：兰开夏棉纺织业是工业革命的起点和支柱产业。动力织机和珍妮纺纱机使英国纺织品产量是世界其他国家总和的数倍。曼彻斯特是'世界棉都'。但劳动条件恶劣，工人运动正在兴起。",
+            "en": "Global textile monopoly: Lancashire cotton industry is the starting point and pillar of the Industrial Revolution. Power looms and spinning jenny make British textile output many times that of all other countries combined. Manchester is 'Cottonopolis.' But labor conditions are appalling, and the workers' movement is rising."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1840年的英国是全球唯一的工业化国家，在蒸汽动力、机械制造、铁路和纺织工业方面拥有压倒性领先。'世界工厂'的地位无可争议。但工业化也带来严重的社会问题——童工、贫民窟、环境污染。法国和普鲁士正开始追赶，但与英国的差距至少有20-30年。英国的技术霸权将持续到19世纪末。",
+          "en": "Britain in 1840 is the world's only industrialized nation, with overwhelming leadership in steam power, machinery, railways, and textiles. Its 'workshop of the world' status is undisputed. But industrialization brings severe social problems — child labor, slums, pollution. France and Prussia are beginning to catch up, but the gap is at least 20-30 years. Britain's tech hegemony will persist until the late 19th century."
         }
       },
       "assessment": {
@@ -21579,6 +21625,20 @@
         "keyInnovations": {
           "zh": "蒸汽船、早期铁路网络、电报实验、机械化纺织、标准化零件制造和大规模兵工生产正逐步改变经济与社会。伊利运河等交通工程已显著整合内陆市场，工厂体系在新英格兰和中大西洋地区持续扩展。",
           "en": "Steamboats, early railroad networks, telegraph experimentation, mechanized textiles, interchangeable-parts manufacturing, and large-scale armory production were gradually reshaping economy and society. Transport projects such as the Erie Canal had already integrated inland markets significantly, and the factory system continued to expand in New England and the Mid-Atlantic."
+        },
+        "sectors": {
+          "manufacturingAndInvention": {
+            "zh": "制造业与发明创新活跃：美国发明了'可互换零件'制造法（惠特尼），正奠定大规模生产的基础。科尔特左轮手枪工厂是早期标准化生产的典范。棉花轧棉机使南方棉花产量暴增。但美国制造业仍以初级加工为主，精密制造落后于英国。",
+            "en": "Active manufacturing and invention: America invented 'interchangeable parts' manufacturing (Whitney), laying mass production foundations. Colt's revolver factory exemplifies early standardized production. The cotton gin caused Southern cotton output to surge. But US manufacturing is still primarily processing; precision manufacturing lags Britain."
+          },
+          "railwayExpansion": {
+            "zh": "铁路扩张势头强劲：美国铁路里程已超过5000英里并快速增长，正成为世界铁路建设最活跃的国家。但铁路设备大量从英国进口，自主制造能力有限。蒸汽船在密西西比河上广泛使用，推动内陆交通革命。",
+            "en": "Strong railway expansion momentum: US rail mileage exceeds 5,000 miles and grows rapidly, becoming the world's most active railway builder. But rail equipment is largely imported from Britain; domestic manufacturing capability is limited. Steamboats widely used on the Mississippi, driving an inland transport revolution."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1840年的美国正处于工业化起步阶段，在'可互换零件'和标准化生产方面展现出独特创新力。铁路扩张势头全球最强，但核心工业技术仍依赖英国。美国的独特优势在于广袤的国土、丰富的资源和创业精神——这些要素将在19世纪下半叶将美国推上工业产能世界第一的位置。但1840年时，美国仍是一个以农业为主的发展中国家。",
+          "en": "The US in 1840 is at the early stage of industrialization, showing unique innovation in interchangeable parts and standardized production. Railway expansion momentum is the world's strongest, but core industrial technology still depends on Britain. America's unique advantages are vast territory, abundant resources, and entrepreneurial spirit — factors that will propel the US to #1 industrial capacity in the latter 19th century. But in 1840, the US is still primarily an agricultural developing country."
         }
       },
       "assessment": {

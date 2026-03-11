@@ -2461,6 +2461,24 @@
         "keyInnovations": {
           "zh": "关键技术与知识成就包括高产作物推广、精细稻作与复种体系、成熟的运河与漕运组织、地图测绘、历算与天文观测、铜铁冶炼、景德镇瓷业、木版印刷与大型类书编纂。宫廷也吸收了部分耶稣会传入的几何学、天文学、机械钟表与透视绘画技法。",
           "en": "Key technological and knowledge achievements included the spread of high-yield crops, intensive rice cultivation and multiple-cropping systems, sophisticated canal and grain transport organization, cartography, calendrical science and astronomy, copper and iron metallurgy, Jingdezhen porcelain production, woodblock printing, and large encyclopedic compilation projects. The court also absorbed selected Jesuit-transmitted knowledge in geometry, astronomy, mechanical clocks, and perspective painting."
+        },
+        "sectors": {
+          "traditionalCrafts": {
+            "zh": "传统手工业世界领先：景德镇瓷器、苏杭丝绸、茶叶加工、漆器等手工业产品质量全球最高。中国瓷器是全球最重要的贸易品之一，欧洲大量仿制。年画、木版印刷和造纸术产量远超欧洲。",
+            "en": "World-leading traditional craftsmanship: Jingdezhen porcelain, Suzhou-Hangzhou silk, tea processing, lacquerware are the world's highest quality handicrafts. Chinese porcelain is among the most important global trade goods, extensively imitated in Europe. Woodblock printing and papermaking output far exceeds Europe."
+          },
+          "agriculturalTechnology": {
+            "zh": "农业技术成熟高效：精耕细作的水稻种植体系养活全球最大人口（约3亿）。梯田灌溉工程、轮作复种技术极其成熟。《天工开物》（1637年）系统总结了明清时期的技术成就。但缺乏向机械化转变的动力。",
+            "en": "Mature and efficient agricultural technology: intensive wet-rice cultivation feeds the world's largest population (~300 million). Terrace irrigation and crop rotation techniques are extremely refined. Tiangong Kaiwu (1637) systematically compiled Ming-Qing technological achievements. But lacks impetus for mechanization."
+          },
+          "waterEngineering": {
+            "zh": "水利工程历史悠久：大运河（世界最长运河）仍是南北经济命脉。黄河治理和江南水利体系规模宏大。但水利技术停留在传统经验层面，缺乏流体力学等科学理论支撑。",
+            "en": "Long-standing water engineering: the Grand Canal (world's longest) remains the north-south economic lifeline. Yellow River management and Jiangnan water systems are massive in scale. But water engineering remains at the traditional empirical level, lacking scientific foundations like fluid mechanics."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1750年的清朝仍是全球最大经济体（GDP约占世界25%），传统手工业和农业技术在各自领域世界领先。但致命的差距正在形成：欧洲的科学革命和即将到来的工业革命将创造一种中国传统技术体系无法应对的全新生产方式。清朝科技停留在经验主义阶段，缺乏系统科学理论和机械化转型动力。这一差距将在90年后的鸦片战争中以毁灭性方式暴露。",
+          "en": "The Qing Dynasty in 1750 is still the world's largest economy (~25% of global GDP); traditional craftsmanship and agricultural technology lead in their respective domains. But a fatal gap is forming: Europe's Scientific Revolution and the coming Industrial Revolution will create an entirely new mode of production that China's traditional technology system cannot address. Qing tech remains at the empirical stage, lacking systematic scientific theory and mechanization impetus. This gap will be devastatingly exposed in the Opium War 90 years later."
         }
       },
       "assessment": {
@@ -2485,50 +2503,191 @@
       "factions": [
         {
           "id": "qing_qianlong_imperial",
-          "name": { "zh": "乾隆皇权派", "en": "Qianlong Imperial Faction" },
+          "name": {
+            "zh": "乾隆皇权派",
+            "en": "Qianlong Imperial Faction"
+          },
           "type": "other",
-          "leader": { "zh": "乾隆帝（弘历）", "en": "Qianlong Emperor (Hongli)" },
-          "leaderTitle": { "zh": "皇帝", "en": "Emperor" },
-          "ideology": { "zh": "满洲皇权至上，儒学正统与文字狱，十全武功与领土扩张，多元帝国治理", "en": "Manchu imperial supremacy, Confucian orthodoxy enforced through literary inquisitions, the Ten Great Campaigns and territorial expansion, multiethnic empire governance" },
-          "headquarters": { "zh": "北京紫禁城 / 承德避暑山庄", "en": "Forbidden City, Beijing / Chengde Mountain Resort" },
+          "leader": {
+            "zh": "乾隆帝（弘历）",
+            "en": "Qianlong Emperor (Hongli)"
+          },
+          "leaderTitle": {
+            "zh": "皇帝",
+            "en": "Emperor"
+          },
+          "ideology": {
+            "zh": "满洲皇权至上，儒学正统与文字狱，十全武功与领土扩张，多元帝国治理",
+            "en": "Manchu imperial supremacy, Confucian orthodoxy enforced through literary inquisitions, the Ten Great Campaigns and territorial expansion, multiethnic empire governance"
+          },
+          "headquarters": {
+            "zh": "北京紫禁城 / 承德避暑山庄",
+            "en": "Forbidden City, Beijing / Chengde Mountain Resort"
+          },
           "status": "ruling",
-          "relationship": { "zh": "乾隆帝是清朝权力最为集中的皇帝之一，通过军机处实现高效的中央集权决策。他同时运用满洲认同与儒学正统维护统治合法性，对外发动十全武功扩展疆域至极盛，对内以文字狱严控思想言论，皇权达到顶峰。", "en": "The Qianlong Emperor was one of the most centralized rulers in Qing history, achieving highly efficient decision-making through the Grand Council. He simultaneously leveraged Manchu identity and Confucian orthodoxy to uphold ruling legitimacy, launched the Ten Great Campaigns to expand territory to its maximum extent, and used literary inquisitions to strictly control thought and speech domestically, bringing imperial power to its zenith." },
-          "description": { "zh": "乾隆帝（1711—1799）是清朝第六位皇帝，在位六十年（1735—1795），实际掌权至1799年去世。他在位期间清帝国疆域达到历史极盛：平定准噶尔、征服新疆、巩固对西藏的宗主权、两征金川、四征缅甸与安南。帝国财政充裕，人口突破三亿，文化事业空前繁荣——《四库全书》的编纂是其文治的标志性成就。然而乾隆同时推行大规模文字狱，销毁焚烧含有反满内容的书籍数千种，对知识分子实施严酷思想控制。他晚年宠信和珅，贪腐之风弥漫朝廷。1750年前后正是乾隆盛世的高峰时期，帝国看似强盛无比，但人口激增带来的土地压力、官僚体系的腐化、以及对外部世界变化的漠视，已为19世纪的衰落埋下了深层隐患。", "en": "The Qianlong Emperor (1711–1799), sixth ruler of the Qing dynasty, reigned for sixty years (1735–1795) and retained real power until his death in 1799. Under his rule the Qing Empire reached its greatest territorial extent: conquering the Dzungar Khanate, subjugating Xinjiang, consolidating suzerainty over Tibet, fighting two Jinchuan campaigns, and launching four expeditions into Burma and Annam. Imperial finances were abundant, the population surpassed 300 million, and cultural enterprise flourished unprecedentedly—the compilation of the Siku Quanshu stood as the hallmark of his civil achievement. Yet Qianlong simultaneously conducted massive literary inquisitions, destroying thousands of works containing anti-Manchu content and imposing harsh intellectual control. In his later years he favored the corrupt minister Heshen, and corruption pervaded the court. Around 1750, the High Qing prosperity was at its peak and the empire appeared supremely powerful, but population pressure on land, bureaucratic decay, and indifference to changes in the outside world were already sowing deep seeds of the decline that would unfold in the 19th century." },
+          "relationship": {
+            "zh": "乾隆帝是清朝权力最为集中的皇帝之一，通过军机处实现高效的中央集权决策。他同时运用满洲认同与儒学正统维护统治合法性，对外发动十全武功扩展疆域至极盛，对内以文字狱严控思想言论，皇权达到顶峰。",
+            "en": "The Qianlong Emperor was one of the most centralized rulers in Qing history, achieving highly efficient decision-making through the Grand Council. He simultaneously leveraged Manchu identity and Confucian orthodoxy to uphold ruling legitimacy, launched the Ten Great Campaigns to expand territory to its maximum extent, and used literary inquisitions to strictly control thought and speech domestically, bringing imperial power to its zenith."
+          },
+          "description": {
+            "zh": "乾隆帝（1711—1799）是清朝第六位皇帝，在位六十年（1735—1795），实际掌权至1799年去世。他在位期间清帝国疆域达到历史极盛：平定准噶尔、征服新疆、巩固对西藏的宗主权、两征金川、四征缅甸与安南。帝国财政充裕，人口突破三亿，文化事业空前繁荣——《四库全书》的编纂是其文治的标志性成就。然而乾隆同时推行大规模文字狱，销毁焚烧含有反满内容的书籍数千种，对知识分子实施严酷思想控制。他晚年宠信和珅，贪腐之风弥漫朝廷。1750年前后正是乾隆盛世的高峰时期，帝国看似强盛无比，但人口激增带来的土地压力、官僚体系的腐化、以及对外部世界变化的漠视，已为19世纪的衰落埋下了深层隐患。",
+            "en": "The Qianlong Emperor (1711–1799), sixth ruler of the Qing dynasty, reigned for sixty years (1735–1795) and retained real power until his death in 1799. Under his rule the Qing Empire reached its greatest territorial extent: conquering the Dzungar Khanate, subjugating Xinjiang, consolidating suzerainty over Tibet, fighting two Jinchuan campaigns, and launching four expeditions into Burma and Annam. Imperial finances were abundant, the population surpassed 300 million, and cultural enterprise flourished unprecedentedly—the compilation of the Siku Quanshu stood as the hallmark of his civil achievement. Yet Qianlong simultaneously conducted massive literary inquisitions, destroying thousands of works containing anti-Manchu content and imposing harsh intellectual control. In his later years he favored the corrupt minister Heshen, and corruption pervaded the court. Around 1750, the High Qing prosperity was at its peak and the empire appeared supremely powerful, but population pressure on land, bureaucratic decay, and indifference to changes in the outside world were already sowing deep seeds of the decline that would unfold in the 19th century."
+          },
           "keyFigures": [
-            { "name": { "zh": "乾隆帝", "en": "Qianlong Emperor" }, "title": { "zh": "皇帝", "en": "Emperor" }, "role": { "zh": "清帝国最高统治者，在位期间帝国达到极盛", "en": "Supreme ruler of the Qing Empire, under whom the empire reached its zenith" } },
-            { "name": { "zh": "傅恒", "en": "Fuheng" }, "title": { "zh": "大学士 / 军机大臣", "en": "Grand Secretary / Grand Councillor" }, "role": { "zh": "乾隆朝最受信任的满洲重臣之一，多次领军出征", "en": "One of the most trusted Manchu grandees of the Qianlong court, commanding multiple military campaigns" } }
+            {
+              "name": {
+                "zh": "乾隆帝",
+                "en": "Qianlong Emperor"
+              },
+              "title": {
+                "zh": "皇帝",
+                "en": "Emperor"
+              },
+              "role": {
+                "zh": "清帝国最高统治者，在位期间帝国达到极盛",
+                "en": "Supreme ruler of the Qing Empire, under whom the empire reached its zenith"
+              }
+            },
+            {
+              "name": {
+                "zh": "傅恒",
+                "en": "Fuheng"
+              },
+              "title": {
+                "zh": "大学士 / 军机大臣",
+                "en": "Grand Secretary / Grand Councillor"
+              },
+              "role": {
+                "zh": "乾隆朝最受信任的满洲重臣之一，多次领军出征",
+                "en": "One of the most trusted Manchu grandees of the Qianlong court, commanding multiple military campaigns"
+              }
+            }
           ]
         },
         {
           "id": "qing_manchu_bannermen",
-          "name": { "zh": "满洲旗人贵族", "en": "Manchu Bannermen Establishment" },
+          "name": {
+            "zh": "满洲旗人贵族",
+            "en": "Manchu Bannermen Establishment"
+          },
           "type": "other",
-          "leader": { "zh": "八旗都统（无统一领袖）", "en": "Commanders of the Eight Banners (no unified leader)" },
-          "leaderTitle": { "zh": "都统 / 旗主", "en": "Banner Commander / Banner Lord" },
-          "ideology": { "zh": "八旗制度与满洲武勇传统，维护旗人世袭特权与满汉分治", "en": "Eight Banners system and Manchu martial tradition, preservation of bannermen's hereditary privileges and Manchu-Han separation" },
-          "headquarters": { "zh": "北京内城（旗人聚居区）/ 各省驻防城", "en": "Inner city of Beijing (bannermen quarters) / garrison cities across the provinces" },
+          "leader": {
+            "zh": "八旗都统（无统一领袖）",
+            "en": "Commanders of the Eight Banners (no unified leader)"
+          },
+          "leaderTitle": {
+            "zh": "都统 / 旗主",
+            "en": "Banner Commander / Banner Lord"
+          },
+          "ideology": {
+            "zh": "八旗制度与满洲武勇传统，维护旗人世袭特权与满汉分治",
+            "en": "Eight Banners system and Manchu martial tradition, preservation of bannermen's hereditary privileges and Manchu-Han separation"
+          },
+          "headquarters": {
+            "zh": "北京内城（旗人聚居区）/ 各省驻防城",
+            "en": "Inner city of Beijing (bannermen quarters) / garrison cities across the provinces"
+          },
           "status": "allied",
-          "relationship": { "zh": "满洲旗人是清朝统治的根基性社会群体。八旗子弟享有世袭俸禄、免除赋役、专属居住区和优先仕途等特权。他们是皇帝最可靠的支持者，但到乾隆中期旗人武备已严重松弛，许多人沦为寄食京师的闲散阶层。乾隆多次试图振兴旗人尚武精神，但收效甚微。", "en": "Manchu bannermen constituted the foundational social group of Qing rule. Banner descendants enjoyed hereditary stipends, exemption from corvée, exclusive residential quarters, and preferential access to office. They were the emperor's most reliable supporters, yet by mid-Qianlong their martial vigor had seriously eroded and many had become an idle parasitic class subsisting on stipends in the capital. Qianlong made repeated efforts to revive bannermen's martial spirit, but with little success." },
-          "description": { "zh": "八旗制度是清朝最独特的社会—军事—政治组织体系，起源于努尔哈赤时代的满洲部族联盟。到乾隆时期，八旗体系已不仅仅是军事组织，而是一个涵盖满洲、蒙古、汉军三种旗籍、约两百万人口的世袭特权社群。旗人在北京内城和全国各战略要地的驻防城中集中居住，与汉人社会形成空间隔离。他们享有国家提供的俸米、旗地和优先科举名额，理论上为帝国提供军事力量作为回报。然而承平日久，京城旗人日益脱离军事训练，沉迷于养鸟遛弯、听戏品茶等休闲生活。旗人人口持续增长而旗地和俸禄有限，导致大量旗人陷入贫困。这一「旗人生计问题」是乾隆朝最棘手的社会难题之一。尽管如此，旗人贵族仍在宫廷政治、军事指挥和边疆管理中占据不可替代的核心地位。", "en": "The Eight Banners system was the Qing dynasty's most distinctive social-military-political organization, originating from the Manchu tribal confederation of Nurhaci's era. By the Qianlong period, the banner system was no longer merely a military organization but a hereditary privileged community encompassing Manchu, Mongol, and Han-martial banner registers totaling some two million people. Bannermen resided in concentrated quarters in Beijing's inner city and garrison cities at strategic locations nationwide, spatially separated from Han Chinese society. They received state-provided stipends, banner lands, and preferential examination quotas, theoretically providing military service in return. Yet after prolonged peace, Beijing bannermen increasingly abandoned military training for leisure pursuits such as bird-keeping, strolling, theater-going, and tea appreciation. As the banner population grew while banner lands and stipends remained fixed, large numbers of bannermen fell into poverty. This 'bannermen livelihood problem' was one of the most intractable social issues of the Qianlong era. Nevertheless, the banner aristocracy continued to occupy an irreplaceable core position in court politics, military command, and frontier administration." },
+          "relationship": {
+            "zh": "满洲旗人是清朝统治的根基性社会群体。八旗子弟享有世袭俸禄、免除赋役、专属居住区和优先仕途等特权。他们是皇帝最可靠的支持者，但到乾隆中期旗人武备已严重松弛，许多人沦为寄食京师的闲散阶层。乾隆多次试图振兴旗人尚武精神，但收效甚微。",
+            "en": "Manchu bannermen constituted the foundational social group of Qing rule. Banner descendants enjoyed hereditary stipends, exemption from corvée, exclusive residential quarters, and preferential access to office. They were the emperor's most reliable supporters, yet by mid-Qianlong their martial vigor had seriously eroded and many had become an idle parasitic class subsisting on stipends in the capital. Qianlong made repeated efforts to revive bannermen's martial spirit, but with little success."
+          },
+          "description": {
+            "zh": "八旗制度是清朝最独特的社会—军事—政治组织体系，起源于努尔哈赤时代的满洲部族联盟。到乾隆时期，八旗体系已不仅仅是军事组织，而是一个涵盖满洲、蒙古、汉军三种旗籍、约两百万人口的世袭特权社群。旗人在北京内城和全国各战略要地的驻防城中集中居住，与汉人社会形成空间隔离。他们享有国家提供的俸米、旗地和优先科举名额，理论上为帝国提供军事力量作为回报。然而承平日久，京城旗人日益脱离军事训练，沉迷于养鸟遛弯、听戏品茶等休闲生活。旗人人口持续增长而旗地和俸禄有限，导致大量旗人陷入贫困。这一「旗人生计问题」是乾隆朝最棘手的社会难题之一。尽管如此，旗人贵族仍在宫廷政治、军事指挥和边疆管理中占据不可替代的核心地位。",
+            "en": "The Eight Banners system was the Qing dynasty's most distinctive social-military-political organization, originating from the Manchu tribal confederation of Nurhaci's era. By the Qianlong period, the banner system was no longer merely a military organization but a hereditary privileged community encompassing Manchu, Mongol, and Han-martial banner registers totaling some two million people. Bannermen resided in concentrated quarters in Beijing's inner city and garrison cities at strategic locations nationwide, spatially separated from Han Chinese society. They received state-provided stipends, banner lands, and preferential examination quotas, theoretically providing military service in return. Yet after prolonged peace, Beijing bannermen increasingly abandoned military training for leisure pursuits such as bird-keeping, strolling, theater-going, and tea appreciation. As the banner population grew while banner lands and stipends remained fixed, large numbers of bannermen fell into poverty. This 'bannermen livelihood problem' was one of the most intractable social issues of the Qianlong era. Nevertheless, the banner aristocracy continued to occupy an irreplaceable core position in court politics, military command, and frontier administration."
+          },
           "keyFigures": [
-            { "name": { "zh": "鄂尔泰家族", "en": "Ortai Family" }, "title": { "zh": "满洲贵族", "en": "Manchu Nobility" }, "role": { "zh": "镶蓝旗重要世家，多代出任军机大臣与封疆大吏", "en": "Important Bordered Blue Banner lineage, producing grand councillors and frontier governors across generations" } },
-            { "name": { "zh": "兆惠", "en": "Zhaohui" }, "title": { "zh": "定边将军", "en": "General Who Pacifies the Frontier" }, "role": { "zh": "乾隆朝名将，参与平定准噶尔与大小和卓叛乱", "en": "Renowned Qianlong-era general who participated in suppressing the Dzungars and the Khoja rebellions" } }
+            {
+              "name": {
+                "zh": "鄂尔泰家族",
+                "en": "Ortai Family"
+              },
+              "title": {
+                "zh": "满洲贵族",
+                "en": "Manchu Nobility"
+              },
+              "role": {
+                "zh": "镶蓝旗重要世家，多代出任军机大臣与封疆大吏",
+                "en": "Important Bordered Blue Banner lineage, producing grand councillors and frontier governors across generations"
+              }
+            },
+            {
+              "name": {
+                "zh": "兆惠",
+                "en": "Zhaohui"
+              },
+              "title": {
+                "zh": "定边将军",
+                "en": "General Who Pacifies the Frontier"
+              },
+              "role": {
+                "zh": "乾隆朝名将，参与平定准噶尔与大小和卓叛乱",
+                "en": "Renowned Qianlong-era general who participated in suppressing the Dzungars and the Khoja rebellions"
+              }
+            }
           ]
         },
         {
           "id": "qing_han_literati",
-          "name": { "zh": "汉族士大夫文人", "en": "Han Chinese Literati" },
+          "name": {
+            "zh": "汉族士大夫文人",
+            "en": "Han Chinese Literati"
+          },
           "type": "other",
-          "leader": { "zh": "各省学政与翰林（无统一领袖）", "en": "Provincial education commissioners and Hanlin academicians (no unified leader)" },
-          "leaderTitle": { "zh": "学士 / 侍郎", "en": "Academician / Vice Minister" },
-          "ideology": { "zh": "儒学道统与科举功名，考据学与经世致用，隐含的汉族文化优越意识", "en": "Confucian orthodoxy and examination-based achievement, evidential scholarship and practical statecraft, with an underlying Han cultural supremacy consciousness" },
-          "headquarters": { "zh": "北京翰林院 / 江南书院", "en": "Hanlin Academy in Beijing / Jiangnan academies" },
+          "leader": {
+            "zh": "各省学政与翰林（无统一领袖）",
+            "en": "Provincial education commissioners and Hanlin academicians (no unified leader)"
+          },
+          "leaderTitle": {
+            "zh": "学士 / 侍郎",
+            "en": "Academician / Vice Minister"
+          },
+          "ideology": {
+            "zh": "儒学道统与科举功名，考据学与经世致用，隐含的汉族文化优越意识",
+            "en": "Confucian orthodoxy and examination-based achievement, evidential scholarship and practical statecraft, with an underlying Han cultural supremacy consciousness"
+          },
+          "headquarters": {
+            "zh": "北京翰林院 / 江南书院",
+            "en": "Hanlin Academy in Beijing / Jiangnan academies"
+          },
           "status": "rival",
-          "relationship": { "zh": "汉族士人通过科举制度主导了清朝大部分文官系统，是帝国治理不可或缺的力量。他们在意识形态上接受清廷正统，但部分人暗怀对满洲统治的不满。乾隆通过文字狱严厉打压任何暗示反满情绪的文字，同时以四库全书编纂等文化工程笼络士人。这种恩威并施的策略使汉族文人整体上处于顺从状态，但地下反满情绪从未完全消失。", "en": "Han literati dominated most of the Qing civil bureaucracy through the examination system and were indispensable to imperial governance. They ideologically accepted Qing legitimacy, though some harbored covert resentment toward Manchu rule. Qianlong used literary inquisitions to severely punish any writing hinting at anti-Manchu sentiment, while simultaneously co-opting literati through cultural projects such as the Siku Quanshu compilation. This carrot-and-stick approach kept Han literati generally compliant, but underground anti-Manchu sentiment never entirely disappeared." },
-          "description": { "zh": "清代汉族士大夫是帝国行政机器的运转核心。到乾隆时期，科举制度每年吸引数百万人参与各级考试，进士出身者充任知县、知府乃至六部侍郎、总督巡抚，构成从中央到地方的完整文官网络。学术上，乾嘉考据学（朴学）成为主流，学者们沉浸于对经典文本的校勘、训诂和辑佚工作，以惠栋、戴震为代表。这种「考据」取向固然是学术自觉的产物，但也与文字狱的高压政治环境有关——士人回避敏感的政治评论，转而投入「安全」的学术领域。尽管如此，部分士人仍关注经世致用之学，关心漕运、盐政、河工等实际治理问题。在社会层面，汉族地方绅士掌控着基层教育、宗族事务、公共工程和地方调解，是帝国与乡村社会之间的关键中介。少数秘密会社如天地会和白莲教中保留着「反清复明」的隐性叙事，但在乾隆盛世的表面繁荣下尚未形成系统性威胁。", "en": "Qing-era Han literati were the operational core of the imperial administrative machine. By the Qianlong period, the examination system attracted millions of candidates at various levels annually; jinshi degree-holders staffed posts from county magistrate to metropolitan vice minister, governor-general, and governor, forming a comprehensive civil bureaucratic network from center to locality. Academically, Qianjia evidential scholarship (puxue) became the mainstream, with scholars immersing themselves in textual collation, philology, and recovery of lost works, led by figures such as Hui Dong and Dai Zhen. This 'evidential' orientation was partly a product of scholarly self-awareness but also related to the high-pressure political environment of literary inquisitions—literati avoided sensitive political commentary and retreated into 'safe' academic pursuits. Nevertheless, some scholars remained committed to 'statecraft' learning, engaging with practical governance issues such as grain transport, salt administration, and river conservancy. At the social level, Han local gentry controlled grassroots education, lineage affairs, public works, and local mediation, serving as crucial intermediaries between the empire and rural society. A few secret societies such as the Tiandihui and White Lotus Sect preserved a covert 'overthrow Qing, restore Ming' narrative, but under the surface prosperity of the Qianlong era they had not yet coalesced into a systematic threat." },
+          "relationship": {
+            "zh": "汉族士人通过科举制度主导了清朝大部分文官系统，是帝国治理不可或缺的力量。他们在意识形态上接受清廷正统，但部分人暗怀对满洲统治的不满。乾隆通过文字狱严厉打压任何暗示反满情绪的文字，同时以四库全书编纂等文化工程笼络士人。这种恩威并施的策略使汉族文人整体上处于顺从状态，但地下反满情绪从未完全消失。",
+            "en": "Han literati dominated most of the Qing civil bureaucracy through the examination system and were indispensable to imperial governance. They ideologically accepted Qing legitimacy, though some harbored covert resentment toward Manchu rule. Qianlong used literary inquisitions to severely punish any writing hinting at anti-Manchu sentiment, while simultaneously co-opting literati through cultural projects such as the Siku Quanshu compilation. This carrot-and-stick approach kept Han literati generally compliant, but underground anti-Manchu sentiment never entirely disappeared."
+          },
+          "description": {
+            "zh": "清代汉族士大夫是帝国行政机器的运转核心。到乾隆时期，科举制度每年吸引数百万人参与各级考试，进士出身者充任知县、知府乃至六部侍郎、总督巡抚，构成从中央到地方的完整文官网络。学术上，乾嘉考据学（朴学）成为主流，学者们沉浸于对经典文本的校勘、训诂和辑佚工作，以惠栋、戴震为代表。这种「考据」取向固然是学术自觉的产物，但也与文字狱的高压政治环境有关——士人回避敏感的政治评论，转而投入「安全」的学术领域。尽管如此，部分士人仍关注经世致用之学，关心漕运、盐政、河工等实际治理问题。在社会层面，汉族地方绅士掌控着基层教育、宗族事务、公共工程和地方调解，是帝国与乡村社会之间的关键中介。少数秘密会社如天地会和白莲教中保留着「反清复明」的隐性叙事，但在乾隆盛世的表面繁荣下尚未形成系统性威胁。",
+            "en": "Qing-era Han literati were the operational core of the imperial administrative machine. By the Qianlong period, the examination system attracted millions of candidates at various levels annually; jinshi degree-holders staffed posts from county magistrate to metropolitan vice minister, governor-general, and governor, forming a comprehensive civil bureaucratic network from center to locality. Academically, Qianjia evidential scholarship (puxue) became the mainstream, with scholars immersing themselves in textual collation, philology, and recovery of lost works, led by figures such as Hui Dong and Dai Zhen. This 'evidential' orientation was partly a product of scholarly self-awareness but also related to the high-pressure political environment of literary inquisitions—literati avoided sensitive political commentary and retreated into 'safe' academic pursuits. Nevertheless, some scholars remained committed to 'statecraft' learning, engaging with practical governance issues such as grain transport, salt administration, and river conservancy. At the social level, Han local gentry controlled grassroots education, lineage affairs, public works, and local mediation, serving as crucial intermediaries between the empire and rural society. A few secret societies such as the Tiandihui and White Lotus Sect preserved a covert 'overthrow Qing, restore Ming' narrative, but under the surface prosperity of the Qianlong era they had not yet coalesced into a systematic threat."
+          },
           "keyFigures": [
-            { "name": { "zh": "戴震", "en": "Dai Zhen" }, "title": { "zh": "翰林院庶吉士", "en": "Hanlin Compiler" }, "role": { "zh": "乾嘉考据学代表人物，哲学家与语言学家", "en": "Leading figure of Qianjia evidential scholarship, philosopher and philologist" } },
-            { "name": { "zh": "纪昀", "en": "Ji Yun" }, "title": { "zh": "四库全书总纂官", "en": "Chief Editor of the Siku Quanshu" }, "role": { "zh": "主持四库全书编纂的汉族文臣代表", "en": "Han civil official representative who directed the Siku Quanshu compilation" } }
+            {
+              "name": {
+                "zh": "戴震",
+                "en": "Dai Zhen"
+              },
+              "title": {
+                "zh": "翰林院庶吉士",
+                "en": "Hanlin Compiler"
+              },
+              "role": {
+                "zh": "乾嘉考据学代表人物，哲学家与语言学家",
+                "en": "Leading figure of Qianjia evidential scholarship, philosopher and philologist"
+              }
+            },
+            {
+              "name": {
+                "zh": "纪昀",
+                "en": "Ji Yun"
+              },
+              "title": {
+                "zh": "四库全书总纂官",
+                "en": "Chief Editor of the Siku Quanshu"
+              },
+              "role": {
+                "zh": "主持四库全书编纂的汉族文臣代表",
+                "en": "Han civil official representative who directed the Siku Quanshu compilation"
+              }
+            }
           ]
         }
       ]
@@ -16697,50 +16856,191 @@
       "factions": [
         {
           "id": "russia_imperial_court",
-          "name": { "zh": "帝国宫廷", "en": "Imperial Court" },
+          "name": {
+            "zh": "帝国宫廷",
+            "en": "Imperial Court"
+          },
           "type": "other",
-          "leader": { "zh": "伊丽莎白·彼得罗芙娜女皇", "en": "Empress Elizabeth Petrovna" },
-          "leaderTitle": { "zh": "全俄罗斯女皇", "en": "Empress of All the Russias" },
-          "ideology": { "zh": "彼得大帝改革遗产的延续，法式宫廷文化，启蒙理念与专制皇权的结合，东正教皇室正统", "en": "Continuation of Peter the Great's reform legacy, Francophile court culture, combination of Enlightenment ideals with autocratic imperial power, Orthodox imperial legitimacy" },
-          "headquarters": { "zh": "圣彼得堡（冬宫）", "en": "Saint Petersburg (Winter Palace)" },
+          "leader": {
+            "zh": "伊丽莎白·彼得罗芙娜女皇",
+            "en": "Empress Elizabeth Petrovna"
+          },
+          "leaderTitle": {
+            "zh": "全俄罗斯女皇",
+            "en": "Empress of All the Russias"
+          },
+          "ideology": {
+            "zh": "彼得大帝改革遗产的延续，法式宫廷文化，启蒙理念与专制皇权的结合，东正教皇室正统",
+            "en": "Continuation of Peter the Great's reform legacy, Francophile court culture, combination of Enlightenment ideals with autocratic imperial power, Orthodox imperial legitimacy"
+          },
+          "headquarters": {
+            "zh": "圣彼得堡（冬宫）",
+            "en": "Saint Petersburg (Winter Palace)"
+          },
           "status": "ruling",
-          "relationship": { "zh": "伊丽莎白女皇1741年通过宫廷政变夺权后，恢复了彼得大帝时代的参政院和改革路线。她热爱法国文化，大力资助艺术与建筑，同时积极参与欧洲大国政治。宫廷由女皇的宠臣（如拉祖莫夫斯基和舒瓦洛夫兄弟）主导，为未来叶卡捷琳娜二世的改革铺平了道路。", "en": "After seizing power through a palace coup in 1741, Empress Elizabeth restored the Senate and reform trajectory of Peter the Great's era. A passionate Francophile, she lavishly patronized the arts and architecture while actively engaging in European great-power politics. The court was dominated by the empress's favorites (such as Razumovsky and the Shuvalov brothers), paving the way for Catherine the Great's future reforms." },
-          "description": { "zh": "伊丽莎白·彼得罗芙娜（1709—1762）是彼得大帝与叶卡捷琳娜一世之女，1741年在近卫军支持下发动政变推翻了摄政的安娜·利奥波尔多芙娜，登上皇位。她的统治标志着俄罗斯帝国从「宫廷政变时代」的混乱中恢复稳定。在文化上，她将法国趣味引入俄国宫廷，兴建了冬宫与皇村，创办了莫斯科大学（1755年）和帝国美术学院。在外交上，俄国在七年战争中加入反普鲁士联盟，一度击败腓特烈大帝并占领柏林。然而伊丽莎白本人对日常政务兴趣有限，大量行政事务委托给舒瓦洛夫兄弟和别斯图热夫-留明伯爵等宠臣。她废除了死刑，在一定程度上缓和了安娜统治时期的恐怖政治，但农奴制度不仅未被触动，反而进一步固化。她选定侄子彼得（未来的彼得三世）为继承人，并为其安排了与德意志公主索菲娅（未来的叶卡捷琳娜二世）的婚姻。", "en": "Elizabeth Petrovna (1709–1762) was the daughter of Peter the Great and Catherine I who seized the throne in 1741 through a coup backed by the Guards regiments, overthrowing the regent Anna Leopoldovna. Her reign marked the Russian Empire's recovery from the chaos of the 'era of palace coups.' Culturally, she introduced French taste to the Russian court, built the Winter Palace and Tsarskoye Selo, and founded Moscow University (1755) and the Imperial Academy of Arts. Diplomatically, Russia joined the anti-Prussian coalition in the Seven Years' War, at one point defeating Frederick the Great and occupying Berlin. Elizabeth herself had limited interest in daily administration, delegating much governance to favorites such as the Shuvalov brothers and Count Bestuzhev-Ryumin. She abolished the death penalty, somewhat softening the terror of Anna's reign, but serfdom was not only left untouched but further entrenched. She designated her nephew Peter (the future Peter III) as heir and arranged his marriage to the German princess Sophia (the future Catherine the Great)." },
+          "relationship": {
+            "zh": "伊丽莎白女皇1741年通过宫廷政变夺权后，恢复了彼得大帝时代的参政院和改革路线。她热爱法国文化，大力资助艺术与建筑，同时积极参与欧洲大国政治。宫廷由女皇的宠臣（如拉祖莫夫斯基和舒瓦洛夫兄弟）主导，为未来叶卡捷琳娜二世的改革铺平了道路。",
+            "en": "After seizing power through a palace coup in 1741, Empress Elizabeth restored the Senate and reform trajectory of Peter the Great's era. A passionate Francophile, she lavishly patronized the arts and architecture while actively engaging in European great-power politics. The court was dominated by the empress's favorites (such as Razumovsky and the Shuvalov brothers), paving the way for Catherine the Great's future reforms."
+          },
+          "description": {
+            "zh": "伊丽莎白·彼得罗芙娜（1709—1762）是彼得大帝与叶卡捷琳娜一世之女，1741年在近卫军支持下发动政变推翻了摄政的安娜·利奥波尔多芙娜，登上皇位。她的统治标志着俄罗斯帝国从「宫廷政变时代」的混乱中恢复稳定。在文化上，她将法国趣味引入俄国宫廷，兴建了冬宫与皇村，创办了莫斯科大学（1755年）和帝国美术学院。在外交上，俄国在七年战争中加入反普鲁士联盟，一度击败腓特烈大帝并占领柏林。然而伊丽莎白本人对日常政务兴趣有限，大量行政事务委托给舒瓦洛夫兄弟和别斯图热夫-留明伯爵等宠臣。她废除了死刑，在一定程度上缓和了安娜统治时期的恐怖政治，但农奴制度不仅未被触动，反而进一步固化。她选定侄子彼得（未来的彼得三世）为继承人，并为其安排了与德意志公主索菲娅（未来的叶卡捷琳娜二世）的婚姻。",
+            "en": "Elizabeth Petrovna (1709–1762) was the daughter of Peter the Great and Catherine I who seized the throne in 1741 through a coup backed by the Guards regiments, overthrowing the regent Anna Leopoldovna. Her reign marked the Russian Empire's recovery from the chaos of the 'era of palace coups.' Culturally, she introduced French taste to the Russian court, built the Winter Palace and Tsarskoye Selo, and founded Moscow University (1755) and the Imperial Academy of Arts. Diplomatically, Russia joined the anti-Prussian coalition in the Seven Years' War, at one point defeating Frederick the Great and occupying Berlin. Elizabeth herself had limited interest in daily administration, delegating much governance to favorites such as the Shuvalov brothers and Count Bestuzhev-Ryumin. She abolished the death penalty, somewhat softening the terror of Anna's reign, but serfdom was not only left untouched but further entrenched. She designated her nephew Peter (the future Peter III) as heir and arranged his marriage to the German princess Sophia (the future Catherine the Great)."
+          },
           "keyFigures": [
-            { "name": { "zh": "伊丽莎白女皇", "en": "Empress Elizabeth" }, "title": { "zh": "全俄罗斯女皇", "en": "Empress of All the Russias" }, "role": { "zh": "俄罗斯帝国女皇，彼得大帝改革遗产的继承者", "en": "Empress of Russia and heir to Peter the Great's reform legacy" } },
-            { "name": { "zh": "伊万·舒瓦洛夫", "en": "Ivan Shuvalov" }, "title": { "zh": "女皇宠臣 / 莫斯科大学创始人", "en": "Imperial Favorite / Founder of Moscow University" }, "role": { "zh": "女皇最亲近的顾问之一，推动教育与文化事业", "en": "One of the empress's closest advisors, advancing education and cultural affairs" } }
+            {
+              "name": {
+                "zh": "伊丽莎白女皇",
+                "en": "Empress Elizabeth"
+              },
+              "title": {
+                "zh": "全俄罗斯女皇",
+                "en": "Empress of All the Russias"
+              },
+              "role": {
+                "zh": "俄罗斯帝国女皇，彼得大帝改革遗产的继承者",
+                "en": "Empress of Russia and heir to Peter the Great's reform legacy"
+              }
+            },
+            {
+              "name": {
+                "zh": "伊万·舒瓦洛夫",
+                "en": "Ivan Shuvalov"
+              },
+              "title": {
+                "zh": "女皇宠臣 / 莫斯科大学创始人",
+                "en": "Imperial Favorite / Founder of Moscow University"
+              },
+              "role": {
+                "zh": "女皇最亲近的顾问之一，推动教育与文化事业",
+                "en": "One of the empress's closest advisors, advancing education and cultural affairs"
+              }
+            }
           ]
         },
         {
           "id": "russia_guards_regiments",
-          "name": { "zh": "近卫军团", "en": "Guards Regiments" },
+          "name": {
+            "zh": "近卫军团",
+            "en": "Guards Regiments"
+          },
           "type": "other",
-          "leader": { "zh": "近卫军将领（集体领导）", "en": "Guards Officers (collective leadership)" },
-          "leaderTitle": { "zh": "近卫军团长", "en": "Guards Regiment Commanders" },
-          "ideology": { "zh": "彼得大帝军事传统，贵族军官的政治特权，通过武力干预维护自身利益与国家方向", "en": "Peter the Great's military tradition, political privileges of noble officers, armed intervention to protect their interests and shape the nation's direction" },
-          "headquarters": { "zh": "圣彼得堡（近卫军营地）", "en": "Saint Petersburg (Guards barracks)" },
+          "leader": {
+            "zh": "近卫军将领（集体领导）",
+            "en": "Guards Officers (collective leadership)"
+          },
+          "leaderTitle": {
+            "zh": "近卫军团长",
+            "en": "Guards Regiment Commanders"
+          },
+          "ideology": {
+            "zh": "彼得大帝军事传统，贵族军官的政治特权，通过武力干预维护自身利益与国家方向",
+            "en": "Peter the Great's military tradition, political privileges of noble officers, armed intervention to protect their interests and shape the nation's direction"
+          },
+          "headquarters": {
+            "zh": "圣彼得堡（近卫军营地）",
+            "en": "Saint Petersburg (Guards barracks)"
+          },
           "status": "allied",
-          "relationship": { "zh": "近卫军是18世纪俄罗斯政治中最关键的「造王者」力量。普列奥布拉任斯基团和谢苗诺夫斯基团等精锐近卫军由贵族子弟组成，直接扈卫皇帝，在宫廷政变中屡次发挥决定性作用。伊丽莎白本人就是靠近卫军的支持才登上皇位，此后对近卫军予以厚赏和优待。", "en": "The Guards regiments were the most critical 'kingmaker' force in 18th-century Russian politics. Elite units such as the Preobrazhensky and Semyonovsky regiments, composed of noble sons, directly protected the sovereign and repeatedly played decisive roles in palace coups. Elizabeth herself owed her throne to Guards support and thereafter lavished rewards and privileges upon them." },
-          "description": { "zh": "俄国近卫军团起源于彼得大帝的少年游戏兵团，到18世纪中叶已发展为一支在政治上举足轻重的精锐武装。普列奥布拉任斯基团（始建于1683年）和谢苗诺夫斯基团是最古老、最具声望的两个近卫团。近卫军官几乎全部出身俄国贵族世家，他们不仅是皇帝的贴身护卫和仪仗力量，更是宫廷政治中最具实力的武装集团。从1725年彼得大帝去世到1762年叶卡捷琳娜二世登基，俄国先后发生了五次宫廷政变，每一次都有近卫军的决定性参与。1741年伊丽莎白正是在普列奥布拉任斯基团三百名士兵的簇拥下闯入冬宫夺取皇位。近卫军军官享有比普通军人更高的军衔和薪俸，许多人直接参与宫廷社交和政策讨论。这种军事—政治双重角色使近卫军成为俄国专制体制中最独特的权力要素之一。", "en": "The Russian Guards regiments originated from Peter the Great's childhood 'play regiments' and by the mid-18th century had evolved into an elite armed force of immense political weight. The Preobrazhensky Regiment (founded 1683) and Semyonovsky Regiment were the oldest and most prestigious. Guards officers were almost exclusively drawn from Russian noble families; they served not only as the sovereign's personal bodyguard and ceremonial force but also as the most powerful armed faction in court politics. From Peter the Great's death in 1725 to Catherine the Great's accession in 1762, Russia experienced five palace coups, each with decisive Guards participation. In 1741 Elizabeth seized the throne at the Winter Palace surrounded by three hundred Preobrazhensky soldiers. Guards officers enjoyed higher ranks and pay than regular military personnel, and many directly participated in court society and policy discussions. This dual military-political role made the Guards one of the most distinctive power elements within the Russian autocratic system." },
+          "relationship": {
+            "zh": "近卫军是18世纪俄罗斯政治中最关键的「造王者」力量。普列奥布拉任斯基团和谢苗诺夫斯基团等精锐近卫军由贵族子弟组成，直接扈卫皇帝，在宫廷政变中屡次发挥决定性作用。伊丽莎白本人就是靠近卫军的支持才登上皇位，此后对近卫军予以厚赏和优待。",
+            "en": "The Guards regiments were the most critical 'kingmaker' force in 18th-century Russian politics. Elite units such as the Preobrazhensky and Semyonovsky regiments, composed of noble sons, directly protected the sovereign and repeatedly played decisive roles in palace coups. Elizabeth herself owed her throne to Guards support and thereafter lavished rewards and privileges upon them."
+          },
+          "description": {
+            "zh": "俄国近卫军团起源于彼得大帝的少年游戏兵团，到18世纪中叶已发展为一支在政治上举足轻重的精锐武装。普列奥布拉任斯基团（始建于1683年）和谢苗诺夫斯基团是最古老、最具声望的两个近卫团。近卫军官几乎全部出身俄国贵族世家，他们不仅是皇帝的贴身护卫和仪仗力量，更是宫廷政治中最具实力的武装集团。从1725年彼得大帝去世到1762年叶卡捷琳娜二世登基，俄国先后发生了五次宫廷政变，每一次都有近卫军的决定性参与。1741年伊丽莎白正是在普列奥布拉任斯基团三百名士兵的簇拥下闯入冬宫夺取皇位。近卫军军官享有比普通军人更高的军衔和薪俸，许多人直接参与宫廷社交和政策讨论。这种军事—政治双重角色使近卫军成为俄国专制体制中最独特的权力要素之一。",
+            "en": "The Russian Guards regiments originated from Peter the Great's childhood 'play regiments' and by the mid-18th century had evolved into an elite armed force of immense political weight. The Preobrazhensky Regiment (founded 1683) and Semyonovsky Regiment were the oldest and most prestigious. Guards officers were almost exclusively drawn from Russian noble families; they served not only as the sovereign's personal bodyguard and ceremonial force but also as the most powerful armed faction in court politics. From Peter the Great's death in 1725 to Catherine the Great's accession in 1762, Russia experienced five palace coups, each with decisive Guards participation. In 1741 Elizabeth seized the throne at the Winter Palace surrounded by three hundred Preobrazhensky soldiers. Guards officers enjoyed higher ranks and pay than regular military personnel, and many directly participated in court society and policy discussions. This dual military-political role made the Guards one of the most distinctive power elements within the Russian autocratic system."
+          },
           "keyFigures": [
-            { "name": { "zh": "阿列克谢·拉祖莫夫斯基", "en": "Alexei Razumovsky" }, "title": { "zh": "元帅 / 女皇秘密丈夫", "en": "Field Marshal / Empress's Secret Consort" }, "role": { "zh": "近卫军高级将领，伊丽莎白最亲密的伴侣", "en": "Senior Guards officer and Elizabeth's closest companion" } },
-            { "name": { "zh": "基里尔·拉祖莫夫斯基", "en": "Kirill Razumovsky" }, "title": { "zh": "小俄罗斯（乌克兰）盖特曼", "en": "Hetman of Little Russia (Ukraine)" }, "role": { "zh": "阿列克谢之弟，近卫军中的权势人物", "en": "Brother of Alexei and a powerful figure within the Guards" } }
+            {
+              "name": {
+                "zh": "阿列克谢·拉祖莫夫斯基",
+                "en": "Alexei Razumovsky"
+              },
+              "title": {
+                "zh": "元帅 / 女皇秘密丈夫",
+                "en": "Field Marshal / Empress's Secret Consort"
+              },
+              "role": {
+                "zh": "近卫军高级将领，伊丽莎白最亲密的伴侣",
+                "en": "Senior Guards officer and Elizabeth's closest companion"
+              }
+            },
+            {
+              "name": {
+                "zh": "基里尔·拉祖莫夫斯基",
+                "en": "Kirill Razumovsky"
+              },
+              "title": {
+                "zh": "小俄罗斯（乌克兰）盖特曼",
+                "en": "Hetman of Little Russia (Ukraine)"
+              },
+              "role": {
+                "zh": "阿列克谢之弟，近卫军中的权势人物",
+                "en": "Brother of Alexei and a powerful figure within the Guards"
+              }
+            }
           ]
         },
         {
           "id": "russia_old_believers",
-          "name": { "zh": "旧礼仪派信众", "en": "Old Believer Communities" },
+          "name": {
+            "zh": "旧礼仪派信众",
+            "en": "Old Believer Communities"
+          },
           "type": "religious",
-          "leader": { "zh": "各地旧礼仪派长老（无统一领袖）", "en": "Regional Old Believer elders (no unified leader)" },
-          "leaderTitle": { "zh": "长老 / 精神导师", "en": "Elder / Spiritual Guide" },
-          "ideology": { "zh": "17世纪尼康改革前的俄罗斯东正教礼仪传统，拒绝官方教会改革，维护旧信仰纯洁", "en": "Pre-Nikonian Russian Orthodox liturgical tradition, rejection of official church reforms, preservation of the purity of the old faith" },
-          "headquarters": { "zh": "维格修道院 / 伏尔加河流域 / 西伯利亚偏远社区", "en": "Vyg Monastery / Volga River basin / remote Siberian communities" },
+          "leader": {
+            "zh": "各地旧礼仪派长老（无统一领袖）",
+            "en": "Regional Old Believer elders (no unified leader)"
+          },
+          "leaderTitle": {
+            "zh": "长老 / 精神导师",
+            "en": "Elder / Spiritual Guide"
+          },
+          "ideology": {
+            "zh": "17世纪尼康改革前的俄罗斯东正教礼仪传统，拒绝官方教会改革，维护旧信仰纯洁",
+            "en": "Pre-Nikonian Russian Orthodox liturgical tradition, rejection of official church reforms, preservation of the purity of the old faith"
+          },
+          "headquarters": {
+            "zh": "维格修道院 / 伏尔加河流域 / 西伯利亚偏远社区",
+            "en": "Vyg Monastery / Volga River basin / remote Siberian communities"
+          },
           "status": "underground",
-          "relationship": { "zh": "旧礼仪派是俄国最大的宗教异见群体，自17世纪尼康宗教改革以来持续遭受国家迫害。他们拒绝接受1652年后的新礼仪，被官方教会视为分裂者（raskol'niki）。政府对其征收双倍人头税、禁止其担任公职，但始终无法消灭这一运动。数百万信众分布在帝国偏远地区，形成了事实上的平行社会。", "en": "The Old Believers constituted Russia's largest religious dissenting community, subject to persistent state persecution since the Nikonian church reforms of the 17th century. They refused to accept the new liturgical practices introduced after 1652 and were labeled schismatics (raskol'niki) by the official church. The government imposed double poll taxes and barred them from public office, yet could never eradicate the movement. Millions of adherents spread across remote regions of the empire, forming a de facto parallel society." },
-          "description": { "zh": "旧礼仪派（老信徒）运动起源于1650年代牧首尼康对俄罗斯东正教礼仪的改革。尼康按照希腊范本修改了祈祷手势（三指画十字取代两指）、圣咏文本和仪式细节，大量信众将此视为对真正基督教信仰的背叛而拒绝接受。在领袖大司祭阿瓦库姆被焚刑处死后，运动非但未被消灭，反而在地下蔓延扩展。到18世纪中叶，旧礼仪派信众估计达数百万之众，分布在帝国北部的森林、伏尔加河流域、乌拉尔山区、西伯利亚和顿河哥萨克地区。他们分为多个派别——最激进的「无祭司派」认为末日已至，拒绝一切教会圣事；较温和的「有祭司派」则保留旧礼仪但接受逃离官方教会的神职人员。旧礼仪派社区以严格的道德纪律、勤勉的劳动伦理和强烈的社区团结著称，许多人在商业领域取得了显著成功。他们的存在是对俄国国家—教会一体化体制的持续挑战，也是俄罗斯宗教多元性的重要体现。", "en": "The Old Believer (Starovery) movement originated from Patriarch Nikon's reforms of Russian Orthodox liturgy in the 1650s. Nikon revised prayer gestures (three-finger cross replaced two-finger), psalter texts, and ritual details according to Greek models, and large numbers of believers regarded this as a betrayal of true Christian faith and refused to comply. After the movement's leader, Archpriest Avvakum, was burned at the stake, the movement not only survived but expanded underground. By the mid-18th century, Old Believer adherents were estimated at several million, distributed across the empire's northern forests, the Volga basin, the Ural Mountains, Siberia, and Don Cossack territories. They divided into multiple factions—the most radical 'priestless' (bespopovtsy) believed the End Times had arrived and rejected all church sacraments, while the more moderate 'priested' (popovtsy) preserved old-rite liturgy but accepted clergy who had fled the official church. Old Believer communities were known for strict moral discipline, diligent work ethic, and intense communal solidarity, and many achieved notable commercial success. Their existence constituted a persistent challenge to the Russian state-church integration system and an important expression of Russian religious pluralism." },
+          "relationship": {
+            "zh": "旧礼仪派是俄国最大的宗教异见群体，自17世纪尼康宗教改革以来持续遭受国家迫害。他们拒绝接受1652年后的新礼仪，被官方教会视为分裂者（raskol'niki）。政府对其征收双倍人头税、禁止其担任公职，但始终无法消灭这一运动。数百万信众分布在帝国偏远地区，形成了事实上的平行社会。",
+            "en": "The Old Believers constituted Russia's largest religious dissenting community, subject to persistent state persecution since the Nikonian church reforms of the 17th century. They refused to accept the new liturgical practices introduced after 1652 and were labeled schismatics (raskol'niki) by the official church. The government imposed double poll taxes and barred them from public office, yet could never eradicate the movement. Millions of adherents spread across remote regions of the empire, forming a de facto parallel society."
+          },
+          "description": {
+            "zh": "旧礼仪派（老信徒）运动起源于1650年代牧首尼康对俄罗斯东正教礼仪的改革。尼康按照希腊范本修改了祈祷手势（三指画十字取代两指）、圣咏文本和仪式细节，大量信众将此视为对真正基督教信仰的背叛而拒绝接受。在领袖大司祭阿瓦库姆被焚刑处死后，运动非但未被消灭，反而在地下蔓延扩展。到18世纪中叶，旧礼仪派信众估计达数百万之众，分布在帝国北部的森林、伏尔加河流域、乌拉尔山区、西伯利亚和顿河哥萨克地区。他们分为多个派别——最激进的「无祭司派」认为末日已至，拒绝一切教会圣事；较温和的「有祭司派」则保留旧礼仪但接受逃离官方教会的神职人员。旧礼仪派社区以严格的道德纪律、勤勉的劳动伦理和强烈的社区团结著称，许多人在商业领域取得了显著成功。他们的存在是对俄国国家—教会一体化体制的持续挑战，也是俄罗斯宗教多元性的重要体现。",
+            "en": "The Old Believer (Starovery) movement originated from Patriarch Nikon's reforms of Russian Orthodox liturgy in the 1650s. Nikon revised prayer gestures (three-finger cross replaced two-finger), psalter texts, and ritual details according to Greek models, and large numbers of believers regarded this as a betrayal of true Christian faith and refused to comply. After the movement's leader, Archpriest Avvakum, was burned at the stake, the movement not only survived but expanded underground. By the mid-18th century, Old Believer adherents were estimated at several million, distributed across the empire's northern forests, the Volga basin, the Ural Mountains, Siberia, and Don Cossack territories. They divided into multiple factions—the most radical 'priestless' (bespopovtsy) believed the End Times had arrived and rejected all church sacraments, while the more moderate 'priested' (popovtsy) preserved old-rite liturgy but accepted clergy who had fled the official church. Old Believer communities were known for strict moral discipline, diligent work ethic, and intense communal solidarity, and many achieved notable commercial success. Their existence constituted a persistent challenge to the Russian state-church integration system and an important expression of Russian religious pluralism."
+          },
           "keyFigures": [
-            { "name": { "zh": "安德烈·杰尼索夫", "en": "Andrei Denisov" }, "title": { "zh": "维格修道院创始人", "en": "Founder of Vyg Monastery" }, "role": { "zh": "旧礼仪派无祭司派最重要的组织者与神学家（已故，但遗产深远）", "en": "Most important organizer and theologian of the priestless Old Believers (deceased, but with profound legacy)" } },
-            { "name": { "zh": "各地旧礼仪派商人", "en": "Old Believer Merchants" }, "title": { "zh": "行商", "en": "Merchants" }, "role": { "zh": "在莫斯科、伏尔加河流域等地经营纺织、粮食等行业的旧礼仪派商业网络", "en": "Old Believer commercial networks operating in textiles, grain, and other industries in Moscow, the Volga region, and beyond" } }
+            {
+              "name": {
+                "zh": "安德烈·杰尼索夫",
+                "en": "Andrei Denisov"
+              },
+              "title": {
+                "zh": "维格修道院创始人",
+                "en": "Founder of Vyg Monastery"
+              },
+              "role": {
+                "zh": "旧礼仪派无祭司派最重要的组织者与神学家（已故，但遗产深远）",
+                "en": "Most important organizer and theologian of the priestless Old Believers (deceased, but with profound legacy)"
+              }
+            },
+            {
+              "name": {
+                "zh": "各地旧礼仪派商人",
+                "en": "Old Believer Merchants"
+              },
+              "title": {
+                "zh": "行商",
+                "en": "Merchants"
+              },
+              "role": {
+                "zh": "在莫斯科、伏尔加河流域等地经营纺织、粮食等行业的旧礼仪派商业网络",
+                "en": "Old Believer commercial networks operating in textiles, grain, and other industries in Moscow, the Volga region, and beyond"
+              }
+            }
           ]
         }
       ]
@@ -18495,6 +18795,20 @@
         "keyInnovations": {
           "zh": "关键进展包括标准化军械生产、改良兵站与粮秣体系、排水与殖垦工程、行政统计和人口登记、道路与运河建设，以及在农业管理和国家测绘上的务实改进。",
           "en": "Key advances included standardized arms production, improved logistics and provisioning systems, drainage and colonization works, administrative statistics and population registration, road and canal building, and practical improvements in agrarian management and state surveying."
+        },
+        "sectors": {
+          "militaryReform": {
+            "zh": "军事改革欧洲最系统：腓特烈大帝（1740-1786年在位）将普鲁士军队打造为欧洲最精锐的军事力量。'斜线战术'（oblique order）是18世纪最先进的战场机动战术。普鲁士军事学院和参谋制度为现代军事组织奠定基础。",
+            "en": "Europe's most systematic military reform: Frederick the Great (r. 1740-1786) forges the Prussian army into Europe's most elite military force. The 'oblique order' is the 18th century's most advanced battlefield maneuver tactic. Prussian military academies and staff system lay foundations for modern military organization."
+          },
+          "educationAndScience": {
+            "zh": "教育改革领先欧陆：普鲁士率先推行全民义务教育理念。柏林科学院汇聚欧拉等顶尖数学家和科学家。普鲁士的教育和军事制度将在19世纪成为全球仿效的典范。",
+            "en": "Continental education reform leader: Prussia pioneers universal compulsory education concepts. The Berlin Academy of Sciences attracts top mathematicians and scientists including Euler. Prussian education and military institutions will become globally emulated models in the 19th century."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1750年的普鲁士虽然在工业和商业方面远不如英法荷兰，但在军事组织和教育制度方面已建立显著优势。腓特烈大帝的军事改革使普鲁士以相对较小的国土和人口跻身欧洲五强。普鲁士的核心竞争力在于'制度创新'——义务教育、参谋制度和军事学院体系将在未来一个世纪为德国统一和崛起提供人才基础。",
+          "en": "Prussia in 1750, though far behind Britain, France, and the Netherlands in industry and commerce, has established significant advantages in military organization and education. Frederick the Great's military reforms make Prussia a European great power with relatively small territory and population. Prussia's core competitiveness lies in 'institutional innovation' — compulsory education, the staff system, and military academies will provide the talent base for German unification and rise in the coming century."
         }
       },
       "assessment": {
@@ -18519,50 +18833,191 @@
       "factions": [
         {
           "id": "prussia_enlightened_absolutism",
-          "name": { "zh": "开明专制派", "en": "Enlightened Absolutism" },
+          "name": {
+            "zh": "开明专制派",
+            "en": "Enlightened Absolutism"
+          },
           "type": "other",
-          "leader": { "zh": "腓特烈二世（腓特烈大帝）", "en": "Frederick II (Frederick the Great)" },
-          "leaderTitle": { "zh": "普鲁士国王", "en": "King of Prussia" },
-          "ideology": { "zh": "开明专制主义，国王为国家第一公仆，军事现代化，宗教宽容，启蒙理性治国", "en": "Enlightened absolutism, the king as first servant of the state, military modernization, religious tolerance, and governance by Enlightenment reason" },
-          "headquarters": { "zh": "波茨坦（无忧宫）/ 柏林", "en": "Potsdam (Sanssouci Palace) / Berlin" },
+          "leader": {
+            "zh": "腓特烈二世（腓特烈大帝）",
+            "en": "Frederick II (Frederick the Great)"
+          },
+          "leaderTitle": {
+            "zh": "普鲁士国王",
+            "en": "King of Prussia"
+          },
+          "ideology": {
+            "zh": "开明专制主义，国王为国家第一公仆，军事现代化，宗教宽容，启蒙理性治国",
+            "en": "Enlightened absolutism, the king as first servant of the state, military modernization, religious tolerance, and governance by Enlightenment reason"
+          },
+          "headquarters": {
+            "zh": "波茨坦（无忧宫）/ 柏林",
+            "en": "Potsdam (Sanssouci Palace) / Berlin"
+          },
           "status": "ruling",
-          "relationship": { "zh": "腓特烈大帝以「国王是国家第一仆人」自居，将启蒙理念与专制权力融为一体。他亲自指挥军队、主持外交、改革法律和经济，同时与伏尔泰等启蒙哲学家保持密切往来。他对宗教持宽容态度但对贵族特权网开一面，形成了独特的普鲁士式开明专制模式。", "en": "Frederick the Great styled himself 'the first servant of the state,' fusing Enlightenment ideals with autocratic power. He personally commanded armies, directed diplomacy, and reformed law and the economy while maintaining close correspondence with Enlightenment philosophers such as Voltaire. He adopted religious tolerance but left noble privileges largely intact, creating a distinctively Prussian model of enlightened absolutism." },
-          "description": { "zh": "腓特烈二世（1712—1786）是18世纪欧洲最杰出的军事家和政治家之一，也是开明专制主义的典范。1740年即位后立即入侵西里西亚，引发奥地利王位继承战争，一举将普鲁士从二流国家提升为欧洲五大强国之一。他亲临战阵指挥了七年战争中的多次关键战役，以寡击众屡创奇迹——罗斯巴赫和洛伊滕战役成为军事史经典。在治国方面，他推行法律改革（编纂普鲁士通用法典的前期工作）、鼓励宗教宽容（「在我的国家每个人都可以按自己的方式获得救赎」）、改善农业技术、引进马铃薯种植、建立学校体系。他以法语写作哲学著作，在无忧宫举办音乐沙龙并亲自演奏长笛。然而他的统治也有明显的局限：农奴制在容克领地上不被触动，贵族在军官团中的垄断地位得到保留，普鲁士的「开明」实质上是自上而下的、有选择性的现代化。1750年正值七年战争前夕，腓特烈正在为即将到来的生存危机做最后准备。", "en": "Frederick II (1712–1786) was one of 18th-century Europe's foremost military commanders and statesmen, and the exemplar of enlightened absolutism. Upon his accession in 1740, he immediately invaded Silesia, triggering the War of the Austrian Succession and elevating Prussia from a second-rate state to one of Europe's five great powers at a stroke. He personally commanded key battles of the Seven Years' War, repeatedly achieving against-the-odds victories—Rossbach and Leuthen became classics of military history. In governance he pursued legal reform (preparatory work for the Prussian General Code), encouraged religious tolerance ('In my realm everyone may be saved in his own fashion'), improved agricultural technology, introduced potato cultivation, and established a school system. He wrote philosophical works in French, hosted musical salons at Sanssouci, and personally played the flute. Yet his rule had clear limitations: serfdom on Junker estates was left untouched, the nobility's monopoly in the officer corps was preserved, and Prussian 'enlightenment' was essentially a selective, top-down modernization. In 1750, on the eve of the Seven Years' War, Frederick was making final preparations for the existential crisis to come." },
+          "relationship": {
+            "zh": "腓特烈大帝以「国王是国家第一仆人」自居，将启蒙理念与专制权力融为一体。他亲自指挥军队、主持外交、改革法律和经济，同时与伏尔泰等启蒙哲学家保持密切往来。他对宗教持宽容态度但对贵族特权网开一面，形成了独特的普鲁士式开明专制模式。",
+            "en": "Frederick the Great styled himself 'the first servant of the state,' fusing Enlightenment ideals with autocratic power. He personally commanded armies, directed diplomacy, and reformed law and the economy while maintaining close correspondence with Enlightenment philosophers such as Voltaire. He adopted religious tolerance but left noble privileges largely intact, creating a distinctively Prussian model of enlightened absolutism."
+          },
+          "description": {
+            "zh": "腓特烈二世（1712—1786）是18世纪欧洲最杰出的军事家和政治家之一，也是开明专制主义的典范。1740年即位后立即入侵西里西亚，引发奥地利王位继承战争，一举将普鲁士从二流国家提升为欧洲五大强国之一。他亲临战阵指挥了七年战争中的多次关键战役，以寡击众屡创奇迹——罗斯巴赫和洛伊滕战役成为军事史经典。在治国方面，他推行法律改革（编纂普鲁士通用法典的前期工作）、鼓励宗教宽容（「在我的国家每个人都可以按自己的方式获得救赎」）、改善农业技术、引进马铃薯种植、建立学校体系。他以法语写作哲学著作，在无忧宫举办音乐沙龙并亲自演奏长笛。然而他的统治也有明显的局限：农奴制在容克领地上不被触动，贵族在军官团中的垄断地位得到保留，普鲁士的「开明」实质上是自上而下的、有选择性的现代化。1750年正值七年战争前夕，腓特烈正在为即将到来的生存危机做最后准备。",
+            "en": "Frederick II (1712–1786) was one of 18th-century Europe's foremost military commanders and statesmen, and the exemplar of enlightened absolutism. Upon his accession in 1740, he immediately invaded Silesia, triggering the War of the Austrian Succession and elevating Prussia from a second-rate state to one of Europe's five great powers at a stroke. He personally commanded key battles of the Seven Years' War, repeatedly achieving against-the-odds victories—Rossbach and Leuthen became classics of military history. In governance he pursued legal reform (preparatory work for the Prussian General Code), encouraged religious tolerance ('In my realm everyone may be saved in his own fashion'), improved agricultural technology, introduced potato cultivation, and established a school system. He wrote philosophical works in French, hosted musical salons at Sanssouci, and personally played the flute. Yet his rule had clear limitations: serfdom on Junker estates was left untouched, the nobility's monopoly in the officer corps was preserved, and Prussian 'enlightenment' was essentially a selective, top-down modernization. In 1750, on the eve of the Seven Years' War, Frederick was making final preparations for the existential crisis to come."
+          },
           "keyFigures": [
-            { "name": { "zh": "腓特烈二世", "en": "Frederick II" }, "title": { "zh": "普鲁士国王", "en": "King of Prussia" }, "role": { "zh": "军事天才与开明君主，普鲁士崛起的核心推动者", "en": "Military genius and enlightened monarch, the central driver of Prussia's rise" } },
-            { "name": { "zh": "萨缪尔·冯·科克切伊", "en": "Samuel von Cocceji" }, "title": { "zh": "大法官", "en": "Grand Chancellor" }, "role": { "zh": "普鲁士司法改革的主持者，简化法律程序", "en": "Director of Prussian judicial reform, streamlining legal procedures" } }
+            {
+              "name": {
+                "zh": "腓特烈二世",
+                "en": "Frederick II"
+              },
+              "title": {
+                "zh": "普鲁士国王",
+                "en": "King of Prussia"
+              },
+              "role": {
+                "zh": "军事天才与开明君主，普鲁士崛起的核心推动者",
+                "en": "Military genius and enlightened monarch, the central driver of Prussia's rise"
+              }
+            },
+            {
+              "name": {
+                "zh": "萨缪尔·冯·科克切伊",
+                "en": "Samuel von Cocceji"
+              },
+              "title": {
+                "zh": "大法官",
+                "en": "Grand Chancellor"
+              },
+              "role": {
+                "zh": "普鲁士司法改革的主持者，简化法律程序",
+                "en": "Director of Prussian judicial reform, streamlining legal procedures"
+              }
+            }
           ]
         },
         {
           "id": "prussia_junker_aristocracy",
-          "name": { "zh": "容克军事贵族", "en": "Junker Military Aristocracy" },
+          "name": {
+            "zh": "容克军事贵族",
+            "en": "Junker Military Aristocracy"
+          },
           "type": "other",
-          "leader": { "zh": "各省容克家族（无统一领袖）", "en": "Provincial Junker families (no unified leader)" },
-          "leaderTitle": { "zh": "地主 / 军官", "en": "Landowner / Officer" },
-          "ideology": { "zh": "普鲁士军事荣誉传统，地主阶级权利与农奴制维护，保守社会秩序，对国王的武士忠诚", "en": "Prussian military honor tradition, landowner class rights and preservation of serfdom, conservative social order, and warrior loyalty to the king" },
-          "headquarters": { "zh": "勃兰登堡与东普鲁士庄园", "en": "Brandenburg and East Prussian estates" },
+          "leader": {
+            "zh": "各省容克家族（无统一领袖）",
+            "en": "Provincial Junker families (no unified leader)"
+          },
+          "leaderTitle": {
+            "zh": "地主 / 军官",
+            "en": "Landowner / Officer"
+          },
+          "ideology": {
+            "zh": "普鲁士军事荣誉传统，地主阶级权利与农奴制维护，保守社会秩序，对国王的武士忠诚",
+            "en": "Prussian military honor tradition, landowner class rights and preservation of serfdom, conservative social order, and warrior loyalty to the king"
+          },
+          "headquarters": {
+            "zh": "勃兰登堡与东普鲁士庄园",
+            "en": "Brandenburg and East Prussian estates"
+          },
           "status": "allied",
-          "relationship": { "zh": "容克贵族是普鲁士军队军官团的骨干和王权的核心支柱。腓特烈大帝与容克阶级之间存在一种隐性的社会契约——国王保障容克的土地所有权和对农奴的统治权，容克则提供忠诚的军官来组建欧洲最高效的军队。这种「以地产换军功」的模式是普鲁士军国主义的根基。", "en": "The Junker aristocracy formed the backbone of the Prussian army officer corps and the core pillar of royal power. An implicit social contract existed between Frederick the Great and the Junker class—the king guaranteed their landed property and lordship over serfs, while the Junkers provided loyal officers to build Europe's most efficient army. This 'estates for military service' model was the foundation of Prussian militarism." },
-          "description": { "zh": "容克（Junker）是普鲁士及德意志东部地区的新教地主贵族阶层，源自中世纪东向殖民运动中获得封地的骑士家族。到18世纪中叶，容克已形成一个以军事服务为核心身份认同的社会等级。每个容克家庭都以送子弟进入军校和军官团为最高荣誉，从少尉到将军的职业军官生涯是容克子弟最典型的人生轨迹。他们在各自庄园上对农奴行使准司法权力，包括控制农奴的人身迁徙、劳役义务和婚姻许可。腓特烈大帝虽然在许多方面是一位改革者，但他深知离开容克军官就无法维持普鲁士军事机器的运转，因此不仅保留了容克的全部特权，还进一步强化了军队的贵族专属性——禁止市民出身者担任高级军官。容克阶级的纪律性、牺牲精神和对君主的绝对忠诚，在七年战争的残酷考验中将得到极致体现，但同时也使普鲁士社会改革长期停滞不前。", "en": "The Junkers were the Protestant landowning aristocracy of Prussia and eastern Germany, descended from knight families who received fiefs during the medieval eastward colonization. By the mid-18th century, the Junkers had coalesced into a social estate whose core identity revolved around military service. Every Junker family regarded sending sons to cadet schools and the officer corps as the highest honor, and a professional military career from ensign to general was the archetypal Junker life path. On their estates they exercised quasi-judicial authority over serfs, including control over their movement, labor obligations, and marriage permissions. Although Frederick the Great was a reformer in many respects, he understood that the Prussian military machine could not function without Junker officers, so he not only preserved all Junker privileges but further reinforced the army's aristocratic exclusivity—barring commoners from senior officer positions. The Junker class's discipline, spirit of sacrifice, and absolute loyalty to the monarch would be displayed to the fullest in the grueling test of the Seven Years' War, but simultaneously ensured that Prussian social reform remained long stalled." },
+          "relationship": {
+            "zh": "容克贵族是普鲁士军队军官团的骨干和王权的核心支柱。腓特烈大帝与容克阶级之间存在一种隐性的社会契约——国王保障容克的土地所有权和对农奴的统治权，容克则提供忠诚的军官来组建欧洲最高效的军队。这种「以地产换军功」的模式是普鲁士军国主义的根基。",
+            "en": "The Junker aristocracy formed the backbone of the Prussian army officer corps and the core pillar of royal power. An implicit social contract existed between Frederick the Great and the Junker class—the king guaranteed their landed property and lordship over serfs, while the Junkers provided loyal officers to build Europe's most efficient army. This 'estates for military service' model was the foundation of Prussian militarism."
+          },
+          "description": {
+            "zh": "容克（Junker）是普鲁士及德意志东部地区的新教地主贵族阶层，源自中世纪东向殖民运动中获得封地的骑士家族。到18世纪中叶，容克已形成一个以军事服务为核心身份认同的社会等级。每个容克家庭都以送子弟进入军校和军官团为最高荣誉，从少尉到将军的职业军官生涯是容克子弟最典型的人生轨迹。他们在各自庄园上对农奴行使准司法权力，包括控制农奴的人身迁徙、劳役义务和婚姻许可。腓特烈大帝虽然在许多方面是一位改革者，但他深知离开容克军官就无法维持普鲁士军事机器的运转，因此不仅保留了容克的全部特权，还进一步强化了军队的贵族专属性——禁止市民出身者担任高级军官。容克阶级的纪律性、牺牲精神和对君主的绝对忠诚，在七年战争的残酷考验中将得到极致体现，但同时也使普鲁士社会改革长期停滞不前。",
+            "en": "The Junkers were the Protestant landowning aristocracy of Prussia and eastern Germany, descended from knight families who received fiefs during the medieval eastward colonization. By the mid-18th century, the Junkers had coalesced into a social estate whose core identity revolved around military service. Every Junker family regarded sending sons to cadet schools and the officer corps as the highest honor, and a professional military career from ensign to general was the archetypal Junker life path. On their estates they exercised quasi-judicial authority over serfs, including control over their movement, labor obligations, and marriage permissions. Although Frederick the Great was a reformer in many respects, he understood that the Prussian military machine could not function without Junker officers, so he not only preserved all Junker privileges but further reinforced the army's aristocratic exclusivity—barring commoners from senior officer positions. The Junker class's discipline, spirit of sacrifice, and absolute loyalty to the monarch would be displayed to the fullest in the grueling test of the Seven Years' War, but simultaneously ensured that Prussian social reform remained long stalled."
+          },
           "keyFigures": [
-            { "name": { "zh": "汉斯·约阿希姆·冯·齐滕", "en": "Hans Joachim von Zieten" }, "title": { "zh": "骑兵将军", "en": "Cavalry General" }, "role": { "zh": "容克出身的普鲁士名将，骠骑兵战术大师", "en": "A Prussian commander of Junker origin, master of hussar tactics" } },
-            { "name": { "zh": "库尔特·克里斯托弗·冯·施维林", "en": "Kurt Christoph von Schwerin" }, "title": { "zh": "元帅", "en": "Field Marshal" }, "role": { "zh": "七年战争中的普鲁士高级指挥官", "en": "Senior Prussian commander in the Seven Years' War era" } }
+            {
+              "name": {
+                "zh": "汉斯·约阿希姆·冯·齐滕",
+                "en": "Hans Joachim von Zieten"
+              },
+              "title": {
+                "zh": "骑兵将军",
+                "en": "Cavalry General"
+              },
+              "role": {
+                "zh": "容克出身的普鲁士名将，骠骑兵战术大师",
+                "en": "A Prussian commander of Junker origin, master of hussar tactics"
+              }
+            },
+            {
+              "name": {
+                "zh": "库尔特·克里斯托弗·冯·施维林",
+                "en": "Kurt Christoph von Schwerin"
+              },
+              "title": {
+                "zh": "元帅",
+                "en": "Field Marshal"
+              },
+              "role": {
+                "zh": "七年战争中的普鲁士高级指挥官",
+                "en": "Senior Prussian commander in the Seven Years' War era"
+              }
+            }
           ]
         },
         {
           "id": "prussia_pietist_movement",
-          "name": { "zh": "敬虔主义运动", "en": "Pietist Movement" },
+          "name": {
+            "zh": "敬虔主义运动",
+            "en": "Pietist Movement"
+          },
           "type": "religious",
-          "leader": { "zh": "哈勒大学神学家群体", "en": "Halle University Theologians" },
-          "leaderTitle": { "zh": "教授 / 牧师", "en": "Professor / Pastor" },
-          "ideology": { "zh": "路德宗内部的灵性复兴运动，强调个人虔诚体验、实践伦理与教育改革", "en": "A spiritual renewal movement within Lutheranism, emphasizing personal piety experience, practical ethics, and educational reform" },
-          "headquarters": { "zh": "哈勒（哈勒大学与弗兰克基金会）", "en": "Halle (University of Halle and Francke Foundations)" },
+          "leader": {
+            "zh": "哈勒大学神学家群体",
+            "en": "Halle University Theologians"
+          },
+          "leaderTitle": {
+            "zh": "教授 / 牧师",
+            "en": "Professor / Pastor"
+          },
+          "ideology": {
+            "zh": "路德宗内部的灵性复兴运动，强调个人虔诚体验、实践伦理与教育改革",
+            "en": "A spiritual renewal movement within Lutheranism, emphasizing personal piety experience, practical ethics, and educational reform"
+          },
+          "headquarters": {
+            "zh": "哈勒（哈勒大学与弗兰克基金会）",
+            "en": "Halle (University of Halle and Francke Foundations)"
+          },
           "status": "allied",
-          "relationship": { "zh": "敬虔主义与普鲁士王室有着深厚的历史渊源。腓特烈·威廉一世（士兵国王）是敬虔主义的坚定支持者，哈勒大学成为敬虔主义的学术中心。虽然腓特烈大帝本人是启蒙理性主义者，对宗教热情持怀疑态度，但他尊重宗教自由，允许敬虔主义继续在教育和慈善领域发挥重要影响力。", "en": "Pietism had deep historical ties to the Prussian royal house. Frederick William I (the Soldier King) was a firm Pietist supporter, and the University of Halle became the academic center of Pietism. Though Frederick the Great himself was an Enlightenment rationalist skeptical of religious enthusiasm, he respected religious freedom and allowed Pietism to continue exerting significant influence in education and charity." },
-          "description": { "zh": "敬虔主义（Pietismus）是17世纪末至18世纪德意志路德宗内部最重要的宗教复兴运动，由菲利普·雅各布·斯佩纳发起，在奥古斯特·赫尔曼·弗兰克于哈勒大学的推动下成为一股强大的社会文化力量。弗兰克在哈勒建立了包括孤儿院、学校、药房、印刷所和传教组织在内的庞大慈善—教育综合体（弗兰克基金会），成为近代欧洲最早的系统性社会福利实验之一。敬虔主义深刻影响了普鲁士的教育体系：它主张每个人都应学习阅读以便直接研读圣经，从而推动了初等教育的普及。敬虔主义的实践伦理——勤勉、节俭、纪律、个人责任——与普鲁士的国家精神高度契合，为普鲁士官僚体系和军队注入了一种世俗化的道德严肃性。此外，摩拉维亚兄弟会（亲岑多夫伯爵创建）作为敬虔主义的一个重要分支，开展了大规模的海外传教活动。到1750年，敬虔主义虽已过了最狂热的阶段，但其在教育、伦理和文化领域的遗产已深深融入普鲁士社会的肌理。", "en": "Pietism (Pietismus) was the most important religious renewal movement within German Lutheranism from the late 17th to the 18th century, initiated by Philipp Jakob Spener and propelled into a major socio-cultural force by August Hermann Francke at the University of Halle. Francke established a vast charitable-educational complex in Halle (the Francke Foundations) encompassing an orphanage, schools, pharmacy, printing press, and missionary organizations—one of early modern Europe's first systematic social welfare experiments. Pietism profoundly shaped the Prussian education system: its insistence that everyone should learn to read in order to study the Bible directly helped drive the expansion of elementary education. Pietism's practical ethics—diligence, frugality, discipline, and personal responsibility—aligned closely with the Prussian state ethos, infusing the Prussian bureaucracy and army with a secularized moral seriousness. Additionally, the Moravian Brethren (founded by Count Zinzendorf) as a major Pietist offshoot conducted extensive overseas missionary work. By 1750, Pietism had passed its most fervent phase, but its legacy in education, ethics, and culture had become deeply woven into the fabric of Prussian society." },
+          "relationship": {
+            "zh": "敬虔主义与普鲁士王室有着深厚的历史渊源。腓特烈·威廉一世（士兵国王）是敬虔主义的坚定支持者，哈勒大学成为敬虔主义的学术中心。虽然腓特烈大帝本人是启蒙理性主义者，对宗教热情持怀疑态度，但他尊重宗教自由，允许敬虔主义继续在教育和慈善领域发挥重要影响力。",
+            "en": "Pietism had deep historical ties to the Prussian royal house. Frederick William I (the Soldier King) was a firm Pietist supporter, and the University of Halle became the academic center of Pietism. Though Frederick the Great himself was an Enlightenment rationalist skeptical of religious enthusiasm, he respected religious freedom and allowed Pietism to continue exerting significant influence in education and charity."
+          },
+          "description": {
+            "zh": "敬虔主义（Pietismus）是17世纪末至18世纪德意志路德宗内部最重要的宗教复兴运动，由菲利普·雅各布·斯佩纳发起，在奥古斯特·赫尔曼·弗兰克于哈勒大学的推动下成为一股强大的社会文化力量。弗兰克在哈勒建立了包括孤儿院、学校、药房、印刷所和传教组织在内的庞大慈善—教育综合体（弗兰克基金会），成为近代欧洲最早的系统性社会福利实验之一。敬虔主义深刻影响了普鲁士的教育体系：它主张每个人都应学习阅读以便直接研读圣经，从而推动了初等教育的普及。敬虔主义的实践伦理——勤勉、节俭、纪律、个人责任——与普鲁士的国家精神高度契合，为普鲁士官僚体系和军队注入了一种世俗化的道德严肃性。此外，摩拉维亚兄弟会（亲岑多夫伯爵创建）作为敬虔主义的一个重要分支，开展了大规模的海外传教活动。到1750年，敬虔主义虽已过了最狂热的阶段，但其在教育、伦理和文化领域的遗产已深深融入普鲁士社会的肌理。",
+            "en": "Pietism (Pietismus) was the most important religious renewal movement within German Lutheranism from the late 17th to the 18th century, initiated by Philipp Jakob Spener and propelled into a major socio-cultural force by August Hermann Francke at the University of Halle. Francke established a vast charitable-educational complex in Halle (the Francke Foundations) encompassing an orphanage, schools, pharmacy, printing press, and missionary organizations—one of early modern Europe's first systematic social welfare experiments. Pietism profoundly shaped the Prussian education system: its insistence that everyone should learn to read in order to study the Bible directly helped drive the expansion of elementary education. Pietism's practical ethics—diligence, frugality, discipline, and personal responsibility—aligned closely with the Prussian state ethos, infusing the Prussian bureaucracy and army with a secularized moral seriousness. Additionally, the Moravian Brethren (founded by Count Zinzendorf) as a major Pietist offshoot conducted extensive overseas missionary work. By 1750, Pietism had passed its most fervent phase, but its legacy in education, ethics, and culture had become deeply woven into the fabric of Prussian society."
+          },
           "keyFigures": [
-            { "name": { "zh": "奥古斯特·赫尔曼·弗兰克", "en": "August Hermann Francke" }, "title": { "zh": "哈勒大学教授（已故）", "en": "Professor at University of Halle (deceased)" }, "role": { "zh": "敬虔主义制度化的奠基者，弗兰克基金会创建人", "en": "Founder of institutionalized Pietism and creator of the Francke Foundations" } },
-            { "name": { "zh": "尼古劳斯·路德维希·冯·亲岑多夫", "en": "Nikolaus Ludwig von Zinzendorf" }, "title": { "zh": "伯爵 / 摩拉维亚兄弟会领袖", "en": "Count / Leader of the Moravian Brethren" }, "role": { "zh": "摩拉维亚兄弟会的重建者，推动全球传教运动", "en": "Rebuilder of the Moravian Brethren and promoter of a global missionary movement" } }
+            {
+              "name": {
+                "zh": "奥古斯特·赫尔曼·弗兰克",
+                "en": "August Hermann Francke"
+              },
+              "title": {
+                "zh": "哈勒大学教授（已故）",
+                "en": "Professor at University of Halle (deceased)"
+              },
+              "role": {
+                "zh": "敬虔主义制度化的奠基者，弗兰克基金会创建人",
+                "en": "Founder of institutionalized Pietism and creator of the Francke Foundations"
+              }
+            },
+            {
+              "name": {
+                "zh": "尼古劳斯·路德维希·冯·亲岑多夫",
+                "en": "Nikolaus Ludwig von Zinzendorf"
+              },
+              "title": {
+                "zh": "伯爵 / 摩拉维亚兄弟会领袖",
+                "en": "Count / Leader of the Moravian Brethren"
+              },
+              "role": {
+                "zh": "摩拉维亚兄弟会的重建者，推动全球传教运动",
+                "en": "Rebuilder of the Moravian Brethren and promoter of a global missionary movement"
+              }
+            }
           ]
         }
       ]
@@ -19749,6 +20204,24 @@
         "keyInnovations": {
           "zh": "关键创新包括纽科门蒸汽机在矿业中的应用、改良农业轮作与育种、焦炭冶铁的扩展、精密钟表与航海测量、保险与金融票据制度、报刊传播网络，以及不断改良的纺织机械与工场组织形式",
           "en": "Key innovations included the use of the Newcomen steam engine in mining, improved agricultural rotation and selective breeding, expanding coke-smelted iron, precision clockmaking and navigational surveying, insurance and financial paper instruments, newspaper communication networks, and steadily improving textile machinery and workshop organization"
+        },
+        "sectors": {
+          "protoIndustrialization": {
+            "zh": "工业革命前夜：纽科门蒸汽机已用于矿井排水，瓦特即将改良蒸汽机（1769年）。亚伯拉罕·达比在铁桥峡谷开创焦炭炼铁。约翰·凯飞梭和哈格里夫斯珍妮纺纱机预示纺织工业革命即将到来。",
+            "en": "Eve of the Industrial Revolution: Newcomen steam engines pump mines; Watt is about to improve the steam engine (1769). Abraham Darby pioneers coke-smelted iron at Ironbridge Gorge. Kay's flying shuttle and Hargreaves' spinning jenny herald the coming textile revolution."
+          },
+          "navalTechnology": {
+            "zh": "海军技术全球领先：皇家海军控制全球海洋，风帆战列舰（一级战舰100门以上火炮）技术成熟。航海仪器（哈里森航海钟H4解决经度问题）和海图测绘领先世界。",
+            "en": "Global naval leadership: Royal Navy controls the oceans; ship-of-the-line technology (100+ gun first-rates) is mature. Navigation instruments (Harrison's H4 chronometer solves the longitude problem) and charting lead the world."
+          },
+          "scientificRevolution": {
+            "zh": "科学革命的延续：牛顿力学和光学理论（1687年《原理》）奠定了现代物理学基础。皇家学会是全球最重要的科学机构。本杰明·富兰克林的电学实验和卡文迪什的化学研究推动自然科学进步。",
+            "en": "Continuation of the Scientific Revolution: Newton's mechanics and optics (1687 Principia) laid modern physics foundations. The Royal Society is the world's most important scientific institution. Franklin's electrical experiments and Cavendish's chemistry advance natural science."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1750年的英国正处于人类历史最重大变革的前夜——工业革命即将开始。蒸汽机、焦炭炼铁和纺织机械的萌芽已经出现。海军技术和科学研究继续领先。牛顿科学革命的遗产为技术创新提供了理论基础。英国将在未来50年内从农业社会转变为世界第一个工业化国家。",
+          "en": "Britain in 1750 stands on the eve of humanity's most momentous transformation — the Industrial Revolution is about to begin. Seeds of steam engines, coke-smelted iron, and textile machinery are already visible. Naval technology and scientific research continue to lead. Newton's Scientific Revolution legacy provides the theoretical foundation for technological innovation. Britain will transform from an agricultural society to the world's first industrialized nation within 50 years."
         }
       },
       "assessment": {
@@ -19773,50 +20246,191 @@
       "factions": [
         {
           "id": "britain_whig_oligarchy",
-          "name": { "zh": "辉格党寡头", "en": "Whig Oligarchy" },
+          "name": {
+            "zh": "辉格党寡头",
+            "en": "Whig Oligarchy"
+          },
           "type": "party",
-          "leader": { "zh": "纽卡斯尔公爵 / 威廉·皮特（老皮特）", "en": "Duke of Newcastle / William Pitt the Elder" },
-          "leaderTitle": { "zh": "首席财政大臣 / 国务大臣", "en": "First Lord of the Treasury / Secretary of State" },
-          "ideology": { "zh": "议会主权与光荣革命宪政体制，辉格寡头统治，商业利益与殖民扩张，宗教宽容（新教范畴内）", "en": "Parliamentary sovereignty and Glorious Revolution constitutional settlement, Whig oligarchic rule, commercial interests and colonial expansion, religious toleration (within Protestantism)" },
-          "headquarters": { "zh": "伦敦（威斯敏斯特宫）", "en": "London (Palace of Westminster)" },
+          "leader": {
+            "zh": "纽卡斯尔公爵 / 威廉·皮特（老皮特）",
+            "en": "Duke of Newcastle / William Pitt the Elder"
+          },
+          "leaderTitle": {
+            "zh": "首席财政大臣 / 国务大臣",
+            "en": "First Lord of the Treasury / Secretary of State"
+          },
+          "ideology": {
+            "zh": "议会主权与光荣革命宪政体制，辉格寡头统治，商业利益与殖民扩张，宗教宽容（新教范畴内）",
+            "en": "Parliamentary sovereignty and Glorious Revolution constitutional settlement, Whig oligarchic rule, commercial interests and colonial expansion, religious toleration (within Protestantism)"
+          },
+          "headquarters": {
+            "zh": "伦敦（威斯敏斯特宫）",
+            "en": "London (Palace of Westminster)"
+          },
           "status": "ruling",
-          "relationship": { "zh": "辉格党自1714年汉诺威王朝继承以来持续主导英国政治。纽卡斯尔公爵通过大规模的政治庇护网络控制下院席位，威廉·皮特（老皮特）则以雄辩的口才和帝国扩张愿景赢得公众支持。辉格党代表土地贵族、城市商人和新教非国教派的联合利益，维护汉诺威王朝的统治正统性。", "en": "The Whigs had dominated British politics since the Hanoverian succession of 1714. The Duke of Newcastle controlled House of Commons seats through an extensive patronage network, while William Pitt the Elder won public support with his eloquent oratory and vision of imperial expansion. The Whig party represented the combined interests of landed aristocrats, urban merchants, and Protestant Dissenters, upholding the legitimacy of the Hanoverian dynasty." },
-          "description": { "zh": "辉格党在1714年至1760年代间几乎不间断地控制了英国政府，形成了所谓的「辉格寡头统治」时代。这一时期英国的政治体制以议会主权为基础：国王虽保留部分行政权力，但政策制定与财政控制实际上由内阁和下院主导。纽卡斯尔公爵托马斯·佩勒姆-霍利斯是18世纪中叶辉格政治机器的核心操纵者，他通过控制「腐败选区」、分配政府职位和养老金来维系庞大的议会多数。威廉·皮特（1708—1778）则代表辉格党中更具理想主义色彩的帝国主义翼，他在七年战争中主导了英国的全球战略，以「帝国就是商业」为信条推动殖民征服。在辉格统治下，英国完成了从欧洲岛国到全球帝国的关键转型——北美殖民地扩大、东印度公司在印度站稳脚跟、皇家海军确立了海上霸权。辉格寡头政治虽然腐败且排斥大多数人参政，但它提供了稳定的政治框架，使英国得以在工业革命前夕积累关键的商业和制度优势。", "en": "The Whigs controlled the British government almost without interruption from 1714 to the 1760s, creating the so-called age of 'Whig oligarchy.' Britain's political system in this period rested on parliamentary sovereignty: while the king retained certain executive powers, policy-making and fiscal control were effectively dominated by the cabinet and House of Commons. Thomas Pelham-Holles, Duke of Newcastle, was the master manipulator of the mid-18th-century Whig political machine, maintaining a vast parliamentary majority through control of 'rotten boroughs,' distribution of government posts, and pensions. William Pitt (1708–1778) represented the more idealistic imperialist wing of the Whig party; during the Seven Years' War he directed Britain's global strategy under the creed 'empire is commerce,' driving colonial conquest. Under Whig rule Britain completed its critical transformation from European island nation to global empire—North American colonies expanded, the East India Company established a firm foothold in India, and the Royal Navy secured maritime supremacy. Though corrupt and exclusionary of most people from political participation, the Whig oligarchy provided a stable political framework that allowed Britain to accumulate crucial commercial and institutional advantages on the eve of the Industrial Revolution." },
+          "relationship": {
+            "zh": "辉格党自1714年汉诺威王朝继承以来持续主导英国政治。纽卡斯尔公爵通过大规模的政治庇护网络控制下院席位，威廉·皮特（老皮特）则以雄辩的口才和帝国扩张愿景赢得公众支持。辉格党代表土地贵族、城市商人和新教非国教派的联合利益，维护汉诺威王朝的统治正统性。",
+            "en": "The Whigs had dominated British politics since the Hanoverian succession of 1714. The Duke of Newcastle controlled House of Commons seats through an extensive patronage network, while William Pitt the Elder won public support with his eloquent oratory and vision of imperial expansion. The Whig party represented the combined interests of landed aristocrats, urban merchants, and Protestant Dissenters, upholding the legitimacy of the Hanoverian dynasty."
+          },
+          "description": {
+            "zh": "辉格党在1714年至1760年代间几乎不间断地控制了英国政府，形成了所谓的「辉格寡头统治」时代。这一时期英国的政治体制以议会主权为基础：国王虽保留部分行政权力，但政策制定与财政控制实际上由内阁和下院主导。纽卡斯尔公爵托马斯·佩勒姆-霍利斯是18世纪中叶辉格政治机器的核心操纵者，他通过控制「腐败选区」、分配政府职位和养老金来维系庞大的议会多数。威廉·皮特（1708—1778）则代表辉格党中更具理想主义色彩的帝国主义翼，他在七年战争中主导了英国的全球战略，以「帝国就是商业」为信条推动殖民征服。在辉格统治下，英国完成了从欧洲岛国到全球帝国的关键转型——北美殖民地扩大、东印度公司在印度站稳脚跟、皇家海军确立了海上霸权。辉格寡头政治虽然腐败且排斥大多数人参政，但它提供了稳定的政治框架，使英国得以在工业革命前夕积累关键的商业和制度优势。",
+            "en": "The Whigs controlled the British government almost without interruption from 1714 to the 1760s, creating the so-called age of 'Whig oligarchy.' Britain's political system in this period rested on parliamentary sovereignty: while the king retained certain executive powers, policy-making and fiscal control were effectively dominated by the cabinet and House of Commons. Thomas Pelham-Holles, Duke of Newcastle, was the master manipulator of the mid-18th-century Whig political machine, maintaining a vast parliamentary majority through control of 'rotten boroughs,' distribution of government posts, and pensions. William Pitt (1708–1778) represented the more idealistic imperialist wing of the Whig party; during the Seven Years' War he directed Britain's global strategy under the creed 'empire is commerce,' driving colonial conquest. Under Whig rule Britain completed its critical transformation from European island nation to global empire—North American colonies expanded, the East India Company established a firm foothold in India, and the Royal Navy secured maritime supremacy. Though corrupt and exclusionary of most people from political participation, the Whig oligarchy provided a stable political framework that allowed Britain to accumulate crucial commercial and institutional advantages on the eve of the Industrial Revolution."
+          },
           "keyFigures": [
-            { "name": { "zh": "纽卡斯尔公爵", "en": "Duke of Newcastle" }, "title": { "zh": "首席财政大臣", "en": "First Lord of the Treasury" }, "role": { "zh": "辉格党政治机器的核心操纵者，议会庇护网络大师", "en": "Master manipulator of the Whig political machine and parliamentary patronage network" } },
-            { "name": { "zh": "威廉·皮特（老皮特）", "en": "William Pitt the Elder" }, "title": { "zh": "南方事务国务大臣", "en": "Secretary of State for the Southern Department" }, "role": { "zh": "七年战争英国战略的主要制定者，帝国扩张的倡导者", "en": "Chief architect of British strategy in the Seven Years' War and advocate of imperial expansion" } }
+            {
+              "name": {
+                "zh": "纽卡斯尔公爵",
+                "en": "Duke of Newcastle"
+              },
+              "title": {
+                "zh": "首席财政大臣",
+                "en": "First Lord of the Treasury"
+              },
+              "role": {
+                "zh": "辉格党政治机器的核心操纵者，议会庇护网络大师",
+                "en": "Master manipulator of the Whig political machine and parliamentary patronage network"
+              }
+            },
+            {
+              "name": {
+                "zh": "威廉·皮特（老皮特）",
+                "en": "William Pitt the Elder"
+              },
+              "title": {
+                "zh": "南方事务国务大臣",
+                "en": "Secretary of State for the Southern Department"
+              },
+              "role": {
+                "zh": "七年战争英国战略的主要制定者，帝国扩张的倡导者",
+                "en": "Chief architect of British strategy in the Seven Years' War and advocate of imperial expansion"
+              }
+            }
           ]
         },
         {
           "id": "britain_tory_opposition",
-          "name": { "zh": "托利党反对派", "en": "Tory Opposition" },
+          "name": {
+            "zh": "托利党反对派",
+            "en": "Tory Opposition"
+          },
           "type": "party",
-          "leader": { "zh": "各地乡绅领袖（无统一领袖）", "en": "Country gentlemen leaders (no unified leader)" },
-          "leaderTitle": { "zh": "下院议员 / 乡绅", "en": "Member of Parliament / Country Gentleman" },
-          "ideology": { "zh": "英国国教利益维护，乡村地产主的传统权利，反对辉格腐败与过度征税，疑虑大陆战争与殖民冒险", "en": "Defense of Church of England interests, traditional rights of country landowners, opposition to Whig corruption and excessive taxation, skepticism of continental wars and colonial ventures" },
-          "headquarters": { "zh": "各地乡村庄园 / 牛津大学", "en": "Country estates across England / University of Oxford" },
+          "leader": {
+            "zh": "各地乡绅领袖（无统一领袖）",
+            "en": "Country gentlemen leaders (no unified leader)"
+          },
+          "leaderTitle": {
+            "zh": "下院议员 / 乡绅",
+            "en": "Member of Parliament / Country Gentleman"
+          },
+          "ideology": {
+            "zh": "英国国教利益维护，乡村地产主的传统权利，反对辉格腐败与过度征税，疑虑大陆战争与殖民冒险",
+            "en": "Defense of Church of England interests, traditional rights of country landowners, opposition to Whig corruption and excessive taxation, skepticism of continental wars and colonial ventures"
+          },
+          "headquarters": {
+            "zh": "各地乡村庄园 / 牛津大学",
+            "en": "Country estates across England / University of Oxford"
+          },
           "status": "opposition",
-          "relationship": { "zh": "托利党在1714年后因被怀疑同情詹姆斯党而长期被排除在权力核心之外。他们在下院拥有相当数量的席位，但无法形成政府。托利派议员代表乡村小地主和英国国教牧师的利益，批评辉格党的腐败、高税收和与汉诺威王朝的密切关联，主张节俭政府和传统的英格兰自由。", "en": "The Tories had been excluded from the center of power since 1714 due to suspected Jacobite sympathies. They held a substantial number of Commons seats but could not form a government. Tory MPs represented the interests of country squires and Church of England clergy, criticizing Whig corruption, high taxation, and close ties to the Hanoverian dynasty, and advocating frugal government and traditional English liberties." },
-          "description": { "zh": "托利党在18世纪中叶是一个处于长期在野状态的政治派系。自安妮女王去世、汉诺威王朝即位以来，托利党被辉格党成功地贴上了「詹姆斯党同情者」的标签而被排斥出政府。尽管许多托利派人士实际上是忠于汉诺威王朝的，但「托利=不忠」的政治偏见在乔治一世和乔治二世时代根深蒂固。托利党的政治基盘在英格兰乡村——小地主、乡村牧师和传统社区构成其核心支持者。他们在文化上与牛津大学关系密切（而辉格党与剑桥关系更近），在宗教上坚定维护英国国教的特殊地位。托利派的政治主张包括：反对常备军、主张民兵制，批评辉格政府的腐败选举操控，要求降低土地税，以及对大陆干预持孤立主义倾向。1750年前后，托利党虽已从詹姆斯党阴影中走出，但仍未能重新执政。他们对辉格寡头的持续批评在一定程度上维护了英国议会政治中的反对派传统。", "en": "The Tories in the mid-18th century were a political faction in prolonged opposition. Since Queen Anne's death and the Hanoverian accession, the Whigs had successfully branded the Tories as Jacobite sympathizers and excluded them from government. Though many Tories were in fact loyal to the Hanoverian dynasty, the political prejudice equating 'Tory' with 'disloyal' was deeply entrenched during the reigns of George I and George II. The Tory political base lay in the English countryside—minor landowners, country parsons, and traditional communities formed their core supporters. Culturally they were closely associated with the University of Oxford (while the Whigs leaned toward Cambridge), and in religion they staunchly defended the special position of the Church of England. Tory political demands included opposition to standing armies in favor of militia, criticism of Whig electoral manipulation, calls for lower land tax, and isolationist tendencies regarding continental intervention. Around 1750, the Tories had emerged from the Jacobite shadow but had not yet returned to power. Their sustained criticism of the Whig oligarchy helped preserve the opposition tradition within British parliamentary politics." },
+          "relationship": {
+            "zh": "托利党在1714年后因被怀疑同情詹姆斯党而长期被排除在权力核心之外。他们在下院拥有相当数量的席位，但无法形成政府。托利派议员代表乡村小地主和英国国教牧师的利益，批评辉格党的腐败、高税收和与汉诺威王朝的密切关联，主张节俭政府和传统的英格兰自由。",
+            "en": "The Tories had been excluded from the center of power since 1714 due to suspected Jacobite sympathies. They held a substantial number of Commons seats but could not form a government. Tory MPs represented the interests of country squires and Church of England clergy, criticizing Whig corruption, high taxation, and close ties to the Hanoverian dynasty, and advocating frugal government and traditional English liberties."
+          },
+          "description": {
+            "zh": "托利党在18世纪中叶是一个处于长期在野状态的政治派系。自安妮女王去世、汉诺威王朝即位以来，托利党被辉格党成功地贴上了「詹姆斯党同情者」的标签而被排斥出政府。尽管许多托利派人士实际上是忠于汉诺威王朝的，但「托利=不忠」的政治偏见在乔治一世和乔治二世时代根深蒂固。托利党的政治基盘在英格兰乡村——小地主、乡村牧师和传统社区构成其核心支持者。他们在文化上与牛津大学关系密切（而辉格党与剑桥关系更近），在宗教上坚定维护英国国教的特殊地位。托利派的政治主张包括：反对常备军、主张民兵制，批评辉格政府的腐败选举操控，要求降低土地税，以及对大陆干预持孤立主义倾向。1750年前后，托利党虽已从詹姆斯党阴影中走出，但仍未能重新执政。他们对辉格寡头的持续批评在一定程度上维护了英国议会政治中的反对派传统。",
+            "en": "The Tories in the mid-18th century were a political faction in prolonged opposition. Since Queen Anne's death and the Hanoverian accession, the Whigs had successfully branded the Tories as Jacobite sympathizers and excluded them from government. Though many Tories were in fact loyal to the Hanoverian dynasty, the political prejudice equating 'Tory' with 'disloyal' was deeply entrenched during the reigns of George I and George II. The Tory political base lay in the English countryside—minor landowners, country parsons, and traditional communities formed their core supporters. Culturally they were closely associated with the University of Oxford (while the Whigs leaned toward Cambridge), and in religion they staunchly defended the special position of the Church of England. Tory political demands included opposition to standing armies in favor of militia, criticism of Whig electoral manipulation, calls for lower land tax, and isolationist tendencies regarding continental intervention. Around 1750, the Tories had emerged from the Jacobite shadow but had not yet returned to power. Their sustained criticism of the Whig oligarchy helped preserve the opposition tradition within British parliamentary politics."
+          },
           "keyFigures": [
-            { "name": { "zh": "威廉·温德姆爵士", "en": "Sir William Wyndham" }, "title": { "zh": "下院托利领袖（已故）", "en": "Tory Leader in the Commons (deceased)" }, "role": { "zh": "安妮女王时代遗留的托利派旗帜性人物，其政治遗产延续至此时", "en": "Iconic Tory figure from Queen Anne's era whose political legacy endured to this period" } },
-            { "name": { "zh": "约翰·布尔", "en": "Country Gentlemen Collectively" }, "title": { "zh": "各地乡绅议员", "en": "Country MPs" }, "role": { "zh": "托利党地方代表的集体力量，维持反对辉格腐败的议会传统", "en": "Collective force of Tory local representatives, maintaining the parliamentary tradition of opposing Whig corruption" } }
+            {
+              "name": {
+                "zh": "威廉·温德姆爵士",
+                "en": "Sir William Wyndham"
+              },
+              "title": {
+                "zh": "下院托利领袖（已故）",
+                "en": "Tory Leader in the Commons (deceased)"
+              },
+              "role": {
+                "zh": "安妮女王时代遗留的托利派旗帜性人物，其政治遗产延续至此时",
+                "en": "Iconic Tory figure from Queen Anne's era whose political legacy endured to this period"
+              }
+            },
+            {
+              "name": {
+                "zh": "约翰·布尔",
+                "en": "Country Gentlemen Collectively"
+              },
+              "title": {
+                "zh": "各地乡绅议员",
+                "en": "Country MPs"
+              },
+              "role": {
+                "zh": "托利党地方代表的集体力量，维持反对辉格腐败的议会传统",
+                "en": "Collective force of Tory local representatives, maintaining the parliamentary tradition of opposing Whig corruption"
+              }
+            }
           ]
         },
         {
           "id": "britain_jacobite_remnants",
-          "name": { "zh": "詹姆斯党残余", "en": "Jacobite Remnants" },
+          "name": {
+            "zh": "詹姆斯党残余",
+            "en": "Jacobite Remnants"
+          },
           "type": "other",
-          "leader": { "zh": "\"小僭王「查尔斯·爱德华·斯图亚特", "en": "Charles Edward Stuart ('Bonnie Prince Charlie')" },
-          "leaderTitle": { "zh": "斯图亚特王位觊觎者", "en": "Stuart Pretender to the Throne" },
-          "ideology": { "zh": "斯图亚特王朝复辟，天主教合法王权（或至少宗教宽容），苏格兰高地传统与氏族忠诚", "en": "Stuart dynasty restoration, Catholic legitimate kingship (or at least religious toleration), Scottish Highland traditions and clan loyalty" },
-          "headquarters": { "zh": "罗马（流亡宫廷）/ 苏格兰高地", "en": "Rome (court in exile) / Scottish Highlands" },
+          "leader": {
+            "zh": "\"小僭王「查尔斯·爱德华·斯图亚特",
+            "en": "Charles Edward Stuart ('Bonnie Prince Charlie')"
+          },
+          "leaderTitle": {
+            "zh": "斯图亚特王位觊觎者",
+            "en": "Stuart Pretender to the Throne"
+          },
+          "ideology": {
+            "zh": "斯图亚特王朝复辟，天主教合法王权（或至少宗教宽容），苏格兰高地传统与氏族忠诚",
+            "en": "Stuart dynasty restoration, Catholic legitimate kingship (or at least religious toleration), Scottish Highland traditions and clan loyalty"
+          },
+          "headquarters": {
+            "zh": "罗马（流亡宫廷）/ 苏格兰高地",
+            "en": "Rome (court in exile) / Scottish Highlands"
+          },
           "status": "underground",
-          "relationship": { "zh": "1745年起义被镇压后，詹姆斯党作为有组织的政治—军事力量已基本瓦解。「小僭王」查尔斯·爱德华·斯图亚特流亡欧洲大陆，苏格兰高地遭到英国政府的系统性军事镇压和文化清洗——禁止穿格纹、解除氏族武装、取消酋长司法权。残余的同情者转入地下或流亡海外。", "en": "After the crushing of the 1745 uprising, the Jacobites as an organized political-military force were essentially destroyed. Charles Edward Stuart ('Bonnie Prince Charlie') went into exile on the European continent, while the Scottish Highlands were subjected to systematic military suppression and cultural erasure by the British government—tartan was banned, clans were disarmed, and chieftains' judicial authority was abolished. Remaining sympathizers went underground or into exile abroad." },
-          "description": { "zh": "詹姆斯党运动起源于1688年光荣革命后对被废黜的斯图亚特王朝的忠诚。其名称来源于拉丁语中的「雅各布斯」（Jacobus，即詹姆斯的拉丁形式）。1745年，「小僭王」查尔斯·爱德华·斯图亚特在法国支持下登陆苏格兰高地，召集了约五千名高地氏族战士，一路南下攻克爱丁堡并深入英格兰腹地直达德比，距伦敦仅200公里。这一冒险最终在1746年卡洛登荒原战役中以惨败告终——坎伯兰公爵率领的英军以火器优势屠杀了高地军队。此后英国政府对苏格兰高地实施了极其严厉的惩罚政策：禁止格纹和高地服饰、取消氏族酋长的世袭权力、没收叛乱者的土地、建造军用道路和堡垒控制高地。「小僭王」在苏格兰流浪五个月后逃往法国，此后在欧洲大陆流亡数十年，逐渐酗酒沉沦。到1750年，詹姆斯党作为政治运动已名存实亡，但它在苏格兰文化记忆中留下了不可磨灭的浪漫印记，并深刻影响了此后的苏格兰民族认同建构。", "en": "The Jacobite movement originated from loyalty to the deposed Stuart dynasty after the Glorious Revolution of 1688. Its name derived from the Latin 'Jacobus' (the Latin form of James). In 1745, Charles Edward Stuart ('Bonnie Prince Charlie'), with French backing, landed in the Scottish Highlands, rallied some five thousand Highland clan warriors, and marched south, capturing Edinburgh and penetrating deep into England as far as Derby, just 200 kilometers from London. This gamble ended in disaster at the Battle of Culloden in 1746—the Duke of Cumberland's forces, with their superiority in firearms, slaughtered the Highland army. The British government then imposed extremely harsh punitive measures on the Scottish Highlands: banning tartan and Highland dress, abolishing chieftains' hereditary powers, confiscating rebels' lands, and building military roads and forts to control the Highlands. The 'Young Pretender' wandered Scotland for five months before escaping to France, and spent decades in continental exile, gradually declining into alcoholism. By 1750, Jacobitism as a political movement was effectively defunct, yet it left an indelible romantic imprint on Scottish cultural memory and profoundly influenced subsequent constructions of Scottish national identity." },
+          "relationship": {
+            "zh": "1745年起义被镇压后，詹姆斯党作为有组织的政治—军事力量已基本瓦解。「小僭王」查尔斯·爱德华·斯图亚特流亡欧洲大陆，苏格兰高地遭到英国政府的系统性军事镇压和文化清洗——禁止穿格纹、解除氏族武装、取消酋长司法权。残余的同情者转入地下或流亡海外。",
+            "en": "After the crushing of the 1745 uprising, the Jacobites as an organized political-military force were essentially destroyed. Charles Edward Stuart ('Bonnie Prince Charlie') went into exile on the European continent, while the Scottish Highlands were subjected to systematic military suppression and cultural erasure by the British government—tartan was banned, clans were disarmed, and chieftains' judicial authority was abolished. Remaining sympathizers went underground or into exile abroad."
+          },
+          "description": {
+            "zh": "詹姆斯党运动起源于1688年光荣革命后对被废黜的斯图亚特王朝的忠诚。其名称来源于拉丁语中的「雅各布斯」（Jacobus，即詹姆斯的拉丁形式）。1745年，「小僭王」查尔斯·爱德华·斯图亚特在法国支持下登陆苏格兰高地，召集了约五千名高地氏族战士，一路南下攻克爱丁堡并深入英格兰腹地直达德比，距伦敦仅200公里。这一冒险最终在1746年卡洛登荒原战役中以惨败告终——坎伯兰公爵率领的英军以火器优势屠杀了高地军队。此后英国政府对苏格兰高地实施了极其严厉的惩罚政策：禁止格纹和高地服饰、取消氏族酋长的世袭权力、没收叛乱者的土地、建造军用道路和堡垒控制高地。「小僭王」在苏格兰流浪五个月后逃往法国，此后在欧洲大陆流亡数十年，逐渐酗酒沉沦。到1750年，詹姆斯党作为政治运动已名存实亡，但它在苏格兰文化记忆中留下了不可磨灭的浪漫印记，并深刻影响了此后的苏格兰民族认同建构。",
+            "en": "The Jacobite movement originated from loyalty to the deposed Stuart dynasty after the Glorious Revolution of 1688. Its name derived from the Latin 'Jacobus' (the Latin form of James). In 1745, Charles Edward Stuart ('Bonnie Prince Charlie'), with French backing, landed in the Scottish Highlands, rallied some five thousand Highland clan warriors, and marched south, capturing Edinburgh and penetrating deep into England as far as Derby, just 200 kilometers from London. This gamble ended in disaster at the Battle of Culloden in 1746—the Duke of Cumberland's forces, with their superiority in firearms, slaughtered the Highland army. The British government then imposed extremely harsh punitive measures on the Scottish Highlands: banning tartan and Highland dress, abolishing chieftains' hereditary powers, confiscating rebels' lands, and building military roads and forts to control the Highlands. The 'Young Pretender' wandered Scotland for five months before escaping to France, and spent decades in continental exile, gradually declining into alcoholism. By 1750, Jacobitism as a political movement was effectively defunct, yet it left an indelible romantic imprint on Scottish cultural memory and profoundly influenced subsequent constructions of Scottish national identity."
+          },
           "keyFigures": [
-            { "name": { "zh": "查尔斯·爱德华·斯图亚特", "en": "Charles Edward Stuart" }, "title": { "zh": "斯图亚特王位觊觎者", "en": "Stuart Pretender" }, "role": { "zh": "1745年起义的领袖，流亡中的斯图亚特王朝代表", "en": "Leader of the 1745 uprising and Stuart dynastic representative in exile" } },
-            { "name": { "zh": "西蒙·弗雷泽（洛瓦特勋爵）", "en": "Simon Fraser (Lord Lovat)" }, "title": { "zh": "弗雷泽氏族酋长", "en": "Chief of Clan Fraser" }, "role": { "zh": "1745年起义中最后一位被斩首的贵族叛乱者", "en": "The last nobleman to be beheaded for his role in the 1745 rebellion" } }
+            {
+              "name": {
+                "zh": "查尔斯·爱德华·斯图亚特",
+                "en": "Charles Edward Stuart"
+              },
+              "title": {
+                "zh": "斯图亚特王位觊觎者",
+                "en": "Stuart Pretender"
+              },
+              "role": {
+                "zh": "1745年起义的领袖，流亡中的斯图亚特王朝代表",
+                "en": "Leader of the 1745 uprising and Stuart dynastic representative in exile"
+              }
+            },
+            {
+              "name": {
+                "zh": "西蒙·弗雷泽（洛瓦特勋爵）",
+                "en": "Simon Fraser (Lord Lovat)"
+              },
+              "title": {
+                "zh": "弗雷泽氏族酋长",
+                "en": "Chief of Clan Fraser"
+              },
+              "role": {
+                "zh": "1745年起义中最后一位被斩首的贵族叛乱者",
+                "en": "The last nobleman to be beheaded for his role in the 1745 rebellion"
+              }
+            }
           ]
         }
       ]
@@ -20419,52 +21033,219 @@
       "factions": [
         {
           "id": "france_royal_court_1750",
-          "name": { "zh": "王室宫廷", "en": "Royal Court" },
+          "name": {
+            "zh": "王室宫廷",
+            "en": "Royal Court"
+          },
           "type": "other",
-          "leader": { "zh": "路易十五", "en": "Louis XV" },
-          "leaderTitle": { "zh": "法兰西与纳瓦拉国王", "en": "King of France and Navarre" },
-          "ideology": { "zh": "绝对君主制传统延续，凡尔赛宫廷政治，皇家庇护与宠臣体系，对外争霸与殖民扩张", "en": "Continuation of absolute monarchy tradition, Versailles court politics, royal patronage and favorites system, great-power rivalry and colonial expansion" },
-          "headquarters": { "zh": "凡尔赛宫", "en": "Palace of Versailles" },
+          "leader": {
+            "zh": "路易十五",
+            "en": "Louis XV"
+          },
+          "leaderTitle": {
+            "zh": "法兰西与纳瓦拉国王",
+            "en": "King of France and Navarre"
+          },
+          "ideology": {
+            "zh": "绝对君主制传统延续，凡尔赛宫廷政治，皇家庇护与宠臣体系，对外争霸与殖民扩张",
+            "en": "Continuation of absolute monarchy tradition, Versailles court politics, royal patronage and favorites system, great-power rivalry and colonial expansion"
+          },
+          "headquarters": {
+            "zh": "凡尔赛宫",
+            "en": "Palace of Versailles"
+          },
           "status": "ruling",
-          "relationship": { "zh": "路易十五在弗勒里枢机去世后（1743年）亲政，但对日常政务兴趣不稳定，大量决策受蓬帕杜尔夫人和宠臣集团影响。王廷通过官僚体系、包税商和地方总督维持对全国的统治，但高等法院的抵制和启蒙思想的传播正在侵蚀绝对主义的合法性基础。", "en": "Louis XV assumed personal rule after the death of Cardinal Fleury (1743) but his attention to daily governance was uneven, and many decisions were shaped by Madame de Pompadour and courtier factions. The crown maintained national control through the bureaucracy, tax farmers, and provincial intendants, but resistance from the parlements and the spread of Enlightenment thought were eroding the legitimacy foundations of absolutism." },
-          "description": { "zh": "路易十五（1710—1774）是法国历史上最具争议的国王之一。他在位五十九年（1715—1774），是路易十四之后法国绝对君主制由盛转衰的关键时期。少年时代由奥尔良摄政公爵和弗勒里枢机先后辅政，成年亲政后表现出聪明但缺乏持久意志的特点。蓬帕杜尔夫人（1721—1764）作为他最具影响力的情妇，在1745年至1764年间深度介入政治决策、文化庇护和外交方向——她推动了法奥联盟（「外交革命」）和对启蒙知识分子的保护。凡尔赛宫廷的运转消耗了巨额财政，数千名贵族在凡尔赛竞逐国王的恩宠，形成了一个远离社会现实的封闭权力世界。与此同时，七年战争的失败（失去加拿大和印度大部分殖民地）严重损害了法国的国际地位和国内威信。1750年正值蓬帕杜尔夫人影响力的高峰时期，法国外交正从传统的反哈布斯堡路线转向新的法奥同盟。", "en": "Louis XV (1710–1774) was one of the most controversial kings in French history. His fifty-nine-year reign (1715–1774) marked the critical transition of French absolute monarchy from its peak to decline after Louis XIV. Governed in his youth by the Duke of Orléans as regent and then by Cardinal Fleury, he showed intelligence but lacked sustained willpower upon assuming personal rule. Madame de Pompadour (1721–1764), his most influential mistress, was deeply involved in political decisions, cultural patronage, and diplomatic direction from 1745 to 1764—she promoted the Franco-Austrian alliance (the 'Diplomatic Revolution') and the protection of Enlightenment intellectuals. The operations of the Versailles court consumed enormous fiscal resources, with thousands of nobles competing for royal favor in a closed world of power detached from social reality. Meanwhile, defeat in the Seven Years' War (losing Canada and most Indian colonies) severely damaged France's international standing and domestic prestige. Around 1750, at the height of Pompadour's influence, French diplomacy was pivoting from the traditional anti-Habsburg line toward a new Franco-Austrian alliance." },
+          "relationship": {
+            "zh": "路易十五在弗勒里枢机去世后（1743年）亲政，但对日常政务兴趣不稳定，大量决策受蓬帕杜尔夫人和宠臣集团影响。王廷通过官僚体系、包税商和地方总督维持对全国的统治，但高等法院的抵制和启蒙思想的传播正在侵蚀绝对主义的合法性基础。",
+            "en": "Louis XV assumed personal rule after the death of Cardinal Fleury (1743) but his attention to daily governance was uneven, and many decisions were shaped by Madame de Pompadour and courtier factions. The crown maintained national control through the bureaucracy, tax farmers, and provincial intendants, but resistance from the parlements and the spread of Enlightenment thought were eroding the legitimacy foundations of absolutism."
+          },
+          "description": {
+            "zh": "路易十五（1710—1774）是法国历史上最具争议的国王之一。他在位五十九年（1715—1774），是路易十四之后法国绝对君主制由盛转衰的关键时期。少年时代由奥尔良摄政公爵和弗勒里枢机先后辅政，成年亲政后表现出聪明但缺乏持久意志的特点。蓬帕杜尔夫人（1721—1764）作为他最具影响力的情妇，在1745年至1764年间深度介入政治决策、文化庇护和外交方向——她推动了法奥联盟（「外交革命」）和对启蒙知识分子的保护。凡尔赛宫廷的运转消耗了巨额财政，数千名贵族在凡尔赛竞逐国王的恩宠，形成了一个远离社会现实的封闭权力世界。与此同时，七年战争的失败（失去加拿大和印度大部分殖民地）严重损害了法国的国际地位和国内威信。1750年正值蓬帕杜尔夫人影响力的高峰时期，法国外交正从传统的反哈布斯堡路线转向新的法奥同盟。",
+            "en": "Louis XV (1710–1774) was one of the most controversial kings in French history. His fifty-nine-year reign (1715–1774) marked the critical transition of French absolute monarchy from its peak to decline after Louis XIV. Governed in his youth by the Duke of Orléans as regent and then by Cardinal Fleury, he showed intelligence but lacked sustained willpower upon assuming personal rule. Madame de Pompadour (1721–1764), his most influential mistress, was deeply involved in political decisions, cultural patronage, and diplomatic direction from 1745 to 1764—she promoted the Franco-Austrian alliance (the 'Diplomatic Revolution') and the protection of Enlightenment intellectuals. The operations of the Versailles court consumed enormous fiscal resources, with thousands of nobles competing for royal favor in a closed world of power detached from social reality. Meanwhile, defeat in the Seven Years' War (losing Canada and most Indian colonies) severely damaged France's international standing and domestic prestige. Around 1750, at the height of Pompadour's influence, French diplomacy was pivoting from the traditional anti-Habsburg line toward a new Franco-Austrian alliance."
+          },
           "keyFigures": [
-            { "name": { "zh": "路易十五", "en": "Louis XV" }, "title": { "zh": "法兰西国王", "en": "King of France" }, "role": { "zh": "法兰西绝对君主，在位期间国力由盛转衰", "en": "Absolute monarch of France, during whose reign national power shifted from zenith to decline" } },
-            { "name": { "zh": "蓬帕杜尔夫人", "en": "Madame de Pompadour" }, "title": { "zh": "国王首席情妇", "en": "Chief Royal Mistress" }, "role": { "zh": "政治顾问、文化庇护者和外交方向的重要影响者", "en": "Political advisor, cultural patron, and significant influence on diplomatic direction" } }
+            {
+              "name": {
+                "zh": "路易十五",
+                "en": "Louis XV"
+              },
+              "title": {
+                "zh": "法兰西国王",
+                "en": "King of France"
+              },
+              "role": {
+                "zh": "法兰西绝对君主，在位期间国力由盛转衰",
+                "en": "Absolute monarch of France, during whose reign national power shifted from zenith to decline"
+              }
+            },
+            {
+              "name": {
+                "zh": "蓬帕杜尔夫人",
+                "en": "Madame de Pompadour"
+              },
+              "title": {
+                "zh": "国王首席情妇",
+                "en": "Chief Royal Mistress"
+              },
+              "role": {
+                "zh": "政治顾问、文化庇护者和外交方向的重要影响者",
+                "en": "Political advisor, cultural patron, and significant influence on diplomatic direction"
+              }
+            }
           ]
         },
         {
           "id": "france_philosophes",
-          "name": { "zh": "启蒙哲人 / 启蒙运动", "en": "Philosophes / Enlightenment Movement" },
+          "name": {
+            "zh": "启蒙哲人 / 启蒙运动",
+            "en": "Philosophes / Enlightenment Movement"
+          },
           "type": "other",
-          "leader": { "zh": "伏尔泰 / 狄德罗", "en": "Voltaire / Diderot" },
-          "leaderTitle": { "zh": "哲学家 / 百科全书主编", "en": "Philosopher / Editor of the Encyclopédie" },
-          "ideology": { "zh": "理性主义，宗教宽容与反教权主义，自然权利，科学进步，社会契约论，通过知识改良社会", "en": "Rationalism, religious tolerance and anticlericalism, natural rights, scientific progress, social contract theory, and social improvement through knowledge" },
-          "headquarters": { "zh": "巴黎（咖啡馆与沙龙）", "en": "Paris (cafés and salons)" },
+          "leader": {
+            "zh": "伏尔泰 / 狄德罗",
+            "en": "Voltaire / Diderot"
+          },
+          "leaderTitle": {
+            "zh": "哲学家 / 百科全书主编",
+            "en": "Philosopher / Editor of the Encyclopédie"
+          },
+          "ideology": {
+            "zh": "理性主义，宗教宽容与反教权主义，自然权利，科学进步，社会契约论，通过知识改良社会",
+            "en": "Rationalism, religious tolerance and anticlericalism, natural rights, scientific progress, social contract theory, and social improvement through knowledge"
+          },
+          "headquarters": {
+            "zh": "巴黎（咖啡馆与沙龙）",
+            "en": "Paris (cafés and salons)"
+          },
           "status": "opposition",
-          "relationship": { "zh": "启蒙哲人群体并非一个统一的组织，而是由共享理性主义与批判精神的知识分子组成的松散网络。他们通过著作、百科全书、沙龙和跨国通信传播新思想，对旧制度的政治、宗教和社会基础提出系统性质疑。王权对他们态度矛盾——蓬帕杜尔夫人保护百科全书派，但教会和保守势力多次推动查禁其著作。", "en": "The philosophes were not a unified organization but a loose network of intellectuals sharing rationalist and critical convictions. They disseminated new ideas through writings, the Encyclopédie, salons, and transnational correspondence, mounting a systematic challenge to the political, religious, and social foundations of the Ancien Régime. The crown's attitude toward them was ambivalent—Madame de Pompadour protected the Encyclopédistes, while the church and conservative forces repeatedly sought to suppress their works." },
-          "description": { "zh": "法国启蒙运动（Les Lumières）是18世纪欧洲最深刻的思想变革之一，其影响远超法国边界，重塑了整个西方文明的政治与文化框架。1750年前后正是启蒙运动从思想酝酿走向全面爆发的关键转折期。伏尔泰（1694—1778）已是欧洲最负盛名的知识分子，他以尖刻的讽刺笔法攻击宗教不宽容和政治专制，在各国宫廷间奔走，与腓特烈大帝等开明君主保持密切交往。孟德斯鸠的《论法的精神》（1748年）系统阐述了三权分立学说，深刻影响了后世的宪政思想。让-雅克·卢梭的社会契约论和自然状态理论正在成形。最具象征意义的是德尼·狄德罗和让·勒朗·达朗贝尔主编的《百科全书》（1751年开始出版），这部旨在系统总结人类全部知识的巨著，汇聚了一百五十余位撰稿人，不仅是一部参考工具书，更是一份挑战传统权威、宣扬理性与进步的思想宣言。启蒙哲人的核心主张——理性取代迷信、宽容取代偏执、进步取代停滞——在1750年的法国社会中引发了日益激烈的思想论战，为四十年后的大革命准备了思想弹药。", "en": "The French Enlightenment (Les Lumières) was one of the most profound intellectual transformations of 18th-century Europe, its influence extending far beyond France to reshape the political and cultural framework of all Western civilization. Around 1750 was the critical turning point when the Enlightenment shifted from intellectual gestation to full eruption. Voltaire (1694–1778) was already Europe's most celebrated intellectual, wielding caustic satire against religious intolerance and political despotism, traveling between courts and maintaining close contact with enlightened monarchs such as Frederick the Great. Montesquieu's Spirit of the Laws (1748) systematically articulated the doctrine of separation of powers, profoundly influencing later constitutional thought. Jean-Jacques Rousseau's social contract theory and state-of-nature philosophy were taking shape. Most symbolically, Denis Diderot and Jean le Rond d'Alembert's Encyclopédie (publication beginning 1751), a monumental work aiming to systematically compile all human knowledge with over 150 contributors, was not merely a reference tool but an intellectual manifesto challenging traditional authority and proclaiming reason and progress. The philosophes' core propositions—reason replacing superstition, tolerance replacing bigotry, progress replacing stagnation—were provoking increasingly fierce intellectual debate in French society around 1750, preparing the intellectual ammunition for the Revolution forty years later." },
+          "relationship": {
+            "zh": "启蒙哲人群体并非一个统一的组织，而是由共享理性主义与批判精神的知识分子组成的松散网络。他们通过著作、百科全书、沙龙和跨国通信传播新思想，对旧制度的政治、宗教和社会基础提出系统性质疑。王权对他们态度矛盾——蓬帕杜尔夫人保护百科全书派，但教会和保守势力多次推动查禁其著作。",
+            "en": "The philosophes were not a unified organization but a loose network of intellectuals sharing rationalist and critical convictions. They disseminated new ideas through writings, the Encyclopédie, salons, and transnational correspondence, mounting a systematic challenge to the political, religious, and social foundations of the Ancien Régime. The crown's attitude toward them was ambivalent—Madame de Pompadour protected the Encyclopédistes, while the church and conservative forces repeatedly sought to suppress their works."
+          },
+          "description": {
+            "zh": "法国启蒙运动（Les Lumières）是18世纪欧洲最深刻的思想变革之一，其影响远超法国边界，重塑了整个西方文明的政治与文化框架。1750年前后正是启蒙运动从思想酝酿走向全面爆发的关键转折期。伏尔泰（1694—1778）已是欧洲最负盛名的知识分子，他以尖刻的讽刺笔法攻击宗教不宽容和政治专制，在各国宫廷间奔走，与腓特烈大帝等开明君主保持密切交往。孟德斯鸠的《论法的精神》（1748年）系统阐述了三权分立学说，深刻影响了后世的宪政思想。让-雅克·卢梭的社会契约论和自然状态理论正在成形。最具象征意义的是德尼·狄德罗和让·勒朗·达朗贝尔主编的《百科全书》（1751年开始出版），这部旨在系统总结人类全部知识的巨著，汇聚了一百五十余位撰稿人，不仅是一部参考工具书，更是一份挑战传统权威、宣扬理性与进步的思想宣言。启蒙哲人的核心主张——理性取代迷信、宽容取代偏执、进步取代停滞——在1750年的法国社会中引发了日益激烈的思想论战，为四十年后的大革命准备了思想弹药。",
+            "en": "The French Enlightenment (Les Lumières) was one of the most profound intellectual transformations of 18th-century Europe, its influence extending far beyond France to reshape the political and cultural framework of all Western civilization. Around 1750 was the critical turning point when the Enlightenment shifted from intellectual gestation to full eruption. Voltaire (1694–1778) was already Europe's most celebrated intellectual, wielding caustic satire against religious intolerance and political despotism, traveling between courts and maintaining close contact with enlightened monarchs such as Frederick the Great. Montesquieu's Spirit of the Laws (1748) systematically articulated the doctrine of separation of powers, profoundly influencing later constitutional thought. Jean-Jacques Rousseau's social contract theory and state-of-nature philosophy were taking shape. Most symbolically, Denis Diderot and Jean le Rond d'Alembert's Encyclopédie (publication beginning 1751), a monumental work aiming to systematically compile all human knowledge with over 150 contributors, was not merely a reference tool but an intellectual manifesto challenging traditional authority and proclaiming reason and progress. The philosophes' core propositions—reason replacing superstition, tolerance replacing bigotry, progress replacing stagnation—were provoking increasingly fierce intellectual debate in French society around 1750, preparing the intellectual ammunition for the Revolution forty years later."
+          },
           "keyFigures": [
-            { "name": { "zh": "伏尔泰", "en": "Voltaire" }, "title": { "zh": "哲学家 / 作家", "en": "Philosopher / Writer" }, "role": { "zh": "启蒙运动最具代表性的知识分子，宗教宽容和言论自由的旗手", "en": "The most representative intellectual of the Enlightenment, champion of religious tolerance and freedom of speech" } },
-            { "name": { "zh": "德尼·狄德罗", "en": "Denis Diderot" }, "title": { "zh": "百科全书主编", "en": "Editor-in-Chief of the Encyclopédie" }, "role": { "zh": "百科全书派的灵魂人物，启蒙知识总汇的组织者", "en": "Animating figure of the Encyclopédistes and organizer of the Enlightenment knowledge compendium" } },
-            { "name": { "zh": "孟德斯鸠", "en": "Montesquieu" }, "title": { "zh": "法学家 / 政治哲学家", "en": "Jurist / Political Philosopher" }, "role": { "zh": "三权分立学说的奠基人，《论法的精神》作者", "en": "Founder of the separation of powers doctrine, author of The Spirit of the Laws" } },
-            { "name": { "zh": "让-雅克·卢梭", "en": "Jean-Jacques Rousseau" }, "title": { "zh": "哲学家 / 作家", "en": "Philosopher / Writer" }, "role": { "zh": "社会契约论者，自然状态与人民主权思想的倡导者", "en": "Social contract theorist and advocate of the state of nature and popular sovereignty" } }
+            {
+              "name": {
+                "zh": "伏尔泰",
+                "en": "Voltaire"
+              },
+              "title": {
+                "zh": "哲学家 / 作家",
+                "en": "Philosopher / Writer"
+              },
+              "role": {
+                "zh": "启蒙运动最具代表性的知识分子，宗教宽容和言论自由的旗手",
+                "en": "The most representative intellectual of the Enlightenment, champion of religious tolerance and freedom of speech"
+              }
+            },
+            {
+              "name": {
+                "zh": "德尼·狄德罗",
+                "en": "Denis Diderot"
+              },
+              "title": {
+                "zh": "百科全书主编",
+                "en": "Editor-in-Chief of the Encyclopédie"
+              },
+              "role": {
+                "zh": "百科全书派的灵魂人物，启蒙知识总汇的组织者",
+                "en": "Animating figure of the Encyclopédistes and organizer of the Enlightenment knowledge compendium"
+              }
+            },
+            {
+              "name": {
+                "zh": "孟德斯鸠",
+                "en": "Montesquieu"
+              },
+              "title": {
+                "zh": "法学家 / 政治哲学家",
+                "en": "Jurist / Political Philosopher"
+              },
+              "role": {
+                "zh": "三权分立学说的奠基人，《论法的精神》作者",
+                "en": "Founder of the separation of powers doctrine, author of The Spirit of the Laws"
+              }
+            },
+            {
+              "name": {
+                "zh": "让-雅克·卢梭",
+                "en": "Jean-Jacques Rousseau"
+              },
+              "title": {
+                "zh": "哲学家 / 作家",
+                "en": "Philosopher / Writer"
+              },
+              "role": {
+                "zh": "社会契约论者，自然状态与人民主权思想的倡导者",
+                "en": "Social contract theorist and advocate of the state of nature and popular sovereignty"
+              }
+            }
           ]
         },
         {
           "id": "france_parlements_1750",
-          "name": { "zh": "高等法院 / 法袍贵族", "en": "Parlements / Judicial Aristocracy" },
+          "name": {
+            "zh": "高等法院 / 法袍贵族",
+            "en": "Parlements / Judicial Aristocracy"
+          },
           "type": "other",
-          "leader": { "zh": "巴黎高等法院院长", "en": "First President of the Parlement of Paris" },
-          "leaderTitle": { "zh": "首席院长", "en": "First President" },
-          "ideology": { "zh": "法国「古老宪政」传统维护，高等法院登记权与谏诤权，抵制王室税收改革，世袭法官权利", "en": "Defense of France's 'ancient constitution' tradition, parlementary rights of registration and remonstrance, resistance to royal tax reform, hereditary judicial privileges" },
-          "headquarters": { "zh": "巴黎（司法宫）", "en": "Paris (Palais de Justice)" },
+          "leader": {
+            "zh": "巴黎高等法院院长",
+            "en": "First President of the Parlement of Paris"
+          },
+          "leaderTitle": {
+            "zh": "首席院长",
+            "en": "First President"
+          },
+          "ideology": {
+            "zh": "法国「古老宪政」传统维护，高等法院登记权与谏诤权，抵制王室税收改革，世袭法官权利",
+            "en": "Defense of France's 'ancient constitution' tradition, parlementary rights of registration and remonstrance, resistance to royal tax reform, hereditary judicial privileges"
+          },
+          "headquarters": {
+            "zh": "巴黎（司法宫）",
+            "en": "Paris (Palais de Justice)"
+          },
           "status": "rival",
-          "relationship": { "zh": "高等法院以其对王室法令的登记权为武器，多次拒绝登记新税法令和宗教政策，实际上构成了对绝对君主制的制度性制衡。路易十五与高等法院之间的冲突贯穿其整个统治时期——国王偶尔动用「强制御令」（lit de justice）强行通过法令，但高等法院始终坚持其谏诤传统。", "en": "The parlements used their right of registration of royal edicts as a weapon, repeatedly refusing to register new tax decrees and religious policies, effectively constituting an institutional check on absolute monarchy. The conflict between Louis XV and the parlements ran throughout his reign—the king occasionally invoked the lit de justice to force edicts through, but the parlements persistently upheld their tradition of remonstrance." },
-          "description": { "zh": "法国高等法院（Parlements）是旧制度下最重要的司法—政治机构，以巴黎高等法院为首，全国共有十三个高等法院。它们名义上是最高司法法庭，但其政治影响力主要来自对王室法令的「登记权」——任何新法律须经高等法院登记方能生效。高等法院法官的职位是可以买卖和世袭的（卖官制度，paulette），这使他们成为一个自成体系的「法袍贵族」阶层，其权力基础独立于王权恩赐。到18世纪中叶，高等法院日益频繁地行使「谏诤权」（droit de remontrance），拒绝登记国王的新税法令和有争议的宗教政策（特别是涉及冉森主义的教令）。他们的抵制以「法国古老宪政」为理论依据，声称自己代表国家的根本法律传统来约束王权。路易十五多次与高等法院发生正面冲突，1753年甚至一度流放巴黎高等法院法官。这场王权与司法贵族之间的持续斗争，是导致旧制度财政改革屡屡受挫的核心原因之一，也为1789年大革命中三级会议的召开埋下了伏笔。高等法院既是保守特权的维护者（抵制有利于社会公平的改革），又在客观上扮演了限制专制权力的角色，这种矛盾性是旧制度政治的一个缩影。", "en": "The French Parlements were the most important judicial-political institutions of the Ancien Régime, led by the Parlement of Paris with thirteen parlements nationwide. Nominally supreme courts of justice, their political influence derived primarily from the right of registration—any new law required parlementary registration to take effect. Parlementary offices were venal and hereditary (the paulette system), making the magistrates a self-sustaining 'robe nobility' whose power base was independent of royal favor. By the mid-18th century, the parlements increasingly exercised their droit de remontrance, refusing to register royal tax edicts and controversial religious policies (particularly those concerning Jansenism). They justified their resistance by invoking France's 'ancient constitution,' claiming to represent the nation's fundamental legal traditions as a check on royal power. Louis XV clashed with the parlements repeatedly, at one point exiling the Parlement of Paris magistrates in 1753. This ongoing struggle between crown and judicial aristocracy was a core reason why Ancien Régime fiscal reform was repeatedly thwarted, and it laid the groundwork for the convocation of the Estates-General in 1789. The parlements simultaneously defended conservative privilege (resisting reforms beneficial to social equity) and objectively served as a check on despotic power—this paradox encapsulated the contradictions of Ancien Régime politics." },
+          "relationship": {
+            "zh": "高等法院以其对王室法令的登记权为武器，多次拒绝登记新税法令和宗教政策，实际上构成了对绝对君主制的制度性制衡。路易十五与高等法院之间的冲突贯穿其整个统治时期——国王偶尔动用「强制御令」（lit de justice）强行通过法令，但高等法院始终坚持其谏诤传统。",
+            "en": "The parlements used their right of registration of royal edicts as a weapon, repeatedly refusing to register new tax decrees and religious policies, effectively constituting an institutional check on absolute monarchy. The conflict between Louis XV and the parlements ran throughout his reign—the king occasionally invoked the lit de justice to force edicts through, but the parlements persistently upheld their tradition of remonstrance."
+          },
+          "description": {
+            "zh": "法国高等法院（Parlements）是旧制度下最重要的司法—政治机构，以巴黎高等法院为首，全国共有十三个高等法院。它们名义上是最高司法法庭，但其政治影响力主要来自对王室法令的「登记权」——任何新法律须经高等法院登记方能生效。高等法院法官的职位是可以买卖和世袭的（卖官制度，paulette），这使他们成为一个自成体系的「法袍贵族」阶层，其权力基础独立于王权恩赐。到18世纪中叶，高等法院日益频繁地行使「谏诤权」（droit de remontrance），拒绝登记国王的新税法令和有争议的宗教政策（特别是涉及冉森主义的教令）。他们的抵制以「法国古老宪政」为理论依据，声称自己代表国家的根本法律传统来约束王权。路易十五多次与高等法院发生正面冲突，1753年甚至一度流放巴黎高等法院法官。这场王权与司法贵族之间的持续斗争，是导致旧制度财政改革屡屡受挫的核心原因之一，也为1789年大革命中三级会议的召开埋下了伏笔。高等法院既是保守特权的维护者（抵制有利于社会公平的改革），又在客观上扮演了限制专制权力的角色，这种矛盾性是旧制度政治的一个缩影。",
+            "en": "The French Parlements were the most important judicial-political institutions of the Ancien Régime, led by the Parlement of Paris with thirteen parlements nationwide. Nominally supreme courts of justice, their political influence derived primarily from the right of registration—any new law required parlementary registration to take effect. Parlementary offices were venal and hereditary (the paulette system), making the magistrates a self-sustaining 'robe nobility' whose power base was independent of royal favor. By the mid-18th century, the parlements increasingly exercised their droit de remontrance, refusing to register royal tax edicts and controversial religious policies (particularly those concerning Jansenism). They justified their resistance by invoking France's 'ancient constitution,' claiming to represent the nation's fundamental legal traditions as a check on royal power. Louis XV clashed with the parlements repeatedly, at one point exiling the Parlement of Paris magistrates in 1753. This ongoing struggle between crown and judicial aristocracy was a core reason why Ancien Régime fiscal reform was repeatedly thwarted, and it laid the groundwork for the convocation of the Estates-General in 1789. The parlements simultaneously defended conservative privilege (resisting reforms beneficial to social equity) and objectively served as a check on despotic power—this paradox encapsulated the contradictions of Ancien Régime politics."
+          },
           "keyFigures": [
-            { "name": { "zh": "巴黎高等法院法官群体", "en": "Parlement of Paris Magistrates" }, "title": { "zh": "法袍贵族", "en": "Robe Nobility" }, "role": { "zh": "以登记权与谏诤权为工具抵制王室改革的司法贵族集团", "en": "Judicial aristocratic body using registration and remonstrance rights to resist royal reform" } },
-            { "name": { "zh": "克里斯托夫·德·博蒙", "en": "Christophe de Beaumont" }, "title": { "zh": "巴黎大主教", "en": "Archbishop of Paris" }, "role": { "zh": "反冉森主义斗争中教会与高等法院冲突的焦点人物", "en": "Central figure in the clash between church and parlements over anti-Jansenist policies" } }
+            {
+              "name": {
+                "zh": "巴黎高等法院法官群体",
+                "en": "Parlement of Paris Magistrates"
+              },
+              "title": {
+                "zh": "法袍贵族",
+                "en": "Robe Nobility"
+              },
+              "role": {
+                "zh": "以登记权与谏诤权为工具抵制王室改革的司法贵族集团",
+                "en": "Judicial aristocratic body using registration and remonstrance rights to resist royal reform"
+              }
+            },
+            {
+              "name": {
+                "zh": "克里斯托夫·德·博蒙",
+                "en": "Christophe de Beaumont"
+              },
+              "title": {
+                "zh": "巴黎大主教",
+                "en": "Archbishop of Paris"
+              },
+              "role": {
+                "zh": "反冉森主义斗争中教会与高等法院冲突的焦点人物",
+                "en": "Central figure in the clash between church and parlements over anti-Jansenist policies"
+              }
+            }
           ]
         }
       ]
@@ -21664,6 +22445,20 @@
         "keyInnovations": {
           "zh": "先进的航海测绘、商船设计、风车驱动工业、水利排灌、金融票据、保险精算、显微镜与光学器械制造，以及高效的商品交易与仓储体系。",
           "en": "Advanced nautical charting, merchant ship design, wind-powered industry, hydraulic drainage, financial paper, insurance calculation, microscope and optical instrument manufacture, and highly efficient commodity exchange and warehousing systems."
+        },
+        "sectors": {
+          "financialInfrastructure": {
+            "zh": "金融基础设施仍全球领先：阿姆斯特丹银行和证券交易所虽然影响力不如巅峰时期，但仍是全球金融中心之一。荷兰的保险业、银行业和国际贸易金融服务体系在欧洲无可匹敌。",
+            "en": "Financial infrastructure still globally leading: the Bank of Amsterdam and stock exchange, though past their peak influence, remain among global financial centers. Dutch insurance, banking, and international trade financial services are unmatched in Europe."
+          },
+          "navalAndMaritime": {
+            "zh": "海军与航海技术仍然先进：荷兰造船业虽然规模不如黄金时代，但技术水平仍是欧洲前列。荷兰东印度公司仍在东南亚和日本维持贸易网络。风车技术在排水和磨坊中的应用高度成熟。",
+            "en": "Naval and maritime tech still advanced: Dutch shipbuilding, though diminished from Golden Age scale, maintains European-leading technical standards. The VOC still maintains trade networks in Southeast Asia and Japan. Windmill technology for drainage and milling is highly refined."
+          }
+        },
+        "overallAssessment": {
+          "zh": "1750年的荷兰虽然政治和军事影响力已大不如前，但在金融体系和海上贸易技术方面仍保持世界级水平。阿姆斯特丹金融体系是18世纪全球资本流动的关键节点。但荷兰的衰落表明，仅靠商业和金融技术无法维持大国地位——英法两国凭借更大的人口和工业基础正在全面超越。",
+          "en": "The Netherlands in 1750, though diminished in political and military influence, maintains world-class financial systems and maritime trade technology. Amsterdam's financial system is a key node in 18th-century global capital flows. But Dutch decline demonstrates that commercial and financial technology alone cannot maintain great power status — Britain and France, with larger populations and industrial bases, are comprehensively overtaking."
         }
       },
       "assessment": {

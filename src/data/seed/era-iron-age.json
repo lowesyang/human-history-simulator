@@ -1751,51 +1751,205 @@
       "factions": [
         {
           "id": "zhou_royal_house",
-          "name": { "zh": "周王室", "en": "Zhou Royal House" },
+          "name": {
+            "zh": "周王室",
+            "en": "Zhou Royal House"
+          },
           "type": "other",
-          "leader": { "zh": "周宣王", "en": "King Xuan of Zhou" },
-          "leaderTitle": { "zh": "天子", "en": "Son of Heaven" },
-          "ideology": { "zh": "天命观与宗法礼制，以封建分封（封建制）维系天下秩序，通过祭天、祭祖和册命仪式彰显王权的神圣性与合法性", "en": "The Mandate of Heaven and patrilineal ritual order, maintaining cosmic order through the fengjian (enfeoffment) system, demonstrating the sacredness and legitimacy of kingship through Heaven sacrifices, ancestral rites, and investiture ceremonies" },
-          "headquarters": { "zh": "镐京（宗周）", "en": "Haojing (Zongzhou)" },
+          "leader": {
+            "zh": "周宣王",
+            "en": "King Xuan of Zhou"
+          },
+          "leaderTitle": {
+            "zh": "天子",
+            "en": "Son of Heaven"
+          },
+          "ideology": {
+            "zh": "天命观与宗法礼制，以封建分封（封建制）维系天下秩序，通过祭天、祭祖和册命仪式彰显王权的神圣性与合法性",
+            "en": "The Mandate of Heaven and patrilineal ritual order, maintaining cosmic order through the fengjian (enfeoffment) system, demonstrating the sacredness and legitimacy of kingship through Heaven sacrifices, ancestral rites, and investiture ceremonies"
+          },
+          "headquarters": {
+            "zh": "镐京（宗周）",
+            "en": "Haojing (Zongzhou)"
+          },
           "status": "ruling",
-          "relationship": { "zh": "周王室是天下名义上的最高统治者，但实际控制力日益局限于王畿地区。宣王时期试图通过军事行动和政治改革重振王威，但诸侯势力的膨胀已难以逆转。王室与各大诸侯之间的关系正从宗主—封臣转向名义共主与实际并立。", "en": "The Zhou royal house was the nominal supreme ruler of all under heaven, but actual control was increasingly limited to the royal domain. King Xuan attempted to revive royal prestige through military campaigns and political reform, but the expansion of vassal power was already irreversible. Relations between the court and major vassals were shifting from suzerain-vassal to nominal overlordship alongside practical co-equality." },
-          "description": { "zh": "周王室以天命为政治合法性根基，通过分封宗族、联姻和册命仪式建立了遍及华北的封建网络。天子掌握祭天大权、册命诸侯的权力和六师军事力量，理论上是文明世界的最高主宰。然而到公元前800年左右的宣王时代，王室权威已显著衰落——犬戎等西北边患频繁侵扰，王畿财政紧张，诸侯国日渐独立行事。宣王发动了一系列军事行动试图重建王威，在南方取得了一些成功，但对西北犬戎的征伐则遭到严重挫败。王室面临的根本困境是：维系天下秩序的工具——分封制本身——正在产生离心力，大国诸侯已拥有独立的军事和经济能力。", "en": "The Zhou royal house derived its political legitimacy from the Mandate of Heaven, establishing a feudal network across North China through enfeoffment of kinsmen, marriage alliances, and investiture ceremonies. The Son of Heaven held the exclusive right to sacrifice to Heaven, invest feudal lords, and command the Six Armies, theoretically reigning as supreme lord of the civilized world. Yet by King Xuan's era around 800 BCE, royal authority had visibly declined—northwestern frontier peoples like the Quanrong frequently raided, royal domain finances were strained, and vassal states increasingly acted independently. Xuan launched a series of military campaigns to rebuild royal prestige, achieving some success in the south but suffering serious defeats against the Quanrong in the northwest. The fundamental dilemma facing the court was that the very instrument of universal order—the fengjian system itself—was generating centrifugal forces, as great vassal states had developed independent military and economic capabilities." },
+          "relationship": {
+            "zh": "周王室是天下名义上的最高统治者，但实际控制力日益局限于王畿地区。宣王时期试图通过军事行动和政治改革重振王威，但诸侯势力的膨胀已难以逆转。王室与各大诸侯之间的关系正从宗主—封臣转向名义共主与实际并立。",
+            "en": "The Zhou royal house was the nominal supreme ruler of all under heaven, but actual control was increasingly limited to the royal domain. King Xuan attempted to revive royal prestige through military campaigns and political reform, but the expansion of vassal power was already irreversible. Relations between the court and major vassals were shifting from suzerain-vassal to nominal overlordship alongside practical co-equality."
+          },
+          "description": {
+            "zh": "周王室以天命为政治合法性根基，通过分封宗族、联姻和册命仪式建立了遍及华北的封建网络。天子掌握祭天大权、册命诸侯的权力和六师军事力量，理论上是文明世界的最高主宰。然而到公元前800年左右的宣王时代，王室权威已显著衰落——犬戎等西北边患频繁侵扰，王畿财政紧张，诸侯国日渐独立行事。宣王发动了一系列军事行动试图重建王威，在南方取得了一些成功，但对西北犬戎的征伐则遭到严重挫败。王室面临的根本困境是：维系天下秩序的工具——分封制本身——正在产生离心力，大国诸侯已拥有独立的军事和经济能力。",
+            "en": "The Zhou royal house derived its political legitimacy from the Mandate of Heaven, establishing a feudal network across North China through enfeoffment of kinsmen, marriage alliances, and investiture ceremonies. The Son of Heaven held the exclusive right to sacrifice to Heaven, invest feudal lords, and command the Six Armies, theoretically reigning as supreme lord of the civilized world. Yet by King Xuan's era around 800 BCE, royal authority had visibly declined—northwestern frontier peoples like the Quanrong frequently raided, royal domain finances were strained, and vassal states increasingly acted independently. Xuan launched a series of military campaigns to rebuild royal prestige, achieving some success in the south but suffering serious defeats against the Quanrong in the northwest. The fundamental dilemma facing the court was that the very instrument of universal order—the fengjian system itself—was generating centrifugal forces, as great vassal states had developed independent military and economic capabilities."
+          },
           "keyFigures": [
-            { "name": { "zh": "周宣王", "en": "King Xuan of Zhou" }, "title": { "zh": "天子", "en": "Son of Heaven" }, "role": { "zh": "试图中兴王室权威的晚期周王", "en": "Late Zhou king attempting to restore royal authority" } },
-            { "name": { "zh": "召穆公", "en": "Duke Mu of Shao" }, "title": { "zh": "太保", "en": "Grand Protector" }, "role": { "zh": "辅政重臣，协助宣王处理军政事务", "en": "Key minister assisting King Xuan in military and political affairs" } }
+            {
+              "name": {
+                "zh": "周宣王",
+                "en": "King Xuan of Zhou"
+              },
+              "title": {
+                "zh": "天子",
+                "en": "Son of Heaven"
+              },
+              "role": {
+                "zh": "试图中兴王室权威的晚期周王",
+                "en": "Late Zhou king attempting to restore royal authority"
+              }
+            },
+            {
+              "name": {
+                "zh": "召穆公",
+                "en": "Duke Mu of Shao"
+              },
+              "title": {
+                "zh": "太保",
+                "en": "Grand Protector"
+              },
+              "role": {
+                "zh": "辅政重臣，协助宣王处理军政事务",
+                "en": "Key minister assisting King Xuan in military and political affairs"
+              }
+            }
           ]
         },
         {
           "id": "zhou_powerful_vassals",
-          "name": { "zh": "强藩诸侯", "en": "Powerful Vassal States" },
+          "name": {
+            "zh": "强藩诸侯",
+            "en": "Powerful Vassal States"
+          },
           "type": "other",
-          "leader": { "zh": "齐、晋、楚等诸侯", "en": "Lords of Qi, Jin, Chu and others" },
-          "leaderTitle": { "zh": "诸侯", "en": "Feudal Lord" },
-          "ideology": { "zh": "名义上尊王，实则追求国力壮大与地区霸权，以封邑扩张、吞并弱小和发展本国经济军事为优先目标", "en": "Nominally respecting the king while in practice pursuing national power and regional hegemony, prioritizing territorial expansion, absorption of weaker states, and developing domestic economy and military" },
-          "headquarters": { "zh": "各国都城（临淄、曲阜、翼城、郢等）", "en": "Various state capitals (Linzi, Qufu, Yicheng, Ying, etc.)" },
+          "leader": {
+            "zh": "齐、晋、楚等诸侯",
+            "en": "Lords of Qi, Jin, Chu and others"
+          },
+          "leaderTitle": {
+            "zh": "诸侯",
+            "en": "Feudal Lord"
+          },
+          "ideology": {
+            "zh": "名义上尊王，实则追求国力壮大与地区霸权，以封邑扩张、吞并弱小和发展本国经济军事为优先目标",
+            "en": "Nominally respecting the king while in practice pursuing national power and regional hegemony, prioritizing territorial expansion, absorption of weaker states, and developing domestic economy and military"
+          },
+          "headquarters": {
+            "zh": "各国都城（临淄、曲阜、翼城、郢等）",
+            "en": "Various state capitals (Linzi, Qufu, Yicheng, Ying, etc.)"
+          },
           "status": "rival",
-          "relationship": { "zh": "大国诸侯名义上仍是周王的封臣，履行朝觐、贡赋等礼仪义务，但在内政、外交和军事上已高度独立。他们之间的竞争日趋激烈，各自发展实力，周王的调解和号令越来越难以得到切实执行。齐、晋、楚等国已开始表现出超越诸侯本分的政治野心。", "en": "The great vassal lords nominally remained feudal subjects of the Zhou king, fulfilling ritual obligations of court attendance and tribute, but had become highly independent in domestic governance, diplomacy, and military matters. Competition among them intensified as each developed its own power, and the Zhou king's mediation and commands became increasingly difficult to enforce. States like Qi, Jin, and Chu were already displaying political ambitions beyond their vassal station." },
-          "description": { "zh": "西周封建体系下最具实力的诸侯国——齐、鲁、晋、楚等——正在成为周天下秩序中最大的不稳定因素。这些国家最初由周王室分封建立，以拱卫王室、镇守边疆为使命，但经过数百年发展，它们已拥有独立的行政体系、强大的军队和广阔的领土。齐国凭借渔盐之利富甲一方，晋国地处战略要冲且土地肥沃，楚国向南扩张吞并了大量土地和人口。这些大国之间的结盟、对抗和吞并已形成独立于周王室的地缘政治格局。虽然诸侯仍在礼仪上尊重天子地位，但实际政治行为已越来越以本国利益为导向——这一趋势将最终导致西周秩序的全面崩溃和春秋争霸时代的到来。", "en": "The most powerful vassal states under the Western Zhou feudal system—Qi, Lu, Jin, Chu, and others—were becoming the greatest destabilizing force in the Zhou universal order. Originally established through royal enfeoffment to defend the court and guard frontiers, after centuries of development they had acquired independent administrative systems, powerful armies, and vast territories. Qi grew wealthy through fish and salt resources, Jin commanded a strategically vital and fertile heartland, and Chu expanded southward absorbing vast lands and populations. Alliances, rivalries, and annexations among these great states had formed a geopolitical landscape independent of the Zhou court. Though vassals still ceremonially respected the Son of Heaven, actual political behavior was increasingly driven by state self-interest—a trend that would ultimately lead to the complete collapse of the Western Zhou order and the dawn of the Spring and Autumn hegemonic era." },
+          "relationship": {
+            "zh": "大国诸侯名义上仍是周王的封臣，履行朝觐、贡赋等礼仪义务，但在内政、外交和军事上已高度独立。他们之间的竞争日趋激烈，各自发展实力，周王的调解和号令越来越难以得到切实执行。齐、晋、楚等国已开始表现出超越诸侯本分的政治野心。",
+            "en": "The great vassal lords nominally remained feudal subjects of the Zhou king, fulfilling ritual obligations of court attendance and tribute, but had become highly independent in domestic governance, diplomacy, and military matters. Competition among them intensified as each developed its own power, and the Zhou king's mediation and commands became increasingly difficult to enforce. States like Qi, Jin, and Chu were already displaying political ambitions beyond their vassal station."
+          },
+          "description": {
+            "zh": "西周封建体系下最具实力的诸侯国——齐、鲁、晋、楚等——正在成为周天下秩序中最大的不稳定因素。这些国家最初由周王室分封建立，以拱卫王室、镇守边疆为使命，但经过数百年发展，它们已拥有独立的行政体系、强大的军队和广阔的领土。齐国凭借渔盐之利富甲一方，晋国地处战略要冲且土地肥沃，楚国向南扩张吞并了大量土地和人口。这些大国之间的结盟、对抗和吞并已形成独立于周王室的地缘政治格局。虽然诸侯仍在礼仪上尊重天子地位，但实际政治行为已越来越以本国利益为导向——这一趋势将最终导致西周秩序的全面崩溃和春秋争霸时代的到来。",
+            "en": "The most powerful vassal states under the Western Zhou feudal system—Qi, Lu, Jin, Chu, and others—were becoming the greatest destabilizing force in the Zhou universal order. Originally established through royal enfeoffment to defend the court and guard frontiers, after centuries of development they had acquired independent administrative systems, powerful armies, and vast territories. Qi grew wealthy through fish and salt resources, Jin commanded a strategically vital and fertile heartland, and Chu expanded southward absorbing vast lands and populations. Alliances, rivalries, and annexations among these great states had formed a geopolitical landscape independent of the Zhou court. Though vassals still ceremonially respected the Son of Heaven, actual political behavior was increasingly driven by state self-interest—a trend that would ultimately lead to the complete collapse of the Western Zhou order and the dawn of the Spring and Autumn hegemonic era."
+          },
           "keyFigures": [
-            { "name": { "zh": "齐侯", "en": "Lord of Qi" }, "title": { "zh": "侯", "en": "Marquis" }, "role": { "zh": "凭借渔盐之利富强的东方大国之主", "en": "Ruler of the wealthy eastern great state, enriched by fish and salt" } },
-            { "name": { "zh": "楚君", "en": "Lord of Chu" }, "title": { "zh": "君", "en": "Lord" }, "role": { "zh": "南方扩张主义大国的统治者，挑战周朝礼制秩序", "en": "Ruler of the expansionist southern great state, challenging the Zhou ritual order" } },
-            { "name": { "zh": "晋侯", "en": "Lord of Jin" }, "title": { "zh": "侯", "en": "Marquis" }, "role": { "zh": "中原战略要地的霸主级诸侯", "en": "Hegemon-level vassal holding strategic Central Plains territory" } }
+            {
+              "name": {
+                "zh": "齐侯",
+                "en": "Lord of Qi"
+              },
+              "title": {
+                "zh": "侯",
+                "en": "Marquis"
+              },
+              "role": {
+                "zh": "凭借渔盐之利富强的东方大国之主",
+                "en": "Ruler of the wealthy eastern great state, enriched by fish and salt"
+              }
+            },
+            {
+              "name": {
+                "zh": "楚君",
+                "en": "Lord of Chu"
+              },
+              "title": {
+                "zh": "君",
+                "en": "Lord"
+              },
+              "role": {
+                "zh": "南方扩张主义大国的统治者，挑战周朝礼制秩序",
+                "en": "Ruler of the expansionist southern great state, challenging the Zhou ritual order"
+              }
+            },
+            {
+              "name": {
+                "zh": "晋侯",
+                "en": "Lord of Jin"
+              },
+              "title": {
+                "zh": "侯",
+                "en": "Marquis"
+              },
+              "role": {
+                "zh": "中原战略要地的霸主级诸侯",
+                "en": "Hegemon-level vassal holding strategic Central Plains territory"
+              }
+            }
           ]
         },
         {
           "id": "zhou_ritual_specialists",
-          "name": { "zh": "礼官与卜筮之士", "en": "Ritual and Divination Specialists" },
+          "name": {
+            "zh": "礼官与卜筮之士",
+            "en": "Ritual and Divination Specialists"
+          },
           "type": "religious",
-          "leader": { "zh": "大宗伯", "en": "Grand Master of Ceremonies" },
-          "leaderTitle": { "zh": "宗伯", "en": "Master of Rites" },
-          "ideology": { "zh": "以《周礼》和《易经》为核心的礼制文化权威，维护天命观、宗法等级和祭祀秩序，是后世儒家政治伦理的直接前身", "en": "Cultural authority centered on the Rites of Zhou and the Yi Jing, upholding the Mandate of Heaven, patrilineal hierarchy, and sacrificial order, serving as the direct precursor to later Confucian political ethics" },
-          "headquarters": { "zh": "镐京与洛邑宗庙区", "en": "Ancestral temple precincts of Haojing and Luoyi" },
+          "leader": {
+            "zh": "大宗伯",
+            "en": "Grand Master of Ceremonies"
+          },
+          "leaderTitle": {
+            "zh": "宗伯",
+            "en": "Master of Rites"
+          },
+          "ideology": {
+            "zh": "以《周礼》和《易经》为核心的礼制文化权威，维护天命观、宗法等级和祭祀秩序，是后世儒家政治伦理的直接前身",
+            "en": "Cultural authority centered on the Rites of Zhou and the Yi Jing, upholding the Mandate of Heaven, patrilineal hierarchy, and sacrificial order, serving as the direct precursor to later Confucian political ethics"
+          },
+          "headquarters": {
+            "zh": "镐京与洛邑宗庙区",
+            "en": "Ancestral temple precincts of Haojing and Luoyi"
+          },
           "status": "allied",
-          "relationship": { "zh": "礼官和卜筮之士是周王权的文化支柱，掌握祭祀程序、吉凶占断和礼仪规范的解释权。他们在政治上支持王室，但其权威来自知识和传统而非军事力量。随着诸侯独立性增强，各国也开始培养自己的礼仪专家，削弱了王室礼官的独占地位。", "en": "Ritual officials and divination specialists served as the cultural pillars of Zhou kingship, controlling the interpretation of sacrificial procedures, auspicious or inauspicious readings, and ritual protocol. Politically they supported the royal house, but their authority derived from knowledge and tradition rather than military force. As vassal independence grew, each state began cultivating its own ritual experts, undermining the exclusivity of the royal ceremonial establishment." },
-          "description": { "zh": "西周的礼官和卜筮之士构成了一个掌握核心文化资本的知识精英阶层。宗伯管理宗庙祭祀、册命典礼和贵族谱系；太史负责记录王言、编纂历史和观察天象；卜官通过蓍草占筮和龟甲灼卜为国家决策提供神意指引。他们共同维护的《周礼》体系不仅是宗教仪式，更是政治等级秩序和社会规范的集中体现。《易经》的占筮传统在此时已开始从纯粹的占卜工具向哲学化方向发展，孕育着后来诸子百家的思想萌芽。然而随着周王权威衰落，礼官阶层面临双重困境：一方面他们的知识仍被需要，另一方面他们赖以存在的王朝秩序正在瓦解。许多礼官开始流散到各诸侯国寻求出路，成为后来\u201c士\u201d阶层兴起的重要源头。", "en": "Western Zhou ritual officials and divination specialists constituted an intellectual elite class holding core cultural capital. The Master of Rites managed ancestral temple sacrifices, investiture ceremonies, and noble genealogies; the Grand Scribe recorded royal words, compiled history, and observed celestial phenomena; divination officials provided divine guidance for state decisions through milfoil casting and turtle-shell burning. The Rites of Zhou system they collectively maintained was not merely religious ceremony but the concentrated expression of political hierarchy and social norms. The Yi Jing divination tradition was already beginning to evolve from a purely divinatory tool toward philosophical depth, nurturing the intellectual seeds of the later Hundred Schools of Thought. Yet as Zhou royal authority declined, ritual specialists faced a dual predicament: their knowledge remained in demand, but the dynastic order on which their existence depended was disintegrating. Many ritual officials began dispersing to various vassal states in search of patronage, becoming an important source of the later rise of the 'shi' intellectual class." },
+          "relationship": {
+            "zh": "礼官和卜筮之士是周王权的文化支柱，掌握祭祀程序、吉凶占断和礼仪规范的解释权。他们在政治上支持王室，但其权威来自知识和传统而非军事力量。随着诸侯独立性增强，各国也开始培养自己的礼仪专家，削弱了王室礼官的独占地位。",
+            "en": "Ritual officials and divination specialists served as the cultural pillars of Zhou kingship, controlling the interpretation of sacrificial procedures, auspicious or inauspicious readings, and ritual protocol. Politically they supported the royal house, but their authority derived from knowledge and tradition rather than military force. As vassal independence grew, each state began cultivating its own ritual experts, undermining the exclusivity of the royal ceremonial establishment."
+          },
+          "description": {
+            "zh": "西周的礼官和卜筮之士构成了一个掌握核心文化资本的知识精英阶层。宗伯管理宗庙祭祀、册命典礼和贵族谱系；太史负责记录王言、编纂历史和观察天象；卜官通过蓍草占筮和龟甲灼卜为国家决策提供神意指引。他们共同维护的《周礼》体系不仅是宗教仪式，更是政治等级秩序和社会规范的集中体现。《易经》的占筮传统在此时已开始从纯粹的占卜工具向哲学化方向发展，孕育着后来诸子百家的思想萌芽。然而随着周王权威衰落，礼官阶层面临双重困境：一方面他们的知识仍被需要，另一方面他们赖以存在的王朝秩序正在瓦解。许多礼官开始流散到各诸侯国寻求出路，成为后来“士”阶层兴起的重要源头。",
+            "en": "Western Zhou ritual officials and divination specialists constituted an intellectual elite class holding core cultural capital. The Master of Rites managed ancestral temple sacrifices, investiture ceremonies, and noble genealogies; the Grand Scribe recorded royal words, compiled history, and observed celestial phenomena; divination officials provided divine guidance for state decisions through milfoil casting and turtle-shell burning. The Rites of Zhou system they collectively maintained was not merely religious ceremony but the concentrated expression of political hierarchy and social norms. The Yi Jing divination tradition was already beginning to evolve from a purely divinatory tool toward philosophical depth, nurturing the intellectual seeds of the later Hundred Schools of Thought. Yet as Zhou royal authority declined, ritual specialists faced a dual predicament: their knowledge remained in demand, but the dynastic order on which their existence depended was disintegrating. Many ritual officials began dispersing to various vassal states in search of patronage, becoming an important source of the later rise of the 'shi' intellectual class."
+          },
           "keyFigures": [
-            { "name": { "zh": "大宗伯", "en": "Grand Master of Ceremonies" }, "title": { "zh": "宗伯", "en": "Master of Rites" }, "role": { "zh": "管理王朝祭祀和贵族礼仪秩序", "en": "Managed dynastic sacrificial rites and aristocratic ceremonial order" } },
-            { "name": { "zh": "太史", "en": "Grand Scribe" }, "title": { "zh": "太史", "en": "Grand Scribe" }, "role": { "zh": "记录王言、编纂历史、观测天象与灾异", "en": "Recorded royal pronouncements, compiled history, and observed celestial phenomena and omens" } }
+            {
+              "name": {
+                "zh": "大宗伯",
+                "en": "Grand Master of Ceremonies"
+              },
+              "title": {
+                "zh": "宗伯",
+                "en": "Master of Rites"
+              },
+              "role": {
+                "zh": "管理王朝祭祀和贵族礼仪秩序",
+                "en": "Managed dynastic sacrificial rites and aristocratic ceremonial order"
+              }
+            },
+            {
+              "name": {
+                "zh": "太史",
+                "en": "Grand Scribe"
+              },
+              "title": {
+                "zh": "太史",
+                "en": "Grand Scribe"
+              },
+              "role": {
+                "zh": "记录王言、编纂历史、观测天象与灾异",
+                "en": "Recorded royal pronouncements, compiled history, and observed celestial phenomena and omens"
+              }
+            }
           ]
         }
       ]
@@ -8610,7 +8764,7 @@
             "zh": "日常生计等值银克/人",
             "en": "grams of silver equivalent per person"
           },
-          "goldKg": 0.000015,
+          "goldKg": 1.5e-05,
           "silverKg": 0.015
         },
         "gdpDescription": {
@@ -12240,6 +12394,20 @@
         "keyInnovations": {
           "zh": "关键技术包括铁兵器的大规模应用、专业化攻城机械、帝国道路与驿传网络、复杂灌溉工程、标准化行政文书和多区域军需调度体系。",
           "en": "Key innovations included large-scale use of iron weaponry, specialized siege machinery, imperial road and courier networks, complex irrigation works, standardized administrative documentation, and multi-regional military logistics."
+        },
+        "sectors": {
+          "militaryEngineering": {
+            "zh": "军事工程古代世界最先进：新亚述帝国拥有古代最强大的攻城技术——攻城锤、移动攻城塔、坑道掘进和引水淹城等手段系统化运用。铁制武器大规模装备军队。亚述战车和骑兵编制是古代最完善的军事组织。",
+            "en": "Most advanced military engineering in the ancient world: the Neo-Assyrian Empire possesses antiquity's most powerful siege technology — battering rams, mobile siege towers, tunneling, and water diversion systematically employed. Iron weapons equip the army at scale. Assyrian chariots and cavalry represent the ancient world's most refined military organization."
+          },
+          "hydraulicEngineering": {
+            "zh": "水利工程宏大：塞纳赫里布在尼尼微修建的供水渠道长约80公里，包含世界已知最古老的水渠桥。灌溉系统支撑美索不达米亚肥沃的农业。",
+            "en": "Grand hydraulic engineering: Sennacherib's water supply channel to Nineveh stretches ~80 km, including the world's oldest known aqueduct bridge. Irrigation systems sustain Mesopotamia's fertile agriculture."
+          }
+        },
+        "overallAssessment": {
+          "zh": "公元前800年的新亚述帝国拥有古代世界最先进的军事技术和工程能力。铁制武器的大规模使用、系统化的攻城术和完善的军事组织使亚述成为古代近东最令人畏惧的军事力量。但亚述的技术优势高度集中在军事领域，其暴力统治方式最终将导致帝国崩溃。",
+          "en": "The Neo-Assyrian Empire in 800 BCE possesses the ancient world's most advanced military technology and engineering. Large-scale iron weapons, systematized siege warfare, and refined military organization make Assyria the most feared military force in the ancient Near East. But Assyria's tech advantage is highly concentrated in the military domain; its brutal ruling style will ultimately lead to imperial collapse."
         }
       },
       "assessment": {
@@ -12264,50 +12432,191 @@
       "factions": [
         {
           "id": "assyria_royal_court",
-          "name": { "zh": "亚述王廷", "en": "Assyrian Royal Court" },
+          "name": {
+            "zh": "亚述王廷",
+            "en": "Assyrian Royal Court"
+          },
           "type": "other",
-          "leader": { "zh": "阿达德-尼拉里三世", "en": "Adad-nirari III" },
-          "leaderTitle": { "zh": "大王", "en": "Great King" },
-          "ideology": { "zh": "亚述神授权的帝国扩张主义，通过持续征服、人口迁徙和恐怖威慑建立近东霸权，大王是神在人间的代理人", "en": "Imperial expansionism mandated by the god Ashur, establishing Near Eastern hegemony through continuous conquest, population deportation, and terror-based deterrence, with the Great King as the god's earthly agent" },
-          "headquarters": { "zh": "卡尔胡", "en": "Kalhu" },
+          "leader": {
+            "zh": "阿达德-尼拉里三世",
+            "en": "Adad-nirari III"
+          },
+          "leaderTitle": {
+            "zh": "大王",
+            "en": "Great King"
+          },
+          "ideology": {
+            "zh": "亚述神授权的帝国扩张主义，通过持续征服、人口迁徙和恐怖威慑建立近东霸权，大王是神在人间的代理人",
+            "en": "Imperial expansionism mandated by the god Ashur, establishing Near Eastern hegemony through continuous conquest, population deportation, and terror-based deterrence, with the Great King as the god's earthly agent"
+          },
+          "headquarters": {
+            "zh": "卡尔胡",
+            "en": "Kalhu"
+          },
           "status": "ruling",
-          "relationship": { "zh": "国王是帝国的绝对中心，掌控军事、行政和宗教权力。王廷通过总督体系和情报网络对各省实施严密控制。然而继承问题和宫廷权斗始终是潜在威胁——太后、宦官和高级将领都可能在王位更替中发挥决定性作用。", "en": "The king was the absolute center of the empire, controlling military, administrative, and religious power. The court exercised tight control over provinces through the governor system and intelligence networks. However, succession disputes and court power struggles remained persistent threats—queen mothers, eunuchs, and senior generals could all play decisive roles in royal transitions." },
-          "description": { "zh": "新亚述王廷以卡尔胡宏伟的宫殿建筑群为中心，集中了帝国最高的决策权力。大王亲自统帅远征军，巡视各省，接受附庸朝贡，并在宫殿浮雕中展现王权的绝对威严。阿达德-尼拉里三世统治时期，帝国正处于制度巩固阶段：行省体制日趋成熟，人口迁徙政策有效瓦解了被征服地区的抵抗力量，军事后勤和道路网络支撑着远距离征服。然而王廷政治并非铁板一块——太后萨姆穆拉马特（塞米拉米斯的历史原型）据传在此时期拥有异常的政治影响力，显示出王廷内部权力分配的复杂性。大王需要不断通过军事胜利来维系自身权威和贵族的忠诚。", "en": "The Neo-Assyrian royal court, centered on the magnificent palace complex at Kalhu, concentrated the empire's supreme decision-making power. The Great King personally commanded expeditionary forces, inspected provinces, received vassal tribute, and displayed absolute royal majesty in palace reliefs. Under Adad-nirari III, the empire was in a phase of institutional consolidation: the provincial system was maturing, population deportation policies effectively dismantled resistance in conquered territories, and military logistics and road networks supported long-distance conquest. Yet court politics were not monolithic—Queen Mother Sammuramat (the historical basis for Semiramis) reportedly wielded extraordinary political influence during this period, revealing the complexity of power distribution within the court. The Great King needed continuous military victories to sustain his authority and noble loyalty." },
+          "relationship": {
+            "zh": "国王是帝国的绝对中心，掌控军事、行政和宗教权力。王廷通过总督体系和情报网络对各省实施严密控制。然而继承问题和宫廷权斗始终是潜在威胁——太后、宦官和高级将领都可能在王位更替中发挥决定性作用。",
+            "en": "The king was the absolute center of the empire, controlling military, administrative, and religious power. The court exercised tight control over provinces through the governor system and intelligence networks. However, succession disputes and court power struggles remained persistent threats—queen mothers, eunuchs, and senior generals could all play decisive roles in royal transitions."
+          },
+          "description": {
+            "zh": "新亚述王廷以卡尔胡宏伟的宫殿建筑群为中心，集中了帝国最高的决策权力。大王亲自统帅远征军，巡视各省，接受附庸朝贡，并在宫殿浮雕中展现王权的绝对威严。阿达德-尼拉里三世统治时期，帝国正处于制度巩固阶段：行省体制日趋成熟，人口迁徙政策有效瓦解了被征服地区的抵抗力量，军事后勤和道路网络支撑着远距离征服。然而王廷政治并非铁板一块——太后萨姆穆拉马特（塞米拉米斯的历史原型）据传在此时期拥有异常的政治影响力，显示出王廷内部权力分配的复杂性。大王需要不断通过军事胜利来维系自身权威和贵族的忠诚。",
+            "en": "The Neo-Assyrian royal court, centered on the magnificent palace complex at Kalhu, concentrated the empire's supreme decision-making power. The Great King personally commanded expeditionary forces, inspected provinces, received vassal tribute, and displayed absolute royal majesty in palace reliefs. Under Adad-nirari III, the empire was in a phase of institutional consolidation: the provincial system was maturing, population deportation policies effectively dismantled resistance in conquered territories, and military logistics and road networks supported long-distance conquest. Yet court politics were not monolithic—Queen Mother Sammuramat (the historical basis for Semiramis) reportedly wielded extraordinary political influence during this period, revealing the complexity of power distribution within the court. The Great King needed continuous military victories to sustain his authority and noble loyalty."
+          },
           "keyFigures": [
-            { "name": { "zh": "阿达德-尼拉里三世", "en": "Adad-nirari III" }, "title": { "zh": "大王", "en": "Great King" }, "role": { "zh": "帝国统治者，推动制度巩固与领土扩张", "en": "Imperial ruler driving institutional consolidation and territorial expansion" } },
-            { "name": { "zh": "萨姆穆拉马特", "en": "Sammuramat" }, "title": { "zh": "太后", "en": "Queen Mother" }, "role": { "zh": "拥有异常政治影响力的王太后，塞米拉米斯传说的历史原型", "en": "Queen mother with extraordinary political influence, historical basis for the Semiramis legend" } }
+            {
+              "name": {
+                "zh": "阿达德-尼拉里三世",
+                "en": "Adad-nirari III"
+              },
+              "title": {
+                "zh": "大王",
+                "en": "Great King"
+              },
+              "role": {
+                "zh": "帝国统治者，推动制度巩固与领土扩张",
+                "en": "Imperial ruler driving institutional consolidation and territorial expansion"
+              }
+            },
+            {
+              "name": {
+                "zh": "萨姆穆拉马特",
+                "en": "Sammuramat"
+              },
+              "title": {
+                "zh": "太后",
+                "en": "Queen Mother"
+              },
+              "role": {
+                "zh": "拥有异常政治影响力的王太后，塞米拉米斯传说的历史原型",
+                "en": "Queen mother with extraordinary political influence, historical basis for the Semiramis legend"
+              }
+            }
           ]
         },
         {
           "id": "assyria_provincial_governors",
-          "name": { "zh": "行省总督集团", "en": "Provincial Governors" },
+          "name": {
+            "zh": "行省总督集团",
+            "en": "Provincial Governors"
+          },
           "type": "other",
-          "leader": { "zh": "图尔塔努", "en": "Turtanu" },
-          "leaderTitle": { "zh": "图尔塔努（大将军兼高级总督）", "en": "Turtanu (Commander-in-Chief and Senior Governor)" },
-          "ideology": { "zh": "在帝国框架内扩大行省自主权和个人权力，通过控制地方税收、军队和人口迁徙获取利益，在王位更替中发挥造王者角色", "en": "Expanding provincial autonomy and personal power within the imperial framework, profiting through control of local taxation, armies, and population deportation, playing kingmaker roles in royal transitions" },
-          "headquarters": { "zh": "各行省首府", "en": "Various provincial capitals" },
+          "leader": {
+            "zh": "图尔塔努",
+            "en": "Turtanu"
+          },
+          "leaderTitle": {
+            "zh": "图尔塔努（大将军兼高级总督）",
+            "en": "Turtanu (Commander-in-Chief and Senior Governor)"
+          },
+          "ideology": {
+            "zh": "在帝国框架内扩大行省自主权和个人权力，通过控制地方税收、军队和人口迁徙获取利益，在王位更替中发挥造王者角色",
+            "en": "Expanding provincial autonomy and personal power within the imperial framework, profiting through control of local taxation, armies, and population deportation, playing kingmaker roles in royal transitions"
+          },
+          "headquarters": {
+            "zh": "各行省首府",
+            "en": "Various provincial capitals"
+          },
           "status": "rival",
-          "relationship": { "zh": "行省总督是帝国行政体系的支柱，但也是王权最危险的潜在挑战者。图尔塔努（大将军）和其他高级总督在各自管辖区内拥有巨大的军事和经济权力，部分总督的实力已接近半独立状态。他们在名义上执行王令，但在继承危机中常成为决定性力量——既可以支持国王，也可能成为叛乱的策划者。", "en": "Provincial governors were the pillars of the imperial administrative system but also the most dangerous potential challengers to royal power. The Turtanu (Commander-in-Chief) and other senior governors wielded enormous military and economic power within their jurisdictions, with some approaching semi-independent status. They nominally executed royal orders but often became decisive forces during succession crises—capable of supporting the king or orchestrating rebellion." },
-          "description": { "zh": "新亚述帝国的行省制度是古代世界最高效的领土管理体系之一，但也孕育了威胁中央权力的离心力量。帝国核心地区被划分为多个行省，每位总督在辖区内负责征税、征兵、司法和公共工程。高级官员如图尔塔努（大将军）和拉布沙奇（大酒政）等不仅掌控军事力量，还管理着广阔的行省领地。部分总督利用人口迁徙政策在辖区安置忠于自己的族群，建立个人势力基础。阿达德-尼拉里三世时期，太后萨姆穆拉马特据传不得不借助某些总督的支持来维持其政治影响力，反映出中央权力与地方权力之间复杂的博弈关系。随着帝国版图不断扩大，远方行省的总督越来越难以被有效监控——他们截留贡赋、私自扩军、建立独立的外交联系，在事实上形成了帝国体制内的权力集团。这种结构性矛盾在后来的帝国历史中反复引发内战和分裂危机。", "en": "The Neo-Assyrian provincial system was one of the most efficient territorial management systems in the ancient world, but it also bred centrifugal forces threatening central power. The imperial core was divided into multiple provinces, with each governor responsible for taxation, conscription, justice, and public works within their jurisdiction. Senior officials like the Turtanu (Commander-in-Chief) and Rab-shakeh (Chief Cupbearer) not only controlled military forces but also managed vast provincial territories. Some governors used population deportation policies to settle groups loyal to themselves in their jurisdictions, building personal power bases. During Adad-nirari III's reign, Queen Mother Sammuramat reportedly had to rely on certain governors' support to maintain her political influence, reflecting the complex power dynamics between central and local authority. As the empire's territory continued expanding, governors of distant provinces became increasingly difficult to effectively monitor—they intercepted tribute, privately expanded their armies, and established independent diplomatic contacts, effectively forming power blocs within the imperial system. This structural contradiction would repeatedly trigger civil wars and fragmentation crises in later imperial history." },
+          "relationship": {
+            "zh": "行省总督是帝国行政体系的支柱，但也是王权最危险的潜在挑战者。图尔塔努（大将军）和其他高级总督在各自管辖区内拥有巨大的军事和经济权力，部分总督的实力已接近半独立状态。他们在名义上执行王令，但在继承危机中常成为决定性力量——既可以支持国王，也可能成为叛乱的策划者。",
+            "en": "Provincial governors were the pillars of the imperial administrative system but also the most dangerous potential challengers to royal power. The Turtanu (Commander-in-Chief) and other senior governors wielded enormous military and economic power within their jurisdictions, with some approaching semi-independent status. They nominally executed royal orders but often became decisive forces during succession crises—capable of supporting the king or orchestrating rebellion."
+          },
+          "description": {
+            "zh": "新亚述帝国的行省制度是古代世界最高效的领土管理体系之一，但也孕育了威胁中央权力的离心力量。帝国核心地区被划分为多个行省，每位总督在辖区内负责征税、征兵、司法和公共工程。高级官员如图尔塔努（大将军）和拉布沙奇（大酒政）等不仅掌控军事力量，还管理着广阔的行省领地。部分总督利用人口迁徙政策在辖区安置忠于自己的族群，建立个人势力基础。阿达德-尼拉里三世时期，太后萨姆穆拉马特据传不得不借助某些总督的支持来维持其政治影响力，反映出中央权力与地方权力之间复杂的博弈关系。随着帝国版图不断扩大，远方行省的总督越来越难以被有效监控——他们截留贡赋、私自扩军、建立独立的外交联系，在事实上形成了帝国体制内的权力集团。这种结构性矛盾在后来的帝国历史中反复引发内战和分裂危机。",
+            "en": "The Neo-Assyrian provincial system was one of the most efficient territorial management systems in the ancient world, but it also bred centrifugal forces threatening central power. The imperial core was divided into multiple provinces, with each governor responsible for taxation, conscription, justice, and public works within their jurisdiction. Senior officials like the Turtanu (Commander-in-Chief) and Rab-shakeh (Chief Cupbearer) not only controlled military forces but also managed vast provincial territories. Some governors used population deportation policies to settle groups loyal to themselves in their jurisdictions, building personal power bases. During Adad-nirari III's reign, Queen Mother Sammuramat reportedly had to rely on certain governors' support to maintain her political influence, reflecting the complex power dynamics between central and local authority. As the empire's territory continued expanding, governors of distant provinces became increasingly difficult to effectively monitor—they intercepted tribute, privately expanded their armies, and established independent diplomatic contacts, effectively forming power blocs within the imperial system. This structural contradiction would repeatedly trigger civil wars and fragmentation crises in later imperial history."
+          },
           "keyFigures": [
-            { "name": { "zh": "图尔塔努", "en": "Turtanu" }, "title": { "zh": "大将军", "en": "Commander-in-Chief" }, "role": { "zh": "帝国最高军事长官兼高级行省管理者，权力仅次于国王", "en": "Supreme military commander and senior provincial administrator, second only to the king in power" } },
-            { "name": { "zh": "边疆行省总督", "en": "Frontier Province Governor" }, "title": { "zh": "行省总督", "en": "Provincial Governor" }, "role": { "zh": "管理帝国边缘行省，掌控地方驻军和贡赋征收", "en": "Governed frontier provinces, controlling local garrisons and tribute collection" } }
+            {
+              "name": {
+                "zh": "图尔塔努",
+                "en": "Turtanu"
+              },
+              "title": {
+                "zh": "大将军",
+                "en": "Commander-in-Chief"
+              },
+              "role": {
+                "zh": "帝国最高军事长官兼高级行省管理者，权力仅次于国王",
+                "en": "Supreme military commander and senior provincial administrator, second only to the king in power"
+              }
+            },
+            {
+              "name": {
+                "zh": "边疆行省总督",
+                "en": "Frontier Province Governor"
+              },
+              "title": {
+                "zh": "行省总督",
+                "en": "Provincial Governor"
+              },
+              "role": {
+                "zh": "管理帝国边缘行省，掌控地方驻军和贡赋征收",
+                "en": "Governed frontier provinces, controlling local garrisons and tribute collection"
+              }
+            }
           ]
         },
         {
           "id": "assyria_priestly_establishment",
-          "name": { "zh": "祭司集团", "en": "Priestly Establishment" },
+          "name": {
+            "zh": "祭司集团",
+            "en": "Priestly Establishment"
+          },
           "type": "religious",
-          "leader": { "zh": "亚述城大祭司", "en": "High Priest of Ashur" },
-          "leaderTitle": { "zh": "大祭司", "en": "High Priest" },
-          "ideology": { "zh": "亚述神为宇宙主宰，帝国扩张是执行神意的神圣事业；通过占星术、肝脏占卜和文献收集保存文明知识", "en": "Ashur as cosmic sovereign, imperial expansion as sacred duty executing divine will; preserving civilizational knowledge through astrology, hepatoscopy, and archival collection" },
-          "headquarters": { "zh": "亚述城亚述神庙与尼尼微抄写学堂", "en": "Temple of Ashur at Assur and scribal academies at Nineveh" },
+          "leader": {
+            "zh": "亚述城大祭司",
+            "en": "High Priest of Ashur"
+          },
+          "leaderTitle": {
+            "zh": "大祭司",
+            "en": "High Priest"
+          },
+          "ideology": {
+            "zh": "亚述神为宇宙主宰，帝国扩张是执行神意的神圣事业；通过占星术、肝脏占卜和文献收集保存文明知识",
+            "en": "Ashur as cosmic sovereign, imperial expansion as sacred duty executing divine will; preserving civilizational knowledge through astrology, hepatoscopy, and archival collection"
+          },
+          "headquarters": {
+            "zh": "亚述城亚述神庙与尼尼微抄写学堂",
+            "en": "Temple of Ashur at Assur and scribal academies at Nineveh"
+          },
           "status": "allied",
-          "relationship": { "zh": "祭司集团为帝国扩张提供宗教合法性——每次远征都被定义为亚述神的旨意。大祭司在王位继承确认和重大决策中通过神谕发挥关键作用。神庙控制可观的土地和财富，尼尼微的书吏和占星师则建立了古代世界最重要的图书馆传统。", "en": "The priestly establishment provided religious legitimacy for imperial expansion—each campaign was defined as the will of the god Ashur. The high priest played a key role through oracles in confirming royal succession and major decisions. Temples controlled considerable land and wealth, while Nineveh's scribes and astrologers established one of the ancient world's most important library traditions." },
-          "description": { "zh": "亚述祭司集团以亚述城的亚述神庙为精神中心，在帝国政治中扮演着不可或缺的角色。大祭司通过占卜和神谕为国家重大决策提供神意指引，包括军事远征的时机选择和王位继承的确认。占星术在新亚述时期达到高度发展，祭司们系统记录天象变化并将其与政治事件相关联，形成了复杂的预兆学说。尼尼微的抄写学堂收集和整理了大量巴比伦和亚述的文学、科学和宗教文献，为后来亚述巴尼拔图书馆的建立奠定了基础。神庙系统同时是重要的经济实体，拥有土地、牲畜和手工作坊。祭司们在维护宗教正统的同时也积极吸收被征服地区的神灵崇拜，展现了帝国宗教政策的包容性和战略性。", "en": "The Assyrian priestly establishment, centered on the Temple of Ashur at the city of Assur, played an indispensable role in imperial politics. The high priest provided divine guidance for major state decisions through divination and oracles, including the timing of military campaigns and confirmation of royal succession. Astrology reached a high level of development in the Neo-Assyrian period, with priests systematically recording celestial phenomena and correlating them with political events, creating a complex omen doctrine. The scribal academies of Nineveh collected and organized vast quantities of Babylonian and Assyrian literary, scientific, and religious texts, laying the foundation for the later Library of Ashurbanipal. The temple system was also a major economic entity, owning land, livestock, and craft workshops. Priests maintained religious orthodoxy while actively incorporating the deity cults of conquered regions, demonstrating the inclusiveness and strategic nature of imperial religious policy." },
+          "relationship": {
+            "zh": "祭司集团为帝国扩张提供宗教合法性——每次远征都被定义为亚述神的旨意。大祭司在王位继承确认和重大决策中通过神谕发挥关键作用。神庙控制可观的土地和财富，尼尼微的书吏和占星师则建立了古代世界最重要的图书馆传统。",
+            "en": "The priestly establishment provided religious legitimacy for imperial expansion—each campaign was defined as the will of the god Ashur. The high priest played a key role through oracles in confirming royal succession and major decisions. Temples controlled considerable land and wealth, while Nineveh's scribes and astrologers established one of the ancient world's most important library traditions."
+          },
+          "description": {
+            "zh": "亚述祭司集团以亚述城的亚述神庙为精神中心，在帝国政治中扮演着不可或缺的角色。大祭司通过占卜和神谕为国家重大决策提供神意指引，包括军事远征的时机选择和王位继承的确认。占星术在新亚述时期达到高度发展，祭司们系统记录天象变化并将其与政治事件相关联，形成了复杂的预兆学说。尼尼微的抄写学堂收集和整理了大量巴比伦和亚述的文学、科学和宗教文献，为后来亚述巴尼拔图书馆的建立奠定了基础。神庙系统同时是重要的经济实体，拥有土地、牲畜和手工作坊。祭司们在维护宗教正统的同时也积极吸收被征服地区的神灵崇拜，展现了帝国宗教政策的包容性和战略性。",
+            "en": "The Assyrian priestly establishment, centered on the Temple of Ashur at the city of Assur, played an indispensable role in imperial politics. The high priest provided divine guidance for major state decisions through divination and oracles, including the timing of military campaigns and confirmation of royal succession. Astrology reached a high level of development in the Neo-Assyrian period, with priests systematically recording celestial phenomena and correlating them with political events, creating a complex omen doctrine. The scribal academies of Nineveh collected and organized vast quantities of Babylonian and Assyrian literary, scientific, and religious texts, laying the foundation for the later Library of Ashurbanipal. The temple system was also a major economic entity, owning land, livestock, and craft workshops. Priests maintained religious orthodoxy while actively incorporating the deity cults of conquered regions, demonstrating the inclusiveness and strategic nature of imperial religious policy."
+          },
           "keyFigures": [
-            { "name": { "zh": "亚述城大祭司", "en": "High Priest of Ashur" }, "title": { "zh": "大祭司", "en": "High Priest" }, "role": { "zh": "帝国最高宗教权威，确认王位继承与重大军事决策", "en": "Supreme religious authority of the empire, confirming succession and major military decisions" } },
-            { "name": { "zh": "尼尼微首席占星师", "en": "Chief Astrologer of Nineveh" }, "title": { "zh": "占星之长", "en": "Chief Astrologer" }, "role": { "zh": "解读天象预兆，为国家决策提供占星学指导", "en": "Interpreted celestial omens, providing astrological guidance for state decisions" } }
+            {
+              "name": {
+                "zh": "亚述城大祭司",
+                "en": "High Priest of Ashur"
+              },
+              "title": {
+                "zh": "大祭司",
+                "en": "High Priest"
+              },
+              "role": {
+                "zh": "帝国最高宗教权威，确认王位继承与重大军事决策",
+                "en": "Supreme religious authority of the empire, confirming succession and major military decisions"
+              }
+            },
+            {
+              "name": {
+                "zh": "尼尼微首席占星师",
+                "en": "Chief Astrologer of Nineveh"
+              },
+              "title": {
+                "zh": "占星之长",
+                "en": "Chief Astrologer"
+              },
+              "role": {
+                "zh": "解读天象预兆，为国家决策提供占星学指导",
+                "en": "Interpreted celestial omens, providing astrological guidance for state decisions"
+              }
+            }
           ]
         }
       ]
@@ -14856,7 +15165,7 @@
             "zh": "毫克银",
             "en": "milligrams of silver"
           },
-          "goldKg": 0.00006,
+          "goldKg": 6e-05,
           "silverKg": 0.06
         },
         "gdpDescription": {
@@ -15825,50 +16134,191 @@
       "factions": [
         {
           "id": "israel_royal_house",
-          "name": { "zh": "王室（耶户王朝）", "en": "Royal House (Jehu Dynasty)" },
+          "name": {
+            "zh": "王室（耶户王朝）",
+            "en": "Royal House (Jehu Dynasty)"
+          },
           "type": "other",
-          "leader": { "zh": "约阿施或耶罗波安二世", "en": "Joash or Jeroboam II" },
-          "leaderTitle": { "zh": "国王", "en": "King" },
-          "ideology": { "zh": "以撒马利亚为中心的中央集权君主制，通过伯特利和但的国家圣所维护王权合法性，推动领土扩张和贸易发展", "en": "Centralized monarchy centered on Samaria, maintaining royal legitimacy through state sanctuaries at Bethel and Dan, pursuing territorial expansion and trade development" },
-          "headquarters": { "zh": "撒马利亚", "en": "Samaria" },
+          "leader": {
+            "zh": "约阿施或耶罗波安二世",
+            "en": "Joash or Jeroboam II"
+          },
+          "leaderTitle": {
+            "zh": "国王",
+            "en": "King"
+          },
+          "ideology": {
+            "zh": "以撒马利亚为中心的中央集权君主制，通过伯特利和但的国家圣所维护王权合法性，推动领土扩张和贸易发展",
+            "en": "Centralized monarchy centered on Samaria, maintaining royal legitimacy through state sanctuaries at Bethel and Dan, pursuing territorial expansion and trade development"
+          },
+          "headquarters": {
+            "zh": "撒马利亚",
+            "en": "Samaria"
+          },
           "status": "ruling",
-          "relationship": { "zh": "耶户王朝通过军事政变上台，经数代经营已建立稳定统治。国王控制军队、征税系统和国家圣所，积极发展与腓尼基的贸易关系。然而王朝面临先知运动的持续批评、与犹大的边境摩擦以及亚述帝国的日益逼近。", "en": "The Jehu dynasty came to power through military coup and after several generations had established stable rule. The king controlled the army, taxation system, and state sanctuaries, actively developing trade relations with Phoenicia. However, the dynasty faced continuous criticism from the prophetic movement, border friction with Judah, and the looming approach of the Assyrian Empire." },
-          "description": { "zh": "耶户王朝在约阿施和即将继位的耶罗波安二世时期正经历复兴。耶户的血腥政变终结了暗利—亚哈家族的统治，但也将北国以色列推入了数十年的政治调整期。到公元前800年前后，王朝已建立起有效的行政体系——撒马利亚的王宫以精美的象牙装饰闻名，米吉多和哈琐的城防设施也经过全面加强。国王通过在伯特利和但设立国家圣所来对抗耶路撒冷的宗教向心力，但这在正统雅威信仰者看来是分裂行为。王室积极发展橄榄油和葡萄酒的出口贸易，与推罗等腓尼基城市保持密切商业往来。耶罗波安二世时代将把以色列推向领土和经济的巅峰，但先知们警告这种繁荣建立在社会不公之上。", "en": "The Jehu dynasty under Joash and the soon-to-succeed Jeroboam II was experiencing revival. Jehu's bloody coup had ended the Omri-Ahab dynasty's rule but also pushed the northern Kingdom of Israel into decades of political adjustment. By around 800 BCE, the dynasty had established an effective administrative system—Samaria's palace was famous for its fine ivory decorations, and fortifications at Megiddo and Hazor had been comprehensively strengthened. The king established state sanctuaries at Bethel and Dan to counter Jerusalem's religious gravity, though orthodox Yahweh worshippers viewed this as divisive. The court actively developed olive oil and wine export trade, maintaining close commercial relations with Phoenician cities like Tyre. The era of Jeroboam II would push Israel to its territorial and economic peak, but prophets warned that this prosperity was built on social injustice." },
+          "relationship": {
+            "zh": "耶户王朝通过军事政变上台，经数代经营已建立稳定统治。国王控制军队、征税系统和国家圣所，积极发展与腓尼基的贸易关系。然而王朝面临先知运动的持续批评、与犹大的边境摩擦以及亚述帝国的日益逼近。",
+            "en": "The Jehu dynasty came to power through military coup and after several generations had established stable rule. The king controlled the army, taxation system, and state sanctuaries, actively developing trade relations with Phoenicia. However, the dynasty faced continuous criticism from the prophetic movement, border friction with Judah, and the looming approach of the Assyrian Empire."
+          },
+          "description": {
+            "zh": "耶户王朝在约阿施和即将继位的耶罗波安二世时期正经历复兴。耶户的血腥政变终结了暗利—亚哈家族的统治，但也将北国以色列推入了数十年的政治调整期。到公元前800年前后，王朝已建立起有效的行政体系——撒马利亚的王宫以精美的象牙装饰闻名，米吉多和哈琐的城防设施也经过全面加强。国王通过在伯特利和但设立国家圣所来对抗耶路撒冷的宗教向心力，但这在正统雅威信仰者看来是分裂行为。王室积极发展橄榄油和葡萄酒的出口贸易，与推罗等腓尼基城市保持密切商业往来。耶罗波安二世时代将把以色列推向领土和经济的巅峰，但先知们警告这种繁荣建立在社会不公之上。",
+            "en": "The Jehu dynasty under Joash and the soon-to-succeed Jeroboam II was experiencing revival. Jehu's bloody coup had ended the Omri-Ahab dynasty's rule but also pushed the northern Kingdom of Israel into decades of political adjustment. By around 800 BCE, the dynasty had established an effective administrative system—Samaria's palace was famous for its fine ivory decorations, and fortifications at Megiddo and Hazor had been comprehensively strengthened. The king established state sanctuaries at Bethel and Dan to counter Jerusalem's religious gravity, though orthodox Yahweh worshippers viewed this as divisive. The court actively developed olive oil and wine export trade, maintaining close commercial relations with Phoenician cities like Tyre. The era of Jeroboam II would push Israel to its territorial and economic peak, but prophets warned that this prosperity was built on social injustice."
+          },
           "keyFigures": [
-            { "name": { "zh": "约阿施", "en": "Joash" }, "title": { "zh": "以色列王", "en": "King of Israel" }, "role": { "zh": "耶户王朝第四代国王，稳定内政并对外发动有限扩张", "en": "Fourth-generation Jehu dynasty king, stabilizing domestic affairs and launching limited expansion" } },
-            { "name": { "zh": "耶罗波安二世", "en": "Jeroboam II" }, "title": { "zh": "王储/继任者", "en": "Crown Prince/Successor" }, "role": { "zh": "即将开创以色列最繁荣时代的未来君主", "en": "Future king who would inaugurate Israel's most prosperous era" } }
+            {
+              "name": {
+                "zh": "约阿施",
+                "en": "Joash"
+              },
+              "title": {
+                "zh": "以色列王",
+                "en": "King of Israel"
+              },
+              "role": {
+                "zh": "耶户王朝第四代国王，稳定内政并对外发动有限扩张",
+                "en": "Fourth-generation Jehu dynasty king, stabilizing domestic affairs and launching limited expansion"
+              }
+            },
+            {
+              "name": {
+                "zh": "耶罗波安二世",
+                "en": "Jeroboam II"
+              },
+              "title": {
+                "zh": "王储/继任者",
+                "en": "Crown Prince/Successor"
+              },
+              "role": {
+                "zh": "即将开创以色列最繁荣时代的未来君主",
+                "en": "Future king who would inaugurate Israel's most prosperous era"
+              }
+            }
           ]
         },
         {
           "id": "israel_yahwist_prophets",
-          "name": { "zh": "雅威先知运动", "en": "Yahwist Prophetic Movement" },
+          "name": {
+            "zh": "雅威先知运动",
+            "en": "Yahwist Prophetic Movement"
+          },
           "type": "religious",
-          "leader": { "zh": "以利沙", "en": "Elisha" },
-          "leaderTitle": { "zh": "先知", "en": "Prophet" },
-          "ideology": { "zh": "独一的雅威崇拜，反对巴力和亚舍拉等外来神崇拜，呼吁社会正义、保护穷人权利、批判王室的压迫和宗教混杂", "en": "Exclusive Yahweh worship, opposing the cults of Baal, Asherah, and other foreign deities, calling for social justice, protecting the rights of the poor, and criticizing royal oppression and religious syncretism" },
-          "headquarters": { "zh": "各地先知团体与乡村集会", "en": "Prophetic communities and rural assemblies across the land" },
+          "leader": {
+            "zh": "以利沙",
+            "en": "Elisha"
+          },
+          "leaderTitle": {
+            "zh": "先知",
+            "en": "Prophet"
+          },
+          "ideology": {
+            "zh": "独一的雅威崇拜，反对巴力和亚舍拉等外来神崇拜，呼吁社会正义、保护穷人权利、批判王室的压迫和宗教混杂",
+            "en": "Exclusive Yahweh worship, opposing the cults of Baal, Asherah, and other foreign deities, calling for social justice, protecting the rights of the poor, and criticizing royal oppression and religious syncretism"
+          },
+          "headquarters": {
+            "zh": "各地先知团体与乡村集会",
+            "en": "Prophetic communities and rural assemblies across the land"
+          },
           "status": "opposition",
-          "relationship": { "zh": "先知运动与王室之间存在深刻的结构性张力。先知们承认王权但拒绝对国王盲目服从，以“雅威之言”为武器批评王室的宗教混杂政策、土地兼并和对穷人的压迫。以利亚曾公开对抗亚哈和耶洗别的巴力崇拜，以利沙则继续这一传统。先知运动虽无军事力量，但其道德权威能动摇王权的合法性。", "en": "The prophetic movement and the royal house maintained a deep structural tension. Prophets acknowledged kingship but refused blind obedience to the king, wielding 'the word of Yahweh' to criticize the court's religious syncretism, land concentration, and oppression of the poor. Elijah had publicly confronted Ahab and Jezebel's Baal worship, and Elisha continued this tradition. Though the prophetic movement lacked military power, its moral authority could shake the legitimacy of kingship." },
-          "description": { "zh": "雅威先知运动是古代以色列最独特的政治—宗教现象之一。先知不是祭司，不依附于固定的神庙体系，而是以“雅威的代言人”身份独立活动。以利亚在迦密山戏剧性地挑战四百五十名巴力先知的故事塑造了先知作为正义卫士的形象。以利沙继承其衣钵，继续在北国行奇迹、传神谕、介入政治。先知运动的核心主张是独一的雅威崇拜——反对与腓尼基传入的巴力和亚舍拉崇拜混合。同时他们强烈批评社会不公：富人兼并穷人的土地、法庭审判不公、债务奴役泛滥。这种社会批判传统将在阿摩司和何西阿等文字先知中达到高峰。先知运动虽然缺乏组织化的政治力量，但其对以色列宗教和道德思想的影响深远，最终塑造了犹太教一神信仰的核心特征。", "en": "The Yahwist prophetic movement was one of the most distinctive politico-religious phenomena in ancient Israel. Prophets were not priests and did not depend on a fixed temple system, but operated independently as 'spokespersons of Yahweh'. The dramatic story of Elijah challenging 450 prophets of Baal on Mount Carmel shaped the image of prophets as champions of righteousness. Elisha inherited his mantle, continuing to perform miracles, deliver oracles, and intervene in politics in the northern kingdom. The movement's core demand was exclusive Yahweh worship—opposing syncretism with the cults of Baal and Asherah introduced through Phoenician influence. They also fiercely criticized social injustice: the rich seizing the poor's land, corrupted courts, and widespread debt slavery. This tradition of social critique would reach its peak in the literary prophets Amos and Hosea. Though the prophetic movement lacked organized political power, its influence on Israelite religious and moral thought was profound, ultimately shaping the core characteristic of monotheism in Judaism." },
+          "relationship": {
+            "zh": "先知运动与王室之间存在深刻的结构性张力。先知们承认王权但拒绝对国王盲目服从，以“雅威之言”为武器批评王室的宗教混杂政策、土地兼并和对穷人的压迫。以利亚曾公开对抗亚哈和耶洗别的巴力崇拜，以利沙则继续这一传统。先知运动虽无军事力量，但其道德权威能动摇王权的合法性。",
+            "en": "The prophetic movement and the royal house maintained a deep structural tension. Prophets acknowledged kingship but refused blind obedience to the king, wielding 'the word of Yahweh' to criticize the court's religious syncretism, land concentration, and oppression of the poor. Elijah had publicly confronted Ahab and Jezebel's Baal worship, and Elisha continued this tradition. Though the prophetic movement lacked military power, its moral authority could shake the legitimacy of kingship."
+          },
+          "description": {
+            "zh": "雅威先知运动是古代以色列最独特的政治—宗教现象之一。先知不是祭司，不依附于固定的神庙体系，而是以“雅威的代言人”身份独立活动。以利亚在迦密山戏剧性地挑战四百五十名巴力先知的故事塑造了先知作为正义卫士的形象。以利沙继承其衣钵，继续在北国行奇迹、传神谕、介入政治。先知运动的核心主张是独一的雅威崇拜——反对与腓尼基传入的巴力和亚舍拉崇拜混合。同时他们强烈批评社会不公：富人兼并穷人的土地、法庭审判不公、债务奴役泛滥。这种社会批判传统将在阿摩司和何西阿等文字先知中达到高峰。先知运动虽然缺乏组织化的政治力量，但其对以色列宗教和道德思想的影响深远，最终塑造了犹太教一神信仰的核心特征。",
+            "en": "The Yahwist prophetic movement was one of the most distinctive politico-religious phenomena in ancient Israel. Prophets were not priests and did not depend on a fixed temple system, but operated independently as 'spokespersons of Yahweh'. The dramatic story of Elijah challenging 450 prophets of Baal on Mount Carmel shaped the image of prophets as champions of righteousness. Elisha inherited his mantle, continuing to perform miracles, deliver oracles, and intervene in politics in the northern kingdom. The movement's core demand was exclusive Yahweh worship—opposing syncretism with the cults of Baal and Asherah introduced through Phoenician influence. They also fiercely criticized social injustice: the rich seizing the poor's land, corrupted courts, and widespread debt slavery. This tradition of social critique would reach its peak in the literary prophets Amos and Hosea. Though the prophetic movement lacked organized political power, its influence on Israelite religious and moral thought was profound, ultimately shaping the core characteristic of monotheism in Judaism."
+          },
           "keyFigures": [
-            { "name": { "zh": "以利沙", "en": "Elisha" }, "title": { "zh": "先知", "en": "Prophet" }, "role": { "zh": "以利亚的继承者，在北国传播雅威信仰并介入政治", "en": "Successor of Elijah, spreading Yahweh worship and intervening in politics in the northern kingdom" } },
-            { "name": { "zh": "以利亚", "en": "Elijah" }, "title": { "zh": "先知", "en": "Prophet" }, "role": { "zh": "对抗巴力崇拜的传奇先知，先知运动的精神象征", "en": "Legendary prophet who confronted Baal worship, spiritual symbol of the prophetic movement" } }
+            {
+              "name": {
+                "zh": "以利沙",
+                "en": "Elisha"
+              },
+              "title": {
+                "zh": "先知",
+                "en": "Prophet"
+              },
+              "role": {
+                "zh": "以利亚的继承者，在北国传播雅威信仰并介入政治",
+                "en": "Successor of Elijah, spreading Yahweh worship and intervening in politics in the northern kingdom"
+              }
+            },
+            {
+              "name": {
+                "zh": "以利亚",
+                "en": "Elijah"
+              },
+              "title": {
+                "zh": "先知",
+                "en": "Prophet"
+              },
+              "role": {
+                "zh": "对抗巴力崇拜的传奇先知，先知运动的精神象征",
+                "en": "Legendary prophet who confronted Baal worship, spiritual symbol of the prophetic movement"
+              }
+            }
           ]
         },
         {
           "id": "israel_baal_worship",
-          "name": { "zh": "巴力崇拜派系", "en": "Baal Worship Faction" },
+          "name": {
+            "zh": "巴力崇拜派系",
+            "en": "Baal Worship Faction"
+          },
           "type": "religious",
-          "leader": { "zh": "耶洗别", "en": "Jezebel" },
-          "leaderTitle": { "zh": "王后", "en": "Queen" },
-          "ideology": { "zh": "以腓尼基巴力—亚舍拉崇拜取代或融合雅威独尊传统，推行宗教多元共存，借助腓尼基神庙经济模式和国际化祭祀体系提升王权合法性和国家财富", "en": "Replacing or syncretizing the Yahwist exclusivist tradition with Phoenician Baal-Asherah worship, promoting religious pluralism, and leveraging the Phoenician temple-economic model and internationalized ritual system to bolster royal legitimacy and national wealth" },
-          "headquarters": { "zh": "撒马利亚巴力神庙", "en": "Temple of Baal at Samaria" },
+          "leader": {
+            "zh": "耶洗别",
+            "en": "Jezebel"
+          },
+          "leaderTitle": {
+            "zh": "王后",
+            "en": "Queen"
+          },
+          "ideology": {
+            "zh": "以腓尼基巴力—亚舍拉崇拜取代或融合雅威独尊传统，推行宗教多元共存，借助腓尼基神庙经济模式和国际化祭祀体系提升王权合法性和国家财富",
+            "en": "Replacing or syncretizing the Yahwist exclusivist tradition with Phoenician Baal-Asherah worship, promoting religious pluralism, and leveraging the Phoenician temple-economic model and internationalized ritual system to bolster royal legitimacy and national wealth"
+          },
+          "headquarters": {
+            "zh": "撒马利亚巴力神庙",
+            "en": "Temple of Baal at Samaria"
+          },
           "status": "rival",
-          "relationship": { "zh": "巴力崇拜派系通过推罗公主耶洗别嫁给亚哈王而获得了宫廷层面的强力支持。耶洗别不仅引入巴力和亚舍拉崇拜，还以王后权威供养四百五十名巴力先知和四百名亚舍拉先知，试图在以色列建立腓尼基式的国家宗教体系。这一派系直接威胁了雅威独尊的宗教传统，引发以利亚等先知的殊死对抗——卡密山上的对决成为这场宗教冲突最戏剧性的象征。", "en": "The Baal worship faction gained powerful court-level support through the marriage of Tyrian princess Jezebel to King Ahab. Jezebel not only introduced Baal and Asherah worship but used her queenly authority to maintain 450 prophets of Baal and 400 prophets of Asherah, attempting to establish a Phoenician-style state religion in Israel. This faction directly threatened the Yahwist exclusivist tradition, provoking a life-or-death confrontation with prophets like Elijah—the contest on Mount Carmel became the most dramatic symbol of this religious conflict." },
-          "description": { "zh": "巴力崇拜在以色列的扩张是古代近东最引人注目的宗教冲突之一。腓尼基的巴力—美尔卡特是推罗城邦的主神，掌管丰饶、风暴和航海，其崇拜体系伴随着精致的神庙建筑、丰盛的祭祀仪式和国际化的祭司网络。当亚哈王迎娶推罗公主耶洗别时，巴力崇拜获得了前所未有的官方支持——撒马利亚修建了宏伟的巴力神庙，腓尼基祭司涌入以色列，丘坛上的混合祭祀日益盛行。耶洗别以铁腕手段迫害雅威先知，据《列王纪》记载杀害了大量雅威先知，迫使以利亚等人逃亡旷野。巴力崇拜的吸引力不仅在于宗教层面——它代表着与腓尼基地中海贸易网络的深度整合、先进的城市文化和富裕的寺庙经济。对于以色列的都市精英和商人阶层而言，拥抱巴力崇拜意味着融入更广阔的国际体系。然而，雅威独尊的先知们将此视为对西奈盟约的根本性背叛，最终耶户政变将以血腥方式终结暗利家族和巴力祭司的统治。", "en": "The expansion of Baal worship in Israel constituted one of the most dramatic religious conflicts in the ancient Near East. The Phoenician Baal-Melqart was the patron deity of Tyre, governing fertility, storms, and seafaring, with a worship system accompanied by elaborate temple architecture, lavish ritual ceremonies, and an internationalized priestly network. When King Ahab married the Tyrian princess Jezebel, Baal worship gained unprecedented official support—a magnificent Baal temple was built at Samaria, Phoenician priests flooded into Israel, and syncretic worship at high places became increasingly prevalent. Jezebel persecuted Yahwist prophets with an iron hand; according to the Book of Kings, she killed many prophets of Yahweh, forcing Elijah and others to flee into the wilderness. The appeal of Baal worship was not merely religious—it represented deep integration with the Phoenician Mediterranean trade network, advanced urban culture, and wealthy temple economies. For Israel's urban elite and merchant class, embracing Baal worship meant joining a broader international system. However, the Yahwist exclusivist prophets viewed this as a fundamental betrayal of the Sinai covenant, and ultimately Jehu's coup would violently end the rule of the Omri family and the Baal priests." },
+          "relationship": {
+            "zh": "巴力崇拜派系通过推罗公主耶洗别嫁给亚哈王而获得了宫廷层面的强力支持。耶洗别不仅引入巴力和亚舍拉崇拜，还以王后权威供养四百五十名巴力先知和四百名亚舍拉先知，试图在以色列建立腓尼基式的国家宗教体系。这一派系直接威胁了雅威独尊的宗教传统，引发以利亚等先知的殊死对抗——卡密山上的对决成为这场宗教冲突最戏剧性的象征。",
+            "en": "The Baal worship faction gained powerful court-level support through the marriage of Tyrian princess Jezebel to King Ahab. Jezebel not only introduced Baal and Asherah worship but used her queenly authority to maintain 450 prophets of Baal and 400 prophets of Asherah, attempting to establish a Phoenician-style state religion in Israel. This faction directly threatened the Yahwist exclusivist tradition, provoking a life-or-death confrontation with prophets like Elijah—the contest on Mount Carmel became the most dramatic symbol of this religious conflict."
+          },
+          "description": {
+            "zh": "巴力崇拜在以色列的扩张是古代近东最引人注目的宗教冲突之一。腓尼基的巴力—美尔卡特是推罗城邦的主神，掌管丰饶、风暴和航海，其崇拜体系伴随着精致的神庙建筑、丰盛的祭祀仪式和国际化的祭司网络。当亚哈王迎娶推罗公主耶洗别时，巴力崇拜获得了前所未有的官方支持——撒马利亚修建了宏伟的巴力神庙，腓尼基祭司涌入以色列，丘坛上的混合祭祀日益盛行。耶洗别以铁腕手段迫害雅威先知，据《列王纪》记载杀害了大量雅威先知，迫使以利亚等人逃亡旷野。巴力崇拜的吸引力不仅在于宗教层面——它代表着与腓尼基地中海贸易网络的深度整合、先进的城市文化和富裕的寺庙经济。对于以色列的都市精英和商人阶层而言，拥抱巴力崇拜意味着融入更广阔的国际体系。然而，雅威独尊的先知们将此视为对西奈盟约的根本性背叛，最终耶户政变将以血腥方式终结暗利家族和巴力祭司的统治。",
+            "en": "The expansion of Baal worship in Israel constituted one of the most dramatic religious conflicts in the ancient Near East. The Phoenician Baal-Melqart was the patron deity of Tyre, governing fertility, storms, and seafaring, with a worship system accompanied by elaborate temple architecture, lavish ritual ceremonies, and an internationalized priestly network. When King Ahab married the Tyrian princess Jezebel, Baal worship gained unprecedented official support—a magnificent Baal temple was built at Samaria, Phoenician priests flooded into Israel, and syncretic worship at high places became increasingly prevalent. Jezebel persecuted Yahwist prophets with an iron hand; according to the Book of Kings, she killed many prophets of Yahweh, forcing Elijah and others to flee into the wilderness. The appeal of Baal worship was not merely religious—it represented deep integration with the Phoenician Mediterranean trade network, advanced urban culture, and wealthy temple economies. For Israel's urban elite and merchant class, embracing Baal worship meant joining a broader international system. However, the Yahwist exclusivist prophets viewed this as a fundamental betrayal of the Sinai covenant, and ultimately Jehu's coup would violently end the rule of the Omri family and the Baal priests."
+          },
           "keyFigures": [
-            { "name": { "zh": "耶洗别", "en": "Jezebel" }, "title": { "zh": "以色列王后", "en": "Queen of Israel" }, "role": { "zh": "推罗公主，巴力崇拜在以色列的最高推动者，以利亚的头号敌人", "en": "Tyrian princess, supreme promoter of Baal worship in Israel, Elijah's arch-nemesis" } },
-            { "name": { "zh": "巴力祭司长", "en": "Chief Priest of Baal" }, "title": { "zh": "巴力大祭司", "en": "High Priest of Baal" }, "role": { "zh": "撒马利亚巴力神庙的最高祭司，主持巴力祭祀仪式", "en": "Chief priest of the Baal temple at Samaria, presiding over Baal worship rituals" } }
+            {
+              "name": {
+                "zh": "耶洗别",
+                "en": "Jezebel"
+              },
+              "title": {
+                "zh": "以色列王后",
+                "en": "Queen of Israel"
+              },
+              "role": {
+                "zh": "推罗公主，巴力崇拜在以色列的最高推动者，以利亚的头号敌人",
+                "en": "Tyrian princess, supreme promoter of Baal worship in Israel, Elijah's arch-nemesis"
+              }
+            },
+            {
+              "name": {
+                "zh": "巴力祭司长",
+                "en": "Chief Priest of Baal"
+              },
+              "title": {
+                "zh": "巴力大祭司",
+                "en": "High Priest of Baal"
+              },
+              "role": {
+                "zh": "撒马利亚巴力神庙的最高祭司，主持巴力祭祀仪式",
+                "en": "Chief priest of the Baal temple at Samaria, presiding over Baal worship rituals"
+              }
+            }
           ]
         }
       ]
@@ -16610,7 +17060,7 @@
             "zh": "银克当量/人",
             "en": "grams of silver equivalent per person"
           },
-          "goldKg": 0.000012,
+          "goldKg": 1.2e-05,
           "silverKg": 0.012
         },
         "gdpDescription": {
@@ -19847,49 +20297,177 @@
       "factions": [
         {
           "id": "egypt_22nd_pharaoh",
-          "name": { "zh": "利比亚裔法老王朝", "en": "Libyan Pharaonic Dynasty (22nd)" },
+          "name": {
+            "zh": "利比亚裔法老王朝",
+            "en": "Libyan Pharaonic Dynasty (22nd)"
+          },
           "type": "other",
-          "leader": { "zh": "舍顺克三世", "en": "Shoshenq III" },
-          "leaderTitle": { "zh": "法老", "en": "Pharaoh" },
-          "ideology": { "zh": "延续法老传统的神王体制，通过埃及化维护统治合法性，以利比亚酋长制的军事贵族传统控制三角洲", "en": "Continuing the divine-king pharaonic tradition, maintaining ruling legitimacy through Egyptianization, and controlling the Delta through the Libyan chieftain military aristocratic tradition" },
-          "headquarters": { "zh": "塔尼斯", "en": "Tanis" },
+          "leader": {
+            "zh": "舍顺克三世",
+            "en": "Shoshenq III"
+          },
+          "leaderTitle": {
+            "zh": "法老",
+            "en": "Pharaoh"
+          },
+          "ideology": {
+            "zh": "延续法老传统的神王体制，通过埃及化维护统治合法性，以利比亚酋长制的军事贵族传统控制三角洲",
+            "en": "Continuing the divine-king pharaonic tradition, maintaining ruling legitimacy through Egyptianization, and controlling the Delta through the Libyan chieftain military aristocratic tradition"
+          },
+          "headquarters": {
+            "zh": "塔尼斯",
+            "en": "Tanis"
+          },
           "status": "ruling",
-          "relationship": { "zh": "法老名义上是全埃及的最高统治者，但实际控制力主要局限于尼罗河三角洲地区。王朝源自利比亚军事酋长阶层，虽完全采纳了埃及法老的传统头衔和宗教仪式，但对上埃及的控制日渐薄弱，底比斯的阿蒙祭司集团已形成事实上的独立政权。", "en": "The pharaoh was nominally supreme ruler of all Egypt, but actual control was mainly limited to the Nile Delta region. The dynasty originated from the Libyan military chieftain class and had fully adopted traditional pharaonic titles and religious ceremonies, but its control over Upper Egypt was steadily weakening, with the Theban Amun priestly establishment having formed a de facto independent regime." },
-          "description": { "zh": "第二十二王朝是由利比亚军事移民后裔建立的法老政权。舍顺克一世曾一度恢复埃及对外影响力，远征巴勒斯坦并在卡纳克留下战功铭文。然而到舍顺克三世时代，王朝已明显衰落。三角洲地区被分割为多个由利比亚裔军事贵族控制的半独立领地，各地方强人名义上尊奉法老但实际自行其政。法老试图通过任命王族成员为各地军事长官来维持控制，但这些分封本身又产生了新的离心力。王朝的根本困境在于利比亚式的分权传统与埃及法老集权理想之间的结构性矛盾——法老既要扮演传统神王角色又无法摆脱部族政治的制约。", "en": "The 22nd Dynasty was a pharaonic regime established by descendants of Libyan military immigrants. Shoshenq I had briefly restored Egypt's external influence, campaigning in Palestine and leaving victory inscriptions at Karnak. However, by Shoshenq III's era the dynasty had clearly declined. The Delta was divided among multiple semi-independent territories controlled by Libyan-descended military nobles, with local strongmen nominally honoring the pharaoh while governing independently. The pharaoh attempted to maintain control by appointing royal family members as regional military commanders, but these appointments themselves generated new centrifugal forces. The dynasty's fundamental predicament was the structural contradiction between the Libyan tradition of decentralized power and the Egyptian pharaonic ideal of centralized authority—the pharaoh had to play the traditional divine-king role while unable to escape the constraints of tribal politics." },
+          "relationship": {
+            "zh": "法老名义上是全埃及的最高统治者，但实际控制力主要局限于尼罗河三角洲地区。王朝源自利比亚军事酋长阶层，虽完全采纳了埃及法老的传统头衔和宗教仪式，但对上埃及的控制日渐薄弱，底比斯的阿蒙祭司集团已形成事实上的独立政权。",
+            "en": "The pharaoh was nominally supreme ruler of all Egypt, but actual control was mainly limited to the Nile Delta region. The dynasty originated from the Libyan military chieftain class and had fully adopted traditional pharaonic titles and religious ceremonies, but its control over Upper Egypt was steadily weakening, with the Theban Amun priestly establishment having formed a de facto independent regime."
+          },
+          "description": {
+            "zh": "第二十二王朝是由利比亚军事移民后裔建立的法老政权。舍顺克一世曾一度恢复埃及对外影响力，远征巴勒斯坦并在卡纳克留下战功铭文。然而到舍顺克三世时代，王朝已明显衰落。三角洲地区被分割为多个由利比亚裔军事贵族控制的半独立领地，各地方强人名义上尊奉法老但实际自行其政。法老试图通过任命王族成员为各地军事长官来维持控制，但这些分封本身又产生了新的离心力。王朝的根本困境在于利比亚式的分权传统与埃及法老集权理想之间的结构性矛盾——法老既要扮演传统神王角色又无法摆脱部族政治的制约。",
+            "en": "The 22nd Dynasty was a pharaonic regime established by descendants of Libyan military immigrants. Shoshenq I had briefly restored Egypt's external influence, campaigning in Palestine and leaving victory inscriptions at Karnak. However, by Shoshenq III's era the dynasty had clearly declined. The Delta was divided among multiple semi-independent territories controlled by Libyan-descended military nobles, with local strongmen nominally honoring the pharaoh while governing independently. The pharaoh attempted to maintain control by appointing royal family members as regional military commanders, but these appointments themselves generated new centrifugal forces. The dynasty's fundamental predicament was the structural contradiction between the Libyan tradition of decentralized power and the Egyptian pharaonic ideal of centralized authority—the pharaoh had to play the traditional divine-king role while unable to escape the constraints of tribal politics."
+          },
           "keyFigures": [
-            { "name": { "zh": "舍顺克三世", "en": "Shoshenq III" }, "title": { "zh": "法老", "en": "Pharaoh" }, "role": { "zh": "王朝晚期法老，挣扎于维系日益分裂的国家统一", "en": "Late dynasty pharaoh struggling to maintain unity in an increasingly fragmented state" } }
+            {
+              "name": {
+                "zh": "舍顺克三世",
+                "en": "Shoshenq III"
+              },
+              "title": {
+                "zh": "法老",
+                "en": "Pharaoh"
+              },
+              "role": {
+                "zh": "王朝晚期法老，挣扎于维系日益分裂的国家统一",
+                "en": "Late dynasty pharaoh struggling to maintain unity in an increasingly fragmented state"
+              }
+            }
           ]
         },
         {
           "id": "egypt_theban_amun",
-          "name": { "zh": "底比斯阿蒙神权政体", "en": "Theban Amun Theocracy" },
+          "name": {
+            "zh": "底比斯阿蒙神权政体",
+            "en": "Theban Amun Theocracy"
+          },
           "type": "religious",
-          "leader": { "zh": "阿蒙神妻", "en": "God's Wife of Amun" },
-          "leaderTitle": { "zh": "阿蒙神之妻", "en": "God's Wife of Amun" },
-          "ideology": { "zh": "阿蒙神的旨意高于世俗王权，底比斯是宇宙的神圣中心，神庙祭司和阿蒙神妻代替法老行使上埃及的统治权", "en": "The will of Amun supersedes secular kingship, Thebes is the sacred center of the cosmos, and temple priests and the God's Wife of Amun exercise governance over Upper Egypt in place of the pharaoh" },
-          "headquarters": { "zh": "底比斯卡纳克神庙", "en": "Karnak Temple at Thebes" },
+          "leader": {
+            "zh": "阿蒙神妻",
+            "en": "God's Wife of Amun"
+          },
+          "leaderTitle": {
+            "zh": "阿蒙神之妻",
+            "en": "God's Wife of Amun"
+          },
+          "ideology": {
+            "zh": "阿蒙神的旨意高于世俗王权，底比斯是宇宙的神圣中心，神庙祭司和阿蒙神妻代替法老行使上埃及的统治权",
+            "en": "The will of Amun supersedes secular kingship, Thebes is the sacred center of the cosmos, and temple priests and the God's Wife of Amun exercise governance over Upper Egypt in place of the pharaoh"
+          },
+          "headquarters": {
+            "zh": "底比斯卡纳克神庙",
+            "en": "Karnak Temple at Thebes"
+          },
           "status": "rival",
-          "relationship": { "zh": "底比斯阿蒙祭司集团与三角洲法老之间形成了事实上的南北分治格局。阿蒙神妻这一职位成为上埃及实际统治者，拥有独立的财政、行政和宗教权力。底比斯方面名义上承认法老地位，但在实际政治中自成体系，对三角洲政权的号令多予忽视。", "en": "The Theban Amun priestly establishment and the Delta pharaoh had formed a de facto north-south divided rule. The position of God's Wife of Amun became the actual ruler of Upper Egypt, wielding independent fiscal, administrative, and religious power. The Theban side nominally recognized the pharaoh but operated as an independent system in practice, largely ignoring directives from the Delta regime." },
-          "description": { "zh": "底比斯阿蒙神权政体是第三中间期最独特的政治现象之一。随着法老中央权威的崩溃，卡纳克阿蒙神庙从宗教机构演变为上埃及的实际政府。“阿蒙神之妻”这一原本纯粹的宗教头衔被赋予了越来越多的世俗权力——拥有庞大的神庙地产、指挥地方武装、主持司法裁判并控制上埃及的财政收入。通过这种独特的神权机制，阿蒙祭司集团建立了一个不依赖法老授权的独立权力中心。神庙掌控了底比斯地区最富庶的农业用地和最大规模的劳动力，其经济实力足以与三角洲法老分庭抗礼。阿蒙神谕在政治决策中的作用日益突出，甚至可以否决世俗权力的安排。这种祭司权力与王权的对抗将持续到库施人入侵建立第二十五王朝。", "en": "The Theban Amun theocracy was one of the most distinctive political phenomena of the Third Intermediate Period. As pharaonic central authority collapsed, the Karnak Temple of Amun evolved from a religious institution into the actual government of Upper Egypt. The position of 'God's Wife of Amun', originally a purely religious title, was invested with increasing secular power—commanding vast temple estates, directing local armed forces, presiding over judicial decisions, and controlling Upper Egypt's fiscal revenues. Through this unique theocratic mechanism, the Amun priestly establishment created an independent power center that did not depend on pharaonic authorization. The temple controlled the richest agricultural lands and largest labor force in the Theban region, with economic strength sufficient to rival the Delta pharaoh. Amun oracles played an increasingly prominent role in political decision-making, even overriding secular power arrangements. This confrontation between priestly and royal power would persist until the Kushite invasion established the 25th Dynasty." },
+          "relationship": {
+            "zh": "底比斯阿蒙祭司集团与三角洲法老之间形成了事实上的南北分治格局。阿蒙神妻这一职位成为上埃及实际统治者，拥有独立的财政、行政和宗教权力。底比斯方面名义上承认法老地位，但在实际政治中自成体系，对三角洲政权的号令多予忽视。",
+            "en": "The Theban Amun priestly establishment and the Delta pharaoh had formed a de facto north-south divided rule. The position of God's Wife of Amun became the actual ruler of Upper Egypt, wielding independent fiscal, administrative, and religious power. The Theban side nominally recognized the pharaoh but operated as an independent system in practice, largely ignoring directives from the Delta regime."
+          },
+          "description": {
+            "zh": "底比斯阿蒙神权政体是第三中间期最独特的政治现象之一。随着法老中央权威的崩溃，卡纳克阿蒙神庙从宗教机构演变为上埃及的实际政府。“阿蒙神之妻”这一原本纯粹的宗教头衔被赋予了越来越多的世俗权力——拥有庞大的神庙地产、指挥地方武装、主持司法裁判并控制上埃及的财政收入。通过这种独特的神权机制，阿蒙祭司集团建立了一个不依赖法老授权的独立权力中心。神庙掌控了底比斯地区最富庶的农业用地和最大规模的劳动力，其经济实力足以与三角洲法老分庭抗礼。阿蒙神谕在政治决策中的作用日益突出，甚至可以否决世俗权力的安排。这种祭司权力与王权的对抗将持续到库施人入侵建立第二十五王朝。",
+            "en": "The Theban Amun theocracy was one of the most distinctive political phenomena of the Third Intermediate Period. As pharaonic central authority collapsed, the Karnak Temple of Amun evolved from a religious institution into the actual government of Upper Egypt. The position of 'God's Wife of Amun', originally a purely religious title, was invested with increasing secular power—commanding vast temple estates, directing local armed forces, presiding over judicial decisions, and controlling Upper Egypt's fiscal revenues. Through this unique theocratic mechanism, the Amun priestly establishment created an independent power center that did not depend on pharaonic authorization. The temple controlled the richest agricultural lands and largest labor force in the Theban region, with economic strength sufficient to rival the Delta pharaoh. Amun oracles played an increasingly prominent role in political decision-making, even overriding secular power arrangements. This confrontation between priestly and royal power would persist until the Kushite invasion established the 25th Dynasty."
+          },
           "keyFigures": [
-            { "name": { "zh": "阿蒙神妻", "en": "God's Wife of Amun" }, "title": { "zh": "阿蒙神之妻", "en": "God's Wife of Amun" }, "role": { "zh": "上埃及实际统治者，掌握宗教、经济和行政权力", "en": "De facto ruler of Upper Egypt, wielding religious, economic, and administrative power" } },
-            { "name": { "zh": "卡纳克阿蒙大祭司", "en": "High Priest of Amun at Karnak" }, "title": { "zh": "阿蒙第一先知", "en": "First Prophet of Amun" }, "role": { "zh": "底比斯宗教体系的最高管理者", "en": "Chief administrator of the Theban religious establishment" } }
+            {
+              "name": {
+                "zh": "阿蒙神妻",
+                "en": "God's Wife of Amun"
+              },
+              "title": {
+                "zh": "阿蒙神之妻",
+                "en": "God's Wife of Amun"
+              },
+              "role": {
+                "zh": "上埃及实际统治者，掌握宗教、经济和行政权力",
+                "en": "De facto ruler of Upper Egypt, wielding religious, economic, and administrative power"
+              }
+            },
+            {
+              "name": {
+                "zh": "卡纳克阿蒙大祭司",
+                "en": "High Priest of Amun at Karnak"
+              },
+              "title": {
+                "zh": "阿蒙第一先知",
+                "en": "First Prophet of Amun"
+              },
+              "role": {
+                "zh": "底比斯宗教体系的最高管理者",
+                "en": "Chief administrator of the Theban religious establishment"
+              }
+            }
           ]
         },
         {
           "id": "egypt_kush_rising",
-          "name": { "zh": "库施（纳帕塔）王国", "en": "Kingdom of Kush (Napata)" },
+          "name": {
+            "zh": "库施（纳帕塔）王国",
+            "en": "Kingdom of Kush (Napata)"
+          },
           "type": "other",
-          "leader": { "zh": "库施国王", "en": "King of Kush" },
-          "leaderTitle": { "zh": "国王", "en": "King" },
-          "ideology": { "zh": "以阿蒙崇拜为正统信仰，自视为古埃及传统的真正继承者，以恢复埃及统一和宗教秩序为使命", "en": "Adopted Amun worship as orthodox faith, viewed itself as the true heir of ancient Egyptian tradition, with a mission to restore Egyptian unity and religious order" },
-          "headquarters": { "zh": "纳帕塔（杰贝尔巴卡尔）", "en": "Napata (Jebel Barkal)" },
+          "leader": {
+            "zh": "库施国王",
+            "en": "King of Kush"
+          },
+          "leaderTitle": {
+            "zh": "国王",
+            "en": "King"
+          },
+          "ideology": {
+            "zh": "以阿蒙崇拜为正统信仰，自视为古埃及传统的真正继承者，以恢复埃及统一和宗教秩序为使命",
+            "en": "Adopted Amun worship as orthodox faith, viewed itself as the true heir of ancient Egyptian tradition, with a mission to restore Egyptian unity and religious order"
+          },
+          "headquarters": {
+            "zh": "纳帕塔（杰贝尔巴卡尔）",
+            "en": "Napata (Jebel Barkal)"
+          },
           "status": "rival",
-          "relationship": { "zh": "库施王国从南方崛起，与埃及的关系正从边境紧张走向直接挑战。库施统治者深受埃及文化影响，虔诚崇拜阿蒙神，甚至自认为比利比亚裔法老更有资格代表正统埃及王权。库施将最终征服整个埃及，建立第二十五王朝。", "en": "The Kingdom of Kush was rising from the south, with relations to Egypt shifting from border tensions to direct challenge. Kushite rulers were deeply influenced by Egyptian culture, devoutly worshiping Amun, and even considering themselves more legitimate representatives of orthodox Egyptian kingship than the Libyan-origin pharaohs. Kush would ultimately conquer all of Egypt and establish the 25th Dynasty." },
-          "description": { "zh": "库施（纳帕塔）王国是一个从尼罗河上游崛起的强大势力，正在成为对埃及最大的外部威胁。库施统治者以杰贝尔巴卡尔的阿蒙神庙为宗教中心，完全接受了埃及的神王理念和阿蒙崇拜，但同时保留了努比亚本土的军事传统和社会结构。库施国王在铭文中使用埃及法老的头衔和仪式，宣称自己才是阿蒙神的真正选民。随着第二十二王朝中央权威的持续衰落和埃及内部分裂加剧，库施看到了北上干预的机会。库施军队以强悍的弓箭手闻名——“弓之国度”（Ta-Seti）的古老声誉在铁器时代依然响亮。库施控制着通往非洲内陆的黄金和象牙贸易通道，经济基础稳固。这一南方大国将在不远的将来跨越上埃及，征服整个尼罗河流域，以第二十五王朝的名义暂时重新统一埃及。", "en": "The Kingdom of Kush (Napata) was a powerful force rising from the upper Nile, becoming the greatest external threat to Egypt. Kushite rulers centered their religion on the Amun temple at Jebel Barkal, fully accepting the Egyptian divine-king concept and Amun worship while retaining indigenous Nubian military traditions and social structures. Kushite kings used Egyptian pharaonic titles and ceremonies in their inscriptions, claiming to be the true chosen people of Amun. As the 22nd Dynasty's central authority continued declining and Egyptian internal fragmentation worsened, Kush saw an opportunity for northern intervention. The Kushite army was renowned for its formidable archers—the ancient reputation of the 'Land of the Bow' (Ta-Seti) remained powerful in the Iron Age. Kush controlled trade routes for gold and ivory into the African interior, providing a solid economic foundation. This southern great power would in the near future cross Upper Egypt and conquer the entire Nile valley, temporarily reunifying Egypt under the 25th Dynasty." },
+          "relationship": {
+            "zh": "库施王国从南方崛起，与埃及的关系正从边境紧张走向直接挑战。库施统治者深受埃及文化影响，虔诚崇拜阿蒙神，甚至自认为比利比亚裔法老更有资格代表正统埃及王权。库施将最终征服整个埃及，建立第二十五王朝。",
+            "en": "The Kingdom of Kush was rising from the south, with relations to Egypt shifting from border tensions to direct challenge. Kushite rulers were deeply influenced by Egyptian culture, devoutly worshiping Amun, and even considering themselves more legitimate representatives of orthodox Egyptian kingship than the Libyan-origin pharaohs. Kush would ultimately conquer all of Egypt and establish the 25th Dynasty."
+          },
+          "description": {
+            "zh": "库施（纳帕塔）王国是一个从尼罗河上游崛起的强大势力，正在成为对埃及最大的外部威胁。库施统治者以杰贝尔巴卡尔的阿蒙神庙为宗教中心，完全接受了埃及的神王理念和阿蒙崇拜，但同时保留了努比亚本土的军事传统和社会结构。库施国王在铭文中使用埃及法老的头衔和仪式，宣称自己才是阿蒙神的真正选民。随着第二十二王朝中央权威的持续衰落和埃及内部分裂加剧，库施看到了北上干预的机会。库施军队以强悍的弓箭手闻名——“弓之国度”（Ta-Seti）的古老声誉在铁器时代依然响亮。库施控制着通往非洲内陆的黄金和象牙贸易通道，经济基础稳固。这一南方大国将在不远的将来跨越上埃及，征服整个尼罗河流域，以第二十五王朝的名义暂时重新统一埃及。",
+            "en": "The Kingdom of Kush (Napata) was a powerful force rising from the upper Nile, becoming the greatest external threat to Egypt. Kushite rulers centered their religion on the Amun temple at Jebel Barkal, fully accepting the Egyptian divine-king concept and Amun worship while retaining indigenous Nubian military traditions and social structures. Kushite kings used Egyptian pharaonic titles and ceremonies in their inscriptions, claiming to be the true chosen people of Amun. As the 22nd Dynasty's central authority continued declining and Egyptian internal fragmentation worsened, Kush saw an opportunity for northern intervention. The Kushite army was renowned for its formidable archers—the ancient reputation of the 'Land of the Bow' (Ta-Seti) remained powerful in the Iron Age. Kush controlled trade routes for gold and ivory into the African interior, providing a solid economic foundation. This southern great power would in the near future cross Upper Egypt and conquer the entire Nile valley, temporarily reunifying Egypt under the 25th Dynasty."
+          },
           "keyFigures": [
-            { "name": { "zh": "库施国王", "en": "King of Kush" }, "title": { "zh": "国王", "en": "King" }, "role": { "zh": "纳帕塔的统治者，自视为阿蒙神的正统代言人", "en": "Ruler of Napata, self-proclaimed orthodox representative of Amun" } },
-            { "name": { "zh": "杰贝尔巴卡尔阿蒙祭司", "en": "Priest of Amun at Jebel Barkal" }, "title": { "zh": "阿蒙祭司", "en": "Priest of Amun" }, "role": { "zh": "为库施王权提供宗教合法性的核心人物", "en": "Key figure providing religious legitimacy for Kushite kingship" } }
+            {
+              "name": {
+                "zh": "库施国王",
+                "en": "King of Kush"
+              },
+              "title": {
+                "zh": "国王",
+                "en": "King"
+              },
+              "role": {
+                "zh": "纳帕塔的统治者，自视为阿蒙神的正统代言人",
+                "en": "Ruler of Napata, self-proclaimed orthodox representative of Amun"
+              }
+            },
+            {
+              "name": {
+                "zh": "杰贝尔巴卡尔阿蒙祭司",
+                "en": "Priest of Amun at Jebel Barkal"
+              },
+              "title": {
+                "zh": "阿蒙祭司",
+                "en": "Priest of Amun"
+              },
+              "role": {
+                "zh": "为库施王权提供宗教合法性的核心人物",
+                "en": "Key figure providing religious legitimacy for Kushite kingship"
+              }
+            }
           ]
         }
       ]
@@ -21057,50 +21635,191 @@
       "factions": [
         {
           "id": "kush_royal_dynasty",
-          "name": { "zh": "库施王族", "en": "Royal Dynasty" },
+          "name": {
+            "zh": "库施王族",
+            "en": "Royal Dynasty"
+          },
           "type": "other",
-          "leader": { "zh": "卡什塔", "en": "Kashta" },
-          "leaderTitle": { "zh": "库施之王", "en": "King of Kush" },
-          "ideology": { "zh": "以阿蒙神授权和努比亚—埃及双重文化传统为合法性基础，以纳帕塔为神圣中心，通过征服埃及恢复玛阿特秩序为终极政治目标", "en": "Deriving legitimacy from Amun's divine mandate and a dual Nubian-Egyptian cultural tradition, centered on the sacred capital Napata, with the ultimate political goal of restoring Ma'at order by conquering Egypt" },
-          "headquarters": { "zh": "纳帕塔", "en": "Napata" },
+          "leader": {
+            "zh": "卡什塔",
+            "en": "Kashta"
+          },
+          "leaderTitle": {
+            "zh": "库施之王",
+            "en": "King of Kush"
+          },
+          "ideology": {
+            "zh": "以阿蒙神授权和努比亚—埃及双重文化传统为合法性基础，以纳帕塔为神圣中心，通过征服埃及恢复玛阿特秩序为终极政治目标",
+            "en": "Deriving legitimacy from Amun's divine mandate and a dual Nubian-Egyptian cultural tradition, centered on the sacred capital Napata, with the ultimate political goal of restoring Ma'at order by conquering Egypt"
+          },
+          "headquarters": {
+            "zh": "纳帕塔",
+            "en": "Napata"
+          },
           "status": "ruling",
-          "relationship": { "zh": "卡什塔是纳帕塔王朝的奠基者之一，正积极向北扩张影响力。库施王族以阿蒙崇拜为王权合法性核心，将自身塑造为埃及法老传统的正统继承者。王室控制着尼罗河上游的黄金矿区和关键贸易通道，军事力量以著名的努比亚弓箭手为核心。卡什塔已开始将势力延伸至上埃及，为其继承者皮耶征服全埃及奠定了基础。", "en": "Kashta was one of the founders of the Napatan dynasty, actively expanding influence northward. The Kushite royal house derived its kingship legitimacy from the cult of Amun, shaping itself as the orthodox heir to the Egyptian pharaonic tradition. The court controlled gold mining regions and key trade corridors of the Upper Nile, with military strength centered on the famous Nubian archers. Kashta had already begun extending power into Upper Egypt, laying the foundation for his successor Piye's conquest of all Egypt." },
-          "description": { "zh": "库施王族正处于从地区强权向帝国级征服者转变的关键节点。纳帕塔王朝有意识地继承和发扬埃及法老传统——采用埃及王室头衔、建造金字塔式的王家墓葬、在杰贝勒·巴尔卡尔圣山修建阿蒙神庙。卡什塔自封法老头衔，将库施定位为埃及文明的正统守护者，批判利比亚第二十二王朝导致的埃及衰落和宗教堕落。王室控制着努比亚丰富的黄金资源——这些黄金使库施成为东北非最富有的王国之一。库施军队以弓术闻名古代世界，强弓精射的努比亚战士是令对手闻风丧胆的可怕力量。卡什塔的北进政策不仅是军事扩张，更是一种文化和宗教使命——将被利比亚人“玷污”的埃及恢复到阿蒙信仰的正统之下。他的儿子皮耶将完成这一伟大征服，建立横跨努比亚和埃及的第二十五王朝。", "en": "The Kushite royal dynasty stood at a critical juncture of transformation from regional power to imperial conqueror. The Napatan dynasty deliberately inherited and promoted the Egyptian pharaonic tradition—adopting Egyptian royal titles, constructing pyramid-style royal tombs, and building Amun temples at the sacred Jebel Barkal. Kashta assumed pharaonic titles, positioning Kush as the orthodox guardian of Egyptian civilization and criticizing the decline and religious corruption of Egypt under the Libyan Twenty-Second Dynasty. The court controlled Nubia's abundant gold resources—these riches made Kush one of the wealthiest kingdoms in Northeast Africa. The Kushite army was famous throughout the ancient world for its archery—Nubian warriors with powerful bows and precise aim were a terrifying force that struck fear into opponents. Kashta's northward policy was not merely military expansion but a cultural and religious mission—restoring Egypt, 'defiled' by the Libyans, to the orthodoxy of Amun worship. His son Piye would complete this great conquest, establishing the Twenty-Fifth Dynasty spanning Nubia and Egypt." },
+          "relationship": {
+            "zh": "卡什塔是纳帕塔王朝的奠基者之一，正积极向北扩张影响力。库施王族以阿蒙崇拜为王权合法性核心，将自身塑造为埃及法老传统的正统继承者。王室控制着尼罗河上游的黄金矿区和关键贸易通道，军事力量以著名的努比亚弓箭手为核心。卡什塔已开始将势力延伸至上埃及，为其继承者皮耶征服全埃及奠定了基础。",
+            "en": "Kashta was one of the founders of the Napatan dynasty, actively expanding influence northward. The Kushite royal house derived its kingship legitimacy from the cult of Amun, shaping itself as the orthodox heir to the Egyptian pharaonic tradition. The court controlled gold mining regions and key trade corridors of the Upper Nile, with military strength centered on the famous Nubian archers. Kashta had already begun extending power into Upper Egypt, laying the foundation for his successor Piye's conquest of all Egypt."
+          },
+          "description": {
+            "zh": "库施王族正处于从地区强权向帝国级征服者转变的关键节点。纳帕塔王朝有意识地继承和发扬埃及法老传统——采用埃及王室头衔、建造金字塔式的王家墓葬、在杰贝勒·巴尔卡尔圣山修建阿蒙神庙。卡什塔自封法老头衔，将库施定位为埃及文明的正统守护者，批判利比亚第二十二王朝导致的埃及衰落和宗教堕落。王室控制着努比亚丰富的黄金资源——这些黄金使库施成为东北非最富有的王国之一。库施军队以弓术闻名古代世界，强弓精射的努比亚战士是令对手闻风丧胆的可怕力量。卡什塔的北进政策不仅是军事扩张，更是一种文化和宗教使命——将被利比亚人“玷污”的埃及恢复到阿蒙信仰的正统之下。他的儿子皮耶将完成这一伟大征服，建立横跨努比亚和埃及的第二十五王朝。",
+            "en": "The Kushite royal dynasty stood at a critical juncture of transformation from regional power to imperial conqueror. The Napatan dynasty deliberately inherited and promoted the Egyptian pharaonic tradition—adopting Egyptian royal titles, constructing pyramid-style royal tombs, and building Amun temples at the sacred Jebel Barkal. Kashta assumed pharaonic titles, positioning Kush as the orthodox guardian of Egyptian civilization and criticizing the decline and religious corruption of Egypt under the Libyan Twenty-Second Dynasty. The court controlled Nubia's abundant gold resources—these riches made Kush one of the wealthiest kingdoms in Northeast Africa. The Kushite army was famous throughout the ancient world for its archery—Nubian warriors with powerful bows and precise aim were a terrifying force that struck fear into opponents. Kashta's northward policy was not merely military expansion but a cultural and religious mission—restoring Egypt, 'defiled' by the Libyans, to the orthodoxy of Amun worship. His son Piye would complete this great conquest, establishing the Twenty-Fifth Dynasty spanning Nubia and Egypt."
+          },
           "keyFigures": [
-            { "name": { "zh": "卡什塔", "en": "Kashta" }, "title": { "zh": "库施之王", "en": "King of Kush" }, "role": { "zh": "纳帕塔王朝奠基者，开始向上埃及扩张", "en": "Founder of the Napatan dynasty, beginning expansion into Upper Egypt" } },
-            { "name": { "zh": "皮耶", "en": "Piye" }, "title": { "zh": "王子/继承人", "en": "Prince/Heir" }, "role": { "zh": "未来征服全埃及、建立第二十五王朝的伟大征服者", "en": "Future great conqueror who would conquer all Egypt and establish the Twenty-Fifth Dynasty" } }
+            {
+              "name": {
+                "zh": "卡什塔",
+                "en": "Kashta"
+              },
+              "title": {
+                "zh": "库施之王",
+                "en": "King of Kush"
+              },
+              "role": {
+                "zh": "纳帕塔王朝奠基者，开始向上埃及扩张",
+                "en": "Founder of the Napatan dynasty, beginning expansion into Upper Egypt"
+              }
+            },
+            {
+              "name": {
+                "zh": "皮耶",
+                "en": "Piye"
+              },
+              "title": {
+                "zh": "王子/继承人",
+                "en": "Prince/Heir"
+              },
+              "role": {
+                "zh": "未来征服全埃及、建立第二十五王朝的伟大征服者",
+                "en": "Future great conqueror who would conquer all Egypt and establish the Twenty-Fifth Dynasty"
+              }
+            }
           ]
         },
         {
           "id": "kush_amun_priesthood",
-          "name": { "zh": "纳帕塔阿蒙祭司团", "en": "Amun Priesthood of Napata" },
+          "name": {
+            "zh": "纳帕塔阿蒙祭司团",
+            "en": "Amun Priesthood of Napata"
+          },
           "type": "religious",
-          "leader": { "zh": "杰贝勒·巴尔卡尔阿蒙大祭司", "en": "High Priest of Amun at Jebel Barkal" },
-          "leaderTitle": { "zh": "阿蒙第一先知", "en": "First Prophet of Amun" },
-          "ideology": { "zh": "杰贝勒·巴尔卡尔是阿蒙的真正圣山和原始居所，纳帕塔的阿蒙崇拜比衰落中的埃及更为纯正，库施王征服埃及是执行阿蒙旨意的神圣事业", "en": "Jebel Barkal as the true sacred mountain and primordial dwelling of Amun, Amun worship at Napata being purer than in declining Egypt, and the Kushite king's conquest of Egypt as a sacred mission executing Amun's will" },
-          "headquarters": { "zh": "杰贝勒·巴尔卡尔阿蒙神庙", "en": "Temple of Amun at Jebel Barkal" },
+          "leader": {
+            "zh": "杰贝勒·巴尔卡尔阿蒙大祭司",
+            "en": "High Priest of Amun at Jebel Barkal"
+          },
+          "leaderTitle": {
+            "zh": "阿蒙第一先知",
+            "en": "First Prophet of Amun"
+          },
+          "ideology": {
+            "zh": "杰贝勒·巴尔卡尔是阿蒙的真正圣山和原始居所，纳帕塔的阿蒙崇拜比衰落中的埃及更为纯正，库施王征服埃及是执行阿蒙旨意的神圣事业",
+            "en": "Jebel Barkal as the true sacred mountain and primordial dwelling of Amun, Amun worship at Napata being purer than in declining Egypt, and the Kushite king's conquest of Egypt as a sacred mission executing Amun's will"
+          },
+          "headquarters": {
+            "zh": "杰贝勒·巴尔卡尔阿蒙神庙",
+            "en": "Temple of Amun at Jebel Barkal"
+          },
           "status": "allied",
-          "relationship": { "zh": "纳帕塔阿蒙祭司团与王室形成紧密的共生关系，为库施王权提供核心的宗教合法性。祭司们宣称杰贝勒·巴尔卡尔是阿蒙的真正圣山，赋予纳帕塔超越卡纳克的神圣地位。王位继承据传需经阿蒙神谕确认，祭司因此在政治继承中拥有关键影响力。神庙管理着可观的地产和牲畜，是纳帕塔地区最重要的经济实体之一。", "en": "The Amun priesthood of Napata formed a tight symbiotic relationship with the royal house, providing core religious legitimacy for Kushite kingship. Priests proclaimed Jebel Barkal as Amun's true sacred mountain, granting Napata a divine status surpassing Karnak. Royal succession reportedly required confirmation through Amun's oracle, giving priests crucial influence in political transitions. The temple managed considerable estates and herds, constituting one of the most important economic entities in the Napata region." },
-          "description": { "zh": "杰贝勒·巴尔卡尔阿蒙神庙是库施王国的精神中心和政治合法性的最高来源。这座圣山巍然耸立于尼罗河第四瀑布附近，其独特的尖塔状山峰被视为阿蒙神的原始居所——库施祭司宣称这里才是阿蒙崇拜的发源地，比底比斯卡纳克更为古老和神圣。祭司团继承了埃及新王国时期在努比亚建立的阿蒙崇拜传统，但融入了大量努比亚本地宗教元素，形成了独特的库施—埃及混合祭祀体系。祭司在王位继承中发挥关键作用——传统认为新王须经阿蒙神谕选定方为合法，这赋予了祭司对王权的重要制约能力。神庙同时是经济中心，管理着大片农地、牲畜和黄金储备。祭司团的宗教宣传为卡什塔和皮耶的北伐提供了思想武器——他们将征服埃及定义为恢复阿蒙信仰纯洁性的圣战，赋予军事行动以不可抗拒的宗教使命感。", "en": "The Temple of Amun at Jebel Barkal was the spiritual center and supreme source of political legitimacy for the Kingdom of Kush. This sacred mountain towered near the Fourth Cataract of the Nile, its distinctive pinnacle-shaped peak regarded as the primordial dwelling of the god Amun—Kushite priests proclaimed this as the birthplace of Amun worship, more ancient and sacred than Theban Karnak. The priesthood inherited the Amun worship traditions established in Nubia during Egypt's New Kingdom period but incorporated extensive local Nubian religious elements, creating a distinctive Kushite-Egyptian hybrid ritual system. Priests played a crucial role in royal succession—tradition held that new kings required selection through Amun's oracle to be legitimate, granting priests significant checking power over kingship. The temple also served as an economic center, managing extensive farmlands, livestock, and gold reserves. The priesthood's religious propaganda provided ideological weapons for Kashta and Piye's northern campaigns—they defined the conquest of Egypt as a holy war to restore the purity of Amun worship, endowing military action with an irresistible sense of religious mission." },
+          "relationship": {
+            "zh": "纳帕塔阿蒙祭司团与王室形成紧密的共生关系，为库施王权提供核心的宗教合法性。祭司们宣称杰贝勒·巴尔卡尔是阿蒙的真正圣山，赋予纳帕塔超越卡纳克的神圣地位。王位继承据传需经阿蒙神谕确认，祭司因此在政治继承中拥有关键影响力。神庙管理着可观的地产和牲畜，是纳帕塔地区最重要的经济实体之一。",
+            "en": "The Amun priesthood of Napata formed a tight symbiotic relationship with the royal house, providing core religious legitimacy for Kushite kingship. Priests proclaimed Jebel Barkal as Amun's true sacred mountain, granting Napata a divine status surpassing Karnak. Royal succession reportedly required confirmation through Amun's oracle, giving priests crucial influence in political transitions. The temple managed considerable estates and herds, constituting one of the most important economic entities in the Napata region."
+          },
+          "description": {
+            "zh": "杰贝勒·巴尔卡尔阿蒙神庙是库施王国的精神中心和政治合法性的最高来源。这座圣山巍然耸立于尼罗河第四瀑布附近，其独特的尖塔状山峰被视为阿蒙神的原始居所——库施祭司宣称这里才是阿蒙崇拜的发源地，比底比斯卡纳克更为古老和神圣。祭司团继承了埃及新王国时期在努比亚建立的阿蒙崇拜传统，但融入了大量努比亚本地宗教元素，形成了独特的库施—埃及混合祭祀体系。祭司在王位继承中发挥关键作用——传统认为新王须经阿蒙神谕选定方为合法，这赋予了祭司对王权的重要制约能力。神庙同时是经济中心，管理着大片农地、牲畜和黄金储备。祭司团的宗教宣传为卡什塔和皮耶的北伐提供了思想武器——他们将征服埃及定义为恢复阿蒙信仰纯洁性的圣战，赋予军事行动以不可抗拒的宗教使命感。",
+            "en": "The Temple of Amun at Jebel Barkal was the spiritual center and supreme source of political legitimacy for the Kingdom of Kush. This sacred mountain towered near the Fourth Cataract of the Nile, its distinctive pinnacle-shaped peak regarded as the primordial dwelling of the god Amun—Kushite priests proclaimed this as the birthplace of Amun worship, more ancient and sacred than Theban Karnak. The priesthood inherited the Amun worship traditions established in Nubia during Egypt's New Kingdom period but incorporated extensive local Nubian religious elements, creating a distinctive Kushite-Egyptian hybrid ritual system. Priests played a crucial role in royal succession—tradition held that new kings required selection through Amun's oracle to be legitimate, granting priests significant checking power over kingship. The temple also served as an economic center, managing extensive farmlands, livestock, and gold reserves. The priesthood's religious propaganda provided ideological weapons for Kashta and Piye's northern campaigns—they defined the conquest of Egypt as a holy war to restore the purity of Amun worship, endowing military action with an irresistible sense of religious mission."
+          },
           "keyFigures": [
-            { "name": { "zh": "杰贝勒·巴尔卡尔阿蒙大祭司", "en": "High Priest of Amun at Jebel Barkal" }, "title": { "zh": "阿蒙第一先知", "en": "First Prophet of Amun" }, "role": { "zh": "库施最高宗教权威，掌握王位继承的神谕确认权", "en": "Supreme religious authority of Kush, holding oracle confirmation power over royal succession" } },
-            { "name": { "zh": "神庙地产总管", "en": "Temple Estate Manager" }, "title": { "zh": "神庙总管", "en": "Temple Steward" }, "role": { "zh": "管理阿蒙神庙的土地、牲畜和黄金储备", "en": "Managed the Amun temple's lands, herds, and gold reserves" } }
+            {
+              "name": {
+                "zh": "杰贝勒·巴尔卡尔阿蒙大祭司",
+                "en": "High Priest of Amun at Jebel Barkal"
+              },
+              "title": {
+                "zh": "阿蒙第一先知",
+                "en": "First Prophet of Amun"
+              },
+              "role": {
+                "zh": "库施最高宗教权威，掌握王位继承的神谕确认权",
+                "en": "Supreme religious authority of Kush, holding oracle confirmation power over royal succession"
+              }
+            },
+            {
+              "name": {
+                "zh": "神庙地产总管",
+                "en": "Temple Estate Manager"
+              },
+              "title": {
+                "zh": "神庙总管",
+                "en": "Temple Steward"
+              },
+              "role": {
+                "zh": "管理阿蒙神庙的土地、牲畜和黄金储备",
+                "en": "Managed the Amun temple's lands, herds, and gold reserves"
+              }
+            }
           ]
         },
         {
           "id": "kush_egyptian_vassals",
-          "name": { "zh": "埃及附庸统治者", "en": "Egyptian Vassal Rulers" },
+          "name": {
+            "zh": "埃及附庸统治者",
+            "en": "Egyptian Vassal Rulers"
+          },
           "type": "other",
-          "leader": { "zh": "利比亚王朝三角洲残余诸侯", "en": "Libyan Dynasty Delta Remnant Lords" },
-          "leaderTitle": { "zh": "地方王", "en": "Local King" },
-          "ideology": { "zh": "维护利比亚—埃及混合王朝在尼罗河三角洲的统治传统，抵制库施的南方入侵，在亚述和库施两大强权之间寻求生存空间", "en": "Maintaining the Libyan-Egyptian hybrid dynastic ruling tradition in the Nile Delta, resisting the Kushite invasion from the south, and seeking survival space between the two great powers of Assyria and Kush" },
-          "headquarters": { "zh": "塔尼斯、布巴斯提斯等三角洲城市", "en": "Delta cities including Tanis, Bubastis, etc." },
+          "leader": {
+            "zh": "利比亚王朝三角洲残余诸侯",
+            "en": "Libyan Dynasty Delta Remnant Lords"
+          },
+          "leaderTitle": {
+            "zh": "地方王",
+            "en": "Local King"
+          },
+          "ideology": {
+            "zh": "维护利比亚—埃及混合王朝在尼罗河三角洲的统治传统，抵制库施的南方入侵，在亚述和库施两大强权之间寻求生存空间",
+            "en": "Maintaining the Libyan-Egyptian hybrid dynastic ruling tradition in the Nile Delta, resisting the Kushite invasion from the south, and seeking survival space between the two great powers of Assyria and Kush"
+          },
+          "headquarters": {
+            "zh": "塔尼斯、布巴斯提斯等三角洲城市",
+            "en": "Delta cities including Tanis, Bubastis, etc."
+          },
           "status": "rival",
-          "relationship": { "zh": "利比亚王朝的残余势力分散在尼罗河三角洲各城市，对库施的南方扩张持抵制态度。这些地方统治者虽然名义上仍称法老或大公，但实际上各自为政，彼此之间也常有冲突。他们既缺乏统一抵抗库施的能力，又不愿接受南方“蛮族”的统治——这种分裂和犹豫最终将导致他们在皮耶北伐时逐一臣服。", "en": "The remnant forces of the Libyan dynasty were scattered across Nile Delta cities, resisting Kushite expansion from the south. Though these local rulers still nominally held titles of pharaoh or great chief, they actually governed independently and frequently conflicted with each other. They lacked the ability to mount unified resistance against Kush yet were unwilling to accept rule by the southern 'barbarians'—this fragmentation and hesitation would ultimately lead to their successive submission during Piye's northern campaign." },
-          "description": { "zh": "公元前800年前后，曾经统一的埃及已分裂为多个相互竞争的地方政权。利比亚第二十二王朝虽然名义上仍存在，但实际权力已碎片化为分布在三角洲和中埃及的诸多地方统治者。这些利比亚裔王公在数百年前作为雇佣军和定居者进入埃及，逐渐掌握了地方军政权力，并最终建立了自己的王朝。他们采纳了埃及法老的头衔和礼仪，但统治风格更接近利比亚部落联盟传统——各城市的地方王相互独立，缺乏有效的中央协调。底比斯的阿蒙祭司对利比亚统治者日益不满，认为他们未能妥善维护宗教秩序和神庙传统。库施正是利用了埃及的这种内部分裂——纳帕塔王朝将自己塑造为阿蒙信仰的真正守护者，而利比亚人则被描绘为导致埃及衰落的罪魁祸首。面对库施的军事压力，三角洲诸侯将面临艰难抉择：是联合抵抗还是逐一臣服。", "en": "Around 800 BCE, the once-unified Egypt had fragmented into multiple competing local regimes. Though the Libyan Twenty-Second Dynasty nominally still existed, real power had splintered into numerous local rulers distributed across the Delta and Middle Egypt. These Libyan-descended princes had entered Egypt centuries earlier as mercenaries and settlers, gradually seizing local military and political power, and eventually establishing their own dynasty. They adopted Egyptian pharaonic titles and ceremony, but their ruling style was closer to Libyan tribal confederation traditions—local kings in each city governed independently, lacking effective central coordination. The Amun priesthood at Thebes grew increasingly dissatisfied with the Libyan rulers, believing they had failed to properly maintain religious order and temple traditions. Kush exploited this internal fragmentation—the Napatan dynasty cast itself as the true guardian of Amun worship, while the Libyans were portrayed as the culprits of Egypt's decline. Facing Kushite military pressure, the Delta princes would face a difficult choice: united resistance or successive submission." },
+          "relationship": {
+            "zh": "利比亚王朝的残余势力分散在尼罗河三角洲各城市，对库施的南方扩张持抵制态度。这些地方统治者虽然名义上仍称法老或大公，但实际上各自为政，彼此之间也常有冲突。他们既缺乏统一抵抗库施的能力，又不愿接受南方“蛮族”的统治——这种分裂和犹豫最终将导致他们在皮耶北伐时逐一臣服。",
+            "en": "The remnant forces of the Libyan dynasty were scattered across Nile Delta cities, resisting Kushite expansion from the south. Though these local rulers still nominally held titles of pharaoh or great chief, they actually governed independently and frequently conflicted with each other. They lacked the ability to mount unified resistance against Kush yet were unwilling to accept rule by the southern 'barbarians'—this fragmentation and hesitation would ultimately lead to their successive submission during Piye's northern campaign."
+          },
+          "description": {
+            "zh": "公元前800年前后，曾经统一的埃及已分裂为多个相互竞争的地方政权。利比亚第二十二王朝虽然名义上仍存在，但实际权力已碎片化为分布在三角洲和中埃及的诸多地方统治者。这些利比亚裔王公在数百年前作为雇佣军和定居者进入埃及，逐渐掌握了地方军政权力，并最终建立了自己的王朝。他们采纳了埃及法老的头衔和礼仪，但统治风格更接近利比亚部落联盟传统——各城市的地方王相互独立，缺乏有效的中央协调。底比斯的阿蒙祭司对利比亚统治者日益不满，认为他们未能妥善维护宗教秩序和神庙传统。库施正是利用了埃及的这种内部分裂——纳帕塔王朝将自己塑造为阿蒙信仰的真正守护者，而利比亚人则被描绘为导致埃及衰落的罪魁祸首。面对库施的军事压力，三角洲诸侯将面临艰难抉择：是联合抵抗还是逐一臣服。",
+            "en": "Around 800 BCE, the once-unified Egypt had fragmented into multiple competing local regimes. Though the Libyan Twenty-Second Dynasty nominally still existed, real power had splintered into numerous local rulers distributed across the Delta and Middle Egypt. These Libyan-descended princes had entered Egypt centuries earlier as mercenaries and settlers, gradually seizing local military and political power, and eventually establishing their own dynasty. They adopted Egyptian pharaonic titles and ceremony, but their ruling style was closer to Libyan tribal confederation traditions—local kings in each city governed independently, lacking effective central coordination. The Amun priesthood at Thebes grew increasingly dissatisfied with the Libyan rulers, believing they had failed to properly maintain religious order and temple traditions. Kush exploited this internal fragmentation—the Napatan dynasty cast itself as the true guardian of Amun worship, while the Libyans were portrayed as the culprits of Egypt's decline. Facing Kushite military pressure, the Delta princes would face a difficult choice: united resistance or successive submission."
+          },
           "keyFigures": [
-            { "name": { "zh": "三角洲地方王", "en": "Delta Local King" }, "title": { "zh": "大酋长", "en": "Great Chief" }, "role": { "zh": "控制三角洲城市和周边农业区的利比亚裔地方统治者", "en": "Libyan-descended local ruler controlling a Delta city and surrounding agricultural area" } },
-            { "name": { "zh": "中埃及诸侯", "en": "Middle Egyptian Prince" }, "title": { "zh": "诺姆长", "en": "Nomarch" }, "role": { "zh": "在库施和三角洲势力之间摇摆的中间地带统治者", "en": "Ruler of the middle ground, vacillating between Kushite and Delta powers" } }
+            {
+              "name": {
+                "zh": "三角洲地方王",
+                "en": "Delta Local King"
+              },
+              "title": {
+                "zh": "大酋长",
+                "en": "Great Chief"
+              },
+              "role": {
+                "zh": "控制三角洲城市和周边农业区的利比亚裔地方统治者",
+                "en": "Libyan-descended local ruler controlling a Delta city and surrounding agricultural area"
+              }
+            },
+            {
+              "name": {
+                "zh": "中埃及诸侯",
+                "en": "Middle Egyptian Prince"
+              },
+              "title": {
+                "zh": "诺姆长",
+                "en": "Nomarch"
+              },
+              "role": {
+                "zh": "在库施和三角洲势力之间摇摆的中间地带统治者",
+                "en": "Ruler of the middle ground, vacillating between Kushite and Delta powers"
+              }
+            }
           ]
         }
       ]
@@ -22935,7 +23654,7 @@
             "zh": "银克当量",
             "en": "grams of silver equivalent"
           },
-          "goldKg": 0.000018,
+          "goldKg": 1.8e-05,
           "silverKg": 0.018
         },
         "gdpDescription": {

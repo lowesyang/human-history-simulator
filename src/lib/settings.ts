@@ -12,9 +12,14 @@ export const DEFAULT_MODEL = "openai/gpt-5.4";
 
 export type SupportedModelId = (typeof SUPPORTED_MODELS)[number]["id"];
 
+export type SimulationMode = "historical" | "speculative";
+
 export interface UserSettings {
   apiKey: string;
   model: SupportedModelId;
+  simulationMode: SimulationMode;
+  enableCivMemory?: boolean;
+  enableScenarioInjection?: boolean;
 }
 
 export interface ModelProfile {
@@ -44,13 +49,15 @@ export function getRuntimeSettings(): UserSettings | null {
   return runtimeSettings;
 }
 
-export function getEffectiveApiKey(): string {
+export function getEffectiveApiKey(headerOverride?: string | null): string {
+  if (headerOverride && headerOverride.trim()) return headerOverride.trim();
   const override = runtimeSettings?.apiKey;
   if (override && override.trim()) return override.trim();
   return process.env.OPENROUTER_API_KEY || "";
 }
 
-export function getEffectiveModel(): string {
+export function getEffectiveModel(headerOverride?: string | null): string {
+  if (headerOverride && headerOverride.trim()) return headerOverride.trim();
   const override = runtimeSettings?.model;
   if (override && override.trim()) return override.trim();
   return process.env.LLM_MODEL || DEFAULT_MODEL;
@@ -59,5 +66,9 @@ export function getEffectiveModel(): string {
 export function getModelProfile(): ModelProfile {
   const model = getEffectiveModel();
   return MODEL_PROFILES[model] ?? DEFAULT_PROFILE;
+}
+
+export function getSimulationMode(): SimulationMode {
+  return runtimeSettings?.simulationMode ?? "historical";
 }
 

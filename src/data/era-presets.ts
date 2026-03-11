@@ -240,8 +240,8 @@ export const ERA_PRESETS: EraPreset[] = [
     month: 10,
     era: { zh: "冷战高峰", en: "Cold War Peak" },
     description: {
-      zh: "古巴导弹危机，美苏对峙，中国大跃进时期，亚非拉去殖民化浪潮，太空竞赛白热化",
-      en: "Cuban Missile Crisis, US-Soviet confrontation, China's Great Leap Forward, decolonization wave, Space Race intensifying",
+      zh: "古巴导弹危机，美苏对峙，亚非拉去殖民化浪潮，太空竞赛白热化",
+      en: "Cuban Missile Crisis, US-Soviet confrontation, decolonization wave, Space Race intensifying",
     },
     icon: "☢️",
     color: "#2C3E50",
@@ -263,7 +263,7 @@ export const ERA_PRESETS: EraPreset[] = [
     id: "ai-age",
     name: { zh: "AI时代", en: "AI Age" },
     year: 2023,
-    month: 11,
+    month: 1,
     era: { zh: "人工智能时代", en: "Age of Artificial Intelligence" },
     description: {
       zh: "ChatGPT引爆AI革命，大模型竞赛全面展开，各国竞相布局AI战略，科技巨头与创业公司争夺AI霸主地位",

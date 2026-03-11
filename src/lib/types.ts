@@ -53,10 +53,37 @@ export type GovernmentForm =
 
 export type RegionStatus =
   | "thriving"
+  | "rising"
   | "stable"
   | "declining"
   | "conflict"
   | "collapsed";
+
+const VALID_STATUSES = new Set<string>([
+  "thriving", "rising", "stable", "declining", "conflict", "collapsed",
+]);
+
+const STATUS_ALIASES: Record<string, RegionStatus> = {
+  expanding: "thriving",
+  growing: "rising",
+  prosperous: "thriving",
+  peak: "thriving",
+  emerging: "rising",
+  fragmented: "declining",
+  fragile: "declining",
+  unstable: "conflict",
+  warring: "conflict",
+  conquered: "collapsed",
+  fallen: "collapsed",
+  destroyed: "collapsed",
+};
+
+export function normalizeStatus(raw: string | undefined | null): RegionStatus {
+  if (!raw) return "stable";
+  const lower = raw.toLowerCase();
+  if (VALID_STATUSES.has(lower)) return lower as RegionStatus;
+  return STATUS_ALIASES[lower] ?? "stable";
+}
 
 export type EventCategory =
   | "war"
@@ -274,6 +301,8 @@ export interface Region {
     era: LocalizedText;
     keyInnovations: LocalizedText;
     infrastructure?: LocalizedText;
+    sectors?: Record<string, LocalizedText>;
+    overallAssessment?: LocalizedText;
   };
 
   aiSector?: AISector;

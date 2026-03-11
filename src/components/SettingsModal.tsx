@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import { useLocale } from "@/lib/i18n";
 import { SUPPORTED_MODELS, DEFAULT_MODEL } from "@/lib/settings";
-import type { SupportedModelId } from "@/lib/settings";
+import type { SupportedModelId, SimulationMode } from "@/lib/settings";
 
 export default function SettingsModal() {
   const { t } = useLocale();
@@ -12,14 +12,23 @@ export default function SettingsModal() {
   const setShowSettings = useSettingsStore((s) => s.setShowSettings);
   const storeApiKey = useSettingsStore((s) => s.apiKey);
   const storeModel = useSettingsStore((s) => s.model);
+  const storeSimMode = useSettingsStore((s) => s.simulationMode);
+  const storeCivMemory = useSettingsStore((s) => s.enableCivMemory);
+  const storeScenarioInj = useSettingsStore((s) => s.enableScenarioInjection);
   const hasEnvKey = useSettingsStore((s) => s.hasEnvKey);
   const envModel = useSettingsStore((s) => s.envModel);
   const setApiKey = useSettingsStore((s) => s.setApiKey);
   const setModel = useSettingsStore((s) => s.setModel);
+  const setSimulationMode = useSettingsStore((s) => s.setSimulationMode);
+  const setEnableCivMemory = useSettingsStore((s) => s.setEnableCivMemory);
+  const setEnableScenarioInjection = useSettingsStore((s) => s.setEnableScenarioInjection);
   const syncToServer = useSettingsStore((s) => s.syncToServer);
 
   const [localKey, setLocalKey] = useState("");
   const [localModel, setLocalModel] = useState<SupportedModelId>(DEFAULT_MODEL as SupportedModelId);
+  const [localSimMode, setLocalSimMode] = useState<SimulationMode>("historical");
+  const [localCivMemory, setLocalCivMemory] = useState(false);
+  const [localScenarioInj, setLocalScenarioInj] = useState(false);
   const [showKey, setShowKey] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -28,9 +37,12 @@ export default function SettingsModal() {
     if (showSettings) {
       setLocalKey(storeApiKey);
       setLocalModel(storeModel);
+      setLocalSimMode(storeSimMode);
+      setLocalCivMemory(storeCivMemory);
+      setLocalScenarioInj(storeScenarioInj);
       setSaved(false);
     }
-  }, [showSettings, storeApiKey, storeModel]);
+  }, [showSettings, storeApiKey, storeModel, storeSimMode, storeCivMemory, storeScenarioInj]);
 
   if (!showSettings) return null;
 
@@ -38,6 +50,9 @@ export default function SettingsModal() {
     setSaving(true);
     setApiKey(localKey);
     setModel(localModel);
+    setSimulationMode(localSimMode);
+    setEnableCivMemory(localCivMemory);
+    setEnableScenarioInjection(localScenarioInj);
 
     await new Promise((resolve) => setTimeout(resolve, 0));
     useSettingsStore.getState().syncToServer().then(() => {
@@ -50,8 +65,14 @@ export default function SettingsModal() {
   const handleReset = async () => {
     setLocalKey("");
     setLocalModel(DEFAULT_MODEL as SupportedModelId);
+    setLocalSimMode("historical");
+    setLocalCivMemory(false);
+    setLocalScenarioInj(false);
     setApiKey("");
     setModel(DEFAULT_MODEL as SupportedModelId);
+    setSimulationMode("historical");
+    setEnableCivMemory(false);
+    setEnableScenarioInjection(false);
     await syncToServer();
   };
 
@@ -172,8 +193,8 @@ export default function SettingsModal() {
                 <label
                   key={m.id}
                   className={`flex items-center gap-3 px-3 py-2 rounded border cursor-pointer transition-all ${localModel === m.id
-                      ? "border-accent-gold bg-accent-gold/10"
-                      : "border-border-subtle hover:border-border-active bg-bg-tertiary/50"
+                    ? "border-accent-gold bg-accent-gold/10"
+                    : "border-border-subtle hover:border-border-active bg-bg-tertiary/50"
                     }`}
                 >
                   <input
@@ -186,8 +207,8 @@ export default function SettingsModal() {
                   />
                   <div
                     className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center shrink-0 ${localModel === m.id
-                        ? "border-accent-gold"
-                        : "border-text-muted"
+                      ? "border-accent-gold"
+                      : "border-text-muted"
                       }`}
                   >
                     {localModel === m.id && (
@@ -209,6 +230,92 @@ export default function SettingsModal() {
               ))}
             </div>
           </div>
+
+          {/* Simulation Mode */}
+          <div className="space-y-2">
+            <label className="block text-xs font-semibold text-text-secondary tracking-wide uppercase">
+              {t("settings.simulationMode")}
+            </label>
+            <div className="space-y-1.5">
+              {(["historical", "speculative"] as const).map((mode) => (
+                <label
+                  key={mode}
+                  className={`flex items-center gap-3 px-3 py-2 rounded border cursor-pointer transition-all ${localSimMode === mode
+                    ? "border-accent-gold bg-accent-gold/10"
+                    : "border-border-subtle hover:border-border-active bg-bg-tertiary/50"
+                    }`}
+                >
+                  <input
+                    type="radio"
+                    name="simMode"
+                    value={mode}
+                    checked={localSimMode === mode}
+                    onChange={() => setLocalSimMode(mode)}
+                    className="sr-only"
+                  />
+                  <div
+                    className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center shrink-0 ${localSimMode === mode
+                      ? "border-accent-gold"
+                      : "border-text-muted"
+                      }`}
+                  >
+                    {localSimMode === mode && (
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-semibold text-text-primary">
+                      {t(`settings.simulationMode.${mode}`)}
+                    </div>
+                    <div className="text-xs text-text-muted">
+                      {t(`settings.simulationMode.${mode}.desc`)}
+                    </div>
+                  </div>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          {/* Advanced Speculative Options (P2) */}
+          {localSimMode === "speculative" && (
+            <div className="space-y-3 pt-1">
+              <label className="block text-xs font-semibold text-text-secondary tracking-wide uppercase">
+                {t("settings.advancedSpeculative")}
+              </label>
+              <label className="flex items-start gap-3 px-3 py-2.5 rounded border border-border-subtle hover:border-border-active bg-bg-tertiary/50 cursor-pointer transition-all">
+                <input
+                  type="checkbox"
+                  checked={localCivMemory}
+                  onChange={(e) => setLocalCivMemory(e.target.checked)}
+                  className="mt-0.5 rounded border-text-muted accent-accent-gold"
+                />
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs font-semibold text-text-primary">
+                    {t("settings.enableCivMemory")}
+                  </div>
+                  <div className="text-xs text-text-muted leading-relaxed">
+                    {t("settings.enableCivMemory.desc")}
+                  </div>
+                </div>
+              </label>
+              <label className="flex items-start gap-3 px-3 py-2.5 rounded border border-border-subtle hover:border-border-active bg-bg-tertiary/50 cursor-pointer transition-all">
+                <input
+                  type="checkbox"
+                  checked={localScenarioInj}
+                  onChange={(e) => setLocalScenarioInj(e.target.checked)}
+                  className="mt-0.5 rounded border-text-muted accent-accent-gold"
+                />
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs font-semibold text-text-primary">
+                    {t("settings.enableScenarioInjection")}
+                  </div>
+                  <div className="text-xs text-text-muted leading-relaxed">
+                    {t("settings.enableScenarioInjection.desc")}
+                  </div>
+                </div>
+              </label>
+            </div>
+          )}
         </div>
 
         {/* Footer */}

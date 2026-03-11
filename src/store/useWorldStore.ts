@@ -10,6 +10,59 @@ import type { EpochChangelog } from "@/lib/changelog";
 
 type Locale = "zh" | "en";
 
+export function detectLocale(): Locale {
+  if (typeof window === "undefined") return "en";
+  const saved = localStorage.getItem("hcs-locale");
+  if (saved === "zh" || saved === "en") return saved;
+  const browserLang = navigator.language || "";
+  return browserLang.startsWith("zh") ? "zh" : "en";
+}
+
+export type PipelinePhase =
+  | "idle"
+  | "loading_events"
+  | "clustering"
+  | "civ_agent"
+  | "simulating"
+  | "saving"
+  | "done";
+
+export interface PipelineGroupInfo {
+  groupIndex: number;
+  regionIds: string[];
+  isOrphan: boolean;
+  isDirect: boolean;
+  status: "pending" | "running" | "done" | "error";
+  startedAt?: number;
+  doneAt?: number;
+}
+
+export interface PipelineState {
+  phase: PipelinePhase;
+  totalGroups: number;
+  completedGroups: number;
+  totalRegions: number;
+  completedRegions: number;
+  groups: PipelineGroupInfo[];
+  isSpeculative: boolean;
+  maxParallel: number;
+  startedAt: number;
+  phaseTimings: Partial<Record<PipelinePhase, number>>;
+}
+
+const EMPTY_PIPELINE: PipelineState = {
+  phase: "idle",
+  totalGroups: 0,
+  completedGroups: 0,
+  totalRegions: 0,
+  completedRegions: 0,
+  groups: [],
+  isSpeculative: false,
+  maxParallel: 1,
+  startedAt: 0,
+  phaseTimings: {},
+};
+
 interface WorldStore {
   locale: Locale;
   setLocale: (locale: Locale) => void;
@@ -86,11 +139,29 @@ interface WorldStore {
 
   preAdvanceYear: number | null;
   setPreAdvanceYear: (year: number | null) => void;
+
+  llmEpochInfo: { epoch: number; totalEpochs: number; targetYear: number } | null;
+  setLlmEpochInfo: (info: { epoch: number; totalEpochs: number; targetYear: number } | null) => void;
+
+  scenarioPremises: string[];
+  addScenarioPremise: (premise: string) => void;
+  removeScenarioPremise: (index: number) => void;
+  clearScenarioPremises: () => void;
+
+  pipeline: PipelineState;
+  setPipelinePhase: (phase: PipelinePhase) => void;
+  setPipelineInfo: (info: Partial<PipelineState>) => void;
+  updatePipelineGroup: (groupIndex: number, update: Partial<PipelineGroupInfo>) => void;
+  setPipelineGroups: (groups: PipelineGroupInfo[]) => void;
+  resetPipeline: () => void;
 }
 
 export const useWorldStore = create<WorldStore>((set, get) => ({
-  locale: "zh",
-  setLocale: (locale) => set({ locale }),
+  locale: "en" as Locale,
+  setLocale: (locale) => {
+    if (typeof window !== "undefined") localStorage.setItem("hcs-locale", locale);
+    set({ locale });
+  },
 
   epochCount: 1,
   setEpochCount: (epochCount) => set({ epochCount }),
@@ -135,13 +206,28 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
   setLoadingStatus: (loadingStatus) => set({ loadingStatus }),
 
   llmStreams: {},
-  appendLlmToken: (regionId, token) =>
-    set((state) => ({
-      llmStreams: {
-        ...state.llmStreams,
-        [regionId]: (state.llmStreams[regionId] || "") + token,
-      },
-    })),
+  appendLlmToken: (() => {
+    let buffer: Record<string, string> = {};
+    let scheduled = false;
+    return (regionId: string, token: string) => {
+      buffer[regionId] = (buffer[regionId] || "") + token;
+      if (!scheduled) {
+        scheduled = true;
+        requestAnimationFrame(() => {
+          const pending = buffer;
+          buffer = {};
+          scheduled = false;
+          useWorldStore.setState((state) => {
+            const next = { ...state.llmStreams };
+            for (const [id, tokens] of Object.entries(pending)) {
+              next[id] = (next[id] || "") + tokens;
+            }
+            return { llmStreams: next };
+          });
+        });
+      }
+    };
+  })(),
   clearLlmStreams: () => set({ llmStreams: {} }),
 
   completedLlmRegions: new Set(),
@@ -188,4 +274,51 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
 
   preAdvanceYear: null,
   setPreAdvanceYear: (preAdvanceYear) => set({ preAdvanceYear }),
+
+  llmEpochInfo: null,
+  setLlmEpochInfo: (llmEpochInfo) => set({ llmEpochInfo }),
+
+  scenarioPremises: [],
+  addScenarioPremise: (premise) =>
+    set((state) => ({ scenarioPremises: [...state.scenarioPremises, premise] })),
+  removeScenarioPremise: (index) =>
+    set((state) => ({
+      scenarioPremises: state.scenarioPremises.filter((_, i) => i !== index),
+    })),
+  clearScenarioPremises: () => set({ scenarioPremises: [] }),
+
+  pipeline: { ...EMPTY_PIPELINE },
+  setPipelinePhase: (phase) =>
+    set((state) => ({
+      pipeline: {
+        ...state.pipeline,
+        phase,
+        phaseTimings: { ...state.pipeline.phaseTimings, [phase]: Date.now() },
+      },
+    })),
+  setPipelineInfo: (info) =>
+    set((state) => ({ pipeline: { ...state.pipeline, ...info } })),
+  updatePipelineGroup: (groupIndex, update) =>
+    set((state) => {
+      const groups = state.pipeline.groups.map((g) =>
+        g.groupIndex === groupIndex ? { ...g, ...update } : g
+      );
+      const completedGroups = groups.filter((g) => g.status === "done" || g.status === "error").length;
+      const completedRegions = groups
+        .filter((g) => g.status === "done" || g.status === "error")
+        .reduce((sum, g) => sum + g.regionIds.length, 0);
+      return {
+        pipeline: { ...state.pipeline, groups, completedGroups, completedRegions },
+      };
+    }),
+  setPipelineGroups: (groups) =>
+    set((state) => ({
+      pipeline: {
+        ...state.pipeline,
+        groups,
+        totalGroups: groups.length,
+        totalRegions: groups.reduce((s, g) => s + g.regionIds.length, 0),
+      },
+    })),
+  resetPipeline: () => set({ pipeline: { ...EMPTY_PIPELINE } }),
 }));

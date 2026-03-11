@@ -3145,7 +3145,228 @@
       "description": {
         "zh": "美国盟友与东亚工业化强国，正处于高度经济增长期。",
         "en": "A U.S. ally and East Asian industrial power in the midst of rapid economic growth."
-      }
+      },
+      "factions": [
+        {
+          "id": "ldp_japan_1962",
+          "name": {
+            "zh": "自由民主党",
+            "en": "Liberal Democratic Party"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "池田勇人",
+            "en": "Hayato Ikeda"
+          },
+          "leaderTitle": {
+            "zh": "内阁总理大臣、自民党总裁",
+            "en": "Prime Minister and President of the LDP"
+          },
+          "ideology": {
+            "zh": "保守主义、亲美同盟、经济增长优先、国民收入倍增计划",
+            "en": "Conservatism, pro-U.S. alliance, economic growth priority, Income Doubling Plan"
+          },
+          "foundedYear": 1955,
+          "headquarters": {
+            "zh": "东京永田町",
+            "en": "Nagatacho, Tokyo"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "自民党自1955年建党以来一直执政，通过派系政治、官僚协调与财界支持巩固权力。池田内阁以「宽容与忍耐」路线缓和60年安保斗争后的政治紧张，将国家重心转向经济增长。党内各派系围绕政策路线和总裁继承展开持续竞争。",
+            "en": "The LDP had ruled continuously since its founding in 1955, consolidating power through factional politics, bureaucratic coordination, and business support. The Ikeda cabinet adopted a 'tolerance and patience' approach to ease political tensions after the 1960 ANPO crisis, shifting national focus to economic growth. Internal factions competed continuously over policy direction and party presidential succession."
+          },
+          "description": {
+            "zh": "自由民主党于1955年由自由党与日本民主党合并成立，迅速确立对日本政坛的主导地位。党的核心政策包括坚持日美安保同盟、推动经济高速增长、反共亲西方路线。池田勇人1960年上台后推出「国民收入倍增计划」，目标在十年内使国民所得翻番，成功将公众注意力从安保争议转向经济繁荣。自民党内部由多个以领袖人物为核心的派系构成，包括池田派、佐藤派、岸派、河野派等，这种派系体制既是权力分配机制也是政策竞争平台。",
+            "en": "The Liberal Democratic Party was formed in 1955 through the merger of the Liberal Party and the Japan Democratic Party, quickly establishing dominance over Japanese politics. Its core policies included upholding the U.S.-Japan Security Alliance, promoting rapid economic growth, and maintaining an anti-communist, pro-Western orientation. After taking office in 1960, Ikeda launched the Income Doubling Plan aiming to double national income within a decade, successfully redirecting public attention from the security treaty controversy to economic prosperity. The LDP was internally structured around multiple factions centered on prominent leaders — including the Ikeda, Sato, Kishi, and Kono factions — a system that served as both a power distribution mechanism and a platform for policy competition."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "池田勇人",
+                "en": "Hayato Ikeda"
+              },
+              "title": {
+                "zh": "内阁总理大臣",
+                "en": "Prime Minister"
+              },
+              "role": {
+                "zh": "自民党总裁，国民收入倍增计划推动者",
+                "en": "LDP President, architect of the Income Doubling Plan"
+              }
+            },
+            {
+              "name": {
+                "zh": "佐藤荣作",
+                "en": "Eisaku Sato"
+              },
+              "title": {
+                "zh": "通商产业大臣",
+                "en": "Minister of International Trade and Industry"
+              },
+              "role": {
+                "zh": "党内实力派系领袖，池田的潜在继任者",
+                "en": "Powerful faction leader within the party, potential successor to Ikeda"
+              }
+            },
+            {
+              "name": {
+                "zh": "岸信介",
+                "en": "Nobusuke Kishi"
+              },
+              "title": {
+                "zh": "前内阁总理大臣",
+                "en": "Former Prime Minister"
+              },
+              "role": {
+                "zh": "右翼鹰派元老，岸派领袖，对党内路线仍有深远影响",
+                "en": "Right-wing hawkish elder statesman, Kishi faction leader, still exerting deep influence on party direction"
+              }
+            }
+          ]
+        },
+        {
+          "id": "jsp_japan_1962",
+          "name": {
+            "zh": "日本社会党",
+            "en": "Japan Socialist Party"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "河上丈太郎",
+            "en": "Jotaro Kawakami"
+          },
+          "leaderTitle": {
+            "zh": "社会党委员长",
+            "en": "Chairman of the Japan Socialist Party"
+          },
+          "ideology": {
+            "zh": "社会民主主义、和平主义、反美军基地、反安保条约、护宪",
+            "en": "Social democracy, pacifism, opposition to U.S. military bases, opposition to the Security Treaty, constitutional defense"
+          },
+          "foundedYear": 1945,
+          "headquarters": {
+            "zh": "东京",
+            "en": "Tokyo"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "日本社会党是议会中最大反对党，在1960年安保斗争中发挥重要作用，但也因委员长浅沼稻次郎遇刺和内部左右派分裂而受到重创。江田三郎提出的「结构改革论」试图走温和路线但遭党内左派反对。社会党与总评工会联盟紧密合作，构成对自民党一党优势的主要制衡力量。",
+            "en": "The JSP was the largest opposition party in the Diet, playing a major role in the 1960 ANPO struggle, but was also severely weakened by the assassination of chairman Inejiro Asanuma and internal left-right splits. Saburo Eda's 'structural reform' thesis attempted a moderate course but faced opposition from the party's left wing. The JSP worked closely with the Sohyo labor federation, forming the principal counterweight to LDP dominance."
+          },
+          "description": {
+            "zh": "日本社会党成立于1945年，是战后日本左翼运动的主要政治载体。其核心主张包括维护和平宪法第九条、反对日美安保条约、要求撤除美军基地、推行社会福利政策。1960年安保斗争中社会党动员大规模抗议，但斗争后期运动失控导致自民党反而巩固了执政地位。党内分为主张与共产阵营亲近的左派和倡导社会民主路线的右派，后者中的一部分已于1960年分裂出去成立民主社会党。1962年的社会党虽然席位稳定，但在池田经济增长路线面前缺乏有效替代方案。",
+            "en": "Founded in 1945, the Japan Socialist Party was the principal political vehicle of the postwar Japanese left. Its core positions included defending Article 9 of the peace constitution, opposing the U.S.-Japan Security Treaty, demanding removal of American military bases, and promoting social welfare policies. During the 1960 ANPO crisis the JSP mobilized massive protests, but the movement's later excesses actually helped consolidate LDP rule. The party was divided between a left wing sympathetic to the communist bloc and a right wing advocating social democracy — part of the latter had already split off in 1960 to form the Democratic Socialist Party. Though the JSP maintained stable Diet representation in 1962, it lacked a compelling alternative to Ikeda's economic growth agenda."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "河上丈太郎",
+                "en": "Jotaro Kawakami"
+              },
+              "title": {
+                "zh": "社会党委员长",
+                "en": "Chairman of the JSP"
+              },
+              "role": {
+                "zh": "党首，试图在左右派之间维持平衡",
+                "en": "Party leader, attempting to balance left and right factions"
+              }
+            },
+            {
+              "name": {
+                "zh": "江田三郎",
+                "en": "Saburo Eda"
+              },
+              "title": {
+                "zh": "社会党书记长",
+                "en": "Secretary-General of the JSP"
+              },
+              "role": {
+                "zh": "结构改革论倡导者，主张温和社会民主路线",
+                "en": "Advocate of structural reform, pushing for a moderate social democratic line"
+              }
+            },
+            {
+              "name": {
+                "zh": "佐佐木更三",
+                "en": "Kozo Sasaki"
+              },
+              "title": {
+                "zh": "社会党副委员长",
+                "en": "Vice-Chairman of the JSP"
+              },
+              "role": {
+                "zh": "左派代表，主张更激进的反安保与亲社会主义阵营立场",
+                "en": "Left-wing representative, advocating a more radical anti-security treaty and pro-socialist bloc stance"
+              }
+            }
+          ]
+        },
+        {
+          "id": "zengakuren_japan_1962",
+          "name": {
+            "zh": "全学连（全日本学生自治会总联合）",
+            "en": "Zengakuren (All-Japan Federation of Student Self-Government Associations)"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "各派系领导人（无统一领袖）",
+            "en": "Various faction leaders (no unified leader)"
+          },
+          "leaderTitle": {
+            "zh": "学生运动领袖",
+            "en": "Student movement leaders"
+          },
+          "ideology": {
+            "zh": "新左翼、反安保、反帝国主义、校园自治、反战和平",
+            "en": "New Left, anti-Security Treaty, anti-imperialism, campus autonomy, anti-war peace activism"
+          },
+          "headquarters": {
+            "zh": "东京各大学",
+            "en": "Universities across Tokyo"
+          },
+          "status": "insurgent",
+          "relationship": {
+            "zh": "全学连在1960年安保斗争中扮演了突击队角色，发起大规模街头示威和国会包围行动。1962年运动进入低潮期，但各派系正在重组和激进化。全学连与日本共产党关系决裂，转向独立新左翼路线，内部分裂为反主流派、革共同等多个对立组织。",
+            "en": "Zengakuren played a vanguard role in the 1960 ANPO struggle, launching massive street demonstrations and Diet-surrounding actions. By 1962 the movement had entered a lull, but various factions were regrouping and radicalizing. Having broken with the Japanese Communist Party, Zengakuren turned toward an independent New Left line, splintering internally into competing organizations such as the Anti-Mainstream and Revolutionary Communist League."
+          },
+          "description": {
+            "zh": "全学连成立于1948年，最初受日本共产党影响，后逐渐走向独立。1960年安保斗争中全学连组织数十万学生涌入街头，与警察爆发激烈冲突，东京大学女学生�的場美智子在抗议中死亡成为运动标志性事件。斗争虽未阻止安保条约续签，但迫使岸信介内阁下台并取消了艾森豪威尔访日。1962年后运动暂时沉寂，但新左翼各派正为1960年代末更大规模的校园抗争蓄力。全学连的激进行动预示了全球1968年学生运动的到来。",
+            "en": "Founded in 1948 and initially influenced by the Japanese Communist Party, Zengakuren gradually became independent. During the 1960 ANPO crisis, Zengakuren mobilized hundreds of thousands of students into the streets, clashing violently with police; the death of University of Tokyo student Michiko Kanba during protests became an iconic event. Though the struggle failed to prevent renewal of the Security Treaty, it forced the Kishi cabinet's resignation and cancelled Eisenhower's planned visit. After 1962 the movement temporarily subsided, but New Left factions were building strength for even larger campus struggles in the late 1960s. Zengakuren's radical actions foreshadowed the global student movements of 1968."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "�的場美智子",
+                "en": "Michiko Kanba"
+              },
+              "title": {
+                "zh": "东京大学学生",
+                "en": "University of Tokyo student"
+              },
+              "role": {
+                "zh": "1960年安保抗议中牺牲的运动象征",
+                "en": "Symbolic martyr of the 1960 ANPO protest movement"
+              }
+            },
+            {
+              "name": {
+                "zh": "清水丈夫",
+                "en": "Takeo Shimizu"
+              },
+              "title": {
+                "zh": "全学连干部",
+                "en": "Zengakuren cadre"
+              },
+              "role": {
+                "zh": "新左翼学生运动的组织者",
+                "en": "Organizer of the New Left student movement"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "prc_1962",
@@ -3741,10 +3962,10 @@
       },
       "factions": [
         {
-          "id": "mao_faction_1962",
+          "id": "cpc_1962",
           "name": {
-            "zh": "毛泽东路线（左派）",
-            "en": "Maoist Line (Left Faction)"
+            "zh": "中国共产党",
+            "en": "Chinese Communist Party"
           },
           "type": "party",
           "leader": {
@@ -3752,25 +3973,26 @@
             "en": "Mao Zedong"
           },
           "leaderTitle": {
-            "zh": "中共中央主席",
-            "en": "Chairman of CCP Central Committee"
+            "zh": "中央委员会主席",
+            "en": "Chairman of the Central Committee"
           },
           "ideology": {
-            "zh": "持续革命论、群众运动、反修正主义",
-            "en": "Permanent revolution, mass movements, anti-revisionism"
+            "zh": "马克思列宁主义、毛泽东思想",
+            "en": "Marxism-Leninism, Mao Zedong Thought"
           },
+          "foundedYear": 1921,
           "headquarters": {
             "zh": "北京中南海",
             "en": "Zhongnanhai, Beijing"
           },
           "status": "ruling",
           "relationship": {
-            "zh": "1962年毛泽东在七千人大会后感到权力旁落，开始酝酿反击刘少奇、邓小平等务实派的路线，为后来的文化大革命埋下伏笔",
-            "en": "After the 7,000 Cadres Conference of 1962, Mao felt sidelined and began plotting against the pragmatic line of Liu Shaoqi and Deng Xiaoping, laying groundwork for the Cultural Revolution"
+            "zh": "中国共产党是中华人民共和国的唯一执政党，掌控国家一切权力机关。1962年党内经历大跃进失败后的路线调整，毛泽东在形式上退居二线但仍握有最高权威，刘少奇、邓小平等务实派主持经济恢复工作，党内路线分歧为后来的文化大革命埋下伏笔。",
+            "en": "The CPC was the sole ruling party of the PRC, controlling all organs of state power. In 1962, the Party was undergoing policy adjustments after the Great Leap Forward's failure. Mao Zedong had formally stepped back to the 'second line' but retained supreme authority, while pragmatists like Liu Shaoqi and Deng Xiaoping led economic recovery. Intra-party line differences foreshadowed the Cultural Revolution."
           },
           "description": {
-            "zh": "以毛泽东为核心的党内左翼路线，强调阶级斗争、群众运动和意识形态纯洁性。1962年大跃进失败后，毛泽东虽然退居二线但仍掌握最高权力，对刘邓的经济恢复路线日益不满。",
-            "en": "The left-wing party line centered on Mao Zedong, emphasizing class struggle, mass movements, and ideological purity. After the Great Leap Forward failure in 1962, Mao retreated to the 'second line' but retained supreme authority, growing increasingly dissatisfied with Liu and Deng's economic recovery policies."
+            "zh": "1962年的中国共产党拥有约1700万党员，是世界上最大的政党之一。党组织渗透国家机器各个层级，从中央政治局到基层生产队均有党的组织。七千人大会刚刚召开，对大跃进进行了初步总结，刘少奇作报告承认了严重失误。但毛泽东对'修正主义'的警惕日益加深，北戴河会议上重提阶级斗争，党内团结表面下暗流涌动。",
+            "en": "The CPC in 1962 had approximately 17 million members, making it one of the world's largest parties. Party organizations penetrated every level of the state apparatus, from the Politburo to grassroots production teams. The Seven Thousand Cadres Conference had just been held, providing a preliminary review of the Great Leap Forward, with Liu Shaoqi's report acknowledging serious errors. Yet Mao's vigilance against 'revisionism' was deepening, and at the Beidaihe Conference he re-emphasized class struggle, with undercurrents stirring beneath the surface of party unity."
           },
           "keyFigures": [
             {
@@ -3779,77 +4001,14 @@
                 "en": "Mao Zedong"
               },
               "title": {
-                "zh": "中共中央主席",
-                "en": "CCP Chairman"
+                "zh": "中央委员会主席",
+                "en": "Chairman of the Central Committee"
               },
               "role": {
-                "zh": "最高领袖",
-                "en": "Supreme leader"
+                "zh": "党的最高领袖，掌握最终决策权",
+                "en": "Supreme leader of the Party, held ultimate decision-making power"
               }
             },
-            {
-              "name": {
-                "zh": "林彪",
-                "en": "Lin Biao"
-              },
-              "title": {
-                "zh": "国防部长",
-                "en": "Minister of Defense"
-              },
-              "role": {
-                "zh": "军队领导人，毛的坚定支持者",
-                "en": "Military leader, Mao's staunch supporter"
-              }
-            },
-            {
-              "name": {
-                "zh": "江青",
-                "en": "Jiang Qing"
-              },
-              "title": {
-                "zh": "中央文革小组核心",
-                "en": "Core of Central Cultural Revolution Group"
-              },
-              "role": {
-                "zh": "文艺界整风，毛的意识形态助手",
-                "en": "Literary rectification, Mao's ideological aide"
-              }
-            }
-          ]
-        },
-        {
-          "id": "pragmatist_faction_1962",
-          "name": {
-            "zh": "务实派（刘邓路线）",
-            "en": "Pragmatist Faction (Liu-Deng Line)"
-          },
-          "type": "party",
-          "leader": {
-            "zh": "刘少奇",
-            "en": "Liu Shaoqi"
-          },
-          "leaderTitle": {
-            "zh": "中华人民共和国主席",
-            "en": "President of the PRC"
-          },
-          "ideology": {
-            "zh": "经济恢复、实事求是、体制内改良",
-            "en": "Economic recovery, seeking truth from facts, institutional reform"
-          },
-          "headquarters": {
-            "zh": "北京",
-            "en": "Beijing"
-          },
-          "status": "opposition",
-          "relationship": {
-            "zh": "大跃进失败后实际主持日常政务，推行调整、巩固、充实、提高方针，恢复经济。虽然名义上服从毛泽东，但路线分歧日益加深。",
-            "en": "After the Great Leap Forward failure, they effectively managed daily governance, implementing the policy of 'adjustment, consolidation, enrichment, and improvement' to restore the economy. Though nominally subordinate to Mao, policy differences deepened."
-          },
-          "description": {
-            "zh": "以刘少奇、邓小平为核心的党内务实派。1962年主导经济恢复工作，推行「三自一包」等灵活经济政策。但这条路线被毛泽东视为「走资本主义道路」，最终导致文化大革命中遭到清洗。",
-            "en": "The pragmatist faction centered on Liu Shaoqi and Deng Xiaoping. In 1962, they led economic recovery efforts with flexible policies like 'three freedoms and one contract'. This line was viewed by Mao as 'taking the capitalist road', ultimately leading to their purge during the Cultural Revolution."
-          },
-          "keyFigures": [
             {
               "name": {
                 "zh": "刘少奇",
@@ -3857,11 +4016,25 @@
               },
               "title": {
                 "zh": "国家主席",
-                "en": "President of PRC"
+                "en": "President of the PRC"
               },
               "role": {
-                "zh": "名义上国家元首，实际主持日常工作",
-                "en": "Nominal head of state, effectively managing daily governance"
+                "zh": "主持国家日常工作与经济恢复",
+                "en": "Oversaw daily state affairs and economic recovery"
+              }
+            },
+            {
+              "name": {
+                "zh": "周恩来",
+                "en": "Zhou Enlai"
+              },
+              "title": {
+                "zh": "国务院总理",
+                "en": "Premier of the State Council"
+              },
+              "role": {
+                "zh": "主管政府行政与外交事务",
+                "en": "Managed government administration and foreign affairs"
               }
             },
             {
@@ -3871,28 +4044,286 @@
               },
               "title": {
                 "zh": "中共中央总书记",
-                "en": "CCP General Secretary"
+                "en": "General Secretary of the CPC Central Committee"
               },
               "role": {
-                "zh": "党务日常运作负责人",
-                "en": "In charge of daily party operations"
-              }
-            },
-            {
-              "name": {
-                "zh": "陈云",
-                "en": "Chen Yun"
-              },
-              "title": {
-                "zh": "中央财经领导小组组长",
-                "en": "Head of Central Finance Group"
-              },
-              "role": {
-                "zh": "经济恢复政策的主要设计者",
-                "en": "Key architect of economic recovery policies"
+                "zh": "负责党的日常工作与组织运转",
+                "en": "Responsible for daily Party work and organizational operations"
               }
             }
           ]
+        },
+        {
+          "id": "rcck_1962",
+          "name": {
+            "zh": "中国国民党革命委员会",
+            "en": "Revolutionary Committee of the Chinese Kuomintang"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "李济深",
+            "en": "Li Jishen"
+          },
+          "leaderTitle": {
+            "zh": "中央主席",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "孙中山新三民主义、爱国统一战线",
+            "en": "Sun Yat-sen's New Three Principles of the People, patriotic united front"
+          },
+          "foundedYear": 1948,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "民革是中国共产党领导的多党合作和政治协商制度中的参政党，主要由原国民党民主派及其后裔组成，通过人民政协参与国家政治生活。",
+            "en": "The RCCK was a participating party in the CPC-led multi-party cooperation and political consultation system, composed mainly of former KMT democratic faction members and their descendants, participating in political life through the CPPCC."
+          },
+          "description": {
+            "zh": "民革成立于1948年，由国民党内反对蒋介石独裁的民主派人士创建。1962年民革在政协框架下参政议政，成员主要分布在文教、科技和原国民党军政人员中，在促进祖国统一议题上发挥独特作用。",
+            "en": "Founded in 1948 by democratic figures within the KMT who opposed Chiang Kai-shek's dictatorship, the RCCK participated in governance through the CPPCC framework in 1962, with members mainly in education, science, and former KMT military-political circles, playing a unique role in promoting national reunification."
+          }
+        },
+        {
+          "id": "cdl_1962",
+          "name": {
+            "zh": "中国民主同盟",
+            "en": "China Democratic League"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "沈钧儒",
+            "en": "Shen Junru"
+          },
+          "leaderTitle": {
+            "zh": "中央主席",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "民主、科学、爱国",
+            "en": "Democracy, science, patriotism"
+          },
+          "foundedYear": 1941,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "民盟是参政党中规模较大的一个，以文化教育界高中级知识分子为主体，通过政协参与国家事务。1957年反右运动中民盟受到严重冲击，多位领导人被划为右派。",
+            "en": "The CDL was one of the larger participating parties, composed mainly of senior and mid-level intellectuals in culture and education, participating in state affairs through the CPPCC. The CDL was severely impacted during the 1957 Anti-Rightist Campaign, with many leaders labeled as rightists."
+          },
+          "description": {
+            "zh": "中国民主同盟1941年成立于重庆，是中国现存历史最悠久的民主党派之一。1962年民盟虽在反右运动后元气大伤，但仍在教育文化领域保持一定影响力，继续在政协框架内参政议政。",
+            "en": "Founded in Chongqing in 1941, the CDL is one of China's oldest existing democratic parties. Though severely weakened after the Anti-Rightist Campaign, the CDL in 1962 still maintained some influence in education and culture, continuing to participate in governance within the CPPCC framework."
+          }
+        },
+        {
+          "id": "cdnca_1962",
+          "name": {
+            "zh": "中国民主建国会",
+            "en": "China Democratic National Construction Association"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "黄炎培",
+            "en": "Huang Yanpei"
+          },
+          "leaderTitle": {
+            "zh": "中央主任委员",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "经济建设、工商界参政",
+            "en": "Economic construction, business community political participation"
+          },
+          "foundedYear": 1945,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "民建以原工商业者及相关知识分子为主体，在社会主义改造后协助政府进行工商业政策咨询。",
+            "en": "The CDNCA, composed mainly of former industrialists and merchants, assisted the government in commercial and industrial policy consultation after socialist transformation."
+          },
+          "description": {
+            "zh": "民建1945年成立于重庆，成员以原民族工商业者及与之联系的知识分子为主。社会主义改造完成后，民建的社会基础发生重大变化，但仍在经济建设领域提供咨询建议。",
+            "en": "Founded in Chongqing in 1945, the CDNCA's membership consisted mainly of former national industrialists and merchants. After the completion of socialist transformation, its social base changed significantly, but it continued to provide advisory input in economic construction."
+          }
+        },
+        {
+          "id": "capd_1962",
+          "name": {
+            "zh": "中国民主促进会",
+            "en": "China Association for Promoting Democracy"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "马叙伦",
+            "en": "Ma Xulun"
+          },
+          "leaderTitle": {
+            "zh": "中央主席",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "教育改革、文化建设",
+            "en": "Education reform, cultural construction"
+          },
+          "foundedYear": 1945,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "民进以教育文化出版界知识分子为主体，在教育政策领域发挥参政议政作用。",
+            "en": "The CAPD, composed mainly of intellectuals in education, culture, and publishing, played a consultative role in education policy."
+          },
+          "description": {
+            "zh": "民进1945年成立于上海，以从事教育文化出版工作的高中级知识分子为主要成员，在基础教育和文化政策方面积极建言献策。",
+            "en": "Founded in Shanghai in 1945, the CAPD's membership consisted mainly of senior and mid-level intellectuals in education, culture, and publishing, actively offering suggestions on basic education and cultural policy."
+          }
+        },
+        {
+          "id": "cpwdp_1962",
+          "name": {
+            "zh": "中国农工民主党",
+            "en": "Chinese Peasants' and Workers' Democratic Party"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "季方",
+            "en": "Ji Fang"
+          },
+          "leaderTitle": {
+            "zh": "中央主席",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "农工权益、医药卫生",
+            "en": "Peasant and worker rights, medicine and public health"
+          },
+          "foundedYear": 1930,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "农工党以医药卫生界知识分子为主体，在公共卫生和医疗政策领域参政议政。",
+            "en": "The CPWDP, composed mainly of intellectuals in medicine and public health, participated in governance on public health and medical policy."
+          },
+          "description": {
+            "zh": "农工党1930年成立，是八个民主党派中历史最悠久的之一。1962年农工党成员主要分布在医药卫生、科技领域，在爱国卫生运动和农村医疗体系建设中发挥咨询作用。",
+            "en": "Founded in 1930, the CPWDP is one of the oldest among the eight democratic parties. In 1962, its members were mainly in medicine, public health, and science, playing a consultative role in patriotic health campaigns and rural medical system construction."
+          }
+        },
+        {
+          "id": "zgzgd_1962",
+          "name": {
+            "zh": "中国致公党",
+            "en": "China Zhi Gong Party"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "陈其尤",
+            "en": "Chen Qiyou"
+          },
+          "leaderTitle": {
+            "zh": "中央主席",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "归侨侨眷权益、海外联络",
+            "en": "Rights of returned overseas Chinese, overseas liaison"
+          },
+          "foundedYear": 1925,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "致公党以归侨侨眷中的中上层人士为主体，在侨务和海外联络方面发挥独特作用。",
+            "en": "The CZGP, composed mainly of upper and middle-level returned overseas Chinese, played a unique role in overseas Chinese affairs and international liaison."
+          },
+          "description": {
+            "zh": "致公党1925年成立于美国旧金山，与海外华侨华人有深厚渊源。1962年致公党在团结归侨、反映侨界诉求方面继续发挥桥梁作用。",
+            "en": "Founded in San Francisco in 1925, the CZGP had deep roots in overseas Chinese communities. In 1962, it continued to serve as a bridge in uniting returned overseas Chinese and reflecting their concerns."
+          }
+        },
+        {
+          "id": "jsxs_1962",
+          "name": {
+            "zh": "九三学社",
+            "en": "Jiusan Society"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "许德珩",
+            "en": "Xu Deheng"
+          },
+          "leaderTitle": {
+            "zh": "中央主席",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "民主与科学、科技兴国",
+            "en": "Democracy and science, national development through science and technology"
+          },
+          "foundedYear": 1946,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "九三学社以科学技术界高中级知识分子为主体，在科技政策和学术研究方面参政议政。",
+            "en": "The Jiusan Society, composed mainly of senior and mid-level intellectuals in science and technology, participated in governance on science policy and academic research."
+          },
+          "description": {
+            "zh": "九三学社1946年成立，以纪念1945年9月3日抗战胜利而得名。1962年学社成员主要分布在科研院所和高等院校，在科学技术发展规划方面提供专业建议。",
+            "en": "Founded in 1946, the Jiusan Society was named to commemorate the September 3, 1945 victory over Japan. In 1962, its members were mainly in research institutes and universities, providing expert advice on science and technology development plans."
+          }
+        },
+        {
+          "id": "tmmh_1962",
+          "name": {
+            "zh": "台湾民主自治同盟",
+            "en": "Taiwan Democratic Self-Government League"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "谢雪红",
+            "en": "Xie Xuehong"
+          },
+          "leaderTitle": {
+            "zh": "中央主席",
+            "en": "Central Chairman"
+          },
+          "ideology": {
+            "zh": "台湾同胞权益、祖国统一",
+            "en": "Rights of Taiwan compatriots, national reunification"
+          },
+          "foundedYear": 1947,
+          "headquarters": {
+            "zh": "北京",
+            "en": "Beijing"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "台盟由台湾省籍人士组成，是八个民主党派中规模最小的，在涉台事务和促进祖国统一方面发挥参政作用。",
+            "en": "The TDSL, composed of people of Taiwanese provincial origin, was the smallest of the eight democratic parties, playing a participatory role in Taiwan-related affairs and promoting national reunification."
+          },
+          "description": {
+            "zh": "台盟1947年成立于香港，由参加台湾'二·二八'起义的台湾省籍爱国民主人士创建。1962年台盟在促进两岸关系和反映台籍人士诉求方面发挥独特作用。",
+            "en": "Founded in Hong Kong in 1947 by patriotic democrats of Taiwanese origin who participated in the February 28 Uprising, the TDSL in 1962 played a unique role in promoting cross-strait relations and reflecting the concerns of Taiwan-origin residents."
+          }
         }
       ]
     },
@@ -12580,7 +13011,229 @@
       "description": {
         "zh": "不结盟运动核心国家，1962年正与中国爆发边境战争。",
         "en": "A core state of the Non-Aligned Movement, engaged in border war with China in 1962."
-      }
+      },
+      "factions": [
+        {
+          "id": "inc_india_1962",
+          "name": {
+            "zh": "印度国民大会党",
+            "en": "Indian National Congress"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "贾瓦哈拉尔·尼赫鲁",
+            "en": "Jawaharlal Nehru"
+          },
+          "leaderTitle": {
+            "zh": "印度总理、国大党主席",
+            "en": "Prime Minister of India and President of the Congress"
+          },
+          "ideology": {
+            "zh": "民主社会主义、不结盟主义、世俗主义、混合经济、五年计划",
+            "en": "Democratic socialism, non-alignment, secularism, mixed economy, Five Year Plans"
+          },
+          "foundedYear": 1885,
+          "headquarters": {
+            "zh": "新德里",
+            "en": "New Delhi"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "国大党自1947年独立以来一直统治印度，尼赫鲁凭借独立运动领袖的崇高威望掌握最高权力。但1962年中印边境战争的军事失败严重动摇了尼赫鲁的不结盟外交路线和个人声望。党内开始出现对尼赫鲁路线的质疑，各邦首席部长和地方党组织的自主性也在增强。",
+            "en": "The Congress had ruled India continuously since independence in 1947, with Nehru wielding supreme power based on his towering prestige as an independence movement leader. But the military defeat in the 1962 Sino-Indian border war severely shook Nehru's non-aligned foreign policy line and personal standing. Questioning of the Nehruvian approach began within the party, and state chief ministers and local party organizations grew increasingly autonomous."
+          },
+          "description": {
+            "zh": "印度国民大会党是印度历史最悠久的政党，领导了反英独立运动并在独立后确立了一党优势体制。尼赫鲁继承甘地遗产，推行世俗民族主义、混合经济体制和五年计划工业化战略。国大党在联邦和大多数邦层面占据压倒性优势，但党内已形成以邦为基础的地方实力派。1962年中印战争暴露了国防准备的严重不足和尼赫鲁「印中亲善」政策的破产，标志着尼赫鲁时代光环的消退。尼赫鲁的健康也在恶化，继任问题开始浮现。",
+            "en": "The Indian National Congress was India's oldest political party, having led the anti-British independence movement and established a dominant-party system after independence. Nehru inherited Gandhi's legacy, pursuing secular nationalism, a mixed economic model, and Five Year Plan industrialization. Congress held overwhelming dominance at both federal and most state levels, but state-based power brokers had already formed within the party. The 1962 Sino-Indian War exposed severe deficiencies in defense preparedness and the bankruptcy of Nehru's 'Hindi-Chini bhai-bhai' policy, marking the fading of the Nehruvian era's prestige. Nehru's health was also deteriorating, and the succession question began to surface."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "贾瓦哈拉尔·尼赫鲁",
+                "en": "Jawaharlal Nehru"
+              },
+              "title": {
+                "zh": "印度总理",
+                "en": "Prime Minister of India"
+              },
+              "role": {
+                "zh": "国家最高领导人，独立运动象征，不结盟运动创始人之一",
+                "en": "Supreme national leader, symbol of independence, co-founder of the Non-Aligned Movement"
+              }
+            },
+            {
+              "name": {
+                "zh": "莫拉尔吉·德赛",
+                "en": "Morarji Desai"
+              },
+              "title": {
+                "zh": "财政部长",
+                "en": "Minister of Finance"
+              },
+              "role": {
+                "zh": "国大党内保守派领袖，潜在总理继任者",
+                "en": "Conservative leader within Congress, potential prime ministerial successor"
+              }
+            },
+            {
+              "name": {
+                "zh": "拉尔·巴哈杜尔·夏斯特里",
+                "en": "Lal Bahadur Shastri"
+              },
+              "title": {
+                "zh": "内政部长",
+                "en": "Minister of Home Affairs"
+              },
+              "role": {
+                "zh": "温和派核心人物，后于1964年继任总理",
+                "en": "Key moderate figure, later succeeded Nehru as Prime Minister in 1964"
+              }
+            }
+          ]
+        },
+        {
+          "id": "bjs_india_1962",
+          "name": {
+            "zh": "印度人民同盟",
+            "en": "Bharatiya Jana Sangh"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "迪恩达亚尔·乌帕德亚雅",
+            "en": "Deendayal Upadhyaya"
+          },
+          "leaderTitle": {
+            "zh": "人民同盟总书记",
+            "en": "General Secretary of Bharatiya Jana Sangh"
+          },
+          "ideology": {
+            "zh": "印度教民族主义、整体人道主义、文化民族主义、反共反穆",
+            "en": "Hindu nationalism, integral humanism, cultural nationalism, anti-communism and anti-Muslim separatism"
+          },
+          "foundedYear": 1951,
+          "headquarters": {
+            "zh": "新德里",
+            "en": "New Delhi"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "印度人民同盟是国大党世俗主义路线的主要右翼挑战者，在北印度印地语地区拥有稳定但有限的选民基础。1962年中印战争后，人民同盟借民族主义情绪上升之机加强对尼赫鲁政府软弱外交和国防失败的批评，要求更强硬的反华反巴立场。",
+            "en": "The Bharatiya Jana Sangh was the principal right-wing challenger to Congress's secular line, with a stable but limited voter base in Hindi-speaking northern India. After the 1962 Sino-Indian War, the Jana Sangh capitalized on rising nationalist sentiment to intensify criticism of the Nehru government's weak diplomacy and defense failures, demanding a harder anti-China and anti-Pakistan stance."
+          },
+          "description": {
+            "zh": "印度人民同盟由国民志愿服务团（RSS）推动于1951年成立，是后来印度人民党（BJP）的前身。创始人希亚马·普拉萨德·穆克吉主张强烈的印度文化认同和反巴基斯坦立场。乌帕德亚雅提出的「整体人道主义」试图为印度教民族主义提供一套超越西方资本主义和马克思主义的替代意识形态框架。该党在议会中席位有限，但通过RSS的基层组织网络拥有远超议会代表性的社会动员能力。1962年战争失败为该党的国防民族主义叙事提供了有力论据。",
+            "en": "The Bharatiya Jana Sangh was founded in 1951 under the impetus of the Rashtriya Swayamsevak Sangh (RSS), serving as the predecessor of today's Bharatiya Janata Party (BJP). Founder Syama Prasad Mukherjee advocated a strong Indian cultural identity and anti-Pakistan stance. Upadhyaya's 'integral humanism' attempted to provide Hindu nationalism with an alternative ideological framework transcending both Western capitalism and Marxism. The party held limited parliamentary seats but possessed social mobilization capacity far exceeding its parliamentary representation through the RSS grassroots network. The 1962 war defeat provided powerful ammunition for the party's defense-nationalist narrative."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "迪恩达亚尔·乌帕德亚雅",
+                "en": "Deendayal Upadhyaya"
+              },
+              "title": {
+                "zh": "人民同盟总书记",
+                "en": "General Secretary"
+              },
+              "role": {
+                "zh": "党的理论家和组织核心，整体人道主义的提出者",
+                "en": "Party theoretician and organizational core, originator of integral humanism"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿塔尔·比哈里·瓦杰帕伊",
+                "en": "Atal Bihari Vajpayee"
+              },
+              "title": {
+                "zh": "人民院议员",
+                "en": "Member of Lok Sabha"
+              },
+              "role": {
+                "zh": "党内新生代雄辩家，日后的印度总理",
+                "en": "Rising orator of the new generation, future Prime Minister of India"
+              }
+            }
+          ]
+        },
+        {
+          "id": "cpi_india_1962",
+          "name": {
+            "zh": "印度共产党",
+            "en": "Communist Party of India"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "什里帕德·阿姆里特·丹吉",
+            "en": "S.A. Dange"
+          },
+          "leaderTitle": {
+            "zh": "印度共产党主席",
+            "en": "Chairman of the Communist Party of India"
+          },
+          "ideology": {
+            "zh": "马克思主义、议会道路、支持工农运动、亲苏联路线",
+            "en": "Marxism, parliamentary path, support for worker and peasant movements, pro-Soviet line"
+          },
+          "foundedYear": 1925,
+          "headquarters": {
+            "zh": "新德里",
+            "en": "New Delhi"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "印度共产党是议会第三大党，在喀拉拉邦和西孟加拉邦拥有强大群众基础。1962年中印战争对党造成严重冲击：亲苏派支持政府抗战立场，亲华派则态度暧昧，导致党内分裂加剧，数百名亲华党员被政府逮捕。这一裂痕最终在1964年导致印共分裂为印度共产党和印度共产党（马克思主义）。",
+            "en": "The CPI was the third-largest parliamentary party, with strong mass bases in Kerala and West Bengal. The 1962 Sino-Indian War severely impacted the party: the pro-Soviet faction supported the government's war stance while the pro-China faction remained ambiguous, deepening internal splits and leading to the arrest of hundreds of pro-China members by the government. This rift ultimately caused the party to split in 1964 into the CPI and the CPI (Marxist)."
+          },
+          "description": {
+            "zh": "印度共产党成立于1925年，是南亚最早的共产主义政党之一。1957年在喀拉拉邦通过选举上台执政，成为世界上首个通过民主选举掌权的共产党政府之一。丹吉领导的主流派主张议会道路和与国大党的有限合作，坚持亲苏联立场。但党内一直存在以南布迪里巴德和孙达拉雅为代表的亲华激进派，主张武装革命和农民运动。中苏分裂和中印战争使这一矛盾激化到无法调和的程度，最终导致1964年的历史性分裂。",
+            "en": "Founded in 1925, the CPI was one of South Asia's earliest communist parties. In 1957 it won power in Kerala through elections, becoming one of the world's first communist governments to attain office through democratic means. The mainstream faction led by Dange advocated the parliamentary path and limited cooperation with Congress, maintaining a pro-Soviet stance. But a pro-China radical wing represented by Namboodiripad and Sundarayya persistently advocated armed revolution and peasant movements. The Sino-Soviet split and the Sino-Indian War intensified this contradiction to the point of irreconcilability, ultimately producing the historic split of 1964."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "什里帕德·阿姆里特·丹吉",
+                "en": "S.A. Dange"
+              },
+              "title": {
+                "zh": "印度共产党主席",
+                "en": "Chairman of the CPI"
+              },
+              "role": {
+                "zh": "亲苏派领袖，主张议会道路和与国大党合作",
+                "en": "Pro-Soviet leader, advocating the parliamentary path and cooperation with Congress"
+              }
+            },
+            {
+              "name": {
+                "zh": "E·M·S·南布迪里巴德",
+                "en": "E.M.S. Namboodiripad"
+              },
+              "title": {
+                "zh": "前喀拉拉邦首席部长",
+                "en": "Former Chief Minister of Kerala"
+              },
+              "role": {
+                "zh": "党内反主流派核心，1964年分裂后成为印共（马）领袖",
+                "en": "Core anti-mainstream figure, became CPI(M) leader after the 1964 split"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿约·库马尔·戈什",
+                "en": "Ajoy Kumar Ghosh"
+              },
+              "title": {
+                "zh": "前印度共产党总书记",
+                "en": "Former General Secretary of the CPI"
+              },
+              "role": {
+                "zh": "1962年初去世的前领导人，其去世加速了党内派系斗争",
+                "en": "Former leader who died in early 1962, whose passing accelerated factional struggle within the party"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "pakistan_1962",
@@ -21690,7 +22343,228 @@
       "description": {
         "zh": "阿拉伯民族主义核心国家，虽叙利亚已退出，仍沿用阿联国号。",
         "en": "The core state of Arab nationalism, still retaining the UAR name despite Syria's withdrawal."
-      }
+      },
+      "factions": [
+        {
+          "id": "asu_egypt_1962",
+          "name": {
+            "zh": "阿拉伯社会主义联盟",
+            "en": "Arab Socialist Union"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "加迈勒·阿卜杜勒·纳赛尔",
+            "en": "Gamal Abdel Nasser"
+          },
+          "leaderTitle": {
+            "zh": "共和国总统、阿拉伯社会主义联盟主席",
+            "en": "President of the Republic and Chairman of the Arab Socialist Union"
+          },
+          "ideology": {
+            "zh": "泛阿拉伯主义、阿拉伯社会主义、不结盟、反帝国主义、国有化",
+            "en": "Pan-Arabism, Arab socialism, non-alignment, anti-imperialism, nationalization"
+          },
+          "foundedYear": 1962,
+          "headquarters": {
+            "zh": "开罗",
+            "en": "Cairo"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "阿拉伯社会主义联盟于1962年正式成立，是纳赛尔政权唯一合法的政治组织，旨在动员全民支持阿拉伯社会主义革命。联盟取代了此前的民族联盟，成为国家与社会之间的制度化纽带。纳赛尔通过联盟控制政治参与，排除反对势力，推行国有化和土地改革。",
+            "en": "The Arab Socialist Union was formally established in 1962 as the sole legal political organization of the Nasser regime, designed to mobilize nationwide support for the Arab socialist revolution. It replaced the earlier National Union, serving as the institutionalized link between state and society. Nasser used the ASU to control political participation, exclude opposition, and advance nationalization and land reform."
+          },
+          "description": {
+            "zh": "阿拉伯社会主义联盟是纳赛尔主义意识形态的组织载体，1962年依据《国家宪章》建立。纳赛尔以1956年苏伊士运河国有化的胜利为标志性成就，推行国有化、土地改革和工业化的阿拉伯社会主义路线。联盟在基层设立委员会，试图建立从村庄到国家的纵向动员体系。但联盟实际上更多是自上而下的控制工具而非真正的群众政党，决策权集中在纳赛尔及其军事和安全核心圈子手中。叙利亚1961年退出阿联后，纳赛尔将国内政治进一步左倾，加速了社会主义改造。",
+            "en": "The Arab Socialist Union was the organizational vehicle of Nasserist ideology, established in 1962 under the National Charter. With the 1956 Suez Canal nationalization as his landmark achievement, Nasser pursued an Arab socialist program of nationalization, land reform, and industrialization. The ASU established committees at the grassroots level, attempting to build a vertical mobilization system from village to state. In practice, however, the ASU served more as a top-down control instrument than a genuine mass party, with decision-making concentrated in Nasser and his military-security inner circle. After Syria's 1961 withdrawal from the UAR, Nasser shifted domestic politics further leftward, accelerating socialist transformation."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "加迈勒·阿卜杜勒·纳赛尔",
+                "en": "Gamal Abdel Nasser"
+              },
+              "title": {
+                "zh": "共和国总统",
+                "en": "President of the Republic"
+              },
+              "role": {
+                "zh": "最高领导人，阿拉伯民族主义的象征",
+                "en": "Supreme leader and symbol of Arab nationalism"
+              }
+            },
+            {
+              "name": {
+                "zh": "安瓦尔·萨达特",
+                "en": "Anwar Sadat"
+              },
+              "title": {
+                "zh": "国民大会议长",
+                "en": "Speaker of the National Assembly"
+              },
+              "role": {
+                "zh": "纳赛尔的亲密战友，未来的总统继任者",
+                "en": "Close comrade of Nasser, future presidential successor"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿里·萨布里",
+                "en": "Ali Sabri"
+              },
+              "title": {
+                "zh": "总理",
+                "en": "Prime Minister"
+              },
+              "role": {
+                "zh": "政府行政首脑，亲苏联派代表",
+                "en": "Head of government administration, representative of the pro-Soviet faction"
+              }
+            }
+          ]
+        },
+        {
+          "id": "muslim_brotherhood_egypt_1962",
+          "name": {
+            "zh": "穆斯林兄弟会",
+            "en": "Muslim Brotherhood"
+          },
+          "type": "religious",
+          "leader": {
+            "zh": "赛义德·库特卜（狱中理论领袖）",
+            "en": "Sayyid Qutb (imprisoned theoretical leader)"
+          },
+          "leaderTitle": {
+            "zh": "思想理论家（在押）",
+            "en": "Ideological theoretician (imprisoned)"
+          },
+          "ideology": {
+            "zh": "伊斯兰主义、沙里亚法治、反世俗民族主义、伊斯兰社会正义",
+            "en": "Islamism, Sharia governance, anti-secular nationalism, Islamic social justice"
+          },
+          "foundedYear": 1928,
+          "headquarters": {
+            "zh": "开罗（地下活动）",
+            "en": "Cairo (underground activities)"
+          },
+          "status": "underground",
+          "relationship": {
+            "zh": "穆斯林兄弟会自1954年刺杀纳赛尔未遂事件后遭到全面镇压，组织被取缔，领导层入狱或流亡。1962年赛义德·库特卜在狱中撰写《路标》，发展出对现代穆斯林社会的激进批判理论，主张以「贾希利亚」（蒙昧状态）概念否定纳赛尔世俗政权的合法性。兄弟会虽被压制但并未消亡，地下网络和流亡成员在海湾国家继续活动。",
+            "en": "The Muslim Brotherhood had been comprehensively suppressed since the failed assassination attempt on Nasser in 1954, with the organization banned and its leadership imprisoned or exiled. In 1962 Sayyid Qutb was writing 'Milestones' in prison, developing a radical critique of modern Muslim societies and using the concept of 'jahiliyyah' (state of ignorance) to deny the legitimacy of Nasser's secular regime. Though suppressed, the Brotherhood had not been destroyed — underground networks and exiled members continued operating in the Gulf states."
+          },
+          "description": {
+            "zh": "穆斯林兄弟会由哈桑·班纳于1928年在伊斯梅利亚创建，是现代伊斯兰主义运动的源头。兄弟会最初致力于伊斯兰教育和社会福利，逐步发展为拥有数百万追随者的政治力量。1952年革命后兄弟会曾与自由军官合作，但很快因政治路线分歧而决裂。1954年暗杀纳赛尔未遂后遭到毁灭性打击，数千人被捕，组织转入地下。库特卜在狱中的激进思想——尤其是关于「先锋队」推翻蒙昧社会、建立伊斯兰国家的理论——将深刻影响后来的全球圣战运动，从基地组织到伊斯兰国都可追溯其思想根源。",
+            "en": "The Muslim Brotherhood was founded by Hassan al-Banna in Ismailia in 1928 and served as the wellspring of the modern Islamist movement. Initially focused on Islamic education and social welfare, it gradually grew into a political force with millions of followers. After the 1952 revolution, the Brotherhood briefly cooperated with the Free Officers but soon clashed over political direction. The failed 1954 assassination attempt on Nasser brought devastating repression — thousands were arrested and the organization went underground. Qutb's radical prison writings — especially his theory of a 'vanguard' overthrowing jahiliyyah society to establish an Islamic state — would profoundly influence later global jihadist movements, from al-Qaeda to ISIS, all traceable to his intellectual roots."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "赛义德·库特卜",
+                "en": "Sayyid Qutb"
+              },
+              "title": {
+                "zh": "穆斯林兄弟会理论家",
+                "en": "Muslim Brotherhood theoretician"
+              },
+              "role": {
+                "zh": "狱中思想领袖，《路标》作者，现代激进伊斯兰主义奠基人",
+                "en": "Imprisoned intellectual leader, author of Milestones, founder of modern radical Islamism"
+              }
+            },
+            {
+              "name": {
+                "zh": "哈桑·胡代比",
+                "en": "Hassan al-Hudaybi"
+              },
+              "title": {
+                "zh": "穆斯林兄弟会总导师",
+                "en": "General Guide of the Muslim Brotherhood"
+              },
+              "role": {
+                "zh": "兄弟会名义最高领导人，亦在狱中，代表温和路线",
+                "en": "Nominal supreme leader of the Brotherhood, also imprisoned, representing the moderate line"
+              }
+            }
+          ]
+        },
+        {
+          "id": "military_egypt_1962",
+          "name": {
+            "zh": "军方建制派",
+            "en": "Military Establishment"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "阿卜杜勒·哈基姆·阿密尔",
+            "en": "Abdel Hakim Amer"
+          },
+          "leaderTitle": {
+            "zh": "陆军元帅、武装力量最高司令",
+            "en": "Field Marshal and Supreme Commander of the Armed Forces"
+          },
+          "ideology": {
+            "zh": "军事建制利益、军工复合体扩张、阿拉伯军事力量投射",
+            "en": "Military establishment interests, military-industrial complex expansion, Arab military power projection"
+          },
+          "headquarters": {
+            "zh": "开罗国防部",
+            "en": "Ministry of Defense, Cairo"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "阿密尔是纳赛尔最亲密的战友之一，掌控武装力量人事和军事行动。军方既是纳赛尔政权的核心支柱，也是一个相对独立的权力中心。阿密尔在军中培植私人效忠网络，军事决策日益脱离纳赛尔的直接控制。1962年埃及介入也门内战的军事行动即由阿密尔主导推动。",
+            "en": "Amer was one of Nasser's closest comrades, controlling armed forces personnel and military operations. The military served as both the core pillar of Nasser's regime and a relatively independent power center. Amer cultivated personal loyalty networks within the military, and military decision-making increasingly escaped Nasser's direct control. The 1962 Egyptian military intervention in the Yemen civil war was driven primarily by Amer."
+          },
+          "description": {
+            "zh": "埃及军方是1952年革命的发动者和纳赛尔政权的根基。军队不仅承担国防职能，还深度介入经济建设、基础设施和国有企业管理。阿密尔元帅作为自由军官集团的核心成员，与纳赛尔自军校时代即为挚友。但阿密尔在军中建立的独立权力网络日益引起纳赛尔的忧虑。军方在1962年推动介入也门内战，派遣数万大军支援也门共和派，这一决定最终被证明是代价高昂的战略错误。军方内部的腐败、裙带关系和专业能力不足等问题将在1967年六日战争的灾难性失败中全面暴露。",
+            "en": "The Egyptian military launched the 1952 revolution and remained the foundation of Nasser's regime. Beyond defense, the military was deeply involved in economic construction, infrastructure, and state enterprise management. Field Marshal Amer, a core member of the Free Officers, had been Nasser's close friend since military academy. But Amer's independent power network within the military increasingly alarmed Nasser. The military pushed for intervention in the Yemen civil war in 1962, deploying tens of thousands of troops to support Yemeni republicans — a decision ultimately proven to be a costly strategic blunder. Problems of corruption, nepotism, and professional inadequacy within the military would be fully exposed in the catastrophic defeat of the 1967 Six-Day War."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "阿卜杜勒·哈基姆·阿密尔",
+                "en": "Abdel Hakim Amer"
+              },
+              "title": {
+                "zh": "陆军元帅",
+                "en": "Field Marshal"
+              },
+              "role": {
+                "zh": "军队最高指挥官，纳赛尔的亲密战友，军方独立权力核心",
+                "en": "Supreme military commander, Nasser's close comrade, core of independent military power"
+              }
+            },
+            {
+              "name": {
+                "zh": "沙姆斯·巴德兰",
+                "en": "Shams Badran"
+              },
+              "title": {
+                "zh": "国防部长",
+                "en": "Minister of Defense"
+              },
+              "role": {
+                "zh": "阿密尔的亲信，军政事务协调人",
+                "en": "Amer's confidant, coordinator of military-political affairs"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿卜杜勒·穆奈姆·里亚德",
+                "en": "Abdel Moneim Riad"
+              },
+              "title": {
+                "zh": "陆军参谋长",
+                "en": "Army Chief of Staff"
+              },
+              "role": {
+                "zh": "职业军官代表，也门战区指挥的关键人物",
+                "en": "Representative of the professional officer corps, key figure in Yemen theater command"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "ethiopia_1962",
@@ -26066,7 +26940,242 @@
       "description": {
         "zh": "第五共和国核心国家，1962年结束阿尔及利亚战争。",
         "en": "The core state of the Fifth Republic, ending the Algerian War in 1962."
-      }
+      },
+      "factions": [
+        {
+          "id": "unr_france_1962",
+          "name": {
+            "zh": "新共和国联盟（戴高乐派）",
+            "en": "Union for the New Republic (Gaullists/UNR)"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "夏尔·戴高乐",
+            "en": "Charles de Gaulle"
+          },
+          "leaderTitle": {
+            "zh": "共和国总统",
+            "en": "President of the Republic"
+          },
+          "ideology": {
+            "zh": "戴高乐主义、法兰西大国地位、独立核威慑、第五共和国制度、欧洲合作中的法国领导权",
+            "en": "Gaullism, French grandeur, independent nuclear deterrent (force de frappe), Fifth Republic institutions, French leadership in European cooperation"
+          },
+          "foundedYear": 1958,
+          "headquarters": {
+            "zh": "巴黎",
+            "en": "Paris"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "新共和国联盟是戴高乐的执政工具，在国民议会中占据多数。1962年戴高乐成功结束阿尔及利亚战争并推动总统直选宪制改革，权力达到顶峰。戴高乐的个人权威远超党组织本身，UNR更像是总统意志的立法执行者而非独立决策的政党。党内对戴高乐的服从近乎绝对。",
+            "en": "The UNR was de Gaulle's governing instrument, holding a majority in the National Assembly. In 1962 de Gaulle successfully ended the Algerian War and advanced constitutional reform for direct presidential election, reaching the peak of his power. De Gaulle's personal authority far exceeded the party organization itself — the UNR functioned more as a legislative executor of presidential will than an independently deliberating party. Obedience to de Gaulle within the party was near-absolute."
+          },
+          "description": {
+            "zh": "新共和国联盟成立于1958年第五共和国建立之际，是戴高乐主义的政党载体。戴高乐以二战抵抗运动领袖和第五共和国缔造者的双重身份，构建了以强势总统为核心的半总统制。1962年是戴高乐执政的关键转折年：3月的埃维昂协议结束了七年多的阿尔及利亚战争，8月戴高乐在小克拉马尔遭OAS暗杀未遂，10月推动全民公投实现总统直选。法国正在发展独立核力量「打击力量」，追求在美苏两极格局中的战略自主。戴高乐将在此后拒绝英国加入欧共体、退出北约军事指挥机构、承认中华人民共和国，继续塑造独立外交路线。",
+            "en": "The UNR was established in 1958 alongside the Fifth Republic as the party vehicle of Gaullism. De Gaulle, commanding dual prestige as wartime Resistance leader and founder of the Fifth Republic, built a semi-presidential system centered on a strong presidency. 1962 was a pivotal year: the March Evian Accords ended the seven-year Algerian War, in August de Gaulle survived an OAS assassination attempt at Petit-Clamart, and in October he pushed through a referendum establishing direct presidential election. France was developing its independent nuclear force de frappe, pursuing strategic autonomy within the bipolar order. De Gaulle would subsequently veto British EEC membership, withdraw from NATO's integrated military command, and recognize the People's Republic of China, continuing to forge an independent diplomatic course."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "夏尔·戴高乐",
+                "en": "Charles de Gaulle"
+              },
+              "title": {
+                "zh": "共和国总统",
+                "en": "President of the Republic"
+              },
+              "role": {
+                "zh": "法兰西第五共和国的缔造者和最高决策者",
+                "en": "Founder and supreme decision-maker of the Fifth French Republic"
+              }
+            },
+            {
+              "name": {
+                "zh": "乔治·蓬皮杜",
+                "en": "Georges Pompidou"
+              },
+              "title": {
+                "zh": "总理",
+                "en": "Prime Minister"
+              },
+              "role": {
+                "zh": "政府行政首脑，戴高乐最信任的执行者和未来继任者",
+                "en": "Head of government, de Gaulle's most trusted executor and future successor"
+              }
+            },
+            {
+              "name": {
+                "zh": "米歇尔·德勃雷",
+                "en": "Michel Debré"
+              },
+              "title": {
+                "zh": "前总理、经济财政部长",
+                "en": "Former Prime Minister, Minister of Economy and Finance"
+              },
+              "role": {
+                "zh": "第五共和国宪法主要起草人，戴高乐主义理论家",
+                "en": "Principal drafter of the Fifth Republic constitution, Gaullist theoretician"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pcf_france_1962",
+          "name": {
+            "zh": "法国共产党",
+            "en": "French Communist Party"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "莫里斯·多列士",
+            "en": "Maurice Thorez"
+          },
+          "leaderTitle": {
+            "zh": "法共总书记",
+            "en": "General Secretary of the PCF"
+          },
+          "ideology": {
+            "zh": "马克思列宁主义、亲莫斯科路线、工人阶级利益、反资本主义、保持法国独立性",
+            "en": "Marxism-Leninism, pro-Moscow line, working-class interests, anti-capitalism, maintaining French independence"
+          },
+          "foundedYear": 1920,
+          "headquarters": {
+            "zh": "巴黎",
+            "en": "Paris"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "法国共产党是法国第二大政党，拥有强大的工会基础和地方政权网络。在第五共和国体制下，法共被排除在全国权力之外，但在市政层面和工人运动中保持影响力。法共忠于莫斯科但强调法国民族独立传统，对戴高乐的独立核政策和退出北约立场持某种程度的矛盾态度。",
+            "en": "The PCF was France's second-largest party, with a powerful trade union base and local government network. Under the Fifth Republic system, the PCF was excluded from national power but maintained influence at the municipal level and within the labor movement. The PCF was loyal to Moscow but emphasized the French national independence tradition, holding a somewhat ambivalent attitude toward de Gaulle's independent nuclear policy and NATO withdrawal stance."
+          },
+          "description": {
+            "zh": "法国共产党成立于1920年图尔大会上从社会党分裂而出，是西欧最强大的共产党之一。二战中法共因参加抵抗运动获得巨大声望，战后长期保持约20-25%的选票。多列士自1930年代起领导法共，坚持亲苏路线但强调法国特色。1962年法共仍拥有约30万党员、控制法国总工会（CGT），在巴黎红带和工业城市具有深厚根基。但第五共和国的总统制结构和选举制度对法共不利，加之中苏分裂对国际共运的冲击，法共面临战略困境。多列士健康恶化，党的领导层更替和路线调整即将到来。",
+            "en": "The French Communist Party was founded at the 1920 Tours Congress through a split from the Socialist Party and became one of Western Europe's most powerful communist parties. The PCF gained enormous prestige through its wartime Resistance role and consistently held around 20-25% of the vote postwar. Thorez had led the PCF since the 1930s, maintaining a pro-Soviet line while emphasizing French specificity. In 1962 the PCF still had approximately 300,000 members, controlled the CGT trade union confederation, and held deep roots in the Parisian red belt and industrial cities. But the Fifth Republic's presidential structure and electoral system worked against the PCF, and the Sino-Soviet split's impact on the international communist movement created strategic difficulties. Thorez's declining health meant leadership transition and policy adjustment were imminent."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "莫里斯·多列士",
+                "en": "Maurice Thorez"
+              },
+              "title": {
+                "zh": "法共总书记",
+                "en": "General Secretary of the PCF"
+              },
+              "role": {
+                "zh": "法共最高领导人，斯大林主义传统的守护者",
+                "en": "Supreme PCF leader, guardian of the Stalinist tradition"
+              }
+            },
+            {
+              "name": {
+                "zh": "瓦尔德克·罗歇",
+                "en": "Waldeck Rochet"
+              },
+              "title": {
+                "zh": "法共副总书记",
+                "en": "Deputy General Secretary of the PCF"
+              },
+              "role": {
+                "zh": "多列士的继任者，正在推动党的温和化转型",
+                "en": "Thorez's successor-in-waiting, pushing for the party's moderate transformation"
+              }
+            },
+            {
+              "name": {
+                "zh": "雅克·杜克洛",
+                "en": "Jacques Duclos"
+              },
+              "title": {
+                "zh": "法共政治局委员、参议员",
+                "en": "PCF Politburo member and Senator"
+              },
+              "role": {
+                "zh": "党内资深元老，二战抵抗运动英雄",
+                "en": "Senior party elder, hero of the wartime Resistance"
+              }
+            }
+          ]
+        },
+        {
+          "id": "oas_france_1962",
+          "name": {
+            "zh": "秘密军事组织",
+            "en": "Organisation armée secrète (OAS)"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "拉乌尔·萨兰",
+            "en": "Raoul Salan"
+          },
+          "leaderTitle": {
+            "zh": "OAS最高指挥官",
+            "en": "Supreme Commander of the OAS"
+          },
+          "ideology": {
+            "zh": "法属阿尔及利亚、反戴高乐恐怖主义、极端殖民主义、军事叛乱",
+            "en": "French Algeria, anti-de Gaulle terrorism, extreme colonialism, military insurrection"
+          },
+          "headquarters": {
+            "zh": "阿尔及尔（转入地下）",
+            "en": "Algiers (driven underground)"
+          },
+          "status": "insurgent",
+          "relationship": {
+            "zh": "OAS是由反对阿尔及利亚独立的法国军人和殖民者组成的恐怖组织，对戴高乐政权发动暴力攻击。1962年是OAS最疯狂也是最终覆灭的一年：组织在阿尔及尔实施大规模焦土恐怖行动，在法国本土发动多次暗杀企图（包括8月的小克拉马尔暗杀事件），但最终在埃维昂协议签署和阿尔及利亚独立的事实面前彻底失败。",
+            "en": "The OAS was a terrorist organization composed of French military personnel and settlers opposed to Algerian independence, launching violent attacks against the de Gaulle regime. 1962 was the OAS's most frenzied and ultimately terminal year: the organization carried out massive scorched-earth terrorist actions in Algiers and launched multiple assassination attempts in metropolitan France (including the August Petit-Clamart attack), but ultimately failed completely in the face of the Evian Accords and Algerian independence."
+          },
+          "description": {
+            "zh": "秘密军事组织（OAS）成立于1961年，由拒绝接受阿尔及利亚独立的法国军官、殖民者和极右翼分子组成。其核心领导人萨兰将军曾参与1961年阿尔及尔将军政变未遂。OAS在阿尔及利亚和法国本土同时发动恐怖袭击，目标包括阿拉伯平民、支持独立的法国人和戴高乐本人。1962年OAS在阿尔及尔制造了大量爆炸和屠杀事件，企图以恐怖手段阻止法国撤离。8月22日在小克拉马尔对戴高乐总统车队的伏击是最接近成功的暗杀行动，但戴高乐奇迹般幸存。此后OAS迅速瓦解，萨兰被捕判刑，组织残余流亡海外。OAS的恐怖主义最终只是加速了法国从阿尔及利亚的撤离。",
+            "en": "The Organisation armée secrète (OAS) was founded in 1961 by French officers, settlers, and far-right extremists who refused to accept Algerian independence. Its core leader, General Salan, had participated in the failed 1961 Algiers generals' putsch. The OAS simultaneously launched terrorist attacks in Algeria and metropolitan France, targeting Arab civilians, pro-independence French citizens, and de Gaulle himself. In 1962 the OAS carried out numerous bombings and massacres in Algiers, attempting to prevent French withdrawal through terror. The August 22 ambush of de Gaulle's motorcade at Petit-Clamart was the closest assassination attempt to success, but de Gaulle miraculously survived. The OAS rapidly disintegrated thereafter; Salan was captured and sentenced, and organizational remnants fled abroad. OAS terrorism ultimately only accelerated France's departure from Algeria."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "拉乌尔·萨兰",
+                "en": "Raoul Salan"
+              },
+              "title": {
+                "zh": "退役将军、OAS最高指挥官",
+                "en": "Retired General, Supreme Commander of the OAS"
+              },
+              "role": {
+                "zh": "OAS创建者和领导人，1962年4月被捕",
+                "en": "Founder and leader of the OAS, captured in April 1962"
+              }
+            },
+            {
+              "name": {
+                "zh": "让-雅克·苏塞尔",
+                "en": "Jean-Jacques Susini"
+              },
+              "title": {
+                "zh": "OAS政治委员会主席",
+                "en": "Chairman of the OAS Political Committee"
+              },
+              "role": {
+                "zh": "OAS的政治策略制定者和意识形态代言人",
+                "en": "OAS political strategist and ideological spokesperson"
+              }
+            },
+            {
+              "name": {
+                "zh": "让-马里·巴斯蒂安-蒂里",
+                "en": "Jean-Marie Bastien-Thiry"
+              },
+              "title": {
+                "zh": "空军中校",
+                "en": "Air Force Lieutenant Colonel"
+              },
+              "role": {
+                "zh": "小克拉马尔暗杀戴高乐行动的策划者，后被处决",
+                "en": "Mastermind of the Petit-Clamart assassination attempt on de Gaulle, later executed"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "west_germany_1962",
@@ -26709,7 +27818,243 @@
       "description": {
         "zh": "西方阵营中的经济奇迹国家，与东德在柏林问题上对峙。",
         "en": "An economic miracle state in the Western bloc, facing East Germany over the Berlin question."
-      }
+      },
+      "factions": [
+        {
+          "id": "cdu_csu_germany_1962",
+          "name": {
+            "zh": "基督教民主联盟/基督教社会联盟",
+            "en": "CDU/CSU (Christian Democratic Union / Christian Social Union)"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "康拉德·阿登纳",
+            "en": "Konrad Adenauer"
+          },
+          "leaderTitle": {
+            "zh": "联邦总理、CDU主席",
+            "en": "Federal Chancellor and CDU Chairman"
+          },
+          "ideology": {
+            "zh": "基督教民主主义、西方一体化、社会市场经济、反共主义、欧洲统一",
+            "en": "Christian democracy, Western integration (Westbindung), social market economy, anti-communism, European unity"
+          },
+          "foundedYear": 1945,
+          "headquarters": {
+            "zh": "波恩",
+            "en": "Bonn"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "CDU/CSU在阿登纳领导下自1949年以来一直执政，缔造了西德经济奇迹和西方融合。但1962年的阿登纳已87岁高龄，权力日渐衰退。10月的《明镜》事件（政府搜查媒体办公室并逮捕记者）引发宪政危机，严重损害了阿登纳的声誉。党内已开始为后阿登纳时代的权力继承做准备。",
+            "en": "The CDU/CSU under Adenauer had governed continuously since 1949, creating the West German economic miracle and Western integration. But in 1962 Adenauer was already 87 years old, with his power waning. The October Spiegel affair (government raids on media offices and arrest of journalists) provoked a constitutional crisis that severely damaged Adenauer's reputation. The party had already begun preparing for post-Adenauer succession."
+          },
+          "description": {
+            "zh": "基督教民主联盟成立于1945年，与巴伐利亚的基督教社会联盟形成永久联盟，是战后西德的主导政治力量。阿登纳以「西方一体化」（Westbindung）为核心战略，将西德牢固嵌入北约和欧洲共同体框架，在经济部长艾哈德推动下实现了「经济奇迹」（Wirtschaftswunder）。CDU/CSU坚持不承认东德的哈尔斯坦主义，主张在西方联盟框架内实现未来统一。1962年柏林墙修建一周年，东西对峙持续。阿登纳虽仍掌权但已是强弩之末，1963年即将交权于艾哈德。党内外对更灵活东方政策的讨论正在兴起。",
+            "en": "The Christian Democratic Union was founded in 1945 and formed a permanent alliance with Bavaria's Christian Social Union, becoming the dominant political force of postwar West Germany. Adenauer's core strategy of Western integration (Westbindung) firmly embedded West Germany in NATO and the European Community framework, while Economics Minister Erhard drove the Wirtschaftswunder (economic miracle). The CDU/CSU upheld the Hallstein Doctrine of non-recognition of East Germany, advocating future reunification within the Western alliance framework. In 1962, one year after the Berlin Wall's construction, East-West confrontation continued. Though Adenauer still held power, he was nearing the end — set to hand over to Erhard in 1963. Discussion of more flexible Eastern policies was beginning both within and outside the party."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "康拉德·阿登纳",
+                "en": "Konrad Adenauer"
+              },
+              "title": {
+                "zh": "联邦总理",
+                "en": "Federal Chancellor"
+              },
+              "role": {
+                "zh": "西德建国之父，西方一体化战略的缔造者",
+                "en": "Founding father of West Germany, architect of the Western integration strategy"
+              }
+            },
+            {
+              "name": {
+                "zh": "路德维希·艾哈德",
+                "en": "Ludwig Erhard"
+              },
+              "title": {
+                "zh": "联邦经济部长",
+                "en": "Federal Minister of Economics"
+              },
+              "role": {
+                "zh": "社会市场经济之父，经济奇迹的推动者，阿登纳的继任者",
+                "en": "Father of the social market economy, driver of the economic miracle, Adenauer's successor"
+              }
+            },
+            {
+              "name": {
+                "zh": "弗朗茨·约瑟夫·施特劳斯",
+                "en": "Franz Josef Strauss"
+              },
+              "title": {
+                "zh": "联邦国防部长、CSU主席",
+                "en": "Federal Minister of Defense, CSU Chairman"
+              },
+              "role": {
+                "zh": "CSU领袖，因《明镜》事件被迫辞职的强硬派",
+                "en": "CSU leader, hardliner forced to resign over the Spiegel affair"
+              }
+            }
+          ]
+        },
+        {
+          "id": "spd_germany_1962",
+          "name": {
+            "zh": "德国社会民主党",
+            "en": "Social Democratic Party of Germany (SPD)"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "维利·勃兰特",
+            "en": "Willy Brandt"
+          },
+          "leaderTitle": {
+            "zh": "SPD副主席、西柏林市长",
+            "en": "SPD Vice-Chairman and Mayor of West Berlin"
+          },
+          "ideology": {
+            "zh": "社会民主主义、戈德斯堡纲领、早期东方政策构想、欧洲合作、福利国家",
+            "en": "Social democracy, Godesberg Programme, early Ostpolitik ideas, European cooperation, welfare state"
+          },
+          "foundedYear": 1875,
+          "headquarters": {
+            "zh": "波恩",
+            "en": "Bonn"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "SPD自1949年以来一直是联邦层面的反对党，但正在经历深刻转型。1959年戈德斯堡纲领标志着SPD放弃马克思主义正统，转向务实的社会民主中间路线。勃兰特作为西柏林市长在1961年柏林墙危机中表现突出，成为新一代领导人的象征。1962年《明镜》事件中SPD支持新闻自由，进一步提升了其民主信誉。",
+            "en": "The SPD had been in federal opposition since 1949 but was undergoing profound transformation. The 1959 Godesberg Programme marked the SPD's abandonment of Marxist orthodoxy in favor of a pragmatic social democratic center course. Brandt, as Mayor of West Berlin, distinguished himself during the 1961 Berlin Wall crisis, becoming a symbol of new-generation leadership. During the 1962 Spiegel affair, the SPD's defense of press freedom further enhanced its democratic credibility."
+          },
+          "description": {
+            "zh": "德国社会民主党是欧洲历史最悠久的社会民主主义政党，1875年成立于哥达。经历纳粹迫害和战后重建后，SPD在1959年戈德斯堡大会上通过新纲领，正式抛弃阶级斗争和生产资料国有化的传统立场，接受市场经济、北约和基督教价值观，完成了向全民党的转型。勃兰特1957年出任西柏林市长后，在冷战前线城市的治理中展现了领导力。他开始构想超越阿登纳僵硬东方政策的新思路——通过接触促变化（Wandel durch Annäherung），这一思想将在他1969年出任总理后发展为著名的东方政策（Ostpolitik）。SPD正在逐步缩小与CDU/CSU的选票差距，为未来执政积蓄力量。",
+            "en": "The SPD was Europe's oldest social democratic party, founded at Gotha in 1875. After surviving Nazi persecution and postwar reconstruction, the SPD adopted a new programme at the 1959 Godesberg Congress, formally abandoning traditional positions on class struggle and nationalization of means of production, accepting the market economy, NATO, and Christian values, completing its transformation into a catch-all party. After becoming Mayor of West Berlin in 1957, Brandt demonstrated leadership in governing this frontline Cold War city. He began conceiving ideas beyond Adenauer's rigid Eastern policy — change through rapprochement (Wandel durch Annäherung) — a concept that would evolve into his famous Ostpolitik after becoming Chancellor in 1969. The SPD was gradually narrowing the electoral gap with the CDU/CSU, building strength for future governance."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "维利·勃兰特",
+                "en": "Willy Brandt"
+              },
+              "title": {
+                "zh": "西柏林市长",
+                "en": "Mayor of West Berlin"
+              },
+              "role": {
+                "zh": "新一代领导人象征，东方政策的未来缔造者",
+                "en": "Symbol of new-generation leadership, future architect of Ostpolitik"
+              }
+            },
+            {
+              "name": {
+                "zh": "埃里希·奥伦豪尔",
+                "en": "Erich Ollenhauer"
+              },
+              "title": {
+                "zh": "SPD主席",
+                "en": "SPD Chairman"
+              },
+              "role": {
+                "zh": "党的最高领导人，战后重建时期的组织者",
+                "en": "Supreme party leader, organizer of the postwar reconstruction era"
+              }
+            },
+            {
+              "name": {
+                "zh": "赫尔伯特·魏纳",
+                "en": "Herbert Wehner"
+              },
+              "title": {
+                "zh": "联邦议院SPD副主席",
+                "en": "SPD Deputy Chairman in the Bundestag"
+              },
+              "role": {
+                "zh": "党内战略家，戈德斯堡转型的关键推动者",
+                "en": "Party strategist, key driver of the Godesberg transformation"
+              }
+            }
+          ]
+        },
+        {
+          "id": "fdp_germany_1962",
+          "name": {
+            "zh": "自由民主党",
+            "en": "Free Democratic Party (FDP)"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "埃里希·门德",
+            "en": "Erich Mende"
+          },
+          "leaderTitle": {
+            "zh": "FDP主席",
+            "en": "FDP Chairman"
+          },
+          "ideology": {
+            "zh": "自由主义、个人自由、市场经济、公民权利、中间路线",
+            "en": "Liberalism, individual freedom, market economy, civil rights, centrist course"
+          },
+          "foundedYear": 1948,
+          "headquarters": {
+            "zh": "波恩",
+            "en": "Bonn"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "FDP是CDU/CSU的联合执政伙伴，在联邦政府中提供关键的议会多数支持。1962年《明镜》事件中，FDP五名内阁部长集体辞职抗议政府侵犯新闻自由，迫使施特劳斯下台，展现了FDP作为自由主义纠偏力量的角色。FDP在经济政策上偏右支持更自由的市场政策，在公民权利问题上则往往比CDU更为进步。",
+            "en": "The FDP was the CDU/CSU's coalition governing partner, providing crucial parliamentary majority support in the federal government. During the 1962 Spiegel affair, all five FDP cabinet ministers resigned in protest against the government's violation of press freedom, forcing Strauss's removal and demonstrating the FDP's role as a liberal corrective force. The FDP leaned right on economic policy favoring freer markets, but was often more progressive than the CDU on civil rights issues."
+          },
+          "description": {
+            "zh": "自由民主党成立于1948年，继承了德国自由主义传统，是联邦德国政治体系中的关键性小党。FDP虽然党员和选票规模有限（通常获得5-12%的选票），但作为两大政党之间的「天平」党，在联邦政府组阁中拥有不成比例的影响力。门德1960年出任党主席后，将FDP定位为CDU/CSU的忠实但独立的联合伙伴。1962年《明镜》事件是FDP历史上的高光时刻：面对政府搜查新闻媒体的威权行为，FDP部长们集体辞职捍卫宪法自由，这一立场赢得了广泛尊重。FDP内部同时存在亲商右翼和社会自由派左翼的张力，后者在1960年代末将推动FDP转向与SPD结盟。",
+            "en": "Founded in 1948, the FDP inherited the German liberal tradition and served as a pivotal small party in the Federal Republic's political system. Though limited in membership and vote share (typically 5-12%), the FDP wielded disproportionate influence in federal coalition formation as the 'kingmaker' between the two major parties. After becoming chairman in 1960, Mende positioned the FDP as a loyal but independent coalition partner of the CDU/CSU. The 1962 Spiegel affair was a defining moment in FDP history: faced with the government's authoritarian raid on a news outlet, FDP ministers collectively resigned to defend constitutional freedoms, earning widespread respect. The FDP contained internal tension between a pro-business right wing and a social-liberal left wing — the latter would drive the FDP toward alliance with the SPD by the late 1960s."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "埃里希·门德",
+                "en": "Erich Mende"
+              },
+              "title": {
+                "zh": "FDP主席",
+                "en": "FDP Chairman"
+              },
+              "role": {
+                "zh": "党的最高领导人，主导FDP与CDU/CSU的联盟关系",
+                "en": "Supreme party leader, directing the FDP's alliance with the CDU/CSU"
+              }
+            },
+            {
+              "name": {
+                "zh": "沃尔夫冈·米施尼克",
+                "en": "Wolfgang Mischnick"
+              },
+              "title": {
+                "zh": "联邦议院FDP党团主席",
+                "en": "FDP Parliamentary Group Leader in the Bundestag"
+              },
+              "role": {
+                "zh": "议会中FDP的核心发言人和策略协调者",
+                "en": "Core FDP spokesperson and strategy coordinator in parliament"
+              }
+            },
+            {
+              "name": {
+                "zh": "瓦尔特·谢尔",
+                "en": "Walter Scheel"
+              },
+              "title": {
+                "zh": "联邦议院议员",
+                "en": "Member of the Bundestag"
+              },
+              "role": {
+                "zh": "FDP内社会自由派的新生力量，未来的联邦总统",
+                "en": "Rising social-liberal force within the FDP, future Federal President"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "uk_1962",
@@ -27284,7 +28629,242 @@
       "description": {
         "zh": "北约核心国家与前殖民帝国，仍保有全球军事与外交影响力。",
         "en": "A core NATO state and former imperial power still retaining global military and diplomatic influence."
-      }
+      },
+      "factions": [
+        {
+          "id": "conservative_party_uk_1962",
+          "name": {
+            "zh": "保守党",
+            "en": "Conservative Party"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "哈罗德·麦克米伦",
+            "en": "Harold Macmillan"
+          },
+          "leaderTitle": {
+            "zh": "首相、保守党党魁",
+            "en": "Prime Minister and Leader of the Conservative Party"
+          },
+          "ideology": {
+            "zh": "后帝国务实主义、核威慑、推动加入欧洲经济共同体、一国保守主义、福利国家维持",
+            "en": "Post-imperial pragmatism, nuclear deterrent, European Economic Community engagement, One Nation Conservatism, welfare state maintenance"
+          },
+          "foundedYear": 1834,
+          "headquarters": {
+            "zh": "伦敦中央办公室",
+            "en": "Central Office, London"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "保守党自1951年以来连续执政，麦克米伦1957年接替艾登出任首相。他以「超级麦克」形象推行务实外交和国内繁荣政策，名言「你们从未生活得这么好」体现了其执政信心。但1962年多重困境汇聚：申请加入欧共体面临戴高乐否决的风险、国防政策因天蝎座导弹取消而动摇、经济增长放缓、间谍丑闻连连。1963年的普罗富莫丑闻将最终摧毁麦克米伦政府。",
+            "en": "The Conservatives had governed continuously since 1951, with Macmillan replacing Eden as Prime Minister in 1957. He projected the 'Supermac' image while pursuing pragmatic diplomacy and domestic prosperity, his famous phrase 'you've never had it so good' embodying governing confidence. But in 1962 multiple difficulties converged: the EEC application faced the risk of de Gaulle's veto, defense policy was shaken by the cancellation of Skybolt, economic growth was slowing, and spy scandals multiplied. The 1963 Profumo affair would ultimately destroy the Macmillan government."
+          },
+          "description": {
+            "zh": "英国保守党是世界上历史最悠久的政党之一，其现代形态可追溯至1834年。麦克米伦属于保守党内的「一国保守主义」传统，主张在维持资本主义体制的同时保留福利国家和充分就业承诺。他推动了「去殖民化之风」政策，承认帝国已不可维持，加速了非洲殖民地独立进程。1962年英国申请加入欧洲经济共同体标志着战后英国战略重心从帝国转向欧洲的历史性转折，但将在1963年1月被戴高乐否决。在核政策上，英国维持独立核威慑（V轰炸机部队），并在拿骚协议中获得美国北极星导弹以替代被取消的天蝎座项目。保守党内右翼对去殖民化和加入欧共体持保留态度，左翼则关注经济现代化和社会改革。",
+            "en": "The British Conservative Party is one of the world's oldest political parties, with its modern form traceable to 1834. Macmillan belonged to the party's 'One Nation Conservatism' tradition, advocating maintenance of the welfare state and full employment alongside the capitalist system. He drove the 'wind of change' policy, acknowledging that empire was no longer tenable and accelerating African colonial independence. Britain's 1962 EEC application marked a historic pivot from empire to Europe in postwar strategy, though it would be vetoed by de Gaulle in January 1963. In nuclear policy, Britain maintained an independent deterrent (V-bomber force) and secured American Polaris missiles at Nassau to replace the cancelled Skybolt. The party's right wing held reservations about decolonization and EEC entry, while the left focused on economic modernization and social reform."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "哈罗德·麦克米伦",
+                "en": "Harold Macmillan"
+              },
+              "title": {
+                "zh": "首相",
+                "en": "Prime Minister"
+              },
+              "role": {
+                "zh": "保守党领袖，后帝国时代英国战略转型的主导者",
+                "en": "Conservative leader, driver of Britain's post-imperial strategic transformation"
+              }
+            },
+            {
+              "name": {
+                "zh": "拉布·巴特勒",
+                "en": "Rab Butler"
+              },
+              "title": {
+                "zh": "第一国务大臣、副首相",
+                "en": "First Secretary of State, Deputy Prime Minister"
+              },
+              "role": {
+                "zh": "保守党二号人物，未来党魁竞争者",
+                "en": "Second-ranking Conservative figure, future leadership contender"
+              }
+            },
+            {
+              "name": {
+                "zh": "爱德华·希思",
+                "en": "Edward Heath"
+              },
+              "title": {
+                "zh": "掌玺大臣、欧共体谈判主管",
+                "en": "Lord Privy Seal, chief EEC negotiator"
+              },
+              "role": {
+                "zh": "欧洲一体化的热忱推动者，未来的保守党首相",
+                "en": "Ardent proponent of European integration, future Conservative Prime Minister"
+              }
+            }
+          ]
+        },
+        {
+          "id": "labour_party_uk_1962",
+          "name": {
+            "zh": "工党",
+            "en": "Labour Party"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "休·盖茨克尔",
+            "en": "Hugh Gaitskell"
+          },
+          "leaderTitle": {
+            "zh": "工党党魁、反对党领袖",
+            "en": "Leader of the Labour Party and Leader of the Opposition"
+          },
+          "ideology": {
+            "zh": "社会民主主义、国民保健服务捍卫、核裁军辩论、福利国家扩张、工人权益",
+            "en": "Social democracy, NHS defense, nuclear disarmament debate, welfare state expansion, workers' rights"
+          },
+          "foundedYear": 1900,
+          "headquarters": {
+            "zh": "伦敦交通大厦",
+            "en": "Transport House, London"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "工党自1951年以来一直处于反对党地位，但在盖茨克尔领导下正逐步恢复选举竞争力。盖茨克尔代表工党右翼，主张保留核武器和大西洋主义外交路线，与党内左翼围绕单方面核裁军展开激烈辩论。1962年盖茨克尔在工党年会上发表著名的反欧共体演说，以「一千年历史的终结」警告加入欧洲的风险。然而盖茨克尔将在1963年1月突然病逝，由哈罗德·威尔逊继任。",
+            "en": "Labour had been in opposition since 1951 but was gradually regaining electoral competitiveness under Gaitskell. Gaitskell represented the party's right wing, advocating retention of nuclear weapons and an Atlanticist foreign policy, engaging in fierce debate with the party left over unilateral nuclear disarmament. In 1962 Gaitskell delivered his famous anti-EEC speech at the Labour conference, warning of 'the end of a thousand years of history'. However, Gaitskell would die suddenly in January 1963, succeeded by Harold Wilson."
+          },
+          "description": {
+            "zh": "英国工党成立于1900年，由工会运动和社会主义团体共同创建，是英国两大轮替执政党之一。工党1945-1951年执政期间建立了国民保健服务（NHS）、推行国有化和福利国家制度，奠定了战后英国社会契约的基础。盖茨克尔1955年出任党魁后致力于推动工党现代化，1959年曾试图修改党章第四条关于公有制的条款但遭工会阻挠。党内围绕核裁军问题分裂严重：左翼与CND联盟主张单方面核裁军，右翼坚持多边主义和北约立场。盖茨克尔1960年在党大会上著名的「战斗、战斗、再战斗」演说击退了左翼的挑战。1962年工党在民调中上升，正为重返执政做准备。",
+            "en": "The British Labour Party was founded in 1900 by the trade union movement and socialist societies, becoming one of Britain's two alternating governing parties. During its 1945-1951 government, Labour established the National Health Service (NHS), carried out nationalization, and built the welfare state, laying the foundations of the postwar British social contract. After becoming leader in 1955, Gaitskell worked to modernize Labour, attempting in 1959 to amend Clause IV on public ownership but being blocked by the unions. The party was sharply divided over nuclear disarmament: the left allied with CND to advocate unilateral disarmament, while the right insisted on multilateralism and the NATO stance. Gaitskell's famous 1960 conference speech to 'fight and fight and fight again' defeated the left's challenge. In 1962 Labour was rising in the polls, preparing for a return to government."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "休·盖茨克尔",
+                "en": "Hugh Gaitskell"
+              },
+              "title": {
+                "zh": "工党党魁",
+                "en": "Leader of the Labour Party"
+              },
+              "role": {
+                "zh": "工党右翼领袖，社会民主路线的捍卫者",
+                "en": "Right-wing Labour leader, defender of the social democratic line"
+              }
+            },
+            {
+              "name": {
+                "zh": "哈罗德·威尔逊",
+                "en": "Harold Wilson"
+              },
+              "title": {
+                "zh": "影子外交大臣",
+                "en": "Shadow Foreign Secretary"
+              },
+              "role": {
+                "zh": "工党左翼代表人物，盖茨克尔去世后继任党魁并成为首相",
+                "en": "Left-wing Labour representative, succeeded Gaitskell as leader and became Prime Minister"
+              }
+            },
+            {
+              "name": {
+                "zh": "安奈林·贝文",
+                "en": "Aneurin Bevan"
+              },
+              "title": {
+                "zh": "前工党副党魁（1960年逝世）",
+                "en": "Former Deputy Leader of Labour (died 1960)"
+              },
+              "role": {
+                "zh": "NHS创建者，工党左翼精神领袖，其遗产仍深刻影响党内辩论",
+                "en": "Creator of the NHS, spiritual leader of the Labour left, whose legacy still profoundly shaped party debates"
+              }
+            }
+          ]
+        },
+        {
+          "id": "cnd_uk_1962",
+          "name": {
+            "zh": "核裁军运动",
+            "en": "Campaign for Nuclear Disarmament (CND)"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "伯特兰·罗素",
+            "en": "Bertrand Russell"
+          },
+          "leaderTitle": {
+            "zh": "CND创始主席、百人委员会发起人",
+            "en": "Founding President of CND and initiator of the Committee of 100"
+          },
+          "ideology": {
+            "zh": "单方面核裁军、和平主义、反核试验、反军备竞赛",
+            "en": "Unilateral nuclear disarmament, pacifism, anti-nuclear testing, opposition to the arms race"
+          },
+          "headquarters": {
+            "zh": "伦敦",
+            "en": "London"
+          },
+          "status": "insurgent",
+          "relationship": {
+            "zh": "CND是英国最具影响力的反核和平运动组织，1958年成立以来发起了标志性的奥尔德马斯顿复活节游行。1962年古巴导弹危机使核战争恐惧达到顶峰，CND的主张引起广泛共鸣。罗素的百人委员会采取公民不服从策略，多次组织大规模静坐示威。CND在工党内部产生深远影响，1960年一度推动工党年会通过单方面核裁军决议（次年被推翻）。",
+            "en": "CND was Britain's most influential anti-nuclear peace movement, organizing iconic Easter marches from Aldermaston since its 1958 founding. The 1962 Cuban Missile Crisis brought nuclear war fears to a peak, giving CND's message wide resonance. Russell's Committee of 100 employed civil disobedience tactics, organizing multiple mass sit-in demonstrations. CND exerted profound influence within the Labour Party, briefly securing a unilateral disarmament resolution at the 1960 Labour conference (reversed the following year)."
+          },
+          "description": {
+            "zh": "核裁军运动（CND）成立于1958年，以其标志性的和平符号闻名全球。创始主席为诺贝尔文学奖得主、哲学家伯特兰·罗素，首任执行秘书为佳能约翰·柯林斯牧师。CND的核心主张是英国应单方面放弃核武器，作为打破核军备竞赛的道德表率。每年复活节从原子武器研究中心奥尔德马斯顿到伦敦的和平游行成为英国战后最大的群众示威活动。1962年古巴导弹危机期间，人类面临核战争的切实威胁，CND的反核呼声达到最高潮。罗素以90岁高龄因参加非暴力抗议被捕入狱，成为全球和平运动的象征。CND的影响超越英国本身，激发了全球反核运动的兴起，其和平标志成为1960年代反战文化的普遍符号。",
+            "en": "The Campaign for Nuclear Disarmament (CND) was founded in 1958 and became globally recognized through its iconic peace symbol. Its founding president was Nobel laureate philosopher Bertrand Russell, with Canon John Collins as its first executive secretary. CND's core demand was that Britain should unilaterally renounce nuclear weapons as a moral example to break the nuclear arms race. The annual Easter march from the Atomic Weapons Research Establishment at Aldermaston to London became the largest mass demonstration in postwar Britain. During the 1962 Cuban Missile Crisis, when humanity faced the genuine threat of nuclear war, CND's anti-nuclear voice reached its crescendo. Russell, at age 90, was arrested and imprisoned for participating in nonviolent protests, becoming a global symbol of the peace movement. CND's influence transcended Britain itself, inspiring the rise of global anti-nuclear movements, and its peace symbol became a universal icon of 1960s anti-war culture."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "伯特兰·罗素",
+                "en": "Bertrand Russell"
+              },
+              "title": {
+                "zh": "CND创始主席",
+                "en": "Founding President of CND"
+              },
+              "role": {
+                "zh": "诺贝尔奖得主哲学家，全球和平运动的精神领袖",
+                "en": "Nobel Prize-winning philosopher, spiritual leader of the global peace movement"
+              }
+            },
+            {
+              "name": {
+                "zh": "约翰·柯林斯牧师",
+                "en": "Canon John Collins"
+              },
+              "title": {
+                "zh": "CND主席",
+                "en": "CND Chairman"
+              },
+              "role": {
+                "zh": "CND日常运作的组织者和公众代言人",
+                "en": "Organizer of CND's daily operations and public spokesperson"
+              }
+            },
+            {
+              "name": {
+                "zh": "迈克尔·富特",
+                "en": "Michael Foot"
+              },
+              "title": {
+                "zh": "工党国会议员",
+                "en": "Labour Member of Parliament"
+              },
+              "role": {
+                "zh": "CND在议会中的核心支持者，工党左翼核裁军运动的推动者",
+                "en": "Core CND supporter in Parliament, promoter of the Labour left's nuclear disarmament campaign"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "somalia_1962",
@@ -59438,7 +61018,7 @@
                 "en": "fiscal 1962 CAD"
               }
             },
-            "percentage": 25.0
+            "percentage": 25
           },
           {
             "category": {
@@ -60451,7 +62031,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 4.0,
+        "militarySpendingPctGdp": 4,
         "threats": {
           "zh": "华约入侵威胁，荷兰位于北德平原西端。",
           "en": "Warsaw Pact invasion threat; Netherlands on the western end of the North German Plain."
@@ -60903,7 +62483,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 1.0,
+        "militarySpendingPctGdp": 1,
         "threats": {
           "zh": "依赖北约集体防御。",
           "en": "Depended on NATO collective defense."
@@ -62321,7 +63901,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 3.0,
+        "militarySpendingPctGdp": 3,
         "threats": {
           "zh": "华约对波罗的海海峡的威胁。",
           "en": "Warsaw Pact threat to the Baltic straits."
@@ -62741,7 +64321,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 0.0,
+        "militarySpendingPctGdp": 0,
         "threats": {
           "zh": "无军队，依赖美国驻凯夫拉维克海军航空站提供北约防御。",
           "en": "No military; depended on US Naval Air Station Keflavík for NATO defense."
@@ -63183,7 +64763,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 5.0,
+        "militarySpendingPctGdp": 5,
         "threats": {
           "zh": "霍查认为苏联、南斯拉夫和西方均为威胁，筹划建造数十万个碉堡。",
           "en": "Hoxha considered the USSR, Yugoslavia, and the West all threats; planned hundreds of thousands of bunkers."
@@ -64099,7 +65679,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 1.0,
+        "militarySpendingPctGdp": 1,
         "threats": {
           "zh": "民族独立运动是主要政治挑战。",
           "en": "Nationalist independence movement was the main political challenge."
@@ -64534,7 +66114,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 2.0,
+        "militarySpendingPctGdp": 2,
         "threats": {
           "zh": "非洲民族主义运动和国际压力。",
           "en": "African nationalist movement and international pressure."
@@ -64947,7 +66527,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 1.0,
+        "militarySpendingPctGdp": 1,
         "threats": {
           "zh": "政治过渡期稳定性。",
           "en": "Stability during political transition."
@@ -65346,7 +66926,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 1.0,
+        "militarySpendingPctGdp": 1,
         "threats": {
           "zh": "内部稳定和边境安全。",
           "en": "Internal stability and border security."
@@ -67698,7 +69278,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 1.0,
+        "militarySpendingPctGdp": 1,
         "threats": {
           "zh": "内部稳定和边境安全。",
           "en": "Internal stability and border security."
@@ -70834,7 +72414,7 @@
             "en": "1962 USD"
           }
         },
-        "militarySpendingPctGdp": 4.0,
+        "militarySpendingPctGdp": 4,
         "threats": {
           "zh": "内部稳定和边境安全。",
           "en": "Internal stability and border security."
@@ -71690,6 +73270,563 @@
         "zh": "1962年的毛里求斯是英国殖民地，甘蔗种植园经济，多族群社会。",
         "en": "In 1962, Mauritius was a British colony with a sugar plantation economy and multi-ethnic society."
       }
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-seed-cold-war-000",
+      "timestamp": {
+        "year": 1962,
+        "month": 10
+      },
+      "title": {
+        "zh": "古巴导弹危机爆发",
+        "en": "Cuban Missile Crisis Erupts"
+      },
+      "description": {
+        "zh": "美国侦察机发现苏联在古巴秘密部署中程弹道导弹，肯尼迪总统下令对古巴实施海上封锁。美苏两国在长达十三天的对峙中将世界推至核战争边缘。",
+        "en": "American reconnaissance aircraft discovered Soviet medium-range ballistic missiles secretly deployed in Cuba. President Kennedy ordered a naval blockade of Cuba, and the thirteen-day standoff between the US and USSR pushed the world to the brink of nuclear war."
+      },
+      "affectedRegions": [
+        "usa_1962",
+        "ussr_1962",
+        "cuba_1962"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-001",
+      "timestamp": {
+        "year": 1962,
+        "month": 10
+      },
+      "title": {
+        "zh": "中印边境战争",
+        "en": "Sino-Indian Border War"
+      },
+      "description": {
+        "zh": "中国与印度在喜马拉雅争议边界地区爆发全面军事冲突。中国人民解放军在东西两线同时发动进攻，印军遭受重大失败，战争以中国单方面宣布停火告终。",
+        "en": "China and India erupted into full-scale military conflict along the disputed Himalayan border. The PLA launched simultaneous offensives on both eastern and western fronts, inflicting major defeats on Indian forces. The war ended with China's unilateral ceasefire declaration."
+      },
+      "affectedRegions": [
+        "prc_1962",
+        "india_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-002",
+      "timestamp": {
+        "year": 1962,
+        "month": 7
+      },
+      "title": {
+        "zh": "阿尔及利亚独立",
+        "en": "Algerian Independence"
+      },
+      "description": {
+        "zh": "经过八年血腥独立战争，法属阿尔及利亚通过全民公投宣布独立，结束了长达132年的法国殖民统治。数十万法裔殖民者被迫撤离。",
+        "en": "After eight years of bloody independence war, French Algeria declared independence through a referendum, ending 132 years of French colonial rule. Hundreds of thousands of French settlers were forced to evacuate."
+      },
+      "affectedRegions": [
+        "algeria_1962",
+        "france_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-003",
+      "timestamp": {
+        "year": 1963,
+        "month": 8
+      },
+      "title": {
+        "zh": "《部分禁止核试验条约》签署",
+        "en": "Partial Nuclear Test Ban Treaty Signed"
+      },
+      "description": {
+        "zh": "美国、苏联和英国在莫斯科签署《部分禁止核试验条约》，禁止在大气层、外层空间和水下进行核试验。这是冷战期间首个重要的军备控制协议。",
+        "en": "The United States, Soviet Union, and United Kingdom signed the Partial Nuclear Test Ban Treaty in Moscow, banning nuclear tests in the atmosphere, outer space, and underwater. It was the first major arms control agreement of the Cold War."
+      },
+      "affectedRegions": [
+        "usa_1962",
+        "ussr_1962",
+        "uk_1962"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-004",
+      "timestamp": {
+        "year": 1963,
+        "month": 11
+      },
+      "title": {
+        "zh": "肯尼迪总统遇刺",
+        "en": "Assassination of President Kennedy"
+      },
+      "description": {
+        "zh": "美国第35任总统约翰·F·肯尼迪在德克萨斯州达拉斯遭枪击身亡，副总统林登·约翰逊随即宣誓就任总统。这一事件深刻震撼了美国社会和国际政治格局。",
+        "en": "The 35th President of the United States, John F. Kennedy, was assassinated by gunfire in Dallas, Texas. Vice President Lyndon B. Johnson was immediately sworn in as President. The event profoundly shook American society and the international political landscape."
+      },
+      "affectedRegions": [
+        "usa_1962"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-005",
+      "timestamp": {
+        "year": 1964,
+        "month": 8
+      },
+      "title": {
+        "zh": "北部湾事件",
+        "en": "Gulf of Tonkin Incident"
+      },
+      "description": {
+        "zh": "美国声称其驱逐舰在北部湾遭到北越鱼雷艇攻击，国会随即通过《北部湾决议》，授权总统在越南采取一切必要军事行动。这成为美国全面介入越战的法律依据。",
+        "en": "The US claimed its destroyers were attacked by North Vietnamese torpedo boats in the Gulf of Tonkin. Congress promptly passed the Gulf of Tonkin Resolution, authorizing the President to take all necessary military action in Vietnam."
+      },
+      "affectedRegions": [
+        "usa_1962",
+        "north_vietnam_1962",
+        "south_vietnam_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-006",
+      "timestamp": {
+        "year": 1964,
+        "month": 10
+      },
+      "title": {
+        "zh": "中国首次核试验成功",
+        "en": "China's First Nuclear Test"
+      },
+      "description": {
+        "zh": "中国在新疆罗布泊成功引爆第一颗原子弹，成为世界第五个拥有核武器的国家。这一成就打破了超级大国的核垄断，显著改变了亚洲和全球的战略平衡。",
+        "en": "China successfully detonated its first atomic bomb at Lop Nur, Xinjiang, becoming the fifth nation to possess nuclear weapons. This achievement broke the nuclear monopoly of the superpowers and significantly altered the strategic balance in Asia and globally."
+      },
+      "affectedRegions": [
+        "prc_1962"
+      ],
+      "category": "technology",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-007",
+      "timestamp": {
+        "year": 1965,
+        "month": 3
+      },
+      "title": {
+        "zh": "美国地面部队进入越南",
+        "en": "US Ground Troops Enter Vietnam"
+      },
+      "description": {
+        "zh": "美国海军陆战队在岘港登陆，标志着美军地面部队正式投入越南战场。至1968年高峰期，驻越美军总数将超过50万人。",
+        "en": "US Marines landed at Da Nang, marking the official commitment of American ground forces to the Vietnam War. At its peak in 1968, the total number of US troops in Vietnam would exceed 500,000."
+      },
+      "affectedRegions": [
+        "usa_1962",
+        "south_vietnam_1962",
+        "north_vietnam_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-008",
+      "timestamp": {
+        "year": 1966,
+        "month": 5
+      },
+      "title": {
+        "zh": "中国文化大革命爆发",
+        "en": "Chinese Cultural Revolution Begins"
+      },
+      "description": {
+        "zh": "毛泽东发动无产阶级文化大革命，红卫兵运动席卷全国，大量知识分子和干部遭受迫害。这场政治运动持续十年，给中国社会、文化和经济造成巨大破坏。",
+        "en": "Mao Zedong launched the Great Proletarian Cultural Revolution. The Red Guard movement swept across the country, and large numbers of intellectuals and cadres were persecuted. This political movement lasted ten years, causing enormous damage to Chinese society, culture, and economy."
+      },
+      "affectedRegions": [
+        "prc_1962"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-009",
+      "timestamp": {
+        "year": 1967,
+        "month": 6
+      },
+      "title": {
+        "zh": "第三次中东战争（六日战争）",
+        "en": "Six-Day War"
+      },
+      "description": {
+        "zh": "以色列对埃及、叙利亚和约旦发动先发制人的军事打击，仅六天即占领西奈半岛、戈兰高地、约旦河西岸和加沙地带。这场战争深刻改变了中东地缘政治格局。",
+        "en": "Israel launched preemptive military strikes against Egypt, Syria, and Jordan, occupying the Sinai Peninsula, Golan Heights, West Bank, and Gaza Strip in just six days. The war fundamentally altered the geopolitical landscape of the Middle East."
+      },
+      "affectedRegions": [
+        "israel_1962",
+        "egypt_1962",
+        "syria_1962",
+        "jordan_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-010",
+      "timestamp": {
+        "year": 1968,
+        "month": 1
+      },
+      "title": {
+        "zh": "春节攻势",
+        "en": "Tet Offensive"
+      },
+      "description": {
+        "zh": "北越和越共在越南农历新年期间对南越发动大规模突然袭击，攻击超过100个城市和军事目标。虽然军事上遭到击退，但这次攻势严重动摇了美国公众对越战的支持。",
+        "en": "North Vietnam and the Viet Cong launched a massive surprise attack on South Vietnam during the Lunar New Year, striking over 100 cities and military targets. Though militarily repulsed, the offensive severely undermined American public support for the Vietnam War."
+      },
+      "affectedRegions": [
+        "north_vietnam_1962",
+        "south_vietnam_1962",
+        "usa_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-011",
+      "timestamp": {
+        "year": 1968,
+        "month": 8
+      },
+      "title": {
+        "zh": "苏联入侵捷克斯洛伐克",
+        "en": "Soviet Invasion of Czechoslovakia"
+      },
+      "description": {
+        "zh": "苏联率领华沙条约组织军队入侵捷克斯洛伐克，镇压了杜布切克领导的“布拉格之春”改革运动。这一事件标志着勃列日涅夫主义的确立——苏联宣称有权干预社会主义阵营内部事务。",
+        "en": "The Soviet Union led Warsaw Pact forces in invading Czechoslovakia, crushing the 'Prague Spring' reform movement led by Dubček. This event established the Brezhnev Doctrine — the Soviet claim of the right to intervene in the internal affairs of the socialist bloc."
+      },
+      "affectedRegions": [
+        "ussr_1962",
+        "czechoslovakia_1962",
+        "poland_1962",
+        "east_germany_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-012",
+      "timestamp": {
+        "year": 1969,
+        "month": 7
+      },
+      "title": {
+        "zh": "阿波罗11号登月",
+        "en": "Apollo 11 Moon Landing"
+      },
+      "description": {
+        "zh": "美国宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林乘坐阿波罗11号成功登陆月球，阿姆斯特朗成为踏上月球的第一人。这一成就标志着美国在太空竞赛中取得决定性胜利。",
+        "en": "American astronauts Neil Armstrong and Buzz Aldrin successfully landed on the Moon aboard Apollo 11, with Armstrong becoming the first person to walk on the lunar surface. This achievement marked a decisive American victory in the Space Race."
+      },
+      "affectedRegions": [
+        "usa_1962"
+      ],
+      "category": "technology",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-013",
+      "timestamp": {
+        "year": 1969,
+        "month": 3
+      },
+      "title": {
+        "zh": "中苏珍宝岛冲突",
+        "en": "Sino-Soviet Border Conflict at Zhenbao Island"
+      },
+      "description": {
+        "zh": "中国与苏联在乌苏里江珍宝岛（达曼斯基岛）爆发武装冲突，双方动用了炮兵和装甲部队。这场冲突标志着中苏关系彻底破裂，全球共产主义阵营正式分裂。",
+        "en": "China and the Soviet Union engaged in armed conflict at Zhenbao Island (Damansky Island) on the Ussuri River, both sides deploying artillery and armored forces. The conflict marked the complete rupture of Sino-Soviet relations and the formal split in the global communist bloc."
+      },
+      "affectedRegions": [
+        "prc_1962",
+        "ussr_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-014",
+      "timestamp": {
+        "year": 1965,
+        "month": 9
+      },
+      "title": {
+        "zh": "印巴第二次战争",
+        "en": "Second Indo-Pakistani War"
+      },
+      "description": {
+        "zh": "印度与巴基斯坦因克什米尔争端再次爆发全面战争。双方在陆地和空中展开大规模作战，最终在联合国调停下签署《塔什干宣言》实现停火。",
+        "en": "India and Pakistan erupted into full-scale war again over the Kashmir dispute. Both sides engaged in large-scale land and air operations, eventually signing the Tashkent Declaration under UN mediation to achieve a ceasefire."
+      },
+      "affectedRegions": [
+        "india_1962",
+        "pakistan_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-015",
+      "timestamp": {
+        "year": 1963,
+        "month": 5
+      },
+      "title": {
+        "zh": "非洲统一组织成立",
+        "en": "Organization of African Unity Founded"
+      },
+      "description": {
+        "zh": "32个非洲独立国家的首脑在亚的斯亚贝巴签署《非洲统一组织宪章》，宣告非洲统一组织正式成立。该组织致力于促进非洲团结、消除殖民主义和推动经济合作。",
+        "en": "Heads of 32 independent African nations signed the Charter of the Organization of African Unity in Addis Ababa, formally establishing the OAU. The organization was dedicated to promoting African unity, eliminating colonialism, and advancing economic cooperation."
+      },
+      "affectedRegions": [
+        "ethiopia_1962",
+        "egypt_1962",
+        "ghana_1962",
+        "nigeria_1962",
+        "tanzania_1962"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-016",
+      "timestamp": {
+        "year": 1967,
+        "month": 7
+      },
+      "title": {
+        "zh": "尼日利亚内战（比亚法拉战争）",
+        "en": "Nigerian Civil War (Biafran War)"
+      },
+      "description": {
+        "zh": "尼日利亚东南部伊博族主导地区宣布独立为比亚法拉共和国，联邦政府随即发动军事镇压。这场持续三年的内战造成约一百万人死于战斗和饥荒。",
+        "en": "The Igbo-dominated southeastern region of Nigeria declared independence as the Republic of Biafra, prompting a military crackdown by the federal government. The three-year civil war resulted in approximately one million deaths from combat and famine."
+      },
+      "affectedRegions": [
+        "nigeria_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-017",
+      "timestamp": {
+        "year": 1963,
+        "month": 6
+      },
+      "title": {
+        "zh": "苏联首位女性宇航员进入太空",
+        "en": "First Woman in Space"
+      },
+      "description": {
+        "zh": "苏联宇航员瓦莲京娜·捷列什科娃乘坐东方6号飞船进入太空，成为人类历史上首位女性宇航员。她在太空中环绕地球飞行48圈，历时近三天。",
+        "en": "Soviet cosmonaut Valentina Tereshkova entered space aboard Vostok 6, becoming the first woman in history to travel to space. She orbited the Earth 48 times over nearly three days."
+      },
+      "affectedRegions": [
+        "ussr_1962"
+      ],
+      "category": "technology",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-018",
+      "timestamp": {
+        "year": 1965,
+        "month": 10
+      },
+      "title": {
+        "zh": "印尼九三〇事件",
+        "en": "Indonesian Anti-Communist Purge"
+      },
+      "description": {
+        "zh": "印度尼西亚军方以粉碎所谓共产党政变阴谋为名，发动大规模清洗行动。苏哈托将军逐步夺取权力，估计有50万至100万人在随后的屠杀中遇难，印尼共产党被彻底消灭。",
+        "en": "The Indonesian military launched a massive purge under the pretext of crushing an alleged communist coup plot. General Suharto gradually seized power, and an estimated 500,000 to 1 million people were killed in the subsequent massacres."
+      },
+      "affectedRegions": [
+        "indonesia_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-019",
+      "timestamp": {
+        "year": 1964,
+        "month": 7
+      },
+      "title": {
+        "zh": "美国《民权法案》签署",
+        "en": "US Civil Rights Act Signed"
+      },
+      "description": {
+        "zh": "美国总统约翰逊签署具有里程碑意义的《民权法案》，从法律上禁止基于种族、肤色、宗教、性别或国籍的歧视。这是美国民权运动取得的最重要立法成果。",
+        "en": "President Johnson signed the landmark Civil Rights Act, legally prohibiting discrimination based on race, color, religion, sex, or national origin. It was the most important legislative achievement of the American civil rights movement."
+      },
+      "affectedRegions": [
+        "usa_1962"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-020",
+      "timestamp": {
+        "year": 1966,
+        "month": 3
+      },
+      "title": {
+        "zh": "法国退出北约军事一体化",
+        "en": "France Withdraws from NATO Military Command"
+      },
+      "description": {
+        "zh": "戴高乐总统宣布法国退出北大西洋公约组织的军事一体化指挥机构，要求所有外国军事基地撤出法国领土。此举体现了法国追求独立外交和防务政策的意志。",
+        "en": "President de Gaulle announced France's withdrawal from NATO's integrated military command structure, demanding the removal of all foreign military bases from French territory."
+      },
+      "affectedRegions": [
+        "france_1962",
+        "usa_1962"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-021",
+      "timestamp": {
+        "year": 1967,
+        "month": 1
+      },
+      "title": {
+        "zh": "欧洲共同体合并条约生效",
+        "en": "European Communities Merger Treaty Takes Effect"
+      },
+      "description": {
+        "zh": "欧洲经济共同体、欧洲煤钢共同体和欧洲原子能共同体正式合并为统一的欧洲共同体，设立单一的委员会和理事会。这是欧洲一体化进程中的重要里程碑。",
+        "en": "The European Economic Community, European Coal and Steel Community, and European Atomic Energy Community formally merged into unified European Communities with a single Commission and Council."
+      },
+      "affectedRegions": [
+        "west_germany_1962",
+        "france_1962",
+        "italy_1962",
+        "belgium_1962",
+        "netherlands_1962",
+        "luxembourg_1962"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-022",
+      "timestamp": {
+        "year": 1968,
+        "month": 7
+      },
+      "title": {
+        "zh": "《不扩散核武器条约》签署",
+        "en": "Nuclear Non-Proliferation Treaty Signed"
+      },
+      "description": {
+        "zh": "美国、苏联、英国等国签署《不扩散核武器条约》，旨在防止核武器和核技术的扩散、促进核裁军及和平利用核能。该条约成为国际核不扩散体系的基石。",
+        "en": "The United States, Soviet Union, United Kingdom, and other nations signed the Nuclear Non-Proliferation Treaty, aimed at preventing the spread of nuclear weapons and technology, promoting nuclear disarmament, and furthering peaceful uses of nuclear energy."
+      },
+      "affectedRegions": [
+        "usa_1962",
+        "ussr_1962",
+        "uk_1962"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-023",
+      "timestamp": {
+        "year": 1962,
+        "month": 11
+      },
+      "title": {
+        "zh": "也门内战爆发",
+        "en": "Yemeni Civil War Erupts"
+      },
+      "description": {
+        "zh": "北也门爆发共和派与保皇派之间的内战。埃及派遣数万军队支持共和政府，沙特阿拉伯则支持保皇派。也门内战成为中东地区冷战代理战争的典型案例。",
+        "en": "Civil war erupted in North Yemen between republican and royalist factions. Egypt dispatched tens of thousands of troops to support the republican government, while Saudi Arabia backed the royalists."
+      },
+      "affectedRegions": [
+        "north_yemen_1962",
+        "egypt_1962",
+        "saudi_1962"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-024",
+      "timestamp": {
+        "year": 1963,
+        "month": 10
+      },
+      "title": {
+        "zh": "肯尼亚独立",
+        "en": "Kenyan Independence"
+      },
+      "description": {
+        "zh": "肯尼亚在乔莫·肯雅塔领导下脱离英国殖民统治宣告独立，成为东非地区去殖民化运动的重要标志。肯雅塔成为首任总统，推动国家建设与非洲化政策。",
+        "en": "Kenya declared independence from British colonial rule under the leadership of Jomo Kenyatta, becoming an important symbol of the decolonization movement in East Africa."
+      },
+      "affectedRegions": [
+        "kenya_colony_1962",
+        "uk_1962"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-cold-war-025",
+      "timestamp": {
+        "year": 1964,
+        "month": 10
+      },
+      "title": {
+        "zh": "赫鲁晓夫下台",
+        "en": "Fall of Khrushchev"
+      },
+      "description": {
+        "zh": "苏共中央在勃列日涅夫等人策划下发动宫廷政变，以“唯意志论”和外交失败为由解除赫鲁晓夫的一切职务。勃列日涅夫接任苏共中央第一书记，开启长达十八年的执政。",
+        "en": "The Soviet Communist Party Central Committee, in a palace coup orchestrated by Brezhnev and others, removed Khrushchev from all positions citing 'voluntarism' and diplomatic failures. Brezhnev assumed the position of First Secretary, beginning an eighteen-year rule."
+      },
+      "affectedRegions": [
+        "ussr_1962"
+      ],
+      "category": "dynasty",
+      "status": "pending"
     }
   ]
 }

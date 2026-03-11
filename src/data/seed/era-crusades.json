@@ -2459,7 +2459,184 @@
       "description": {
         "zh": "南中国的富庶王朝，以临安为都，经济与海贸高度繁荣。",
         "en": "A wealthy southern Chinese dynasty centered at Lin'an, renowned for its prosperous economy and maritime trade."
-      }
+      },
+      "factions": [
+        {
+          "id": "southern_song_war_party",
+          "name": {
+            "zh": "主战派",
+            "en": "War Party"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "韩侂胄",
+            "en": "Han Tuozhou"
+          },
+          "leaderTitle": {
+            "zh": "平章军国事",
+            "en": "Chief Councillor of Military and State Affairs"
+          },
+          "ideology": {
+            "zh": "北伐收复中原、以军事手段恢复故土、强化武备与前线部署",
+            "en": "Northern Expedition to reclaim lost territories, military recovery of the homeland, strengthening armaments and frontier deployments"
+          },
+          "headquarters": {
+            "zh": "临安",
+            "en": "Lin'an"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "韩侂胄以外戚身份掌控朝政，主导宋宁宗时期的政策走向。他倡导北伐金朝、恢复中原，获得部分武将与边臣的支持，但其好战路线遭到主和派与理学派的强烈反对。韩侂胄的权力建立在与皇帝的私人关系之上，而非传统科举官僚体系，这使他在朝中树敌众多。",
+            "en": "Han Tuozhou controlled court politics through his status as an imperial relative-by-marriage, dominating policy during Emperor Ningzong's reign. He championed the Northern Expedition against the Jin dynasty to recover the lost Central Plains, winning support from some military commanders and frontier officials, but his bellicose line faced fierce opposition from the peace party and Neo-Confucian scholars. Han's power rested on his personal relationship with the emperor rather than the traditional examination bureaucracy, making him many enemies at court."
+          },
+          "description": {
+            "zh": "主战派是南宋朝廷中主张以武力收复北方失地的政治势力。韩侂胄（1152-1207年）是南宋权臣中最具争议的人物之一，他以宁宗皇后韩氏的族亲身份入朝，通过宫廷政治斗争击败赵汝愚等政敌，逐步掌控朝政大权。韩侂胄排斥理学派官员、追贬朱熹为\"伪学\"，并积极筹备对金北伐。1206年他发动开禧北伐，但因准备不足、将帅不和、后勤匮乏而遭遇惨败。主战派的核心主张——以军事手段恢复宋朝在淮河以北的故疆——虽然具有强烈的民族主义感召力，但在南宋财政紧张、军事体制僵化的现实面前困难重重。韩侂胄最终在1207年被史弥远发动的宫廷政变杀害，首级被送往金朝求和，主战派随之瓦解。",
+            "en": "The War Party was the political faction at the Southern Song court that advocated military recovery of the lost northern territories. Han Tuozhou (1152–1207) was one of the most controversial power-holders in Southern Song history. He entered court through his kinship with Empress Han of Ningzong, gradually seizing control through palace political struggles and defeating rivals like Zhao Ruyu. Han purged Neo-Confucian officials, condemned Zhu Xi's teachings as 'false learning,' and actively prepared a Northern Expedition against the Jin. In 1206 he launched the Kaixi Northern Expedition, but it ended in disastrous failure due to inadequate preparation, disunity among commanders, and logistical shortages. The War Party's core proposition — recovering Song territories north of the Huai River through military force — carried powerful nationalist appeal but faced enormous difficulties given the Southern Song's strained finances and rigid military institutions. Han Tuozhou was ultimately killed in a palace coup orchestrated by Shi Miyuan in 1207, his severed head sent to the Jin court as a peace offering, and the War Party collapsed."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "韩侂胄",
+                "en": "Han Tuozhou"
+              },
+              "title": {
+                "zh": "平章军国事",
+                "en": "Chief Councillor"
+              },
+              "role": {
+                "zh": "主战派领袖，主导开禧北伐",
+                "en": "War Party leader, architect of the Kaixi Northern Expedition"
+              }
+            },
+            {
+              "name": {
+                "zh": "毕再遇",
+                "en": "Bi Zaiyu"
+              },
+              "title": {
+                "zh": "武义大夫",
+                "en": "Military Commander"
+              },
+              "role": {
+                "zh": "北伐中表现突出的前线将领",
+                "en": "Distinguished frontline general during the Northern Expedition"
+              }
+            }
+          ]
+        },
+        {
+          "id": "southern_song_peace_party",
+          "name": {
+            "zh": "主和派",
+            "en": "Peace Party"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "史弥远",
+            "en": "Shi Miyuan"
+          },
+          "leaderTitle": {
+            "zh": "礼部侍郎",
+            "en": "Vice Minister of Rites"
+          },
+          "ideology": {
+            "zh": "对金和议外交、维持经济稳定与财政安全、反对冒险北伐",
+            "en": "Diplomatic accommodation with the Jin, maintaining economic stability and fiscal security, opposing risky Northern Expeditions"
+          },
+          "headquarters": {
+            "zh": "临安",
+            "en": "Lin'an"
+          },
+          "status": "rival",
+          "relationship": {
+            "zh": "主和派以史弥远及宫廷保守派官僚为核心，主张维持宋金和议现状，反对韩侂胄的军事冒险路线。他们认为南宋应以经济繁荣和财政充裕为立国之本，贸然北伐将危及国本。史弥远在1207年发动政变诛杀韩侂胄后，将长期主导南宋朝政，建立起以和议为核心的外交路线。",
+            "en": "The Peace Party, centered on Shi Miyuan and conservative court bureaucrats, advocated maintaining the status quo of Song-Jin diplomatic accommodation and opposed Han Tuozhou's military adventurism. They believed the Southern Song's foundation lay in economic prosperity and fiscal health, and that a reckless Northern Expedition would endanger the state. After Shi Miyuan's 1207 coup that killed Han Tuozhou, he would dominate Song court politics for decades, establishing a diplomacy-centered policy line."
+          },
+          "description": {
+            "zh": "主和派代表了南宋朝廷中务实保守的政治立场。自1141年绍兴和议以来，宋金之间虽偶有摩擦，但大体维持了以淮河为界的和平格局。主和派认为这一格局虽屈辱却符合现实——南宋的经济繁荣恰恰建立在长期和平之上。史弥远（1164-1233年）出身官宦世家，以礼部侍郎身份崛起于政坛。他深谙宫廷政治的运作规律，善于利用人事安排和制度漏洞积蓄力量。当开禧北伐于1206年惨败后，史弥远联合杨皇后发动宫廷政变，诛杀韩侂胄并以其首级向金朝求和。此后史弥远独揽朝政长达二十六年（1207-1233年），推行亲金外交与文官治国路线。主和派的施政使南宋获得了宝贵的和平时期，但也被批评为丧失进取之心，使军备进一步荒废，为日后蒙古南侵时的被动局面埋下隐患。",
+            "en": "The Peace Party represented the pragmatic-conservative political stance at the Southern Song court. Since the Shaoxing Treaty of 1141, despite occasional friction, Song and Jin had largely maintained peace along the Huai River boundary. The Peace Party held that this arrangement, though humiliating, reflected reality — the Southern Song's economic prosperity was built precisely on prolonged peace. Shi Miyuan (1164–1233) rose from a bureaucratic family, ascending through his position as Vice Minister of Rites. He was adept at palace politics, skillfully using personnel arrangements and institutional loopholes to accumulate power. After the Kaixi Northern Expedition's disastrous failure in 1206, Shi Miyuan allied with Empress Yang to stage a coup, killing Han Tuozhou and sending his head to the Jin court as a peace offering. Shi then monopolized court politics for twenty-six years (1207–1233), pursuing pro-Jin diplomacy and civil governance. The Peace Party's policies gave the Southern Song precious years of peace, but were also criticized for abandoning ambition and further neglecting military preparedness, sowing the seeds of vulnerability when the Mongols eventually invaded from the north."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "史弥远",
+                "en": "Shi Miyuan"
+              },
+              "title": {
+                "zh": "右丞相",
+                "en": "Right Grand Councillor"
+              },
+              "role": {
+                "zh": "政变推翻韩侂胄后独揽朝政二十余年",
+                "en": "Monopolized court politics for over two decades after overthrowing Han Tuozhou"
+              }
+            }
+          ]
+        },
+        {
+          "id": "southern_song_neo_confucian",
+          "name": {
+            "zh": "理学派士大夫",
+            "en": "Neo-Confucian Scholars"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "朱熹及其门人弟子",
+            "en": "Zhu Xi and his disciples"
+          },
+          "leaderTitle": {
+            "zh": "理学宗师",
+            "en": "Master of Neo-Confucian Learning"
+          },
+          "ideology": {
+            "zh": "道德治国、天理与人伦秩序、学术正统、批判朝中权臣政治",
+            "en": "Moral governance, heavenly principle and ethical order, academic orthodoxy, criticism of court power politics"
+          },
+          "headquarters": {
+            "zh": "福建建阳 / 各地书院",
+            "en": "Jianyang, Fujian / Academies across the realm"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "理学派以朱熹（1130-1200年）的学说为核心，主张以道德修养和天理正义为治国根本，同时批判主战派的权臣专断和主和派的苟安偷生。朱熹虽于1200年去世，但其庞大的学术网络和门人弟子遍布各地书院，构成南宋最有影响力的思想力量。韩侂胄执政期间曾以\"伪学\"罪名大肆打压理学派，但理学的影响非但未能根绝，反而在民间和士林中愈加深固。",
+            "en": "The Neo-Confucian faction centered on the teachings of Zhu Xi (1130–1200), advocating moral cultivation and heavenly principle as the foundation of governance, while criticizing both the War Party's autocratic power politics and the Peace Party's complacent appeasement. Although Zhu Xi died in 1200, his vast scholarly network and disciples spread across academies throughout the realm, forming the Southern Song's most influential intellectual force. During Han Tuozhou's rule, the Neo-Confucians were harshly suppressed under charges of 'false learning,' but their influence was far from eradicated and instead deepened further among both commoners and the literati."
+          },
+          "description": {
+            "zh": "理学（道学）运动是南宋思想文化的核心力量。朱熹集北宋周敦颐、程颢、程颐以来理学传统之大成，构建了以\"理\"为宇宙本体、以\"格物致知\"为认知方法、以\"正心诚意\"为修身纲领的完整哲学体系。这一体系不仅是学术理论，更被其追随者视为治国理政的根本准则。朱熹主张士大夫应以道德自觉领导政治，反对任何形式的权臣专制和功利主义治国路线。1195年韩侂胄发起的\"庆元党禁\"将理学定为\"伪学\"，朱熹等五十九人被列入黑名单，理学学者遭到系统性打压——被罢官、禁止参加科举、学术著作被禁毁。然而这场迫害反而使理学获得了殉道光环，在民间书院和士大夫社交网络中进一步传播。朱熹于1200年在遭贬谪的困境中去世，但仅仅数年后理学便获得平反。此后程朱理学逐渐成为中国官方正统思想，深刻影响了此后七百年的东亚文明走向。",
+            "en": "The Neo-Confucian (Daoxue) movement was the core intellectual force of the Southern Song. Zhu Xi synthesized the Neo-Confucian tradition from Northern Song thinkers including Zhou Dunyi, Cheng Hao, and Cheng Yi, constructing a comprehensive philosophical system with 'principle' (li) as cosmic substance, 'investigation of things' (gewu zhizhi) as epistemological method, and 'rectifying the mind and making intentions sincere' as the framework for self-cultivation. This system was not merely academic theory but was regarded by its followers as the fundamental guide for governance. Zhu Xi insisted that scholar-officials should lead politics through moral self-awareness, opposing all forms of autocratic power-brokering and utilitarian governance. The 'Qingyuan Party Ban' initiated by Han Tuozhou in 1195 branded Neo-Confucianism as 'false learning,' blacklisting Zhu Xi and fifty-eight others. Neo-Confucian scholars were systematically purged — dismissed from office, barred from examinations, and their works banned. Yet this persecution paradoxically gave Neo-Confucianism a martyrdom aura, furthering its spread through private academies and literati networks. Zhu Xi died in 1200 under disgrace, but within years Neo-Confucianism was rehabilitated. Cheng-Zhu Neo-Confucianism would gradually become China's official orthodoxy, profoundly shaping the course of East Asian civilization for the next seven centuries."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "朱熹",
+                "en": "Zhu Xi"
+              },
+              "title": {
+                "zh": "理学宗师",
+                "en": "Master of Neo-Confucianism"
+              },
+              "role": {
+                "zh": "程朱理学集大成者，于1200年去世但影响深远",
+                "en": "Supreme synthesizer of Cheng-Zhu Neo-Confucianism, died in 1200 but left profound influence"
+              }
+            },
+            {
+              "name": {
+                "zh": "真德秀",
+                "en": "Zhen Dexiu"
+              },
+              "title": {
+                "zh": "朱熹再传弟子",
+                "en": "Disciple of Zhu Xi's School"
+              },
+              "role": {
+                "zh": "理学派在南宋中后期的重要继承者与政治代言人",
+                "en": "Key successor and political spokesperson of the Neo-Confucian school in the mid-to-late Southern Song"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "jin_dynasty",
@@ -4756,7 +4933,170 @@
       "description": {
         "zh": "从中亚扩展至伊朗的大帝国，正处于军事与领土扩张高峰。",
         "en": "A major empire stretching from Central Asia into Iran, at the height of its military and territorial expansion."
-      }
+      },
+      "factions": [
+        {
+          "id": "khwarazm_shah_court",
+          "name": {
+            "zh": "沙阿宫廷",
+            "en": "Shah's Court"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "阿拉乌丁·穆罕默德二世",
+            "en": "Ala ad-Din Muhammad II"
+          },
+          "leaderTitle": {
+            "zh": "花剌子模沙阿",
+            "en": "Khwarazmshah"
+          },
+          "ideology": {
+            "zh": "快速领土扩张、宣称普世伊斯兰主权、挑战阿拔斯哈里发权威",
+            "en": "Rapid territorial expansion, claiming universal Islamic sovereignty, challenging Abbasid caliphal authority"
+          },
+          "headquarters": {
+            "zh": "古尔甘吉",
+            "en": "Gurganj"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "穆罕默德二世通过快速军事征服建立起从阿姆河到波斯湾的庞大帝国，公然挑战巴格达阿拔斯哈里发的宗教政治权威。然而他的统治过度依赖个人军事威望，行省整合不足，军政体系分裂，且与母亲特肯·可敦之间存在严重权力竞争。这些弱点将在1219年蒙古入侵时暴露无遗。",
+            "en": "Muhammad II established a vast empire from the Oxus to the Persian Gulf through rapid military conquest, openly challenging the Abbasid Caliph's religio-political authority in Baghdad. However, his rule relied excessively on personal military prestige, with insufficient provincial integration, a fragmented military-political system, and a serious power rivalry with his mother Terken Khatun. These weaknesses would be fully exposed during the Mongol invasion of 1219."
+          },
+          "description": {
+            "zh": "穆罕默德二世（约1200-1220年在位）是花剌子模帝国鼎盛期的统治者。他继承父亲帖帖什的征服成果，进一步征服呼罗珊、伊朗西部、阿富汗部分地区和河中地区大部，将版图扩展到前所未有的规模。穆罕默德公然挑战巴格达阿拔斯哈里发的权威，甚至计划废黜哈里发。然而辉煌外表下隐藏致命弱点：帝国是急速征服而非渐进整合获得，各省忠诚度极低；军队虽数量庞大但缺乏统一指挥；沙阿本人性格多疑且优柔寡断。1219年蒙古入侵时，穆罕默德选择分兵防守而非集中决战，导致帝国在短短两年内土崩瓦解。其子札兰丁将成为最后的花剌子模抵抗者。",
+            "en": "Muhammad II (r. c.1200–1220) was the ruler at the Khwarazmian Empire's zenith. Building on his father Tekish's conquests, he further subdued Khorasan, western Iran, parts of Afghanistan, and most of Transoxiana, expanding the empire to unprecedented scale. Muhammad openly challenged the Abbasid Caliph's authority, even planning to depose him. Yet beneath this brilliance lurked fatal weaknesses: the empire was acquired through rapid conquest rather than gradual integration, with extremely low provincial loyalty; the army was large but lacked unified command; and the Shah himself was suspicious and indecisive. When the Mongols invaded in 1219, Muhammad chose to disperse forces rather than concentrate for battle, leading to total collapse within two years. His son Jalal al-Din would become the last Khwarazmian resistance leader."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "阿拉乌丁·穆罕默德二世",
+                "en": "Ala ad-Din Muhammad II"
+              },
+              "title": {
+                "zh": "花剌子模沙阿",
+                "en": "Khwarazmshah"
+              },
+              "role": {
+                "zh": "帝国统治者，将在蒙古入侵中丧失一切",
+                "en": "Imperial ruler, who would lose everything in the Mongol invasion"
+              }
+            },
+            {
+              "name": {
+                "zh": "札兰丁",
+                "en": "Jalal al-Din Mingburnu"
+              },
+              "title": {
+                "zh": "王子",
+                "en": "Prince"
+              },
+              "role": {
+                "zh": "穆罕默德之子，未来最后的花剌子模抵抗者",
+                "en": "Son of Muhammad, future last Khwarazmian resistance leader"
+              }
+            }
+          ]
+        },
+        {
+          "id": "khwarazm_turkic_commanders",
+          "name": {
+            "zh": "突厥军事指挥官",
+            "en": "Turkic Military Commanders"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "突厥部族将领集团",
+            "en": "Turkic Tribal Generals"
+          },
+          "leaderTitle": {
+            "zh": "阿米尔",
+            "en": "Amir"
+          },
+          "ideology": {
+            "zh": "突厥军事传统、部族忠诚与自治、战利品分配权",
+            "en": "Turkic military tradition, tribal loyalty and autonomy, rights to war spoils"
+          },
+          "headquarters": {
+            "zh": "各军事营地与边防要塞",
+            "en": "Various military camps and frontier fortresses"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "突厥部族将领是花剌子模军队的骨干力量，为帝国提供核心骑兵战斗力。这些半自治的军事领袖控制着自己的部众和领地，对沙阿的忠诚更多基于利益交换而非绝对服从。他们在帝国扩张中发挥关键作用，但分散的指挥体系也是军事弱点的根源。",
+            "en": "Turkic tribal generals formed the backbone of the Khwarazmian army, providing its core cavalry combat power. These semi-autonomous military leaders controlled their own tribal followings and territories, with loyalty to the Shah based more on mutual benefit than absolute obedience. They played a key role in imperial expansion, but the dispersed command structure was also a source of military weakness."
+          },
+          "description": {
+            "zh": "花剌子模帝国的军事力量主要建立在突厥部族骑兵基础之上。这些来自中亚草原的突厥战士——包括钦察、康里、乌古斯等部族——是帝国野战军的核心。他们精于骑射和机动作战，在开阔地带具有极强的战斗力。各部族将领以采邑制（伊克塔）或直接赏赐维持军队，同时保留着相当程度的内部自治权。这种军事体制的优势在于能够快速动员大量精锐骑兵，但劣势同样明显：部族将领之间缺乏统一协调，战略层面的集中指挥困难，且忠诚度随军事形势波动。当蒙古入侵时，花剌子模军队的分散布防暴露了这一体制的致命弱点——各省驻军无法有效协调，被成吉思汗的军队逐个击破。部分突厥将领甚至在帝国崩溃后转投蒙古一方。",
+            "en": "The Khwarazmian Empire's military power was primarily built on Turkic tribal cavalry. These Turkic warriors from the Central Asian steppe — including Kipchak, Kangli, Oghuz, and other tribes — formed the core of the imperial field army. Expert in horse archery and mobile warfare, they were formidable in open terrain. Tribal generals maintained their forces through iqta grants or direct rewards while retaining considerable internal autonomy. This military system's advantage was the ability to rapidly mobilize large numbers of elite cavalry, but its disadvantages were equally clear: tribal commanders lacked unified coordination, centralized strategic command was difficult, and loyalty fluctuated with military fortunes. When the Mongols invaded, the dispersed deployment of Khwarazmian forces exposed this system's fatal weakness — provincial garrisons could not coordinate effectively and were destroyed piecemeal by Genghis Khan's army. Some Turkic commanders even defected to the Mongol side after the empire's collapse."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "各省突厥驻军指挥官",
+                "en": "Provincial Turkic Garrison Commanders"
+              },
+              "title": {
+                "zh": "阿米尔",
+                "en": "Amir"
+              },
+              "role": {
+                "zh": "控制各战略要地的半自治军事领袖",
+                "en": "Semi-autonomous military leaders controlling strategic positions"
+              }
+            }
+          ]
+        },
+        {
+          "id": "khwarazm_terken_khatun",
+          "name": {
+            "zh": "特肯·可敦派系",
+            "en": "Queen Mother Terken Khatun Faction"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "特肯·可敦",
+            "en": "Terken Khatun"
+          },
+          "leaderTitle": {
+            "zh": "太后",
+            "en": "Queen Mother"
+          },
+          "ideology": {
+            "zh": "钦察部族权益、母族势力在帝国决策中的核心地位、宫廷权术与继承干预",
+            "en": "Kipchak tribal interests, centrality of maternal clan in imperial decision-making, court intrigue and succession influence"
+          },
+          "headquarters": {
+            "zh": "古尔甘吉（及呼罗珊东部）",
+            "en": "Gurganj (and eastern Khorasan)"
+          },
+          "status": "rival",
+          "relationship": {
+            "zh": "特肯·可敦是穆罕默德二世的母亲，出身钦察突厥贵族。她在帝国东部省份建立了平行权力体系，通过钦察部族亲信在军队和行政中安插势力，频繁干预儿子的政策决定，甚至在继承问题上支持自己偏爱的孙子而非沙阿属意的继承人。这种家族内部权力分裂严重削弱了帝国的统一指挥能力。",
+            "en": "Terken Khatun was Muhammad II's mother, born into the Kipchak Turkic aristocracy. She established a parallel power system in the empire's eastern provinces, placing Kipchak tribal clients in the army and administration, frequently interfering with her son's decisions, and even supporting her preferred grandson as heir over the Shah's chosen successor. This internal family power split severely undermined the empire's unified command."
+          },
+          "description": {
+            "zh": "特肯·可敦是中亚伊斯兰世界中最有权势的女性之一。她出身钦察草原贵族部落，与穆罕默德二世的父亲帖帖什的婚姻使钦察军事力量成为帝国重要支柱。然而特肯·可敦的野心远超后宫——她在帝国东部省份建立了自己的行政网络，控制大量军事资源，并通过安插钦察族人担任要职确保自身影响力。穆罕默德与母亲之间的权力竞争严重削弱了统一指挥。特肯·可敦曾公开反对穆罕默德的某些军事和外交决定，在继承问题上支持自己偏爱的孙子。这种家族权力分裂使帝国在面对外部威胁时尤为脆弱。1219年蒙古入侵时，特肯·可敦率领后宫和部分朝廷逃往里海避难堡垒，但最终被蒙古军队俘获，在囚禁中度过余生。",
+            "en": "Terken Khatun was one of the most powerful women in the Central Asian Islamic world. Born into a noble Kipchak steppe tribe, her marriage to Muhammad II's father Tekish made Kipchak military power a major pillar of the empire. But her ambitions extended far beyond the harem — she established her own administrative network in the eastern provinces, controlled substantial military resources, and ensured her influence by placing Kipchak tribesmen in key positions. The power rivalry between Muhammad and his mother severely undermined unified command. Terken Khatun openly opposed some of Muhammad's decisions and supported her preferred grandson as heir. This family power split made the empire particularly vulnerable to external threats. When the Mongols invaded in 1219, Terken Khatun fled with the harem and court to a Caspian refuge fortress but was ultimately captured by Mongol forces, spending the rest of her life in captivity."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "特肯·可敦",
+                "en": "Terken Khatun"
+              },
+              "title": {
+                "zh": "太后",
+                "en": "Queen Mother"
+              },
+              "role": {
+                "zh": "帝国东部实际控制者，沙阿的母亲和政治对手",
+                "en": "De facto controller of the eastern empire, the Shah's mother and political rival"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "ghurid_sultanate",
@@ -5956,7 +6296,170 @@
       "description": {
         "zh": "萨拉丁之后的继承政权，统治埃及并深度介入叙利亚与十字军战争。",
         "en": "The successor state after Saladin, ruling Egypt and deeply involved in Syria and the Crusades."
-      }
+      },
+      "factions": [
+        {
+          "id": "ayyubid_ruling_dynasty",
+          "name": {
+            "zh": "阿尤布王族",
+            "en": "Ayyubid Ruling Dynasty"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "阿迪勒一世",
+            "en": "Al-Adil I"
+          },
+          "leaderTitle": {
+            "zh": "苏丹",
+            "en": "Sultan"
+          },
+          "ideology": {
+            "zh": "泛伊斯兰防御十字军、家族分封与务实外交、维护萨拉丁遗产",
+            "en": "Pan-Islamic defense against Crusaders, family appanage system and pragmatic diplomacy, preserving Saladin's legacy"
+          },
+          "headquarters": {
+            "zh": "开罗",
+            "en": "Cairo"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "阿迪勒一世（萨拉丁之弟）在萨拉丁1193年去世后的继承纷争中凭借高超的政治手腕和军事实力脱颖而出，于1200年前后统一了阿尤布家族的核心领地。他以务实外交著称，在维持反十字军圣战姿态的同时与法兰克人进行有限度的贸易和外交往来。阿迪勒通过将各地分封给子侄来维持家族团结，但这也埋下了日后内斗的种子。",
+            "en": "Al-Adil I (Saladin's brother) emerged from the succession struggles following Saladin's death in 1193 through superior political skill and military strength, reunifying the Ayyubid family's core domains by around 1200. Known for pragmatic diplomacy, he maintained the posture of anti-Crusader jihad while conducting limited trade and diplomatic exchanges with the Franks. Al-Adil preserved family unity by distributing territories among sons and nephews, though this also sowed seeds of future internal conflict."
+          },
+          "description": {
+            "zh": "阿尤布王朝由萨拉丁于1171年推翻法蒂玛王朝后建立，以库尔德裔军事家族统治埃及和叙利亚。萨拉丁在1187年哈丁战役中击溃十字军、收复耶路撒冷，成为伊斯兰世界最伟大的英雄之一。然而他在1193年去世后，帝国按照家族分封传统被分配给诸子和兄弟，引发了长达数年的内部争夺。阿迪勒一世（1145-1218年）是萨拉丁最能干的兄弟，他先后击败或收买了其他家族竞争者，最终控制了埃及、大马士革和北叙利亚。阿迪勒的统治风格与萨拉丁截然不同——他更重视经济利益和商业外交，与威尼斯等意大利商业城邦保持贸易关系，在对待十字军问题上采取防御而非进攻姿态。他将开罗建设为地中海世界最繁荣的城市之一，大力发展尼罗河灌溉农业和红海-印度洋贸易。然而阿尤布王朝的根本弱点在于缺乏明确的继承制度——帝国更像是一个由同族诸王协调管理的松散联邦，而非中央集权国家。",
+            "en": "The Ayyubid dynasty was established by Saladin after he overthrew the Fatimid dynasty in 1171, ruling Egypt and Syria as a Kurdish military family. Saladin's crushing defeat of the Crusaders at the Battle of Hattin in 1187 and recovery of Jerusalem made him one of Islam's greatest heroes. Yet after his death in 1193, the empire was distributed among sons and brothers according to family appanage tradition, triggering years of internal struggle. Al-Adil I (1145–1218) was Saladin's most capable brother, who defeated or co-opted other family rivals to eventually control Egypt, Damascus, and northern Syria. Al-Adil's governing style differed markedly from Saladin's — he prioritized economic interests and commercial diplomacy, maintained trade relations with Venice and other Italian mercantile cities, and took a defensive rather than offensive stance toward the Crusaders. He developed Cairo into one of the Mediterranean world's most prosperous cities, investing heavily in Nile irrigation agriculture and Red Sea–Indian Ocean trade. Yet the Ayyubid dynasty's fundamental weakness was the absence of clear succession rules — the empire resembled a loose federation coordinated by kinsman-kings rather than a centralized state."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "阿迪勒一世",
+                "en": "Al-Adil I"
+              },
+              "title": {
+                "zh": "苏丹",
+                "en": "Sultan"
+              },
+              "role": {
+                "zh": "萨拉丁之弟，以务实外交统合阿尤布帝国",
+                "en": "Saladin's brother, unified the Ayyubid empire through pragmatic diplomacy"
+              }
+            },
+            {
+              "name": {
+                "zh": "卡米勒",
+                "en": "Al-Kamil"
+              },
+              "title": {
+                "zh": "埃及副苏丹",
+                "en": "Viceroy of Egypt"
+              },
+              "role": {
+                "zh": "阿迪勒之子，未来的苏丹，将与腓特烈二世谈判",
+                "en": "Son of Al-Adil, future sultan who would negotiate with Frederick II"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ayyubid_mamluk_commanders",
+          "name": {
+            "zh": "马穆鲁克军事将领",
+            "en": "Mamluk Military Commanders"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "突厥裔马穆鲁克将领团",
+            "en": "Turkic Mamluk General Corps"
+          },
+          "leaderTitle": {
+            "zh": "埃米尔",
+            "en": "Emir"
+          },
+          "ideology": {
+            "zh": "军事精英统治、奴隶兵制度下的精英骑兵传统、通过军功获取权力与地位",
+            "en": "Military elite rule, elite cavalry tradition within the slave-soldier system, acquiring power and status through martial merit"
+          },
+          "headquarters": {
+            "zh": "开罗城堡",
+            "en": "Cairo Citadel"
+          },
+          "status": "allied",
+          "relationship": {
+            "zh": "马穆鲁克（\"被拥有者\"）是阿尤布王朝的军事支柱。这些主要来自钦察草原和高加索地区的突厥奴隶士兵，在年幼时被购买并在军事学校中接受严格训练，成为精锐骑兵。阿尤布苏丹依赖马穆鲁克军团的战斗力维持统治，但马穆鲁克将领的军事权力也在持续增长，成为朝廷中不可忽视的政治力量。",
+            "en": "The Mamluks ('the owned ones') were the Ayyubid dynasty's military backbone. These Turkic slave-soldiers, purchased mainly from the Kipchak steppe and Caucasus region as youths, received rigorous training in military schools to become elite cavalry. Ayyubid sultans depended on the Mamluk corps' fighting prowess to maintain their rule, but the military power of Mamluk commanders was steadily growing, making them an increasingly formidable political force at court."
+          },
+          "description": {
+            "zh": "马穆鲁克制度是伊斯兰世界独特的军事奴隶精英体系。阿尤布王朝时期，苏丹们从中亚钦察草原、高加索和俄罗斯南部大量购入突厥和切尔克斯少年奴隶，在开罗城堡等军事学校中对其进行骑术、射箭、剑术和伊斯兰教义的全面训练。这些马穆鲁克在完成训练后被释放为自由人，成为苏丹的精锐私军。他们享有丰厚的军饷、伊克塔（军事采邑）和社会地位，但被期望对主人保持绝对忠诚。到1200年前后，马穆鲁克埃米尔已在军事指挥体系中占据核心位置——他们控制着最精锐的骑兵部队，在战场上往往是决定胜负的关键力量。马穆鲁克制度的内在矛盾在于：苏丹需要这些精锐战士维持军事优势，但他们的军事实力也构成了对王权的潜在威胁。这一矛盾将在1250年达到临界点——马穆鲁克将领在抵抗第七次十字军的战争中发动政变，推翻了阿尤布王朝，建立了马穆鲁克苏丹国，开创了一个持续近三百年的军事奴隶王朝。",
+            "en": "The Mamluk system was a unique military slave-elite institution of the Islamic world. During the Ayyubid period, sultans purchased large numbers of Turkic and Circassian youth from the Central Asian Kipchak steppe, Caucasus, and southern Russia, training them comprehensively in horsemanship, archery, swordsmanship, and Islamic doctrine at military schools such as the Cairo Citadel. After completing training, these Mamluks were manumitted as free men, becoming the sultan's elite personal army. They enjoyed generous stipends, iqta (military fiefs), and social status, but were expected to maintain absolute loyalty to their master. By around 1200, Mamluk emirs occupied core positions in the military command structure — controlling the most elite cavalry units and often serving as the decisive factor on battlefields. The inherent contradiction of the Mamluk system was that the sultan needed these elite warriors for military supremacy, but their military power also constituted a potential threat to royal authority. This contradiction would reach a breaking point in 1250 — Mamluk commanders staged a coup during the war against the Seventh Crusade, overthrew the Ayyubid dynasty, and established the Mamluk Sultanate, founding a military slave dynasty that would endure for nearly three centuries."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "法赫鲁丁",
+                "en": "Fakhr al-Din"
+              },
+              "title": {
+                "zh": "马穆鲁克高级埃米尔",
+                "en": "Senior Mamluk Emir"
+              },
+              "role": {
+                "zh": "阿尤布时期马穆鲁克军事精英的代表人物",
+                "en": "Representative of the Mamluk military elite during the Ayyubid period"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ayyubid_ismaili_assassins",
+          "name": {
+            "zh": "伊斯玛仪派刺客（阿萨辛）",
+            "en": "Ismaili Assassins"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "拉希德丁·锡南的继承者",
+            "en": "Successors of Rashid ad-Din Sinan"
+          },
+          "leaderTitle": {
+            "zh": "山中老人",
+            "en": "Old Man of the Mountain"
+          },
+          "ideology": {
+            "zh": "伊斯玛仪派什叶教义、政治暗杀作为战略工具、山堡独立自治",
+            "en": "Ismaili Shia doctrine, political assassination as a strategic tool, mountain fortress autonomy"
+          },
+          "headquarters": {
+            "zh": "马斯亚夫",
+            "en": "Masyaf"
+          },
+          "status": "insurgent",
+          "relationship": {
+            "zh": "叙利亚伊斯玛仪派（尼扎里派）以\"阿萨辛\"之名闻名于世，其山堡网络在阿尤布王朝的叙利亚领地内构成一股半独立的军事力量。拉希德丁·锡南（\"山中老人\"）在1193年去世后，叙利亚尼扎里派虽然实力有所下降，但仍保持着令十字军和穆斯林政权都心存忌惮的暗杀网络和山堡体系。阿尤布苏丹对其采取既遏制又利用的策略。",
+            "en": "The Syrian Ismailis (Nizari sect), known worldwide as the 'Assassins,' maintained a network of mountain fortresses within Ayyubid Syrian territories as a semi-independent military force. After Rashid ad-Din Sinan ('Old Man of the Mountain') died in 1193, the Syrian Nizaris' power somewhat declined, but they preserved an assassination network and fortress system that kept both Crusader and Muslim regimes wary. Ayyubid sultans adopted a strategy of both containment and exploitation toward them."
+          },
+          "description": {
+            "zh": "叙利亚尼扎里伊斯玛仪派——即十字军口中的\"阿萨辛\"——是中世纪最神秘也最令人畏惧的政治力量之一。这一什叶派极端分支起源于11世纪波斯的哈桑·萨巴赫运动，以位于险峻山区的堡垒链为基地，以精心策划的政治暗杀作为影响力工具。叙利亚分支的巅峰时期在拉希德丁·锡南（约1132-1193年）的领导下达到——他将马斯亚夫及叙利亚海岸山脉中的一系列城堡发展为半独立的微型国家。锡南以\"山中老人\"之名在十字军和穆斯林世界同样令人闻风丧胆，据传他多次派遣\"费达伊\"（敢死队员）执行刺杀任务，目标包括十字军领主、穆斯林将领甚至萨拉丁本人。锡南去世后（约1193年），叙利亚尼扎里派失去了独立行动的最强领袖，日益受到阿尤布王朝的政治影响和军事压力。然而他们的山堡体系仍然坚固，暗杀网络依旧令人畏惧。尼扎里派最终将在1270年代被马穆鲁克苏丹拜巴尔斯征服，而他们的波斯总部阿拉穆特则在1256年被蒙古人摧毁。",
+            "en": "The Syrian Nizari Ismailis — the 'Assassins' of Crusader lore — were one of the most mysterious and feared political forces of the medieval period. This extreme Shia offshoot originated in Hasan-i Sabbah's 11th-century Persian movement, using chains of mountain fortresses as bases and meticulously planned political assassinations as tools of influence. The Syrian branch reached its peak under Rashid ad-Din Sinan (c.1132–1193), who developed Masyaf and a chain of castles in Syria's coastal mountains into a semi-independent micro-state. Known as the 'Old Man of the Mountain,' Sinan was equally feared across the Crusader and Muslim worlds, reportedly dispatching 'fidai' (devotees) on assassination missions targeting Crusader lords, Muslim generals, and even Saladin himself. After Sinan's death (c.1193), the Syrian Nizaris lost their strongest independent leader and came increasingly under Ayyubid political influence and military pressure. Yet their fortress system remained formidable and their assassination network still inspired fear. The Nizaris would ultimately be conquered by Mamluk Sultan Baybars in the 1270s, while their Persian headquarters at Alamut was destroyed by the Mongols in 1256."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "拉希德丁·锡南",
+                "en": "Rashid ad-Din Sinan"
+              },
+              "title": {
+                "zh": "山中老人",
+                "en": "Old Man of the Mountain"
+              },
+              "role": {
+                "zh": "叙利亚尼扎里派最伟大的领袖（1193年去世），遗产仍深刻影响该组织",
+                "en": "Greatest leader of the Syrian Nizaris (died 1193), whose legacy still profoundly shaped the organization"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "abbasid_caliphate",
@@ -8810,7 +9313,184 @@
       "description": {
         "zh": "仍以君士坦丁堡为中心维持大国地位，但内政衰败、边疆压力沉重。",
         "en": "Still centered on Constantinople as a great power, but weakened by internal decay and frontier pressures."
-      }
+      },
+      "factions": [
+        {
+          "id": "byzantine_nicaean_empire",
+          "name": {
+            "zh": "尼西亚帝国",
+            "en": "Nicaean Empire"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "狄奥多尔一世·拉斯卡里斯",
+            "en": "Theodore I Laskaris"
+          },
+          "leaderTitle": {
+            "zh": "皇帝",
+            "en": "Emperor"
+          },
+          "ideology": {
+            "zh": "拜占庭正统继承、收复君士坦丁堡、东正教信仰守护",
+            "en": "Legitimate Byzantine succession, reconquest of Constantinople, guardianship of Orthodox faith"
+          },
+          "headquarters": {
+            "zh": "尼西亚",
+            "en": "Nicaea"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "1204年第四次十字军洗劫君士坦丁堡后，拜占庭帝国分裂为数个流亡政权。狄奥多尔一世·拉斯卡里斯在小亚细亚西北部建立尼西亚帝国，自称拜占庭正统继承者，以收复君士坦丁堡为最高目标。尼西亚帝国成为三个希腊继承国中最强大的一个，在1200年前后代表着拜占庭复兴的最大希望。",
+            "en": "After the Fourth Crusade sacked Constantinople in 1204, the Byzantine Empire fragmented into several exile states. Theodore I Laskaris established the Nicaean Empire in northwestern Asia Minor, claiming legitimate Byzantine succession and making the reconquest of Constantinople his supreme goal. The Nicaean Empire became the most powerful of the three Greek successor states, representing the greatest hope for Byzantine restoration around 1200."
+          },
+          "description": {
+            "zh": "尼西亚帝国是1204年灾难后拜占庭文明最重要的延续体。狄奥多尔一世·拉斯卡里斯（约1174-1222年）是安杰洛斯王朝的女婿，在君士坦丁堡陷落时逃往小亚细亚，在布尔萨和尼西亚地区组织残余力量建立了新政权。他于1208年由流亡的君士坦丁堡牧首在尼西亚加冕为皇帝，确立了自身的正统合法性。尼西亚帝国继承了拜占庭的行政传统和军事体系，控制着小亚细亚西部富庶的农业区和重要港口，并依靠专业化的希腊军队抵御塞尔柱突厥人和拉丁帝国的双重压力。在外交上，尼西亚与保加利亚帝国和尼西亚牧首合作，共同对抗拉丁帝国。拉斯卡里斯家族将最终在1261年实现收复君士坦丁堡的伟业——尽管复国后的拜占庭帝国已无法恢复昔日辉煌。",
+            "en": "The Nicaean Empire was the most important continuation of Byzantine civilization after the catastrophe of 1204. Theodore I Laskaris (c.1174–1222) was a son-in-law of the Angelos dynasty who fled to Asia Minor during the fall of Constantinople, organizing remnant forces in the Bursa and Nicaea region to establish a new state. He was crowned emperor by the exiled Patriarch of Constantinople at Nicaea in 1208, establishing his orthodox legitimacy. The Nicaean Empire inherited Byzantine administrative traditions and military systems, controlling the prosperous agricultural lands and important ports of western Asia Minor, and relying on a professional Greek army to resist the dual pressure of Seljuk Turks and the Latin Empire. Diplomatically, Nicaea cooperated with the Bulgarian Empire and the Nicaean Patriarchate against the Latin Empire. The Laskaris family would ultimately achieve the reconquest of Constantinople in 1261 — though the restored Byzantine Empire would never recover its former glory."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "狄奥多尔一世·拉斯卡里斯",
+                "en": "Theodore I Laskaris"
+              },
+              "title": {
+                "zh": "尼西亚皇帝",
+                "en": "Emperor of Nicaea"
+              },
+              "role": {
+                "zh": "拜占庭流亡帝国建立者，正统继承者",
+                "en": "Founder of the Byzantine exile empire, legitimate successor"
+              }
+            }
+          ]
+        },
+        {
+          "id": "byzantine_latin_empire",
+          "name": {
+            "zh": "拉丁帝国",
+            "en": "Latin Empire of Constantinople"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "鲍德温一世 / 亨利",
+            "en": "Baldwin I / Henry of Flanders"
+          },
+          "leaderTitle": {
+            "zh": "拉丁皇帝",
+            "en": "Latin Emperor"
+          },
+          "ideology": {
+            "zh": "天主教统治东正教领土、十字军国家体制、威尼斯商业霸权",
+            "en": "Catholic rule over Orthodox lands, Crusader state system, Venetian commercial hegemony"
+          },
+          "headquarters": {
+            "zh": "君士坦丁堡",
+            "en": "Constantinople"
+          },
+          "status": "rival",
+          "relationship": {
+            "zh": "1204年第四次十字军攻陷君士坦丁堡后建立的天主教政权。鲍德温一世被推举为首任拉丁皇帝，但很快在与保加利亚的战斗中被俘并死亡，由其弟亨利继位。拉丁帝国以天主教统治东正教领土，与所有希腊继承国为敌，但自身实力有限，严重依赖威尼斯海军和法兰克骑士的支持。",
+            "en": "The Catholic state established after the Fourth Crusade captured Constantinople in 1204. Baldwin I was elected first Latin Emperor but was soon captured and killed in battle with the Bulgarians, succeeded by his brother Henry. The Latin Empire imposed Catholic rule over Orthodox lands, antagonizing all Greek successor states, but its own strength was limited and it depended heavily on Venetian naval support and Frankish knights."
+          },
+          "description": {
+            "zh": "拉丁帝国的建立是中世纪史上最戏剧性的事件之一。第四次十字军本应进攻穆斯林控制的埃及，却在威尼斯总督恩里科·丹多洛的操纵和拜占庭内部政治纠纷的诱惑下，于1204年4月攻陷并洗劫了基督教世界最伟大的城市——君士坦丁堡。十字军战士们在三天的疯狂掠夺中摧毁了无数珍贵的艺术品、圣物和文献。随后建立的拉丁帝国以法兰德斯伯爵鲍德温为首任皇帝，按照封建原则分配拜占庭领土。威尼斯获得了最丰厚的商业利益——控制了帝国四分之三的岛屿、港口和贸易特权。然而拉丁帝国自建立之日起就面临来自四面八方的敌对：尼西亚帝国、特拉比松帝国、伊庇鲁斯专制国以及保加利亚帝国都拒绝承认其合法性。天主教与东正教之间不可调和的宗教裂痕使拉丁统治者始终无法赢得希腊民众的支持。这个虚弱的十字军国家将在1261年被尼西亚帝国推翻。",
+            "en": "The Latin Empire's establishment was one of the most dramatic events in medieval history. The Fourth Crusade, originally aimed at Muslim-controlled Egypt, was diverted by Venetian Doge Enrico Dandolo's manipulation and Byzantine internal political disputes, capturing and sacking Christendom's greatest city — Constantinople — in April 1204. Crusaders destroyed countless precious artworks, relics, and manuscripts during three days of frenzied plunder. The resulting Latin Empire installed Count Baldwin of Flanders as its first emperor, distributing Byzantine territories along feudal lines. Venice gained the richest commercial prize — controlling three-quarters of the empire's islands, ports, and trade privileges. Yet the Latin Empire faced hostility from all directions from its inception: the Nicaean Empire, Empire of Trebizond, Despotate of Epirus, and Bulgarian Empire all rejected its legitimacy. The irreconcilable religious rift between Catholicism and Orthodoxy meant Latin rulers could never win support from the Greek population. This weak Crusader state would be overthrown by the Nicaean Empire in 1261."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "鲍德温一世",
+                "en": "Baldwin I"
+              },
+              "title": {
+                "zh": "拉丁皇帝",
+                "en": "Latin Emperor"
+              },
+              "role": {
+                "zh": "首任拉丁皇帝，在阿德里安堡战役中被保加利亚人俘虏",
+                "en": "First Latin Emperor, captured by Bulgarians at the Battle of Adrianople"
+              }
+            },
+            {
+              "name": {
+                "zh": "恩里科·丹多洛",
+                "en": "Enrico Dandolo"
+              },
+              "title": {
+                "zh": "威尼斯总督",
+                "en": "Doge of Venice"
+              },
+              "role": {
+                "zh": "操纵第四次十字军转向君士坦丁堡的幕后推手",
+                "en": "The mastermind behind diverting the Fourth Crusade toward Constantinople"
+              }
+            }
+          ]
+        },
+        {
+          "id": "byzantine_trebizond_empire",
+          "name": {
+            "zh": "特拉比松帝国",
+            "en": "Empire of Trebizond"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "阿莱克修斯一世",
+            "en": "Alexios I of Trebizond"
+          },
+          "leaderTitle": {
+            "zh": "大科穆宁皇帝",
+            "en": "Grand Komnenos Emperor"
+          },
+          "ideology": {
+            "zh": "科穆宁王朝正统、黑海沿岸独立、东正教信仰",
+            "en": "Komnenoi dynastic legitimacy, Black Sea coastal independence, Orthodox faith"
+          },
+          "headquarters": {
+            "zh": "特拉比松",
+            "en": "Trebizond"
+          },
+          "status": "rival",
+          "relationship": {
+            "zh": "特拉比松帝国由科穆宁王朝后裔阿莱克修斯一世在格鲁吉亚女王塔玛丽的支持下建立，控制着黑海东南沿岸的富庶贸易城市。虽然也自称拜占庭正统继承者，但特拉比松地理位置偏远，实力不及尼西亚帝国，且高度依赖格鲁吉亚的军事支持和黑海贸易收入。",
+            "en": "The Empire of Trebizond was established by Alexios I, a descendant of the Komnenoi dynasty, with the support of Georgian Queen Tamar, controlling the prosperous trade cities along the southeastern Black Sea coast. Though also claiming legitimate Byzantine succession, Trebizond was geographically remote, weaker than the Nicaean Empire, and heavily dependent on Georgian military support and Black Sea trade revenues."
+          },
+          "description": {
+            "zh": "特拉比松帝国是1204年后三个希腊继承国中最独特的一个。阿莱克修斯一世（约1182-1222年）和他的兄弟大卫是安德罗尼库斯一世（科穆宁王朝末代皇帝）的孙子，在格鲁吉亚女王塔玛丽的资助和军事支持下于1204年占领了特拉比松。这座位于黑海东南沿岸的古老城市是东西方贸易的重要中转站，控制着通往高加索、波斯和中亚的商路。特拉比松采用“大科穆宁”头衔以示其科穆宁王朝的直系血统，自视为比安杰洛斯王朝（尼西亚帝国的母系来源）更正统的拜占庭继承者。然而特拉比松帝国的领土仅限于本都海岸一带狭长地带，虽然贸易繁荣、文化发达，但军事力量薄弱，需要格鲁吉亚同盟和灵活外交才能在突厥势力和其他希腊政权之间存活。特拉比松将以独特的希腊-高加索混合文化延续至1461年，成为最后灭亡的拜占庭继承国。",
+            "en": "The Empire of Trebizond was the most distinctive of the three Greek successor states after 1204. Alexios I (c.1182–1222) and his brother David were grandsons of Andronikos I (last emperor of the Komnenoi dynasty), who seized Trebizond in 1204 with Georgian Queen Tamar's financial and military support. This ancient city on the southeastern Black Sea coast was a vital transit point for East-West trade, controlling routes to the Caucasus, Persia, and Central Asia. Trebizond adopted the title 'Grand Komnenos' to emphasize its direct Komnenoi bloodline, viewing itself as a more legitimate Byzantine successor than the Angelos dynasty (the maternal lineage of the Nicaean Empire). Yet Trebizond's territory was limited to a narrow strip along the Pontic coast; though commercially prosperous and culturally developed, it was militarily weak, requiring the Georgian alliance and flexible diplomacy to survive between Turkic powers and other Greek states. Trebizond would endure as a unique Greek-Caucasian hybrid culture until 1461, becoming the last Byzantine successor state to fall."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "阿莱克修斯一世",
+                "en": "Alexios I of Trebizond"
+              },
+              "title": {
+                "zh": "大科穆宁皇帝",
+                "en": "Grand Komnenos"
+              },
+              "role": {
+                "zh": "特拉比松帝国建立者，科穆宁王朝后裔",
+                "en": "Founder of the Empire of Trebizond, descendant of the Komnenoi dynasty"
+              }
+            },
+            {
+              "name": {
+                "zh": "塔玛丽女王",
+                "en": "Queen Tamar of Georgia"
+              },
+              "title": {
+                "zh": "格鲁吉亚女王",
+                "en": "Queen of Georgia"
+              },
+              "role": {
+                "zh": "特拉比松帝国最重要的外部支持者和军事盟友",
+                "en": "The most important external patron and military ally of Trebizond"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "principality_of_antioch",
@@ -14482,7 +15162,184 @@
       "description": {
         "zh": "由诸侯、公国、主教领与自由城市组成的帝国结构，1200年正陷于王位争夺。",
         "en": "An imperial structure of princes, duchies, bishoprics, and free cities, in the midst of a royal succession struggle in 1200."
-      }
+      },
+      "factions": [
+        {
+          "id": "hre_hohenstaufen",
+          "name": {
+            "zh": "霍亨斯陶芬王朝",
+            "en": "Hohenstaufen Dynasty"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "弗里德里希二世（幼年）/ 士瓦本的菲利普",
+            "en": "Frederick II (child) / Philip of Swabia"
+          },
+          "leaderTitle": {
+            "zh": "西西里国王 / 罗马人的国王",
+            "en": "King of Sicily / King of the Romans"
+          },
+          "ideology": {
+            "zh": "普世君主制、帝权至上、西西里与德意志联合统治、与教廷对抗",
+            "en": "Universal monarchy claims, imperial supremacy, joint rule of Sicily and Germany, conflict with the papacy"
+          },
+          "headquarters": {
+            "zh": "巴勒莫 / 士瓦本",
+            "en": "Palermo / Swabia"
+          },
+          "status": "ruling",
+          "relationship": {
+            "zh": "霍亨斯陶芬王朝自弗里德里希一世（红胡子巴巴罗萨）以来致力于建立从北海到西西里的强大帝国。1200年时，亨利六世之子弗里德里希尚在幼年，被教宗英诺森三世监护于西西里；而亨利六世之弟菲利普在德意志与韦尔夫家族的奥托四世争夺王位。霍亨斯陶芬家族的长远愿景是统一德意志与意大利，这一野心将在弗里德里希二世手中达到顶峰。",
+            "en": "The Hohenstaufen dynasty had striven since Frederick I Barbarossa to build a powerful empire from the North Sea to Sicily. In 1200, Henry VI's son Frederick was still a child under Pope Innocent III's guardianship in Sicily, while Henry's brother Philip contested the German throne against the Welf candidate Otto IV. The Hohenstaufen long-term vision was unifying Germany and Italy — an ambition that would reach its peak under Frederick II."
+          },
+          "description": {
+            "zh": "霍亨斯陶芬王朝是12-13世纪欧洲最具雄心的统治家族。自红胡子巴巴罗萨开始，该家族致力于建立横跨阿尔卑斯山南北的帝国。亨利六世通过与西西里诺曼王朝联姻，一度将这一梦想变为现实，但其1197年英年早逝立即引发继承危机。德意志诸侯分裂为支持菲利普和支持奥托的两个阵营。菲利普虽获得多数诸侯支持，但教宗英诺森三世的干预使局势更加复杂。年幼的弗里德里希——日后被称为\"世界奇迹\"（Stupor Mundi）——被监护于西西里，接受了独特的多元文化教育。霍亨斯陶芬家族同时控制德意志帝国与西西里王国的前景令教廷深感恐惧，因为这意味着教宗国将被南北夹击。1208年菲利普被暗杀后，奥托四世短暂统一帝国，但弗里德里希二世很快在教宗支持下复出，重新夺回霍亨斯陶芬的皇位，开启了中世纪最精彩的政治角力。",
+            "en": "The Hohenstaufen dynasty was the most ambitious ruling family in 12th–13th century Europe. Beginning with Frederick Barbarossa, they strove to build an empire spanning both sides of the Alps. Henry VI briefly realized this dream through marriage to the Norman dynasty of Sicily, but his premature death in 1197 triggered an immediate succession crisis. German princes split between supporters of Philip and Otto. Though Philip had broader princely support, Pope Innocent III's intervention complicated matters. The young Frederick — later called 'Stupor Mundi' (Wonder of the World) — was raised in Sicily under guardianship, receiving a uniquely multicultural education. The prospect of the Hohenstaufen controlling both the German Empire and the Kingdom of Sicily terrified the papacy, as it meant the Papal States would be strategically encircled. After Philip's assassination in 1208, Otto IV briefly unified the empire, but Frederick II soon returned with papal support to reclaim the Hohenstaufen throne, launching one of the most spectacular political contests of the Middle Ages."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "士瓦本的菲利普",
+                "en": "Philip of Swabia"
+              },
+              "title": {
+                "zh": "罗马人的国王",
+                "en": "King of the Romans"
+              },
+              "role": {
+                "zh": "霍亨斯陶芬候选人，在内战中争夺帝位",
+                "en": "Hohenstaufen candidate, contending for the throne in civil war"
+              }
+            },
+            {
+              "name": {
+                "zh": "弗里德里希（幼年）",
+                "en": "Frederick (child)"
+              },
+              "title": {
+                "zh": "西西里国王",
+                "en": "King of Sicily"
+              },
+              "role": {
+                "zh": "亨利六世之子，未来的弗里德里希二世\"世界奇迹\"",
+                "en": "Son of Henry VI, the future Frederick II 'Stupor Mundi'"
+              }
+            }
+          ]
+        },
+        {
+          "id": "hre_welf_guelphs",
+          "name": {
+            "zh": "韦尔夫/归尔甫派",
+            "en": "Welf/Guelph Faction"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "奥托四世",
+            "en": "Otto IV"
+          },
+          "leaderTitle": {
+            "zh": "对立国王",
+            "en": "Anti-King"
+          },
+          "ideology": {
+            "zh": "韦尔夫家族权益、教宗联盟、反霍亨斯陶芬、德意志内战",
+            "en": "Welf family interests, papal alliance, opposition to Hohenstaufen, German civil war"
+          },
+          "headquarters": {
+            "zh": "布伦瑞克",
+            "en": "Brunswick"
+          },
+          "status": "rival",
+          "relationship": {
+            "zh": "韦尔夫家族的奥托四世在1198年被部分诸侯选为对立国王，与霍亨斯陶芬的菲利普争夺帝国控制权。奥托获得教宗英诺森三世的支持，在莱茵地区和北德意志拥有一批追随者。然而奥托的支持基础不如菲利普广泛，韦尔夫-霍亨斯陶芬之争实质上是德意志诸侯借机扩大自治权的政治博弈。",
+            "en": "The Welf candidate Otto IV was elected anti-king by some princes in 1198, contesting imperial control with the Hohenstaufen Philip. Otto gained Pope Innocent III's backing and held followers in the Rhineland and northern Germany. However, Otto's support base was narrower than Philip's, and the Welf-Hohenstaufen struggle was essentially a political game in which German princes expanded their autonomy."
+          },
+          "description": {
+            "zh": "韦尔夫家族（又称归尔甫派）是霍亨斯陶芬王朝的世仇对手，这场家族恩怨可以追溯到12世纪中叶\"狮子\"亨利与红胡子巴巴罗萨的冲突。奥托四世是\"狮子\"亨利的幼子，母亲是英格兰金雀花王朝的玛蒂尔达公主，因此与英格兰王室有密切的血缘和政治联系。在1198年的双重选举中，奥托在科隆大主教的支持下于亚琛加冕，而菲利普则在美因茨另行加冕，形成了帝国历史上典型的双王对峙。教宗英诺森三世在权衡利弊后选择支持奥托，因为韦尔夫家族不像霍亨斯陶芬那样同时控制西西里，不会对教宗国构成战略威胁。然而奥托一旦真正获得帝位后就违背了对教宗的所有承诺，入侵意大利并威胁教宗领地——这反而促使英诺森三世转而支持年轻的弗里德里希二世。韦尔夫派的历史命运将在1214年的布汶战役中终结。",
+            "en": "The Welf family (also known as the Guelphs) were the hereditary rivals of the Hohenstaufen, a feud traceable to the mid-12th century conflict between Henry the Lion and Frederick Barbarossa. Otto IV was the youngest son of Henry the Lion, with his mother being Matilda, an English Plantagenet princess, giving him close blood and political ties to the English crown. In the double election of 1198, Otto was crowned at Aachen with the Archbishop of Cologne's support while Philip was crowned separately at Mainz, creating a classic dual-kingship standoff. Pope Innocent III chose to support Otto after weighing the options, since the Welfs unlike the Hohenstaufen did not simultaneously control Sicily and would not strategically threaten the Papal States. However, once Otto actually gained the throne he broke all his promises to the pope, invading Italy and threatening papal territories — which in turn prompted Innocent to switch his support to the young Frederick II. The Welf cause would meet its historical end at the Battle of Bouvines in 1214."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "奥托四世",
+                "en": "Otto IV"
+              },
+              "title": {
+                "zh": "对立国王",
+                "en": "Anti-King"
+              },
+              "role": {
+                "zh": "韦尔夫家族候选人，教宗支持的皇帝人选",
+                "en": "Welf candidate, the pope's chosen imperial claimant"
+              }
+            },
+            {
+              "name": {
+                "zh": "阿道夫（科隆大主教）",
+                "en": "Adolf of Cologne"
+              },
+              "title": {
+                "zh": "科隆大主教、选侯",
+                "en": "Archbishop of Cologne, Prince-Elector"
+              },
+              "role": {
+                "zh": "为奥托加冕的关键教会诸侯",
+                "en": "Key ecclesiastical prince who crowned Otto"
+              }
+            }
+          ]
+        },
+        {
+          "id": "hre_papal_party",
+          "name": {
+            "zh": "教宗党",
+            "en": "Papal Party"
+          },
+          "type": "religious",
+          "leader": {
+            "zh": "教宗英诺森三世",
+            "en": "Pope Innocent III"
+          },
+          "leaderTitle": {
+            "zh": "教宗",
+            "en": "Pope"
+          },
+          "ideology": {
+            "zh": "教宗至上论、授职权争议遗产、教廷对帝国继承的裁定权、第四次十字军发起者",
+            "en": "Papal supremacy, Investiture legacy, papal right to adjudicate imperial succession, Fourth Crusade sponsorship"
+          },
+          "headquarters": {
+            "zh": "罗马",
+            "en": "Rome"
+          },
+          "status": "opposition",
+          "relationship": {
+            "zh": "教宗英诺森三世是中世纪最强势的教宗，他坚持教宗有权裁定帝国王位归属，通过《德意志的审议》一文详细论证了教会干预世俗权力的正当性。英诺森最初支持奥托四世对抗霍亨斯陶芬，同时发起第四次十字军并在欧洲范围内推行教会改革。教宗权力在他治下达到历史巅峰。",
+            "en": "Pope Innocent III was the most powerful medieval pope, insisting on the papal right to adjudicate imperial succession and providing detailed canonical justification for ecclesiastical intervention in secular power through his Deliberatio treatise. Innocent initially supported Otto IV against the Hohenstaufen while simultaneously launching the Fourth Crusade and promoting church reform across Europe. Papal power reached its historical zenith under his pontificate."
+          },
+          "description": {
+            "zh": "英诺森三世（1198-1216年在位）将中世纪教宗权力推向历史巅峰。他系统阐述了教宗至上论——主张教宗作为基督在世间的代理人，有权审查和裁定一切涉及灵魂的事务，而王权的合法性归根到底也属于灵性范畴。在德意志王位争夺中，英诺森三世的立场关乎整个欧洲权力格局。他通过《德意志的审议》为自己的干预权做了详尽论证，最初支持奥托四世以防止霍亨斯陶芬同时控制德意志和西西里形成对教宗国的战略包围。同时，英诺森策划了第四次十字军（虽然其方向偏离至君士坦丁堡），召开了第四次拉特兰公会议推行大规模教会改革，批准了方济各会和多明我会的建立。教宗党的力量不限于罗马——在德意志北部和莱茵地区，亲教宗诸侯构成实质性军事力量；在意大利北部，伦巴第城市传统上支持教宗以对抗帝国直接统治。英诺森三世的遗产深刻影响了此后数百年的教俗关系。",
+            "en": "Innocent III (r. 1198–1216) brought medieval papal power to its historical zenith. He systematically articulated papal supremacy — claiming that the Pope as Christ's vicar had authority over all matters touching the soul, and that royal legitimacy ultimately belonged to the spiritual sphere. In the German succession dispute, Innocent's stance affected the entire European power balance. Through his Deliberatio he provided detailed justification for papal intervention, initially supporting Otto IV to prevent the Hohenstaufen from controlling both Germany and Sicily, which would strategically encircle the Papal States. Simultaneously, Innocent launched the Fourth Crusade (though it veered toward Constantinople), convened the Fourth Lateran Council for sweeping church reform, and approved the founding of the Franciscan and Dominican orders. The papal party's strength extended beyond Rome — in northern Germany and the Rhineland, pro-papal princes constituted substantial military forces; in northern Italy, Lombard cities traditionally supported the papacy against direct imperial rule. Innocent III's legacy profoundly shaped church-state relations for centuries to come."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "英诺森三世",
+                "en": "Innocent III"
+              },
+              "title": {
+                "zh": "教宗",
+                "en": "Pope"
+              },
+              "role": {
+                "zh": "中世纪最强势的教宗，主张教权高于皇权",
+                "en": "Most powerful medieval pope, asserting papal authority over imperial power"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "kingdom_of_scotland",
@@ -48428,6 +49285,520 @@
         "zh": "勃艮第是一个以封建地产、修道院网络和葡萄酒贸易支撑、政治稳健的法兰西大公国。",
         "en": "Burgundy was a politically stable major French duchy sustained by feudal estates, monastic networks, and wine trade."
       }
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-seed-crusades-000",
+      "timestamp": {
+        "year": 1200,
+        "month": 1
+      },
+      "title": {
+        "zh": "第四次十字军东征筹备",
+        "en": "Fourth Crusade Preparation"
+      },
+      "description": {
+        "zh": "教皇英诺森三世号召发动第四次十字军东征，法兰西和佛兰德斯的骑士响应号召，但因无力支付威尼斯的船费而被迫改变目标。这场东征最终将偏离圣地，转向君士坦丁堡。",
+        "en": "Pope Innocent III called for the Fourth Crusade. Knights from France and Flanders answered the call, but their inability to pay Venice for transport forced a change of target. The crusade would ultimately deviate from the Holy Land toward Constantinople."
+      },
+      "affectedRegions": [
+        "kingdom_of_france",
+        "venice",
+        "papal_states"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-001",
+      "timestamp": {
+        "year": 1202,
+        "month": 11
+      },
+      "title": {
+        "zh": "十字军攻陷扎拉城",
+        "en": "Sack of Zara by Crusaders"
+      },
+      "description": {
+        "zh": "第四次十字军在威尼斯的操纵下攻陷了匈牙利治下的天主教城市扎拉（今克罗地亚扎达尔），以抵偿船费。这是十字军首次攻击基督教城市，教皇随即对威尼斯处以绝罚。",
+        "en": "Manipulated by Venice, the Fourth Crusade sacked the Hungarian Catholic city of Zara (modern Zadar, Croatia) to offset transport debts. It was the first time Crusaders attacked a Christian city; the Pope promptly excommunicated the Venetians."
+      },
+      "affectedRegions": [
+        "venice",
+        "kingdom_of_hungary",
+        "croatia_1200"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-002",
+      "timestamp": {
+        "year": 1204,
+        "month": 4
+      },
+      "title": {
+        "zh": "十字军洗劫君士坦丁堡",
+        "en": "Sack of Constantinople"
+      },
+      "description": {
+        "zh": "第四次十字军攻破并洗劫了拜占庭帝国首都君士坦丁堡，大量珍贵文物和财富被掠夺。十字军在废墟上建立了拉丁帝国，拜占庭帝国遭受致命打击，东西方基督教会的裂痕从此不可弥合。",
+        "en": "The Fourth Crusade breached and sacked the Byzantine capital of Constantinople, looting vast quantities of treasures and artifacts. The Crusaders established the Latin Empire on the ruins, dealing a fatal blow to Byzantium and making the East-West Christian schism irreparable."
+      },
+      "affectedRegions": [
+        "byzantine_empire",
+        "venice",
+        "kingdom_of_france"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-003",
+      "timestamp": {
+        "year": 1206,
+        "month": 1
+      },
+      "title": {
+        "zh": "铁木真统一蒙古诸部",
+        "en": "Temüjin Unifies the Mongol Tribes"
+      },
+      "description": {
+        "zh": "铁木真在忽里台大会上被推举为成吉思汗，统一了蒙古草原上的所有游牧部落。这标志着蒙古帝国的诞生，一个将改变欧亚大陆面貌的庞大征服机器就此启动。",
+        "en": "Temüjin was proclaimed Genghis Khan at a kurultai, unifying all nomadic tribes of the Mongolian steppe. This marked the birth of the Mongol Empire — a vast conquering machine that would reshape the face of Eurasia."
+      },
+      "affectedRegions": [
+        "mongol_steppe"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-004",
+      "timestamp": {
+        "year": 1209,
+        "month": 7
+      },
+      "title": {
+        "zh": "阿尔比派十字军",
+        "en": "Albigensian Crusade"
+      },
+      "description": {
+        "zh": "教皇英诺森三世宣布对法国南部的卡特里派异端发动十字军。北方法兰西贵族率军南下，对朗格多克地区的卡特里派和保护他们的领主展开长达二十年的血腥讨伐。",
+        "en": "Pope Innocent III declared a crusade against the Cathar heresy in southern France. Northern French nobles led armies southward, launching a twenty-year bloody campaign against the Cathars in Languedoc and the lords who sheltered them."
+      },
+      "affectedRegions": [
+        "kingdom_of_france",
+        "toulouse_1200",
+        "papal_states"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-005",
+      "timestamp": {
+        "year": 1211,
+        "month": 1
+      },
+      "title": {
+        "zh": "蒙古入侵西夏",
+        "en": "Mongol Invasion of Western Xia"
+      },
+      "description": {
+        "zh": "成吉思汗率军攻入西夏，围攻其首都中兴府。西夏被迫求和并向蒙古称臣纳贡，成为蒙古帝国扩张的第一个重大牺牲品。",
+        "en": "Genghis Khan led his forces into Western Xia, besieging its capital Zhongxingfu. Western Xia was forced to sue for peace and submit as a tribute state to the Mongols, becoming the first major victim of Mongol imperial expansion."
+      },
+      "affectedRegions": [
+        "western_xia",
+        "mongol_steppe"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-006",
+      "timestamp": {
+        "year": 1215,
+        "month": 6
+      },
+      "title": {
+        "zh": "《大宪章》签署",
+        "en": "Magna Carta Signed"
+      },
+      "description": {
+        "zh": "英格兰国王约翰在贵族叛乱的压力下，被迫在兰尼米德签署《大宪章》，承认贵族的权利并限制王权。这份文件成为英国宪政和西方法治传统的基石。",
+        "en": "Under pressure from a baronial revolt, King John of England was forced to sign the Magna Carta at Runnymede, acknowledging noble rights and limiting royal authority. This document became the cornerstone of English constitutionalism and the Western rule of law tradition."
+      },
+      "affectedRegions": [
+        "kingdom_of_england"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-007",
+      "timestamp": {
+        "year": 1215,
+        "month": 11
+      },
+      "title": {
+        "zh": "第四次拉特朗公会议",
+        "en": "Fourth Lateran Council"
+      },
+      "description": {
+        "zh": "教皇英诺森三世在罗马召开第四次拉特朗公会议，这是中世纪最重要的教会会议之一。会议制定了圣体变质论教义，规定每年忏悔和领圣餐的义务，并推动了新的十字军东征计划。",
+        "en": "Pope Innocent III convened the Fourth Lateran Council in Rome, one of the most important ecclesiastical councils of the Middle Ages. It defined the doctrine of transubstantiation, mandated annual confession and communion, and promoted plans for a new crusade."
+      },
+      "affectedRegions": [
+        "papal_states",
+        "kingdom_of_france",
+        "holy_roman_empire",
+        "kingdom_of_england"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-008",
+      "timestamp": {
+        "year": 1219,
+        "month": 1
+      },
+      "title": {
+        "zh": "蒙古西征花剌子模",
+        "en": "Mongol Invasion of Khwarazm"
+      },
+      "description": {
+        "zh": "成吉思汗因花剌子模沙杀害蒙古商队和使臣，亲率大军西征。蒙古军队以摧枯拉朽之势攻陷布哈拉、撒马尔罕等中亚名城，花剌子模帝国在一年内土崩瓦解。",
+        "en": "Genghis Khan personally led a massive westward campaign against Khwarazm after the Shah executed Mongol merchants and envoys. Mongol forces swept through Central Asia, capturing Bukhara, Samarkand, and other great cities. The Khwarazmian Empire collapsed within a year."
+      },
+      "affectedRegions": [
+        "mongol_steppe",
+        "khwarazmian_empire"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-009",
+      "timestamp": {
+        "year": 1200,
+        "month": 3
+      },
+      "title": {
+        "zh": "南宋理学兴盛",
+        "en": "Rise of Neo-Confucianism in Southern Song"
+      },
+      "description": {
+        "zh": "朱熹的理学思想在南宋日益获得官方认可，其著作逐渐成为科举考试的核心教材。理学将儒学与形而上学相结合，深刻影响了此后数百年东亚的思想和政治秩序。",
+        "en": "Zhu Xi's Neo-Confucian philosophy gained increasing official recognition in the Southern Song. His works gradually became the core curriculum for civil service examinations, profoundly shaping East Asian thought and political order for centuries."
+      },
+      "affectedRegions": [
+        "southern_song"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-010",
+      "timestamp": {
+        "year": 1202,
+        "month": 1
+      },
+      "title": {
+        "zh": "古尔王朝入侵北印度",
+        "en": "Ghurid Expansion into Northern India"
+      },
+      "description": {
+        "zh": "古尔王朝的穆罕默德·古尔及其将领库特布丁·艾巴克持续扩张在北印度的控制，攻占多个拉杰普特王国的领地。这为此后德里苏丹国的建立奠定了基础。",
+        "en": "Muhammad of Ghur and his general Qutb al-Din Aibak continued expanding Ghurid control in northern India, conquering territories of multiple Rajput kingdoms. This laid the foundation for the later establishment of the Delhi Sultanate."
+      },
+      "affectedRegions": [
+        "ghurid_sultanate",
+        "rajput_1200"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-011",
+      "timestamp": {
+        "year": 1206,
+        "month": 6
+      },
+      "title": {
+        "zh": "德里苏丹国建立",
+        "en": "Establishment of the Delhi Sultanate"
+      },
+      "description": {
+        "zh": "古尔王朝统治者穆罕默德·古尔遇刺后，其奴隶将军库特布丁·艾巴克在德里自立为苏丹，建立了奴隶王朝（马穆鲁克王朝）。德里苏丹国成为南亚次大陆首个持久的穆斯林政权。",
+        "en": "After the assassination of the Ghurid ruler Muhammad of Ghur, his slave-general Qutb al-Din Aibak proclaimed himself Sultan at Delhi, founding the Slave Dynasty (Mamluk Dynasty). The Delhi Sultanate became the first enduring Muslim polity on the Indian subcontinent."
+      },
+      "affectedRegions": [
+        "ghurid_sultanate",
+        "rajput_1200"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-012",
+      "timestamp": {
+        "year": 1204,
+        "month": 1
+      },
+      "title": {
+        "zh": "高棉帝国鼎盛时期",
+        "en": "Khmer Empire at Its Zenith"
+      },
+      "description": {
+        "zh": "高棉帝国在阇耶跋摩七世统治下达到极盛，修建了吴哥城（大吴哥）和巴戎寺等宏伟建筑，并将佛教确立为国教。高棉的势力范围覆盖了现今东南亚大陆的大部分地区。",
+        "en": "The Khmer Empire reached its zenith under Jayavarman VII, who built the magnificent Angkor Thom and Bayon Temple and established Buddhism as the state religion. Khmer influence extended across much of mainland Southeast Asia."
+      },
+      "affectedRegions": [
+        "khmer_empire",
+        "champa"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-013",
+      "timestamp": {
+        "year": 1212,
+        "month": 7
+      },
+      "title": {
+        "zh": "纳瓦斯德托洛萨战役",
+        "en": "Battle of Las Navas de Tolosa"
+      },
+      "description": {
+        "zh": "卡斯蒂利亚、阿拉贡和纳瓦拉联军在安达卢西亚大败穆瓦希德军队。这是伊比利亚半岛收复失地运动的关键转折点，穆斯林势力在半岛的统治从此不可逆转地衰落。",
+        "en": "Combined forces of Castile, Aragon, and Navarre decisively defeated the Almohad army in Andalusia. This was the pivotal turning point of the Reconquista, after which Muslim power on the Iberian Peninsula entered irreversible decline."
+      },
+      "affectedRegions": [
+        "almohad_caliphate",
+        "navarre_1200",
+        "leon_1200"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-014",
+      "timestamp": {
+        "year": 1200,
+        "month": 6
+      },
+      "title": {
+        "zh": "威尼斯海上贸易霸权",
+        "en": "Venetian Maritime Trade Supremacy"
+      },
+      "description": {
+        "zh": "威尼斯共和国凭借其庞大的商船队和遍布地中海的贸易站网络，牢牢掌控着东西方贸易的咽喉。香料、丝绸和奢侈品经威尼斯商人之手流入欧洲，为这座城邦积累了巨大财富。",
+        "en": "The Republic of Venice, with its vast merchant fleet and network of trading posts across the Mediterranean, maintained firm control over East-West trade routes. Spices, silk, and luxury goods flowed into Europe through Venetian merchants, accumulating enormous wealth for the city-state."
+      },
+      "affectedRegions": [
+        "venice",
+        "byzantine_empire",
+        "ayyubid_sultanate_egypt"
+      ],
+      "category": "trade",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-015",
+      "timestamp": {
+        "year": 1200,
+        "month": 2
+      },
+      "title": {
+        "zh": "阿尤布王朝控制埃及和叙利亚",
+        "en": "Ayyubid Dynasty Controls Egypt and Syria"
+      },
+      "description": {
+        "zh": "萨拉丁建立的阿尤布王朝在其去世后由其继承者继续统治，控制着从埃及到叙利亚的广大地区。王朝在与十字军的长期对峙中保持了伊斯兰世界的核心防线。",
+        "en": "The Ayyubid dynasty founded by Saladin continued under his successors, controlling vast territories from Egypt to Syria. The dynasty maintained the core defense line of the Islamic world in its prolonged confrontation with the Crusaders."
+      },
+      "affectedRegions": [
+        "ayyubid_sultanate_egypt",
+        "kingdom_of_jerusalem"
+      ],
+      "category": "dynasty",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-016",
+      "timestamp": {
+        "year": 1200,
+        "month": 8
+      },
+      "title": {
+        "zh": "金宋对峙与淮河防线",
+        "en": "Jin-Song Confrontation Along the Huai River"
+      },
+      "description": {
+        "zh": "南宋与金朝沿淮河一线长期对峙，双方维持着脆弱的和平。南宋依托水军优势和江淮防线抵御金军南下，同时通过榷场进行边境贸易。",
+        "en": "The Southern Song and Jin dynasties maintained a prolonged confrontation along the Huai River, sustaining a fragile peace. The Southern Song relied on naval superiority and the Jianghuai defense line to resist Jin advances while conducting border trade through regulated markets."
+      },
+      "affectedRegions": [
+        "southern_song",
+        "jin_dynasty"
+      ],
+      "category": "diplomacy",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-017",
+      "timestamp": {
+        "year": 1210,
+        "month": 1
+      },
+      "title": {
+        "zh": "蒙古征服金朝北疆",
+        "en": "Mongol Campaigns Against Jin Northern Frontier"
+      },
+      "description": {
+        "zh": "成吉思汗开始对金朝发动大规模军事行动，蒙古骑兵突破长城防线，攻入金朝北方领土。金朝被迫将军事重心从淮河前线转向北方防御。",
+        "en": "Genghis Khan launched large-scale military campaigns against the Jin dynasty. Mongol cavalry breached the Great Wall defenses and invaded Jin's northern territories, forcing the Jin to shift their military focus from the Huai River front to northern defense."
+      },
+      "affectedRegions": [
+        "mongol_steppe",
+        "jin_dynasty"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-018",
+      "timestamp": {
+        "year": 1200,
+        "month": 5
+      },
+      "title": {
+        "zh": "大学与经院哲学兴起",
+        "en": "Rise of Universities and Scholasticism"
+      },
+      "description": {
+        "zh": "巴黎大学、博洛尼亚大学和牛津大学在这一时期蓬勃发展，经院哲学成为欧洲知识界的主流思潮。亚里士多德的著作经阿拉伯学者译介传入欧洲，引发了一场深刻的思想革命。",
+        "en": "The Universities of Paris, Bologna, and Oxford flourished during this period, with Scholasticism becoming the dominant intellectual movement in Europe. Aristotle's works, translated through Arab scholars, entered Europe and triggered a profound intellectual revolution."
+      },
+      "affectedRegions": [
+        "kingdom_of_france",
+        "kingdom_of_england",
+        "papal_states"
+      ],
+      "category": "invention",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-019",
+      "timestamp": {
+        "year": 1203,
+        "month": 1
+      },
+      "title": {
+        "zh": "朱罗王朝海上扩张",
+        "en": "Chola Maritime Expansion"
+      },
+      "description": {
+        "zh": "朱罗王朝继续维持其在印度洋上的海上霸权，与东南亚的三佛齐和中国的宋朝保持着活跃的贸易联系。朱罗的海军力量使其成为印度洋贸易网络中的关键节点。",
+        "en": "The Chola dynasty continued to maintain its maritime supremacy in the Indian Ocean, sustaining active trade links with Srivijaya in Southeast Asia and the Song dynasty in China. Chola naval power made it a key node in the Indian Ocean trade network."
+      },
+      "affectedRegions": [
+        "chola_empire",
+        "srivijaya",
+        "southern_song"
+      ],
+      "category": "trade",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-020",
+      "timestamp": {
+        "year": 1200,
+        "month": 4
+      },
+      "title": {
+        "zh": "大津巴布韦城邦兴起",
+        "en": "Rise of Great Zimbabwe"
+      },
+      "description": {
+        "zh": "大津巴布韦作为南部非洲最重要的城邦国家持续发展，其巨石建筑群规模不断扩大。大津巴布韦控制着金矿和象牙贸易，通过斯瓦希里海岸与印度洋贸易网络相连。",
+        "en": "Great Zimbabwe continued to develop as the most important city-state in Southern Africa, with its massive stone architecture complex expanding in scale. It controlled gold and ivory trade, connected to the Indian Ocean trade network through the Swahili coast."
+      },
+      "affectedRegions": [
+        "great_zimbabwe"
+      ],
+      "category": "trade",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-021",
+      "timestamp": {
+        "year": 1217,
+        "month": 1
+      },
+      "title": {
+        "zh": "第五次十字军东征",
+        "en": "Fifth Crusade Launched"
+      },
+      "description": {
+        "zh": "在教皇霍诺留三世的号召下，匈牙利国王安德拉斯二世率先出发，随后奥地利公爵利奥波德六世等欧洲贵族加入，十字军将进攻目标定为埃及的达米埃塔，试图通过控制尼罗河三角洲来夺回耶路撒冷。",
+        "en": "At the call of Pope Honorius III, King Andrew II of Hungary set out first, followed by Duke Leopold VI of Austria and other European nobles. The Crusaders targeted Damietta in Egypt, attempting to recapture Jerusalem by controlling the Nile Delta."
+      },
+      "affectedRegions": [
+        "kingdom_of_hungary",
+        "ayyubid_sultanate_egypt",
+        "kingdom_of_jerusalem",
+        "papal_states"
+      ],
+      "category": "war",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-022",
+      "timestamp": {
+        "year": 1200,
+        "month": 9
+      },
+      "title": {
+        "zh": "蒲甘王朝的佛教建筑高峰",
+        "en": "Pagan Dynasty's Buddhist Architecture Flourishes"
+      },
+      "description": {
+        "zh": "蒲甘王朝在缅甸中部大规模修建佛塔和寺院，形成了蔚为壮观的蒲甘佛塔群。上座部佛教在蒲甘王朝的推动下深深扎根于缅甸社会。",
+        "en": "The Pagan dynasty undertook massive construction of pagodas and temples in central Burma, creating the spectacular Pagan temple complex. Theravada Buddhism took deep root in Burmese society under Pagan royal patronage."
+      },
+      "affectedRegions": [
+        "pagan_kingdom"
+      ],
+      "category": "religion",
+      "status": "pending"
+    },
+    {
+      "id": "evt-seed-crusades-023",
+      "timestamp": {
+        "year": 1214,
+        "month": 7
+      },
+      "title": {
+        "zh": "布汶战役",
+        "en": "Battle of Bouvines"
+      },
+      "description": {
+        "zh": "法兰西国王腓力二世在布汶战役中决定性地击败了英格兰国王约翰与神圣罗马帝国皇帝奥托四世的联军。此战奠定了法兰西王权的崛起，同时削弱了英格兰和帝国的权威。",
+        "en": "King Philip II of France decisively defeated the combined forces of English King John and Holy Roman Emperor Otto IV at the Battle of Bouvines. This battle cemented the rise of French royal power while weakening English and Imperial authority."
+      },
+      "affectedRegions": [
+        "kingdom_of_france",
+        "kingdom_of_england",
+        "holy_roman_empire"
+      ],
+      "category": "war",
+      "status": "pending"
     }
   ]
 }

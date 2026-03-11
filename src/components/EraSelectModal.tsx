@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useLocale } from "@/lib/i18n";
 import { ERA_PRESETS, type EraPreset } from "@/data/era-presets";
+import { useWorldStore } from "@/store/useWorldStore";
 
 interface Props {
   onConfirm: (eraId: string) => void;
@@ -18,6 +19,7 @@ function formatYear(year: number, locale: "zh" | "en"): string {
 
 export default function EraSelectModal({ onConfirm, onCancel }: Props) {
   const { locale, t, localized } = useLocale();
+  const currentEraId = useWorldStore((s) => s.currentEraId);
   const [selectedEra, setSelectedEra] = useState<EraPreset | null>(null);
   const [confirming, setConfirming] = useState(false);
   const [prebuiltSet, setPrebuiltSet] = useState<Set<string>>(new Set());
@@ -77,35 +79,49 @@ export default function EraSelectModal({ onConfirm, onCancel }: Props) {
             {/* Era grid */}
             <div className="flex-1 overflow-y-auto px-5 py-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {ERA_PRESETS.map((era) => (
-                  <button
-                    key={era.id}
-                    onClick={() => handleEraClick(era)}
-                    className="group text-left px-4 py-3 rounded-lg border border-border-subtle transition-all hover:border-border-active hover:bg-bg-tertiary/50 cursor-pointer"
-                    style={{
-                      borderLeftWidth: "3px",
-                      borderLeftColor: era.color,
-                    }}
-                  >
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-lg">{era.icon}</span>
-                      <span className="text-sm font-semibold text-text-primary group-hover:text-accent-gold transition-colors">
-                        {localized(era.name)}
-                      </span>
-                      {prebuiltSet.has(era.id) && (
-                        <span className="text-xs px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-400 border border-emerald-700/40 font-mono">
-                          {locale === "zh" ? "即时" : "instant"}
+                {[...ERA_PRESETS].reverse().map((era) => {
+                  const isCurrent = era.id === currentEraId;
+                  return (
+                    <button
+                      key={era.id}
+                      onClick={() => handleEraClick(era)}
+                      className={`group text-left px-4 py-3 rounded-lg border transition-all hover:border-border-active hover:bg-bg-tertiary/50 cursor-pointer ${isCurrent
+                          ? "border-accent-gold/60 bg-accent-gold/8 ring-1 ring-accent-gold/30"
+                          : "border-border-subtle"
+                        }`}
+                      style={{
+                        borderLeftWidth: "3px",
+                        borderLeftColor: era.color,
+                      }}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-lg">{era.icon}</span>
+                        <span className={`text-sm font-semibold transition-colors ${isCurrent
+                            ? "text-accent-gold"
+                            : "text-text-primary group-hover:text-accent-gold"
+                          }`}>
+                          {localized(era.name)}
                         </span>
-                      )}
-                      <span className="text-xs text-text-muted ml-auto font-mono">
-                        {formatYear(era.year, locale)}
-                      </span>
-                    </div>
-                    <p className="text-xs text-text-secondary leading-relaxed line-clamp-2">
-                      {localized(era.description)}
-                    </p>
-                  </button>
-                ))}
+                        {isCurrent && (
+                          <span className="text-xs px-1.5 py-0.5 rounded bg-accent-gold/15 text-accent-gold border border-accent-gold/30 font-mono">
+                            {locale === "zh" ? "当前" : "current"}
+                          </span>
+                        )}
+                        {prebuiltSet.has(era.id) && (
+                          <span className="text-xs px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-400 border border-emerald-700/40 font-mono">
+                            {locale === "zh" ? "即时" : "instant"}
+                          </span>
+                        )}
+                        <span className="text-xs text-text-muted ml-auto font-mono">
+                          {formatYear(era.year, locale)}
+                        </span>
+                      </div>
+                      <p className="text-xs text-text-secondary leading-relaxed line-clamp-2">
+                        {localized(era.description)}
+                      </p>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 

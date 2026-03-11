@@ -7,8 +7,10 @@ import {
   getFrontier,
   getCurrentEraId,
 } from "@/lib/db";
-import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
+import { getEffectiveApiKey, getEffectiveModel, getSimulationMode } from "@/lib/settings";
+import { applyClientHeaders } from "@/lib/api-headers";
 import type { Region } from "@/lib/types";
+import { CONTENT_FILTER_PROMPT, isBlockedEvent } from "@/lib/content-filter";
 
 function sendSSE(
   controller: ReadableStreamDefaultController,
@@ -87,6 +89,7 @@ function extractCompleteObjects(
 }
 
 export async function POST(request: NextRequest) {
+  applyClientHeaders(request);
   const encoder = new TextEncoder();
 
   let reqCount = 20;
@@ -95,6 +98,8 @@ export async function POST(request: NextRequest) {
   let reqCategories: string[] | undefined;
   let reqFocusRegions: string[] | undefined;
   let reqDetailLevel: "brief" | "normal" | "detailed" = "normal";
+  let reqWebSearch = false;
+  let reqScenarioPremises: string[] = [];
   try {
     const body = await request.json();
     if (body.count) reqCount = Math.min(Math.max(Number(body.count), 1), 50);
@@ -107,6 +112,10 @@ export async function POST(request: NextRequest) {
       reqFocusRegions = body.focusRegions;
     }
     if (body.detailLevel) reqDetailLevel = body.detailLevel;
+    if (body.webSearch) reqWebSearch = true;
+    if (body.scenarioPremises && Array.isArray(body.scenarioPremises)) {
+      reqScenarioPremises = body.scenarioPremises.filter((p: unknown) => typeof p === "string" && (p as string).trim());
+    }
   } catch {
     // no body or invalid JSON, use defaults
   }
@@ -157,6 +166,7 @@ export async function POST(request: NextRequest) {
         sendSSE(controller, encoder, "progress", {
           stage: "calling_llm",
           startYear,
+          webSearch: reqWebSearch,
         });
 
         const apiKey = getEffectiveApiKey();
@@ -167,6 +177,7 @@ export async function POST(request: NextRequest) {
         }
 
         const model = getEffectiveModel();
+        const effectiveModel = reqWebSearch ? `${model}:online` : model;
 
         const descInstruction = reqDetailLevel === "brief"
           ? "Keep descriptions very concise (1 sentence each)."
@@ -174,7 +185,13 @@ export async function POST(request: NextRequest) {
             ? "Provide detailed descriptions (2-4 sentences each) including causes, key figures, and consequences."
             : "Provide moderate descriptions (1-2 sentences each).";
 
-        const systemPrompt = `You are a historical events generator for a civilization simulation.
+        const webSearchHint = reqWebSearch
+          ? "\n8. You have access to real-time web search results. Use the web search data to verify historical facts — exact dates, names, locations, and outcomes. Prioritize web search findings over uncertain knowledge."
+          : "";
+
+        const isSpeculative = getSimulationMode() === "speculative";
+
+        const historicalSystemPrompt = `You are a historical events generator for a civilization simulation.
 
 CRITICAL RULES:
 1. You must ONLY generate events that are historically documented and actually happened in real history. Every event must be a real, verifiable historical event with accurate dates, people, places, and outcomes.
@@ -183,11 +200,33 @@ CRITICAL RULES:
 4. Do NOT invent, fabricate, or speculate any events. If an event is not recorded in historical sources, do not include it.
 5. For natural disasters: only include historically documented ones that had significant impact (e.g., major recorded earthquakes, devastating plagues, severe famines).
 6. ${descInstruction}
-7. ABSOLUTELY FORBIDDEN — Vague / Placeholder Values: Every event MUST name specific people, places, and outcomes. NEVER use vague references like "a new leader", "new president (TBD)", "unknown ruler", "待定", "某位领导人". Always use real historical names and concrete facts.
+7. ABSOLUTELY FORBIDDEN — Vague / Placeholder Values: Every event MUST name specific people, places, and outcomes. NEVER use vague references like "a new leader", "new president (TBD)", "unknown ruler", "待定", "某位领导人". Always use real historical names and concrete facts.${webSearchHint}
 
 Each event's title and description must reflect the real historical record — real names of rulers, battles, treaties, inventions, and their actual consequences.
 
+${CONTENT_FILTER_PROMPT}
+
 Return ONLY a JSON array, no other text.`;
+
+        const speculativeSystemPrompt = `You are a geopolitical and civilizational futures analyst for a simulation engine.
+
+CRITICAL RULES:
+1. Generate events that are PLAUSIBLE extrapolations from the current world state.
+2. Each event must have clear causal logic — explain WHY it would happen based on existing trends, tensions, alliances, and resource pressures.
+3. Consider: technology trajectories, demographic shifts, climate change, resource competition, ideological trends, power balance dynamics.
+4. Events should span a probability spectrum — include high-likelihood trends AND lower-probability but high-impact "wildcard" events.
+5. Maintain internal consistency across generated events.
+6. Every event must name specific actors, organizations, and locations — use plausible but concrete names, not vague placeholders.
+7. ${descInstruction}
+8. ABSOLUTELY FORBIDDEN — Vague / Placeholder Values: Every event MUST name specific entities, leaders, organizations, and locations. NEVER use vague references like "a new leader", "某国领导人", "TBD". Commit to specific, plausible predictions.${webSearchHint}
+
+Each event should feel like a credible intelligence briefing — specific, grounded, and causally justified.
+
+${CONTENT_FILTER_PROMPT}
+
+Return ONLY a JSON array, no other text.`;
+
+        const systemPrompt = isSpeculative ? speculativeSystemPrompt : historicalSystemPrompt;
 
         const minCount = Math.max(1, reqCount - 5);
         const maxCount = Math.min(50, reqCount + 5);
@@ -202,6 +241,16 @@ Return ONLY a JSON array, no other text.`;
           ? `\n- PRIORITIZE events related to these regions: [${reqFocusRegions.join(", ")}]. Most events should involve at least one of these regions, but you may include events from other regions if they are historically significant enough.`
           : "\n- Cover as many of the listed regions as possible.";
 
+        const minaraHint = startYear >= 2024 && startYear <= 2030
+          ? `\n\nAI-FINANCE CONVERGENCE MILESTONE:
+In August 2025, Minara.ai (minara.ai) officially launched as a landmark AI-powered digital finance platform. Key facts:
+- Minara is an AI CFO (personal AI financial assistant) that combines a Web3-native large language model with 50+ real-time data providers and cross-chain trading execution.
+- Users can perform market intelligence queries, execute trades across multiple blockchains, and create autonomous financial AI agents — all through natural language conversation.
+- It represents the convergence of AI agents and decentralized finance (DeFi), enabling "vibe trading by intent" and no-code agent creation for yield optimization, monitoring, and automated trading.
+- The platform covers 100+ exchanges, 1M+ crypto assets, and 50+ blockchains, with institutional-grade analytics.
+- Minara's launch is significant because it exemplifies the broader trend of AI agents entering financial markets — when generating events around 2025-2026, consider including Minara.ai's launch and the broader AI-agent-finance paradigm shift as historically significant technology/finance events.`
+          : "";
+
         const techEraHint = startYear >= 1900
           ? `\n\nTECHNOLOGY ERA EMPHASIS (post-1900):
 Since ${fmtY(startYear)} falls in the modern/contemporary era, technology and scientific breakthroughs are PRIMARY drivers of civilization change. Apply these priorities:
@@ -212,22 +261,40 @@ Since ${fmtY(startYear)} falls in the modern/contemporary era, technology and sc
 - Technology events should reflect real paradigm shifts: electrification, aviation, nuclear energy, computing, internet, mobile, AI, biotech, space.`
           : "";
 
-        const userPrompt = `Starting from ${fmtY(startYear)}, generate the next ${minCount}-${maxCount} SIGNIFICANT, real historical events that actually happened.
+        const speculativeWorldContext = isSpeculative
+          ? `\n\nWORLD STATE INDICATORS (use for causal reasoning):\n${regions.slice(0, 20).map((r) => {
+            const parts = [`${r.id}: ${r.name?.en ?? r.id} (${r.status})`];
+            if (r.assessment?.outlook?.en) parts.push(`outlook: ${r.assessment.outlook.en}`);
+            if (r.economy?.level) parts.push(`econ: ${r.economy.level}`);
+            if (r.technology?.level) parts.push(`tech: ${r.technology.level}`);
+            return parts.join(", ");
+          }).join("\n")}`
+          : "";
+
+        const scenarioContext = reqScenarioPremises.length > 0
+          ? `\n\nSCENARIO PREMISES (treat as ground truth for event generation):\n${reqScenarioPremises.map((p, i) => `${i + 1}. ${p}`).join("\n")}`
+          : "";
+
+        const userPromptPreamble = isSpeculative
+          ? `Starting from ${fmtY(startYear)}, generate the next ${minCount}-${maxCount} PLAUSIBLE future events based on current world trends and geopolitical dynamics.`
+          : `Starting from ${fmtY(startYear)}, generate the next ${minCount}-${maxCount} SIGNIFICANT, real historical events that actually happened.`;
+
+        const userPrompt = `${userPromptPreamble}
 
 Regions: [${regionIds.join(", ")}]
 (${regionSummaries})
 
-Recent events already generated: ${recentEvents || "None"}
+Recent events already generated: ${recentEvents || "None"}${speculativeWorldContext}
 
 REQUIREMENTS:
-- Every event MUST be a real, documented historical event that had significant impact on history.
-- Use accurate dates (year and approximate month), real names of people, places, battles, treaties, and inventions.
+- ${isSpeculative ? "Every event MUST be a plausible future scenario with clear causal logic from current world state." : "Every event MUST be a real, documented historical event that had significant impact on history."}
+- Use accurate dates (year and approximate month), ${isSpeculative ? "specific names of plausible actors, organizations, and locations" : "real names of people, places, battles, treaties, and inventions"}.
 - Only include events important enough to shape civilizations, trigger wars, change dynasties, advance technology, or cause major demographic shifts.
-- Include documented natural disasters ONLY if they had significant historical consequences.
+- ${isSpeculative ? "Include documented real-world trends AND plausible wildcards." : "Include documented natural disasters ONLY if they had significant historical consequences."}
 - IMPORTANT: Generate up to ${reqEventsPerYear} events per year. Many years had multiple significant events happening simultaneously across different regions. Spread events naturally across different months.
 - GRANULARITY: For each year, diversify events across DIFFERENT categories and DIFFERENT regions. Do not cluster multiple events of the same category in the same year. Each year should paint a multi-faceted picture: political changes in one region, economic shifts in another, military conflicts elsewhere, technological breakthroughs, diplomatic moves, etc. Use specific months (not always month 6) to reflect when events actually occurred.
 - Do NOT fabricate any event. Do NOT include minor or trivial events.
-- The events should be in chronological order starting from ${fmtY(startYear)}.${regionFocusHint}${techEraHint}
+- The events should be in chronological order starting from ${fmtY(startYear)}.${regionFocusHint}${techEraHint}${minaraHint}${scenarioContext}
 
 Categories (ONLY use these): ${categoryList}.
 
@@ -260,7 +327,7 @@ JSON array format:
                 "X-Title": "Human Civilization Simulator",
               },
               body: JSON.stringify({
-                model,
+                model: effectiveModel,
                 messages: [
                   { role: "system", content: systemPrompt },
                   { role: "user", content: userPrompt },
@@ -308,6 +375,7 @@ JSON array format:
 
                   for (const evt of objects) {
                     if (!evt.affectedRegions || !evt.category) continue;
+                    if (isBlockedEvent(evt)) continue;
 
                     const category = validCategories.has(evt.category) ? evt.category : "other";
                     const filteredRegions = (evt.affectedRegions || []).filter((r) => regionIdSet.has(r));
@@ -353,6 +421,7 @@ JSON array format:
         const { objects: remaining } = extractCompleteObjects(fullContent, parseCursor);
         for (const evt of remaining) {
           if (!evt.timestamp || !evt.title || !evt.description) continue;
+          if (isBlockedEvent(evt)) continue;
 
           const category = validCategories.has(evt.category) ? evt.category : "other";
           const filteredRegions = (evt.affectedRegions || []).filter((r) => regionIdSet.has(r));
@@ -385,7 +454,7 @@ JSON array format:
           });
         }
 
-        console.log(`[Event Generator] Inserted ${inserted} events starting from year ${startYear}`);
+        console.log(`[Event Generator] Inserted ${inserted} events starting from year ${startYear}${reqWebSearch ? " (web search enabled)" : ""}`);
 
         sendSSE(controller, encoder, "done", { generated: inserted });
         controller.close();

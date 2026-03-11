@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, lazy, Suspense } from "react";
 import { createPortal } from "react-dom";
-import ReactMarkdown from "react-markdown";
+import { getLlmHeaders } from "@/lib/client-headers";
+
+const ReactMarkdown = lazy(() => import("react-markdown"));
 
 const explainCache = new Map<string, string>();
 
@@ -95,7 +97,7 @@ export default function ExplainButton({
     try {
       const resp = await fetch("/api/explain", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getLlmHeaders() },
         body: JSON.stringify({
           regionName,
           regionId,
@@ -184,7 +186,9 @@ export default function ExplainButton({
             <div className="explain-tooltip-arrow" />
             <div className="explain-tooltip-body explain-prose">
               {explanation ? (
-                <ReactMarkdown>{explanation}</ReactMarkdown>
+                <Suspense fallback={<span className="text-text-muted">{explanation}</span>}>
+                  <ReactMarkdown>{explanation}</ReactMarkdown>
+                </Suspense>
               ) : (
                 <span className="text-text-muted animate-pulse">
                   {locale === "zh" ? "正在分析…" : "Analyzing…"}

@@ -1,19 +1,23 @@
 "use client";
 
 import type { Region } from "@/lib/types";
+import { normalizeStatus } from "@/lib/types";
 import { useLocale } from "@/lib/i18n";
 import StatBar from "./StatBar";
 
 const STATUS_COLORS: Record<string, string> = {
-  thriving: "#4ade80",
-  stable: "#60a5fa",
-  declining: "#fbbf24",
-  conflict: "#f87171",
-  collapsed: "#9ca3af",
+  thriving: "#22c55e",
+  rising: "#10b981",
+  stable: "#d97706",
+  declining: "#eab308",
+  conflict: "#ef4444",
+  collapsed: "#8b5cf6",
 };
 
 export default function HeaderSection({ region }: { region: Region }) {
   const { t, localized, tWithFallback } = useLocale();
+  const status = normalizeStatus(region.status);
+  const civ = region.civilization;
 
   return (
     <div className="space-y-3">
@@ -22,53 +26,69 @@ export default function HeaderSection({ region }: { region: Region }) {
           <h2 className="font-cinzel text-lg font-bold text-text-primary">
             {localized(region.name)}
           </h2>
-          <div className="text-xs text-text-secondary">
-            {localized(region.civilization.name)}
-          </div>
+          {civ?.name && (
+            <div className="text-xs text-text-secondary">
+              {localized(civ.name)}
+            </div>
+          )}
         </div>
         <span
           className="text-xs px-2 py-0.5 rounded-full font-semibold capitalize shrink-0 ml-2 text-white"
-          style={{ background: STATUS_COLORS[region.status] ?? "#888" }}
+          style={{ background: STATUS_COLORS[status] ?? "#888" }}
         >
-          {t(`status.${region.status}`)}
+          {t(`status.${status}`)}
         </span>
       </div>
 
-      {/* Key info */}
-      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-text-secondary">
-        {region.civilization.ruler && (
+      {civ && (
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-text-secondary">
+          {civ.ruler && (
+            <div>
+              <span className="text-text-muted">{t("info.ruler")}:</span>{" "}
+              {localized(civ.ruler)}
+              {civ.rulerTitle &&
+                ` · ${localized(civ.rulerTitle)}`}
+            </div>
+          )}
+          {civ.capital && (
+            <div>
+              <span className="text-text-muted">{t("info.capital")}:</span>{" "}
+              {localized(civ.capital)}
+            </div>
+          )}
+          {civ.dynasty && (
+            <div>
+              <span className="text-text-muted">{t("info.dynasty")}:</span>{" "}
+              {localized(civ.dynasty)}
+            </div>
+          )}
           <div>
-            <span className="text-text-muted">{t("info.ruler")}:</span>{" "}
-            {localized(region.civilization.ruler)}
-            {region.civilization.rulerTitle &&
-              ` · ${localized(region.civilization.rulerTitle)}`}
+            <span className="text-text-muted">{t("info.government")}:</span>{" "}
+            {tWithFallback("govtForm", civ.governmentForm)}
           </div>
-        )}
-        {region.civilization.capital && (
           <div>
-            <span className="text-text-muted">{t("info.capital")}:</span>{" "}
-            {localized(region.civilization.capital)}
+            <span className="text-text-muted">{t("info.population")}:</span>{" "}
+            {region.demographics.population.toLocaleString()}
           </div>
-        )}
-        {region.civilization.dynasty && (
           <div>
-            <span className="text-text-muted">{t("info.dynasty")}:</span>{" "}
-            {localized(region.civilization.dynasty)}
+            <span className="text-text-muted">{t("tech.era")}:</span>{" "}
+            {localized(region.technology.era)}
           </div>
-        )}
-        <div>
-          <span className="text-text-muted">{t("info.government")}:</span>{" "}
-          {tWithFallback("govtForm", region.civilization.governmentForm)}
         </div>
-        <div>
-          <span className="text-text-muted">{t("info.population")}:</span>{" "}
-          {region.demographics.population.toLocaleString()}
+      )}
+
+      {!civ && (
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-text-secondary">
+          <div>
+            <span className="text-text-muted">{t("info.population")}:</span>{" "}
+            {region.demographics.population.toLocaleString()}
+          </div>
+          <div>
+            <span className="text-text-muted">{t("tech.era")}:</span>{" "}
+            {localized(region.technology.era)}
+          </div>
         </div>
-        <div>
-          <span className="text-text-muted">{t("tech.era")}:</span>{" "}
-          {localized(region.technology.era)}
-        </div>
-      </div>
+      )}
 
       {/* Level bars */}
       <div className="space-y-1.5">

@@ -166,7 +166,7 @@ Return ONLY a valid JSON object (no markdown, no explanation, no whitespace form
         "weaknesses": { "zh": "...", "en": "..." },
         "outlook": { "zh": "...", "en": "..." }
       },
-      "status": "thriving|stable|declining|conflict|collapsed",
+      "status": "thriving|rising|stable|declining|conflict|collapsed",
       "description": { "zh": "...", "en": "..." }
     }
   ]

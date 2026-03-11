@@ -1,18 +1,30 @@
 import type { AgentContext, AgentMessage } from "./types";
 import type { TransitionResult } from "../transition";
-import { getRegionFieldSchema } from "../transition";
+import { getRegionFieldSchema, type FieldSchemaMode } from "../transition";
 import { callAgentStreaming, safeParseJSON, type TokenCallback } from "./llm-client";
+import { getSimulationMode } from "../settings";
+import type { CivDecision } from "./civ-agent";
+import { buildMemoryContext } from "./civ-memory";
 
-const FIELD_SCHEMA = getRegionFieldSchema();
+function buildSystemPrompt(base: string, mode: FieldSchemaMode, includeAiSector: boolean): string {
+  return base + getRegionFieldSchema(mode, includeAiSector);
+}
 
-const SYSTEM_DIRECT = `You are a historian for a civilization simulation. Given a civilization's current state and historical events that DIRECTLY affect it, produce a TRANSITION describing how this civilization changes.
+const SYSTEM_DIRECT_BASE = `You are a historian for a civilization simulation. Given a civilization's current state and historical events that DIRECTLY affect it, produce a TRANSITION describing how this civilization changes.
 
 CRITICAL: The events provided are based on real historical records. Your transitions must faithfully reflect what actually happened historically — real consequences, real outcomes, real leadership changes. Do NOT invent outcomes that contradict the historical record.
 
 Do NOT output the full updated state. Output ONLY the CHANGES (transition) as compact JSON.
 
 Output format (compact JSON, no markdown):
-{"era":{"zh":"...","en":"..."},"summary":{"zh":"一句话总结本轮变化","en":"One-sentence summary"},"transitions":[{"regionId":"xxx","description":{"zh":"描述发生了什么（2-3句）","en":"What happened (2-3 sentences)"},"changes":{"field.path":value,...}}]}
+{"era":{"zh":"...","en":"..."},"summary":{"zh":"一句话总结本轮变化","en":"One-sentence summary"},"transitions":[{"regionId":"xxx","description":{"zh":"一句话概括","en":"One sentence"},"changes":{"field.path":value,...}}]}
+
+BREVITY IS CRITICAL:
+- description: 1 sentence per language, max 30 words each. Never write paragraphs.
+- changes: Only include fields with MEANINGFUL changes. Typical: 4-8 fields per region.
+- Do NOT update fields just to rephrase existing values. Only change fields where the VALUE actually differs.
+- Skip assessment/description updates if nothing substantively changed.
+- Prefer number deltas over replacing LocalizedText when possible.
 
 Change value rules:
 - Number fields: use relative delta (e.g. -50000 means subtract 50000 from current). Use "=50000" string for absolute set.
@@ -28,9 +40,8 @@ Rules:
 - Be historically accurate and proportional to the events
 - Apply direct event effects: casualties, territorial changes, economic impact, leadership changes
 - Update diplomacy, assessment, and description to reflect the new reality
-- Keep descriptions concise (1-2 sentences per field)
 - ALL text must be bilingual: {"zh":"...","en":"..."}
-- status must be one of: thriving|stable|declining|conflict|collapsed
+- status must be one of: thriving|rising|stable|declining|conflict|collapsed
 
 ABSOLUTELY FORBIDDEN — Vague / Placeholder Values:
 - NEVER use placeholder text such as "待定", "TBD", "未知", "Unknown", "新当选总统", "New President", "（待定）", "(pending)", "to be determined", or ANY similar vague phrasing in ANY field.
@@ -38,16 +49,21 @@ ABSOLUTELY FORBIDDEN — Vague / Placeholder Values:
 - This is a SIMULATION — when the historical record does not specify an exact outcome, you MUST make a well-reasoned prediction based on the political context, factional dynamics, succession rules, geopolitical pressures, and historical patterns of the civilization. Commit to a specific prediction; never hedge with "pending" or "TBD".
 - Example: Instead of "新当选总统（待定）", write the actual name like "德怀特·艾森豪威尔" / "Dwight D. Eisenhower". Instead of "新政策（制定中）", write "马歇尔计划" / "Marshall Plan".
 
-${FIELD_SCHEMA}`;
+`;
 
-const SYSTEM_INDIRECT = `You are a historian for a civilization simulation. Given a civilization that is INDIRECTLY affected by nearby historical events, produce a TRANSITION describing minor ripple effects.
+const SYSTEM_INDIRECT_BASE = `You are a historian for a civilization simulation. Given a civilization that is INDIRECTLY affected by nearby historical events, produce a TRANSITION describing minor ripple effects.
 
 CRITICAL: The events provided are based on real historical records. Your indirect effects must be historically plausible and consistent with what actually happened in this period. Do NOT invent major events or outcomes that contradict the historical record.
 
 Do NOT output the full updated state. Output ONLY the CHANGES (transition) as compact JSON.
 
 Output format (compact JSON, no markdown):
-{"era":{"zh":"...","en":"..."},"summary":{"zh":"...","en":"..."},"transitions":[{"regionId":"xxx","description":{"zh":"间接影响描述","en":"Indirect impact description"},"changes":{"field.path":value,...}}]}
+{"era":{"zh":"...","en":"..."},"summary":{"zh":"...","en":"..."},"transitions":[{"regionId":"xxx","description":{"zh":"一句话概括间接影响","en":"One sentence indirect impact"},"changes":{"field.path":value,...}}]}
+
+BREVITY IS CRITICAL:
+- description: 1 sentence per language, max 20 words each.
+- changes: Typically 2-5 fields per region. Only include genuinely affected fields.
+- Do NOT update assessment or description unless the indirect effect is significant.
 
 Change value rules:
 - Number fields: use relative delta. Use "=N" string for absolute set.
@@ -61,17 +77,16 @@ Rules:
 - Changes should be MINOR — trade disruptions, diplomatic shifts, small economic ripples
 - Do NOT invent major events for this civilization
 - Only update fields realistically affected by indirect ripple effects
-- Keep the transition small (typically 2-6 field changes)
 - ALL text must be bilingual: {"zh":"...","en":"..."}
-- status must be one of: thriving|stable|declining|conflict|collapsed
+- status must be one of: thriving|rising|stable|declining|conflict|collapsed
 
 ABSOLUTELY FORBIDDEN — Vague / Placeholder Values:
 - NEVER use placeholder text such as "待定", "TBD", "未知", "Unknown", "(pending)", "(to be determined)", or ANY similar vague phrasing.
 - Every field you change MUST have a CONCRETE, SPECIFIC value — real names, real policies, real descriptions. When the historical record is ambiguous, make a well-reasoned prediction based on context. Never hedge.
 
-${FIELD_SCHEMA}`;
+`;
 
-const SYSTEM_INDEPENDENT = `You are a historian for a civilization simulation. You are given MULTIPLE civilizations that are GEOGRAPHICALLY ISOLATED and have NO mutual relationship in this era. Produce a TRANSITION for EACH civilization describing its own independent historical evolution for this time period.
+const SYSTEM_INDEPENDENT_BASE = `You are a historian for a civilization simulation. You are given MULTIPLE civilizations that are GEOGRAPHICALLY ISOLATED and have NO mutual relationship in this era. Produce a TRANSITION for EACH civilization describing its own independent historical evolution for this time period.
 
 CRITICAL RULES:
 1. Each civilization evolves INDEPENDENTLY. Do NOT invent interactions, trade, diplomacy, or influence between these civilizations — they are unrelated to each other.
@@ -82,7 +97,14 @@ CRITICAL RULES:
 Do NOT output the full updated state. Output ONLY the CHANGES (transition) as compact JSON.
 
 Output format (compact JSON, no markdown):
-{"era":{"zh":"...","en":"..."},"summary":{"zh":"...","en":"..."},"transitions":[{"regionId":"xxx","description":{"zh":"本期独立演进","en":"Independent evolution this period"},"changes":{"field.path":value,...}},{"regionId":"yyy","description":{"zh":"...","en":"..."},"changes":{...}}]}
+{"era":{"zh":"...","en":"..."},"summary":{"zh":"...","en":"..."},"transitions":[{"regionId":"xxx","description":{"zh":"一句话","en":"One sentence"},"changes":{"field.path":value,...}}]}
+
+EXTREME BREVITY IS REQUIRED — these are minor background updates:
+- description: 1 short sentence per language, max 15 words each. Example: {"zh":"人口缓慢增长，经济稳定","en":"Slow population growth, stable economy"}
+- changes: 2-4 fields per region MAX. Only population, economy.level, technology.level, and status. Skip everything else unless truly warranted.
+- Do NOT update assessment, description, diplomacy, culture, or government for background evolution.
+- Do NOT write long descriptions or explanations. This is background noise, not narrative.
+- You MUST produce one transition entry for EVERY region listed.
 
 Change value rules:
 - Number fields: use relative delta. Use "=N" string for absolute set.
@@ -94,42 +116,79 @@ Change value rules:
 
 Rules:
 - Each region's transition must reflect ONLY its own internal development
-- Keep the transition small per region (typically 2-5 field changes)
 - ALL text must be bilingual: {"zh":"...","en":"..."}
-- status must be one of: thriving|stable|declining|conflict|collapsed
-- You MUST produce one transition entry for EVERY region listed
+- status must be one of: thriving|rising|stable|declining|conflict|collapsed
 
 ABSOLUTELY FORBIDDEN — Vague / Placeholder Values:
 - NEVER use placeholder text such as "待定", "TBD", "未知", "Unknown", "(pending)", "(to be determined)", or ANY similar vague phrasing.
 - Every field you change MUST have a CONCRETE, SPECIFIC value — real names, real policies, real descriptions. When the outcome is uncertain, make a well-reasoned prediction based on internal dynamics, succession patterns, and historical context. Never hedge.
 
-${FIELD_SCHEMA}`;
+`;
 
 const TECH_ERA_SUPPLEMENT = `
 
-TECHNOLOGY ERA RULES (post-1900):
-Since this is the modern/contemporary era, technology is a PRIMARY driver of civilization change. Apply these amplified rules:
+TECHNOLOGY ERA (post-1900):
+Technology is a PRIMARY driver. For tech-related events:
+1. Cascade tech changes across economy, military, demographics, and diplomacy — not just technology.level.
+2. Tech leaders gain amplified military.level/economy.level; laggards show relative decline.
+3. Post-1900 economic deltas from tech events should be 5-15% GDP scale, not 1-2%.
+4. Always update military.technology for tech events. Nuclear/cyber/AI reshape threats and diplomacy.
+5. assessment.outlook MUST reflect technological standing.
+6. AI-Finance convergence (2025+): AI agents entering financial markets, agent-based digital finance.
+Keep output concise — apply these as field changes, not as narrative.`;
 
-1. **Technology cascading**: Every technology/invention event must cascade across MULTIPLE fields — not just technology.level. Update economy (new industries, GDP growth, trade shifts), military (new weapons, doctrine changes), demographics (urbanization, life expectancy, migration patterns), culture (communication revolution, media, education), and government (surveillance, digital governance, technocratic shifts).
-2. **Technology-driven power shifts**: Technological leadership directly determines geopolitical power. A civilization that leads in a tech wave (industrialization, nuclear, computing, space, AI) should see amplified gains in military.level, economy.level, and diplomatic leverage. Laggards should show relative decline.
-3. **Economic transformation weight**: Technology events should produce LARGER economic deltas than pre-modern events. An industrial revolution or digital transformation reshapes GDP at 5-15% scale, not 1-2%. Update economy.mainIndustries, economy.economicSystem, and economy.gdpDescription to reflect technological paradigm shifts.
-4. **Military-industrial coupling**: Post-1900 military changes are inseparable from technology. Always update military.technology when processing any technology event. Nuclear weapons, aircraft, missiles, cyber capabilities, and AI fundamentally alter military.threats and diplomacy.
-5. **Demographic acceleration**: Technology events (medical advances, agricultural revolution, urbanization) should drive larger demographic changes — life expectancy jumps, urbanization surges, population growth or decline driven by industrial/post-industrial transitions.
-6. **Technology as diplomatic leverage**: Update diplomacy fields to reflect technology-based alliances (NATO tech sharing, semiconductor supply chains, space cooperation), technology embargoes, and technology competition (Space Race, AI race, chip wars).
-7. **Assessment must reflect tech position**: assessment.strengths/weaknesses/outlook MUST mention technological standing. A civilization's future trajectory in the modern era is dominated by its technology position.`;
+const SPECULATIVE_DIRECT_OVERRIDE = `The events provided are SPECULATIVE future scenarios. Your transitions must reflect plausible consequences based on the civilization's current capabilities, resources, geopolitical position, and historical patterns. Apply causal reasoning: how would this civilization realistically respond to these events given its government form, economic structure, military capacity, and cultural values?`;
+
+const SPECULATIVE_INDIRECT_OVERRIDE = `The events provided are SPECULATIVE future scenarios. Your indirect effects must reflect plausible ripple effects extrapolated from the civilization's current state and global trends. Apply causal reasoning while keeping changes minor and realistic.`;
+
+const SPECULATIVE_INDEPENDENT_OVERRIDE = `The events represent SPECULATIVE future scenarios in this world. Each civilization evolves based on plausible extrapolations of its current trajectory — internal dynamics, demographic trends, technological adoption curves, and global macro-forces like climate change, resource competition, and ideological shifts. Make well-reasoned predictions, not just incremental tweaks.`;
+
+const CIV_AGENCY_SUPPLEMENT = `
+
+CIVILIZATION AGENCY (speculative mode):
+Before computing transitions, reason about each civilization's STRATEGIC INTENT:
+
+1. **Goal inference**: Based on the civilization's current assessment (strengths, weaknesses, outlook), government form, and diplomatic posture, infer 1-2 primary strategic goals (e.g. territorial expansion, economic reform, military buildup, diplomatic realignment, technology leapfrog).
+2. **Decision logic**: How would this civilization's leadership CHOOSE to respond to the events — not just react passively? Consider: risk appetite based on government form, resource constraints, ideological alignment, succession pressures, public opinion.
+3. **Proactive actions**: Beyond reacting to events, include 1-2 SELF-INITIATED changes that reflect the civilization pursuing its own agenda (e.g. launching a reform program, initiating trade negotiations, beginning military modernization), even if no external event triggers them.
+
+Include a "strategicIntent" field in each transition:
+"strategicIntent": {"zh":"...","en":"..."} — 1 sentence summary of the civilization's primary goal this period.
+`;
 
 export async function runHistorian(
   ctx: AgentContext,
   regionIds: string[],
   isDirect: boolean,
   onToken?: TokenCallback,
-  isOrphanGroup?: boolean
+  isOrphanGroup?: boolean,
+  isSpeculative?: boolean,
+  civDecisions?: CivDecision[]
 ): Promise<TransitionResult> {
+  const regionIdSet = new Set(regionIds);
   const regionsToUpdate = ctx.currentState.regions.filter((r) =>
-    regionIds.includes(r.id)
+    regionIdSet.has(r.id)
   );
 
-  const eventsSummary = ctx.events.map((e) => ({
+  const hasAiSector = regionsToUpdate.some((r) => r.aiSector);
+
+  // Even in orphan groups, check if any region is directly affected by events
+  const directlyAffectedInGroup = isOrphanGroup
+    ? ctx.events.some((e) =>
+      e.affectedRegions.some((rid: string) => regionIdSet.has(rid))
+    )
+    : false;
+
+  const effectiveOrphan = isOrphanGroup && !directlyAffectedInGroup;
+  const effectiveDirect = isDirect || directlyAffectedInGroup;
+
+  const relevantEvents = effectiveOrphan
+    ? ctx.events.slice(0, 3)
+    : ctx.events.filter((e) =>
+      e.affectedRegions.some((rid: string) => regionIdSet.has(rid)) ||
+      (effectiveDirect && e.affectedRegions.length === 0)
+    );
+  const eventsSummary = (relevantEvents.length > 0 ? relevantEvents : ctx.events.slice(0, 5)).map((e) => ({
     title: e.title,
     description: e.description,
     affectedRegions: e.affectedRegions,
@@ -137,7 +196,7 @@ export async function runHistorian(
   }));
 
   const regionSnapshot = regionsToUpdate.map((r) =>
-    isOrphanGroup
+    effectiveOrphan
       ? {
         id: r.id,
         name: r.name,
@@ -147,72 +206,132 @@ export async function runHistorian(
         economy: { level: r.economy?.level },
         technology: { level: r.technology?.level },
       }
-      : {
-        id: r.id,
-        name: r.name,
-        status: r.status,
-        description: r.description,
-        civilization: {
-          name: r.civilization?.name,
-          ruler: r.civilization?.ruler,
-          rulerTitle: r.civilization?.rulerTitle,
-          dynasty: r.civilization?.dynasty,
-          capital: r.civilization?.capital,
-          governmentForm: r.civilization?.governmentForm,
-          type: r.civilization?.type,
-          succession: r.civilization?.succession,
-        },
-        demographics: {
-          population: r.demographics?.population,
-          urbanPopulation: r.demographics?.urbanPopulation,
-        },
-        economy: {
-          level: r.economy?.level,
-          gdpEstimate: r.economy?.gdpEstimate,
-        },
-        military: {
-          level: r.military?.level,
-          standingArmy: r.military?.standingArmy,
-          reserves: r.military?.reserves,
-          totalTroops: r.military?.totalTroops,
-        },
-        technology: { level: r.technology?.level },
-        diplomacy: {
-          allies: r.diplomacy?.allies,
-          enemies: r.diplomacy?.enemies,
-          foreignPolicy: r.diplomacy?.foreignPolicy,
-        },
-        assessment: r.assessment,
-        ...(r.aiSector ? {
-          aiSector: {
-            level: r.aiSector.level,
-            policy: r.aiSector.policy,
+      : effectiveDirect
+        ? {
+          id: r.id,
+          name: r.name,
+          status: r.status,
+          description: r.description,
+          civilization: {
+            name: r.civilization?.name,
+            ruler: r.civilization?.ruler,
+            rulerTitle: r.civilization?.rulerTitle,
+            dynasty: r.civilization?.dynasty,
+            capital: r.civilization?.capital,
+            governmentForm: r.civilization?.governmentForm,
+            type: r.civilization?.type,
+            succession: r.civilization?.succession,
           },
-        } : {}),
-      }
+          demographics: {
+            population: r.demographics?.population,
+            urbanPopulation: r.demographics?.urbanPopulation,
+          },
+          economy: {
+            level: r.economy?.level,
+            gdpEstimate: r.economy?.gdpEstimate,
+          },
+          military: {
+            level: r.military?.level,
+            standingArmy: r.military?.standingArmy,
+            reserves: r.military?.reserves,
+            totalTroops: r.military?.totalTroops,
+          },
+          technology: { level: r.technology?.level },
+          diplomacy: {
+            allies: r.diplomacy?.allies,
+            enemies: r.diplomacy?.enemies,
+            foreignPolicy: r.diplomacy?.foreignPolicy,
+          },
+          assessment: r.assessment,
+          ...(r.aiSector ? {
+            aiSector: {
+              level: r.aiSector.level,
+              policy: r.aiSector.policy,
+            },
+          } : {}),
+        }
+        : {
+          id: r.id,
+          name: r.name,
+          status: r.status,
+          demographics: { population: r.demographics?.population },
+          economy: { level: r.economy?.level },
+          military: { level: r.military?.level },
+          technology: { level: r.technology?.level },
+          diplomacy: {
+            allies: r.diplomacy?.allies,
+            enemies: r.diplomacy?.enemies,
+          },
+        }
   );
 
-  const otherRegionNames = isOrphanGroup
+  const otherRegionNames = effectiveOrphan
     ? []
     : ctx.currentState.regions
-      .filter((r) => !regionIds.includes(r.id))
+      .filter((r) => !regionIdSet.has(r.id))
+      .filter((r) => {
+        for (const myRegion of regionsToUpdate) {
+          const alliesStr = JSON.stringify(myRegion.diplomacy?.allies || "");
+          const enemiesStr = JSON.stringify(myRegion.diplomacy?.enemies || "");
+          const rName = JSON.stringify(r.name);
+          if (
+            alliesStr.includes(r.id) ||
+            enemiesStr.includes(r.id) ||
+            alliesStr.includes(rName) ||
+            enemiesStr.includes(rName)
+          ) {
+            return true;
+          }
+        }
+        return false;
+      })
+      .slice(0, 20)
       .map((r) => ({ id: r.id, name: r.name, status: r.status }));
 
-  let systemPrompt: string;
+  let promptBase: string;
+  let schemaMode: FieldSchemaMode;
   let temperature: number;
-  if (isOrphanGroup) {
-    systemPrompt = SYSTEM_INDEPENDENT;
-    temperature = 0.3;
-  } else if (isDirect) {
-    systemPrompt = SYSTEM_DIRECT;
-    temperature = 0.5;
+  if (effectiveOrphan) {
+    promptBase = SYSTEM_INDEPENDENT_BASE;
+    schemaMode = "minimal";
+    temperature = isSpeculative ? 0.45 : 0.3;
+  } else if (effectiveDirect) {
+    promptBase = SYSTEM_DIRECT_BASE;
+    schemaMode = "full";
+    temperature = isSpeculative ? 0.65 : 0.5;
   } else {
-    systemPrompt = SYSTEM_INDIRECT;
-    temperature = 0.3;
+    promptBase = SYSTEM_INDIRECT_BASE;
+    schemaMode = "core";
+    temperature = isSpeculative ? 0.45 : 0.3;
   }
 
-  if (ctx.targetYear >= 1900) {
+  if (isSpeculative) {
+    if (effectiveOrphan) {
+      promptBase = promptBase.replace(
+        /CRITICAL RULES:\n1\. Each civilization evolves INDEPENDENTLY[\s\S]*?4\. Keep changes small and realistic[^\n]*/,
+        `CRITICAL RULES:\n1. Each civilization evolves INDEPENDENTLY. Do NOT invent interactions between these civilizations.\n2. ${SPECULATIVE_INDEPENDENT_OVERRIDE}\n3. Keep changes realistic but allow for meaningful shifts driven by plausible future dynamics. Still limit to 2-4 fields per region.`
+      );
+    } else if (effectiveDirect) {
+      promptBase = promptBase.replace(
+        "CRITICAL: The events provided are based on real historical records. Your transitions must faithfully reflect what actually happened historically — real consequences, real outcomes, real leadership changes. Do NOT invent outcomes that contradict the historical record.",
+        SPECULATIVE_DIRECT_OVERRIDE
+      );
+    } else {
+      promptBase = promptBase.replace(
+        "CRITICAL: The events provided are based on real historical records. Your indirect effects must be historically plausible and consistent with what actually happened in this period. Do NOT invent major events or outcomes that contradict the historical record.",
+        SPECULATIVE_INDIRECT_OVERRIDE
+      );
+    }
+  }
+
+  let systemPrompt = buildSystemPrompt(promptBase, schemaMode, hasAiSector);
+
+  if (ctx.targetYear >= 1900 && !effectiveOrphan) {
     systemPrompt += TECH_ERA_SUPPLEMENT;
+  }
+
+  if (isSpeculative && !effectiveOrphan) {
+    systemPrompt += CIV_AGENCY_SUPPLEMENT;
   }
 
   const userParts = [
@@ -221,8 +340,25 @@ export async function runHistorian(
     `Events: ${JSON.stringify(eventsSummary)}`,
     `Regions to update (current key stats): ${JSON.stringify(regionSnapshot)}`,
   ];
+  if (regionIds.length > 5) {
+    userParts.push(`You are updating ${regionIds.length} regions. Keep EACH transition minimal: 2-4 field changes for background regions, 4-8 for directly affected.`);
+  }
   if (otherRegionNames.length > 0) {
     userParts.push(`Other civilizations: ${JSON.stringify(otherRegionNames)}`);
+  }
+
+  if (civDecisions && civDecisions.length > 0) {
+    const relevant = civDecisions.filter((d) => regionIdSet.has(d.regionId));
+    if (relevant.length > 0) {
+      userParts.push(
+        `Strategic decisions by key civilizations (use as additional context for computing transitions):\n${JSON.stringify(relevant)}`
+      );
+    }
+  }
+
+  const memoryCtx = buildMemoryContext(regionIds);
+  if (memoryCtx) {
+    userParts.push(memoryCtx);
   }
 
   const messages: AgentMessage[] = [

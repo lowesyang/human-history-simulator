@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import React from "react";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
+import { getLlmHeaders } from "@/lib/client-headers";
 import type { HistoricalEvent, EventCategory } from "@/lib/types";
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -51,21 +53,31 @@ export default function EventList() {
   const [showCustomForm, setShowCustomForm] = useState(false);
   const [customFormDefaultYear, setCustomFormDefaultYear] = useState<number | undefined>(undefined);
 
-  const events = tab === "past" ? [...pastEvents].reverse() : futureEvents;
+  const filteredFutureEvents = useMemo(() => {
+    return futureEvents.filter((evt) => {
+      const ey = evt.timestamp.year;
+      const em = evt.timestamp.month;
+      return ey > frontier.year || (ey === frontier.year && em >= frontier.month);
+    });
+  }, [futureEvents, frontier.year, frontier.month]);
 
-  const groupedByYear = events.reduce(
-    (acc, evt) => {
-      const yearKey = evt.timestamp.year;
-      if (!acc[yearKey]) acc[yearKey] = [];
-      acc[yearKey].push(evt);
-      return acc;
-    },
-    {} as Record<number, HistoricalEvent[]>
-  );
+  const events = tab === "past" ? [...pastEvents].reverse() : filteredFutureEvents;
 
-  const sortedYears = Object.keys(groupedByYear)
-    .map(Number)
-    .sort((a, b) => (tab === "past" ? b - a : a - b));
+  const { groupedByYear, sortedYears } = useMemo(() => {
+    const grouped = events.reduce(
+      (acc, evt) => {
+        const yearKey = evt.timestamp.year;
+        if (!acc[yearKey]) acc[yearKey] = [];
+        acc[yearKey].push(evt);
+        return acc;
+      },
+      {} as Record<number, HistoricalEvent[]>
+    );
+    const years = Object.keys(grouped)
+      .map(Number)
+      .sort((a, b) => (tab === "past" ? b - a : a - b));
+    return { groupedByYear: grouped, sortedYears: years };
+  }, [events, tab]);
 
   const [genStatus, setGenStatus] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -92,6 +104,7 @@ export default function EventList() {
     categories?: string[];
     focusRegions?: string[];
     detailLevel: string;
+    webSearch?: boolean;
   }) => {
     setShowGenerateConfirm(false);
     setIsGeneratingEvents(true);
@@ -104,7 +117,7 @@ export default function EventList() {
     try {
       const resp = await fetch("/api/events/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getLlmHeaders() },
         body: JSON.stringify(params),
         signal: abortCtrl.signal,
       });
@@ -138,10 +151,11 @@ export default function EventList() {
                 const stage = data.stage as string;
                 if (stage === "calling_llm") {
                   const sy = data.startYear as number;
+                  const ws = data.webSearch as boolean;
                   const fmtY = (y: number) => y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`;
                   setGenStatus(locale === "zh"
-                    ? `AI 正在生成 ${fmtY(sy)} 起的重大历史事件...`
-                    : `Generating significant events from ${fmtY(sy)}...`);
+                    ? `AI 正在${ws ? "联网搜索并" : ""}生成 ${fmtY(sy)} 起的重大历史事件...`
+                    : `${ws ? "Searching web & g" : "G"}enerating significant events from ${fmtY(sy)}...`);
                 } else if (stage === "streaming") {
                   setGenStatus(locale === "zh"
                     ? `正在接收数据...`
@@ -235,13 +249,13 @@ export default function EventList() {
 
   const [editingEvent, setEditingEvent] = useState<HistoricalEvent | undefined>(undefined);
 
-  const handleEditEvent = (evt: HistoricalEvent) => {
+  const handleEditEvent = useCallback((evt: HistoricalEvent) => {
     setEditingEvent(evt);
     setCustomFormDefaultYear(evt.timestamp.year);
     setShowCustomForm(true);
-  };
+  }, []);
 
-  const handleCustomEventUpdated = (evt: HistoricalEvent) => {
+  const handleCustomEventUpdated = useCallback((evt: HistoricalEvent) => {
     const current = useWorldStore.getState().futureEvents;
     const updated = current.map((e) => e.id === evt.id ? evt : e).sort(
       (a, b) => a.timestamp.year - b.timestamp.year || a.timestamp.month - b.timestamp.month
@@ -249,9 +263,9 @@ export default function EventList() {
     setFutureEvents(updated);
     setShowCustomForm(false);
     setEditingEvent(undefined);
-  };
+  }, [setFutureEvents]);
 
-  const handleDeleteEvent = async (evtId: string) => {
+  const handleDeleteEvent = useCallback(async (evtId: string) => {
     if (!confirm(t("events.deleteConfirm"))) return;
     try {
       const resp = await fetch(`/api/events/custom?id=${evtId}`, { method: "DELETE" });
@@ -262,7 +276,7 @@ export default function EventList() {
     } catch (err) {
       console.error("Delete event failed:", err);
     }
-  };
+  }, [setFutureEvents, t]);
 
   const handleClearPendingEvents = async () => {
     if (!confirm(t("events.clearConfirm"))) return;
@@ -297,7 +311,7 @@ export default function EventList() {
               : "text-text-muted border-transparent"
               }`}
           >
-            {t("events.future")} ({futureEvents.length})
+            {t("events.future")} ({filteredFutureEvents.length})
           </button>
         </div>
 
@@ -408,7 +422,7 @@ export default function EventList() {
               + {t("events.addCustom")}
             </button>
 
-            {futureEvents.length > 0 && !isGeneratingEvents && (
+            {filteredFutureEvents.length > 0 && !isGeneratingEvents && (
               <button
                 onClick={handleClearPendingEvents}
                 disabled={isLoading}
@@ -468,6 +482,7 @@ function GenerateConfirmModal({
     categories?: string[];
     focusRegions?: string[];
     detailLevel: string;
+    webSearch?: boolean;
   }) => void;
   onCancel: () => void;
 }) {
@@ -478,6 +493,7 @@ function GenerateConfirmModal({
   const [eventsPerYear, setEventsPerYear] = useState(4);
   const [detailLevel, setDetailLevel] = useState<"brief" | "normal" | "detailed">("normal");
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const [webSearch, setWebSearch] = useState(false);
 
   const allCategories: { id: string; label: string }[] = [
     { id: "war", label: t("events.category.war") },
@@ -531,6 +547,7 @@ function GenerateConfirmModal({
       categories: allCategoriesSelected ? undefined : [...selectedCategories],
       focusRegions: focusRegions.size > 0 ? [...focusRegions] : undefined,
       detailLevel,
+      webSearch: webSearch || undefined,
     });
   };
 
@@ -643,6 +660,29 @@ function GenerateConfirmModal({
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Web Search toggle */}
+          <div className="flex items-center justify-between py-1">
+            <div className="flex-1 mr-3">
+              <label className="text-xs font-medium text-text-secondary">{t("events.webSearch")}</label>
+              <p className="text-xs text-text-muted mt-0.5 leading-relaxed">{t("events.webSearchHint")}</p>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={webSearch}
+              onClick={() => setWebSearch(!webSearch)}
+              className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border transition-colors duration-200 focus:outline-none ${webSearch
+                ? "bg-accent-gold/80 border-accent-gold"
+                : "bg-bg-tertiary border-border-subtle"
+                }`}
+            >
+              <span
+                className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-200 ${webSearch ? "translate-x-[18px]" : "translate-x-[2px]"
+                  }`}
+              />
+            </button>
           </div>
 
           {/* Advanced toggle */}
@@ -991,7 +1031,7 @@ function CustomEventModal({
   );
 }
 
-function EventCard({
+const EventCard = React.memo(function EventCard({
   event,
   locale,
   localized,
@@ -1082,4 +1122,4 @@ function EventCard({
       )}
     </div>
   );
-}
+});

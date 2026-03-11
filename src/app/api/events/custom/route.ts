@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { insertEvent, getLatestSnapshot, updateEvent, deleteEvent, getCurrentEraId } from "@/lib/db";
 import type { Region } from "@/lib/types";
+import { isBlockedEvent } from "@/lib/content-filter";
 
 interface CustomEventBody {
   title: { zh: string; en: string };
@@ -25,6 +26,9 @@ export async function POST(request: NextRequest) {
     }
     if (!body.description?.zh && !body.description?.en) {
       return NextResponse.json({ error: "Description is required" }, { status: 400 });
+    }
+    if (isBlockedEvent({ title: body.title, description: body.description })) {
+      return NextResponse.json({ error: "This event topic is not supported" }, { status: 403 });
     }
     if (body.timestamp?.year == null || body.timestamp?.month == null) {
       return NextResponse.json({ error: "Valid timestamp required" }, { status: 400 });
@@ -104,6 +108,9 @@ export async function PUT(request: NextRequest) {
     }
     if (!title?.zh && !title?.en) {
       return NextResponse.json({ error: "Title is required" }, { status: 400 });
+    }
+    if (isBlockedEvent({ title, description })) {
+      return NextResponse.json({ error: "This event topic is not supported" }, { status: 403 });
     }
     if (timestamp?.year == null || timestamp?.month == null) {
       return NextResponse.json({ error: "Valid timestamp required" }, { status: 400 });

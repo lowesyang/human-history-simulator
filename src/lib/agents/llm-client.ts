@@ -1,9 +1,57 @@
 import type { AgentMessage } from "./types";
 import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
 
-const LLM_TIMEOUT_MS = 300_000;
+const LLM_TIMEOUT_MS = 120_000;
+const STREAMING_STALL_MS = 30_000;
 
 export type TokenCallback = (regionId: string, token: string) => void;
+
+export interface LlmUsageStats {
+  totalCalls: number;
+  totalPromptTokens: number;
+  totalCompletionTokens: number;
+  totalTokens: number;
+  avgLatencyMs: number;
+  callHistory: { regionId: string; promptTokens: number; completionTokens: number; latencyMs: number; timestamp: number }[];
+}
+
+const usageStats: LlmUsageStats = {
+  totalCalls: 0,
+  totalPromptTokens: 0,
+  totalCompletionTokens: 0,
+  totalTokens: 0,
+  avgLatencyMs: 0,
+  callHistory: [],
+};
+
+const MAX_HISTORY = 100;
+
+export function getLlmUsageStats(): LlmUsageStats {
+  return { ...usageStats, callHistory: [...usageStats.callHistory] };
+}
+
+export function resetLlmUsageStats(): void {
+  usageStats.totalCalls = 0;
+  usageStats.totalPromptTokens = 0;
+  usageStats.totalCompletionTokens = 0;
+  usageStats.totalTokens = 0;
+  usageStats.avgLatencyMs = 0;
+  usageStats.callHistory = [];
+}
+
+function recordUsage(regionId: string, promptTokens: number, completionTokens: number, latencyMs: number) {
+  usageStats.totalCalls++;
+  usageStats.totalPromptTokens += promptTokens;
+  usageStats.totalCompletionTokens += completionTokens;
+  usageStats.totalTokens += promptTokens + completionTokens;
+  usageStats.avgLatencyMs = Math.round(
+    ((usageStats.avgLatencyMs * (usageStats.totalCalls - 1)) + latencyMs) / usageStats.totalCalls
+  );
+  usageStats.callHistory.push({ regionId, promptTokens, completionTokens, latencyMs, timestamp: Date.now() });
+  if (usageStats.callHistory.length > MAX_HISTORY) {
+    usageStats.callHistory.shift();
+  }
+}
 
 export async function callAgentStreaming(
   messages: AgentMessage[],
@@ -16,6 +64,7 @@ export async function callAgentStreaming(
 
   const model = getEffectiveModel();
   const temperature = options?.temperature ?? 0.5;
+  const startTime = Date.now();
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
@@ -52,10 +101,27 @@ export async function callAgentStreaming(
     let buffer = "";
     let fullContent = "";
     let finishReason = "";
+    let usageData: { prompt_tokens?: number; completion_tokens?: number } | null = null;
+    let lastDataTime = Date.now();
 
     while (true) {
-      const { done, value } = await reader.read();
+      const readPromise = reader.read();
+      const stallCheck = new Promise<{ done: true; value: undefined }>((resolve) => {
+        const id = setInterval(() => {
+          if (Date.now() - lastDataTime > STREAMING_STALL_MS) {
+            clearInterval(id);
+            resolve({ done: true, value: undefined });
+          }
+        }, 5_000);
+        readPromise.then(() => clearInterval(id)).catch(() => clearInterval(id));
+      });
+
+      const { done, value } = await Promise.race([readPromise, stallCheck]);
+      if (done && !value && fullContent.length === 0) {
+        throw new Error(`LLM streaming stalled for ${STREAMING_STALL_MS}ms with no content`);
+      }
       if (done) break;
+      lastDataTime = Date.now();
 
       buffer += decoder.decode(value, { stream: true });
       const lines = buffer.split("\n");
@@ -75,15 +141,26 @@ export async function callAgentStreaming(
           }
           const fr = chunk.choices?.[0]?.finish_reason;
           if (fr) finishReason = fr;
+          if (chunk.usage) usageData = chunk.usage;
         } catch {
           // skip malformed chunks
         }
       }
     }
 
+    const latencyMs = Date.now() - startTime;
+    const promptTokens = usageData?.prompt_tokens ?? Math.ceil(messages.reduce((s, m) => s + m.content.length, 0) / 4);
+    const completionTokens = usageData?.completion_tokens ?? Math.ceil(fullContent.length / 4);
+
+    recordUsage(regionId, promptTokens, completionTokens, latencyMs);
+
     if (finishReason === "length") {
       console.warn(`[Agent] ${regionId}: streaming response truncated (finish_reason: length), ${fullContent.length} chars`);
     }
+
+    console.log(
+      `[Agent] ${regionId}: ${promptTokens}p + ${completionTokens}c = ${promptTokens + completionTokens}t, ${latencyMs}ms`
+    );
 
     if (!fullContent) throw new Error("No content in LLM streaming response");
     return fullContent;
@@ -182,7 +259,16 @@ export function safeParseJSON<T = unknown>(text: string): T {
     } catch { /* fall through */ }
   }
 
-  const target = sanitized !== jsonStr ? sanitized : jsonStr;
+  let target = sanitized !== jsonStr ? sanitized : jsonStr;
+
+  // Fix bare =N patterns: "field":=7 -> "field":"=7"
+  const bareEqualFixed = target.replace(/:(\s*)=([\d.]+)/g, ':$1"=$2"');
+  if (bareEqualFixed !== target) {
+    try {
+      return JSON.parse(bareEqualFixed);
+    } catch { /* fall through */ }
+    target = bareEqualFixed;
+  }
 
   try {
     const repaired = repairJSON(target);

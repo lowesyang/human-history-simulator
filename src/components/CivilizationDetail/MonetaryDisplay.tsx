@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "@/lib/i18n";
+import { fmtNum, fmtKg } from "@/lib/format-number";
 import type { MonetaryValue } from "@/lib/types";
 
 export default function MonetaryDisplay({
@@ -10,15 +11,18 @@ export default function MonetaryDisplay({
   value: MonetaryValue | undefined;
   compact?: boolean;
 }) {
-  const { localized } = useLocale();
+  const { locale, localized } = useLocale();
 
   if (!value) return <span className="text-text-muted">—</span>;
 
   const unitStr = localized(value.unit);
   const amount =
     typeof value.amount === "number"
-      ? value.amount.toLocaleString()
+      ? fmtNum(value.amount, locale)
       : value.amount;
+
+  const goldLabel = locale === "zh" ? "黄金" : " gold";
+  const silverLabel = locale === "zh" ? "白银" : " silver";
 
   if (compact) {
     return (
@@ -35,10 +39,10 @@ export default function MonetaryDisplay({
       </div>
       <div className="flex gap-3 text-xs text-text-muted">
         {value.goldKg != null && value.goldKg > 0 && (
-          <span>≈ {value.goldKg.toLocaleString()} kg gold</span>
+          <span>≈ {fmtKg(value.goldKg, locale)}{goldLabel}</span>
         )}
         {value.silverKg != null && value.silverKg > 0 && (
-          <span>≈ {value.silverKg.toLocaleString()} kg silver</span>
+          <span>≈ {fmtKg(value.silverKg, locale)}{silverLabel}</span>
         )}
       </div>
       {value.displayNote && (

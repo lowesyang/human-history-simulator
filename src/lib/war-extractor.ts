@@ -1,5 +1,5 @@
-import type { HistoricalEvent, War, Region, LocalizedText } from "./types";
-import { callAgentStreaming, safeParseJSON } from "./agents/llm-client";
+import type { HistoricalEvent, War, Region } from "./types";
+import { callAgent, safeParseJSON } from "./agents/llm-client";
 import type { AgentMessage } from "./agents/types";
 
 const WAR_SYSTEM = `You analyze historical events and extract war/conflict information. Given war-related events and the civilizations involved, produce structured war data.
@@ -78,10 +78,8 @@ Analyze these war events and extract structured war data. Update existing wars i
   ];
 
   try {
-    const response = await callAgentStreaming(
+    const response = await callAgent(
       messages,
-      "war-analyzer",
-      () => { },
       { temperature: 0.3 }
     );
     const wars = safeParseJSON<Partial<War>[]>(response);

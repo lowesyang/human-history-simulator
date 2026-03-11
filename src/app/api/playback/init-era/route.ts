@@ -11,11 +11,13 @@ import {
 } from "@/lib/db";
 import { ERA_PRESETS } from "@/data/era-presets";
 import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
+import { applyClientHeaders } from "@/lib/api-headers";
 import {
   findClosestSnapshotYear,
   mergeSnapshotGeometry,
 } from "@/lib/geo-snapshots";
 import type { Region } from "@/lib/types";
+import { CONTENT_FILTER_PROMPT, isBlockedEvent } from "@/lib/content-filter";
 import fs from "fs";
 import path from "path";
 
@@ -69,12 +71,17 @@ function sendSSE(
   event: string,
   data: unknown
 ) {
-  controller.enqueue(
-    encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`)
-  );
+  try {
+    controller.enqueue(
+      encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`)
+    );
+  } catch {
+    // Controller already closed — safe to ignore
+  }
 }
 
 export async function POST(request: NextRequest) {
+  applyClientHeaders(request);
   const body = await request.json();
   const eraId = body.eraId as string;
 
@@ -337,6 +344,8 @@ Each event in the "events" array:
 9. Events should span years ${preset.year} to ${preset.year + 29}, covering all major regions. Generate 1-3 events per year — many years had multiple significant events across different regions. Spread events naturally across different months.
 10. Return ONLY valid JSON, no markdown, no explanation
 
+${CONTENT_FILTER_PROMPT}
+
 ## Available Territory Templates
 ${territoryList}`;
 
@@ -474,29 +483,31 @@ Return compact JSON: {"state":{...},"events":[...]}`;
           ]);
           const regionIds = new Set(stateRegions.map((r) => r.id as string));
 
-          const dbEvents = (parsed.events || []).map((evt) => {
-            const ts = evt.timestamp as { year: number; month: number };
-            const affectedRegions = ((evt.affectedRegions as string[]) || []).filter(
-              (r) => regionIds.has(r)
-            );
-            if (affectedRegions.length === 0 && regionIds.size > 0) {
-              affectedRegions.push([...regionIds][0]);
-            }
-            const category = validCategories.has(evt.category as string)
-              ? (evt.category as string)
-              : "other";
+          const dbEvents = (parsed.events || [])
+            .filter((evt) => !isBlockedEvent(evt as { title?: { zh?: string; en?: string }; description?: { zh?: string; en?: string } }))
+            .map((evt) => {
+              const ts = evt.timestamp as { year: number; month: number };
+              const affectedRegions = ((evt.affectedRegions as string[]) || []).filter(
+                (r) => regionIds.has(r)
+              );
+              if (affectedRegions.length === 0 && regionIds.size > 0) {
+                affectedRegions.push([...regionIds][0]);
+              }
+              const category = validCategories.has(evt.category as string)
+                ? (evt.category as string)
+                : "other";
 
-            return {
-              id: `evt-era-${uuidv4().slice(0, 8)}`,
-              year: ts.year,
-              month: ts.month || 6,
-              title: evt.title as object,
-              description: evt.description as object,
-              affectedRegions,
-              category,
-              status: "pending",
-            };
-          });
+              return {
+                id: `evt-era-${uuidv4().slice(0, 8)}`,
+                year: ts.year,
+                month: ts.month || 6,
+                title: evt.title as object,
+                description: evt.description as object,
+                affectedRegions,
+                category,
+                status: "pending",
+              };
+            });
 
           const llmSnapshotYear = findClosestSnapshotYear(preset.year);
           mergeSnapshotGeometry(stateRegions as unknown as Region[], llmSnapshotYear);

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { ERA_PRESETS } from "@/data/era-presets";
 import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
+import { applyClientHeaders } from "@/lib/api-headers";
+import { CONTENT_FILTER_PROMPT, isBlockedEvent } from "@/lib/content-filter";
 import fs from "fs";
 import path from "path";
 
@@ -34,6 +36,7 @@ function sendSSE(
 }
 
 export async function POST(request: NextRequest) {
+  applyClientHeaders(request);
   const body = await request.json();
   const eraIds = (body.eraIds as string[] | undefined) || ERA_PRESETS.map((e) => e.id);
   const force = body.force === true;
@@ -184,20 +187,22 @@ async function generateOneEra(
     if (!parsed.state?.regions) throw new Error("Invalid LLM response: missing state.regions");
 
     const regionIds = new Set(parsed.state.regions.map((r) => r.id as string));
-    const events = (parsed.events || []).map((evt) => {
-      const ts = evt.timestamp as { year: number; month: number };
-      const affected = ((evt.affectedRegions as string[]) || []).filter((r) => regionIds.has(r));
-      if (affected.length === 0 && regionIds.size > 0) affected.push([...regionIds][0]);
-      return {
-        id: `evt-era-${uuidv4().slice(0, 8)}`,
-        timestamp: { year: ts.year, month: ts.month || 6 },
-        title: evt.title,
-        description: evt.description,
-        affectedRegions: affected,
-        category: VALID_CATEGORIES.has(evt.category as string) ? evt.category : "other",
-        status: "pending",
-      };
-    });
+    const events = (parsed.events || [])
+      .filter((evt) => !isBlockedEvent(evt as { title?: { zh?: string; en?: string }; description?: { zh?: string; en?: string } }))
+      .map((evt) => {
+        const ts = evt.timestamp as { year: number; month: number };
+        const affected = ((evt.affectedRegions as string[]) || []).filter((r) => regionIds.has(r));
+        if (affected.length === 0 && regionIds.size > 0) affected.push([...regionIds][0]);
+        return {
+          id: `evt-era-${uuidv4().slice(0, 8)}`,
+          timestamp: { year: ts.year, month: ts.month || 6 },
+          title: evt.title,
+          description: evt.description,
+          affectedRegions: affected,
+          category: VALID_CATEGORIES.has(evt.category as string) ? evt.category : "other",
+          status: "pending",
+        };
+      });
 
     return {
       id: `state-y${preset.year}-m${preset.month}-initial`,
@@ -222,6 +227,8 @@ All text fields must be bilingual: {"zh":"...","en":"..."}
 Include 6-12 major civilizations. Use ONLY territoryIds from the list below.
 Be historically accurate. Events should span years ${yearRange}.
 Return ONLY valid JSON, no markdown.
+
+${CONTENT_FILTER_PROMPT}
 
 Available territories:
 ${territoryList}`;

@@ -11,6 +11,7 @@ export interface RegionGroup {
  * 1. Event co-occurrence (regions sharing the same event)
  * 2. War belligerents (all sides in active wars)
  * 3. Territory proximity (regions sharing the same territoryId)
+ * 4. Single-region events link that region to all other event-affected regions
  */
 export function buildRelationGraph(
   regions: Region[],
@@ -30,11 +31,25 @@ export function buildRelationGraph(
     graph.get(b)!.add(a);
   }
 
+  const allEventAffected = new Set<string>();
   for (const evt of events) {
     const rids = evt.affectedRegions.filter((id) => regionIdSet.has(id));
+    for (const rid of rids) allEventAffected.add(rid);
     for (let i = 0; i < rids.length; i++) {
       for (let j = i + 1; j < rids.length; j++) {
         addEdge(rids[i], rids[j]);
+      }
+    }
+  }
+
+  // Single-region events: link to other event-affected regions so major powers
+  // that appear alone in events don't become orphans
+  const affectedArr = [...allEventAffected];
+  for (const evt of events) {
+    const rids = evt.affectedRegions.filter((id) => regionIdSet.has(id));
+    if (rids.length === 1) {
+      for (const other of affectedArr) {
+        if (other !== rids[0]) addEdge(rids[0], other);
       }
     }
   }

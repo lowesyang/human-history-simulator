@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import React from "react";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
+import { getLlmHeaders } from "@/lib/client-headers";
 import AdvanceConfirmModal from "./AdvanceConfirmModal";
 import type { HistoricalEvent } from "@/lib/types";
 
@@ -77,7 +79,7 @@ function formatStageText(
 
 const EPOCH_OPTIONS = [1, 3, 5, 10];
 
-export default function Timeline() {
+export default React.memo(function Timeline() {
   const viewingTime = useWorldStore((s) => s.viewingTime);
   const setViewingTime = useWorldStore((s) => s.setViewingTime);
   const frontier = useWorldStore((s) => s.frontier);
@@ -88,12 +90,14 @@ export default function Timeline() {
   const currentState = useWorldStore((s) => s.currentState);
   const { locale, t } = useLocale();
 
-  const eraNameRaw = currentState?.era
-    ? currentState.era[locale]
-    : locale === "zh" ? "青铜时代中期" : "Middle Bronze Age";
-  const eraName = eraNameRaw
-    .replace(/^[^:：]+[：:]\s*/, "")
-    .replace(/\s*[（(]\s*(?:公元前?\d+年|\d+\s*(?:BCE?|CE|AD))\s*[）)]\s*$/, "");
+  const eraName = useMemo(() => {
+    const raw = currentState?.era
+      ? currentState.era[locale]
+      : locale === "zh" ? "青铜时代中期" : "Middle Bronze Age";
+    return raw
+      .replace(/^[^:：]+[：:]\s*/, "")
+      .replace(/\s*[（(]\s*(?:公元前?\d+年|\d+\s*(?:BCE?|CE|AD))\s*[）)]\s*$/, "");
+  }, [currentState?.era, locale]);
 
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [previewEvents, setPreviewEvents] = useState<HistoricalEvent[]>([]);
@@ -150,11 +154,12 @@ export default function Timeline() {
     );
     store.clearLlmStreams();
     store.clearCompletedLlmRegions();
+    store.setLlmEpochInfo(null);
 
     try {
       const resp = await fetch("/api/playback/advance", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getLlmHeaders() },
         body: JSON.stringify({
           epochs: store.epochCount,
           excludedEventIds,
@@ -223,6 +228,8 @@ export default function Timeline() {
       useWorldStore.getState().clearLlmStreams();
       useWorldStore.getState().clearCompletedLlmRegions();
       useWorldStore.getState().setPreAdvanceYear(null);
+      useWorldStore.getState().setLlmEpochInfo(null);
+      useWorldStore.getState().resetPipeline();
     }
   };
 
@@ -424,7 +431,7 @@ export default function Timeline() {
       )}
     </>
   );
-}
+});
 
 function handleSSEEvent(
   event: string,
@@ -437,12 +444,91 @@ function handleSSEEvent(
     case "pre_advance": {
       const preAdvanceYear = data.preAdvanceYear as number | null;
       store.setPreAdvanceYear(preAdvanceYear);
+      store.resetPipeline();
+      store.setPipelineInfo({ startedAt: Date.now() });
+      store.setShowLogPanel(false);
       break;
     }
 
-    case "progress":
+    case "epoch_start": {
+      store.clearLlmStreams();
+      store.clearCompletedLlmRegions();
+      const epoch = data.epoch as number;
+      const totalEpochs = data.totalEpochs as number;
+      const targetYear = data.targetYear as number;
+      store.setLlmEpochInfo({ epoch, totalEpochs, targetYear });
+      store.setPipelinePhase("loading_events");
+      break;
+    }
+
+    case "clustering_done": {
+      const groups = data.groups as { groupIndex: number; regionIds: string[]; isOrphan: boolean; isDirect: boolean }[];
+      if (groups) {
+        store.setPipelineGroups(
+          groups.map((g) => ({
+            ...g,
+            status: "pending" as const,
+          }))
+        );
+      }
+      store.setPipelinePhase("clustering");
+      break;
+    }
+
+    case "civ_agent_start": {
+      store.setPipelinePhase("civ_agent");
+      store.setPipelineInfo({
+        isSpeculative: true,
+        maxParallel: (data.maxParallel as number) || 1,
+      });
+      break;
+    }
+
+    case "group_start": {
+      const groupIndex = data.groupIndex as number;
+      store.updatePipelineGroup(groupIndex, { status: "running", startedAt: Date.now() });
+      const group = store.pipeline.groups.find((g) => g.groupIndex === groupIndex);
+      if (group) {
+        const names = getRegionNames(group.regionIds.slice(0, 4), locale);
+        const extra = group.regionIds.length > 4 ? (locale === "zh" ? ` 等${group.regionIds.length}国` : ` +${group.regionIds.length - 4} more`) : "";
+        const epochInfo = store.llmEpochInfo;
+        const yearStr = epochInfo
+          ? locale === "zh"
+            ? epochInfo.targetYear < 0 ? `公元前${Math.abs(epochInfo.targetYear)}年` : `公元${epochInfo.targetYear}年`
+            : epochInfo.targetYear < 0 ? `${Math.abs(epochInfo.targetYear)} BCE` : `${epochInfo.targetYear} CE`
+          : "";
+        store.setLoadingStatus(
+          locale === "zh"
+            ? `AI 正在推演 ${yearStr} 的历史走向 — ${names}${extra}...`
+            : `AI simulating ${yearStr} — ${names}${extra}...`
+        );
+      }
+      break;
+    }
+
+    case "group_done": {
+      const groupIndex = data.groupIndex as number;
+      const success = data.success as boolean;
+      store.updatePipelineGroup(groupIndex, {
+        status: success ? "done" : "error",
+        doneAt: Date.now(),
+      });
+      break;
+    }
+
+    case "progress": {
+      const stage = data.stage as string;
+      if (stage === "simulating") {
+        store.setPipelinePhase("simulating");
+        store.setPipelineInfo({
+          maxParallel: (data.maxParallel as number) || store.pipeline.maxParallel,
+        });
+      } else if (stage === "saving") {
+        store.setPipelinePhase("saving");
+      }
       store.setLoadingStatus(formatStageText(data, locale));
       break;
+    }
 
     case "llm_token": {
       const regionId = data.regionId as string;
@@ -500,6 +586,7 @@ function handleSSEEvent(
       if (doneWars) {
         store.setActiveWars(doneWars);
       }
+      store.setPipelinePhase("done");
       refreshEvents();
       break;
     }

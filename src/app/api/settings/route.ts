@@ -24,7 +24,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const { apiKey, model } = body;
+  const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection } = body;
 
   const validModelIds = SUPPORTED_MODELS.map((m) => m.id);
   if (model && !validModelIds.includes(model)) {
@@ -37,6 +37,9 @@ export async function POST(request: NextRequest) {
   setRuntimeSettings({
     apiKey: apiKey ?? "",
     model: model || DEFAULT_MODEL,
+    simulationMode: simulationMode || "historical",
+    enableCivMemory: enableCivMemory ?? false,
+    enableScenarioInjection: enableScenarioInjection ?? false,
   });
 
   return NextResponse.json({ success: true });

@@ -1,15 +1,10 @@
 @import "tailwindcss";
 @import "maplibre-gl/dist/maplibre-gl.css";
 
-@font-face {
-  font-family: "Cinzel";
-  src: url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap");
-}
-
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-cinzel: "Cinzel", serif;
+  --font-cinzel: var(--font-cinzel), "Cinzel", serif;
 
   --color-bg-primary: #0f0e0c;
   --color-bg-secondary: #1a1814;
@@ -139,7 +134,7 @@ input[type="range"]::-moz-range-thumb {
 
 /* Icon button base styles */
 .icon-btn {
-  @apply relative flex items-center justify-center w-8 h-8 rounded-full transition-all cursor-pointer;
+  @apply relative flex items-center justify-center w-8 h-8 rounded-full transition-all cursor-pointer text-base;
 }
 
 .icon-btn:hover:not(:disabled) {
@@ -277,13 +272,14 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .explain-tooltip {
-  animation: explainFadeIn 0.15s ease-out;
+  animation: explainFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .explain-tooltip-arrow {
   position: absolute;
   bottom: -5px;
-  left: 20px;
+  left: 50%;
+  margin-left: -5px;
   width: 10px;
   height: 10px;
   background: #1e1b16;
@@ -391,11 +387,649 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @keyframes explainFadeIn {
-  from { opacity: 0; transform: translateY(4px); }
+  from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Era banner — grand overlay (header) */
+/* ─── Welcome Modal ─── */
+
+.welcome-backdrop {
+  background: rgba(5, 4, 3, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.welcome-backdrop.visible {
+  background: rgba(5, 4, 3, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.welcome-backdrop.exiting {
+  background: rgba(5, 4, 3, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.5s ease-in, backdrop-filter 0.5s ease-in;
+}
+
+.welcome-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.welcome-particle {
+  position: absolute;
+  bottom: -10px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.4);
+  animation: welcomeFloat linear infinite;
+}
+
+.welcome-particle:nth-child(odd) {
+  background: rgba(184, 115, 51, 0.35);
+  width: 3px;
+  height: 3px;
+}
+
+.welcome-particle:nth-child(3n) {
+  background: rgba(212, 160, 23, 0.3);
+  width: 1.5px;
+  height: 1.5px;
+}
+
+@keyframes welcomeFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(-10vh) translateX(10px) scale(1);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-20px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.welcome-card {
+  position: relative;
+  max-width: 560px;
+  width: calc(100% - 48px);
+  border-radius: 24px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  background: linear-gradient(
+    165deg,
+    rgba(26, 24, 20, 0.95) 0%,
+    rgba(15, 14, 12, 0.98) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.08),
+    0 40px 100px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(201, 168, 76, 0.06);
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.welcome-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.welcome-card.exiting {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+}
+
+.welcome-card-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 160px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 168, 76, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 40px 36px;
+  gap: 20px;
+}
+
+.welcome-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.welcome-logo-ring {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(184, 115, 51, 0.08));
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.1);
+  animation: welcomeLogoBreath 3s ease-in-out infinite;
+}
+
+.welcome-logo-ring::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  border: 1px solid transparent;
+  background: conic-gradient(
+    from 0deg,
+    rgba(201, 168, 76, 0.3),
+    transparent 40%,
+    rgba(184, 115, 51, 0.2) 60%,
+    transparent
+  ) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: welcomeRingSpin 6s linear infinite;
+}
+
+@keyframes welcomeRingSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes welcomeLogoBreath {
+  0%, 100% { box-shadow: 0 0 40px rgba(201, 168, 76, 0.1); }
+  50% { box-shadow: 0 0 60px rgba(201, 168, 76, 0.2); }
+}
+
+.welcome-logo-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+}
+
+.welcome-title {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.05em;
+  color: #c9a84c;
+  text-shadow: 0 0 30px rgba(201, 168, 76, 0.25);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.welcome-title-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 168, 76, 0.5),
+    transparent
+  );
+}
+
+.welcome-slogan {
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #e8dcc8;
+  text-align: center;
+  max-width: 440px;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.welcome-eras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 480px;
+}
+
+.welcome-era-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  background: rgba(201, 168, 76, 0.04);
+  font-size: 12px;
+  color: #8a7d6a;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.welcome-era-active {
+  border-color: rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.1);
+  color: #c9a84c;
+  box-shadow: 0 0 16px rgba(201, 168, 76, 0.12);
+  transform: scale(1.05);
+}
+
+.welcome-era-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.welcome-era-year {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.welcome-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #c4b49a;
+  text-align: center;
+  max-width: 440px;
+}
+
+.welcome-features {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.welcome-feature-number {
+  font-family: "Cinzel", serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #c9a84c;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+}
+
+.welcome-feature-label {
+  font-size: 12px;
+  color: #8a7d6a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.welcome-feature-divider {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(201, 168, 76, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.welcome-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.welcome-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(184, 115, 51, 0.1));
+  color: #c9a84c;
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.welcome-cta:hover {
+  border-color: rgba(201, 168, 76, 0.65);
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.2), 0 4px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.welcome-cta:hover::before {
+  opacity: 1;
+}
+
+.welcome-cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.welcome-cta svg {
+  transition: transform 0.3s;
+}
+
+.welcome-cta:hover svg {
+  transform: translateX(3px);
+}
+
+.welcome-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  background: rgba(201, 168, 76, 0.04);
+  color: #8a7d6a;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.welcome-github:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  color: #c4b49a;
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.welcome-hint {
+  font-size: 12px;
+  color: #5a5247;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+/* API Key Section */
+.welcome-apikey-section {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: rgba(201, 168, 76, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.welcome-apikey-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c9a84c;
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.welcome-apikey-desc {
+  font-size: 12px;
+  color: #8a7d6a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.welcome-apikey-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.welcome-apikey-input {
+  width: 100%;
+  padding: 10px 38px 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: rgba(15, 14, 12, 0.8);
+  color: #efe5d4;
+  font-size: 13px;
+  font-family: "Courier New", monospace;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.welcome-apikey-eye {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #6a6055;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  padding: 0;
+}
+
+.welcome-apikey-eye:hover {
+  color: #c9a84c;
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.welcome-apikey-input::placeholder {
+  color: #5a5247;
+}
+
+.welcome-apikey-input:focus {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+.welcome-apikey-input:disabled {
+  opacity: 0.6;
+}
+
+.welcome-apikey-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(184, 115, 51, 0.08));
+  color: #c9a84c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.welcome-apikey-btn:hover:not(:disabled) {
+  border-color: rgba(201, 168, 76, 0.6);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(184, 115, 51, 0.12));
+}
+
+.welcome-apikey-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.welcome-apikey-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(201, 168, 76, 0.3);
+  border-top-color: #c9a84c;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.welcome-apikey-error {
+  font-size: 12px;
+  color: #c45a5a;
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(196, 90, 90, 0.08);
+  border: 1px solid rgba(196, 90, 90, 0.15);
+}
+
+.welcome-apikey-hint {
+  font-size: 12px;
+  color: #6a6055;
+  margin: 0;
+}
+
+.welcome-apikey-hint a {
+  color: #c9a84c;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.welcome-apikey-hint a:hover {
+  color: #e0c06a;
+}
+
+.welcome-apikey-safe {
+  font-size: 12px;
+  color: #5a5247;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.welcome-apikey-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(46, 107, 79, 0.4);
+  background: rgba(46, 107, 79, 0.1);
+  color: #6bc490;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.welcome-cta-disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+/* Staggered entrance */
+@keyframes welcomeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-anim-in {
+  animation: welcomeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .welcome-content {
+    padding: 36px 24px 28px;
+    gap: 16px;
+  }
+  .welcome-title {
+    font-size: 20px;
+  }
+  .welcome-slogan {
+    font-size: 13px;
+  }
+  .welcome-features {
+    gap: 14px;
+  }
+  .welcome-feature-number {
+    font-size: 20px;
+  }
+  .welcome-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .welcome-cta,
+  .welcome-github {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ─── Pipeline visualization ─── */
+
+.pipeline-phase-pulse {
+  animation: pipelinePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pipelinePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.pipeline-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(201, 168, 76, 0.2);
+  border-top-color: var(--color-accent-gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ─── Era banner — grand overlay (header) ─── */
 .era-banner {
   position: absolute;
   left: 50%;
@@ -413,7 +1047,7 @@ input[type="range"]::-moz-range-thumb {
 /* Era banner — inline (timeline bar) */
 .era-banner-inline {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
   padding: 0 4px;
   white-space: nowrap;
@@ -424,6 +1058,7 @@ input[type="range"]::-moz-range-thumb {
   font-family: "Cinzel", serif;
   font-weight: 700;
   font-size: 14px;
+  line-height: 1;
   letter-spacing: 0.06em;
   color: #c9a84c;
   text-shadow: 0 0 14px rgba(201, 168, 76, 0.3);
@@ -432,6 +1067,7 @@ input[type="range"]::-moz-range-thumb {
 
 .era-banner-divider {
   width: 1px;
+  align-self: center;
   height: 14px;
   background: linear-gradient(
     180deg,
@@ -445,7 +1081,8 @@ input[type="range"]::-moz-range-thumb {
 .era-banner-name {
   font-family: "Cinzel", serif;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1;
   letter-spacing: 0.08em;
   color: #e8dcc8;
   text-shadow: 0 0 10px rgba(232, 220, 200, 0.12);

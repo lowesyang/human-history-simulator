@@ -8,7 +8,7 @@ const globalForDb = globalThis as unknown as {
   __historyDbVersion?: number;
 };
 
-const CURRENT_MIGRATION_VERSION = 3;
+const CURRENT_MIGRATION_VERSION = 4;
 
 function getDb(): Database.Database {
   if (!globalForDb.__historyDb) {
@@ -130,6 +130,23 @@ function initSchema(db: Database.Database) {
   if (!tables) {
     db.exec(`CREATE TABLE IF NOT EXISTS app_config (key TEXT PRIMARY KEY, value TEXT)`);
   }
+
+  // v4 migration: is_triggered on events + civ_memories table
+  if (!cols.some((c) => c.name === "is_triggered")) {
+    db.exec("ALTER TABLE events ADD COLUMN is_triggered INTEGER DEFAULT 0");
+  }
+
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS civ_memories (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      region_id TEXT NOT NULL,
+      year INTEGER NOT NULL,
+      memory_text TEXT NOT NULL,
+      era_id TEXT,
+      created_at TEXT DEFAULT (datetime('now'))
+    );
+    CREATE INDEX IF NOT EXISTS idx_civ_memories_region ON civ_memories(region_id, year);
+  `);
 }
 
 export function insertSnapshot(
@@ -637,7 +654,10 @@ export function switchToEra(
     ).get(eraId ?? null) as { cnt: number };
 
     if (hasSnapshot.cnt > 0) {
-      return;
+      db.prepare(`DELETE FROM state_snapshots WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM events WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM evolution_logs WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM wars WHERE era_id = ?`).run(eraId ?? null);
     }
 
     db.prepare(`
@@ -853,4 +873,37 @@ function parseWarRow(row: Record<string, unknown>) {
     impact: JSON.parse((row.impact_json as string) || '{"side1":{"zh":"","en":""},"side2":{"zh":"","en":""}}'),
     relatedEventIds: JSON.parse(row.related_event_ids_json as string),
   };
+}
+
+// ── Civilization Memory ──
+
+export function insertCivMemory(
+  regionId: string,
+  year: number,
+  memoryText: string,
+  eraId?: string
+) {
+  const db = getDb();
+  db.prepare(
+    `INSERT INTO civ_memories (region_id, year, memory_text, era_id) VALUES (?, ?, ?, ?)`
+  ).run(regionId, year, memoryText, eraId ?? getCurrentEraId() ?? null);
+}
+
+export function getRecentCivMemories(
+  regionId: string,
+  limit: number = 5
+): { year: number; memoryText: string }[] {
+  const db = getDb();
+  const eraId = getCurrentEraId();
+  const rows = eraId
+    ? db.prepare(
+      `SELECT year, memory_text FROM civ_memories WHERE region_id = ? AND era_id = ? ORDER BY year DESC LIMIT ?`
+    ).all(regionId, eraId, limit)
+    : db.prepare(
+      `SELECT year, memory_text FROM civ_memories WHERE region_id = ? ORDER BY year DESC LIMIT ?`
+    ).all(regionId, limit);
+  return (rows as { year: number; memory_text: string }[]).map((r) => ({
+    year: r.year,
+    memoryText: r.memory_text,
+  }));
 }

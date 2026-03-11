@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import maplibregl from "maplibre-gl";
 import { Map, Source, Layer, Marker, type MapRef } from "@vis.gl/react-maplibre";
 import type { MapLayerMouseEvent } from "maplibre-gl";
 import { useWorldStore } from "@/store/useWorldStore";
@@ -19,18 +18,148 @@ const EMPTY_FC: GeoJSON.FeatureCollection = {
   features: [],
 };
 
+const STATUS_COLORS: Record<string, string> = {
+  thriving: "#22c55e",
+  rising: "#10b981",
+  stable: "#d97706",
+  declining: "#eab308",
+  conflict: "#ef4444",
+  collapsed: "#8b5cf6",
+};
+
+const WarMarkerItem = React.memo(function WarMarkerItem({
+  war,
+  lng,
+  lat,
+  isPrimary,
+  locale,
+  onSelect,
+}: {
+  war: War;
+  lng: number;
+  lat: number;
+  isPrimary: boolean;
+  locale: "zh" | "en";
+  onSelect: (war: War) => void;
+}) {
+  const statusKey = `war.${war.status}`;
+  const side1Label = localized(war.belligerents.side1.label);
+  const side2Label = localized(war.belligerents.side2.label);
+  const summaryText = localized(war.summary);
+  const warName = war.name[locale];
+  const formatYr = (y: number) =>
+    locale === "zh"
+      ? (y < 0 ? `公元前${Math.abs(y)}年` : `公元${y}年`)
+      : (y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`);
+  const period = war.endYear
+    ? `${formatYr(war.startYear)} — ${formatYr(war.endYear)}`
+    : `${formatYr(war.startYear)} — ${t("war.ongoing")}`;
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent) => { e.stopPropagation(); onSelect(war); },
+    [onSelect, war]
+  );
+
+  return (
+    <Marker longitude={lng} latitude={lat} anchor="center">
+      <div
+        className="war-marker-btn group"
+        onClick={handleClick}
+        style={{ position: "relative", width: 28, height: 28, cursor: "pointer" }}
+      >
+        {isPrimary && (
+          <span
+            style={{
+              position: "absolute", inset: -4,
+              borderRadius: "50%",
+              background: "rgba(239,68,68,0.15)",
+              animation: "warPing 1.5s cubic-bezier(0,0,0.2,1) infinite",
+            }}
+          />
+        )}
+        <span
+          style={{
+            position: "absolute", inset: 0,
+            borderRadius: "50%",
+            background: "rgba(127,29,29,0.8)",
+            border: "1.5px solid rgba(239,68,68,0.5)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            boxShadow: "0 2px 8px rgba(127,29,29,0.4)",
+          }}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="3" x2="12" y2="12" />
+            <line x1="12" y1="12" x2="20" y2="20" />
+            <line x1="3" y1="7" x2="7" y2="3" />
+            <line x1="17" y1="21" x2="21" y2="17" />
+            <line x1="21" y1="3" x2="12" y2="12" />
+            <line x1="12" y1="12" x2="4" y2="20" />
+            <line x1="17" y1="3" x2="21" y2="7" />
+            <line x1="3" y1="17" x2="7" y2="21" />
+          </svg>
+        </span>
+        {isPrimary && (
+          <span
+            style={{
+              position: "absolute",
+              top: "100%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              marginTop: 4,
+              fontSize: 12,
+              fontWeight: 600,
+              color: "#fca5a5",
+              whiteSpace: "nowrap",
+              textShadow: "0 1px 3px rgba(0,0,0,0.9)",
+              pointerEvents: "none",
+            }}
+          >
+            {warName}
+          </span>
+        )}
+        <div className="war-marker-tooltip">
+          <div style={{ fontWeight: 700, color: "#fca5a5", marginBottom: 2 }}>{warName}</div>
+          <div style={{ color: "#9ca3af", marginBottom: 4 }}>{period}</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
+            <span style={{ color: "#f87171", fontWeight: 600 }}>{side1Label}</span>
+            <span style={{ color: "#6b7280" }}>vs</span>
+            <span style={{ color: "#60a5fa", fontWeight: 600 }}>{side2Label}</span>
+          </div>
+          <div style={{
+            display: "inline-block",
+            padding: "1px 6px",
+            borderRadius: 4,
+            fontSize: 12,
+            fontWeight: 600,
+            background: war.status === "ongoing" ? "rgba(239,68,68,0.15)" : war.status === "ceasefire" ? "rgba(251,191,36,0.15)" : "rgba(34,197,94,0.15)",
+            color: war.status === "ongoing" ? "#f87171" : war.status === "ceasefire" ? "#fbbf24" : war.status === "stalemate" ? "#9ca3af" : "#4ade80",
+            marginBottom: summaryText ? 4 : 0,
+          }}>
+            {t(statusKey)}
+          </div>
+          {summaryText && (
+            <div style={{ color: "#d1ccc0", lineHeight: 1.4, WebkitLineClamp: 2, WebkitBoxOrient: "vertical", display: "-webkit-box", overflow: "hidden" }}>
+              {summaryText}
+            </div>
+          )}
+        </div>
+      </div>
+    </Marker>
+  );
+});
+
 function WorldMapInner() {
   const mapRef = useRef<MapRef>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const coordsRef = useRef<{ lat: number; lng: number } | null>(null);
+  const coordsElRef = useRef<HTMLDivElement>(null);
+  const rafIdRef = useRef(0);
   const currentState = useWorldStore((s) => s.currentState);
   const locale = useWorldStore((s) => s.locale);
   const setSelectedRegionId = useWorldStore((s) => s.setSelectedRegionId);
   const selectedRegionId = useWorldStore((s) => s.selectedRegionId);
   const activeWars = useWorldStore((s) => s.activeWars);
   const setSelectedWar = useWorldStore((s) => s.setSelectedWar);
-  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(
-    null
-  );
   const [hoverInfo, setHoverInfo] = useState<{
     x: number;
     y: number;
@@ -40,6 +169,8 @@ function WorldMapInner() {
     status: string;
   } | null>(null);
   const [territoriesLoaded, setTerritoriesLoaded] = useState(false);
+  const [filterStatus, setFilterStatus] = useState<string | null>(null);
+  const [hoverLegend, setHoverLegend] = useState<string | null>(null);
 
   useEffect(() => {
     loadTerritories().then(() => setTerritoriesLoaded(true));
@@ -60,19 +191,6 @@ function WorldMapInner() {
     if (!territoriesLoaded || !currentState) return EMPTY_FC;
     return regionsToLabelPoints(currentState.regions, locale);
   }, [currentState, locale, territoriesLoaded]);
-
-  useEffect(() => {
-    const map = mapRef.current?.getMap();
-    if (!map) return;
-    const civSource = map.getSource("civilizations") as maplibregl.GeoJSONSource | undefined;
-    if (civSource && typeof civSource.setData === "function") {
-      civSource.setData(geojsonData);
-    }
-    const labelSource = map.getSource("civ-labels") as maplibregl.GeoJSONSource | undefined;
-    if (labelSource && typeof labelSource.setData === "function") {
-      labelSource.setData(labelPointsData);
-    }
-  }, [geojsonData, labelPointsData]);
 
   const centroids = useMemo(() => {
     if (!territoriesLoaded || !currentState) return {};
@@ -141,9 +259,24 @@ function WorldMapInner() {
     return markers;
   }, [activeWars, centroids]);
 
+  const flushCoords = useCallback(() => {
+    rafIdRef.current = 0;
+    const c = coordsRef.current;
+    const el = coordsElRef.current;
+    if (el && c) {
+      el.textContent = `${c.lat >= 0 ? "N" : "S"} ${Math.abs(c.lat).toFixed(1)} / ${c.lng >= 0 ? "E" : "W"} ${Math.abs(c.lng).toFixed(1)}`;
+      el.style.display = "";
+    } else if (el) {
+      el.style.display = "none";
+    }
+  }, []);
+
   const onMouseMove = useCallback(
     (e: MapLayerMouseEvent) => {
-      setCoords({ lat: e.lngLat.lat, lng: e.lngLat.lng });
+      coordsRef.current = { lat: e.lngLat.lat, lng: e.lngLat.lng };
+      if (!rafIdRef.current) {
+        rafIdRef.current = requestAnimationFrame(flushCoords);
+      }
 
       if (useWorldStore.getState().selectedRegionId) {
         setHoverInfo(null);
@@ -176,7 +309,7 @@ function WorldMapInner() {
         setHoverInfo(null);
       }
     },
-    []
+    [flushCoords]
   );
 
   const onClick = useCallback(
@@ -197,15 +330,12 @@ function WorldMapInner() {
 
   const onMouseLeave = useCallback(() => {
     setHoverInfo(null);
+    coordsRef.current = null;
+    if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+    rafIdRef.current = 0;
+    const el = coordsElRef.current;
+    if (el) el.style.display = "none";
   }, []);
-
-  const statusColors: Record<string, string> = {
-    thriving: "#4ade80",
-    stable: "#d97706",
-    declining: "#fbbf24",
-    conflict: "#f87171",
-    collapsed: "#9ca3af",
-  };
 
   const tooltipStyle = useMemo(() => {
     if (!hoverInfo) return {};
@@ -255,8 +385,14 @@ function WorldMapInner() {
                   selectedRegionId ?? "",
                 ],
                 0.8,
-                ["get", "fillOpacity"],
-              ],
+                ...(filterStatus
+                  ? [
+                    ["==", ["get", "status"], filterStatus],
+                    ["get", "fillOpacity"],
+                    0.08,
+                  ]
+                  : [["get", "fillOpacity"]]),
+              ] as any,
             }}
           />
           <Layer
@@ -286,6 +422,14 @@ function WorldMapInner() {
                 3,
                 ["get", "borderWidth"],
               ],
+              "line-opacity": filterStatus
+                ? [
+                  "case",
+                  ["==", ["get", "status"], filterStatus],
+                  1,
+                  0.12,
+                ] as any
+                : 1,
             }}
           />
         </Source>
@@ -311,6 +455,14 @@ function WorldMapInner() {
               "text-color": "#E8DCC8",
               "text-halo-color": "rgba(15,14,12,0.9)",
               "text-halo-width": 2,
+              "text-opacity": filterStatus
+                ? [
+                  "case",
+                  ["==", ["get", "status"], filterStatus],
+                  1,
+                  0.15,
+                ] as any
+                : 1,
             }}
           />
           <Layer
@@ -334,6 +486,14 @@ function WorldMapInner() {
               "text-color": "#E8DCC8",
               "text-halo-color": "rgba(15,14,12,0.9)",
               "text-halo-width": 1.5,
+              "text-opacity": filterStatus
+                ? [
+                  "case",
+                  ["==", ["get", "status"], filterStatus],
+                  1,
+                  0.15,
+                ] as any
+                : 1,
             }}
           />
         </Source>
@@ -362,120 +522,67 @@ function WorldMapInner() {
           />
         </Source>
 
-        {/* War icons — one per line midpoint, all using the same crossed-swords icon */}
-        {warMarkers.map(({ war, lng, lat, isPrimary }, idx) => {
-          const statusKey = `war.${war.status}`;
-          const side1Label = localized(war.belligerents.side1.label);
-          const side2Label = localized(war.belligerents.side2.label);
-          const summaryText = localized(war.summary);
-          const warName = war.name[locale];
-          const formatYr = (y: number) =>
-            locale === "zh"
-              ? (y < 0 ? `公元前${Math.abs(y)}年` : `公元${y}年`)
-              : (y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`);
-          const period = war.endYear
-            ? `${formatYr(war.startYear)} — ${formatYr(war.endYear)}`
-            : `${formatYr(war.startYear)} — ${t("war.ongoing")}`;
-
-          return (
-            <Marker key={`${war.id}-${idx}`} longitude={lng} latitude={lat} anchor="center">
-              <div
-                className="war-marker-btn group"
-                onClick={(e) => { e.stopPropagation(); setSelectedWar(war); }}
-                style={{ position: "relative", width: 28, height: 28, cursor: "pointer" }}
-              >
-                {isPrimary && (
-                  <span
-                    style={{
-                      position: "absolute", inset: -4,
-                      borderRadius: "50%",
-                      background: "rgba(239,68,68,0.15)",
-                      animation: "warPing 1.5s cubic-bezier(0,0,0.2,1) infinite",
-                    }}
-                  />
-                )}
-                <span
-                  style={{
-                    position: "absolute", inset: 0,
-                    borderRadius: "50%",
-                    background: "rgba(127,29,29,0.8)",
-                    border: "1.5px solid rgba(239,68,68,0.5)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 2px 8px rgba(127,29,29,0.4)",
-                  }}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="3" y1="3" x2="12" y2="12" />
-                    <line x1="12" y1="12" x2="20" y2="20" />
-                    <line x1="3" y1="7" x2="7" y2="3" />
-                    <line x1="17" y1="21" x2="21" y2="17" />
-                    <line x1="21" y1="3" x2="12" y2="12" />
-                    <line x1="12" y1="12" x2="4" y2="20" />
-                    <line x1="17" y1="3" x2="21" y2="7" />
-                    <line x1="3" y1="17" x2="7" y2="21" />
-                  </svg>
-                </span>
-                {isPrimary && (
-                  <span
-                    style={{
-                      position: "absolute",
-                      top: "100%",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      marginTop: 4,
-                      fontSize: 10,
-                      fontWeight: 600,
-                      color: "#fca5a5",
-                      whiteSpace: "nowrap",
-                      textShadow: "0 1px 3px rgba(0,0,0,0.9)",
-                      pointerEvents: "none",
-                    }}
-                  >
-                    {warName}
-                  </span>
-                )}
-                {/* Hover tooltip */}
-                <div className="war-marker-tooltip">
-                  <div style={{ fontWeight: 700, color: "#fca5a5", marginBottom: 2 }}>{warName}</div>
-                  <div style={{ color: "#9ca3af", marginBottom: 4 }}>{period}</div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
-                    <span style={{ color: "#f87171", fontWeight: 600 }}>{side1Label}</span>
-                    <span style={{ color: "#6b7280" }}>vs</span>
-                    <span style={{ color: "#60a5fa", fontWeight: 600 }}>{side2Label}</span>
-                  </div>
-                  <div style={{
-                    display: "inline-block",
-                    padding: "1px 6px",
-                    borderRadius: 4,
-                    fontSize: 10,
-                    fontWeight: 600,
-                    background: war.status === "ongoing" ? "rgba(239,68,68,0.15)" : war.status === "ceasefire" ? "rgba(251,191,36,0.15)" : "rgba(34,197,94,0.15)",
-                    color: war.status === "ongoing" ? "#f87171" : war.status === "ceasefire" ? "#fbbf24" : war.status === "stalemate" ? "#9ca3af" : "#4ade80",
-                    marginBottom: summaryText ? 4 : 0,
-                  }}>
-                    {t(statusKey)}
-                  </div>
-                  {summaryText && (
-                    <div style={{ color: "#d1ccc0", lineHeight: 1.4, WebkitLineClamp: 2, WebkitBoxOrient: "vertical", display: "-webkit-box", overflow: "hidden" }}>
-                      {summaryText}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </Marker>
-          );
-        })}
+        {warMarkers.map(({ war, lng, lat, isPrimary }, idx) => (
+          <WarMarkerItem
+            key={`${war.id}-${idx}`}
+            war={war}
+            lng={lng}
+            lat={lat}
+            isPrimary={isPrimary}
+            locale={locale}
+            onSelect={setSelectedWar}
+          />
+        ))}
       </Map>
 
-      {/* Coordinate display */}
-      {coords && (
-        <div className="absolute bottom-2 left-2 glass-panel px-3 py-1 rounded text-xs font-mono text-text-secondary">
-          {coords.lat >= 0 ? "N" : "S"}{" "}
-          {Math.abs(coords.lat).toFixed(1)} /{" "}
-          {coords.lng >= 0 ? "E" : "W"}{" "}
-          {Math.abs(coords.lng).toFixed(1)}
-        </div>
-      )}
+      {/* Status legend */}
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 glass-panel rounded-lg px-4 py-2 z-30 flex items-center gap-1">
+        {(Object.keys(STATUS_COLORS) as Array<keyof typeof STATUS_COLORS>).map(
+          (key) => {
+            const isActive = filterStatus === key;
+            const isHovered = hoverLegend === key;
+            const isDimmed = filterStatus !== null && !isActive;
+            return (
+              <button
+                key={key}
+                onClick={() => setFilterStatus(isActive ? null : key)}
+                onMouseEnter={() => setHoverLegend(key)}
+                onMouseLeave={() => setHoverLegend(null)}
+                className="flex items-center gap-1.5 px-2 py-1 rounded-md transition-all duration-200"
+                style={{
+                  background: isActive
+                    ? `${STATUS_COLORS[key]}20`
+                    : isHovered
+                      ? `${STATUS_COLORS[key]}10`
+                      : "transparent",
+                  outline: isActive
+                    ? `1.5px solid ${STATUS_COLORS[key]}80`
+                    : isHovered
+                      ? `1.5px solid ${STATUS_COLORS[key]}40`
+                      : "1.5px solid transparent",
+                  opacity: isDimmed ? (isHovered ? 0.7 : 0.4) : 1,
+                  cursor: "pointer",
+                }}
+              >
+                <span
+                  className="w-2.5 h-2.5 rounded-sm inline-block flex-shrink-0"
+                  style={{ backgroundColor: STATUS_COLORS[key] }}
+                />
+                <span className="text-xs text-text-secondary whitespace-nowrap">
+                  {t(`status.${key}`)}
+                </span>
+              </button>
+            );
+          }
+        )}
+      </div>
+
+      {/* Coordinate display — updated via ref to avoid re-renders */}
+      <div
+        ref={coordsElRef}
+        className="absolute bottom-2 left-2 glass-panel px-3 py-1 rounded text-xs font-mono text-text-secondary"
+        style={{ display: "none" }}
+      />
 
       {/* Hover tooltip */}
       {hoverInfo && (
@@ -498,7 +605,7 @@ function WorldMapInner() {
             <span
               className="w-2 h-2 rounded-full inline-block"
               style={{
-                backgroundColor: statusColors[hoverInfo.status] ?? "#888",
+                backgroundColor: STATUS_COLORS[hoverInfo.status] ?? "#888",
               }}
             />
             <span className="text-xs capitalize text-text-muted">

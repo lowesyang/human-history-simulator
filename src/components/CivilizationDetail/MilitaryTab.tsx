@@ -44,15 +44,17 @@ export default function MilitaryTab({ region }: { region: Region }) {
           {t("military.commanders")}
         </h4>
         <div className="text-text-secondary">
-          {mil.commandStructure.commanderInChief && (
+          {mil.commandStructure?.commanderInChief && (
             <div className="mb-1">
               {t("military.commanderInChief")}: {localized(mil.commandStructure.commanderInChief)}
             </div>
           )}
-          <div className="mb-1">
-            {t("military.generals")}: {mil.commandStructure.totalGenerals}
-          </div>
-          {mil.commandStructure.keyGenerals && mil.commandStructure.keyGenerals.length > 0 && (
+          {mil.commandStructure?.totalGenerals != null && (
+            <div className="mb-1">
+              {t("military.generals")}: {mil.commandStructure.totalGenerals}
+            </div>
+          )}
+          {mil.commandStructure?.keyGenerals && mil.commandStructure.keyGenerals.length > 0 && (
             <DataTable
               columns={[
                 { key: "name", label: t("table.name") },

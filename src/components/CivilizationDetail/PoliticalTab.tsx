@@ -7,6 +7,10 @@ import DataTable from "./DataTable";
 export default function PoliticalTab({ region }: { region: Region }) {
   const { t, localized, tWithFallback } = useLocale();
 
+  if (!region.government) {
+    return null;
+  }
+
   const deptRows = (region.government.departments || []).map((d) => ({
     name: localized(d.name),
     function: localized(d.function),
@@ -19,12 +23,14 @@ export default function PoliticalTab({ region }: { region: Region }) {
         <p>{localized(region.government.structure)}</p>
       </Section>
 
-      <Section title={t("info.government")}>
-        <InfoRow label={t("info.government")} value={tWithFallback("govtForm", region.civilization.governmentForm)} />
-        <InfoRow label={t("political.socialStructure")} value={localized(region.civilization.socialStructure)} />
-        <InfoRow label={t("political.rulingClass")} value={localized(region.civilization.rulingClass)} />
-        <InfoRow label={t("political.succession")} value={localized(region.civilization.succession)} />
-      </Section>
+      {region.civilization && (
+        <Section title={t("info.government")}>
+          <InfoRow label={t("info.government")} value={tWithFallback("govtForm", region.civilization.governmentForm)} />
+          <InfoRow label={t("political.socialStructure")} value={localized(region.civilization.socialStructure)} />
+          <InfoRow label={t("political.rulingClass")} value={localized(region.civilization.rulingClass)} />
+          <InfoRow label={t("political.succession")} value={localized(region.civilization.succession)} />
+        </Section>
+      )}
 
       <Section title={t("govt.departments")}>
         <DataTable

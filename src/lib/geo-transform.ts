@@ -1,14 +1,16 @@
 import type { Region, RegionStatus } from "./types";
+import { normalizeStatus } from "./types";
 
 const STATUS_COLORS: Record<
   RegionStatus,
   { fill: string; border: string }
 > = {
   thriving: { fill: "#22c55e", border: "#15803d" },
+  rising: { fill: "#10b981", border: "#047857" },
   stable: { fill: "#d97706", border: "#92400e" },
   declining: { fill: "#eab308", border: "#a16207" },
   conflict: { fill: "#ef4444", border: "#b91c1c" },
-  collapsed: { fill: "#6b7280", border: "#4b5563" },
+  collapsed: { fill: "#8b5cf6", border: "#6d28d9" },
 };
 
 const STATUS_MODIFIERS: Record<
@@ -19,10 +21,11 @@ const STATUS_MODIFIERS: Record<
   }
 > = {
   thriving: { opacityMultiplier: 1.0 },
+  rising: { opacityMultiplier: 0.95 },
   stable: { opacityMultiplier: 0.85 },
   declining: { dashArray: [4, 4], opacityMultiplier: 0.7 },
   conflict: { opacityMultiplier: 0.85 },
-  collapsed: { dashArray: [2, 6], opacityMultiplier: 0.35 },
+  collapsed: { dashArray: [2, 6], opacityMultiplier: 0.6 },
 };
 
 let _territories: Record<
@@ -74,16 +77,17 @@ function buildFeature(
   geometry: GeoJSON.Geometry,
   locale: "zh" | "en"
 ): GeoJSON.Feature {
-  const statusColors = STATUS_COLORS[region.status] ?? {
+  const status = normalizeStatus(region.status);
+  const statusColors = STATUS_COLORS[status] ?? {
     fill: "#888",
     border: "#666",
   };
-  const statusMod = STATUS_MODIFIERS[region.status] ?? {
+  const statusMod = STATUS_MODIFIERS[status] ?? {
     opacityMultiplier: 0.8,
   };
 
   const baseOpacity = 0.25 + ((region.economy?.level ?? 0) / 10) * 0.45;
-  const fillOpacity = baseOpacity * (statusMod.opacityMultiplier ?? 1.0);
+  const fillOpacity = Math.max(0.15, baseOpacity * (statusMod.opacityMultiplier ?? 1.0));
   const borderWidth = 1 + ((region.military?.level ?? 0) / 10) * 2;
   const area = computeArea(geometry);
 
@@ -103,7 +107,7 @@ function buildFeature(
       governmentForm: typeof region.civilization?.governmentForm === "string"
         ? region.civilization.governmentForm
         : region.civilization?.governmentForm?.[locale] ?? "other",
-      status: region.status,
+      status,
       economyLevel: region.economy?.level ?? 0,
       technologyLevel: region.technology?.level ?? 0,
       militaryLevel: region.military?.level ?? 0,
@@ -172,7 +176,7 @@ export function regionsToLabelPoints(
         regionId: region.id,
         label: region.name?.[locale] ?? region.id,
         sublabel: region.civilization?.name?.[locale] ?? "",
-        status: region.status,
+        status: normalizeStatus(region.status),
         population,
         importance,
         sortKey: -importance,

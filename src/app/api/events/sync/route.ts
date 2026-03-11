@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { insertEvent, getEvents, getCurrentEraId } from "@/lib/db";
 import type { HistoricalEvent } from "@/lib/types";
+import { isBlockedEvent } from "@/lib/content-filter";
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,6 +19,7 @@ export async function POST(request: NextRequest) {
     let synced = 0;
     for (const evt of clientEvents) {
       if (evt.status !== "pending" || existingIds.has(evt.id)) continue;
+      if (isBlockedEvent(evt)) continue;
 
       insertEvent(
         evt.id,

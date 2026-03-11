@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { callLLM, extractJSON } from "@/lib/llm";
 import { buildSystemPrompt, buildUserPrompt } from "@/lib/prompt";
+import { applyClientHeaders } from "@/lib/api-headers";
 import {
   getLatestSnapshot,
   insertSnapshot,
@@ -11,6 +12,7 @@ import {
 import type { WorldState, HistoricalEvent, Region } from "@/lib/types";
 
 export async function POST(request: NextRequest) {
+  applyClientHeaders(request);
   try {
     const body = await request.json();
     const { eventIds } = body as { eventIds: string[] };

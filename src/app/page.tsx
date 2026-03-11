@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { useWorldStore } from "@/store/useWorldStore";
+import { useWorldStore, detectLocale } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
 import EventList from "@/components/EventList";
 import Timeline from "@/components/Timeline";
@@ -10,11 +10,9 @@ import LanguageSwitch from "@/components/LanguageSwitch";
 import CivilizationDetail from "@/components/CivilizationDetail";
 import LlmStreamPanel from "@/components/LlmStreamPanel";
 import EvolutionLogPanel from "@/components/EvolutionLogPanel";
-import EraSelectModal from "@/components/EraSelectModal";
-import WarDetailModal from "@/components/WarDetailModal";
 import WarsPanel from "@/components/WarsPanel";
-import SettingsModal from "@/components/SettingsModal";
 import { useSettingsStore } from "@/store/useSettingsStore";
+import { getLlmHeaders } from "@/lib/client-headers";
 import { SUPPORTED_MODELS, DEFAULT_MODEL } from "@/lib/settings";
 import type { HistoricalEvent, WorldState, War } from "@/lib/types";
 import type { EpochChangelog } from "@/lib/changelog";
@@ -23,35 +21,35 @@ import { ERA_PRESETS } from "@/data/era-presets";
 const DEFAULT_ERA_ID = "modern-era";
 
 const WorldMap = dynamic(() => import("@/components/WorldMap"), { ssr: false });
+const EraSelectModal = dynamic(() => import("@/components/EraSelectModal"), { ssr: false });
+const WarDetailModal = dynamic(() => import("@/components/WarDetailModal"), { ssr: false });
+const SettingsModal = dynamic(() => import("@/components/SettingsModal"), { ssr: false });
+const WelcomeModal = dynamic(() => import("@/components/WelcomeModal"), { ssr: false });
 
 export default function Home() {
   const { t } = useLocale();
-  const setCurrentState = useWorldStore((s) => s.setCurrentState);
-  const setPastEvents = useWorldStore((s) => s.setPastEvents);
-  const setFutureEvents = useWorldStore((s) => s.setFutureEvents);
-  const setFrontier = useWorldStore((s) => s.setFrontier);
-  const setOriginTime = useWorldStore((s) => s.setOriginTime);
-  const setViewingTime = useWorldStore((s) => s.setViewingTime);
-  const setEvolutionLogs = useWorldStore((s) => s.setEvolutionLogs);
+
+  // Only subscribe to values that drive rendering; setters accessed via getState()
   const evolutionLogs = useWorldStore((s) => s.evolutionLogs);
   const showLogPanel = useWorldStore((s) => s.showLogPanel);
-  const setShowLogPanel = useWorldStore((s) => s.setShowLogPanel);
-  const setActiveWars = useWorldStore((s) => s.setActiveWars);
   const activeWars = useWorldStore((s) => s.activeWars);
   const showWarsPanel = useWorldStore((s) => s.showWarsPanel);
-  const setShowWarsPanel = useWorldStore((s) => s.setShowWarsPanel);
   const isLoading = useWorldStore((s) => s.isLoading);
   const loadingStatus = useWorldStore((s) => s.loadingStatus);
-  const viewingTime = useWorldStore((s) => s.viewingTime);
   const locale = useWorldStore((s) => s.locale);
   const selectedRegionId = useWorldStore((s) => s.selectedRegionId);
   const currentState = useWorldStore((s) => s.currentState);
+  const viewingTime = useWorldStore((s) => s.viewingTime);
 
   const [showEraModal, setShowEraModal] = useState(false);
-  const setShowSettings = useSettingsStore((s) => s.setShowSettings);
+  const [showWelcome, setShowWelcome] = useState(false);
+  const [requireApiKey, setRequireApiKey] = useState(false);
   const fetchServerState = useSettingsStore((s) => s.fetchServerState);
   const settingsModel = useSettingsStore((s) => s.model);
   const envModel = useSettingsStore((s) => s.envModel);
+  const hasEnvKey = useSettingsStore((s) => s.hasEnvKey);
+  const storedApiKey = useSettingsStore((s) => s.apiKey);
+  const settingsLoaded = useSettingsStore((s) => s.settingsLoaded);
 
   const effectiveModelId = settingsModel || envModel || DEFAULT_MODEL;
   const effectiveModelLabel = SUPPORTED_MODELS.find((m) => m.id === effectiveModelId)?.label ?? effectiveModelId.split("/").pop();
@@ -76,7 +74,7 @@ export default function Home() {
 
     fetch("/api/playback/init-era", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...getLlmHeaders() },
       body: JSON.stringify({ eraId: DEFAULT_ERA_ID }),
     })
       .then(async (resp) => {
@@ -119,8 +117,29 @@ export default function Home() {
   }, [fetchServerState]);
 
   useEffect(() => {
+    const real = detectLocale();
+    if (real !== useWorldStore.getState().locale) {
+      useWorldStore.getState().setLocale(real);
+    }
+  }, []);
+
+  useEffect(() => {
+    const seen = localStorage.getItem("hcs-welcome-seen");
+    if (!seen) setShowWelcome(true);
+  }, []);
+
+  useEffect(() => {
+    if (!settingsLoaded) return;
+    if (!hasEnvKey && !storedApiKey) {
+      setRequireApiKey(true);
+      setShowWelcome(true);
+    }
+  }, [settingsLoaded, hasEnvKey, storedApiKey]);
+
+  useEffect(() => {
     async function init() {
       try {
+        const store = useWorldStore.getState();
         const [stateResp, eventsResp, logsResp] = await Promise.all([
           fetch("/api/state"),
           fetch("/api/events"),
@@ -133,33 +152,33 @@ export default function Home() {
         let hasState = false;
 
         if (stateData && !stateData.error) {
-          setCurrentState(stateData as WorldState);
-          setFrontier(stateData.timestamp);
-          setViewingTime(stateData.timestamp);
+          store.setCurrentState(stateData as WorldState);
+          store.setFrontier(stateData.timestamp);
+          store.setViewingTime(stateData.timestamp);
           if (stateData.wars) {
-            setActiveWars(stateData.wars as War[]);
+            store.setActiveWars(stateData.wars as War[]);
           }
           hasState = true;
         }
 
         if (eventsData.events) {
           const events = eventsData.events as HistoricalEvent[];
-          setPastEvents(events.filter((e) => e.status === "processed"));
-          setFutureEvents(events.filter((e) => e.status === "pending"));
+          store.setPastEvents(events.filter((e) => e.status === "processed"));
+          store.setFutureEvents(events.filter((e) => e.status === "pending"));
         }
         if (eventsData.frontier) {
-          setFrontier(eventsData.frontier);
+          store.setFrontier(eventsData.frontier);
         }
         if (eventsData.originTime) {
-          setOriginTime(eventsData.originTime);
+          store.setOriginTime(eventsData.originTime);
         }
         if (eventsData.eraId) {
-          useWorldStore.getState().setCurrentEraId(eventsData.eraId as string);
+          store.setCurrentEraId(eventsData.eraId as string);
         }
 
         if (logsData.logs && logsData.logs.length > 0) {
-          setEvolutionLogs(logsData.logs as EpochChangelog[]);
-          setShowLogPanel(true);
+          store.setEvolutionLogs(logsData.logs as EpochChangelog[]);
+          store.setShowLogPanel(true);
         }
 
         if (!hasState) {
@@ -176,15 +195,16 @@ export default function Home() {
 
   useEffect(() => {
     async function loadSnapshot() {
+      const store = useWorldStore.getState();
       try {
         const resp = await fetch(
           `/api/state?year=${viewingTime.year}&month=${viewingTime.month}`
         );
         const data = await resp.json();
         if (data && !data.error) {
-          setCurrentState(data as WorldState);
+          store.setCurrentState(data as WorldState);
           if (data.wars) {
-            setActiveWars(data.wars as War[]);
+            store.setActiveWars(data.wars as War[]);
           }
         }
       } catch (err) {
@@ -192,7 +212,7 @@ export default function Home() {
       }
     }
     loadSnapshot();
-  }, [viewingTime.year, viewingTime.month, setCurrentState, setActiveWars]);
+  }, [viewingTime.year, viewingTime.month]);
 
   const handleEraSelect = async (eraId: string) => {
     setShowEraModal(false);
@@ -212,7 +232,7 @@ export default function Home() {
     try {
       const resp = await fetch("/api/playback/init-era", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getLlmHeaders() },
         body: JSON.stringify({ eraId }),
       });
 
@@ -295,8 +315,8 @@ export default function Home() {
           <button
             onClick={() => {
               const next = !showLogPanel;
-              setShowLogPanel(next);
-              if (next) setShowWarsPanel(false);
+              useWorldStore.getState().setShowLogPanel(next);
+              if (next) useWorldStore.getState().setShowWarsPanel(false);
             }}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs cursor-pointer transition-all ${showLogPanel
               ? "border-accent-gold/60 bg-accent-gold/10 text-accent-gold"
@@ -314,8 +334,8 @@ export default function Home() {
           <button
             onClick={() => {
               const next = !showWarsPanel;
-              setShowWarsPanel(next);
-              if (next) setShowLogPanel(false);
+              useWorldStore.getState().setShowWarsPanel(next);
+              if (next) useWorldStore.getState().setShowLogPanel(false);
             }}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs cursor-pointer transition-all ${showWarsPanel
               ? "border-red-700/60 bg-red-900/25 text-red-300"
@@ -352,7 +372,7 @@ export default function Home() {
             <span className="text-text-muted text-xs">▾</span>
           </button>
           <button
-            onClick={() => setShowSettings(true)}
+            onClick={() => useSettingsStore.getState().setShowSettings(true)}
             className="tooltip-wrap tooltip-below tooltip-multiline flex items-center gap-1.5 px-2.5 py-1 rounded border border-border-subtle text-text-muted hover:text-accent-gold hover:border-border-active transition-all cursor-pointer text-xs"
             data-tooltip={locale === "zh"
               ? `当前引擎：${effectiveModelLabel}。AI 基于大语言模型扮演历史学家，依据真实历史事件与用户自定义事件，科学推演各文明的兴衰变迁——王朝更替、战争胜负、经济涨落、人口迁徙、科技演进等，力求符合历史规律与因果逻辑。点击切换模型。`
@@ -370,8 +390,8 @@ export default function Home() {
             <span className="font-mono">{effectiveModelLabel}</span>
           </button>
           <button
-            onClick={() => setShowSettings(true)}
-            className="tooltip-wrap flex items-center justify-center w-8 h-8 rounded-full border border-border-subtle text-text-secondary hover:text-accent-gold hover:border-border-active transition-all cursor-pointer"
+            onClick={() => useSettingsStore.getState().setShowSettings(true)}
+            className="tooltip-wrap tooltip-below flex items-center justify-center w-8 h-8 rounded-full border border-border-subtle text-text-secondary hover:text-accent-gold hover:border-border-active transition-all cursor-pointer"
             data-tooltip={t("settings.tooltip")}
           >
             <svg
@@ -386,6 +406,17 @@ export default function Home() {
             >
               <circle cx="12" cy="12" r="3" />
               <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setShowWelcome(true)}
+            className="tooltip-wrap tooltip-below flex items-center justify-center w-8 h-8 rounded-full border border-border-subtle text-text-secondary hover:text-accent-gold hover:border-border-active transition-all cursor-pointer"
+            data-tooltip={locale === "zh" ? "关于" : "About"}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
             </svg>
           </button>
           <LanguageSwitch />
@@ -435,6 +466,17 @@ export default function Home() {
 
       <WarDetailModal />
       <SettingsModal />
+
+      {showWelcome && (
+        <WelcomeModal
+          requireApiKey={requireApiKey}
+          onClose={() => {
+            setShowWelcome(false);
+            setRequireApiKey(false);
+            localStorage.setItem("hcs-welcome-seen", "1");
+          }}
+        />
+      )}
     </div>
   );
 }

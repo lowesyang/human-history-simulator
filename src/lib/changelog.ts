@@ -1,5 +1,6 @@
 import type { Region, LocalizedText, HistoricalEvent } from "./types";
 import type { RegionTransition } from "./transition";
+import { fmtNum, fmtKg } from "./format-number";
 
 export interface RegionChangelog {
   regionId: string;
@@ -7,6 +8,7 @@ export interface RegionChangelog {
   isDirect: boolean;
   description: LocalizedText;
   changes: ChangeEntry[];
+  impactScore: number;
 }
 
 export type ChangeSentiment = "positive" | "negative" | "neutral";
@@ -16,14 +18,19 @@ export interface ChangeEntry {
   label: LocalizedText;
   detail: LocalizedText;
   sentiment: ChangeSentiment;
+  /** Internal field path (e.g. "economy.gdpEstimate") used for impact scoring. Not serialized to UI. */
+  fieldPath?: string;
 }
 
 export interface EpochChangelog {
   targetYear: number;
+  startYear?: number;
+  endYear?: number;
   era: LocalizedText;
   summary: LocalizedText;
   events: { title: LocalizedText; category: string }[];
   regions: RegionChangelog[];
+  impactTiers: { critical: number; high: number; medium: number };
   timestamp: string;
 }
 
@@ -130,35 +137,47 @@ export function generateChangelog(
   targetYear: number,
   era: LocalizedText,
   summary: LocalizedText,
-  directIds: Set<string>
+  directIds: Set<string>,
+  startYear?: number,
+  endYear?: number,
 ): EpochChangelog {
   const regionChanges: RegionChangelog[] = [];
 
+  const regionLookup = new Map<string, Region>();
+  for (const r of regions) {
+    regionLookup.set(r.id, r);
+  }
+
   for (const transition of transitions) {
-    const region = regions.find((r) => r.id === transition.regionId);
+    const region = regionLookup.get(transition.regionId);
     if (!region) continue;
 
     const changes = transitionToChangeEntries(transition);
+    const isDirect = directIds.has(transition.regionId);
+    const score = computeImpactScore(changes, region, isDirect);
     regionChanges.push({
       regionId: transition.regionId,
       regionName: region.name,
-      isDirect: directIds.has(transition.regionId),
+      isDirect,
       description: transition.description,
       changes,
+      impactScore: score,
     });
   }
 
-  regionChanges.sort((a, b) => {
-    if (a.isDirect !== b.isDirect) return a.isDirect ? -1 : 1;
-    return b.changes.length - a.changes.length;
-  });
+  regionChanges.sort((a, b) => b.impactScore - a.impactScore);
+
+  const tiers = computeImpactTiers(regionChanges);
 
   return {
     targetYear,
+    startYear,
+    endYear,
     era,
     summary,
     events: events.map((e) => ({ title: e.title, category: e.category })),
     regions: regionChanges,
+    impactTiers: tiers,
     timestamp: new Date().toISOString(),
   };
 }
@@ -176,6 +195,7 @@ function transitionToChangeEntries(transition: RegionTransition): ChangeEntry[] 
       label,
       detail: formatChangeValue(value),
       sentiment: inferSentiment(value),
+      fieldPath: path,
     });
   }
 
@@ -215,6 +235,7 @@ function inferSentiment(value: unknown): ChangeSentiment {
 const ENUM_DISPLAY: Record<string, LocalizedText> = {
   // RegionStatus
   thriving: { zh: "繁荣", en: "Thriving" },
+  rising: { zh: "崛起", en: "Rising" },
   stable: { zh: "稳定", en: "Stable" },
   declining: { zh: "衰落", en: "Declining" },
   conflict: { zh: "冲突", en: "Conflict" },
@@ -263,8 +284,8 @@ function formatChangeValue(value: unknown): LocalizedText {
   if (typeof value === "number") {
     const sign = value > 0 ? "+" : "";
     return {
-      zh: `${sign}${fmt(value)}`,
-      en: `${sign}${fmt(value)}`,
+      zh: `${sign}${fmtNum(value, "zh")}`,
+      en: `${sign}${fmtNum(value, "en")}`,
     };
   }
 
@@ -281,17 +302,17 @@ function formatChangeValue(value: unknown): LocalizedText {
       const sign = obj.amount > 0 ? "+" : "";
       const unitZh = isLocalizedText(obj.unit) ? ` ${(obj.unit as Record<string, string>).zh}` : "";
       const unitEn = isLocalizedText(obj.unit) ? ` ${(obj.unit as Record<string, string>).en}` : "";
-      const zhParts: string[] = [`${sign}${fmt(obj.amount)}${unitZh}`];
-      const enParts: string[] = [`${sign}${fmt(obj.amount)}${unitEn}`];
+      const zhParts: string[] = [`${sign}${fmtNum(obj.amount, "zh")}${unitZh}`];
+      const enParts: string[] = [`${sign}${fmtNum(obj.amount, "en")}${unitEn}`];
       if (typeof obj.goldKg === "number" && obj.goldKg !== 0) {
         const gs = obj.goldKg > 0 ? "+" : "";
-        zhParts.push(`${gs}${fmt(obj.goldKg)}kg 黄金`);
-        enParts.push(`${gs}${fmt(obj.goldKg)}kg gold`);
+        zhParts.push(`${gs}${fmtKg(obj.goldKg, "zh")}黄金`);
+        enParts.push(`${gs}${fmtKg(obj.goldKg, "en")} gold`);
       }
       if (typeof obj.silverKg === "number" && obj.silverKg !== 0) {
         const ss = obj.silverKg > 0 ? "+" : "";
-        zhParts.push(`${ss}${fmt(obj.silverKg)}kg 白银`);
-        enParts.push(`${ss}${fmt(obj.silverKg)}kg silver`);
+        zhParts.push(`${ss}${fmtKg(obj.silverKg, "zh")}白银`);
+        enParts.push(`${ss}${fmtKg(obj.silverKg, "en")} silver`);
       }
       return { zh: zhParts.join(", "), en: enParts.join(", ") };
     }
@@ -307,8 +328,113 @@ function isLocalizedText(v: unknown): boolean {
   return typeof obj.zh === "string" && typeof obj.en === "string";
 }
 
-function fmt(n: number): string {
-  if (Math.abs(n) >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
-  if (Math.abs(n) >= 1_000) return (n / 1_000).toFixed(1) + "K";
-  return n.toLocaleString();
+/* ---------- Impact Score Computation ---------- */
+
+/**
+ * Per-change weight by category. These are additive base values, intentionally
+ * kept small so the final score stays in a reasonable range.
+ */
+const CATEGORY_WEIGHT: Record<string, number> = {
+  status: 6,
+  political: 3,
+  military: 4,
+  economy: 3,
+  technology: 3,
+  diplomacy: 3,
+  demographics: 2,
+  culture: 1,
+  assessment: 0.5,
+};
+
+/**
+ * Fields where a change carries outsized strategic significance.
+ * Bonus is additive (+3), not multiplicative, to avoid score explosion.
+ */
+const HIGH_IMPACT_FIELDS = new Set([
+  "status",
+  "civilization.ruler",
+  "civilization.dynasty",
+  "civilization.governmentForm",
+  "civilization.type",
+  "military.level",
+  "economy.level",
+  "technology.level",
+]);
+
+function computeChangeWeight(entry: ChangeEntry): number {
+  const base = CATEGORY_WEIGHT[entry.category] ?? 1;
+  const fieldBonus = entry.fieldPath && HIGH_IMPACT_FIELDS.has(entry.fieldPath) ? 3 : 0;
+  const sentimentBonus = entry.sentiment === "negative" ? 1 : 0;
+  return base + fieldBonus + sentimentBonus;
+}
+
+/**
+ * Civilization importance tier (1-5). Only the very top nations reach 4-5;
+ * most medium countries stay at 2-3, and small states at 1.
+ */
+function computeCivImportance(region: Region): number {
+  let score = 0;
+
+  const pop = region.demographics?.population ?? 0;
+  if (pop >= 500_000_000) score += 3;
+  else if (pop >= 100_000_000) score += 2;
+  else if (pop >= 30_000_000) score += 1;
+
+  const gdp = region.economy?.gdpEstimate?.amount ?? 0;
+  const goldKg = region.economy?.gdpEstimate?.goldKg ?? 0;
+  if (gdp > 0) {
+    if (gdp >= 10_000_000_000_000) score += 3;
+    else if (gdp >= 3_000_000_000_000) score += 2;
+    else if (gdp >= 500_000_000_000) score += 1;
+  } else if (goldKg > 0) {
+    if (goldKg >= 500_000) score += 3;
+    else if (goldKg >= 100_000) score += 2;
+    else if (goldKg >= 10_000) score += 1;
+  }
+
+  const milLevel = region.military?.level ?? 0;
+  if (milLevel >= 9) score += 2;
+  else if (milLevel >= 7) score += 1;
+
+  return Math.min(score, 5);
+}
+
+function computeImpactScore(
+  changes: ChangeEntry[],
+  region: Region,
+  isDirect: boolean,
+): number {
+  if (changes.length === 0) return 0;
+
+  const changeScore = changes.reduce((sum, c) => sum + computeChangeWeight(c), 0);
+  const civTier = computeCivImportance(region);
+  const civMultiplier = 1 + civTier * 0.3;
+  const directMultiplier = isDirect ? 1.4 : 1.0;
+
+  return changeScore * civMultiplier * directMultiplier;
+}
+
+/**
+ * Compute dynamic tier thresholds from the actual score distribution.
+ * Top ~5% → Critical, next ~15% → High, next ~30% → Medium, rest → Low.
+ */
+export function computeImpactTiers(regions: { impactScore: number }[]): {
+  critical: number;
+  high: number;
+  medium: number;
+} {
+  if (regions.length === 0) return { critical: Infinity, high: Infinity, medium: Infinity };
+
+  const scores = regions.map((r) => r.impactScore).sort((a, b) => b - a);
+  const len = scores.length;
+
+  const criticalIdx = Math.max(0, Math.ceil(len * 0.05) - 1);
+  const highIdx = Math.max(criticalIdx + 1, Math.ceil(len * 0.20) - 1);
+  const mediumIdx = Math.max(highIdx + 1, Math.ceil(len * 0.50) - 1);
+
+  return {
+    critical: scores[criticalIdx],
+    high: scores[Math.min(highIdx, len - 1)],
+    medium: scores[Math.min(mediumIdx, len - 1)],
+  };
 }

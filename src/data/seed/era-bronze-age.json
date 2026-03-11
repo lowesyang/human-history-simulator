@@ -1034,7 +1034,57 @@
       "description": {
         "zh": "黄河中游的早期青铜王朝，正扩张并整合周边方国。",
         "en": "An early Bronze Age dynasty in the middle Yellow River expanding and integrating surrounding polities."
-      }
+      },
+      "factions": [
+        {
+          "id": "shang_royal_clan",
+          "name": { "zh": "王族宗室", "en": "Royal Clan" },
+          "type": "other",
+          "leader": { "zh": "盘庚", "en": "Pan Geng" },
+          "leaderTitle": { "zh": "商王", "en": "King of Shang" },
+          "ideology": { "zh": "以甲骨占卜沟通上帝与祖灵的神权王权，通过大规模祭祀确立宇宙秩序、政治权威与王族血脉的神圣性", "en": "Theocratic kingship communicating with the high god Di and ancestral spirits through oracle bone divination, establishing cosmic order, political authority, and the sacredness of the royal bloodline through large-scale sacrificial rituals" },
+          "headquarters": { "zh": "亳（早期商都）", "en": "Bo (early Shang capital)" },
+          "status": "ruling",
+          "relationship": { "zh": "商王族是整个王朝的权力核心，商王身兼最高祭司、军事统帅和政治裁决者三重角色。王族通过甲骨占卜垄断与天帝、祖灵的沟通渠道，以此确立不可挑战的统治合法性。王室控制青铜礼器铸造、贡赋征收和对外军事征伐，将宗教权威与世俗权力紧密结合。", "en": "The Shang royal clan was the power center of the entire dynasty, with the king serving the triple role of supreme priest, military commander, and political adjudicator. The royal clan monopolized communication channels with the high god Di and ancestral spirits through oracle bone divination, establishing unchallengeable ruling legitimacy. The court controlled bronze ritual vessel casting, tribute collection, and military campaigns, tightly binding religious authority to secular power." },
+          "description": { "zh": "商王族以祖先崇拜和占卜沟通为政治合法性根基，盘庚时代代表早期商朝王权巩固的关键阶段。商王通过频繁的龟甲占卜决定一切重大国事——包括征伐、农时、祭祀和迁都等事务。王掌控大规模人祭与牲祭仪式，彰显天命所归。王族成员被分封至各地方据点，构成以血缘为纽带的统治网络。青铜礼器的铸造和分配由王室严格掌控，成为政治等级的物质象征。盘庚迁殷的决策反映了王族在面对宗族纷争和资源需求时主动调整统治策略的能力，预示着商朝将进入更辉煌的殷墟时期。", "en": "The Shang royal clan derived its political legitimacy from ancestor worship and divinatory communication, with the Pan Geng era representing a critical phase of early Shang royal consolidation. The king decided all major state affairs through frequent oracle bone divination on turtle shells—including campaigns, agricultural timing, sacrificial rites, and capital relocation. The king oversaw large-scale human and animal sacrifice to demonstrate the mandate of heaven. Royal clan members were enfeoffed at regional strongholds, forming a kinship-based governance network. Bronze ritual vessel production and distribution were strictly controlled by the court, serving as material symbols of political hierarchy. Pan Geng's decision to relocate to Yin reflected the royal clan's ability to actively adjust its ruling strategy in response to kinship disputes and resource needs, foreshadowing the more glorious Yinxu period of Shang civilization." },
+          "keyFigures": [
+            { "name": { "zh": "盘庚", "en": "Pan Geng" }, "title": { "zh": "商王", "en": "King of Shang" }, "role": { "zh": "主导迁殷的早期商王，巩固王权并重整宗族秩序", "en": "Early Shang king who led the move to Yin, consolidating royal power and reorganizing clan order" } },
+            { "name": { "zh": "王族宗长", "en": "Royal Clan Patriarch" }, "title": { "zh": "宗族之长", "en": "Head of the Royal Lineage" }, "role": { "zh": "管理王族内部事务、继承秩序与各地王族据点协调", "en": "Managed royal clan affairs, succession order, and coordination of regional royal strongholds" } }
+          ]
+        },
+        {
+          "id": "shang_rival_clans",
+          "name": { "zh": "方国诸侯与对抗宗族", "en": "Rival Clan Lords" },
+          "type": "other",
+          "leader": { "zh": "诸方国伯长", "en": "Regional Fang Lords" },
+          "leaderTitle": { "zh": "方伯", "en": "Fang Lord" },
+          "ideology": { "zh": "承认商王宗主权以获取贸易与军事庇护，但坚持地方自治权，保留本族祭祀传统、独立武装和对附庸人口的控制", "en": "Acknowledging Shang suzerainty for trade and military protection while insisting on local autonomy, preserving clan ritual traditions, independent armed forces, and control over dependent populations" },
+          "headquarters": { "zh": "各方国与臣属宗族城邑", "en": "Various fang polity and subordinate clan centers" },
+          "status": "rival",
+          "relationship": { "zh": "方国诸侯与强势臣属宗族名义上服从商王，定期纳贡并参与军事行动，但各自保有独立军队和祭祀权力。王室对远方方国的实际控制力有限，方国忠诚度取决于商军威慑力和贸易利益的维持。当王室内部出现继承纷争或征发过重时，这些半自治势力随时可能反叛或拒绝履行义务。", "en": "Fang lords and powerful subordinate clans nominally obeyed the Shang king, rendering regular tribute and participating in military campaigns, but each maintained independent armed forces and ritual authority. The court's actual control over distant fang states was limited, and their loyalty depended on Shang military deterrence and trade benefits. When succession disputes arose within the royal house or demands grew excessive, these semi-autonomous powers could rebel or refuse obligations at any time." },
+          "description": { "zh": "商朝的统治并非直辖所有领土，而是依靠一个由大小方国（方）和臣属宗族组成的松散联盟网络。这些半自治势力各有自己的首领、军队、祭祀传统和经济体系，部分通过王室联姻纳入商的统治圈，部分则是被征服后被迫归附。方国向商朝缴纳龟甲、牛骨、铜锡原料、牲畜和劳力作为贡赋。然而它们对商王权威的接受是有条件的——一旦商军力量减弱或征发过度，方国便可能联合反叛。盘庚迁殷的背景之一即是应对宗族内部和方国势力的离心倾向。这些方国诸侯既是商朝扩张的工具，也是王朝统治最大的不稳定因素，为后来武王伐纣时方国倒戈埋下了伏笔。", "en": "Shang rule did not directly administer all territories but relied on a loose alliance network of large and small fang polities and subordinate clans. These semi-autonomous powers each had their own leaders, armies, ritual traditions, and economic systems; some were brought into the Shang orbit through royal marriages, while others submitted after conquest. Fang states rendered tribute of turtle shells, ox bones, copper-tin materials, livestock, and labor. However, their acceptance of Shang authority was conditional—whenever Shang military power weakened or demands grew excessive, fang states might unite in rebellion. One context for Pan Geng's relocation to Yin was precisely to counter centrifugal tendencies among both internal clans and external fang powers. These fang lords served as both instruments of Shang expansion and the greatest source of dynastic instability, foreshadowing the mass defection of fang states during King Wu's eventual conquest of Shang." },
+          "keyFigures": [
+            { "name": { "zh": "东方方伯", "en": "Eastern Fang Lord" }, "title": { "zh": "方伯", "en": "Fang Lord" }, "role": { "zh": "控制东方沿海贝壳与盐的贸易网络，是最富庶的臣属势力之一", "en": "Controlled eastern coastal shell and salt trade networks, among the wealthiest subordinate powers" } },
+            { "name": { "zh": "南方方伯", "en": "Southern Fang Lord" }, "title": { "zh": "方伯", "en": "Fang Lord" }, "role": { "zh": "管辖南方铜矿产区，提供关键青铜原料但军事独立性较强", "en": "Governed southern copper mining areas, supplying critical bronze materials while maintaining significant military independence" } }
+          ]
+        },
+        {
+          "id": "shang_divination_priesthood",
+          "name": { "zh": "祭司占卜集团", "en": "Priestly-Divination Establishment" },
+          "type": "religious",
+          "leader": { "zh": "大卜", "en": "Grand Diviner" },
+          "leaderTitle": { "zh": "大卜（卜人之长）", "en": "Grand Diviner (Chief of the Bu Ren)" },
+          "ideology": { "zh": "以甲骨占卜（卜辞）为核心的宗教实践体系，掌控与祖灵和天帝的沟通渠道、灾异解读与祭祀程序，认为一切国事须经神意确认方可执行", "en": "Religious practice centered on oracle bone divination (bu-ci), controlling channels of communication with ancestral spirits and the high god Di, interpreting omens, and managing sacrificial procedures, holding that all state affairs must receive divine confirmation before execution" },
+          "headquarters": { "zh": "亳王宫祭祀区", "en": "Ritual precinct of the Bo royal palace" },
+          "status": "allied",
+          "relationship": { "zh": "祭司占卜集团与王权高度共生：王需借助占卜获取决策的宗教合法性，卜人（占卜专家）则依赖王室供养维持其特权地位。卜人是商王与鬼神世界之间的唯一中介，在军事征伐、农事安排和祭祀仪式等一切重大决策中拥有巨大的隐性影响力，但缺乏独立军事力量。", "en": "The priestly-divination establishment was highly symbiotic with kingship: the king relied on divination for religious legitimacy in decision-making, while the bu ren (divination specialists) depended on royal patronage to maintain their privileged position. The bu ren served as the sole intermediaries between the Shang king and the spirit world, wielding enormous covert influence over all major decisions including military campaigns, agricultural planning, and sacrificial ceremonies, though they lacked independent military power." },
+          "description": { "zh": "商代的祭司占卜集团（卜人）是王朝政治运作中不可缺少的核心阶层。他们在龟甲和牛肩胛骨上凿钻施灼，通过解读裂纹纹路判定祖灵和天帝的旨意。所有重大军事行动、农事安排、迁都计划和王室祭祀都须经占卜认可方能实施。卜人同时负责组织和管理大量的人牲和动物牺牲仪式，维系商朝庞大而复杂的祭祀体系。这一集团掌握早期甲骨文书写技术，将占卜结果刻录在甲骨之上，形成了中国最早的文字记录传统。他们的知识垄断使其成为王朝不可替代的技术官僚，但同时也意味着对占卜结果的解释权可以微妙地影响政治走向——卜人对裂纹的阐释往往能左右战争与和平的选择。", "en": "The Shang priestly-divination establishment (bu ren) was an indispensable core stratum in dynastic political operations. They drilled and burned turtle shells and ox scapulae, reading the resulting crack patterns to determine the will of ancestral spirits and the high god Di. All major military campaigns, agricultural arrangements, capital relocation plans, and royal sacrifices required divinatory approval before implementation. The bu ren also organized and managed the large-scale human and animal sacrifice rituals that sustained the Shang's vast and complex ceremonial system. This group mastered early oracle bone script technology, recording divinatory results on shells and bones, creating the earliest written record tradition in China. Their knowledge monopoly made them irreplaceable technical bureaucrats of the dynasty, while also meaning that their interpretive authority over crack readings could subtly influence political directions—a bu ren's reading of crack patterns could often sway the choice between war and peace." },
+          "keyFigures": [
+            { "name": { "zh": "大卜", "en": "Grand Diviner" }, "title": { "zh": "大卜", "en": "Grand Diviner" }, "role": { "zh": "占卜仪式最高主持者，掌握神意阐释权的核心权威", "en": "Supreme officiant of divination rituals, core authority holding the power to interpret divine will" } },
+            { "name": { "zh": "祝官", "en": "Invocation Officer" }, "title": { "zh": "祝", "en": "Zhu (Invocator)" }, "role": { "zh": "负责祭祀祷词、祖先沟通仪式与人牲管理", "en": "Responsible for sacrificial prayers, ancestral communication rites, and management of human sacrificial victims" } }
+          ]
+        }
+      ]
     },
     {
       "id": "japan_jomon_chiefdoms",
@@ -5581,7 +5631,57 @@
       "description": {
         "zh": "古巴比伦仍控制南美索不达米亚核心地区，但已接近赫梯袭击与王朝终结前夕。",
         "en": "Old Babylon still held the southern Mesopotamian core, though it stood near the Hittite raid and the end of the dynasty."
-      }
+      },
+      "factions": [
+        {
+          "id": "babylon_royal_admin",
+          "name": { "zh": "王室行政机构", "en": "Royal Administration" },
+          "type": "other",
+          "leader": { "zh": "萨姆苏-迪塔那", "en": "Samsu-ditana" },
+          "leaderTitle": { "zh": "巴比伦之王", "en": "King of Babylon" },
+          "ideology": { "zh": "继承汉谟拉比的法律与行政遗产，维护巴比伦城作为南两河文明中心的地位，通过成文法典、灌溉管理和集权官僚体系实施统治", "en": "Inheriting the legal and administrative legacy of Hammurabi, maintaining Babylon's status as the civilizational center of southern Mesopotamia, ruling through written law codes, irrigation management, and a centralized bureaucracy" },
+          "headquarters": { "zh": "巴比伦城王宫", "en": "Royal Palace of Babylon" },
+          "status": "ruling",
+          "relationship": { "zh": "萨姆苏-迪塔那是巴比伦第一王朝末代国王，面临内外交困。王权理论上承袭汉谟拉比的辉煌遗产——成文法典、标准化行政和灌溉网络仍在运作，但实际控制力日渐萎缩。国王需要同时应对赫梯军事威胁、喀西特渗透和地方省份的离心倾向，统治基础已非常脆弱。", "en": "Samsu-ditana was the last king of the First Dynasty of Babylon, facing crisis from within and without. Kingship theoretically inherited the glorious legacy of Hammurabi—written law codes, standardized administration, and irrigation networks still functioned, but actual control was steadily shrinking. The king had to simultaneously deal with the Hittite military threat, Kassite infiltration, and centrifugal tendencies of provincial areas, leaving the regime's foundations extremely fragile." },
+          "description": { "zh": "巴比伦第一王朝的王室行政机构在萨姆苏-迪塔那统治时已步入暮年，但汉谟拉比所建立的制度遗产仍在运作。楔形文字官僚体系维持着税赋征收、灌溉调度、司法裁判和档案管理等核心职能。巴比伦城仍是南两河流域最重要的行政中心，书吏学堂继续培养行政人才，契约和法律文书的传统未曾中断。然而王朝已无力维持有效的边防和全面的地方控制——财政赤字持续扩大，南部灌溉系统维护日益困难，多个边缘城市实际脱离中央管辖。国王试图通过加重征发和调整总督人选来弥补控制力的流失，但这些措施收效甚微。不久之后赫梯突袭将终结这个延续数百年的王朝，为喀西特人入主巴比伦开辟道路。", "en": "The royal administration of the First Dynasty of Babylon under Samsu-ditana had entered its twilight, though the institutional legacy established by Hammurabi still functioned. The cuneiform bureaucratic system maintained core functions of tax collection, irrigation scheduling, judicial adjudication, and archival management. Babylon remained the most important administrative center of southern Mesopotamia, scribal academies continued training administrative personnel, and contract and legal documentation traditions remained unbroken. Yet the dynasty could no longer sustain effective frontier defense or comprehensive local control—fiscal deficits continued widening, maintenance of southern irrigation systems grew increasingly difficult, and several peripheral cities had effectively seceded from central authority. The king attempted to compensate for control losses through heavier levies and reshuffling governors, but these measures had limited effect. Soon the Hittite raid would end this centuries-old dynasty, clearing the way for Kassite takeover of Babylon." },
+          "keyFigures": [
+            { "name": { "zh": "萨姆苏-迪塔那", "en": "Samsu-ditana" }, "title": { "zh": "巴比伦之王", "en": "King of Babylon" }, "role": { "zh": "王朝末代国王，竭力维持日渐崩溃的统治秩序", "en": "Last king of the dynasty, struggling to maintain collapsing order" } },
+            { "name": { "zh": "王宫大书吏", "en": "Royal Chief Scribe" }, "title": { "zh": "大书吏", "en": "Chief Scribe" }, "role": { "zh": "统管楔形文字行政系统，维系汉谟拉比时代以来的官僚传统", "en": "Oversaw the cuneiform administrative system, maintaining the bureaucratic tradition since Hammurabi's era" } }
+          ]
+        },
+        {
+          "id": "babylon_marduk_temple",
+          "name": { "zh": "马尔杜克神庙集团", "en": "Marduk Temple Establishment" },
+          "type": "religious",
+          "leader": { "zh": "马尔杜克大祭司", "en": "High Priest of Marduk" },
+          "leaderTitle": { "zh": "马尔杜克首席祭司", "en": "Chief Priest of Marduk" },
+          "ideology": { "zh": "马尔杜克为万神之首、巴比伦为世界中心，神庙地产和祭祀体系是社会经济秩序和宇宙和谐的基石，新年典礼（阿基图节）是维系天地秩序的核心仪式", "en": "Marduk as chief of all gods, Babylon as the center of the world, temple estates and the sacrificial system as the cornerstone of socioeconomic order and cosmic harmony, and the New Year festival (Akitu) as the core ceremony maintaining the order of heaven and earth" },
+          "headquarters": { "zh": "埃萨吉拉神庙", "en": "Esagila Temple" },
+          "status": "allied",
+          "relationship": { "zh": "马尔杜克神庙是巴比伦城最强大的宗教和经济机构，与王权形成互惠共生关系。王室依赖神庙提供统治合法性和紧急财政支持——尤其是在阿基图新年典礼中由大祭司“授予”国王权杖的仪式是王权存续的宗教必要条件。然而国王在财政困难时频繁动用神庙储备，引发了祭司集团的不满和抵制。", "en": "The Temple of Marduk was the most powerful religious and economic institution in Babylon, forming a mutually beneficial symbiotic relationship with kingship. The crown depended on the temple for ruling legitimacy and emergency fiscal support—especially the Akitu New Year ceremony where the high priest ritually 'bestowed' the scepter on the king, which was a religious prerequisite for kingship's continuation. However, the king's frequent draws on temple reserves during fiscal difficulties generated priestly discontent and resistance." },
+          "description": { "zh": "埃萨吉拉神庙是古巴比伦最重要的宗教中心，供奉城市守护神马尔杜克。神庙拥有大片耕地、牲畜群、手工作坊和庞大的祭司及劳工队伍，构成一个几乎自给自足的经济体。祭司们不仅主持宗教仪式和节庆——尤其是隆重的阿基图（新年）典礼——还深度参与司法裁判、教育培训和商业借贷活动。马尔杜克崇拜的宇宙论地位赋予巴比伦在整个美索不达米亚文明圈中无可替代的宗教权威：《创世史诗》（Enuma Elish）将马尔杜克塑造为击败混沌、创造世界的至高神，而巴比伦则是宇宙秩序的中心。在王朝衰落时期，神庙成为巴比伦社会稳定的最后堡垒——即使王权更替，神庙的祭祀、经济和文化功能仍可持续运作。这也是后来喀西特人接管后选择维持而非废除巴比伦传统的重要原因。", "en": "The Esagila Temple was Old Babylon's most important religious center, dedicated to the city's patron god Marduk. The temple owned vast agricultural lands, livestock herds, craft workshops, and a large staff of priests and laborers, forming a nearly self-sufficient economic entity. Priests not only officiated religious ceremonies and festivals—especially the grand Akitu (New Year) ceremony—but also deeply participated in judicial decisions, education, and commercial lending activities. The cosmological status of Marduk worship gave Babylon irreplaceable religious authority throughout the Mesopotamian civilizational sphere: the Enuma Elish creation epic depicted Marduk as the supreme god who defeated chaos and created the world, with Babylon as the center of cosmic order. During the dynasty's decline, the temple became the last bastion of social stability in Babylon—even as royal power changed hands, the temple's ritual, economic, and cultural functions could continue operating. This was also an important reason why the Kassites chose to maintain rather than abolish Babylonian traditions after their takeover." },
+          "keyFigures": [
+            { "name": { "zh": "马尔杜克大祭司", "en": "High Priest of Marduk" }, "title": { "zh": "首席祭司", "en": "Chief Priest" }, "role": { "zh": "主持阿基图新年典礼和国家重大宗教仪式，掌握“授予”王权的仪式权力", "en": "Officiated the Akitu New Year ceremony and major state religious rituals, holding the ritual power to 'bestow' kingship" } },
+            { "name": { "zh": "神庙地产总管", "en": "Temple Estate Manager" }, "title": { "zh": "地产总管", "en": "Chief Steward" }, "role": { "zh": "管理埃萨吉拉庞大的土地、农业和手工业生产体系", "en": "Managed Esagila's vast land, agriculture, and craft production system" } }
+          ]
+        },
+        {
+          "id": "babylon_merchant_guilds",
+          "name": { "zh": "商人行会", "en": "Merchant Guilds" },
+          "type": "other",
+          "leader": { "zh": "远途商团首领", "en": "Chief of Long-Distance Merchants" },
+          "leaderTitle": { "zh": "塔姆卡鲁之长", "en": "Head Tamkarum" },
+          "ideology": { "zh": "维护楔形文字契约法文化、国际贸易网络和信用体系的稳定，以专业商业技能和跨区域资本流动维持社会影响力，追求贸易自由和商路安全", "en": "Maintaining the stability of cuneiform contract law culture, international trade networks, and credit systems, sustaining social influence through professional commercial skills and cross-regional capital flows, pursuing trade freedom and route security" },
+          "headquarters": { "zh": "巴比伦商人区与码头市场", "en": "Merchant quarter and quay markets of Babylon" },
+          "status": "allied",
+          "relationship": { "zh": "塔姆卡鲁（tamkarum，远距离商人）行会是巴比伦城市经济的核心引擎。他们为王室和神庙提供稀缺进口物资——木材、石材、金属和奢侈品——同时通过信贷系统为农业和手工业提供融资。商人利益与城市繁荣而非特定王朝紧密挂钩，因此他们在政权更替中能够保持相对的连续性和影响力。", "en": "The tamkarum (long-distance merchant) guilds were the core engine of Babylon's urban economy. They supplied the crown and temples with scarce imports—timber, stone, metals, and luxury goods—while financing agriculture and craft production through credit systems. Merchant interests aligned more closely with urban prosperity than with any specific dynasty, enabling them to maintain relative continuity and influence through regime changes." },
+          "description": { "zh": "巴比伦的商人行会代表着美索不达米亚城市文明中最具活力的经济力量。塔姆卡鲁商人经营着连接波斯湾迪尔蒙、安纳托利亚和叙利亚的贸易网络，通过白银称量交易和复杂的信贷合同进行跨区域商业活动。汉谟拉比法典中大量涉及商业交易、借贷、合伙和代理的条款，反映了商人阶层在巴比伦社会中的重要地位。商人行会同时是金融中介——他们发放商业贷款、管理存储设施、组织商队并承担贸易风险。楔形文字契约文化是他们商业活动的基础，每一笔交易都有详细的泥板记录和见证人。在王朝衰落时期，虽然战乱和政治不稳影响了远距离贸易，但商人的专业技能、商业网络和契约法知识使其具备跨政权的生存能力——无论由谁统治巴比伦，都离不开这些连接世界的贸易专家。", "en": "Babylon's merchant guilds represented the most dynamic economic force in Mesopotamian urban civilization. Tamkarum merchants operated trade networks connecting Dilmun in the Persian Gulf, Anatolia, and Syria, conducting cross-regional commerce through silver-weight transactions and complex credit contracts. The extensive provisions in Hammurabi's law code covering commercial transactions, lending, partnerships, and agency reflected the important position of the merchant class in Babylonian society. Merchant guilds also served as financial intermediaries—extending commercial loans, managing storage facilities, organizing caravans, and bearing trade risks. Cuneiform contract culture was the foundation of their commercial activity, with every transaction meticulously recorded on clay tablets with witnesses. During the dynasty's decline, though warfare and political instability disrupted long-distance trade, merchants' professional skills, commercial networks, and contract law expertise gave them cross-regime survival capability—whoever ruled Babylon would depend on these trade specialists who connected the world." },
+          "keyFigures": [
+            { "name": { "zh": "远途商团首领", "en": "Chief of Long-Distance Merchants" }, "title": { "zh": "塔姆卡鲁之长", "en": "Head Tamkarum" }, "role": { "zh": "组织跨地区贸易商队，维护巴比伦的国际商业联系", "en": "Organized interregional trade caravans, maintaining Babylon's international commercial connections" } },
+            { "name": { "zh": "信贷商行主", "en": "Head of Credit House" }, "title": { "zh": "商行之长", "en": "Credit House Chief" }, "role": { "zh": "经营信贷业务，为农业和手工业提供融资并管理商业风险", "en": "Operated credit business, financing agriculture and crafts while managing commercial risk" } }
+          ]
+        }
+      ]
     },
     {
       "id": "kassite_babylonia_rising",
@@ -11262,7 +11362,57 @@
       "description": {
         "zh": "安纳托利亚中部强国，正向叙利亚与巴比伦发动远征。",
         "en": "A central Anatolian great power undertaking campaigns into Syria and even against Babylon."
-      }
+      },
+      "factions": [
+        {
+          "id": "hittite_royal_dynasty",
+          "name": { "zh": "赫梯王族", "en": "Royal Dynasty" },
+          "type": "other",
+          "leader": { "zh": "哈图西里一世", "en": "Hattusili I" },
+          "leaderTitle": { "zh": "大王", "en": "Great King" },
+          "ideology": { "zh": "以神授大王权为核心的军事扩张主义，通过征服安纳托利亚和叙利亚建立霸权，将战车创新与宫廷外交结合形成独特的强国战略", "en": "Military expansionism centered on divinely sanctioned Great Kingship, establishing hegemony through the conquest of Anatolia and Syria, combining chariot warfare innovation with palace diplomacy to form a distinctive great-power strategy" },
+          "headquarters": { "zh": "哈图沙", "en": "Hattusa" },
+          "status": "ruling",
+          "relationship": { "zh": "赫梯大王是国家最高统治者，兼具最高军事统帅、最高法官和首席祭司三重角色。哈图西里一世开创了赫梯帝国的扩张传统，率军深入叙利亚北部并掠夺阿勒颇。然而早期赫梯王室的宫廷政治极不稳定——父子、兄弟和姻亲之间的权力博弈频繁演变为流血政变，继承权争夺构成王朝最大的内部威胁。", "en": "The Hittite Great King was the supreme ruler of the state, serving the triple role of supreme military commander, highest judge, and chief priest. Hattusili I inaugurated the Hittite expansion tradition, leading armies deep into northern Syria and plundering Aleppo. Yet early Hittite court politics were extremely unstable—power struggles among fathers, sons, brothers, and in-laws frequently escalated into bloody coups, with succession disputes constituting the dynasty's greatest internal threat." },
+          "description": { "zh": "赫梯王族以哈图沙为权力中心，大王通过赫梯语、卢维亚语和阿卡德语多语言行政体系管理其多民族王国。哈图西里一世是古赫梯最具开创性的军事领袖，他率领以战车为核心的军队远征叙利亚北部，摧毁了哈尔帕（阿勒颇）并将赫梯势力投射至美索不达米亚边缘。大王在远征中展现了惊人的军事组织能力——长程陆上行军的后勤补给、山地战车作战的战术适应、以及对被征服城市的系统性掠夺和附庸化。然而哈图西里一世的遗嘱文献揭示了王室内部触目惊心的权力斗争：他多次更换继承人，公开谴责不忠的亲属，最终在暮年指定了他认为可靠的继承者。这种不稳定的继承模式将贯穿整个古赫梯时期，成为王国发展的结构性隐患。", "en": "The Hittite royal dynasty was centered at Hattusa, with the Great King administering his multiethnic kingdom through a multilingual bureaucracy in Hittite, Luwian, and Akkadian. Hattusili I was the most pioneering military leader of Old Hittite history, leading chariot-centered armies on campaigns deep into northern Syria, destroying Halab (Aleppo) and projecting Hittite power to the edges of Mesopotamia. The Great King demonstrated remarkable military organizational capacity during campaigns—logistics for long overland marches, tactical adaptation of chariot warfare in mountain terrain, and systematic plundering and vassalization of conquered cities. However, Hattusili I's testament documents reveal shocking power struggles within the royal house: he changed his designated heir multiple times, publicly denounced disloyal relatives, and ultimately in his old age appointed the successor he deemed reliable. This pattern of unstable succession would persist throughout the Old Hittite period, becoming a structural vulnerability of the kingdom." },
+          "keyFigures": [
+            { "name": { "zh": "哈图西里一世", "en": "Hattusili I" }, "title": { "zh": "大王", "en": "Great King" }, "role": { "zh": "开创赫梯帝国扩张传统的早期大王，远征叙利亚北部", "en": "Early Great King who inaugurated the Hittite imperial expansion tradition, campaigning in northern Syria" } },
+            { "name": { "zh": "塔瓦南娜（王后）", "en": "Tawananna (Queen)" }, "title": { "zh": "王后", "en": "Queen" }, "role": { "zh": "独立的宗教权威与宫廷政治参与者，在王位更替中常起关键作用", "en": "Independent religious authority and participant in court politics, often playing a critical role in royal transitions" } }
+          ]
+        },
+        {
+          "id": "hittite_pankus_assembly",
+          "name": { "zh": "潘库斯贵族会议", "en": "Pankus Assembly" },
+          "type": "other",
+          "leader": { "zh": "贵族长老会议主席", "en": "Chief of the Pankus Council" },
+          "leaderTitle": { "zh": "贵族会议之长", "en": "Chief of the Assembly" },
+          "ideology": { "zh": "维护贵族阶层的集体权利和制衡王权的传统，通过贵族会议确认继承人选、裁决王室纠纷，保障贵族在土地和军功分配中的核心利益", "en": "Upholding the collective rights of the aristocracy and the tradition of checking royal power, confirming succession choices and adjudicating royal disputes through the assembly, protecting noble core interests in land and military reward distribution" },
+          "headquarters": { "zh": "哈图沙宫廷议事厅", "en": "Council hall of the Hattusa palace" },
+          "status": "rival",
+          "relationship": { "zh": "潘库斯（贵族集体大会）是古赫梯独特的政治制度，在理论上拥有审判甚至废黜大王的权力。这种贵族会议传统对王权形成有效制约——大王需要贵族的军事支持和政治认可，继承人的选定也需经过潘库斯的确认。在实际政治中，贵族频繁利用继承纷争的机会扩大自身权力，甚至策划政变推翻他们认为不合格的国王。", "en": "The Pankus (collective assembly of nobles) was a distinctive political institution of the Old Hittite kingdom, theoretically possessing the power to judge and even depose the Great King. This aristocratic assembly tradition effectively checked royal power—the Great King needed noble military support and political recognition, and the selection of heirs also required Pankus confirmation. In practical politics, nobles frequently exploited succession disputes to expand their own power, even plotting coups to overthrow kings they deemed unworthy." },
+          "description": { "zh": "潘库斯会议是赫梯政治制度中最独特的要素之一，代表着一种有限制衡王权的贵族共治传统。这一机构起源于赫梯人早期的部落议事传统，在王国建立后保留了贵族集体参与重大决策的权利。潘库斯有权在继承争议中选定或确认国王人选，审理涉及王室成员的重大案件，甚至在极端情况下判处国王及其亲属。哈图西里一世的遗嘱中即多次提及潘库斯对继承人选的关注和影响。贵族成员控制着安纳托利亚各地的城堡和战车部队，他们的军事实力是大王远征不可或缺的基础。然而潘库斯也是宫廷阴谋和暗杀的温床——当贵族利益与王室政策发生冲突时，暴力更替往往比和平协商更为常见。这种王权与贵族权力之间的紧张关系深刻影响了赫梯政治的演变方向。", "en": "The Pankus assembly was one of the most distinctive elements of the Hittite political system, representing a tradition of aristocratic co-governance that imposed limited checks on royal power. This institution originated in the early tribal deliberative traditions of the Hittites and preserved the collective right of nobles to participate in major decisions after the kingdom was established. The Pankus had the authority to select or confirm royal candidates during succession disputes, try major cases involving royal family members, and in extreme circumstances pass judgment on the king and his relatives. Hattusili I's testament repeatedly referenced the Pankus's concern and influence over succession choices. Noble members controlled fortresses and chariot forces across Anatolia, and their military strength was indispensable for the Great King's campaigns. Yet the Pankus was also a breeding ground for court intrigue and assassination—when noble interests conflicted with royal policy, violent change was often more common than peaceful negotiation. This tension between royal and noble power profoundly shaped the evolution of Hittite politics." },
+          "keyFigures": [
+            { "name": { "zh": "贵族会议长老", "en": "Senior Pankus Elder" }, "title": { "zh": "长老", "en": "Elder" }, "role": { "zh": "主持贵族会议裁决，在继承纷争中发挥关键调停或选择作用", "en": "Presided over assembly decisions, playing key mediating or choosing roles in succession disputes" } },
+            { "name": { "zh": "各地战车领主", "en": "Regional Chariot Lords" }, "title": { "zh": "贵族", "en": "Noble" }, "role": { "zh": "控制地方军事力量，是大王远征和国内政治博弈中的关键角色", "en": "Controlled local military forces, playing key roles in the Great King's campaigns and domestic political maneuvering" } }
+          ]
+        },
+        {
+          "id": "hittite_subject_peoples",
+          "name": { "zh": "臣属民族", "en": "Subject Peoples" },
+          "type": "other",
+          "leader": { "zh": "哈梯族及卢维族长老", "en": "Hattic and Luwian Elders" },
+          "leaderTitle": { "zh": "地方首领", "en": "Local Chief" },
+          "ideology": { "zh": "保护本族宗教传统、语言和社区自治权，在赫梯统治框架内争取最大限度的文化独立和减轻贡赋压力", "en": "Protecting native religious traditions, language, and community autonomy, seeking maximum cultural independence and reduced tribute burdens within the framework of Hittite rule" },
+          "headquarters": { "zh": "安纳托利亚各地哈梯、卢维族聚落", "en": "Various Hattic and Luwian settlements across Anatolia" },
+          "status": "opposition",
+          "relationship": { "zh": "赫梯王国统治着大量非赫梯语人口——哈梯人是安纳托利亚原住民，卢维亚人则分布在南部和西部广大地区。这些臣属民族在赫梯的多神信仰体系中保留了自己的宗教传统，但在政治和军事上处于从属地位。当赫梯主力远征在外或发生宫廷政变时，臣属民族常趁机发动叛乱，是赫梯内部稳定的长期隐患。", "en": "The Hittite kingdom ruled over large non-Hittite-speaking populations—the Hattic were Anatolian aboriginals, while Luwians were distributed across the vast southern and western regions. These subject peoples preserved their own religious traditions within the Hittite polytheistic system, but were politically and militarily subordinate. When Hittite main forces were on distant campaigns or palace coups occurred, subject peoples frequently seized the opportunity to revolt, constituting a persistent threat to internal stability." },
+          "description": { "zh": "赫梯王国的多民族特性是其文明的独特之处，但也是统治的结构性挑战。哈梯人是安纳托利亚中部的原住民，早在赫梯人到来之前就已建立了成熟的宗教和文化传统——“千神之国”的称号在很大程度上源于对哈梯神灵体系的吸收。卢维亚人分布在安纳托利亚南部和西部，他们虽与赫梯人同属印欧语系安纳托利亚语族，但保持着独立的语言、象形文字传统和地方认同。此外还有大量胡里安人从东南方向渗入赫梯领土，带来了他们自己的宗教和文化影响。这些臣属民族虽然在日常生活中接受赫梯统治，向王室缴纳贡赋并提供劳役和兵员，但他们的地方忠诚度始终不稳定。每当赫梯遭遇军事挫折或内部政变，边缘地区的叛乱便此起彼伏。赫梯王室通过多语行政、宗教包容和地方任命等手段管理这种多样性，但文化整合从未真正完成。", "en": "The multiethnic character of the Hittite kingdom was both a distinctive feature of its civilization and a structural governance challenge. The Hattic were indigenous to central Anatolia, having established mature religious and cultural traditions long before the Hittites arrived—the epithet 'Land of a Thousand Gods' derived largely from the absorption of the Hattic deity system. Luwians were distributed across southern and western Anatolia; though belonging to the same Indo-European Anatolian language family as the Hittites, they maintained independent language, hieroglyphic traditions, and local identity. Additionally, large numbers of Hurrians infiltrated Hittite territory from the southeast, bringing their own religious and cultural influences. Though these subject peoples accepted Hittite rule in daily life, paying tribute and providing labor and military service, their local loyalty remained perpetually unstable. Whenever the Hittites suffered military setbacks or internal coups, peripheral revolts would erupt in waves. The Hittite court managed this diversity through multilingual administration, religious tolerance, and local appointments, but cultural integration was never truly completed." },
+          "keyFigures": [
+            { "name": { "zh": "哈梯族祭祀长老", "en": "Hattic Cult Elder" }, "title": { "zh": "地方祭司", "en": "Local Priest" }, "role": { "zh": "维护原住民宗教传统，在赫梯“千神之国”体系中保持哈梯神灵崇拜", "en": "Preserved indigenous religious traditions, maintaining Hattic deity worship within the Hittite 'Thousand Gods' system" } },
+            { "name": { "zh": "卢维亚地方首领", "en": "Luwian Local Lord" }, "title": { "zh": "地方王", "en": "Local King" }, "role": { "zh": "管理西部安纳托利亚卢维亚社区，维持不稳定的臣属关系", "en": "Governed Luwian communities in western Anatolia, maintaining an unstable subordinate relationship" } }
+          ]
+        }
+      ]
     },
     {
       "id": "kizzuwatna",
@@ -12430,7 +12580,57 @@
       "description": {
         "zh": "上埃及的本土法老政权正与喜克索斯争夺尼罗河全境控制权。",
         "en": "The native Upper Egyptian pharaonic regime was contesting control of the Nile valley with the Hyksos."
-      }
+      },
+      "factions": [
+        {
+          "id": "egypt_pharaonic_court",
+          "name": { "zh": "法老宫廷", "en": "Pharaonic Court" },
+          "type": "other",
+          "leader": { "zh": "雅赫摩斯一世", "en": "Ahmose I" },
+          "leaderTitle": { "zh": "法老", "en": "Pharaoh" },
+          "ideology": { "zh": "神王合一的王权理念，以驱逐希克索斯、重新统一上下埃及为最高使命，通过阿蒙-拉崇拜和军事扩张确立神圣的法老权威", "en": "Divine kingship unifying the sacred and the political, with the supreme mission of expelling the Hyksos and reunifying Upper and Lower Egypt, establishing sacred pharaonic authority through Amun-Ra worship and military expansion" },
+          "headquarters": { "zh": "底比斯王宫", "en": "Royal Palace at Thebes" },
+          "status": "ruling",
+          "relationship": { "zh": "法老宫廷是埃及新王国的绝对权力核心。雅赫摩斯一世成功驱逐希克索斯并统一上下埃及，开启了第十八王朝的辉煌时代。法老身兼最高统帅和最高祭司，与阿蒙神庙结成紧密联盟以巩固合法性。宫廷集中了军事将领、王室亲族和高级书吏，通过战车技术革新和军事扩张确立地区霸权。", "en": "The pharaonic court was the absolute power center of the Egyptian New Kingdom. Ahmose I successfully expelled the Hyksos and unified Upper and Lower Egypt, inaugurating the glorious era of the Eighteenth Dynasty. The pharaoh served as both supreme commander and chief priest, forging a tight alliance with the Amun temple to consolidate legitimacy. The court concentrated military commanders, royal kinsmen, and senior scribes, establishing regional hegemony through chariot technology innovation and military expansion." },
+          "description": { "zh": "第十八王朝的法老宫廷正处于埃及历史上最激动人心的转折时刻。雅赫摩斯一世继承卡摩斯未竟的事业，率军攻下希克索斯首都阿瓦里斯，结束了长达一个多世纪的外族统治，重新统一尼罗河全境。胜利后的法老迅速建立起强大的中央集权体制——改组军队、引进战车与复合弓等新型军事技术、发展尼罗河船运后勤能力。宫廷以底比斯为政治和宗教中心，将法老塑造为玛阿特秩序的守护者和阿蒙-拉在人间的代理人。征服努比亚的战役巩固了南方黄金产区的控制，为后续大规模神庙建设和军事扩张奠定了经济基础。法老通过赏赐土地和战利品给功勋军官，创建了一个新兴的军事贵族阶层，彻底重塑了埃及的权力结构。", "en": "The Eighteenth Dynasty pharaonic court stood at one of the most exciting turning points in Egyptian history. Ahmose I inherited Kamose's unfinished work, leading armies to capture the Hyksos capital of Avaris and ending over a century of foreign rule, reunifying the entire Nile valley. The victorious pharaoh swiftly established a powerful centralized system—reorganizing the military, adopting new technologies like chariots and composite bows, and developing Nile riverine logistics. The court made Thebes the political and religious center, shaping the pharaoh as the guardian of Ma'at order and the earthly agent of Amun-Ra. Campaigns to conquer Nubia secured control of southern gold-producing regions, laying the economic foundation for subsequent large-scale temple construction and military expansion. The pharaoh created a new military aristocracy by rewarding meritorious officers with land and war booty, thoroughly reshaping Egypt's power structure." },
+          "keyFigures": [
+            { "name": { "zh": "雅赫摩斯一世", "en": "Ahmose I" }, "title": { "zh": "法老", "en": "Pharaoh" }, "role": { "zh": "驱逐希克索斯、统一埃及、开创第十八王朝的缔造者", "en": "Founder of the Eighteenth Dynasty who expelled the Hyksos and reunified Egypt" } },
+            { "name": { "zh": "雅赫摩斯-尼菲尔泰丽", "en": "Ahmose-Nefertari" }, "title": { "zh": "王后", "en": "Queen" }, "role": { "zh": "阿蒙神配偶，拥有独立宗教权威和政治影响力", "en": "God's Wife of Amun, holding independent religious authority and political influence" } }
+          ]
+        },
+        {
+          "id": "egypt_amun_priests",
+          "name": { "zh": "阿蒙神庙祭司团", "en": "Amun Priesthood" },
+          "type": "religious",
+          "leader": { "zh": "卡纳克阿蒙大祭司", "en": "High Priest of Amun at Karnak" },
+          "leaderTitle": { "zh": "阿蒙第一先知", "en": "First Prophet of Amun" },
+          "ideology": { "zh": "阿蒙-拉为众神之王，底比斯/卡纳克是宇宙秩序的中心，法老的一切胜利皆出于阿蒙的旨意，神庙祭司是维护神人关系的不可替代中介", "en": "Amun-Ra as king of the gods, Thebes/Karnak as the center of cosmic order, all pharaonic victories attributed to the will of Amun, and temple priests as irreplaceable intermediaries maintaining the divine-human relationship" },
+          "headquarters": { "zh": "卡纳克神庙", "en": "Temple of Karnak" },
+          "status": "allied",
+          "relationship": { "zh": "阿蒙祭司团与法老宫廷形成战略联盟：法老将驱逐希克索斯的胜利归功于阿蒙的庇佑，为神庙提供大量土地捐赠和战利品供奉；神庙则为法老的统一战争和统治提供不可替代的宗教合法性。驱逐异族的成功极大提升了阿蒙崇拜的地位，祭司团的政治和经济影响力正处于爆发性增长的起点。", "en": "The Amun priesthood and the pharaonic court formed a strategic alliance: the pharaoh attributed the victory over the Hyksos to Amun's protection, providing vast land endowments and war booty offerings to the temple; in return, the temple provided irreplaceable religious legitimacy for the pharaoh's unification wars and rule. The successful expulsion of foreigners enormously elevated the status of Amun worship, and the priesthood's political and economic influence was at the starting point of explosive growth." },
+          "description": { "zh": "卡纳克阿蒙神庙正从驱逐希克索斯的民族胜利中获得空前的宗教权威和物质财富。阿蒙崇拜被成功塑造为埃及本土正统信仰的象征，“阿蒙的旨意”成为统一战争和一切重大国策的终极合法性来源。雅赫摩斯一世将大量战利品和土地捐赠给卡纳克神庙，开启了新王国时期阿蒙神庙财富持续膨胀的序幕。祭司团不仅主持宗教仪式和节庆，还参与司法裁判、教育和商业活动，构成一个日益独立的经济和政治实体。王后雅赫摩斯-尼菲尔泰丽被授予“阿蒙神配”的头衔，标志着王室与神庙之间权力纽带的进一步强化。然而神庙权力的快速增长也埋下了深远的隐患——数百年后祭司权力与王权之间的张力将成为新王国衰落的重要因素。", "en": "The Temple of Karnak at Amun was gaining unprecedented religious authority and material wealth from the national victory of expelling the Hyksos. The Amun cult was successfully shaped into a symbol of native Egyptian orthodox faith, and 'the will of Amun' became the ultimate source of legitimacy for the unification war and all major state policies. Ahmose I donated vast war booty and lands to the Karnak temple, opening the prologue of continuously expanding Amun temple wealth during the New Kingdom period. The priesthood not only officiated religious ceremonies and festivals but also participated in judicial decisions, education, and commercial activities, forming an increasingly independent economic and political entity. Queen Ahmose-Nefertari was granted the title 'God's Wife of Amun', marking a further strengthening of the power bond between the royal house and the temple. Yet the rapid growth of temple power also planted far-reaching dangers—centuries later, the tension between priestly power and kingship would become an important factor in the New Kingdom's decline." },
+          "keyFigures": [
+            { "name": { "zh": "卡纳克阿蒙大祭司", "en": "High Priest of Amun at Karnak" }, "title": { "zh": "阿蒙第一先知", "en": "First Prophet of Amun" }, "role": { "zh": "底比斯最高宗教权威，管理日益膨胀的神庙财富和祭祀体系", "en": "Highest religious authority at Thebes, managing the rapidly expanding temple wealth and ritual system" } },
+            { "name": { "zh": "雅赫摩斯-尼菲尔泰丽", "en": "Ahmose-Nefertari" }, "title": { "zh": "阿蒙神配", "en": "God's Wife of Amun" }, "role": { "zh": "连接王室与神庙的关键宗教角色，拥有独立的仪式权力", "en": "Key religious role linking the royal house and the temple, holding independent ritual authority" } }
+          ]
+        },
+        {
+          "id": "egypt_military_class",
+          "name": { "zh": "军事将领阶层", "en": "Military Officer Class" },
+          "type": "other",
+          "leader": { "zh": "埃尔卡卜的雅赫摩斯", "en": "Ahmose son of Ibana" },
+          "leaderTitle": { "zh": "将军", "en": "General" },
+          "ideology": { "zh": "通过军事扩张重建统一强盛的埃及，以战车和新型兵器技术实现军事现代化，凭军功获取土地、奴隶和社会地位", "en": "Rebuilding a unified and powerful Egypt through military expansion, modernizing the military with chariots and new weapons technology, and achieving land, slaves, and social status through martial merit" },
+          "headquarters": { "zh": "底比斯军营与各地要塞", "en": "Military camps at Thebes and various fortresses" },
+          "status": "allied",
+          "relationship": { "zh": "军事将领阶层是法老对抗希克索斯和征服努比亚的核心依靠力量。这些将领在战争中积累了巨大威望，获得法老慷慨的土地赏赐和战俘奴隶，逐渐形成一个强大的新兴军功贵族集团。他们对法老高度忠诚，但其权力基础来自实战能力和部下追随而非传统血统，代表着埃及社会结构的深刻变革。", "en": "The military officer class was the pharaoh's core fighting force against the Hyksos and in the conquest of Nubia. These commanders accumulated enormous prestige through war, receiving generous land grants and war-captive slaves from the pharaoh, gradually forming a powerful new merit-based military aristocracy. They were highly loyal to the pharaoh, but their power base came from battlefield capability and troop loyalty rather than traditional bloodline, representing a profound transformation of Egyptian social structure." },
+          "description": { "zh": "驱逐希克索斯的战争催生了埃及历史上第一个真正的职业军事精英阶层。以埃尔卡卜的雅赫摩斯为代表的新一代将领掌握了战车、复合弓和新式青铜兵器等从希克索斯处学到并加以改良的军事技术。战车部队虽然规模尚在扩展中但已成为决定性的战场力量，开启了埃及军事的新纪元。远征努比亚的将领负责征服和管理南方黄金产区，确保了帝国扩张所需的关键经济资源。来自努比亚的精锐弓箭手和侦察兵被大量纳入军事体系，强化了埃及军队的多兵种作战能力。这些军功贵族来自不同社会背景，他们的崛起标志着传统世袭贵族对政治权力垄断的终结——在新王国时期，军事能力将成为与血统同等重要的权力通行证。", "en": "The war to expel the Hyksos gave birth to the first true professional military elite class in Egyptian history. A new generation of commanders, exemplified by Ahmose son of Ibana, mastered chariot warfare, composite bows, and new bronze weapons—military technologies learned from the Hyksos and improved upon. Though chariot forces were still expanding in scale, they had already become a decisive battlefield force, opening a new epoch in Egyptian warfare. Generals campaigning in Nubia were responsible for conquering and managing southern gold-producing regions, securing the critical economic resources needed for imperial expansion. Elite Nubian archers and scouts were incorporated into the military system in large numbers, enhancing the Egyptian army's multi-branch combat capability. These military meritocrats came from diverse social backgrounds, and their rise marked the end of traditional hereditary nobility's monopoly on political power—in the New Kingdom period, military ability would become a passport to power as important as bloodline." },
+          "keyFigures": [
+            { "name": { "zh": "埃尔卡卜的雅赫摩斯", "en": "Ahmose son of Ibana" }, "title": { "zh": "将军", "en": "General" }, "role": { "zh": "记录其参与驱逐希克索斯和征服努比亚战功的传奇军人", "en": "Legendary soldier whose tomb inscriptions record his exploits in expelling the Hyksos and conquering Nubia" } },
+            { "name": { "zh": "战车队长", "en": "Chariot Captain" }, "title": { "zh": "战车统领", "en": "Chariot Commander" }, "role": { "zh": "指挥新型战车部队，推动埃及军事技术革新", "en": "Commanded new chariot forces, driving the revolution in Egyptian military technology" } }
+          ]
+        }
+      ]
     },
     {
       "id": "hyksos_avaris",
@@ -19174,7 +19374,7 @@
             "zh": "克白银价值",
             "en": "grams of silver equivalent"
           },
-          "goldKg": 0.000024,
+          "goldKg": 2.4e-05,
           "silverKg": 0.024
         },
         "gdpDescription": {
@@ -25248,7 +25448,7 @@
             "zh": "石器时代—早期复杂农业社会折算银克/人",
             "en": "grams of silver equivalent per person in an early complex agrarian society"
           },
-          "goldKg": 0.00003,
+          "goldKg": 3e-05,
           "silverKg": 0.006
         },
         "gdpDescription": {
@@ -41280,6 +41480,2848 @@
       "description": {
         "zh": "帕拉伊索文化是秘鲁海岸以前陶神庙建筑和海陆互补经济为基础的早期礼仪酋邦。",
         "en": "The El Paraíso culture was an early ceremonial chiefdom on the Peruvian coast, built on preceramic temple architecture and a complementary maritime-agricultural economy."
+      }
+    },
+    {
+      "id": "cyprus_bronze",
+      "name": {
+        "zh": "青铜时代塞浦路斯",
+        "en": "Bronze Age Cyprus"
+      },
+      "territoryId": "cyprus_bronze",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": {
+          "zh": "塞浦路斯青铜文明",
+          "en": "Cypriot Bronze Civilization"
+        },
+        "type": "chiefdom",
+        "ruler": {
+          "zh": "恩科米首领",
+          "en": "Chief of Enkomi"
+        },
+        "rulerTitle": {
+          "zh": "首领",
+          "en": "Chief"
+        },
+        "dynasty": {
+          "zh": "塞浦路斯城镇联盟时期",
+          "en": "Cypriot Town-League Period"
+        },
+        "capital": {
+          "zh": "恩科米",
+          "en": "Enkomi"
+        },
+        "governmentForm": {
+          "zh": "由数个沿海城镇组成的松散酋邦联合体，以铜矿开采和海上贸易为核心纽带。",
+          "en": "A loose confederation of coastal towns held together by copper mining and maritime trade."
+        },
+        "socialStructure": {
+          "zh": "社会上层由控制铜矿与海港的首领家族和冶金精英构成，中层为农民、渔夫与工匠，下层为矿工和依附劳动者。铜的生产与出口创造了高度分工与区域间联系。",
+          "en": "The upper tier consisted of chiefly families and metallurgical elites controlling copper mines and harbors; the middle tier of farmers, fishers, and artisans; the lower tier of miners and dependent laborers. Copper production and export generated marked division of labor and interregional connections."
+        },
+        "rulingClass": {
+          "zh": "统治阶层主要是控制矿区、冶铸作坊和海港仓储的首领家族，其权威来源于对铜资源和贸易网络的垄断。",
+          "en": "The ruling class comprised chiefly lineages controlling mines, smelting workshops, and harbor storerooms, whose authority derived from monopoly over copper resources and trade networks."
+        },
+        "succession": {
+          "zh": "继承多在首领家族内部进行，但需要冶金精英和贸易伙伴的支持。铜生产中断可能引发继承危机。",
+          "en": "Succession usually occurred within chiefly families but required backing from metallurgical elites and trade partners. Disruption of copper production could trigger succession crises."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "塞浦路斯此时尚未统一为单一国家，而是由恩科米、阿拉萨等数个城镇中心各自管辖周边地区。各中心在铜出口与外来贸易上相互协调，但内政各自独立。",
+          "en": "Cyprus was not yet unified into a single state; instead, several town centers such as Enkomi and Alassa each governed surrounding areas. The centers coordinated on copper export and foreign trade but remained internally autonomous."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "矿务与冶铸事务",
+              "en": "Mining and Smelting Affairs"
+            },
+            "function": {
+              "zh": "管理铜矿开采、冶炼作坊与铜锭生产。",
+              "en": "Managed copper mining, smelting workshops, and ingot production."
+            },
+            "headCount": 30
+          },
+          {
+            "name": {
+              "zh": "海港与贸易事务",
+              "en": "Harbor and Trade Affairs"
+            },
+            "function": {
+              "zh": "组织铜锭出口、接待外国商人、管理仓储与关税。",
+              "en": "Organized copper ingot export, hosted foreign merchants, and managed storage and duties."
+            },
+            "headCount": 25
+          },
+          {
+            "name": {
+              "zh": "祭祀与城镇事务",
+              "en": "Ritual and Town Affairs"
+            },
+            "function": {
+              "zh": "主持祭祀仪式、协调城镇建设与司法仲裁。",
+              "en": "Conducted religious ceremonies, coordinated town construction, and arbitrated disputes."
+            },
+            "headCount": 15
+          }
+        ],
+        "totalOfficials": 70,
+        "localAdmin": {
+          "zh": "各城镇由首领及其亲信直接管理，周边村落通过贡纳和劳役维系与中心的关系。",
+          "en": "Each town was directly administered by its chief and inner circle; outlying villages maintained ties to the center through tribute and labor obligations."
+        },
+        "legalSystem": {
+          "zh": "法律以习惯法为基础，由首领与长老裁决。铜矿权属、贸易纠纷和土地争端是主要法律事务。",
+          "en": "Law was based on custom, with chiefs and elders rendering judgments. Copper mining rights, trade disputes, and land claims were the chief legal concerns."
+        },
+        "taxationSystem": {
+          "zh": "税收以铜锭、农产品和劳役形式征收。铜出口利润是首领的主要收入来源。",
+          "en": "Revenue was collected in copper ingots, agricultural produce, and labor. Profits from copper export were the chief source of income for rulers."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "多神信仰",
+          "en": "Polytheism"
+        },
+        "culturalAchievements": {
+          "zh": "塞浦路斯以铜冶金、氧化铜牛皮锭生产和独特的塞浦路斯-米诺斯混合风格陶器著称，是东地中海铜贸易网络的核心节点。",
+          "en": "Cyprus was distinguished by copper metallurgy, oxhide ingot production, and a distinctive Cypro-Minoan hybrid pottery style, serving as a central node in Eastern Mediterranean copper trade."
+        },
+        "languageFamily": {
+          "zh": "塞浦路斯-米诺斯语（未完全解读），可能与爱琴海语系相关。",
+          "en": "Cypro-Minoan script (not fully deciphered), possibly related to Aegean language families."
+        },
+        "philosophy": {
+          "zh": "宗教观念融合近东与爱琴海元素，崇拜丰产女神和金属之神，重视冶金仪式与海上航行的神圣性。",
+          "en": "Religious thought blended Near Eastern and Aegean elements, venerating fertility goddesses and metal deities, with metallurgical rites and maritime sanctity."
+        },
+        "writingSystem": {
+          "zh": "塞浦路斯-米诺斯文字，用于铜锭标记和行政记录，尚未完全破译。",
+          "en": "Cypro-Minoan script used for marking copper ingots and administrative records, not yet fully deciphered."
+        }
+      },
+      "economy": {
+        "level": 2,
+        "gdpEstimate": {
+          "amount": 50000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "gdpPerCapita": {
+          "amount": 1.0,
+          "unit": {
+            "zh": "千克白银当量/人/年",
+            "en": "kg silver equivalent/person/year"
+          }
+        },
+        "gdpDescription": {
+          "zh": "经济高度依赖铜矿开采和出口，辅以农业、畜牧和渔业。铜贸易使塞浦路斯获得了远超其人口规模的区域经济影响力。",
+          "en": "The economy depended heavily on copper mining and export, supplemented by agriculture, herding, and fishing. The copper trade gave Cyprus regional economic influence far exceeding its population."
+        },
+        "mainIndustries": {
+          "zh": "铜矿开采与冶炼、牛皮铜锭生产、农牧业、陶器与纺织、海上贸易",
+          "en": "Copper mining and smelting, oxhide ingot production, farming and herding, pottery and textiles, maritime trade"
+        },
+        "tradeGoods": {
+          "zh": "铜锭、铜器、陶器、橄榄油、谷物、木材、纺织品",
+          "en": "Copper ingots, copper implements, pottery, olive oil, grain, timber, textiles"
+        },
+        "currency": {
+          "name": {
+            "zh": "铜锭称量体系",
+            "en": "Copper ingot weight system"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "牛皮铜锭",
+            "en": "Oxhide copper ingot"
+          }
+        },
+        "householdWealth": {
+          "zh": "普通家庭依赖田地和小型作坊为生。冶金精英家庭则拥有大量铜料储备、进口奢侈品和更大的土地。",
+          "en": "Ordinary families depended on fields and small workshops. Metallurgical elite households held large copper stocks, imported luxuries, and more land."
+        },
+        "averageIncome": {
+          "amount": 0.8,
+          "unit": {
+            "zh": "千克白银当量/人/年",
+            "en": "kg silver equivalent/person/year"
+          }
+        },
+        "foreignTradeVolume": {
+          "amount": 15000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "economicSystem": {
+          "zh": "以宫殿-首领主导的再分配与市场交换并行的混合经济，铜出口带来大量外部资源。",
+          "en": "A mixed economy combining palace-chief redistribution with market exchange, with copper exports bringing substantial external resources."
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 8000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "annualExpenditure": {
+          "amount": 7200,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "surplus": {
+          "amount": 800,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "铜锭出口利润",
+              "en": "Copper ingot export profits"
+            },
+            "amount": {
+              "amount": 4000,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 50
+          },
+          {
+            "source": {
+              "zh": "农牧贡赋",
+              "en": "Agricultural and pastoral tribute"
+            },
+            "amount": {
+              "amount": 2400,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "source": {
+              "zh": "港口关税与贸易馈赠",
+              "en": "Harbor duties and trade gifts"
+            },
+            "amount": {
+              "amount": 1600,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 20
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "矿务与冶炼",
+              "en": "Mining and smelting"
+            },
+            "amount": {
+              "amount": 2880,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "category": {
+              "zh": "祭祀与城镇建设",
+              "en": "Ritual and town construction"
+            },
+            "amount": {
+              "amount": 2160,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "category": {
+              "zh": "防御与武装",
+              "en": "Defense and armament"
+            },
+            "amount": {
+              "amount": 1440,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "首领与精英维持",
+              "en": "Chiefly and elite maintenance"
+            },
+            "amount": {
+              "amount": 720,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 10
+          }
+        ],
+        "treasury": {
+          "amount": 5000,
+          "unit": {
+            "zh": "克银当量",
+            "en": "grams silver equivalent"
+          }
+        },
+        "treasuryDescription": {
+          "zh": "储备主要为铜锭、粮食、进口奢侈品和冶金原料。铜锭是最具流动性的储备形式。",
+          "en": "Reserves consisted mainly of copper ingots, grain, imported luxuries, and smelting materials. Copper ingots were the most liquid form of reserve."
+        },
+        "fiscalPolicy": {
+          "zh": "财政政策以维持铜生产和出口通道为优先，同时投资港口设施与宗教建设。",
+          "en": "Fiscal policy prioritized maintaining copper production and export channels while investing in harbor facilities and religious construction."
+        }
+      },
+      "military": {
+        "level": 2,
+        "totalTroops": 500,
+        "standingArmy": 150,
+        "reserves": 350,
+        "branches": [
+          {
+            "name": {
+              "zh": "城镇守卫",
+              "en": "Town Guard"
+            },
+            "count": 150,
+            "description": {
+              "zh": "驻守恩科米等主要城镇与矿区的常备武装力量。",
+              "en": "A standing armed force garrisoning major towns such as Enkomi and mine sites."
+            }
+          },
+          {
+            "name": {
+              "zh": "征召战士",
+              "en": "Levy Warriors"
+            },
+            "count": 350,
+            "description": {
+              "zh": "来自各城镇和村落的壮丁，战时征召防御海上袭击和矿区威胁。",
+              "en": "Able-bodied men from towns and villages, levied in wartime against seaborne raids and threats to mines."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 5,
+          "commanderInChief": {
+            "zh": "恩科米首领",
+            "en": "Chief of Enkomi"
+          }
+        },
+        "technology": {
+          "zh": "武器以铜剑、铜矛和盾牌为主，防御工事有石砌城墙。海上力量尚处于初步阶段。",
+          "en": "Weapons consisted mainly of copper swords, spears, and shields, with stone-walled fortifications. Naval capability was still rudimentary."
+        },
+        "annualMilitarySpending": {
+          "amount": 1440,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "militarySpendingPctGdp": 2.88,
+        "threats": {
+          "zh": "主要威胁来自海盗袭击、争夺铜资源的外来势力以及近东大国的扩张压力。",
+          "en": "Main threats came from pirate raids, foreign powers competing for copper resources, and expansionist pressures from Near Eastern empires."
+        }
+      },
+      "demographics": {
+        "population": 50000,
+        "populationDescription": {
+          "zh": "人口约五万，分布于恩科米、阿拉萨等沿海城镇及内陆铜矿区和农耕村落。城镇化程度在岛屿社会中相对较高。",
+          "en": "The population was about 50,000, spread across coastal towns such as Enkomi and Alassa, inland copper-mining districts, and farming villages. Urbanization was relatively high for an island society."
+        },
+        "urbanPopulation": 10000,
+        "urbanizationRate": 20,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "恩科米",
+              "en": "Enkomi"
+            },
+            "population": 5000
+          },
+          {
+            "name": {
+              "zh": "阿拉萨",
+              "en": "Alassa"
+            },
+            "population": 2000
+          },
+          {
+            "name": {
+              "zh": "卡拉瓦索斯",
+              "en": "Kalavasos"
+            },
+            "population": 1500
+          },
+          {
+            "name": {
+              "zh": "马罗尼",
+              "en": "Maroni"
+            },
+            "population": 1500
+          }
+        ],
+        "socialClasses": {
+          "zh": "首领家族与冶金精英、祭司与书吏、农民与工匠、矿工与依附劳动者。",
+          "en": "Chiefly families and metallurgical elites, priests and scribes, farmers and artisans, miners and dependent laborers."
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与埃及、乌加里特和爱琴海诸城保持密切铜贸易关系，互送礼品并维持商业联盟。",
+          "en": "Maintained close copper-trade ties with Egypt, Ugarit, and Aegean cities, exchanging gifts and sustaining commercial alliances."
+        },
+        "enemies": {
+          "zh": "无长期固定敌国，但海盗和沿海竞争者构成间歇性威胁。",
+          "en": "No permanent fixed enemies, though pirates and coastal competitors posed intermittent threats."
+        },
+        "foreignPolicy": {
+          "zh": "对外政策以保障铜出口航道安全、维持多方贸易伙伴关系和避免卷入近东大国冲突为核心。",
+          "en": "Foreign policy centered on securing copper export sea lanes, maintaining multilateral trade partnerships, and avoiding entanglement in Near Eastern great-power conflicts."
+        }
+      },
+      "technology": {
+        "level": 3,
+        "era": {
+          "zh": "东地中海青铜时代中期",
+          "en": "Middle Bronze Age of the Eastern Mediterranean"
+        },
+        "keyInnovations": {
+          "zh": "大规模铜冶炼与牛皮铜锭铸造、塞浦路斯-米诺斯文字使用、石砌城镇防御工事、远程海上贸易网络。",
+          "en": "Large-scale copper smelting and oxhide ingot casting, Cypro-Minoan script usage, stone-built town fortifications, and long-range maritime trade networks."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "铜资源丰富，冶金技术先进，位于东地中海贸易网络中心，经济外向性强。",
+          "en": "Rich copper resources, advanced metallurgy, a central position in Eastern Mediterranean trade networks, and a strongly outward-oriented economy."
+        },
+        "weaknesses": {
+          "zh": "人口较少，军事力量有限，高度依赖外贸，易受海上封锁和大国干预影响。",
+          "en": "Small population, limited military strength, heavy dependence on foreign trade, and vulnerability to naval blockade and great-power intervention."
+        },
+        "outlook": {
+          "zh": "短期内可凭借铜贸易维持繁荣，但长期面临近东政治格局变化和铜需求波动的风险。",
+          "en": "Prosperity could be maintained in the short term through copper trade, but long-term risks included shifts in Near Eastern politics and fluctuations in copper demand."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "青铜时代塞浦路斯是以铜矿开采和海上贸易为核心的东地中海岛屿社会。",
+        "en": "Bronze Age Cyprus was an Eastern Mediterranean island society centered on copper mining and maritime trade."
+      }
+    },
+    {
+      "id": "saharan_cattle_bronze",
+      "name": {
+        "zh": "撒哈拉畜牧部落（塔西里地区）",
+        "en": "Saharan Cattle Pastoralists (Tassili Region)"
+      },
+      "territoryId": "saharan_cattle_bronze",
+      "territoryScale": "lg",
+      "civilization": {
+        "name": {
+          "zh": "塔西里-撒哈拉畜牧文明",
+          "en": "Tassili-Saharan Pastoral Civilization"
+        },
+        "type": "tribal",
+        "ruler": {
+          "zh": "部族长老",
+          "en": "Tribal Elder"
+        },
+        "rulerTitle": {
+          "zh": "长老",
+          "en": "Elder"
+        },
+        "dynasty": {
+          "zh": "撒哈拉畜牧时期部族群",
+          "en": "Saharan Pastoral-Period Tribal Communities"
+        },
+        "capital": {
+          "zh": "无固定都城",
+          "en": "No fixed capital"
+        },
+        "governmentForm": {
+          "zh": "由分散于撒哈拉绿洲和草地走廊的畜牧部族构成的松散社会，以长老合议和季节性集会为主要治理形式。",
+          "en": "A dispersed society of pastoral tribes scattered across Saharan oases and grassland corridors, governed mainly by elder councils and seasonal assemblies."
+        },
+        "socialStructure": {
+          "zh": "社会以牛群规模和控制水源为核心分层。拥有大型牛群的家族构成上层，普通牧民和农耕辅助者居中，依附家庭和边缘采集者居下。岩画艺术表明社会对牲畜有强烈的文化认同。",
+          "en": "Society was stratified by herd size and control of water sources. Families with large cattle herds formed the upper tier, ordinary pastoralists and farming auxiliaries the middle, and dependent households and marginal gatherers the lower. Rock art indicates strong cultural identification with livestock."
+        },
+        "rulingClass": {
+          "zh": "统治阶层是拥有大型牛群和控制关键水源的长老家族。祭司或萨满在仪式决策中拥有重要发言权。",
+          "en": "The ruling stratum consisted of elder lineages with large herds and control of key water sources. Ritual specialists or shamans held important say in ceremonial decisions."
+        },
+        "succession": {
+          "zh": "领导权多在长老家族内部传承，依靠牛群财富和社区声望。长老会议对继承人的认可不可或缺。",
+          "en": "Leadership usually passed within elder lineages, sustained by herd wealth and community prestige. Elder council endorsement of an heir was indispensable."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "没有集中政权，各部族和季节营地独立运行，在雨季草地与旱季水源点会合时进行跨部族协商。长老与祭司在迁徙、牧场分配和冲突调停中起主导作用。",
+          "en": "There was no centralized authority; each tribe and seasonal camp operated independently, with inter-tribal consultation occurring at rainy-season pastures and dry-season water points. Elders and ritual specialists led migration, pasture allocation, and conflict mediation."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "牧场与水源协调组",
+              "en": "Pasture and Water Coordination Group"
+            },
+            "function": {
+              "zh": "分配季节性草场、管理绿洲水源与迁徙路线。",
+              "en": "Allocated seasonal pastures, managed oasis water, and planned migration routes."
+            },
+            "headCount": 15
+          },
+          {
+            "name": {
+              "zh": "祭仪与纠纷调停组",
+              "en": "Ritual and Dispute Mediation Group"
+            },
+            "function": {
+              "zh": "主持岩画祭祀、牲畜仪式与部族间冲突调解。",
+              "en": "Conducted rock-art ceremonies, livestock rites, and mediated inter-tribal conflicts."
+            },
+            "headCount": 10
+          },
+          {
+            "name": {
+              "zh": "畜群管理事务",
+              "en": "Herd Management Affairs"
+            },
+            "function": {
+              "zh": "监督牲畜健康、繁殖与分群策略。",
+              "en": "Oversaw livestock health, breeding, and herd-splitting strategies."
+            },
+            "headCount": 12
+          }
+        ],
+        "totalOfficials": 37,
+        "localAdmin": {
+          "zh": "地方管理即营地管理，由各营地长老和牧群首领自行处理日常事务。跨营地事务在季节性集会上协调。",
+          "en": "Local administration was camp administration, with camp elders and herd leaders handling daily affairs. Cross-camp matters were coordinated at seasonal gatherings."
+        },
+        "legalSystem": {
+          "zh": "法律以习惯法为主，涉及牲畜所有权、水权、婚姻交换和血仇赔偿。违犯者面临牲畜赔偿、驱逐或公开惩罚。",
+          "en": "Law was mainly customary, covering livestock ownership, water rights, marriage exchange, and blood-feud compensation. Offenders faced cattle fines, expulsion, or public punishment."
+        },
+        "taxationSystem": {
+          "zh": "无正式税制，资源通过互助、牲畜赠予和季节性贡献流通。长老和祭司获得的供奉是事实上的税收。",
+          "en": "There was no formal tax system; resources circulated through mutual aid, cattle gifts, and seasonal contributions. Offerings to elders and ritual specialists functioned as de facto taxation."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "万物有灵与牲畜崇拜",
+          "en": "Animism and Cattle Veneration"
+        },
+        "culturalAchievements": {
+          "zh": "塔西里岩画是撒哈拉最杰出的史前艺术遗产之一，描绘了大量牛群、牧人、仪式场景和野生动物，展示了绿色撒哈拉时期的生活面貌。",
+          "en": "The Tassili rock paintings are among the Sahara's most outstanding prehistoric art legacies, depicting large herds, herders, ritual scenes, and wildlife, illustrating life during the Green Sahara period."
+        },
+        "languageFamily": {
+          "zh": "可能属于尼罗-撒哈拉语系或亚非语系早期分支。",
+          "en": "Possibly early branches of Nilo-Saharan or Afroasiatic language families."
+        },
+        "philosophy": {
+          "zh": "以牲畜崇拜、祖先记忆和自然循环为核心的信仰体系，岩画兼具宗教仪式和历史记录功能。",
+          "en": "A belief system centered on cattle veneration, ancestral memory, and natural cycles, with rock art serving both ritual and historical recording functions."
+        },
+        "writingSystem": {
+          "zh": "无文字系统，信息以岩画、口述传统和仪式符号传达。",
+          "en": "No writing system; information was conveyed through rock art, oral tradition, and ritual symbolism."
+        }
+      },
+      "economy": {
+        "level": 1,
+        "gdpEstimate": {
+          "amount": 150000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "gdpPerCapita": {
+          "amount": 0.5,
+          "unit": {
+            "zh": "千克白银当量/人/年",
+            "en": "kg silver equivalent/person/year"
+          }
+        },
+        "gdpDescription": {
+          "zh": "经济以畜牧业为绝对主体，辅以绿洲农业和采集。财富以牛群数量衡量。干旱化趋势正在压缩可用牧场。",
+          "en": "The economy was overwhelmingly pastoral, supplemented by oasis farming and gathering. Wealth was measured in cattle numbers. Aridification was steadily reducing available pasture."
+        },
+        "mainIndustries": {
+          "zh": "牛羊畜牧、绿洲灌溉农业、皮革加工、岩盐采集、采集狩猎",
+          "en": "Cattle and sheep herding, oasis irrigation farming, leather working, rock salt collection, gathering and hunting"
+        },
+        "tradeGoods": {
+          "zh": "牲畜、皮革、乳制品、岩盐、赭石颜料、鸵鸟蛋壳饰品",
+          "en": "Livestock, leather, dairy products, rock salt, ochre pigments, ostrich eggshell ornaments"
+        },
+        "currency": {
+          "name": {
+            "zh": "牲畜交换",
+            "en": "Livestock exchange"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "以牛为基本计值单位",
+            "en": "Cattle as basic unit of account"
+          }
+        },
+        "householdWealth": {
+          "zh": "家庭财富几乎完全由牛群规模决定。拥有十头以上牛的家庭被视为富裕，一两头牛的家庭则接近贫困线。",
+          "en": "Household wealth was almost entirely determined by herd size. Families with ten or more cattle were considered well-off; those with one or two approached the poverty threshold."
+        },
+        "averageIncome": {
+          "amount": 0.4,
+          "unit": {
+            "zh": "千克白银当量/人/年",
+            "en": "kg silver equivalent/person/year"
+          }
+        },
+        "foreignTradeVolume": {
+          "amount": 8000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "economicSystem": {
+          "zh": "以家庭畜牧为核心的自给经济，辅以部族间互助交换和季节性集市。",
+          "en": "A subsistence economy centered on household pastoralism, supplemented by inter-tribal mutual exchange and seasonal markets."
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 9000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "annualExpenditure": {
+          "amount": 8500,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "surplus": {
+          "amount": 500,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "牲畜贡献与互惠赠予",
+              "en": "Livestock contributions and reciprocal gifts"
+            },
+            "amount": {
+              "amount": 5400,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 60
+          },
+          {
+            "source": {
+              "zh": "绿洲农产与采集物",
+              "en": "Oasis produce and gathered goods"
+            },
+            "amount": {
+              "amount": 2700,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "source": {
+              "zh": "岩盐与装饰品交换",
+              "en": "Rock salt and ornament exchange"
+            },
+            "amount": {
+              "amount": 900,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 10
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "畜群维持与水源管理",
+              "en": "Herd maintenance and water management"
+            },
+            "amount": {
+              "amount": 3400,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "category": {
+              "zh": "祭仪与集会",
+              "en": "Rituals and assemblies"
+            },
+            "amount": {
+              "amount": 2550,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "category": {
+              "zh": "迁徙与营地建设",
+              "en": "Migration and camp construction"
+            },
+            "amount": {
+              "amount": 1700,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "防御与护卫",
+              "en": "Defense and protection"
+            },
+            "amount": {
+              "amount": 850,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 10
+          }
+        ],
+        "treasury": {
+          "amount": 3000,
+          "unit": {
+            "zh": "克银当量",
+            "en": "grams silver equivalent"
+          }
+        },
+        "treasuryDescription": {
+          "zh": "储备以牲畜、干粮、盐块和皮革形式存在，而非贵金属。旱季储备尤为关键。",
+          "en": "Reserves were held as livestock, dried food, salt blocks, and leather rather than precious metals. Dry-season reserves were especially critical."
+        },
+        "fiscalPolicy": {
+          "zh": "财政政策以维持牧场可用性和旱季生存储备为核心，兼顾大型祭祀集会的物资需求。",
+          "en": "Fiscal policy centered on maintaining pasture availability and dry-season survival reserves while meeting material needs of large ritual gatherings."
+        }
+      },
+      "military": {
+        "level": 1,
+        "totalTroops": 3000,
+        "standingArmy": 500,
+        "reserves": 2500,
+        "branches": [
+          {
+            "name": {
+              "zh": "部族战士",
+              "en": "Tribal Warriors"
+            },
+            "count": 500,
+            "description": {
+              "zh": "由各部族长老召集的常备护卫，负责保护牛群、水源和营地。",
+              "en": "Standing guards mobilized by tribal elders, responsible for protecting herds, water sources, and camps."
+            }
+          },
+          {
+            "name": {
+              "zh": "牧民民兵",
+              "en": "Pastoral Militia"
+            },
+            "count": 2500,
+            "description": {
+              "zh": "战时由各营地壮年男子集结，使用弓矛和投掷武器。",
+              "en": "In wartime, able-bodied men from each camp assembled, armed with bows, spears, and throwing weapons."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 8,
+          "commanderInChief": {
+            "zh": "最高部族长老",
+            "en": "Supreme Tribal Elder"
+          }
+        },
+        "technology": {
+          "zh": "武器以弓箭、木矛、投石器和石制工具为主，防御依赖地形和分散机动。",
+          "en": "Weapons consisted mainly of bows, wooden spears, slings, and stone tools; defense relied on terrain and dispersed mobility."
+        },
+        "annualMilitarySpending": {
+          "amount": 850,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "militarySpendingPctGdp": 0.57,
+        "threats": {
+          "zh": "主要威胁来自干旱化导致的牧场萎缩、水源争夺和邻近部族的牲畜劫掠。",
+          "en": "Main threats came from aridification shrinking pastures, water-source competition, and livestock raiding by neighboring tribes."
+        }
+      },
+      "demographics": {
+        "population": 300000,
+        "populationDescription": {
+          "zh": "人口约三十万，广泛分散于塔西里·恩阿杰尔及周边撒哈拉高原的绿洲、干谷和季节性草地。随着干旱化加剧，人口正逐渐向尼日尔河与乍得湖方向南迁。",
+          "en": "The population was about 300,000, widely dispersed across the Tassili n'Ajjer and surrounding Saharan plateau oases, dry valleys, and seasonal pastures. As aridification intensified, population was gradually shifting southward toward the Niger River and Lake Chad."
+        },
+        "urbanPopulation": 0,
+        "urbanizationRate": 0,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "塔西里岩画绿洲营地",
+              "en": "Tassili Rock-Art Oasis Camp"
+            },
+            "population": 800
+          },
+          {
+            "name": {
+              "zh": "费赞谷地营地",
+              "en": "Fezzan Valley Camp"
+            },
+            "population": 600
+          },
+          {
+            "name": {
+              "zh": "阿哈加尔高原营地",
+              "en": "Ahaggar Plateau Camp"
+            },
+            "population": 500
+          }
+        ],
+        "socialClasses": {
+          "zh": "大牧群主长老家族、普通牧民与辅助农耕者、依附家庭与边缘采集者。",
+          "en": "Large-herd elder lineages, ordinary pastoralists and farming auxiliaries, dependent households and marginal gatherers."
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与相邻撒哈拉部族保持季节性互助、婚姻联盟和牧场共享关系。",
+          "en": "Maintained seasonal mutual aid, marriage alliances, and pasture-sharing arrangements with neighboring Saharan tribes."
+        },
+        "enemies": {
+          "zh": "无固定长期宿敌，但水源与牧场争夺导致的部族摩擦频繁。",
+          "en": "No permanent long-term enemies, though tribal friction over water and pasture was frequent."
+        },
+        "foreignPolicy": {
+          "zh": "对外以维护迁徙通道与水源权、通过婚姻和礼物交换建立联盟为核心。",
+          "en": "External policy focused on securing migration corridors and water rights and building alliances through marriage and gift exchange."
+        }
+      },
+      "technology": {
+        "level": 1,
+        "era": {
+          "zh": "撒哈拉新石器畜牧晚期",
+          "en": "Late Neolithic Pastoral Period of the Sahara"
+        },
+        "keyInnovations": {
+          "zh": "牛羊驯化与管理、绿洲灌溉、岩画艺术传统、季节性迁徙知识体系。",
+          "en": "Cattle and sheep domestication and management, oasis irrigation, rock-art tradition, and seasonal migration knowledge systems."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "牲畜财富丰富，文化凝聚力强，迁徙与生存知识体系成熟，岩画传统独特。",
+          "en": "Rich livestock wealth, strong cultural cohesion, mature migration and survival knowledge, and a unique rock-art tradition."
+        },
+        "weaknesses": {
+          "zh": "严重受撒哈拉干旱化威胁，缺乏固定聚落和防御工事，政治组织高度分散。",
+          "en": "Severely threatened by Saharan aridification, lacking fixed settlements and fortifications, and politically highly dispersed."
+        },
+        "outlook": {
+          "zh": "短期内部族仍可维持传统生计，但撒哈拉持续干旱化将迫使大规模南迁，深刻改变西非萨赫勒地区的人口格局。",
+          "en": "Tribes could maintain traditional livelihoods in the short term, but continued Saharan aridification would force large-scale southward migration, profoundly reshaping the demographic landscape of the West African Sahel."
+        }
+      },
+      "status": "declining",
+      "description": {
+        "zh": "撒哈拉畜牧部落是以牛群和岩画文化著称的塔西里地区游牧社会，正面临不可逆转的干旱化威胁。",
+        "en": "The Saharan cattle pastoralists were a nomadic society of the Tassili region known for their herds and rock-art culture, facing irreversible aridification."
+      }
+    },
+    {
+      "id": "irish_bronze_cultures",
+      "name": {
+        "zh": "爱尔兰青铜时代文化",
+        "en": "Irish Bronze Age Cultures"
+      },
+      "territoryId": "irish_bronze_cultures",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "爱尔兰青铜时代文明",
+          "en": "Irish Bronze Age Civilization"
+        },
+        "type": "tribal",
+        "ruler": {
+          "zh": "部族首领",
+          "en": "Tribal Chief"
+        },
+        "rulerTitle": {
+          "zh": "首领",
+          "en": "Chief"
+        },
+        "dynasty": {
+          "zh": "爱尔兰青铜时代部族联盟",
+          "en": "Irish Bronze Age Tribal Confederacies"
+        },
+        "capital": {
+          "zh": "无固定都城",
+          "en": "No fixed capital"
+        },
+        "governmentForm": {
+          "zh": "由若干部族和区域首领组成的松散联合体，以墓葬仪式和金属贸易为纽带。",
+          "en": "A loose confederation of several tribes and regional chiefs, linked by funerary ritual and metal trade."
+        },
+        "socialStructure": {
+          "zh": "社会上层由控制金矿和青铜作坊的首领家族构成，中层为农民、工匠和牧人，下层为依附劳动者。Lunula金项圈等精美黄金饰品表明社会已出现显著等级分化。",
+          "en": "The upper tier consisted of chiefly families controlling gold sources and bronze workshops; the middle of farmers, artisans, and herders; the lower of dependent laborers. Fine gold ornaments such as Lunula gorgets indicate marked social stratification."
+        },
+        "rulingClass": {
+          "zh": "统治阶层为控制黄金矿源、青铜冶铸和墓葬仪式的部族首领家族。其权威建立在金属财富、血统和与爱琴-大西洋贸易网络的联系上。",
+          "en": "The ruling class comprised tribal chiefly families controlling gold sources, bronze metallurgy, and funerary ritual. Their authority rested on metal wealth, lineage, and connections to the Aegean-Atlantic trade network."
+        },
+        "succession": {
+          "zh": "继承通常在首领家族内部进行，伴随精美墓葬与陪葬品以确认新首领的合法性。",
+          "en": "Succession usually occurred within chiefly families, accompanied by elaborate burials and grave goods to confirm the new chief's legitimacy."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "爱尔兰此时没有统一国家，而是由多个区域性部族首领主导，各自管辖河谷、金矿区或沿海据点。大型仪式遗址可能充当临时性的跨部族协调中心。",
+          "en": "Ireland had no unified state; instead, multiple regional tribal chiefs each governed river valleys, gold-mining areas, or coastal strongholds. Large ceremonial sites may have served as temporary inter-tribal coordination centers."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "金属工坊与贸易事务",
+              "en": "Metal Workshop and Trade Affairs"
+            },
+            "function": {
+              "zh": "管理金矿开采、青铜铸造和贵金属贸易。",
+              "en": "Managed gold mining, bronze casting, and precious-metal trade."
+            },
+            "headCount": 20
+          },
+          {
+            "name": {
+              "zh": "祭祀与墓葬事务",
+              "en": "Ritual and Funerary Affairs"
+            },
+            "function": {
+              "zh": "主持祭祀仪式、墓葬营建和季节性集会。",
+              "en": "Oversaw religious ceremonies, tomb construction, and seasonal assemblies."
+            },
+            "headCount": 15
+          },
+          {
+            "name": {
+              "zh": "畜牧与农耕协调",
+              "en": "Pastoral and Agricultural Coordination"
+            },
+            "function": {
+              "zh": "协调放牧区域、谷物储备和劳役征发。",
+              "en": "Coordinated grazing areas, grain stores, and labor levies."
+            },
+            "headCount": 12
+          }
+        ],
+        "totalOfficials": 47,
+        "localAdmin": {
+          "zh": "地方治理由村落长老和小型部族首领负责。大型环形堡寨和仪式遗址对周边村落具有一定政治号召力。",
+          "en": "Local governance was handled by village elders and minor tribal chiefs. Large ring-forts and ceremonial sites exercised some political influence over surrounding hamlets."
+        },
+        "legalSystem": {
+          "zh": "法律以习惯法为主，由首领和长老裁决。土地使用权、牲畜纠纷和金属权属是主要法律问题。",
+          "en": "Law was chiefly customary, adjudicated by chiefs and elders. Land use rights, livestock disputes, and metal-resource claims were the main legal issues."
+        },
+        "taxationSystem": {
+          "zh": "税赋以牲畜、谷物和金属制品形式征收。金矿利润是首领最重要的额外收入。",
+          "en": "Revenue was collected in livestock, grain, and metal goods. Gold-mining profits were chiefs' most important supplementary income."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "多神信仰",
+          "en": "Polytheism"
+        },
+        "culturalAchievements": {
+          "zh": "以Lunula金项圈、精美青铜武器、巨石墓葬传统和环形堡寨著称。爱尔兰黄金工艺在大西洋欧洲享有盛誉，并通过贸易网络远传至伊比利亚和北欧。",
+          "en": "Known for Lunula gold gorgets, fine bronze weapons, megalithic burial traditions, and ring-forts. Irish goldwork was renowned across Atlantic Europe and spread via trade networks to Iberia and Northern Europe."
+        },
+        "languageFamily": {
+          "zh": "早期印欧语（前凯尔特或原始凯尔特阶段）。",
+          "en": "Early Indo-European (pre-Celtic or proto-Celtic stage)."
+        },
+        "philosophy": {
+          "zh": "宗教观念围绕太阳崇拜、祖先墓葬仪式和自然季节循环，金属制品在仪式中具有核心象征意义。",
+          "en": "Religious thought revolved around solar worship, ancestral burial ritual, and seasonal natural cycles, with metalwork holding central symbolic significance in ceremony."
+        },
+        "writingSystem": {
+          "zh": "无文字系统，文化记忆依赖口述传统、墓葬象征和仪式实践。",
+          "en": "No writing system; cultural memory relied on oral tradition, funerary symbolism, and ritual practice."
+        }
+      },
+      "economy": {
+        "level": 1,
+        "gdpEstimate": {
+          "amount": 120000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "gdpPerCapita": {
+          "amount": 0.6,
+          "unit": {
+            "zh": "千克白银当量/人/年",
+            "en": "kg silver equivalent/person/year"
+          }
+        },
+        "gdpDescription": {
+          "zh": "经济以畜牧和农耕为基础，黄金开采和青铜冶铸为其在大西洋贸易网络中赢得了不成比例的地位。",
+          "en": "The economy rested on herding and farming, while gold mining and bronze metallurgy won Ireland a disproportionate position in the Atlantic trade network."
+        },
+        "mainIndustries": {
+          "zh": "畜牧业、谷物种植、金矿开采、青铜冶铸、皮革与纺织、海上贸易",
+          "en": "Herding, grain cultivation, gold mining, bronze casting, leather and textiles, and maritime trade"
+        },
+        "tradeGoods": {
+          "zh": "黄金饰品、青铜武器与工具、牲畜、毛皮、谷物、琥珀转运",
+          "en": "Gold ornaments, bronze weapons and tools, livestock, furs, grain, and transit amber"
+        },
+        "currency": {
+          "name": {
+            "zh": "牲畜与金属交换",
+            "en": "Livestock and metal exchange"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "以牛和金属计值",
+            "en": "Reckoned in cattle and metal"
+          }
+        },
+        "householdWealth": {
+          "zh": "普通家庭依赖田地和牲畜。首领和冶金精英则拥有黄金储备、进口奢侈品和更大的土地面积。",
+          "en": "Ordinary families depended on fields and livestock. Chiefs and metallurgical elites held gold reserves, imported luxuries, and larger landholdings."
+        },
+        "averageIncome": {
+          "amount": 0.5,
+          "unit": {
+            "zh": "千克白银当量/人/年",
+            "en": "kg silver equivalent/person/year"
+          }
+        },
+        "foreignTradeVolume": {
+          "amount": 15000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "economicSystem": {
+          "zh": "以部族再分配与家庭自给农牧并行的混合经济，远程贸易通过海上交换链实现。",
+          "en": "A mixed economy combining tribal redistribution with household subsistence farming and herding, with long-distance trade conducted through maritime exchange chains."
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 9000,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "annualExpenditure": {
+          "amount": 8400,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "surplus": {
+          "amount": 600,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "牲畜与谷物贡赋",
+              "en": "Livestock and grain tribute"
+            },
+            "amount": {
+              "amount": 4500,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 50
+          },
+          {
+            "source": {
+              "zh": "金矿与金属贸易收入",
+              "en": "Gold mining and metal trade income"
+            },
+            "amount": {
+              "amount": 2700,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "source": {
+              "zh": "劳役与祭祀供品",
+              "en": "Labor obligations and ritual offerings"
+            },
+            "amount": {
+              "amount": 1800,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 20
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "祭祀、墓葬与仪式建设",
+              "en": "Ritual, burial, and ceremonial construction"
+            },
+            "amount": {
+              "amount": 3360,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "category": {
+              "zh": "金属工坊与矿务",
+              "en": "Metalworking and mining"
+            },
+            "amount": {
+              "amount": 2520,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "category": {
+              "zh": "防御与武装",
+              "en": "Defense and armament"
+            },
+            "amount": {
+              "amount": 1260,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 15
+          },
+          {
+            "category": {
+              "zh": "首领与精英维持",
+              "en": "Chiefs and elite maintenance"
+            },
+            "amount": {
+              "amount": 1260,
+              "unit": {
+                "zh": "克银当量/年",
+                "en": "grams silver equivalent/year"
+              }
+            },
+            "percentage": 15
+          }
+        ],
+        "treasury": {
+          "amount": 5000,
+          "unit": {
+            "zh": "克银当量",
+            "en": "grams silver equivalent"
+          }
+        },
+        "treasuryDescription": {
+          "zh": "储备以黄金饰品、铜锭、谷物和牲畜形式存在。黄金是最具流动性和声望价值的储备。",
+          "en": "Reserves were held as gold ornaments, copper ingots, grain, and livestock. Gold was the most liquid and prestigious form of reserve."
+        },
+        "fiscalPolicy": {
+          "zh": "财政以维持金矿生产、仪式建设和部族联盟为优先。",
+          "en": "Fiscal priorities were maintaining gold production, ceremonial construction, and tribal alliances."
+        }
+      },
+      "military": {
+        "level": 1,
+        "totalTroops": 2000,
+        "standingArmy": 400,
+        "reserves": 1600,
+        "branches": [
+          {
+            "name": {
+              "zh": "首领亲卫",
+              "en": "Chiefly Guard"
+            },
+            "count": 400,
+            "description": {
+              "zh": "由首领直接召集的常备武装，装备青铜武器，负责护卫与要地防御。",
+              "en": "A standing armed force directly mobilized by chiefs, equipped with bronze weapons, for escort and key-site defense."
+            }
+          },
+          {
+            "name": {
+              "zh": "部族征召兵",
+              "en": "Tribal Levies"
+            },
+            "count": 1600,
+            "description": {
+              "zh": "战时征召的壮年男子，使用矛、斧、盾和弓箭。",
+              "en": "Able-bodied men called up in wartime, wielding spears, axes, shields, and bows."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 6,
+          "commanderInChief": {
+            "zh": "最有声望的部族首领",
+            "en": "Most Prestigious Tribal Chief"
+          }
+        },
+        "technology": {
+          "zh": "武器以青铜剑、矛、斧为主，防御依赖环形堡寨和地形优势。",
+          "en": "Weapons consisted mainly of bronze swords, spears, and axes; defense relied on ring-forts and terrain."
+        },
+        "annualMilitarySpending": {
+          "amount": 1260,
+          "unit": {
+            "zh": "克银当量/年",
+            "en": "grams silver equivalent/year"
+          }
+        },
+        "militarySpendingPctGdp": 1.05,
+        "threats": {
+          "zh": "主要威胁来自邻近部族的领土争夺和沿海海盗袭击。",
+          "en": "Main threats included territorial competition from neighboring tribes and coastal pirate raids."
+        }
+      },
+      "demographics": {
+        "population": 200000,
+        "populationDescription": {
+          "zh": "人口约二十万，分布于爱尔兰全岛，以河谷农牧区和沿海聚落为主。南部和东部的金矿区人口密度相对较高。",
+          "en": "The population was about 200,000, spread across the island of Ireland, mainly in river-valley farming-herding areas and coastal settlements. Gold-mining areas in the south and east had relatively higher population density."
+        },
+        "urbanPopulation": 5000,
+        "urbanizationRate": 2.5,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "威克洛金矿区聚落",
+              "en": "Wicklow Gold-Mining Settlement"
+            },
+            "population": 1500
+          },
+          {
+            "name": {
+              "zh": "博因河谷仪式中心",
+              "en": "Boyne Valley Ceremonial Center"
+            },
+            "population": 1200
+          },
+          {
+            "name": {
+              "zh": "香农河口聚落",
+              "en": "Shannon Estuary Settlement"
+            },
+            "population": 1000
+          },
+          {
+            "name": {
+              "zh": "科克沿海聚落",
+              "en": "Cork Coastal Settlement"
+            },
+            "population": 800
+          }
+        ],
+        "socialClasses": {
+          "zh": "首领与金属精英、祭司与工匠、自由农牧民、依附劳动者。",
+          "en": "Chiefs and metal elites, priests and artisans, free farmers and herders, dependent laborers."
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与不列颠岛、伊比利亚和北欧部族保持黄金和青铜贸易联系。",
+          "en": "Maintained gold and bronze trade links with Britain, Iberia, and Northern European tribes."
+        },
+        "enemies": {
+          "zh": "无固定敌国，但岛内部族间和与不列颠沿海群体间存在间歇性冲突。",
+          "en": "No permanent enemies, though intermittent conflicts occurred among Irish tribes and with British coastal groups."
+        },
+        "foreignPolicy": {
+          "zh": "对外以保持海上贸易通道和金属交换网络为核心，通过婚姻和礼物建立跨海联盟。",
+          "en": "Foreign policy centered on maintaining maritime trade routes and metal-exchange networks, building cross-sea alliances through marriage and gift exchange."
+        }
+      },
+      "technology": {
+        "level": 2,
+        "era": {
+          "zh": "大西洋欧洲中期青铜时代",
+          "en": "Middle Bronze Age of Atlantic Europe"
+        },
+        "keyInnovations": {
+          "zh": "Lunula金项圈锻造、青铜武器和工具铸造、环形堡寨建设、大西洋海上贸易航线。",
+          "en": "Lunula gorget forging, bronze weapon and tool casting, ring-fort construction, and Atlantic maritime trade routes."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "黄金资源丰富，冶金工艺精湛，大西洋贸易网络联系广泛，墓葬和仪式文化凝聚力强。",
+          "en": "Rich gold resources, accomplished metallurgy, broad Atlantic trade-network connections, and strong cohesion from burial and ritual culture."
+        },
+        "weaknesses": {
+          "zh": "政治分散，缺乏统一领导，人口相对稀少，岛屿地理限制了大规模军事扩张。",
+          "en": "Politically fragmented, lacking unified leadership, with a relatively sparse population, and island geography limiting large-scale military expansion."
+        },
+        "outlook": {
+          "zh": "短期内可凭借黄金和青铜贸易维持繁荣，长期则取决于大西洋贸易网络的持续性和岛内部族整合程度。",
+          "en": "Prosperity could be maintained in the short term through gold and bronze trade, with long-term prospects depending on the durability of the Atlantic trade network and the degree of intra-island tribal integration."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "爱尔兰青铜时代文化是以Lunula金项圈和精美青铜器著称的大西洋岛屿部族社会。",
+        "en": "Irish Bronze Age cultures were an Atlantic island tribal society renowned for Lunula gold gorgets and fine bronzework."
+      }
+    },
+    {
+      "id": "urnfield_cultures",
+      "name": {
+        "zh": "骨灰瓮文化联盟",
+        "en": "Urnfield Culture Confederacies"
+      },
+      "territoryId": "central_europe",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "骨灰瓮文化",
+          "en": "Urnfield Culture"
+        },
+        "type": "tribal",
+        "ruler": {
+          "zh": "诸部族首领与长老会议",
+          "en": "Various tribal chiefs and elder councils"
+        },
+        "rulerTitle": {
+          "zh": "首领",
+          "en": "Chieftain"
+        },
+        "dynasty": {
+          "zh": "不适用",
+          "en": "Not applicable"
+        },
+        "capital": {
+          "zh": "无统一都城",
+          "en": "No unified capital"
+        },
+        "governmentForm": {
+          "zh": "以部族首领联合会议与祭祀集会为中心的松散联盟，战时推举盟主，和平时期各聚落自治。",
+          "en": "A loose confederation centered on joint chiefly councils and ritual assemblies, with a war leader elected in crisis and autonomous settlements in peacetime."
+        },
+        "socialStructure": {
+          "zh": "社会以氏族家庭为基础，上层为控制青铜器生产、盐矿和跨阿尔卑斯贸易的首领家族，中层为自由农户与工匠，下层为附属劳力和战俘。火葬瓮棺礼仪差异反映等级分化。",
+          "en": "Society was organized around kin groups, with leading families controlling bronze production, salt mines, and trans-Alpine trade at the top, free farming households and artisans in the middle, and dependent laborers and war captives at the bottom. Differential cremation urn burials reflected status hierarchy."
+        },
+        "rulingClass": {
+          "zh": "控制冶炼、盐业与长途贸易的首领家族及其武装随从",
+          "en": "Chiefly families controlling metallurgy, salt extraction, and long-distance trade, along with their armed retinues"
+        },
+        "succession": {
+          "zh": "首领之位多在强势家族内继承，但须得到部族长老与战士认可；争端可能导致联盟重组。",
+          "en": "Chieftainship was usually inherited within dominant families but required endorsement by tribal elders and warriors; disputes could trigger alliance realignments."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "联盟无常设中央行政机构，依靠季节性部族会议、祭祀集会和贸易市集维系联系。核心聚落的首领对周围小型聚落有号召力，但行政层级浅薄。",
+          "en": "The confederation lacked permanent central administration, relying on seasonal tribal assemblies, ritual gatherings, and trade fairs to maintain cohesion. Chiefs of core settlements held influence over surrounding hamlets, but administrative hierarchy remained shallow."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "首领议事会",
+              "en": "Council of Chiefs"
+            },
+            "function": {
+              "zh": "协调跨部族防务、贸易纠纷、季节性盟会与祭祀安排。",
+              "en": "Coordinated inter-tribal defense, trade disputes, seasonal assemblies, and ritual arrangements."
+            },
+            "headCount": 25
+          },
+          {
+            "name": {
+              "zh": "冶炼与盐务管理",
+              "en": "Metallurgy and Salt Administration"
+            },
+            "function": {
+              "zh": "监督青铜铸造、盐矿开采与贵重物品的分配。",
+              "en": "Oversaw bronze casting, salt mining operations, and the distribution of prestige goods."
+            },
+            "headCount": 60
+          },
+          {
+            "name": {
+              "zh": "祭祀与仓储",
+              "en": "Ritual and Storehouse"
+            },
+            "function": {
+              "zh": "主持火葬仪式、祖先祭祀、管理部族粮仓和贡品。",
+              "en": "Oversaw cremation ceremonies, ancestral rites, and managed tribal granaries and tribute stores."
+            },
+            "headCount": 45
+          }
+        ],
+        "totalOfficials": 130,
+        "localAdmin": {
+          "zh": "地方以山谷聚落群或河流流域为单位，由聚落首领与长老管理。防御性山丘聚落通常对谷地小村行使保护性权威。",
+          "en": "Local administration was organized by valley settlement clusters or river basins under settlement chiefs and elders. Fortified hilltop settlements typically exercised protective authority over lowland hamlets."
+        },
+        "legalSystem": {
+          "zh": "以习惯法为基础，强调氏族间的赔偿、血仇调解与盟誓机制。重大争端由首领联席裁决，惩罚多为补偿、流放或征讨。",
+          "en": "Law was customary, emphasizing inter-clan compensation, blood-feud mediation, and oath mechanisms. Major disputes were settled by joint chiefly arbitration, with penalties typically involving compensation, exile, or punitive raids."
+        },
+        "taxationSystem": {
+          "zh": "无统一税制，首领通过贡纳、劳役、盐矿与铜矿收益分成及贸易利润获取资源。祭祀与军事动员时各聚落按户提供粮食和人力。",
+          "en": "There was no uniform tax system; chiefs drew resources from tribute, labor obligations, shares of salt and copper mining output, and trade profits. During rituals and military mobilizations, settlements provided grain and manpower by household."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "以火葬崇拜、祖先祭祀、太阳与水神崇拜为核心的多神信仰体系",
+          "en": "A polytheistic system centered on cremation cult, ancestor veneration, and worship of solar and water deities"
+        },
+        "culturalAchievements": {
+          "zh": "以统一的火葬瓮棺墓葬传统闻名，青铜板甲、剑、盾与装饰品工艺精湛，哈尔施塔特盐矿开采技术先进，跨阿尔卑斯贸易网络连接地中海与北欧。",
+          "en": "Known for the uniform cremation urn burial tradition, skilled bronze sheet-armor, sword, shield, and ornament production, advanced Hallstatt salt-mining technology, and trans-Alpine trade networks linking the Mediterranean to Northern Europe."
+        },
+        "languageFamily": {
+          "zh": "印欧语系原始凯尔特-意大利语分支（前凯尔特语阶段）",
+          "en": "Indo-European, proto-Celtic-Italic branch (pre-Celtic stage)"
+        },
+        "philosophy": {
+          "zh": "以火葬仪式观、循环再生信仰、祖灵崇拜与自然力量敬畏为思想核心。",
+          "en": "Centered on cremation ritual worldview, beliefs in cyclical renewal, ancestor spirit veneration, and reverence for natural forces."
+        },
+        "writingSystem": {
+          "zh": "尚无文字，信息以口传、符号装饰和仪式记忆传递。",
+          "en": "No writing system existed; information was transmitted through oral tradition, symbolic decoration, and ritual memory."
+        }
+      },
+      "economy": {
+        "level": 4,
+        "gdpEstimate": {
+          "amount": 5000000,
+          "unit": {
+            "zh": "两银/年（估算）",
+            "en": "taels of silver per year (estimated)"
+          }
+        },
+        "gdpPerCapita": {
+          "amount": 10,
+          "unit": {
+            "zh": "两银/人/年（估算）",
+            "en": "taels of silver per person per year (estimated)"
+          }
+        },
+        "gdpDescription": {
+          "zh": "经济以混合农牧业为基础，盐矿开采和青铜冶炼为核心产业，跨阿尔卑斯贸易使中欧与地中海世界产生经济联系。精英家族通过控制矿产和贸易路线积累财富。",
+          "en": "The economy was based on mixed agro-pastoral production, with salt mining and bronze smelting as core industries; trans-Alpine trade linked Central Europe economically to the Mediterranean world. Elite families accumulated wealth through control of mineral resources and trade routes."
+        },
+        "mainIndustries": {
+          "zh": "谷物种植、畜牧业、盐矿开采、青铜冶炼与铸造、制陶、纺织与跨阿尔卑斯贸易",
+          "en": "Grain cultivation, animal husbandry, salt mining, bronze smelting and casting, pottery, textile production, and trans-Alpine trade"
+        },
+        "tradeGoods": {
+          "zh": "盐、青铜器、武器、装饰品、琥珀、皮革、牲畜、谷物与陶器",
+          "en": "Salt, bronzeware, weapons, ornaments, amber, leather, livestock, grain, and pottery"
+        },
+        "currency": {
+          "name": {
+            "zh": "实物交换与贵重品经济",
+            "en": "Barter and prestige-goods exchange"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "无统一货币单位",
+            "en": "No standardized monetary unit"
+          }
+        },
+        "householdWealth": {
+          "zh": "普通家户财富以粮仓储备、陶器、农具和牲畜为主；首领家族积累大量青铜器、武器、盐和进口奢侈品。",
+          "en": "Ordinary household wealth consisted of granary stores, pottery, farm tools, and livestock; chiefly families accumulated large quantities of bronzeware, weapons, salt, and imported luxury goods."
+        },
+        "averageIncome": {
+          "amount": 8,
+          "unit": {
+            "zh": "两银等值/人/年（估算）",
+            "en": "taels of silver equivalent per person per year (estimated)"
+          }
+        },
+        "foreignTradeVolume": {
+          "amount": 250000,
+          "unit": {
+            "zh": "两银/年（估算）",
+            "en": "taels of silver per year (estimated)"
+          }
+        },
+        "economicSystem": {
+          "zh": "以氏族共同生产、首领再分配和跨区域贸易并存的部族经济，盐和青铜的专业化生产使经济超越纯粹自给自足。",
+          "en": "A tribal economy combining clan-based production, chiefly redistribution, and interregional trade; the specialized production of salt and bronze elevated the economy beyond pure subsistence."
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 300000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "annualExpenditure": {
+          "amount": 280000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "surplus": {
+          "amount": 20000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "盐矿与铜矿收益",
+              "en": "Salt and copper mining income"
+            },
+            "amount": {
+              "amount": 105000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 35
+          },
+          {
+            "source": {
+              "zh": "农牧贡纳",
+              "en": "Agro-pastoral tribute"
+            },
+            "amount": {
+              "amount": 90000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "source": {
+              "zh": "贸易通行与交换收益",
+              "en": "Trade passage and exchange gains"
+            },
+            "amount": {
+              "amount": 60000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "source": {
+              "zh": "劳役与战利品",
+              "en": "Labor dues and war booty"
+            },
+            "amount": {
+              "amount": 45000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 15
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "防务与动员",
+              "en": "Defense and mobilization"
+            },
+            "amount": {
+              "amount": 98000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 35
+          },
+          {
+            "category": {
+              "zh": "冶炼与工匠支持",
+              "en": "Smelting and artisan support"
+            },
+            "amount": {
+              "amount": 56000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "祭祀与盟会",
+              "en": "Rituals and assemblies"
+            },
+            "amount": {
+              "amount": 56000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "首领再分配与馈赠",
+              "en": "Chiefly redistribution and gifts"
+            },
+            "amount": {
+              "amount": 42000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 15
+          },
+          {
+            "category": {
+              "zh": "仓储与基础设施",
+              "en": "Storage and infrastructure"
+            },
+            "amount": {
+              "amount": 28000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 10
+          }
+        ],
+        "treasury": {
+          "amount": 120000,
+          "unit": {
+            "zh": "两银等值",
+            "en": "taels of silver equivalent"
+          }
+        },
+        "treasuryDescription": {
+          "zh": "\"国库\"主要表现为首领控制的盐储、青铜器储备、粮仓和进口奢侈品，分散储存于多个设防聚落中。",
+          "en": "The 'treasury' chiefly consisted of salt stores, bronze reserves, granaries, and imported luxury goods under elite control, dispersed across several fortified settlements."
+        },
+        "fiscalPolicy": {
+          "zh": "财政重在维持冶炼和盐矿产出、防务动员与祭祀分配，平时征收适中，危机时加重贡纳。",
+          "en": "Fiscal practice focused on sustaining metallurgical and salt output, defense mobilization, and ritual redistribution, with moderate exactions in normal times and heavier tribute in crises."
+        }
+      },
+      "military": {
+        "level": 4,
+        "totalTroops": 12000,
+        "standingArmy": 3000,
+        "reserves": 9000,
+        "branches": [
+          {
+            "name": {
+              "zh": "首领亲卫队",
+              "en": "Chiefly Guard Retinues"
+            },
+            "count": 1500,
+            "description": {
+              "zh": "装备青铜剑、板甲和圆盾的精锐武士，由首领直接指挥。",
+              "en": "Elite warriors equipped with bronze swords, sheet armor, and round shields, under direct chiefly command."
+            }
+          },
+          {
+            "name": {
+              "zh": "部族征召步兵",
+              "en": "Tribal Levy Infantry"
+            },
+            "count": 8000,
+            "description": {
+              "zh": "战时从各聚落征召的成年男子，使用矛、斧和弓。",
+              "en": "Adult males levied from settlements in wartime, armed with spears, axes, and bows."
+            }
+          },
+          {
+            "name": {
+              "zh": "山地侦察兵",
+              "en": "Mountain Scouts"
+            },
+            "count": 2500,
+            "description": {
+              "zh": "熟悉阿尔卑斯山地与森林地形，负责侦察、伏击与护送贸易队伍。",
+              "en": "Men familiar with Alpine and forest terrain, responsible for scouting, ambushes, and escorting trade convoys."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 18,
+          "commanderInChief": {
+            "zh": "战时由联盟推举最强部族首领担任盟主",
+            "en": "A war leader elected from the strongest tribal chief by the confederation in wartime"
+          }
+        },
+        "technology": {
+          "zh": "军事装备以青铜剑、矛、板甲和圆盾为特色，防御依靠山丘聚落、壕沟和木栅；部分精锐可能使用马拉战车。",
+          "en": "Military equipment featured bronze swords, spears, sheet armor, and round shields; defense relied on hilltop settlements, ditches, and palisades; some elites may have used horse-drawn chariots."
+        },
+        "annualMilitarySpending": {
+          "amount": 98000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "militarySpendingPctGdp": 1.96,
+        "threats": {
+          "zh": "主要威胁来自邻近部族的领土竞争、北方日耳曼诸群体南迁压力以及东南方向游牧或半游牧人群的骑马突袭。",
+          "en": "Main threats came from territorial competition with neighboring tribes, southward migration pressure from northern Germanic groups, and mounted raids by nomadic or semi-nomadic peoples from the southeast."
+        }
+      },
+      "demographics": {
+        "population": 500000,
+        "populationDescription": {
+          "zh": "人口分布于多瑙河流域、阿尔卑斯北麓、波希米亚盆地和南德山地，聚落以设防山丘村落与河谷农庄为主。",
+          "en": "The population was spread across the Danube basin, northern Alpine foothills, Bohemian basin, and southern German highlands, primarily in fortified hilltop villages and river-valley farmsteads."
+        },
+        "urbanPopulation": 25000,
+        "urbanizationRate": 5,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "哈尔施塔特盐矿聚落",
+              "en": "Hallstatt Salt-Mining Settlement"
+            },
+            "population": 3000
+          },
+          {
+            "name": {
+              "zh": "多瑙河上游设防聚落",
+              "en": "Upper Danube Fortified Settlement"
+            },
+            "population": 2500
+          },
+          {
+            "name": {
+              "zh": "波希米亚中部山丘堡",
+              "en": "Central Bohemian Hillfort"
+            },
+            "population": 2000
+          },
+          {
+            "name": {
+              "zh": "阿尔卑斯北麓铜矿聚落",
+              "en": "Northern Alpine Copper-Mining Settlement"
+            },
+            "population": 1800
+          }
+        ],
+        "socialClasses": {
+          "zh": "首领家族与武装精英、冶金工匠、自由农牧民、附属劳力与战俘",
+          "en": "Chiefly families and armed elites, metallurgical artisans, free agro-pastoral households, dependent laborers, and war captives"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "主要盟友为相邻河谷部族、阿尔卑斯通道上的贸易伙伴以及北意大利早期文化圈。",
+          "en": "Main allies were neighboring valley tribes, trade partners along Alpine passes, and early northern Italian cultural groups."
+        },
+        "enemies": {
+          "zh": "没有固定国家级宿敌，但常与北方部族和东方草原游牧群体发生资源冲突。",
+          "en": "No fixed state-level enemies, but frequent resource conflicts with northern tribes and eastern steppe nomadic groups."
+        },
+        "foreignPolicy": {
+          "zh": "对外政策以维持跨阿尔卑斯贸易通道安全、婚盟结盟和联合防御为主。",
+          "en": "Foreign policy focused on maintaining the safety of trans-Alpine trade routes, marriage alliances, and joint defense arrangements."
+        }
+      },
+      "technology": {
+        "level": 4,
+        "era": {
+          "zh": "中欧青铜时代晚期（骨灰瓮文化期）",
+          "en": "Late Bronze Age Central Europe (Urnfield period)"
+        },
+        "keyInnovations": {
+          "zh": "青铜板甲与剑的标准化生产、深矿盐开采技术、火葬瓮棺传统的传播、设防山丘聚落建设。",
+          "en": "Standardized production of bronze sheet armor and swords, deep salt-mining techniques, spread of cremation urn burial tradition, and construction of fortified hilltop settlements."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "控制关键盐矿和铜矿资源，跨阿尔卑斯贸易网络发达，青铜冶金技术成熟，部族动员灵活。",
+          "en": "Control of key salt and copper mining resources, well-developed trans-Alpine trade networks, mature bronze metallurgical techniques, and flexible tribal mobilization."
+        },
+        "weaknesses": {
+          "zh": "政治整合度低，缺乏统一文字和常备军，首领间竞争可能削弱联盟，对气候变化和外部迁徙冲击敏感。",
+          "en": "Low political integration, lack of unified writing and standing army, inter-chiefly competition could weaken the confederation, and vulnerability to climate change and external migration shocks."
+        },
+        "outlook": {
+          "zh": "若盐铜贸易持续繁荣且内部凝聚力增强，可能演化为更稳固的酋邦或早期王国；否则将在迁徙浪潮中被新文化取代。",
+          "en": "If salt and copper trade continued to thrive and internal cohesion strengthened, the culture could evolve into more consolidated chiefdoms or early kingdoms; otherwise it risked being supplanted by new cultural groups in migration waves."
+        }
+      },
+      "status": "rising",
+      "description": {
+        "zh": "中欧骨灰瓮文化联盟以火葬传统、青铜冶金和盐矿开采闻名，是阿尔卑斯南北贸易的关键中间人。",
+        "en": "The Urnfield Culture Confederacies of Central Europe were known for cremation burial traditions, bronze metalwork, and salt mining, serving as key intermediaries in trans-Alpine trade."
+      }
+    },
+    {
+      "id": "lusatian_bronze",
+      "name": {
+        "zh": "卢萨蒂亚文化",
+        "en": "Lusatian Culture"
+      },
+      "territoryId": "poland",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": {
+          "zh": "卢萨蒂亚文化",
+          "en": "Lusatian Culture"
+        },
+        "type": "tribal",
+        "ruler": {
+          "zh": "各聚落首领与长老",
+          "en": "Settlement chiefs and elders"
+        },
+        "rulerTitle": {
+          "zh": "首领",
+          "en": "Chieftain"
+        },
+        "dynasty": {
+          "zh": "不适用",
+          "en": "Not applicable"
+        },
+        "capital": {
+          "zh": "无统一都城",
+          "en": "No unified capital"
+        },
+        "governmentForm": {
+          "zh": "以设防聚落为核心的分散部族社会，各聚落由首领与长老自治，跨聚落事务通过季节性集会协调。",
+          "en": "A decentralized tribal society centered on fortified settlements, each governed by chiefs and elders, with inter-settlement matters coordinated through seasonal assemblies."
+        },
+        "socialStructure": {
+          "zh": "社会以氏族共同体为基础，上层为控制设防聚落和琥珀贸易的首领家族，中层为自由农民与制陶工匠，下层为附属人口。",
+          "en": "Society was organized around clan communities, with chiefly families controlling fortified settlements and amber trade at the top, free farmers and potters in the middle, and dependent populations at the bottom."
+        },
+        "rulingClass": {
+          "zh": "控制设防聚落、琥珀贸易和青铜器储备的首领家族",
+          "en": "Chiefly families controlling fortified settlements, amber trade, and bronze stockpiles"
+        },
+        "succession": {
+          "zh": "首领职位在强势家族中继承，需经长老认可。",
+          "en": "Chieftainship was inherited within dominant families, subject to elder endorsement."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "政治组织以各设防聚落为独立单元，比斯库平式木构堡垒为核心。跨聚落协调依赖季节性集会和共同祭祀。",
+          "en": "Political organization treated each fortified settlement as an independent unit, centered on Biskupin-type timber strongholds. Inter-settlement coordination relied on seasonal assemblies and joint rituals."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "聚落议事会",
+              "en": "Settlement Council"
+            },
+            "function": {
+              "zh": "管理聚落内部事务、防务和资源分配。",
+              "en": "Managed internal settlement affairs, defense, and resource allocation."
+            },
+            "headCount": 15
+          },
+          {
+            "name": {
+              "zh": "工匠与贸易管理",
+              "en": "Craft and Trade Administration"
+            },
+            "function": {
+              "zh": "监督制陶、青铜加工与琥珀贸易。",
+              "en": "Oversaw pottery production, bronze working, and amber trade."
+            },
+            "headCount": 30
+          }
+        ],
+        "totalOfficials": 45,
+        "localAdmin": {
+          "zh": "以各设防聚落为自治单元，大型堡垒对周围开放村落有保护权威。",
+          "en": "Each fortified settlement served as an autonomous unit, with large strongholds exercising protective authority over surrounding open villages."
+        },
+        "legalSystem": {
+          "zh": "习惯法，以氏族赔偿、盟誓和长老裁决为主。",
+          "en": "Customary law, centered on clan compensation, oath-taking, and elder adjudication."
+        },
+        "taxationSystem": {
+          "zh": "无统一税制，首领通过贡纳、劳役和贸易分成取得资源。",
+          "en": "No uniform tax system; chiefs obtained resources through tribute, labor obligations, and trade profit-sharing."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "萨满教与祖先崇拜，重视湖泊、河流和森林神灵",
+          "en": "Shamanism and ancestor worship, with emphasis on lake, river, and forest spirits"
+        },
+        "culturalAchievements": {
+          "zh": "以比斯库平式精密木构堡垒建筑闻名，制陶工艺精细，琥珀加工与贸易是其特色文化成就。",
+          "en": "Renowned for Biskupin-type precision timber stronghold construction, fine pottery craftsmanship, and amber working and trade as distinctive cultural achievements."
+        },
+        "languageFamily": {
+          "zh": "印欧语系（前斯拉夫或前波罗的语分支，存争议）",
+          "en": "Indo-European (pre-Slavic or pre-Baltic branch, debated)"
+        },
+        "philosophy": {
+          "zh": "以万物有灵观、水与森林崇拜、祖先纪念和火葬信仰为核心。",
+          "en": "Centered on animistic worldview, water and forest worship, ancestral commemoration, and cremation beliefs."
+        },
+        "writingSystem": {
+          "zh": "无文字体系，以口传和象征性纹饰传递信息。",
+          "en": "No writing system; information transmitted through oral tradition and symbolic decoration."
+        }
+      },
+      "economy": {
+        "level": 3,
+        "gdpEstimate": {
+          "amount": 2400000,
+          "unit": {
+            "zh": "两银/年（估算）",
+            "en": "taels of silver per year (estimated)"
+          }
+        },
+        "gdpPerCapita": {
+          "amount": 8,
+          "unit": {
+            "zh": "两银/人/年（估算）",
+            "en": "taels of silver per person per year (estimated)"
+          }
+        },
+        "gdpDescription": {
+          "zh": "经济以农业和渔猎为基础，制陶业发达，琥珀贸易将波罗的海与中欧、地中海连接起来。",
+          "en": "The economy was based on agriculture and fishing-hunting, with a developed pottery industry; amber trade connected the Baltic with Central Europe and the Mediterranean."
+        },
+        "mainIndustries": {
+          "zh": "谷物种植、畜牧、渔猎、制陶、青铜加工、琥珀贸易与木材建筑",
+          "en": "Grain cultivation, animal husbandry, fishing and hunting, pottery, bronze working, amber trade, and timber construction"
+        },
+        "tradeGoods": {
+          "zh": "琥珀、陶器、青铜器、毛皮、谷物、鱼干与木材",
+          "en": "Amber, pottery, bronzeware, furs, grain, dried fish, and timber"
+        },
+        "currency": {
+          "name": {
+            "zh": "实物交换与礼物经济",
+            "en": "Barter and prestige-gift exchange"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "无统一货币单位",
+            "en": "No standardized monetary unit"
+          }
+        },
+        "householdWealth": {
+          "zh": "普通家户以粮仓、陶器、农具和牲畜为主要财富；首领家族积累琥珀、青铜器和进口品。",
+          "en": "Ordinary household wealth consisted of granary stores, pottery, tools, and livestock; chiefly families accumulated amber, bronzeware, and imports."
+        },
+        "averageIncome": {
+          "amount": 6,
+          "unit": {
+            "zh": "两银等值/人/年（估算）",
+            "en": "taels of silver equivalent per person per year (estimated)"
+          }
+        },
+        "foreignTradeVolume": {
+          "amount": 100000,
+          "unit": {
+            "zh": "两银/年（估算）",
+            "en": "taels of silver per year (estimated)"
+          }
+        },
+        "economicSystem": {
+          "zh": "以氏族生产、首领再分配和琥珀长途贸易并存的部族经济。",
+          "en": "A tribal economy combining clan-based production, chiefly redistribution, and long-distance amber trade."
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 144000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "annualExpenditure": {
+          "amount": 135000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "surplus": {
+          "amount": 9000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "农牧贡纳",
+              "en": "Agro-pastoral tribute"
+            },
+            "amount": {
+              "amount": 57600,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "source": {
+              "zh": "琥珀贸易收益",
+              "en": "Amber trade income"
+            },
+            "amount": {
+              "amount": 36000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 25
+          },
+          {
+            "source": {
+              "zh": "劳役与制陶收益",
+              "en": "Labor dues and pottery income"
+            },
+            "amount": {
+              "amount": 28800,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "source": {
+              "zh": "渔猎与林产",
+              "en": "Fishing, hunting, and forest products"
+            },
+            "amount": {
+              "amount": 21600,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 15
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "防务与堡垒维护",
+              "en": "Defense and stronghold maintenance"
+            },
+            "amount": {
+              "amount": 54000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "category": {
+              "zh": "祭祀与集会",
+              "en": "Rituals and assemblies"
+            },
+            "amount": {
+              "amount": 27000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "首领再分配",
+              "en": "Chiefly redistribution"
+            },
+            "amount": {
+              "amount": 27000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "工匠支持与仓储",
+              "en": "Artisan support and storage"
+            },
+            "amount": {
+              "amount": 27000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          }
+        ],
+        "treasury": {
+          "amount": 50000,
+          "unit": {
+            "zh": "两银等值",
+            "en": "taels of silver equivalent"
+          }
+        },
+        "treasuryDescription": {
+          "zh": "\"国库\"以设防聚落中的粮仓、琥珀储备和青铜器存储为主。",
+          "en": "The 'treasury' consisted mainly of granaries, amber reserves, and bronze stockpiles within fortified settlements."
+        },
+        "fiscalPolicy": {
+          "zh": "财政重在维持堡垒防御、工匠生产和贸易网络，平时征收较轻。",
+          "en": "Fiscal practice focused on maintaining stronghold defenses, artisan production, and trade networks, with relatively light exactions in normal times."
+        }
+      },
+      "military": {
+        "level": 3,
+        "totalTroops": 7000,
+        "standingArmy": 1500,
+        "reserves": 5500,
+        "branches": [
+          {
+            "name": {
+              "zh": "堡垒守卫",
+              "en": "Stronghold Garrison"
+            },
+            "count": 1500,
+            "description": {
+              "zh": "驻守比斯库平式木构堡垒的常备武装，装备青铜矛和木盾。",
+              "en": "Standing garrison of Biskupin-type timber strongholds, equipped with bronze spears and wooden shields."
+            }
+          },
+          {
+            "name": {
+              "zh": "部族征召民兵",
+              "en": "Tribal Levy Militia"
+            },
+            "count": 4500,
+            "description": {
+              "zh": "战时从各聚落征召的成年男性，多使用石骨兵器和弓箭。",
+              "en": "Adult males levied from settlements in wartime, using mostly stone-bone weapons and bows."
+            }
+          },
+          {
+            "name": {
+              "zh": "森林侦察队",
+              "en": "Forest Scout Bands"
+            },
+            "count": 1000,
+            "description": {
+              "zh": "熟悉湖泽与森林地形的轻装侦察兵。",
+              "en": "Light scouts familiar with lake and forest terrain."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 10,
+          "commanderInChief": {
+            "zh": "各堡垒首领在战时可能联合推举盟主",
+            "en": "Stronghold chiefs could jointly elect a war leader in times of conflict"
+          }
+        },
+        "technology": {
+          "zh": "以木构堡垒防御为特色，进攻武器以青铜矛、石斧和弓箭为主。比斯库平式聚落具有精密的防御设计。",
+          "en": "Defense featured timber stronghold construction; offensive weapons were mainly bronze spears, stone axes, and bows. Biskupin-type settlements had sophisticated defensive design."
+        },
+        "annualMilitarySpending": {
+          "amount": 54000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "militarySpendingPctGdp": 2.25,
+        "threats": {
+          "zh": "主要威胁来自邻近部族的侵扰、斯基泰方向游牧人群的骑马突袭以及自然灾害（洪水毁堡）。",
+          "en": "Main threats came from neighboring tribal raids, mounted incursions from Scythian-direction nomads, and natural disasters (floods destroying strongholds)."
+        }
+      },
+      "demographics": {
+        "population": 300000,
+        "populationDescription": {
+          "zh": "人口分布于波兰平原的河流和湖泊沿线，以设防聚落和开放村庄两种形态居住。",
+          "en": "The population was distributed along rivers and lakes of the Polish plains, living in both fortified settlements and open villages."
+        },
+        "urbanPopulation": 9000,
+        "urbanizationRate": 3,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "比斯库平式大型堡垒聚落",
+              "en": "Large Biskupin-Type Stronghold Settlement"
+            },
+            "population": 1200
+          },
+          {
+            "name": {
+              "zh": "维斯瓦河中游聚落群",
+              "en": "Middle Vistula River Settlement Cluster"
+            },
+            "population": 900
+          },
+          {
+            "name": {
+              "zh": "奥得河谷防御聚落",
+              "en": "Oder Valley Defensive Settlement"
+            },
+            "population": 800
+          }
+        ],
+        "socialClasses": {
+          "zh": "首领家族、制陶与青铜工匠、自由农民、渔猎者与附属人口",
+          "en": "Chiefly families, pottery and bronze artisans, free farmers, fisher-hunters, and dependent populations"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与琥珀贸易路线上的波罗的海沿岸部族和骨灰瓮文化群体保持联系。",
+          "en": "Maintained connections with Baltic coastal tribes and Urnfield Culture groups along amber trade routes."
+        },
+        "enemies": {
+          "zh": "无固定国家级宿敌，但与周边部族存在领土和资源摩擦。",
+          "en": "No fixed state-level enemies, but had territorial and resource friction with surrounding tribes."
+        },
+        "foreignPolicy": {
+          "zh": "以维护琥珀贸易通道和堡垒联防为核心的防御性外交。",
+          "en": "Defensive diplomacy focused on safeguarding amber trade routes and stronghold mutual defense."
+        }
+      },
+      "technology": {
+        "level": 3,
+        "era": {
+          "zh": "中东欧青铜时代晚期（卢萨蒂亚文化期）",
+          "en": "Late Bronze Age Central-Eastern Europe (Lusatian Culture period)"
+        },
+        "keyInnovations": {
+          "zh": "精密木构堡垒建造技术（比斯库平类型）、精细制陶工艺、琥珀加工与长途贸易网络。",
+          "en": "Precision timber stronghold construction (Biskupin type), fine pottery techniques, amber working, and long-distance trade networks."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "堡垒防御体系坚固，制陶和木工技术精湛，琥珀贸易提供额外财富来源。",
+          "en": "Strong stronghold defensive systems, skilled pottery and timber craftsmanship, and amber trade providing additional wealth sources."
+        },
+        "weaknesses": {
+          "zh": "政治分散，缺乏统一领导和文字，堡垒易受洪水和火灾毁损，军事技术落后于南方文明。",
+          "en": "Politically fragmented, lacking unified leadership and writing, strongholds vulnerable to floods and fire, and military technology lagging behind southern civilizations."
+        },
+        "outlook": {
+          "zh": "若琥珀贸易持续且堡垒网络扩展，可能形成更大规模的区域酋邦；否则将随铁器时代文化转型而被取代。",
+          "en": "If amber trade continued and the stronghold network expanded, larger regional chiefdoms could form; otherwise, the culture would be supplanted during the Iron Age transition."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "卢萨蒂亚文化以木构堡垒、精美陶器和琥珀贸易闻名，分布于波兰与东德地区。",
+        "en": "The Lusatian Culture was known for timber strongholds, fine pottery, and amber trade, spread across Poland and Eastern Germany."
+      }
+    },
+    {
+      "id": "nubian_new_kingdom_allies",
+      "name": {
+        "zh": "上努比亚酋邦",
+        "en": "Upper Nubian Chiefdoms"
+      },
+      "territoryId": "nubia",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": {
+          "zh": "上努比亚酋邦",
+          "en": "Upper Nubian Chiefdoms"
+        },
+        "type": "tribal",
+        "ruler": {
+          "zh": "诸酋长",
+          "en": "Various paramount chiefs"
+        },
+        "rulerTitle": {
+          "zh": "酋长",
+          "en": "Paramount Chief"
+        },
+        "dynasty": {
+          "zh": "不适用",
+          "en": "Not applicable"
+        },
+        "capital": {
+          "zh": "无统一都城",
+          "en": "No unified capital"
+        },
+        "governmentForm": {
+          "zh": "以金矿产区和牧场为基础的多个酋邦松散并存，各酋长掌控一定领地和附属人口，在克尔马文明衰落后维持区域性自治。",
+          "en": "Multiple chiefdoms loosely coexisting around gold-producing zones and pasturelands, each paramount chief controlling a territory and dependent population, maintaining regional autonomy after the decline of Kerma civilization."
+        },
+        "socialStructure": {
+          "zh": "社会由酋长家族、祭司、武装追随者、自由牧民与农户及附属人口构成。金矿控制和牛群规模是地位标志。",
+          "en": "Society consisted of chiefly families, priests, armed retainers, free pastoralists and farmers, and dependent populations. Gold mine control and cattle herd size served as status markers."
+        },
+        "rulingClass": {
+          "zh": "控制金矿、牛群和祭祀权威的酋长家族",
+          "en": "Chiefly families controlling gold mines, cattle herds, and ritual authority"
+        },
+        "succession": {
+          "zh": "酋长之位在强势家族中继承，有时需经长老协商或武力竞争确认。",
+          "en": "Paramount chieftainship was inherited within dominant families, sometimes requiring elder consultation or confirmation through competition."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "各酋邦以酋长为核心，辅以长老会议和祭司集团。跨酋邦协调有限，主要在金矿分配和防御埃及入侵方面合作。",
+          "en": "Each chiefdom was centered on the paramount chief, assisted by elder councils and priestly groups. Inter-chiefdom coordination was limited, mainly cooperating on gold allocation and defense against Egyptian incursion."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "酋长议事会",
+              "en": "Chiefly Council"
+            },
+            "function": {
+              "zh": "协调领地事务、裁决争端和组织防务。",
+              "en": "Coordinated territorial affairs, settled disputes, and organized defense."
+            },
+            "headCount": 12
+          },
+          {
+            "name": {
+              "zh": "金矿与贡赋管理",
+              "en": "Gold Mining and Tribute Administration"
+            },
+            "function": {
+              "zh": "监督金矿开采、贡品收集与对外贸易。",
+              "en": "Oversaw gold mining, tribute collection, and external trade."
+            },
+            "headCount": 25
+          }
+        ],
+        "totalOfficials": 37,
+        "localAdmin": {
+          "zh": "地方以牧场区和金矿聚落为单位，由附属酋长和长老管理。",
+          "en": "Local administration was organized by pasture zones and mining settlements under sub-chiefs and elders."
+        },
+        "legalSystem": {
+          "zh": "习惯法与酋长裁决并用，重视牛群赔偿和血亲调解。",
+          "en": "Customary law combined with chiefly adjudication, emphasizing cattle compensation and kin-based mediation."
+        },
+        "taxationSystem": {
+          "zh": "无统一税制，酋长通过金矿产出、牛群贡纳、劳役和战利品获取资源。",
+          "en": "No uniform tax system; chiefs obtained resources through gold mining output, cattle tribute, labor dues, and war booty."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "多神崇拜，以牛崇拜、祖先祭祀和尼罗河神灵为核心，部分受克尔马宗教传统影响",
+          "en": "Polytheistic worship centered on cattle cults, ancestor veneration, and Nile river spirits, partly influenced by Kerma religious traditions"
+        },
+        "culturalAchievements": {
+          "zh": "继承克尔马文明的制陶、冶金与墓葬传统，金矿开采技术在非洲东北部具有重要地位，牧牛文化深刻影响社会组织。",
+          "en": "Inherited Kerma civilization's pottery, metallurgical, and funerary traditions; gold mining technology held significant importance in northeastern Africa; cattle-herding culture deeply shaped social organization."
+        },
+        "languageFamily": {
+          "zh": "尼罗-撒哈拉语系东苏丹语族（前梅罗伊特语阶段）",
+          "en": "Nilo-Saharan, Eastern Sudanic branch (pre-Meroitic stage)"
+        },
+        "philosophy": {
+          "zh": "以祖先崇拜、牛群为神圣财富的信仰和尼罗河力量敬畏为核心思想。",
+          "en": "Centered on ancestor veneration, beliefs in cattle as sacred wealth, and reverence for the power of the Nile."
+        },
+        "writingSystem": {
+          "zh": "无本地文字，使用口传记忆与象征性标记。部分精英可能接触埃及象形文字。",
+          "en": "No indigenous script; relied on oral memory and symbolic markings. Some elites may have encountered Egyptian hieroglyphs."
+        }
+      },
+      "economy": {
+        "level": 3,
+        "gdpEstimate": {
+          "amount": 1800000,
+          "unit": {
+            "zh": "两银/年（估算）",
+            "en": "taels of silver per year (estimated)"
+          }
+        },
+        "gdpPerCapita": {
+          "amount": 9,
+          "unit": {
+            "zh": "两银/人/年（估算）",
+            "en": "taels of silver per person per year (estimated)"
+          }
+        },
+        "gdpDescription": {
+          "zh": "经济以畜牧业和金矿开采为两大支柱，尼罗河沿岸农业补充粮食供应，与埃及和红海方向的贸易提供外部收入。",
+          "en": "The economy rested on two pillars of pastoralism and gold mining, supplemented by Nile-bank agriculture for food and trade with Egypt and Red Sea directions for external income."
+        },
+        "mainIndustries": {
+          "zh": "畜牧业、金矿开采、尼罗河沿岸农业、制陶、皮革加工与区域贸易",
+          "en": "Pastoralism, gold mining, Nile-bank agriculture, pottery, leather working, and regional trade"
+        },
+        "tradeGoods": {
+          "zh": "黄金、牛群、象牙、兽皮、乳香、乌木与陶器",
+          "en": "Gold, cattle, ivory, animal hides, frankincense, ebony, and pottery"
+        },
+        "currency": {
+          "name": {
+            "zh": "实物交换（以金粉和牛为主要价值媒介）",
+            "en": "Barter (with gold dust and cattle as primary value media)"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "无统一货币单位",
+            "en": "No standardized monetary unit"
+          }
+        },
+        "householdWealth": {
+          "zh": "普通家户财富以牛群、粮仓和陶器为主；酋长家族积累黄金、象牙和大牛群。",
+          "en": "Ordinary household wealth consisted of cattle herds, granaries, and pottery; chiefly families accumulated gold, ivory, and large herds."
+        },
+        "averageIncome": {
+          "amount": 7,
+          "unit": {
+            "zh": "两银等值/人/年（估算）",
+            "en": "taels of silver equivalent per person per year (estimated)"
+          }
+        },
+        "foreignTradeVolume": {
+          "amount": 120000,
+          "unit": {
+            "zh": "两银/年（估算）",
+            "en": "taels of silver per year (estimated)"
+          }
+        },
+        "economicSystem": {
+          "zh": "以牧畜为基础、金矿开采为特色的酋邦再分配经济，辅以与埃及和红海方向的边境贸易。",
+          "en": "A chiefdom redistributive economy based on pastoralism and characterized by gold mining, supplemented by frontier trade with Egypt and Red Sea directions."
+        }
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 108000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "annualExpenditure": {
+          "amount": 100000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "surplus": {
+          "amount": 8000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "金矿产出",
+              "en": "Gold mining output"
+            },
+            "amount": {
+              "amount": 43200,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "source": {
+              "zh": "牲畜贡纳",
+              "en": "Livestock tribute"
+            },
+            "amount": {
+              "amount": 32400,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 30
+          },
+          {
+            "source": {
+              "zh": "对外贸易收益",
+              "en": "External trade income"
+            },
+            "amount": {
+              "amount": 21600,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "source": {
+              "zh": "劳役与农产贡纳",
+              "en": "Labor dues and agricultural tribute"
+            },
+            "amount": {
+              "amount": 10800,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 10
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "防务与动员",
+              "en": "Defense and mobilization"
+            },
+            "amount": {
+              "amount": 40000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 40
+          },
+          {
+            "category": {
+              "zh": "祭祀与酋长馈赠",
+              "en": "Rituals and chiefly gifts"
+            },
+            "amount": {
+              "amount": 25000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 25
+          },
+          {
+            "category": {
+              "zh": "金矿运营",
+              "en": "Gold mining operations"
+            },
+            "amount": {
+              "amount": 20000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "仓储与基建",
+              "en": "Storage and infrastructure"
+            },
+            "amount": {
+              "amount": 15000,
+              "unit": {
+                "zh": "两银等值",
+                "en": "taels of silver equivalent"
+              }
+            },
+            "percentage": 15
+          }
+        ],
+        "treasury": {
+          "amount": 40000,
+          "unit": {
+            "zh": "两银等值",
+            "en": "taels of silver equivalent"
+          }
+        },
+        "treasuryDescription": {
+          "zh": "\"国库\"以酋长控制的金矿储备、牛群和粮仓为主，分散于各酋邦中心。",
+          "en": "The 'treasury' consisted mainly of gold reserves, cattle herds, and granaries under chiefly control, dispersed across chiefdom centers."
+        },
+        "fiscalPolicy": {
+          "zh": "财政以维持金矿生产、防御埃及威胁和酋长威望分配为重点。",
+          "en": "Fiscal practice focused on sustaining gold production, defense against Egyptian threats, and chiefly prestige distribution."
+        }
+      },
+      "military": {
+        "level": 3,
+        "totalTroops": 5000,
+        "standingArmy": 1200,
+        "reserves": 3800,
+        "branches": [
+          {
+            "name": {
+              "zh": "酋长亲卫",
+              "en": "Chiefly Guard"
+            },
+            "count": 1200,
+            "description": {
+              "zh": "酋长直属武装护卫，装备弓箭、矛和皮盾。",
+              "en": "Armed guards directly attached to paramount chiefs, equipped with bows, spears, and leather shields."
+            }
+          },
+          {
+            "name": {
+              "zh": "牧民征召兵",
+              "en": "Pastoral Levy"
+            },
+            "count": 3000,
+            "description": {
+              "zh": "战时征召的牧民战士，擅长机动作战和弓术。",
+              "en": "Pastoralist warriors levied in wartime, skilled in mobile warfare and archery."
+            }
+          },
+          {
+            "name": {
+              "zh": "金矿区守卫",
+              "en": "Gold District Guards"
+            },
+            "count": 800,
+            "description": {
+              "zh": "保护金矿产区和贸易路线的驻守武装。",
+              "en": "Standing forces protecting gold mining areas and trade routes."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 8,
+          "commanderInChief": {
+            "zh": "最强酋邦酋长在联合防御时担任盟主",
+            "en": "The paramount chief of the strongest chiefdom served as alliance leader during joint defense"
+          }
+        },
+        "technology": {
+          "zh": "以弓箭和投矛为主要武器，防御依靠自然地形和简易土堡。部分武器可能受埃及和克尔马军事传统影响。",
+          "en": "Bows and throwing spears were the main weapons; defense relied on natural terrain and simple earthworks. Some weaponry may have reflected Egyptian and Kerma military influences."
+        },
+        "annualMilitarySpending": {
+          "amount": 40000,
+          "unit": {
+            "zh": "两银等值/年",
+            "en": "taels of silver equivalent per year"
+          }
+        },
+        "militarySpendingPctGdp": 2.22,
+        "threats": {
+          "zh": "最大威胁来自埃及新王国南扩企图，其次为邻近酋邦间的资源竞争和沙漠游牧部族的侵扰。",
+          "en": "The greatest threat came from New Kingdom Egypt's southward expansion ambitions, followed by resource competition among neighboring chiefdoms and raids by desert nomadic tribes."
+        }
+      },
+      "demographics": {
+        "population": 200000,
+        "populationDescription": {
+          "zh": "人口沿尼罗河上游和金矿产区分布，以分散牧场和小型农业聚落为主。",
+          "en": "Population was distributed along the upper Nile and gold-producing areas, primarily in dispersed pastoral camps and small farming settlements."
+        },
+        "urbanPopulation": 8000,
+        "urbanizationRate": 4,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "金矿区中心聚落",
+              "en": "Gold District Central Settlement"
+            },
+            "population": 2500
+          },
+          {
+            "name": {
+              "zh": "上尼罗河贸易站",
+              "en": "Upper Nile Trading Post"
+            },
+            "population": 1800
+          },
+          {
+            "name": {
+              "zh": "牧地酋邦中心",
+              "en": "Pastoral Chiefdom Center"
+            },
+            "population": 1200
+          }
+        ],
+        "socialClasses": {
+          "zh": "酋长家族、祭司、武装追随者、金矿工人、自由牧民与农户、附属人口",
+          "en": "Chiefly families, priests, armed retainers, gold miners, free pastoralists and farmers, dependent populations"
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与南方内陆部族和红海方向贸易伙伴保持联系。",
+          "en": "Maintained connections with southern interior tribes and Red Sea trading partners."
+        },
+        "enemies": {
+          "zh": "埃及新王国构成最大外部威胁，其南扩野心直接威胁上努比亚独立。",
+          "en": "New Kingdom Egypt posed the greatest external threat, with its southward expansion ambitions directly threatening Upper Nubian independence."
+        },
+        "foreignPolicy": {
+          "zh": "以防御埃及、维护金矿独立控制和保持与南方部族交换网络为核心。",
+          "en": "Foreign policy centered on defending against Egypt, maintaining independent control of gold mines, and preserving exchange networks with southern tribes."
+        }
+      },
+      "technology": {
+        "level": 3,
+        "era": {
+          "zh": "东北非青铜时代（后克尔马时期）",
+          "en": "Bronze Age Northeastern Africa (post-Kerma period)"
+        },
+        "keyInnovations": {
+          "zh": "黄金开采与冶炼技术、灌溉农业、牛群管理体系和继承自克尔马的制陶传统。",
+          "en": "Gold mining and smelting techniques, irrigation agriculture, cattle management systems, and pottery traditions inherited from Kerma."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "控制丰富金矿资源，牧畜经济提供灵活生计基础，继承克尔马文明技术遗产。",
+          "en": "Control of rich gold mining resources, pastoral economy providing a flexible subsistence base, and inherited technological legacy from Kerma civilization."
+        },
+        "weaknesses": {
+          "zh": "政治分裂为多个独立酋邦，缺乏统一军事指挥，面对埃及新王国的压倒性军事优势处于劣势。",
+          "en": "Politically fragmented into multiple independent chiefdoms, lacking unified military command, and at a disadvantage against the overwhelming military superiority of New Kingdom Egypt."
+        },
+        "outlook": {
+          "zh": "随着埃及新王国势力南扩，上努比亚酋邦将面临被征服或被迫臣服的命运，但其黄金资源将使其成为埃及帝国不可或缺的一部分。",
+          "en": "As New Kingdom Egypt expanded southward, the Upper Nubian chiefdoms faced conquest or forced submission, though their gold resources would make them an indispensable part of the Egyptian empire."
+        }
+      },
+      "status": "declining",
+      "description": {
+        "zh": "上努比亚酋邦是克尔马文明衰落后散居于上尼罗河地区的产金牧畜酋邦群体，正面临埃及新王国南扩的威胁。",
+        "en": "The Upper Nubian Chiefdoms were gold-producing pastoral chiefdoms scattered along the upper Nile after the decline of Kerma civilization, facing the threat of New Kingdom Egypt's southward expansion."
       }
     }
   ],

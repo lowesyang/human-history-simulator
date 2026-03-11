@@ -10,7 +10,6 @@ const SNAPSHOT_YEARS = [
 ];
 
 const snapshotCache = new Map<number, Record<string, GeoJSON.Geometry>>();
-const isDev = process.env.NODE_ENV !== "production";
 
 export function findClosestSnapshotYear(simYear: number): number {
   let best = SNAPSHOT_YEARS[0];
@@ -29,10 +28,8 @@ export function findClosestSnapshotYear(simYear: number): number {
 export function loadSnapshot(
   year: number
 ): Record<string, GeoJSON.Geometry> | null {
-  if (!isDev) {
-    const cached = snapshotCache.get(year);
-    if (cached) return cached;
-  }
+  const cached = snapshotCache.get(year);
+  if (cached) return cached;
 
   const filePath = path.join(
     process.cwd(),

@@ -4,6 +4,7 @@ export interface RegionTransition {
   regionId: string;
   description: LocalizedText;
   changes: Record<string, unknown>;
+  strategicIntent?: LocalizedText;
 }
 
 export interface TransitionResult {
@@ -179,19 +180,13 @@ function fixRegionConsistency(r: Region) {
   }
 }
 
-/**
- * Generate a condensed schema string for the Region type.
- * Included in LLM prompts so the model knows all available field paths.
- */
-export function getRegionFieldSchema(): string {
-  return `Region field paths (use dot notation in "changes"):
---- identity ---
-status: RegionStatus (thriving|stable|declining|conflict|collapsed)
+export type FieldSchemaMode = "full" | "core" | "minimal";
+
+const SCHEMA_SECTIONS: Record<string, string> = {
+  identity: `status: RegionStatus (thriving|rising|stable|declining|conflict|collapsed)
 description: LocalizedText
-name: LocalizedText
-territoryScale: "xs"|"sm"|"md"|"lg"|"xl"
---- civilization ---
-civilization.name: LocalizedText
+name: LocalizedText`,
+  civilization: `civilization.name: LocalizedText
 civilization.type: CivilizationType (empire|kingdom|city_state|tribal|nomadic|trade_network|theocracy|republic)
 civilization.ruler: LocalizedText
 civilization.rulerTitle: LocalizedText
@@ -200,21 +195,18 @@ civilization.capital: LocalizedText
 civilization.governmentForm: LocalizedText
 civilization.socialStructure: LocalizedText
 civilization.rulingClass: LocalizedText
-civilization.succession: LocalizedText
---- government ---
-government.structure: LocalizedText
+civilization.succession: LocalizedText`,
+  government: `government.structure: LocalizedText
 government.totalOfficials: number
 government.localAdmin: LocalizedText
 government.legalSystem: LocalizedText
-government.taxationSystem: LocalizedText
---- culture ---
-culture.religion: LocalizedText
+government.taxationSystem: LocalizedText`,
+  culture: `culture.religion: LocalizedText
 culture.philosophy: LocalizedText
 culture.writingSystem: LocalizedText
 culture.culturalAchievements: LocalizedText
-culture.languageFamily: LocalizedText
---- economy ---
-economy.level: number (1-10)
+culture.languageFamily: LocalizedText`,
+  economy: `economy.level: number (1-10)
 economy.gdpEstimate: MonetaryValue (delta: {amount, goldKg, silverKg})
 economy.gdpPerCapita: MonetaryValue
 economy.gdpDescription: LocalizedText
@@ -224,47 +216,41 @@ economy.householdWealth: LocalizedText
 economy.averageIncome: MonetaryValue
 economy.foreignTradeVolume: MonetaryValue
 economy.tradeRoutes: LocalizedText
-economy.economicSystem: LocalizedText
---- finances ---
-finances.annualRevenue: MonetaryValue
+economy.economicSystem: LocalizedText`,
+  finances: `finances.annualRevenue: MonetaryValue
 finances.annualExpenditure: MonetaryValue
 finances.surplus: MonetaryValue
 finances.treasury: MonetaryValue
 finances.treasuryDescription: LocalizedText
 finances.debtLevel: MonetaryValue
-finances.fiscalPolicy: LocalizedText
---- military ---
-military.level: number (1-10)
+finances.fiscalPolicy: LocalizedText`,
+  military: `military.level: number (1-10)
 military.standingArmy: number (delta)
 military.reserves: number (delta)
 military.technology: LocalizedText
 military.annualMilitarySpending: MonetaryValue
 military.militarySpendingPctGdp: number
 military.threats: LocalizedText
-military.recentBattles: LocalizedText
---- demographics ---
-demographics.population: number (delta)
+military.recentBattles: LocalizedText`,
+  demographics: `demographics.population: number (delta)
 demographics.populationDescription: LocalizedText
 demographics.urbanPopulation: number (delta)
 demographics.ethnicGroups: LocalizedText
 demographics.socialClasses: LocalizedText
 demographics.literacyRate: LocalizedText
-demographics.lifeExpectancy: LocalizedText
---- diplomacy ---
-diplomacy.allies: LocalizedText
+demographics.lifeExpectancy: LocalizedText`,
+  diplomacy: `diplomacy.allies: LocalizedText
 diplomacy.enemies: LocalizedText
 diplomacy.vassals: LocalizedText
 diplomacy.tributeRelations: LocalizedText
 diplomacy.treaties: LocalizedText
 diplomacy.foreignPolicy: LocalizedText
-diplomacy.recentDiplomaticEvents: LocalizedText
---- technology ---
-technology.level: number (1-10)
+diplomacy.recentDiplomaticEvents: LocalizedText`,
+  technology: `technology.level: number (1-10)
 technology.era: LocalizedText
 technology.keyInnovations: LocalizedText
-technology.infrastructure: LocalizedText
---- aiSector (optional, only for AI-era civilizations) ---
-aiSector.level: number (1-10)
+technology.infrastructure: LocalizedText`,
+  aiSector: `aiSector.level: number (1-10)
 aiSector.policy: LocalizedText
 aiSector.regulatoryStance: LocalizedText
 aiSector.investmentScale: LocalizedText
@@ -272,18 +258,58 @@ aiSector.researchFocus: LocalizedText
 aiSector.computeInfrastructure: LocalizedText
 aiSector.talentPool: LocalizedText
 aiSector.globalRanking: LocalizedText
-aiSector.outlook: LocalizedText
---- assessment ---
-assessment.strengths: LocalizedText
+aiSector.outlook: LocalizedText`,
+  assessment: `assessment.strengths: LocalizedText
 assessment.weaknesses: LocalizedText
-assessment.outlook: LocalizedText
+assessment.outlook: LocalizedText`,
+};
 
-Value types:
+const VALUE_TYPE_DOCS = `Value types:
 - LocalizedText = {"zh":"中文","en":"English"}
-- MonetaryValue delta = {amount: +/-number, unit: {"zh":"单位","en":"unit"}, goldKg: +/-number, silverKg: +/-number}. "unit" indicates the currency denomination (e.g. {"zh":"百万美元","en":"million USD"}, {"zh":"万两白银","en":"10k taels silver"}). goldKg and silverKg MUST be computed from amount using historically accurate exchange rates for the era (e.g. ancient: 1 talent ≈ 26kg silver; 1945: 1oz gold = $35; 2000: 1oz gold ≈ $280; 2020: 1oz gold ≈ $1800). NEVER set goldKg/silverKg to 0 when amount is non-zero.
-- number fields = relative delta by default (e.g. -50000 means subtract). Use "=50000" string for absolute set.
-- string/LocalizedText fields = absolute replacement
-- null = clear the field
-- NOTE: military.totalTroops is auto-calculated from standingArmy + reserves. Do NOT set it directly.
-- NOTE: demographics.urbanizationRate is auto-calculated. Do NOT set it directly.`;
+- MonetaryValue delta = {amount: +/-number, unit: {"zh":"单位","en":"unit"}, goldKg: +/-number, silverKg: +/-number}. "unit" indicates the currency denomination. goldKg/silverKg MUST use historically accurate exchange rates (e.g. ancient: 1 talent ≈ 26kg silver; 1945: 1oz gold = $35; 2000: 1oz gold ≈ $280; 2020: 1oz gold ≈ $1800). NEVER set goldKg/silverKg to 0 when amount is non-zero.
+- number = relative delta (e.g. -50000 means subtract). Use "=50000" for absolute set.
+- string/LocalizedText = absolute replacement. null = clear field.
+- Do NOT set military.totalTroops or demographics.urbanizationRate (auto-calculated).`;
+
+const CORE_SECTIONS = [
+  "identity", "civilization", "economy", "military",
+  "demographics", "diplomacy", "technology", "assessment",
+];
+
+const MINIMAL_SECTIONS = [
+  "identity", "civilization", "economy", "demographics", "technology",
+];
+
+/**
+ * Generate a field schema string scoped to the mode.
+ * - "full": all sections (used for direct historian calls)
+ * - "core": skip government/finances/culture detail (indirect effects)
+ * - "minimal": bare minimum for orphan/independent groups
+ */
+export function getRegionFieldSchema(mode: FieldSchemaMode = "full", includeAiSector = false): string {
+  let sections: string[];
+  switch (mode) {
+    case "minimal":
+      sections = MINIMAL_SECTIONS;
+      break;
+    case "core":
+      sections = CORE_SECTIONS;
+      break;
+    default:
+      sections = Object.keys(SCHEMA_SECTIONS).filter(
+        (k) => k !== "aiSector"
+      );
+      break;
+  }
+
+  if (includeAiSector && !sections.includes("aiSector")) {
+    sections.push("aiSector");
+  }
+
+  const body = sections
+    .map((s) => SCHEMA_SECTIONS[s])
+    .filter(Boolean)
+    .join("\n");
+
+  return `Region field paths (dot notation in "changes"):\n${body}\n\n${VALUE_TYPE_DOCS}`;
 }

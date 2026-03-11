@@ -1,10 +1,13 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback, lazy, Suspense } from "react";
+import { createPortal } from "react-dom";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
 import ExplainButton from "@/components/ExplainButton";
 import type { EpochChangelog, RegionChangelog, ChangeEntry, ChangeSentiment } from "@/lib/changelog";
+
+const ReactMarkdown = lazy(() => import("react-markdown"));
 
 const SENTIMENT_COLORS: Record<ChangeSentiment, string> = {
   positive: "#4ead6b",
@@ -37,6 +40,192 @@ const CATEGORY_COLORS: Record<string, string> = {
   migration: "#7b6b8a",
   other: "#6b5f4e",
 };
+
+interface TierThresholds { critical: number; high: number; medium: number }
+
+const TIER_STYLES = {
+  critical: { label: { zh: "极高影响", en: "Critical" }, color: "#ff6b6b", bg: "rgba(255,107,107,0.15)" },
+  high: { label: { zh: "高影响", en: "High" }, color: "#ffa94d", bg: "rgba(255,169,77,0.15)" },
+  medium: { label: { zh: "中影响", en: "Medium" }, color: "#69db7c", bg: "rgba(105,219,124,0.15)" },
+  low: { label: { zh: "低影响", en: "Low" }, color: "#8a7d6a", bg: "rgba(107,95,78,0.12)" },
+} as const;
+
+function getImpactTier(
+  score: number,
+  thresholds: TierThresholds,
+): typeof TIER_STYLES[keyof typeof TIER_STYLES] {
+  if (score >= thresholds.critical) return TIER_STYLES.critical;
+  if (score >= thresholds.high) return TIER_STYLES.high;
+  if (score >= thresholds.medium) return TIER_STYLES.medium;
+  return TIER_STYLES.low;
+}
+
+function ImpactBadge({
+  score,
+  locale,
+  thresholds,
+  regionName,
+  regionId,
+  changes,
+  isDirect,
+  epochContext,
+}: {
+  score: number;
+  locale: "zh" | "en";
+  thresholds: TierThresholds;
+  regionName: string;
+  regionId: string;
+  changes: ChangeEntry[];
+  isDirect: boolean;
+  epochContext: { year: number; era: string; eventTitles: string[] };
+}) {
+  const tier = getImpactTier(score, thresholds);
+  const [showTip, setShowTip] = useState(false);
+  const [explanation, setExplanation] = useState("");
+  const [streaming, setStreaming] = useState(false);
+  const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
+  const badgeRef = useRef<HTMLButtonElement>(null);
+  const tipRef = useRef<HTMLDivElement>(null);
+
+  const computePos = useCallback(() => {
+    if (!badgeRef.current) return null;
+    const rect = badgeRef.current.getBoundingClientRect();
+    return { top: rect.top, left: rect.left + rect.width / 2 };
+  }, []);
+
+  useEffect(() => {
+    if (!showTip) return;
+    function onClickOutside(e: MouseEvent) {
+      if (badgeRef.current?.contains(e.target as Node) || tipRef.current?.contains(e.target as Node)) return;
+      setShowTip(false);
+    }
+    function onScroll() {
+      const p = computePos();
+      if (p) setPos(p);
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    window.addEventListener("scroll", onScroll, true);
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside);
+      window.removeEventListener("scroll", onScroll, true);
+    };
+  }, [showTip, computePos]);
+
+  const openTip = useCallback(() => {
+    const p = computePos();
+    if (p) setPos(p);
+    setShowTip(true);
+  }, [computePos]);
+
+  const handleClick = useCallback(async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (streaming) { setShowTip((p) => !p); return; }
+    if (explanation) { setShowTip((p) => !p); return; }
+
+    openTip();
+    setStreaming(true);
+    setExplanation("");
+
+    const changeSummary = changes
+      .slice(0, 6)
+      .map((c) => {
+        const label = typeof c.label === "object" ? c.label[locale] : String(c.label);
+        const detail = typeof c.detail === "object" ? c.detail[locale] : String(c.detail);
+        return `${label}: ${detail}`;
+      })
+      .join("; ");
+
+    try {
+      const { getLlmHeaders } = await import("@/lib/client-headers");
+      const resp = await fetch("/api/explain", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...getLlmHeaders() },
+        body: JSON.stringify({
+          regionName,
+          regionId,
+          year: epochContext.year,
+          era: epochContext.era,
+          events: epochContext.eventTitles,
+          changeLabel: locale === "zh"
+            ? `影响程度: ${tier.label.zh} (${isDirect ? "直接影响" : "间接影响"}, ${changes.length}项变化)`
+            : `Impact: ${tier.label.en} (${isDirect ? "direct" : "indirect"}, ${changes.length} changes)`,
+          changeDetail: changeSummary,
+          changeSentiment: "neutral",
+          regionDescription: "",
+          locale,
+        }),
+      });
+
+      if (!resp.ok || !resp.body) {
+        setExplanation(locale === "zh" ? "请求失败" : "Request failed");
+        setStreaming(false);
+        return;
+      }
+
+      const reader = resp.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let text = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+        for (const line of lines) {
+          if (!line.startsWith("data: ")) continue;
+          const payload = line.slice(6).trim();
+          if (payload === "[DONE]") continue;
+          try {
+            const data = JSON.parse(payload);
+            if (data.token) { text += data.token; setExplanation(text); }
+          } catch { /* skip */ }
+        }
+      }
+    } catch {
+      setExplanation(locale === "zh" ? "请求失败" : "Request failed");
+    } finally {
+      setStreaming(false);
+    }
+  }, [streaming, explanation, changes, locale, regionName, regionId, epochContext, tier, isDirect, openTip]);
+
+  const tooltipReady = showTip && pos;
+  const tooltipStyle: React.CSSProperties = pos
+    ? { position: "fixed", left: pos.left, top: pos.top - 8, transform: "translate(-50%, -100%)", zIndex: 9999, width: 300 }
+    : { position: "fixed", top: -9999, left: -9999, zIndex: 9999, width: 300, opacity: 0 };
+
+  return (
+    <>
+      <button
+        ref={badgeRef}
+        onClick={handleClick}
+        className="text-xs px-1 py-0.5 rounded whitespace-nowrap font-medium cursor-pointer hover:brightness-125 transition-all"
+        style={{ background: tier.bg, color: tier.color }}
+      >
+        {tier.label[locale]}
+      </button>
+      {tooltipReady && typeof document !== "undefined" && createPortal(
+        <div ref={tipRef} className="explain-tooltip" style={tooltipStyle}>
+          <div className="explain-tooltip-arrow" />
+          <div className="explain-tooltip-body explain-prose" style={{ maxHeight: 200, overflowY: "auto" }}>
+            {explanation ? (
+              <Suspense fallback={<span className="text-text-muted text-xs">{explanation}</span>}>
+                <ReactMarkdown>{explanation}</ReactMarkdown>
+              </Suspense>
+            ) : (
+              <span className="text-text-muted animate-pulse text-xs">
+                {locale === "zh" ? "AI 正在分析影响原因…" : "AI analyzing impact..."}
+              </span>
+            )}
+          </div>
+        </div>,
+        document.body,
+      )}
+    </>
+  );
+}
 
 function formatYear(year: number, locale: "zh" | "en"): string {
   if (locale === "zh") {
@@ -150,7 +339,9 @@ function EpochLogEntry({
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <span className="text-xs font-semibold text-accent-gold">
-              {formatYear(log.targetYear, locale)}
+              {log.startYear && log.endYear && log.startYear !== log.endYear
+                ? `${formatYear(log.startYear, locale)} — ${formatYear(log.endYear, locale)}`
+                : formatYear(log.targetYear, locale)}
             </span>
             <span className="text-xs text-text-muted">
               {localized(log.era)}
@@ -177,22 +368,7 @@ function EpochLogEntry({
         <div className="px-3 pb-3 space-y-2">
           {/* Triggering events */}
           {log.events.length > 0 && (
-            <div className="space-y-1">
-              <div className="text-xs font-semibold text-text-muted uppercase tracking-wider">
-                {t("log.events")}
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {log.events.map((evt, i) => (
-                  <span
-                    key={i}
-                    className="text-xs px-1.5 py-0.5 rounded text-text-primary"
-                    style={{ background: CATEGORY_COLORS[evt.category] ?? "#6b5f4e" }}
-                  >
-                    {localized(evt.title)}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <CollapsibleEvents events={log.events} localized={localized} t={t} />
           )}
 
           {/* Region changes */}
@@ -203,6 +379,7 @@ function EpochLogEntry({
               locale={locale}
               t={t}
               localized={localized}
+              impactTiers={log.impactTiers ?? { critical: Infinity, high: Infinity, medium: Infinity }}
               epochContext={{
                 year: log.targetYear,
                 era: localized(log.era),
@@ -216,17 +393,82 @@ function EpochLogEntry({
   );
 }
 
+const COLLAPSED_MAX_HEIGHT = 78;
+
+function CollapsibleEvents({
+  events,
+  localized,
+  t,
+}: {
+  events: EpochChangelog["events"];
+  localized: (text: { zh: string; en: string } | undefined) => string;
+  t: (key: string) => string;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [overflows, setOverflows] = useState(false);
+  const [eventsExpanded, setEventsExpanded] = useState(false);
+
+  const checkOverflow = useCallback(() => {
+    const el = containerRef.current;
+    if (el) {
+      setOverflows(el.scrollHeight > COLLAPSED_MAX_HEIGHT + 4);
+    }
+  }, []);
+
+  useEffect(() => {
+    checkOverflow();
+  }, [events, checkOverflow]);
+
+  return (
+    <div className="space-y-1">
+      <div className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+        {t("log.events")}
+      </div>
+      <div className="relative">
+        <div
+          ref={containerRef}
+          className="flex flex-wrap gap-1 overflow-hidden transition-[max-height] duration-200"
+          style={{ maxHeight: eventsExpanded ? containerRef.current?.scrollHeight ?? 9999 : COLLAPSED_MAX_HEIGHT }}
+        >
+          {events.map((evt, i) => (
+            <span
+              key={i}
+              className="text-xs px-1.5 py-0.5 rounded text-text-primary"
+              style={{ background: CATEGORY_COLORS[evt.category] ?? "#6b5f4e" }}
+            >
+              {localized(evt.title)}
+            </span>
+          ))}
+        </div>
+        {overflows && !eventsExpanded && (
+          <div className="absolute bottom-0 left-0 right-0 h-5 bg-gradient-to-t from-bg-primary/80 to-transparent pointer-events-none" />
+        )}
+        {overflows && (
+          <button
+            onClick={() => setEventsExpanded(!eventsExpanded)}
+            className="text-xs text-accent-gold hover:text-accent-amber mt-1 transition-colors"
+          >
+            {eventsExpanded ? `▴ ${t("log.eventsShowLess")}` : `▾ ${t("log.eventsShowMore")}`}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function RegionChangeBlock({
   region,
   locale,
   t,
   localized,
+  impactTiers,
   epochContext,
 }: {
   region: RegionChangelog;
   locale: "zh" | "en";
   t: (key: string) => string;
   localized: (text: { zh: string; en: string } | undefined) => string;
+  impactTiers: TierThresholds;
   epochContext: {
     year: number;
     era: string;
@@ -256,6 +498,16 @@ function RegionChangeBlock({
           >
             {region.isDirect ? t("log.directlyAffected") : t("log.indirectlyAffected")}
           </span>
+          <ImpactBadge
+            score={region.impactScore}
+            locale={locale}
+            thresholds={impactTiers}
+            regionName={localized(region.regionName)}
+            regionId={region.regionId}
+            changes={region.changes}
+            isDirect={region.isDirect}
+            epochContext={epochContext}
+          />
           <span className="text-xs text-text-muted whitespace-nowrap">
             {region.changes.length} {t("log.changes")}
           </span>

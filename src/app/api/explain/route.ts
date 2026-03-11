@@ -1,7 +1,10 @@
 import { NextRequest } from "next/server";
 import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
+import { applyClientHeaders } from "@/lib/api-headers";
+import { CONTENT_FILTER_PROMPT } from "@/lib/content-filter";
 
 export async function POST(req: NextRequest) {
+  applyClientHeaders(req);
   const body = await req.json();
   const {
     regionName,
@@ -50,8 +53,8 @@ export async function POST(req: NextRequest) {
 
   const systemPrompt =
     locale === "zh"
-      ? `你是一位严谨的历史学家。用户会给你一个文明在某个历史时期发生的具体变化，请你用简洁、清晰的${lang}解释这个变化产生的历史原因和逻辑。回答要基于真实历史背景，200字以内。`
-      : `You are a rigorous historian. The user will give you a specific change that happened to a civilization in a historical period. Explain the historical causes and logic behind this change in concise, clear ${lang}. Base your answer on real historical context. Keep it under 150 words.`;
+      ? `你是一位严谨的历史学家。用户会给你一个文明在某个历史时期发生的具体变化，请你用简洁、清晰的${lang}解释这个变化产生的历史原因和逻辑。回答要基于真实历史背景，200字以内。\n\n${CONTENT_FILTER_PROMPT}`
+      : `You are a rigorous historian. The user will give you a specific change that happened to a civilization in a historical period. Explain the historical causes and logic behind this change in concise, clear ${lang}. Base your answer on real historical context. Keep it under 150 words.\n\n${CONTENT_FILTER_PROMPT}`;
 
   const userPrompt =
     locale === "zh"

@@ -1,6 +1,6 @@
 import { app, BrowserWindow, ipcMain, dialog } from "electron";
 import { autoUpdater } from "electron-updater";
-import { spawn, ChildProcess } from "child_process";
+import { spawn, ChildProcess, execSync } from "child_process";
 import path from "path";
 import fs from "fs";
 import net from "net";
@@ -91,6 +91,22 @@ function findServerJs(dir: string): string | null {
   return null;
 }
 
+function killServerProcess(): void {
+  if (!serverProcess) return;
+  const pid = serverProcess.pid;
+  serverProcess = null;
+  if (!pid) return;
+  try {
+    if (process.platform === "win32") {
+      execSync(`taskkill /pid ${pid} /T /F`, { stdio: "ignore" });
+    } else {
+      process.kill(-pid, "SIGKILL");
+    }
+  } catch {
+    try { process.kill(pid, "SIGKILL"); } catch { /* already dead */ }
+  }
+}
+
 function findFreePort(): Promise<number> {
   return new Promise((resolve, reject) => {
     const server = net.createServer();
@@ -153,6 +169,7 @@ async function startNextServer(): Promise<number> {
     env,
     cwd: path.dirname(serverPath),
     stdio: ["ignore", "pipe", "pipe"],
+    detached: process.platform !== "win32",
   });
 
   serverProcess.stdout?.on("data", (data: Buffer) => {
@@ -165,6 +182,7 @@ async function startNextServer(): Promise<number> {
 
   serverProcess.on("exit", (code) => {
     console.log(`Next.js server exited with code ${code}`);
+    serverProcess = null;
     if (mainWindow && !mainWindow.isDestroyed()) {
       mainWindow.close();
     }
@@ -415,17 +433,11 @@ if (!gotLock) {
   });
 
   app.on("window-all-closed", () => {
-    if (serverProcess) {
-      serverProcess.kill();
-      serverProcess = null;
-    }
+    killServerProcess();
     app.quit();
   });
 
   app.on("before-quit", () => {
-    if (serverProcess) {
-      serverProcess.kill();
-      serverProcess = null;
-    }
+    killServerProcess();
   });
 }

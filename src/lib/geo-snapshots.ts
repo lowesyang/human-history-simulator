@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import zlib from "zlib";
 import type { Region } from "./types";
 import { getPublicDir } from "./paths";
 
@@ -32,16 +33,20 @@ export function loadSnapshot(
   const cached = snapshotCache.get(year);
   if (cached) return cached;
 
-  const filePath = path.join(
-    getPublicDir(),
-    "geojson",
-    "snapshots",
-    `${year}.json`
-  );
-  if (!fs.existsSync(filePath)) return null;
+  const baseDir = path.join(getPublicDir(), "geojson", "snapshots");
+  const gzPath = path.join(baseDir, `${year}.json.gz`);
+  const jsonPath = path.join(baseDir, `${year}.json`);
 
   try {
-    const raw = fs.readFileSync(filePath, "utf-8");
+    let raw: string;
+    if (fs.existsSync(gzPath)) {
+      const compressed = fs.readFileSync(gzPath);
+      raw = zlib.gunzipSync(compressed).toString("utf-8");
+    } else if (fs.existsSync(jsonPath)) {
+      raw = fs.readFileSync(jsonPath, "utf-8");
+    } else {
+      return null;
+    }
     const data = JSON.parse(raw) as Record<string, GeoJSON.Geometry>;
     snapshotCache.set(year, data);
     return data;

@@ -8,35 +8,31 @@ directories:
 
 files:
   - ".next/standalone/**/*"
-  - "!.next/standalone/node_modules/better-sqlite3/prebuilds/**"
   - ".next/static/**/*"
   - "electron/dist/**/*"
   - "package.json"
   - "!**/.env*"
   - "!**/node_modules/.cache/**"
+  - "!node_modules"
 
 extraResources:
   - from: "public"
     to: "public"
     filter:
       - "**/*"
+      - "!geojson/snapshots/*.json"
   - from: "src/data/seed"
     to: "src/data/seed"
     filter:
       - "era-*.json"
-  - from: ".next/static"
-    to: ".next/static"
-    filter:
-      - "**/*"
 
 asar: true
 asarUnpack:
-  - "node_modules/better-sqlite3/**/*"
-  - "node_modules/@napi-rs/**/*"
-  - "node_modules/@emnapi/**/*"
   - ".next/standalone/**/*"
 
-npmRebuild: true
+npmRebuild: false
+
+afterPack: scripts/after-pack.js
 
 mac:
   category: public.app-category.education

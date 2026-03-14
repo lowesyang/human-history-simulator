@@ -20,7 +20,7 @@ import type { HistoricalEvent, WorldState, War } from "@/lib/types";
 import type { EpochChangelog } from "@/lib/changelog";
 import { ERA_PRESETS } from "@/data/era-presets";
 
-const DEFAULT_ERA_ID = "modern-era";
+const DEFAULT_ERA_ID = "ai-age";
 
 const WorldMap = dynamic(() => import("@/components/WorldMap"), { ssr: false });
 const EraSelectModal = dynamic(() => import("@/components/EraSelectModal"), { ssr: false });

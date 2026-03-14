@@ -20,6 +20,14 @@ export interface AssetDef {
   priceHistory: { year: number; price: number }[];
 }
 
+const DATA_MAX_YEAR = 2023;
+
+function isAssetActiveAtYear(asset: AssetDef, year: number): boolean {
+  if (year < asset.availableFrom) return false;
+  if (asset.availableTo >= DATA_MAX_YEAR) return true;
+  return year <= asset.availableTo;
+}
+
 export interface PriceImpactRule {
   eventCategory: EventCategory | EventCategory[];
   assetCategories: string[];
@@ -427,7 +435,7 @@ export function updateAssetPrices(
 
   // Phase 1: OU process for each available asset
   for (const asset of seedAssets) {
-    if (currentYear < asset.availableFrom || currentYear > asset.availableTo) continue;
+    if (!isAssetActiveAtYear(asset, currentYear)) continue;
 
     const mu = interpolatePrice(asset.priceHistory, currentYear);
     const P = priceMap.get(asset.id) ?? mu;
@@ -471,7 +479,7 @@ export function updateAssetPrices(
 
       for (const asset of seedAssets) {
         if (!rule.assetCategories.includes(asset.category)) continue;
-        if (currentYear < asset.availableFrom || currentYear > asset.availableTo) continue;
+        if (!isAssetActiveAtYear(asset, currentYear)) continue;
 
         const p = priceMap.get(asset.id) ?? 0;
         if (p <= 0) continue;
@@ -511,7 +519,7 @@ export function updateAssetPrices(
   // Build output ticks
   const prices: AssetPriceTick[] = [];
   for (const asset of seedAssets) {
-    if (currentYear < asset.availableFrom || currentYear > asset.availableTo) continue;
+    if (!isAssetActiveAtYear(asset, currentYear)) continue;
     const p = priceMap.get(asset.id);
     if (p === undefined) continue;
     const vol = volatilityMap.get(asset.id) ?? asset.baseVolatility;

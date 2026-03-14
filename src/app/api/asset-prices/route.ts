@@ -19,6 +19,14 @@ interface SeedAsset {
 
 const seedAssets = (assetPricesData as { assets: SeedAsset[] }).assets;
 
+const CATALOG_MAX_YEAR = 2023;
+
+function isActiveAtYear(a: SeedAsset, year: number): boolean {
+  if (year < a.availableFrom) return false;
+  if (a.availableTo >= CATALOG_MAX_YEAR) return true;
+  return year <= a.availableTo;
+}
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -42,7 +50,7 @@ export async function GET(request: NextRequest) {
       const dbIds = new Set(dbPrices.map((p) => p.assetId));
 
       const fallbackPrices = seedAssets
-        .filter((a) => !dbIds.has(a.id) && currentYear >= a.availableFrom && currentYear <= a.availableTo)
+        .filter((a) => !dbIds.has(a.id) && isActiveAtYear(a, currentYear))
         .map((a) => ({
           assetId: a.id,
           year: currentYear,
@@ -55,7 +63,7 @@ export async function GET(request: NextRequest) {
 
       if (allPrices.length === 0) {
         const seedOnly = seedAssets
-          .filter((a) => currentYear >= a.availableFrom && currentYear <= a.availableTo)
+          .filter((a) => isActiveAtYear(a, currentYear))
           .map((a) => ({
             assetId: a.id,
             year: currentYear,
@@ -76,7 +84,7 @@ export async function GET(request: NextRequest) {
       const dbIds = new Set(dbPrices.map((p: { assetId: string }) => p.assetId));
 
       const fallbackPrices = seedAssets
-        .filter((a) => !dbIds.has(a.id) && year >= a.availableFrom && year <= a.availableTo)
+        .filter((a) => !dbIds.has(a.id) && isActiveAtYear(a, year))
         .map((a) => ({
           assetId: a.id,
           year,

@@ -11,6 +11,10 @@ contextBridge.exposeInMainWorld("electronAPI", {
   setUpdateSettings: (settings: { autoUpdate?: boolean }) =>
     ipcRenderer.invoke("set-update-settings", settings),
 
+  getAppSettings: () => ipcRenderer.invoke("get-app-settings"),
+  setAppSettings: (settings: Record<string, unknown>) =>
+    ipcRenderer.invoke("set-app-settings", settings),
+
   onUpdateAvailable: (callback: (data: { version: string; releaseNotes?: string; releaseDate?: string; autoDownloading: boolean }) => void) => {
     ipcRenderer.on("update-available", (_event, data) => callback(data));
   },

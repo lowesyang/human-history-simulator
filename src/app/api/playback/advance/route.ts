@@ -819,7 +819,7 @@ function runPriceEngine(
     if (yearDelta <= 0) return;
 
     const seedAssets = (assetPricesData as { assets: AssetDef[] }).assets
-      .filter((a: AssetDef) => a.availableFrom <= toYear && a.availableTo >= fromYear);
+      .filter((a: AssetDef) => a.availableFrom <= toYear && (a.availableTo >= 2023 || a.availableTo >= fromYear));
     if (seedAssets.length === 0) return;
 
     const latestPrices = getLatestAssetPrices();
@@ -872,7 +872,7 @@ function revaluePortfolios(toYear: number) {
 
     const seedAssets = (assetPricesData as { assets: AssetDef[] }).assets;
     for (const a of seedAssets) {
-      if (!priceMap.has(a.id) && toYear >= a.availableFrom && toYear <= a.availableTo) {
+      if (!priceMap.has(a.id) && toYear >= a.availableFrom && (a.availableTo >= 2023 || toYear <= a.availableTo)) {
         const hist = a.priceHistory;
         const closest = hist.reduce(
           (best: { year: number; price: number }, pt: { year: number; price: number }) =>

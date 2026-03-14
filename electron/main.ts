@@ -34,6 +34,37 @@ function savePrefs(prefs: Partial<AppPreferences>): void {
   fs.writeFileSync(getPrefsPath(), JSON.stringify(merged, null, 2));
 }
 
+/* ── App settings (API key, model, simulation options) persisted to userData ── */
+
+interface AppSettings {
+  apiKey?: string;
+  model?: string;
+  simulationMode?: string;
+  enableCivMemory?: boolean;
+  enableScenarioInjection?: boolean;
+  webSearchOnAdvance?: boolean;
+}
+
+function getSettingsPath(): string {
+  return path.join(app.getPath("userData"), "settings.json");
+}
+
+function loadAppSettings(): AppSettings {
+  try {
+    const raw = fs.readFileSync(getSettingsPath(), "utf-8");
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+}
+
+function saveAppSettings(settings: Partial<AppSettings>): void {
+  const current = loadAppSettings();
+  const merged = { ...current, ...settings };
+  fs.mkdirSync(path.dirname(getSettingsPath()), { recursive: true });
+  fs.writeFileSync(getSettingsPath(), JSON.stringify(merged, null, 2));
+}
+
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
 let serverPort = 3000;
@@ -45,6 +76,19 @@ function getResourcePath(...segments: string[]): string {
     return path.join(process.resourcesPath, ...segments);
   }
   return path.join(app.getAppPath(), ...segments);
+}
+
+function findServerJs(dir: string): string | null {
+  const direct = path.join(dir, "server.js");
+  if (fs.existsSync(direct)) return direct;
+  try {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const found = findServerJs(path.join(dir, entry.name));
+      if (found) return found;
+    }
+  } catch { /* ignore */ }
+  return null;
 }
 
 function findFreePort(): Promise<number> {
@@ -63,16 +107,16 @@ function findFreePort(): Promise<number> {
   });
 }
 
-async function waitForServer(port: number, timeoutMs = 30_000): Promise<void> {
+async function waitForServer(port: number, timeoutMs = 60_000): Promise<void> {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
     try {
-      const res = await fetch(`http://localhost:${port}/api/state`);
-      if (res.ok || res.status === 404) return;
+      await fetch(`http://localhost:${port}/`);
+      return;
     } catch {
       // server not ready yet
     }
-    await new Promise((r) => setTimeout(r, 500));
+    await new Promise((r) => setTimeout(r, 300));
   }
   throw new Error(`Server did not start within ${timeoutMs}ms`);
 }
@@ -82,10 +126,11 @@ async function startNextServer(): Promise<number> {
   serverPort = port;
 
   const appDataDir = app.getPath("userData");
-  const resourceDir = isProd ? process.resourcesPath : app.getAppPath();
+  const resourceDir = process.resourcesPath;
 
   const env: Record<string, string> = {
     ...process.env as Record<string, string>,
+    ELECTRON_RUN_AS_NODE: "1",
     PORT: String(port),
     HOSTNAME: "localhost",
     APP_DATA_DIR: appDataDir,
@@ -93,26 +138,22 @@ async function startNextServer(): Promise<number> {
     NODE_ENV: "production",
   };
 
-  if (isProd) {
-    const serverPath = path.join(
-      process.resourcesPath,
-      "app.asar.unpacked",
-      ".next",
-      "standalone",
-      "server.js"
-    );
-    serverProcess = spawn(process.execPath, [serverPath], {
-      env,
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-  } else {
-    serverProcess = spawn("npx", ["next", "start", "-p", String(port)], {
-      env,
-      stdio: ["ignore", "pipe", "pipe"],
-      shell: true,
-      cwd: app.getAppPath(),
-    });
+  const standaloneDir = path.join(
+    process.resourcesPath,
+    "app.asar.unpacked",
+    ".next",
+    "standalone"
+  );
+  const serverPath = findServerJs(standaloneDir);
+  if (!serverPath) {
+    throw new Error("Could not find server.js in standalone build");
   }
+
+  serverProcess = spawn(process.execPath, [serverPath], {
+    env,
+    cwd: path.dirname(serverPath),
+    stdio: ["ignore", "pipe", "pipe"],
+  });
 
   serverProcess.stdout?.on("data", (data: Buffer) => {
     console.log(`[next] ${data.toString().trim()}`);
@@ -133,13 +174,115 @@ async function startNextServer(): Promise<number> {
   return port;
 }
 
-function createWindow(port: number): BrowserWindow {
+/* ── Loading page (inline HTML) ── */
+
+function getLoadingHTML(): string {
+  return `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f0e0c;
+    color: #d4c5a0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .logo-container {
+    width: 96px; height: 96px;
+    margin-bottom: 32px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .logo-container svg {
+    width: 100%; height: 100%;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.85; }
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    color: #f1f5f9;
+  }
+  .status {
+    font-size: 14px;
+    color: #6b6352;
+    margin-bottom: 32px;
+  }
+  .spinner-track {
+    width: 200px;
+    height: 3px;
+    background: #1e1b16;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .spinner-bar {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, #c9a44e, #e8c96a, #c9a44e);
+    border-radius: 2px;
+    animation: slide 1.4s ease-in-out infinite;
+  }
+  @keyframes slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
+  }
+  .version {
+    position: fixed;
+    bottom: 16px;
+    font-size: 12px;
+    color: #3d3929;
+  }
+</style>
+</head>
+<body>
+  <div class="logo-container">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" fill="#1a1812" stroke="#c9a44e" stroke-width="4"/>
+      <!-- Globe lines -->
+      <ellipse cx="50" cy="50" rx="30" ry="44" fill="none" stroke="#c9a44e" stroke-width="1.5" opacity="0.5"/>
+      <ellipse cx="50" cy="50" rx="44" ry="20" fill="none" stroke="#c9a44e" stroke-width="1.5" opacity="0.5"/>
+      <line x1="50" y1="6" x2="50" y2="94" stroke="#c9a44e" stroke-width="1.5" opacity="0.5"/>
+      <line x1="6" y1="50" x2="94" y2="50" stroke="#c9a44e" stroke-width="1.5" opacity="0.5"/>
+      <!-- Compass star -->
+      <polygon points="50,12 54,44 50,48 46,44" fill="#c9a44e"/>
+      <polygon points="50,88 54,56 50,52 46,56" fill="#c9a44e"/>
+      <polygon points="12,50 44,46 48,50 44,54" fill="#c9a44e"/>
+      <polygon points="88,50 56,46 52,50 56,54" fill="#c9a44e"/>
+      <!-- Diagonal arms -->
+      <polygon points="23,23 46,46 44,48" fill="#c9a44e" opacity="0.7"/>
+      <polygon points="77,23 54,46 56,48" fill="#c9a44e" opacity="0.7"/>
+      <polygon points="23,77 46,54 44,52" fill="#c9a44e" opacity="0.7"/>
+      <polygon points="77,77 54,54 56,52" fill="#c9a44e" opacity="0.7"/>
+      <circle cx="50" cy="50" r="4" fill="#c9a44e"/>
+    </svg>
+  </div>
+  <h1>Human History Simulator</h1>
+  <p class="status">Initializing server…</p>
+  <div class="spinner-track"><div class="spinner-bar"></div></div>
+  <div class="version">v${app.getVersion()}</div>
+</body>
+</html>`;
+}
+
+function createWindow(): BrowserWindow {
   const win = new BrowserWindow({
     width: 1440,
     height: 900,
     minWidth: 1024,
     minHeight: 700,
     title: "Human History Simulator",
+    backgroundColor: "#0f0e0c",
+    show: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
@@ -147,7 +290,9 @@ function createWindow(port: number): BrowserWindow {
     },
   });
 
-  win.loadURL(`http://localhost:${port}`);
+  win.once("ready-to-show", () => {
+    win.show();
+  });
 
   win.on("closed", () => {
     mainWindow = null;
@@ -220,6 +365,11 @@ function registerIpcHandlers() {
       savePrefs({ autoUpdate: settings.autoUpdate });
     }
   });
+
+  ipcMain.handle("get-app-settings", () => loadAppSettings());
+  ipcMain.handle("set-app-settings", (_event, settings: Record<string, unknown>) => {
+    saveAppSettings(settings as Partial<AppSettings>);
+  });
 }
 
 /* ── App lifecycle ── */
@@ -238,10 +388,23 @@ if (!gotLock) {
   app.on("ready", async () => {
     registerIpcHandlers();
 
+    mainWindow = createWindow();
+    mainWindow.loadURL(`data:text/html;charset=utf-8,${encodeURIComponent(getLoadingHTML())}`);
+
     try {
-      const port = await startNextServer();
-      mainWindow = createWindow(port);
-      setupAutoUpdater(mainWindow);
+      let port: number;
+      if (isProd) {
+        port = await startNextServer();
+        setupAutoUpdater(mainWindow);
+      } else {
+        await waitForServer(3000, 60_000);
+        port = 3000;
+        serverPort = 3000;
+      }
+
+      if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.loadURL(`http://localhost:${port}`);
+      }
     } catch (err) {
       dialog.showErrorBox(
         "Startup Error",

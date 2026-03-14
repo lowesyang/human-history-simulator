@@ -28,14 +28,46 @@ interface SettingsStore {
   setEnvModel: (model: string) => void;
   setShowSettings: (show: boolean, tab?: SettingsTab) => void;
 
-  loadFromStorage: () => void;
+  loadFromStorage: () => void | Promise<void>;
   syncToServer: () => Promise<void>;
   fetchServerState: () => Promise<void>;
 }
 
 const STORAGE_KEY = "hcs-settings";
 
-function loadStorage(): { apiKey: string; model: SupportedModelId; simulationMode?: SimulationMode; enableCivMemory?: boolean; enableScenarioInjection?: boolean; webSearchOnAdvance?: boolean } | null {
+interface StoredSettings {
+  apiKey: string;
+  model: SupportedModelId;
+  simulationMode?: SimulationMode;
+  enableCivMemory?: boolean;
+  enableScenarioInjection?: boolean;
+  webSearchOnAdvance?: boolean;
+}
+
+function isElectron(): boolean {
+  return typeof window !== "undefined" && !!(window as unknown as Record<string, unknown>).electronAPI;
+}
+
+function getElectronAPI(): { getAppSettings: () => Promise<StoredSettings>; setAppSettings: (s: Record<string, unknown>) => Promise<void> } | null {
+  if (!isElectron()) return null;
+  return (window as unknown as Record<string, unknown>).electronAPI as ReturnType<typeof getElectronAPI>;
+}
+
+async function loadStorageAsync(): Promise<StoredSettings | null> {
+  const api = getElectronAPI();
+  if (api) {
+    try {
+      const data = await api.getAppSettings();
+      if (data && data.apiKey) return data;
+      return null;
+    } catch {
+      return null;
+    }
+  }
+  return loadStorageLocal();
+}
+
+function loadStorageLocal(): StoredSettings | null {
   if (typeof window === "undefined") return null;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -46,9 +78,21 @@ function loadStorage(): { apiKey: string; model: SupportedModelId; simulationMod
   }
 }
 
-function saveStorage(apiKey: string, model: SupportedModelId, simulationMode: SimulationMode, enableCivMemory: boolean, enableScenarioInjection: boolean, webSearchOnAdvance: boolean) {
+async function persistSettings(apiKey: string, model: SupportedModelId, simulationMode: SimulationMode, enableCivMemory: boolean, enableScenarioInjection: boolean, webSearchOnAdvance: boolean) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance }));
+
+  const payload = { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance };
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+
+  const api = getElectronAPI();
+  if (api) {
+    try {
+      await api.setAppSettings(payload);
+    } catch (err) {
+      console.error("Failed to persist settings via Electron IPC:", err);
+    }
+  }
 }
 
 export const useSettingsStore = create<SettingsStore>((set, get) => ({
@@ -78,8 +122,8 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
     else useWorldStore.getState().removeLayer("settings");
   },
 
-  loadFromStorage: () => {
-    const stored = loadStorage();
+  loadFromStorage: async () => {
+    const stored = await loadStorageAsync();
     if (stored) {
       set({
         apiKey: stored.apiKey,
@@ -94,7 +138,7 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
 
   syncToServer: async () => {
     const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance } = get();
-    saveStorage(apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance);
+    await persistSettings(apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance);
     await fetch("/api/settings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -107,7 +151,7 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
       const resp = await fetch("/api/settings");
       const data = await resp.json();
 
-      const stored = loadStorage();
+      const stored = await loadStorageAsync();
       const updates: Partial<SettingsStore> = {
         hasEnvKey: data.hasEnvKey,
         envModel: data.envModel,

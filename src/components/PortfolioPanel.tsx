@@ -173,8 +173,14 @@ function resolvePriceAssetId(id: string): string {
   return ASSET_ID_ALIASES[id] ?? id;
 }
 
+const CATALOG_MAX_YEAR = 2023;
+
 function isAvailableAtYear(asset: CatalogAsset, year: number): boolean {
-  return year >= (asset.availableFrom ?? -2000) && year <= (asset.availableTo ?? 2023);
+  const from = asset.availableFrom ?? -2000;
+  const to = asset.availableTo ?? CATALOG_MAX_YEAR;
+  if (year < from) return false;
+  if (to >= CATALOG_MAX_YEAR) return true;
+  return year <= to;
 }
 
 function fmt(v: number): string {

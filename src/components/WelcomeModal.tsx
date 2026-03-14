@@ -16,6 +16,64 @@ const TAGS = [
   { icon: "🌍", key: "welcome.tag.interactiveMap" },
 ];
 
+type UpdateStatus = "idle" | "checking" | "available" | "downloading" | "downloaded" | "error";
+
+function useElectronUpdate() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [version, setVersion] = useState("");
+  const [status, setStatus] = useState<UpdateStatus>("idle");
+  const [newVersion, setNewVersion] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const api = (window as unknown as Record<string, unknown>).electronAPI as {
+      getVersion: () => Promise<string>;
+      checkForUpdates: () => Promise<unknown>;
+      downloadUpdate: () => Promise<void>;
+      installUpdate: () => Promise<void>;
+      onUpdateAvailable: (cb: (d: { version: string; autoDownloading: boolean }) => void) => void;
+      onUpdateProgress: (cb: (d: { percent: number }) => void) => void;
+      onUpdateDownloaded: (cb: (d: { version: string }) => void) => void;
+      onUpdateError: (cb: (d: { message: string }) => void) => void;
+    } | undefined;
+    if (!api) return;
+    setIsDesktop(true);
+
+    api.getVersion().then(setVersion);
+    api.checkForUpdates();
+
+    api.onUpdateAvailable((d) => {
+      setNewVersion(d.version);
+      setStatus(d.autoDownloading ? "downloading" : "available");
+    });
+    api.onUpdateProgress((d) => {
+      setStatus("downloading");
+      setProgress(d.percent);
+    });
+    api.onUpdateDownloaded((d) => {
+      setNewVersion(d.version);
+      setStatus("downloaded");
+    });
+    api.onUpdateError((d) => {
+      setStatus("error");
+      setError(d.message);
+    });
+  }, []);
+
+  const download = useCallback(() => {
+    const api = (window as unknown as Record<string, unknown>).electronAPI as { downloadUpdate: () => void } | undefined;
+    if (api) { setStatus("downloading"); api.downloadUpdate(); }
+  }, []);
+
+  const install = useCallback(() => {
+    const api = (window as unknown as Record<string, unknown>).electronAPI as { installUpdate: () => void } | undefined;
+    api?.installUpdate();
+  }, []);
+
+  return { isDesktop, version, status, newVersion, progress, error, download, install };
+}
+
 interface WelcomeModalProps {
   onClose: () => void;
   requireApiKey?: boolean;
@@ -34,6 +92,9 @@ export default function WelcomeModal({ onClose, requireApiKey = false }: Welcome
 
   const syncToServer = useSettingsStore((s) => s.syncToServer);
   const setStoreApiKey = useSettingsStore((s) => s.setApiKey);
+
+  const update = useElectronUpdate();
+  const isZh = locale === "zh";
 
   useEffect(() => {
     const raf = requestAnimationFrame(() => setPhase("visible"));
@@ -129,6 +190,68 @@ export default function WelcomeModal({ onClose, requireApiKey = false }: Welcome
             <h1 className="welcome-title">{t("app.title")}</h1>
             <div className="welcome-title-line" />
           </div>
+
+          {/* Update banner (Electron only) */}
+          {update.isDesktop && (update.status === "available" || update.status === "downloading" || update.status === "downloaded") && (
+            <div
+              className={`welcome-update-banner ${isVisible ? "welcome-anim-in" : ""}`}
+              style={{ animationDelay: "0.1s" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {update.status === "available" && (
+                <>
+                  <div className="welcome-update-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                  </div>
+                  <span className="welcome-update-text">
+                    {isZh ? `v${update.newVersion} 新版本可用` : `v${update.newVersion} available`}
+                  </span>
+                  <button className="welcome-update-btn" onClick={update.download}>
+                    {isZh ? "更新" : "Update"}
+                  </button>
+                </>
+              )}
+              {update.status === "downloading" && (
+                <>
+                  <span className="welcome-update-text" style={{ flex: 1 }}>
+                    {isZh ? "下载中…" : "Downloading…"} {update.progress > 0 ? `${Math.round(update.progress)}%` : ""}
+                  </span>
+                  <div className="welcome-update-progress">
+                    <div className="welcome-update-progress-bar" style={{ width: `${Math.max(update.progress, 5)}%` }} />
+                  </div>
+                </>
+              )}
+              {update.status === "downloaded" && (
+                <>
+                  <div className="welcome-update-icon welcome-update-icon-ready">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <span className="welcome-update-text">
+                    {isZh ? `v${update.newVersion} 已就绪` : `v${update.newVersion} ready`}
+                  </span>
+                  <button className="welcome-update-btn welcome-update-btn-install" onClick={update.install}>
+                    {isZh ? "重启安装" : "Restart"}
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+
+          {/* Version display (Electron only, when no update banner) */}
+          {update.isDesktop && update.version && update.status !== "available" && update.status !== "downloading" && update.status !== "downloaded" && (
+            <div
+              className={`welcome-version-badge ${isVisible ? "welcome-anim-in" : ""}`}
+              style={{ animationDelay: "0.1s" }}
+            >
+              v{update.version}
+            </div>
+          )}
 
           {/* Slogan */}
           <p

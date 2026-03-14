@@ -39,7 +39,9 @@ function isAssetAvailableAtYear(assetId: string, year: number): boolean {
   if (!asset) return false;
   const from = (asset as { availableFrom?: number }).availableFrom ?? -2000;
   const to = (asset as { availableTo?: number }).availableTo ?? 2023;
-  return year >= from && year <= to;
+  if (year < from) return false;
+  if (to >= 2023) return true;
+  return year <= to;
 }
 
 function buildPriceMap(currentYear: number): Map<string, number> {
@@ -50,7 +52,7 @@ function buildPriceMap(currentYear: number): Map<string, number> {
     priceMap.set(p.assetId, p.priceGoldGrams);
   }
   for (const a of seedAssets) {
-    if (!priceMap.has(a.id) && currentYear >= a.availableFrom && currentYear <= a.availableTo) {
+    if (!priceMap.has(a.id) && currentYear >= a.availableFrom && (a.availableTo >= 2023 || currentYear <= a.availableTo)) {
       priceMap.set(a.id, interpolatePrice(a.priceHistory, currentYear));
     }
   }

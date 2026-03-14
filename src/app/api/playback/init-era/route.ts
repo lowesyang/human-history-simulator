@@ -649,7 +649,7 @@ function loadEconomicSeedData(eraId: string, eraStartYear: number, regions: Regi
 
     const assets = (assetPricesData as { assets: { id: string; priceHistory: { year: number; price: number }[]; availableFrom: number; availableTo: number; baseVolatility: number }[] }).assets;
     for (const asset of assets) {
-      if (eraStartYear < asset.availableFrom || eraStartYear > asset.availableTo) continue;
+      if (eraStartYear < asset.availableFrom || (asset.availableTo < 2023 && eraStartYear > asset.availableTo)) continue;
       const seedPrice = interpolatePrice(asset.priceHistory, eraStartYear);
       const prevPrice = prevPriceMap.get(asset.id);
       const price = prevPrice != null && prevPrice > 0
@@ -661,7 +661,7 @@ function loadEconomicSeedData(eraId: string, eraStartYear: number, regions: Regi
 
     const newPriceMap = new Map<string, number>();
     for (const asset of assets) {
-      if (eraStartYear < asset.availableFrom || eraStartYear > asset.availableTo) continue;
+      if (eraStartYear < asset.availableFrom || (asset.availableTo < 2023 && eraStartYear > asset.availableTo)) continue;
       const seedPrice = interpolatePrice(asset.priceHistory, eraStartYear);
       const prevPrice = prevPriceMap.get(asset.id);
       newPriceMap.set(asset.id, prevPrice != null && prevPrice > 0 ? prevPrice * 0.7 + seedPrice * 0.3 : seedPrice);

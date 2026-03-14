@@ -29,6 +29,7 @@ extraResources:
 asar: true
 asarUnpack:
   - ".next/standalone/**/*"
+  - ".next/static/**/*"
 
 npmRebuild: false
 

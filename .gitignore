@@ -17,8 +17,8 @@
 /.next/
 /out/
 
-# production
-/build
+# production (electron-builder output lives under /dist, not /build)
+/build/*
 !/build/icon.*
 !/build/README.md
 

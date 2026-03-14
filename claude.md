@@ -55,6 +55,7 @@
 The app is packaged as an Electron desktop client. Electron's main process spawns a **Next.js standalone server** (`output: "standalone"` in `next.config.ts`) as a child process, then loads its URL in a `BrowserWindow`. This retains full Next.js features (API routes, SSR, middleware) inside the desktop shell.
 
 Key files:
+
 - `electron/main.ts` — main process (server lifecycle, auto-update, IPC)
 - `electron/preload.ts` — contextBridge for renderer
 - `electron-builder.yml` — packaging config
@@ -71,6 +72,7 @@ npm run electron:publish       # Build + upload to GitHub Releases
 ```
 
 Each command runs `electron:prebuild` first, which chains:
+
 1. `npm run build` — Next.js standalone production build
 2. `npm run electron:compile` — esbuild bundles `electron/main.ts` and `electron/preload.ts`
 3. `npm run electron:compress-geo` — gzip all `public/geojson/snapshots/*.json` → `*.json.gz`
@@ -100,7 +102,7 @@ extraResources:
     to: "public"
     filter:
       - "**/*"
-      - "!geojson/snapshots/*.json"   # exclude raw, ship only .gz
+      - "!geojson/snapshots/*.json" # exclude raw, ship only .gz
 ```
 
 Runtime loading in `src/lib/geo-snapshots.ts` transparently decompresses with `zlib.gunzipSync`, falling back to raw `.json` for dev mode. **Do not remove the gzip fallback** — it's needed for `npm run dev` where `.gz` files don't exist.

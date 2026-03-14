@@ -125,6 +125,116 @@ const rules: ThresholdRule[] = [
       category: "diplomacy",
     }),
   },
+  // ── Economic thresholds ──
+  {
+    id: "fiscal_crisis",
+    name: { zh: "财政危机", en: "Fiscal Crisis" },
+    condition: (prev, next) => {
+      const debtGoldKg = next.finances?.debtLevel?.goldKg ?? 0;
+      const gdpGoldKg = next.economy?.gdpEstimate?.goldKg ?? 0;
+      if (gdpGoldKg <= 0) return false;
+      const prevDebt = prev.finances?.debtLevel?.goldKg ?? 0;
+      const prevGdp = prev.economy?.gdpEstimate?.goldKg ?? 0;
+      if (prevGdp <= 0) return false;
+      const nextDebt = debtGoldKg;
+      const nextGdp = gdpGoldKg;
+      const debtToGdp = debtGoldKg / gdpGoldKg;
+      const prevDebtToGdp = prevDebt / prevGdp;
+      const nextDebtToGdp = nextDebt / nextGdp;
+      return debtToGdp > 0.8 && nextDebtToGdp > prevDebtToGdp;
+    },
+    generateEvent: (region, world) => ({
+      id: `threshold-fiscal_crisis-${region.id}`,
+      timestamp: { year: world.timestamp.year, month: 1 },
+      title: {
+        zh: `${region.name?.zh ?? region.id}债务危机加剧`,
+        en: `Fiscal Crisis Deepens in ${region.name?.en ?? region.id}`,
+      },
+      description: {
+        zh: `${region.name?.zh ?? region.id}债务占GDP比例突破80%且持续攀升，财政可持续性受到严重威胁`,
+        en: `Debt-to-GDP in ${region.name?.en ?? region.id} exceeds 80% and continues rising, seriously threatening fiscal sustainability`,
+      },
+      affectedRegions: [region.id],
+      category: "finance",
+      importance: "high",
+    }),
+  },
+  {
+    id: "trade_boom",
+    name: { zh: "贸易繁荣", en: "Trade Boom" },
+    condition: (prev, next) => {
+      const prevTrade = prev.economy?.foreignTradeVolume?.goldKg ?? 0;
+      const nextTrade = next.economy?.foreignTradeVolume?.goldKg ?? 0;
+      if (prevTrade <= 0) return false;
+      return (nextTrade - prevTrade) / prevTrade > 0.5;
+    },
+    generateEvent: (region, world) => ({
+      id: `threshold-trade_boom-${region.id}`,
+      timestamp: { year: world.timestamp.year, month: 1 },
+      title: {
+        zh: `${region.name?.zh ?? region.id}对外贸易大幅增长`,
+        en: `Trade Boom in ${region.name?.en ?? region.id}`,
+      },
+      description: {
+        zh: `${region.name?.zh ?? region.id}对外贸易额同比增长超过50%，经济活力显著提升`,
+        en: `Foreign trade volume in ${region.name?.en ?? region.id} surges over 50% year-on-year, significantly boosting economic vitality`,
+      },
+      affectedRegions: [region.id],
+      category: "trade",
+      importance: "medium",
+    }),
+  },
+  {
+    id: "hyperinflation",
+    name: { zh: "恶性通货膨胀风险", en: "Hyperinflation Risk" },
+    condition: (prev, next) => {
+      const treasury = next.finances?.treasury?.goldKg ?? 0;
+      const milPct = next.military?.militarySpendingPctGdp ?? 0;
+      return treasury <= 0 && milPct > 30;
+    },
+    generateEvent: (region, world) => ({
+      id: `threshold-hyperinflation-${region.id}`,
+      timestamp: { year: world.timestamp.year, month: 1 },
+      title: {
+        zh: `${region.name?.zh ?? region.id}面临恶性通货膨胀风险`,
+        en: `Hyperinflation Risk in ${region.name?.en ?? region.id}`,
+      },
+      description: {
+        zh: `${region.name?.zh ?? region.id}国库枯竭且军费占GDP超30%，货币贬值与恶性通胀风险急剧上升`,
+        en: `With depleted treasury and military spending exceeding 30% of GDP, ${region.name?.en ?? region.id} faces acute hyperinflation and currency collapse risk`,
+      },
+      affectedRegions: [region.id],
+      category: "finance",
+      importance: "critical",
+    }),
+  },
+  {
+    id: "golden_age",
+    name: { zh: "黄金时代", en: "Golden Age" },
+    condition: (prev, next) => {
+      const prevGdp = prev.economy?.gdpEstimate?.goldKg ?? 0;
+      const nextGdp = next.economy?.gdpEstimate?.goldKg ?? 0;
+      if (prevGdp <= 0) return false;
+      const growth = (nextGdp - prevGdp) / prevGdp;
+      const milPct = next.military?.militarySpendingPctGdp ?? 0;
+      return growth > 0.05 && milPct < 15 && next.status !== "conflict";
+    },
+    generateEvent: (region, world) => ({
+      id: `threshold-golden_age-${region.id}`,
+      timestamp: { year: world.timestamp.year, month: 1 },
+      title: {
+        zh: `${region.name?.zh ?? region.id}进入黄金时代`,
+        en: `Golden Age in ${region.name?.en ?? region.id}`,
+      },
+      description: {
+        zh: `${region.name?.zh ?? region.id}经济持续增长超5%、军费占比低于15%且无战事，社会繁荣稳定`,
+        en: `Sustained GDP growth over 5%, military spending under 15% of GDP, and peace—${region.name?.en ?? region.id} enters a prosperous golden age`,
+      },
+      affectedRegions: [region.id],
+      category: "trade",
+      importance: "medium",
+    }),
+  },
 ];
 
 export interface TriggeredEvent {
@@ -150,10 +260,10 @@ export function checkThresholds(
       try {
         if (rule.condition(prev, next, world)) {
           const eventData = rule.generateEvent(next, world);
-          const id = `evt-trigger-${uuidv4().slice(0, 8)}`;
+          const eventId = eventData.id ?? `evt-trigger-${uuidv4().slice(0, 8)}`;
 
           insertEvent(
-            id,
+            eventId,
             eventData.timestamp?.year ?? world.timestamp.year,
             eventData.timestamp?.month ?? 1,
             eventData.title!,
@@ -165,7 +275,7 @@ export function checkThresholds(
             eraId ?? undefined
           );
 
-          triggered.push({ id, rule: rule.id, event: eventData });
+          triggered.push({ id: eventId, rule: rule.id, event: eventData });
         }
       } catch (err) {
         console.error(`[ThresholdTrigger] Rule ${rule.id} failed for ${next.id}:`, err);

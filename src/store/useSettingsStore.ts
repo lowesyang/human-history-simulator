@@ -1,6 +1,9 @@
 import { create } from "zustand";
 import type { SupportedModelId, SimulationMode } from "@/lib/settings";
 import { DEFAULT_MODEL } from "@/lib/settings";
+import { useWorldStore } from "@/store/useWorldStore";
+
+export type SettingsTab = "general" | "simulation";
 
 interface SettingsStore {
   apiKey: string;
@@ -8,9 +11,11 @@ interface SettingsStore {
   simulationMode: SimulationMode;
   enableCivMemory: boolean;
   enableScenarioInjection: boolean;
+  webSearchOnAdvance: boolean;
   hasEnvKey: boolean;
   envModel: string;
   showSettings: boolean;
+  activeSettingsTab: SettingsTab;
   settingsLoaded: boolean;
 
   setApiKey: (key: string) => void;
@@ -18,9 +23,10 @@ interface SettingsStore {
   setSimulationMode: (mode: SimulationMode) => void;
   setEnableCivMemory: (enable: boolean) => void;
   setEnableScenarioInjection: (enable: boolean) => void;
+  setWebSearchOnAdvance: (enable: boolean) => void;
   setHasEnvKey: (has: boolean) => void;
   setEnvModel: (model: string) => void;
-  setShowSettings: (show: boolean) => void;
+  setShowSettings: (show: boolean, tab?: SettingsTab) => void;
 
   loadFromStorage: () => void;
   syncToServer: () => Promise<void>;
@@ -29,7 +35,7 @@ interface SettingsStore {
 
 const STORAGE_KEY = "hcs-settings";
 
-function loadStorage(): { apiKey: string; model: SupportedModelId; simulationMode?: SimulationMode; enableCivMemory?: boolean; enableScenarioInjection?: boolean } | null {
+function loadStorage(): { apiKey: string; model: SupportedModelId; simulationMode?: SimulationMode; enableCivMemory?: boolean; enableScenarioInjection?: boolean; webSearchOnAdvance?: boolean } | null {
   if (typeof window === "undefined") return null;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -40,9 +46,9 @@ function loadStorage(): { apiKey: string; model: SupportedModelId; simulationMod
   }
 }
 
-function saveStorage(apiKey: string, model: SupportedModelId, simulationMode: SimulationMode, enableCivMemory: boolean, enableScenarioInjection: boolean) {
+function saveStorage(apiKey: string, model: SupportedModelId, simulationMode: SimulationMode, enableCivMemory: boolean, enableScenarioInjection: boolean, webSearchOnAdvance: boolean) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection }));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance }));
 }
 
 export const useSettingsStore = create<SettingsStore>((set, get) => ({
@@ -51,9 +57,11 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
   simulationMode: "historical" as SimulationMode,
   enableCivMemory: false,
   enableScenarioInjection: false,
+  webSearchOnAdvance: false,
   hasEnvKey: false,
   envModel: DEFAULT_MODEL,
   showSettings: false,
+  activeSettingsTab: "general" as SettingsTab,
   settingsLoaded: false,
 
   setApiKey: (apiKey) => set({ apiKey }),
@@ -61,9 +69,14 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
   setSimulationMode: (simulationMode) => set({ simulationMode }),
   setEnableCivMemory: (enableCivMemory) => set({ enableCivMemory }),
   setEnableScenarioInjection: (enableScenarioInjection) => set({ enableScenarioInjection }),
+  setWebSearchOnAdvance: (webSearchOnAdvance) => set({ webSearchOnAdvance }),
   setHasEnvKey: (hasEnvKey) => set({ hasEnvKey }),
   setEnvModel: (envModel) => set({ envModel }),
-  setShowSettings: (showSettings) => set({ showSettings }),
+  setShowSettings: (showSettings, tab) => {
+    set({ showSettings, activeSettingsTab: tab ?? "general" });
+    if (showSettings) useWorldStore.getState().pushLayer("settings");
+    else useWorldStore.getState().removeLayer("settings");
+  },
 
   loadFromStorage: () => {
     const stored = loadStorage();
@@ -74,17 +87,18 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
         simulationMode: stored.simulationMode ?? "historical",
         enableCivMemory: stored.enableCivMemory ?? false,
         enableScenarioInjection: stored.enableScenarioInjection ?? false,
+        webSearchOnAdvance: stored.webSearchOnAdvance ?? false,
       });
     }
   },
 
   syncToServer: async () => {
-    const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection } = get();
-    saveStorage(apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection);
+    const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance } = get();
+    saveStorage(apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance);
     await fetch("/api/settings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection }),
+      body: JSON.stringify({ apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance }),
     });
   },
 
@@ -106,6 +120,7 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
         updates.simulationMode = stored.simulationMode ?? "historical";
         updates.enableCivMemory = stored.enableCivMemory ?? false;
         updates.enableScenarioInjection = stored.enableScenarioInjection ?? false;
+        updates.webSearchOnAdvance = stored.webSearchOnAdvance ?? false;
       }
 
       set(updates);
@@ -120,6 +135,7 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
             simulationMode: stored.simulationMode ?? "historical",
             enableCivMemory: stored.enableCivMemory ?? false,
             enableScenarioInjection: stored.enableScenarioInjection ?? false,
+            webSearchOnAdvance: stored.webSearchOnAdvance ?? false,
           }),
         });
       }

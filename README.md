@@ -140,7 +140,7 @@ Open [http://localhost:3000](http://localhost:3000). If no API key is configured
 
 **Engine & Controls**
 
-- [ ] **Tunable Simulation Engine**: Optimize progression efficiency and expose a control panel for shaping how history unfolds — adjust _contingency_ vs. _determinism_ to set the balance between butterfly effects and structural forces, tune event-category weights (war, diplomacy, trade, tech, culture, disaster) to amplify or suppress specific drivers, and compare divergence across parallel runs to see exactly where and why timelines split.
+- [x] **Tunable Simulation Engine**: Optimize progression efficiency and expose a control panel for shaping how history unfolds — adjust _contingency_ vs. _determinism_ to set the balance between butterfly effects and structural forces, tune event-category weights (war, diplomacy, trade, tech, culture, disaster) to amplify or suppress specific drivers, and compare divergence across parallel runs to see exactly where and why timelines split.
 - [ ] **Richer Custom Events**: Make custom-event injection more expressive: chain events together, set preconditions, and craft elaborate alternate-history scenarios with branching consequences.
 - [ ] **Live State Editor**: Directly modify any civilization's state at any point in time — tweak GDP, swap rulers, redraw alliances, adjust military strength — and watch the engine propagate consequences forward.
 

@@ -1,0 +1,2087 @@
+{
+  "_comment": "Static population benchmarks for fallback when economic_history DB lacks data. Each key is a region ID, value is an array of {year, population} sorted by year. Sources: UN Population Division, World Bank, national census data, historical scholarly estimates.",
+  "north_america_usa": [
+    {
+      "year": 2013,
+      "population": 316129000
+    },
+    {
+      "year": 2014,
+      "population": 318857000
+    },
+    {
+      "year": 2015,
+      "population": 321419000
+    },
+    {
+      "year": 2016,
+      "population": 323128000
+    },
+    {
+      "year": 2017,
+      "population": 325719000
+    },
+    {
+      "year": 2018,
+      "population": 327167000
+    },
+    {
+      "year": 2019,
+      "population": 328240000
+    },
+    {
+      "year": 2020,
+      "population": 331003000
+    },
+    {
+      "year": 2021,
+      "population": 331894000
+    },
+    {
+      "year": 2022,
+      "population": 333288000
+    },
+    {
+      "year": 2023,
+      "population": 335000000
+    }
+  ],
+  "ai_usa": [
+    {
+      "year": 2013,
+      "population": 316129000
+    },
+    {
+      "year": 2014,
+      "population": 318857000
+    },
+    {
+      "year": 2015,
+      "population": 321419000
+    },
+    {
+      "year": 2016,
+      "population": 323128000
+    },
+    {
+      "year": 2017,
+      "population": 325719000
+    },
+    {
+      "year": 2018,
+      "population": 327167000
+    },
+    {
+      "year": 2019,
+      "population": 328240000
+    },
+    {
+      "year": 2020,
+      "population": 331003000
+    },
+    {
+      "year": 2021,
+      "population": 331894000
+    },
+    {
+      "year": 2022,
+      "population": 333288000
+    },
+    {
+      "year": 2023,
+      "population": 335000000
+    }
+  ],
+  "east_asia_china_prc": [
+    {
+      "year": 1990,
+      "population": 1135185000
+    },
+    {
+      "year": 1995,
+      "population": 1204855000
+    },
+    {
+      "year": 2000,
+      "population": 1262645000
+    },
+    {
+      "year": 2005,
+      "population": 1303720000
+    },
+    {
+      "year": 2010,
+      "population": 1337705000
+    },
+    {
+      "year": 2013,
+      "population": 1360720000
+    },
+    {
+      "year": 2014,
+      "population": 1367820000
+    },
+    {
+      "year": 2015,
+      "population": 1374620000
+    },
+    {
+      "year": 2016,
+      "population": 1382710000
+    },
+    {
+      "year": 2017,
+      "population": 1390080000
+    },
+    {
+      "year": 2018,
+      "population": 1395380000
+    },
+    {
+      "year": 2019,
+      "population": 1400050000
+    },
+    {
+      "year": 2020,
+      "population": 1411780000
+    },
+    {
+      "year": 2021,
+      "population": 1412600000
+    },
+    {
+      "year": 2022,
+      "population": 1411750000
+    },
+    {
+      "year": 2023,
+      "population": 1410000000
+    }
+  ],
+  "south_asia_india": [
+    {
+      "year": 1990,
+      "population": 873278000
+    },
+    {
+      "year": 1995,
+      "population": 960875000
+    },
+    {
+      "year": 2000,
+      "population": 1056576000
+    },
+    {
+      "year": 2005,
+      "population": 1140043000
+    },
+    {
+      "year": 2010,
+      "population": 1234281000
+    },
+    {
+      "year": 2013,
+      "population": 1279499000
+    },
+    {
+      "year": 2014,
+      "population": 1293859000
+    },
+    {
+      "year": 2015,
+      "population": 1310152000
+    },
+    {
+      "year": 2016,
+      "population": 1324517000
+    },
+    {
+      "year": 2017,
+      "population": 1338677000
+    },
+    {
+      "year": 2018,
+      "population": 1352642000
+    },
+    {
+      "year": 2019,
+      "population": 1366418000
+    },
+    {
+      "year": 2020,
+      "population": 1380004000
+    },
+    {
+      "year": 2021,
+      "population": 1393409000
+    },
+    {
+      "year": 2022,
+      "population": 1417173000
+    },
+    {
+      "year": 2023,
+      "population": 1428628000
+    }
+  ],
+  "east_asia_japan": [
+    {
+      "year": 1990,
+      "population": 123611000
+    },
+    {
+      "year": 1995,
+      "population": 125570000
+    },
+    {
+      "year": 2000,
+      "population": 126843000
+    },
+    {
+      "year": 2005,
+      "population": 127768000
+    },
+    {
+      "year": 2010,
+      "population": 128057000
+    },
+    {
+      "year": 2013,
+      "population": 127445000
+    },
+    {
+      "year": 2014,
+      "population": 127131000
+    },
+    {
+      "year": 2015,
+      "population": 127095000
+    },
+    {
+      "year": 2016,
+      "population": 126933000
+    },
+    {
+      "year": 2017,
+      "population": 126706000
+    },
+    {
+      "year": 2018,
+      "population": 126443000
+    },
+    {
+      "year": 2019,
+      "population": 126167000
+    },
+    {
+      "year": 2020,
+      "population": 125836000
+    },
+    {
+      "year": 2021,
+      "population": 125502000
+    },
+    {
+      "year": 2022,
+      "population": 125125000
+    },
+    {
+      "year": 2023,
+      "population": 124000000
+    }
+  ],
+  "ai_russia": [
+    {
+      "year": 2013,
+      "population": 143507000
+    },
+    {
+      "year": 2014,
+      "population": 143820000
+    },
+    {
+      "year": 2015,
+      "population": 144097000
+    },
+    {
+      "year": 2016,
+      "population": 144342000
+    },
+    {
+      "year": 2017,
+      "population": 144497000
+    },
+    {
+      "year": 2018,
+      "population": 144478000
+    },
+    {
+      "year": 2019,
+      "population": 144386000
+    },
+    {
+      "year": 2020,
+      "population": 144104000
+    },
+    {
+      "year": 2021,
+      "population": 143759000
+    },
+    {
+      "year": 2022,
+      "population": 144236000
+    },
+    {
+      "year": 2023,
+      "population": 146000000
+    }
+  ],
+  "ai_germany": [
+    {
+      "year": 2013,
+      "population": 80646000
+    },
+    {
+      "year": 2014,
+      "population": 81198000
+    },
+    {
+      "year": 2015,
+      "population": 82176000
+    },
+    {
+      "year": 2016,
+      "population": 82522000
+    },
+    {
+      "year": 2017,
+      "population": 82792000
+    },
+    {
+      "year": 2018,
+      "population": 83019000
+    },
+    {
+      "year": 2019,
+      "population": 83167000
+    },
+    {
+      "year": 2020,
+      "population": 83241000
+    },
+    {
+      "year": 2021,
+      "population": 83196000
+    },
+    {
+      "year": 2022,
+      "population": 84359000
+    },
+    {
+      "year": 2023,
+      "population": 84482000
+    }
+  ],
+  "ai_uk": [
+    {
+      "year": 2013,
+      "population": 64106000
+    },
+    {
+      "year": 2014,
+      "population": 64597000
+    },
+    {
+      "year": 2015,
+      "population": 65110000
+    },
+    {
+      "year": 2016,
+      "population": 65595000
+    },
+    {
+      "year": 2017,
+      "population": 66022000
+    },
+    {
+      "year": 2018,
+      "population": 66436000
+    },
+    {
+      "year": 2019,
+      "population": 66797000
+    },
+    {
+      "year": 2020,
+      "population": 67081000
+    },
+    {
+      "year": 2021,
+      "population": 67026000
+    },
+    {
+      "year": 2022,
+      "population": 67508000
+    },
+    {
+      "year": 2023,
+      "population": 67736000
+    }
+  ],
+  "ai_france": [
+    {
+      "year": 2013,
+      "population": 65998000
+    },
+    {
+      "year": 2014,
+      "population": 66312000
+    },
+    {
+      "year": 2015,
+      "population": 66548000
+    },
+    {
+      "year": 2016,
+      "population": 66725000
+    },
+    {
+      "year": 2017,
+      "population": 66918000
+    },
+    {
+      "year": 2018,
+      "population": 67059000
+    },
+    {
+      "year": 2019,
+      "population": 67200000
+    },
+    {
+      "year": 2020,
+      "population": 67287000
+    },
+    {
+      "year": 2021,
+      "population": 67390000
+    },
+    {
+      "year": 2022,
+      "population": 67508000
+    },
+    {
+      "year": 2023,
+      "population": 67750000
+    }
+  ],
+  "ai_brazil": [
+    {
+      "year": 2013,
+      "population": 200362000
+    },
+    {
+      "year": 2014,
+      "population": 202764000
+    },
+    {
+      "year": 2015,
+      "population": 204472000
+    },
+    {
+      "year": 2016,
+      "population": 206082000
+    },
+    {
+      "year": 2017,
+      "population": 207660000
+    },
+    {
+      "year": 2018,
+      "population": 209186000
+    },
+    {
+      "year": 2019,
+      "population": 210147000
+    },
+    {
+      "year": 2020,
+      "population": 212559000
+    },
+    {
+      "year": 2021,
+      "population": 213318000
+    },
+    {
+      "year": 2022,
+      "population": 214326000
+    },
+    {
+      "year": 2023,
+      "population": 216422000
+    }
+  ],
+  "ai_indonesia": [
+    {
+      "year": 2013,
+      "population": 253609000
+    },
+    {
+      "year": 2014,
+      "population": 256514000
+    },
+    {
+      "year": 2015,
+      "population": 258162000
+    },
+    {
+      "year": 2016,
+      "population": 261115000
+    },
+    {
+      "year": 2017,
+      "population": 263991000
+    },
+    {
+      "year": 2018,
+      "population": 266912000
+    },
+    {
+      "year": 2019,
+      "population": 270626000
+    },
+    {
+      "year": 2020,
+      "population": 273524000
+    },
+    {
+      "year": 2021,
+      "population": 276362000
+    },
+    {
+      "year": 2022,
+      "population": 275501000
+    },
+    {
+      "year": 2023,
+      "population": 277534000
+    }
+  ],
+  "ai_nigeria": [
+    {
+      "year": 2013,
+      "population": 173615000
+    },
+    {
+      "year": 2014,
+      "population": 178517000
+    },
+    {
+      "year": 2015,
+      "population": 183635000
+    },
+    {
+      "year": 2016,
+      "population": 188925000
+    },
+    {
+      "year": 2017,
+      "population": 193392000
+    },
+    {
+      "year": 2018,
+      "population": 195875000
+    },
+    {
+      "year": 2019,
+      "population": 200964000
+    },
+    {
+      "year": 2020,
+      "population": 206140000
+    },
+    {
+      "year": 2021,
+      "population": 211401000
+    },
+    {
+      "year": 2022,
+      "population": 218541000
+    },
+    {
+      "year": 2023,
+      "population": 224000000
+    }
+  ],
+  "ai_pakistan": [
+    {
+      "year": 2013,
+      "population": 182143000
+    },
+    {
+      "year": 2014,
+      "population": 185546000
+    },
+    {
+      "year": 2015,
+      "population": 189381000
+    },
+    {
+      "year": 2016,
+      "population": 193203000
+    },
+    {
+      "year": 2017,
+      "population": 197016000
+    },
+    {
+      "year": 2018,
+      "population": 200814000
+    },
+    {
+      "year": 2019,
+      "population": 204597000
+    },
+    {
+      "year": 2020,
+      "population": 208364000
+    },
+    {
+      "year": 2021,
+      "population": 220892000
+    },
+    {
+      "year": 2022,
+      "population": 229489000
+    },
+    {
+      "year": 2023,
+      "population": 231402000
+    }
+  ],
+  "ai_mexico": [
+    {
+      "year": 2013,
+      "population": 122332000
+    },
+    {
+      "year": 2014,
+      "population": 123800000
+    },
+    {
+      "year": 2015,
+      "population": 125891000
+    },
+    {
+      "year": 2016,
+      "population": 127540000
+    },
+    {
+      "year": 2017,
+      "population": 129163000
+    },
+    {
+      "year": 2018,
+      "population": 130759000
+    },
+    {
+      "year": 2019,
+      "population": 126014000
+    },
+    {
+      "year": 2020,
+      "population": 128933000
+    },
+    {
+      "year": 2021,
+      "population": 130118000
+    },
+    {
+      "year": 2022,
+      "population": 131563000
+    },
+    {
+      "year": 2023,
+      "population": 132947000
+    }
+  ],
+  "ai_egypt": [
+    {
+      "year": 2013,
+      "population": 89581000
+    },
+    {
+      "year": 2014,
+      "population": 91812000
+    },
+    {
+      "year": 2015,
+      "population": 94447000
+    },
+    {
+      "year": 2016,
+      "population": 96443000
+    },
+    {
+      "year": 2017,
+      "population": 98424000
+    },
+    {
+      "year": 2018,
+      "population": 100388000
+    },
+    {
+      "year": 2019,
+      "population": 102334000
+    },
+    {
+      "year": 2020,
+      "population": 104258000
+    },
+    {
+      "year": 2021,
+      "population": 106157000
+    },
+    {
+      "year": 2022,
+      "population": 109262000
+    },
+    {
+      "year": 2023,
+      "population": 112716000
+    }
+  ],
+  "ai_turkey": [
+    {
+      "year": 2013,
+      "population": 76148000
+    },
+    {
+      "year": 2014,
+      "population": 77181000
+    },
+    {
+      "year": 2015,
+      "population": 78218000
+    },
+    {
+      "year": 2016,
+      "population": 79278000
+    },
+    {
+      "year": 2017,
+      "population": 80745000
+    },
+    {
+      "year": 2018,
+      "population": 82004000
+    },
+    {
+      "year": 2019,
+      "population": 83155000
+    },
+    {
+      "year": 2020,
+      "population": 84339000
+    },
+    {
+      "year": 2021,
+      "population": 84775000
+    },
+    {
+      "year": 2022,
+      "population": 85280000
+    },
+    {
+      "year": 2023,
+      "population": 85816000
+    }
+  ],
+  "ai_iran": [
+    {
+      "year": 2013,
+      "population": 77176000
+    },
+    {
+      "year": 2014,
+      "population": 78144000
+    },
+    {
+      "year": 2015,
+      "population": 79109000
+    },
+    {
+      "year": 2016,
+      "population": 80277000
+    },
+    {
+      "year": 2017,
+      "population": 81163000
+    },
+    {
+      "year": 2018,
+      "population": 82012000
+    },
+    {
+      "year": 2019,
+      "population": 82914000
+    },
+    {
+      "year": 2020,
+      "population": 83993000
+    },
+    {
+      "year": 2021,
+      "population": 85029000
+    },
+    {
+      "year": 2022,
+      "population": 87924000
+    },
+    {
+      "year": 2023,
+      "population": 88551000
+    }
+  ],
+  "ai_south_korea": [
+    {
+      "year": 2013,
+      "population": 50220000
+    },
+    {
+      "year": 2014,
+      "population": 50747000
+    },
+    {
+      "year": 2015,
+      "population": 51015000
+    },
+    {
+      "year": 2016,
+      "population": 51246000
+    },
+    {
+      "year": 2017,
+      "population": 51446000
+    },
+    {
+      "year": 2018,
+      "population": 51607000
+    },
+    {
+      "year": 2019,
+      "population": 51765000
+    },
+    {
+      "year": 2020,
+      "population": 51781000
+    },
+    {
+      "year": 2021,
+      "population": 51745000
+    },
+    {
+      "year": 2022,
+      "population": 51672000
+    },
+    {
+      "year": 2023,
+      "population": 51740000
+    }
+  ],
+  "ai_italy": [
+    {
+      "year": 2013,
+      "population": 60233000
+    },
+    {
+      "year": 2014,
+      "population": 60789000
+    },
+    {
+      "year": 2015,
+      "population": 60731000
+    },
+    {
+      "year": 2016,
+      "population": 60628000
+    },
+    {
+      "year": 2017,
+      "population": 60537000
+    },
+    {
+      "year": 2018,
+      "population": 60422000
+    },
+    {
+      "year": 2019,
+      "population": 60297000
+    },
+    {
+      "year": 2020,
+      "population": 59554000
+    },
+    {
+      "year": 2021,
+      "population": 59236000
+    },
+    {
+      "year": 2022,
+      "population": 58940000
+    },
+    {
+      "year": 2023,
+      "population": 58762000
+    }
+  ],
+  "ai_spain": [
+    {
+      "year": 2013,
+      "population": 46620000
+    },
+    {
+      "year": 2014,
+      "population": 46455000
+    },
+    {
+      "year": 2015,
+      "population": 46449000
+    },
+    {
+      "year": 2016,
+      "population": 46485000
+    },
+    {
+      "year": 2017,
+      "population": 46593000
+    },
+    {
+      "year": 2018,
+      "population": 46797000
+    },
+    {
+      "year": 2019,
+      "population": 47100000
+    },
+    {
+      "year": 2020,
+      "population": 47351000
+    },
+    {
+      "year": 2021,
+      "population": 47385000
+    },
+    {
+      "year": 2022,
+      "population": 47558000
+    },
+    {
+      "year": 2023,
+      "population": 48085000
+    }
+  ],
+  "ai_canada": [
+    {
+      "year": 2013,
+      "population": 35158000
+    },
+    {
+      "year": 2014,
+      "population": 35535000
+    },
+    {
+      "year": 2015,
+      "population": 35832000
+    },
+    {
+      "year": 2016,
+      "population": 36109000
+    },
+    {
+      "year": 2017,
+      "population": 36540000
+    },
+    {
+      "year": 2018,
+      "population": 37065000
+    },
+    {
+      "year": 2019,
+      "population": 37589000
+    },
+    {
+      "year": 2020,
+      "population": 37743000
+    },
+    {
+      "year": 2021,
+      "population": 38007000
+    },
+    {
+      "year": 2022,
+      "population": 38929000
+    },
+    {
+      "year": 2023,
+      "population": 40097000
+    }
+  ],
+  "ai_australia": [
+    {
+      "year": 2013,
+      "population": 23128000
+    },
+    {
+      "year": 2014,
+      "population": 23491000
+    },
+    {
+      "year": 2015,
+      "population": 23816000
+    },
+    {
+      "year": 2016,
+      "population": 24190000
+    },
+    {
+      "year": 2017,
+      "population": 24601000
+    },
+    {
+      "year": 2018,
+      "population": 24992000
+    },
+    {
+      "year": 2019,
+      "population": 25366000
+    },
+    {
+      "year": 2020,
+      "population": 25694000
+    },
+    {
+      "year": 2021,
+      "population": 25739000
+    },
+    {
+      "year": 2022,
+      "population": 25979000
+    },
+    {
+      "year": 2023,
+      "population": 26473000
+    }
+  ],
+  "ai_saudi_arabia": [
+    {
+      "year": 2013,
+      "population": 30770000
+    },
+    {
+      "year": 2014,
+      "population": 31384000
+    },
+    {
+      "year": 2015,
+      "population": 31997000
+    },
+    {
+      "year": 2016,
+      "population": 32552000
+    },
+    {
+      "year": 2017,
+      "population": 33101000
+    },
+    {
+      "year": 2018,
+      "population": 33699000
+    },
+    {
+      "year": 2019,
+      "population": 34269000
+    },
+    {
+      "year": 2020,
+      "population": 34814000
+    },
+    {
+      "year": 2021,
+      "population": 35340000
+    },
+    {
+      "year": 2022,
+      "population": 36408000
+    },
+    {
+      "year": 2023,
+      "population": 36947000
+    }
+  ],
+  "ai_poland": [
+    {
+      "year": 2013,
+      "population": 38063000
+    },
+    {
+      "year": 2014,
+      "population": 38018000
+    },
+    {
+      "year": 2015,
+      "population": 37986000
+    },
+    {
+      "year": 2016,
+      "population": 37949000
+    },
+    {
+      "year": 2017,
+      "population": 37975000
+    },
+    {
+      "year": 2018,
+      "population": 37974000
+    },
+    {
+      "year": 2019,
+      "population": 37966000
+    },
+    {
+      "year": 2020,
+      "population": 37950000
+    },
+    {
+      "year": 2021,
+      "population": 37747000
+    },
+    {
+      "year": 2022,
+      "population": 37750000
+    },
+    {
+      "year": 2023,
+      "population": 37600000
+    }
+  ],
+  "ai_netherlands": [
+    {
+      "year": 2013,
+      "population": 16804000
+    },
+    {
+      "year": 2014,
+      "population": 16865000
+    },
+    {
+      "year": 2015,
+      "population": 16939000
+    },
+    {
+      "year": 2016,
+      "population": 17030000
+    },
+    {
+      "year": 2017,
+      "population": 17131000
+    },
+    {
+      "year": 2018,
+      "population": 17232000
+    },
+    {
+      "year": 2019,
+      "population": 17344000
+    },
+    {
+      "year": 2020,
+      "population": 17441000
+    },
+    {
+      "year": 2021,
+      "population": 17475000
+    },
+    {
+      "year": 2022,
+      "population": 17590000
+    },
+    {
+      "year": 2023,
+      "population": 17811000
+    }
+  ],
+  "ai_switzerland": [
+    {
+      "year": 2013,
+      "population": 8089000
+    },
+    {
+      "year": 2014,
+      "population": 8188000
+    },
+    {
+      "year": 2015,
+      "population": 8282000
+    },
+    {
+      "year": 2016,
+      "population": 8373000
+    },
+    {
+      "year": 2017,
+      "population": 8451000
+    },
+    {
+      "year": 2018,
+      "population": 8514000
+    },
+    {
+      "year": 2019,
+      "population": 8575000
+    },
+    {
+      "year": 2020,
+      "population": 8638000
+    },
+    {
+      "year": 2021,
+      "population": 8703000
+    },
+    {
+      "year": 2022,
+      "population": 8776000
+    },
+    {
+      "year": 2023,
+      "population": 8851000
+    }
+  ],
+  "ai_austria": [
+    {
+      "year": 2013,
+      "population": 8479000
+    },
+    {
+      "year": 2014,
+      "population": 8546000
+    },
+    {
+      "year": 2015,
+      "population": 8642000
+    },
+    {
+      "year": 2016,
+      "population": 8736000
+    },
+    {
+      "year": 2017,
+      "population": 8798000
+    },
+    {
+      "year": 2018,
+      "population": 8847000
+    },
+    {
+      "year": 2019,
+      "population": 8879000
+    },
+    {
+      "year": 2020,
+      "population": 8917000
+    },
+    {
+      "year": 2021,
+      "population": 8956000
+    },
+    {
+      "year": 2022,
+      "population": 9042000
+    },
+    {
+      "year": 2023,
+      "population": 9105000
+    }
+  ],
+  "ai_belgium": [
+    {
+      "year": 2013,
+      "population": 11161000
+    },
+    {
+      "year": 2014,
+      "population": 11209000
+    },
+    {
+      "year": 2015,
+      "population": 11274000
+    },
+    {
+      "year": 2016,
+      "population": 11331000
+    },
+    {
+      "year": 2017,
+      "population": 11376000
+    },
+    {
+      "year": 2018,
+      "population": 11427000
+    },
+    {
+      "year": 2019,
+      "population": 11484000
+    },
+    {
+      "year": 2020,
+      "population": 11522000
+    },
+    {
+      "year": 2021,
+      "population": 11554000
+    },
+    {
+      "year": 2022,
+      "population": 11589000
+    },
+    {
+      "year": 2023,
+      "population": 11686000
+    }
+  ],
+  "ai_vietnam": [
+    {
+      "year": 2013,
+      "population": 89709000
+    },
+    {
+      "year": 2014,
+      "population": 90729000
+    },
+    {
+      "year": 2015,
+      "population": 91714000
+    },
+    {
+      "year": 2016,
+      "population": 92695000
+    },
+    {
+      "year": 2017,
+      "population": 93672000
+    },
+    {
+      "year": 2018,
+      "population": 94666000
+    },
+    {
+      "year": 2019,
+      "population": 95546000
+    },
+    {
+      "year": 2020,
+      "population": 97339000
+    },
+    {
+      "year": 2021,
+      "population": 98168000
+    },
+    {
+      "year": 2022,
+      "population": 99462000
+    },
+    {
+      "year": 2023,
+      "population": 99500000
+    }
+  ],
+  "ai_thailand": [
+    {
+      "year": 2013,
+      "population": 67451000
+    },
+    {
+      "year": 2014,
+      "population": 67726000
+    },
+    {
+      "year": 2015,
+      "population": 68979000
+    },
+    {
+      "year": 2016,
+      "population": 69210000
+    },
+    {
+      "year": 2017,
+      "population": 69429000
+    },
+    {
+      "year": 2018,
+      "population": 69626000
+    },
+    {
+      "year": 2019,
+      "population": 69800000
+    },
+    {
+      "year": 2020,
+      "population": 69951000
+    },
+    {
+      "year": 2021,
+      "population": 69951000
+    },
+    {
+      "year": 2022,
+      "population": 71697000
+    },
+    {
+      "year": 2023,
+      "population": 71801000
+    }
+  ],
+  "ai_philippines": [
+    {
+      "year": 2013,
+      "population": 98394000
+    },
+    {
+      "year": 2014,
+      "population": 100102000
+    },
+    {
+      "year": 2015,
+      "population": 101833000
+    },
+    {
+      "year": 2016,
+      "population": 103320000
+    },
+    {
+      "year": 2017,
+      "population": 104918000
+    },
+    {
+      "year": 2018,
+      "population": 106652000
+    },
+    {
+      "year": 2019,
+      "population": 108117000
+    },
+    {
+      "year": 2020,
+      "population": 109581000
+    },
+    {
+      "year": 2021,
+      "population": 110818000
+    },
+    {
+      "year": 2022,
+      "population": 113880000
+    },
+    {
+      "year": 2023,
+      "population": 115560000
+    }
+  ],
+  "ai_malaysia": [
+    {
+      "year": 2013,
+      "population": 29717000
+    },
+    {
+      "year": 2014,
+      "population": 30228000
+    },
+    {
+      "year": 2015,
+      "population": 30724000
+    },
+    {
+      "year": 2016,
+      "population": 31187000
+    },
+    {
+      "year": 2017,
+      "population": 31624000
+    },
+    {
+      "year": 2018,
+      "population": 32050000
+    },
+    {
+      "year": 2019,
+      "population": 32524000
+    },
+    {
+      "year": 2020,
+      "population": 32366000
+    },
+    {
+      "year": 2021,
+      "population": 32776000
+    },
+    {
+      "year": 2022,
+      "population": 33200000
+    },
+    {
+      "year": 2023,
+      "population": 33938000
+    }
+  ],
+  "ai_singapore": [
+    {
+      "year": 2013,
+      "population": 5399000
+    },
+    {
+      "year": 2014,
+      "population": 5470000
+    },
+    {
+      "year": 2015,
+      "population": 5535000
+    },
+    {
+      "year": 2016,
+      "population": 5607000
+    },
+    {
+      "year": 2017,
+      "population": 5612000
+    },
+    {
+      "year": 2018,
+      "population": 5639000
+    },
+    {
+      "year": 2019,
+      "population": 5704000
+    },
+    {
+      "year": 2020,
+      "population": 5686000
+    },
+    {
+      "year": 2021,
+      "population": 5454000
+    },
+    {
+      "year": 2022,
+      "population": 5638000
+    },
+    {
+      "year": 2023,
+      "population": 5917000
+    }
+  ],
+  "ai_israel": [
+    {
+      "year": 2013,
+      "population": 8060000
+    },
+    {
+      "year": 2014,
+      "population": 8215000
+    },
+    {
+      "year": 2015,
+      "population": 8380000
+    },
+    {
+      "year": 2016,
+      "population": 8547000
+    },
+    {
+      "year": 2017,
+      "population": 8713000
+    },
+    {
+      "year": 2018,
+      "population": 8883000
+    },
+    {
+      "year": 2019,
+      "population": 9054000
+    },
+    {
+      "year": 2020,
+      "population": 9217000
+    },
+    {
+      "year": 2021,
+      "population": 9371000
+    },
+    {
+      "year": 2022,
+      "population": 9557000
+    },
+    {
+      "year": 2023,
+      "population": 9757000
+    }
+  ],
+  "ai_south_africa": [
+    {
+      "year": 2013,
+      "population": 53005000
+    },
+    {
+      "year": 2014,
+      "population": 54002000
+    },
+    {
+      "year": 2015,
+      "population": 55386000
+    },
+    {
+      "year": 2016,
+      "population": 56207000
+    },
+    {
+      "year": 2017,
+      "population": 57009000
+    },
+    {
+      "year": 2018,
+      "population": 57793000
+    },
+    {
+      "year": 2019,
+      "population": 58558000
+    },
+    {
+      "year": 2020,
+      "population": 59308000
+    },
+    {
+      "year": 2021,
+      "population": 60042000
+    },
+    {
+      "year": 2022,
+      "population": 60604000
+    },
+    {
+      "year": 2023,
+      "population": 61535000
+    }
+  ],
+  "ai_argentina": [
+    {
+      "year": 2013,
+      "population": 42202000
+    },
+    {
+      "year": 2014,
+      "population": 42670000
+    },
+    {
+      "year": 2015,
+      "population": 43132000
+    },
+    {
+      "year": 2016,
+      "population": 43590000
+    },
+    {
+      "year": 2017,
+      "population": 44044000
+    },
+    {
+      "year": 2018,
+      "population": 44494000
+    },
+    {
+      "year": 2019,
+      "population": 44939000
+    },
+    {
+      "year": 2020,
+      "population": 45377000
+    },
+    {
+      "year": 2021,
+      "population": 45808000
+    },
+    {
+      "year": 2022,
+      "population": 46234000
+    },
+    {
+      "year": 2023,
+      "population": 46654000
+    }
+  ],
+  "ai_colombia": [
+    {
+      "year": 2013,
+      "population": 47342000
+    },
+    {
+      "year": 2014,
+      "population": 47791000
+    },
+    {
+      "year": 2015,
+      "population": 48229000
+    },
+    {
+      "year": 2016,
+      "population": 48654000
+    },
+    {
+      "year": 2017,
+      "population": 49066000
+    },
+    {
+      "year": 2018,
+      "population": 49469000
+    },
+    {
+      "year": 2019,
+      "population": 49861000
+    },
+    {
+      "year": 2020,
+      "population": 50882000
+    },
+    {
+      "year": 2021,
+      "population": 51265000
+    },
+    {
+      "year": 2022,
+      "population": 51874000
+    },
+    {
+      "year": 2023,
+      "population": 52085000
+    }
+  ],
+  "ai_ethiopia_2000": [
+    {
+      "year": 2013,
+      "population": 96506000
+    },
+    {
+      "year": 2014,
+      "population": 99014000
+    },
+    {
+      "year": 2015,
+      "population": 101566000
+    },
+    {
+      "year": 2016,
+      "population": 104148000
+    },
+    {
+      "year": 2017,
+      "population": 106401000
+    },
+    {
+      "year": 2018,
+      "population": 109224000
+    },
+    {
+      "year": 2019,
+      "population": 112079000
+    },
+    {
+      "year": 2020,
+      "population": 114964000
+    },
+    {
+      "year": 2021,
+      "population": 117876000
+    },
+    {
+      "year": 2022,
+      "population": 123380000
+    },
+    {
+      "year": 2023,
+      "population": 126527000
+    }
+  ],
+  "ai_kenya": [
+    {
+      "year": 2013,
+      "population": 45010000
+    },
+    {
+      "year": 2014,
+      "population": 46050000
+    },
+    {
+      "year": 2015,
+      "population": 47236000
+    },
+    {
+      "year": 2016,
+      "population": 48461000
+    },
+    {
+      "year": 2017,
+      "population": 49700000
+    },
+    {
+      "year": 2018,
+      "population": 50951000
+    },
+    {
+      "year": 2019,
+      "population": 52574000
+    },
+    {
+      "year": 2020,
+      "population": 53771000
+    },
+    {
+      "year": 2021,
+      "population": 54986000
+    },
+    {
+      "year": 2022,
+      "population": 54028000
+    },
+    {
+      "year": 2023,
+      "population": 55100000
+    }
+  ],
+  "ai_uae": [
+    {
+      "year": 2013,
+      "population": 9040000
+    },
+    {
+      "year": 2014,
+      "population": 9154000
+    },
+    {
+      "year": 2015,
+      "population": 9267000
+    },
+    {
+      "year": 2016,
+      "population": 9361000
+    },
+    {
+      "year": 2017,
+      "population": 9401000
+    },
+    {
+      "year": 2018,
+      "population": 9543000
+    },
+    {
+      "year": 2019,
+      "population": 9771000
+    },
+    {
+      "year": 2020,
+      "population": 9890000
+    },
+    {
+      "year": 2021,
+      "population": 9991000
+    },
+    {
+      "year": 2022,
+      "population": 10082000
+    },
+    {
+      "year": 2023,
+      "population": 10000000
+    }
+  ],
+  "ai_ukraine": [
+    {
+      "year": 2013,
+      "population": 45490000
+    },
+    {
+      "year": 2014,
+      "population": 45245000
+    },
+    {
+      "year": 2015,
+      "population": 44830000
+    },
+    {
+      "year": 2016,
+      "population": 44439000
+    },
+    {
+      "year": 2017,
+      "population": 44034000
+    },
+    {
+      "year": 2018,
+      "population": 43993000
+    },
+    {
+      "year": 2019,
+      "population": 43734000
+    },
+    {
+      "year": 2020,
+      "population": 43467000
+    },
+    {
+      "year": 2021,
+      "population": 43192000
+    },
+    {
+      "year": 2022,
+      "population": 41167000
+    },
+    {
+      "year": 2023,
+      "population": 37000000
+    }
+  ],
+  "modern_usa": [
+    {
+      "year": 1990,
+      "population": 249623000
+    },
+    {
+      "year": 1991,
+      "population": 253493000
+    },
+    {
+      "year": 1992,
+      "population": 256514000
+    },
+    {
+      "year": 1993,
+      "population": 259919000
+    },
+    {
+      "year": 1994,
+      "population": 263126000
+    },
+    {
+      "year": 1995,
+      "population": 266278000
+    },
+    {
+      "year": 1996,
+      "population": 269394000
+    },
+    {
+      "year": 1997,
+      "population": 272647000
+    },
+    {
+      "year": 1998,
+      "population": 275854000
+    },
+    {
+      "year": 1999,
+      "population": 279040000
+    },
+    {
+      "year": 2000,
+      "population": 282162000
+    }
+  ],
+  "modern_china": [
+    {
+      "year": 1990,
+      "population": 1135185000
+    },
+    {
+      "year": 1991,
+      "population": 1150780000
+    },
+    {
+      "year": 1992,
+      "population": 1164970000
+    },
+    {
+      "year": 1993,
+      "population": 1178440000
+    },
+    {
+      "year": 1994,
+      "population": 1191835000
+    },
+    {
+      "year": 1995,
+      "population": 1204855000
+    },
+    {
+      "year": 1996,
+      "population": 1217550000
+    },
+    {
+      "year": 1997,
+      "population": 1230075000
+    },
+    {
+      "year": 1998,
+      "population": 1241935000
+    },
+    {
+      "year": 1999,
+      "population": 1252735000
+    },
+    {
+      "year": 2000,
+      "population": 1262645000
+    }
+  ],
+  "modern_india": [
+    {
+      "year": 1990,
+      "population": 873278000
+    },
+    {
+      "year": 1991,
+      "population": 891274000
+    },
+    {
+      "year": 1992,
+      "population": 909090000
+    },
+    {
+      "year": 1993,
+      "population": 926689000
+    },
+    {
+      "year": 1994,
+      "population": 944070000
+    },
+    {
+      "year": 1995,
+      "population": 960875000
+    },
+    {
+      "year": 1996,
+      "population": 979290000
+    },
+    {
+      "year": 1997,
+      "population": 997515000
+    },
+    {
+      "year": 1998,
+      "population": 1015420000
+    },
+    {
+      "year": 1999,
+      "population": 1034172000
+    },
+    {
+      "year": 2000,
+      "population": 1056576000
+    }
+  ]
+}

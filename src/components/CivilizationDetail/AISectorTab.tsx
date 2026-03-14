@@ -17,22 +17,22 @@ export default function AISectorTab({ region }: { region: Region }) {
   }
 
   return (
-    <div className="space-y-4 text-xs">
+    <div className="space-y-4">
       <StatBar label={t("info.aiSector")} value={ai.level} color="#8B5CF6" />
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.policy")}</h4>
-        <p className="text-text-primary">{localized(ai.policy)}</p>
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.policy")}</h4>
+        <p className="readable-prose text-text-primary">{localized(ai.policy)}</p>
       </div>
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.regulatory")}</h4>
-        <p className="text-text-secondary">{localized(ai.regulatoryStance)}</p>
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.regulatory")}</h4>
+        <p className="readable-prose">{localized(ai.regulatoryStance)}</p>
       </div>
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.investment")}</h4>
-        <p className="text-text-secondary">{localized(ai.investmentScale)}</p>
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.investment")}</h4>
+        <p className="readable-prose">{localized(ai.investmentScale)}</p>
       </div>
 
       {ai.keyModels && ai.keyModels.length > 0 && (
@@ -96,30 +96,30 @@ export default function AISectorTab({ region }: { region: Region }) {
       )}
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.researchFocus")}</h4>
-        <p className="text-text-secondary">{localized(ai.researchFocus)}</p>
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.researchFocus")}</h4>
+        <p className="readable-prose">{localized(ai.researchFocus)}</p>
       </div>
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.compute")}</h4>
-        <p className="text-text-secondary">{localized(ai.computeInfrastructure)}</p>
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.compute")}</h4>
+        <p className="readable-prose">{localized(ai.computeInfrastructure)}</p>
       </div>
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.talent")}</h4>
-        <p className="text-text-secondary">{localized(ai.talentPool)}</p>
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.talent")}</h4>
+        <p className="readable-prose">{localized(ai.talentPool)}</p>
       </div>
 
       {ai.globalRanking && (
         <div>
-          <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.ranking")}</h4>
-          <p className="text-text-secondary">{localized(ai.globalRanking)}</p>
+          <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.ranking")}</h4>
+          <p className="readable-prose">{localized(ai.globalRanking)}</p>
         </div>
       )}
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">{t("ai.outlook")}</h4>
-        <p className="text-text-primary">{localized(ai.outlook)}</p>
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">{t("ai.outlook")}</h4>
+        <p className="readable-prose text-text-primary">{localized(ai.outlook)}</p>
       </div>
     </div>
   );

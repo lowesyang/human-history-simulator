@@ -100,10 +100,11 @@ export async function POST(request: NextRequest) {
   let reqDetailLevel: "brief" | "normal" | "detailed" = "normal";
   let reqWebSearch = false;
   let reqScenarioPremises: string[] = [];
+  let reqSimulationParams: { contingencyRatio?: number; categoryWeights?: Record<string, number> } | undefined;
   try {
     const body = await request.json();
     if (body.count) reqCount = Math.min(Math.max(Number(body.count), 1), 50);
-    if (body.startYear != null) reqStartYear = Number(body.startYear);
+    if (body.startYear != null && !isNaN(Number(body.startYear))) reqStartYear = Number(body.startYear);
     if (body.eventsPerYear != null) reqEventsPerYear = Math.min(Math.max(Number(body.eventsPerYear), 1), 8);
     if (body.categories && Array.isArray(body.categories) && body.categories.length > 0) {
       reqCategories = body.categories;
@@ -115,6 +116,9 @@ export async function POST(request: NextRequest) {
     if (body.webSearch) reqWebSearch = true;
     if (body.scenarioPremises && Array.isArray(body.scenarioPremises)) {
       reqScenarioPremises = body.scenarioPremises.filter((p: unknown) => typeof p === "string" && (p as string).trim());
+    }
+    if (body.simulationParams && typeof body.simulationParams === "object") {
+      reqSimulationParams = body.simulationParams;
     }
   } catch {
     // no body or invalid JSON, use defaults
@@ -235,7 +239,7 @@ Return ONLY a JSON array, no other text.`;
 
         const categoryList = reqCategories
           ? reqCategories.join("|")
-          : "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|technology|finance|other";
+          : "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|technology|finance|announcement|other";
 
         const regionFocusHint = reqFocusRegions && reqFocusRegions.length > 0
           ? `\n- PRIORITIZE events related to these regions: [${reqFocusRegions.join(", ")}]. Most events should involve at least one of these regions, but you may include events from other regions if they are historically significant enough.`
@@ -261,6 +265,14 @@ Since ${fmtY(startYear)} falls in the modern/contemporary era, technology and sc
 - Technology events should reflect real paradigm shifts: electrification, aviation, nuclear energy, computing, internet, mobile, AI, biotech, space.`
           : "";
 
+        const announcementHint = `\n\nMAJOR ANNOUNCEMENTS & LANDMARK PUBLICATIONS (category "announcement"):
+Use the "announcement" category for historically significant proclamations, product launches, policy declarations, landmark publications, and formal statements that shaped the course of history. These are distinct from gradual inventions or diplomatic negotiations — they are specific, dated moments when something was formally announced, published, or declared. Examples by era:
+- Ancient/Medieval: publication of major religious or philosophical texts, royal edicts, papal bulls, legal codes (e.g., Edict of Milan, Magna Carta, Gutenberg Bible printing).
+- Early Modern: declarations and manifestos (e.g., Luther's 95 Theses, Declaration of Independence, Declaration of the Rights of Man, Communist Manifesto).
+- Industrial/Modern: landmark scientific publications (e.g., Darwin's Origin of Species, Einstein's relativity papers), corporate/product announcements, major policy declarations (e.g., Monroe Doctrine, Emancipation Proclamation, Balfour Declaration, Marshall Plan announcement).
+- Contemporary (post-1950): product launches (e.g., Sputnik launch announcement, Apollo 11, IBM PC, Macintosh, World Wide Web announcement, iPhone launch, ChatGPT release), major policy/legislation announcements (e.g., Civil Rights Act signing, Paris Climate Agreement), landmark scientific results (e.g., Human Genome Project completion, LIGO gravitational waves detection, first black hole image), corporate milestones (e.g., founding announcements of transformative companies).
+- Include at least 10-15% "announcement" events when generating events for post-1800 periods, and 5-10% for earlier periods. These should be specific, datable moments — not gradual processes.`;
+
         const speculativeWorldContext = isSpeculative
           ? `\n\nWORLD STATE INDICATORS (use for causal reasoning):\n${regions.slice(0, 20).map((r) => {
             const parts = [`${r.id}: ${r.name?.en ?? r.id} (${r.status})`];
@@ -274,6 +286,36 @@ Since ${fmtY(startYear)} falls in the modern/contemporary era, technology and sc
         const scenarioContext = reqScenarioPremises.length > 0
           ? `\n\nSCENARIO PREMISES (treat as ground truth for event generation):\n${reqScenarioPremises.map((p, i) => `${i + 1}. ${p}`).join("\n")}`
           : "";
+
+        const getWeightLabel = (w: number) => {
+          if (w <= 0) return "none";
+          if (w <= 0.3) return "very low";
+          if (w <= 0.7) return "low";
+          if (w <= 1.2) return "normal";
+          if (w <= 1.7) return "high";
+          if (w <= 2.2) return "very high";
+          return "dominant";
+        };
+        let weightContext = "";
+        if (reqSimulationParams?.categoryWeights) {
+          const entries = Object.entries(reqSimulationParams.categoryWeights).filter(([, w]) => w !== 1);
+          if (entries.length > 0) {
+            const parts = entries.map(([cat, w]) => `${cat} (${getWeightLabel(w)})`);
+            weightContext = `\n\nEVENT CATEGORY EMPHASIS:\nAdjust the distribution of generated events proportionally to these emphasis levels: ${parts.join(", ")}. Categories not listed are normal weight. Generate more events for high-emphasis categories and fewer for low-emphasis ones.`;
+          }
+        }
+
+        let contingencyContext = "";
+        const contingency = reqSimulationParams?.contingencyRatio ?? 50;
+        if (contingency === 0) {
+          contingencyContext = `\n\nHISTORICAL STYLE — EXTREME CONTINGENCY:\nPrioritize events driven by accidents, individual decisions, unlikely coincidences, and chain reactions. Assassinations, plagues, freak disasters, and miscalculations should feature prominently.`;
+        } else if (contingency === 25) {
+          contingencyContext = `\n\nHISTORICAL STYLE — HIGH CONTINGENCY:\nInclude more events driven by individual agency, sudden crises, and unexpected turns. Key personalities and chance events should frequently disrupt broader trends.`;
+        } else if (contingency === 75) {
+          contingencyContext = `\n\nHISTORICAL STYLE — STRUCTURAL:\nFocus on events driven by structural forces (economics, demographics, institutions, geography). Individual-driven surprises should be rare.`;
+        } else if (contingency === 100) {
+          contingencyContext = `\n\nHISTORICAL STYLE — IRON DETERMINISM:\nOnly include events that follow strict material and structural logic. Geography, resources, and population dynamics drive everything. Avoid any events that depend on individual agency or unlikely coincidences.`;
+        }
 
         const userPromptPreamble = isSpeculative
           ? `Starting from ${fmtY(startYear)}, generate the next ${minCount}-${maxCount} PLAUSIBLE future events based on current world trends and geopolitical dynamics.`
@@ -294,7 +336,7 @@ REQUIREMENTS:
 - IMPORTANT: Generate up to ${reqEventsPerYear} events per year. Many years had multiple significant events happening simultaneously across different regions. Spread events naturally across different months.
 - GRANULARITY: For each year, diversify events across DIFFERENT categories and DIFFERENT regions. Do not cluster multiple events of the same category in the same year. Each year should paint a multi-faceted picture: political changes in one region, economic shifts in another, military conflicts elsewhere, technological breakthroughs, diplomatic moves, etc. Use specific months (not always month 6) to reflect when events actually occurred.
 - Do NOT fabricate any event. Do NOT include minor or trivial events.
-- The events should be in chronological order starting from ${fmtY(startYear)}.${regionFocusHint}${techEraHint}${minaraHint}${scenarioContext}
+- The events should be in chronological order starting from ${fmtY(startYear)}. CRITICAL: ALL events MUST have timestamp.year >= ${startYear}. Do NOT generate any event before ${fmtY(startYear)}. Ignore the recent events list if those events are from earlier years.${regionFocusHint}${techEraHint}${announcementHint}${minaraHint}${scenarioContext}${weightContext}${contingencyContext}
 
 Categories (ONLY use these): ${categoryList}.
 
@@ -307,7 +349,7 @@ JSON array format:
         const validCategories = new Set([
           "war", "dynasty", "invention", "trade", "religion",
           "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
-          "technology", "finance", "other",
+          "technology", "finance", "announcement", "other",
         ]);
         const regionIdSet = new Set(regionIds);
 
@@ -376,6 +418,7 @@ JSON array format:
                   for (const evt of objects) {
                     if (!evt.affectedRegions || !evt.category) continue;
                     if (isBlockedEvent(evt)) continue;
+                    if (evt.timestamp.year < startYear) continue;
 
                     const category = validCategories.has(evt.category) ? evt.category : "other";
                     const filteredRegions = (evt.affectedRegions || []).filter((r) => regionIdSet.has(r));
@@ -422,6 +465,7 @@ JSON array format:
         for (const evt of remaining) {
           if (!evt.timestamp || !evt.title || !evt.description) continue;
           if (isBlockedEvent(evt)) continue;
+          if (evt.timestamp.year < startYear) continue;
 
           const category = validCategories.has(evt.category) ? evt.category : "other";
           const filteredRegions = (evt.affectedRegions || []).filter((r) => regionIdSet.has(r));

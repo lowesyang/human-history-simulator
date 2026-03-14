@@ -1,0 +1,204 @@
+{
+  "goldSilverRatio": [
+    {
+      "year": -1600,
+      "ratio": 2.5,
+      "source": "Ancient Egypt, Amarna Letters"
+    },
+    {
+      "year": -500,
+      "ratio": 13.3,
+      "source": "Persian Empire, Darius I fixed ratio"
+    },
+    {
+      "year": 100,
+      "ratio": 12.0,
+      "source": "Roman Empire, Augustus standardization"
+    },
+    {
+      "year": 750,
+      "ratio": 8.0,
+      "source": "Tang Dynasty, East-West differential"
+    },
+    {
+      "year": 1200,
+      "ratio": 10.0,
+      "source": "Venetian trade records"
+    },
+    {
+      "year": 1500,
+      "ratio": 10.5,
+      "source": "Pre-Columbian Europe"
+    },
+    {
+      "year": 1600,
+      "ratio": 12.0,
+      "source": "Spanish silver influx begins impact"
+    },
+    {
+      "year": 1700,
+      "ratio": 15.0,
+      "source": "Newton's fixed ratio for British mint"
+    },
+    {
+      "year": 1800,
+      "ratio": 15.5,
+      "source": "Bimetallic standard era"
+    },
+    {
+      "year": 1873,
+      "ratio": 16.0,
+      "source": "Crime of '73, demonetization"
+    },
+    {
+      "year": 1900,
+      "ratio": 34.0,
+      "source": "Gold standard dominance"
+    },
+    {
+      "year": 1940,
+      "ratio": 97.0,
+      "source": "Wartime gold hoarding"
+    },
+    {
+      "year": 1970,
+      "ratio": 23.0,
+      "source": "Post-Bretton Woods"
+    },
+    {
+      "year": 2000,
+      "ratio": 60.0,
+      "source": "Industrial silver demand"
+    },
+    {
+      "year": 2020,
+      "ratio": 86.0,
+      "source": "COVID-era flight to gold"
+    }
+  ],
+  "pppAnchors": {
+    "grain_kg": [
+      {
+        "year": -1600,
+        "goldGrams": 0.08,
+        "note": "Babylonian barley price"
+      },
+      {
+        "year": 100,
+        "goldGrams": 0.04,
+        "note": "Roman wheat, Diocletian's Edict"
+      },
+      {
+        "year": 1300,
+        "goldGrams": 0.06,
+        "note": "Pre-Black Death England"
+      },
+      {
+        "year": 1350,
+        "goldGrams": 0.03,
+        "note": "Post-plague labor scarcity"
+      },
+      {
+        "year": 1600,
+        "goldGrams": 0.05,
+        "note": "Price Revolution aftermath"
+      },
+      {
+        "year": 1800,
+        "goldGrams": 0.03,
+        "note": "Agricultural improvement"
+      },
+      {
+        "year": 1900,
+        "goldGrams": 0.015,
+        "note": "Mechanized farming"
+      },
+      {
+        "year": 2000,
+        "goldGrams": 0.005,
+        "note": "Green Revolution mature"
+      }
+    ],
+    "daily_unskilled_wage": [
+      {
+        "year": -1600,
+        "silverGrams": 1.5,
+        "note": "Babylonian laborer"
+      },
+      {
+        "year": 100,
+        "silverGrams": 3.0,
+        "note": "Roman legionary daily"
+      },
+      {
+        "year": 1300,
+        "silverGrams": 1.5,
+        "note": "English laborer pre-plague"
+      },
+      {
+        "year": 1350,
+        "silverGrams": 3.0,
+        "note": "Post-plague wage doubling"
+      },
+      {
+        "year": 1600,
+        "silverGrams": 2.5,
+        "note": "London laborer"
+      },
+      {
+        "year": 1800,
+        "silverGrams": 4.0,
+        "note": "Early industrial England"
+      },
+      {
+        "year": 1900,
+        "silverGrams": 15.0,
+        "note": "Industrial wage premium"
+      },
+      {
+        "year": 2000,
+        "silverGrams": 300.0,
+        "note": "Modern developed economy"
+      }
+    ]
+  },
+  "modernUsdGoldPrice": [
+    {
+      "year": 1800,
+      "usdPerOzGold": 19.39
+    },
+    {
+      "year": 1900,
+      "usdPerOzGold": 20.67
+    },
+    {
+      "year": 1934,
+      "usdPerOzGold": 35.0
+    },
+    {
+      "year": 1971,
+      "usdPerOzGold": 35.0,
+      "note": "Nixon shock, last fixed price"
+    },
+    {
+      "year": 1980,
+      "usdPerOzGold": 615.0
+    },
+    {
+      "year": 2000,
+      "usdPerOzGold": 279.0
+    },
+    {
+      "year": 2010,
+      "usdPerOzGold": 1225.0
+    },
+    {
+      "year": 2020,
+      "usdPerOzGold": 1770.0
+    },
+    {
+      "year": 2023,
+      "usdPerOzGold": 1940.0
+    }
+  ]
+}

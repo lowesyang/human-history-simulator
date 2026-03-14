@@ -14,7 +14,8 @@ interface CustomEventBody {
 
 const VALID_CATEGORIES = new Set([
   "war", "dynasty", "invention", "trade", "religion",
-  "disaster", "natural_disaster", "exploration", "diplomacy", "migration", "other",
+  "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
+  "technology", "finance", "announcement", "other",
 ]);
 
 export async function POST(request: NextRequest) {

@@ -30,7 +30,7 @@ export default function FactionsTab({ region }: { region: Region }) {
   }
 
   return (
-    <div className="space-y-3 text-xs">
+    <div className="space-y-3">
       {factions.map((faction) => {
         const isExpanded = expandedId === faction.id;
         return (
@@ -99,9 +99,8 @@ function FactionCard({
           {t(`factions.status.${faction.status}`)}
         </span>
         <span
-          className={`text-text-muted transition-transform ${
-            isExpanded ? "rotate-180" : ""
-          }`}
+          className={`text-text-muted transition-transform ${isExpanded ? "rotate-180" : ""
+            }`}
         >
           ▾
         </span>
@@ -109,7 +108,7 @@ function FactionCard({
 
       {isExpanded && (
         <div className="px-3 pb-3 space-y-3 border-t border-border-subtle pt-2">
-          <div className="text-text-secondary leading-relaxed">
+          <div className="readable-prose">
             {localized(faction.description)}
           </div>
 

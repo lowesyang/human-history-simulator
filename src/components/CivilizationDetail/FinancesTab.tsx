@@ -9,10 +9,15 @@ export default function FinancesTab({ region }: { region: Region }) {
   const { t, localized } = useLocale();
   const fin = region.finances;
 
+  if (!fin) return null;
+
   const surplusPositive = (fin.surplus?.amount ?? 0) >= 0;
+  const debtGoldKg = fin.debtLevel?.goldKg ?? 0;
+  const gdpGoldKg = region.economy?.gdpEstimate?.goldKg ?? 1;
+  const debtToGdp = (debtGoldKg / gdpGoldKg) * 100;
 
   return (
-    <div className="space-y-4 text-xs">
+    <div className="space-y-4">
       {/* Revenue vs Expenditure */}
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded p-2 bg-bg-tertiary">
@@ -41,6 +46,29 @@ export default function FinancesTab({ region }: { region: Region }) {
           {surplusPositive ? t("finances.surplus") : t("finances.deficit")}
         </div>
         <MonetaryDisplay value={fin.surplus} />
+      </div>
+
+      {/* Debt-to-GDP ratio */}
+      <div>
+        <div className="text-xs text-text-muted mb-1">
+          {t("finances.debtToGdp")}: {debtToGdp.toFixed(1)}%
+        </div>
+        <div className="h-2 rounded overflow-hidden bg-bg-tertiary">
+          <div
+            className="h-full transition-all rounded"
+            style={{
+              width: `${Math.min(debtToGdp, 100)}%`,
+              backgroundColor:
+                debtToGdp < 30
+                  ? "#22c55e"
+                  : debtToGdp < 60
+                    ? "#eab308"
+                    : debtToGdp < 80
+                      ? "#f97316"
+                      : "#ef4444",
+            }}
+          />
+        </div>
       </div>
 
       {/* Revenue breakdown */}
@@ -101,7 +129,7 @@ export default function FinancesTab({ region }: { region: Region }) {
           {t("finances.treasury")}
         </h4>
         <MonetaryDisplay value={fin.treasury} />
-        <p className="mt-1 text-text-secondary">
+        <p className="mt-1 readable-prose">
           {localized(fin.treasuryDescription)}
         </p>
       </div>
@@ -111,7 +139,7 @@ export default function FinancesTab({ region }: { region: Region }) {
         <h4 className="font-semibold mb-1.5 text-accent-copper">
           {t("finances.policy")}
         </h4>
-        <p className="text-text-secondary">{localized(fin.fiscalPolicy)}</p>
+        <p className="readable-prose">{localized(fin.fiscalPolicy)}</p>
       </div>
     </div>
   );

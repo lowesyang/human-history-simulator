@@ -6,6 +6,7 @@ import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
 import { getLlmHeaders } from "@/lib/client-headers";
 import AdvanceConfirmModal from "./AdvanceConfirmModal";
+import SimulationControlPanel from "./SimulationControlPanel";
 import type { HistoricalEvent } from "@/lib/types";
 
 function formatYear(year: number, locale: "zh" | "en") {
@@ -163,6 +164,7 @@ export default React.memo(function Timeline() {
         body: JSON.stringify({
           epochs: store.epochCount,
           excludedEventIds,
+          simulationParams: store.simulationParams,
         }),
         signal: abortCtrl.signal,
       });
@@ -358,7 +360,9 @@ export default React.memo(function Timeline() {
             className="icon-btn icon-btn-danger tooltip-wrap border border-[#dc503c] text-[#dc503c]"
             data-tooltip={t("timeline.stop")}
           >
-            ⏹
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <rect x="6" y="6" width="12" height="12" rx="1" />
+            </svg>
           </button>
         ) : (
           <button
@@ -368,7 +372,15 @@ export default React.memo(function Timeline() {
             data-tooltip={t("timeline.advance")}
             style={{ opacity: isFetchingPreview ? 0.6 : 1 }}
           >
-            {isFetchingPreview ? "⏳" : "▶"}
+            {isFetchingPreview ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-spin">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <polygon points="6,4 20,12 6,20" />
+              </svg>
+            )}
           </button>
         )}
 
@@ -380,8 +392,14 @@ export default React.memo(function Timeline() {
           data-tooltip={t("timeline.reset")}
           style={{ opacity: isLoading ? 0.4 : 1 }}
         >
-          ↺
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+            <path d="M3 3v5h5" />
+          </svg>
         </button>
+
+        {/* Simulation tuning */}
+        <SimulationControlPanel />
 
         {/* Era & Year display */}
         <div className="era-banner-inline">
@@ -549,7 +567,6 @@ function handleSSEEvent(
 
     case "changelog": {
       store.addEvolutionLog(data as unknown as import("@/lib/changelog").EpochChangelog);
-      store.setShowLogPanel(true);
       break;
     }
 
@@ -571,6 +588,46 @@ function handleSSEEvent(
       break;
     }
 
+    case "economic_snapshots": {
+      const snapshots = data.snapshots as Record<string, import("@/lib/types").EconomicSnapshot> | undefined;
+      if (snapshots) {
+        const prev = store.economicHistory;
+        const year = data.year as number;
+        const next = { ...prev };
+        for (const [regionId, snap] of Object.entries(snapshots)) {
+          const existing = next[regionId] ?? [];
+          const filtered = existing.filter((s) => s.year !== year);
+          next[regionId] = [...filtered, { ...snap, regionId, year }];
+        }
+        store.setEconomicHistory(next);
+      }
+      break;
+    }
+
+    case "asset_prices": {
+      const prices = data.prices as import("@/lib/types").AssetPriceTick[] | undefined;
+      if (prices && prices.length > 0) {
+        const prev = store.assetPrices;
+        const next = { ...prev };
+        for (const tick of prices) {
+          const existing = next[tick.assetId] ?? [];
+          next[tick.assetId] = [...existing.filter((t) => t.year !== tick.year), tick];
+        }
+        store.setAssetPrices(next);
+      }
+      break;
+    }
+
+    case "econ_shocks": {
+      const shocks = data.shocks as import("@/lib/types").EconShock[] | undefined;
+      if (shocks) {
+        for (const shock of shocks) {
+          store.addEconShock(shock);
+        }
+      }
+      break;
+    }
+
     case "done": {
       const state = data.state as Record<string, unknown> | undefined;
       if (state) {
@@ -588,6 +645,45 @@ function handleSSEEvent(
       }
       store.setPipelinePhase("done");
       refreshEvents();
+      refreshEconomicData();
+      break;
+    }
+
+    case "war_update": {
+      const warUpdateSnapshots = data.snapshots as Record<string, import("@/lib/types").WarMetricsSnapshot[]> | undefined;
+      if (warUpdateSnapshots) {
+        store.mergeWarSnapshots(warUpdateSnapshots);
+      }
+      const prevWars = store.activeWars;
+      const newWars = data.wars as import("@/lib/types").War[] | undefined;
+      if (newWars) {
+        const prevIds = new Set(prevWars.map((w) => w.id));
+        for (const w of newWars) {
+          if (!prevIds.has(w.id)) {
+            const warName = w.name[locale] || w.name.en;
+            store.addWarNotification({
+              id: `new-${w.id}-${Date.now()}`,
+              message: locale === "zh" ? `战争爆发：${warName}` : `War Declared: ${warName}`,
+              type: "new",
+            });
+          }
+        }
+        for (const w of newWars) {
+          const prev = prevWars.find((pw) => pw.id === w.id);
+          if (prev && prev.status === "ongoing" && w.status !== "ongoing") {
+            const warName = w.name[locale] || w.name.en;
+            const statusLabel = locale === "zh"
+              ? (w.status === "ceasefire" ? "停战" : w.status.includes("victory") ? "胜利" : "僵持")
+              : (w.status === "ceasefire" ? "Ceasefire" : w.status.includes("victory") ? "Victory" : "Stalemate");
+            store.addWarNotification({
+              id: `end-${w.id}-${Date.now()}`,
+              message: `${statusLabel}: ${warName}`,
+              type: "ended",
+            });
+          }
+        }
+        store.setActiveWars(newWars);
+      }
       break;
     }
 
@@ -619,5 +715,31 @@ async function refreshEvents() {
       );
   } catch (err) {
     console.error("Failed to refresh events:", err);
+  }
+}
+
+async function refreshEconomicData() {
+  try {
+    const store = useWorldStore.getState();
+    const [snapshotsResp, assetResp] = await Promise.all([
+      fetch("/api/economic-history"),
+      fetch("/api/asset-prices?latest=true&exchangeRates=true"),
+    ]);
+    if (snapshotsResp.ok) {
+      const s = await snapshotsResp.json();
+      store.setEconomicHistory(s.snapshots ?? {});
+    }
+    if (assetResp.ok) {
+      const a = await assetResp.json();
+      const pricesByAsset: Record<string, { assetId: string; year: number; priceGoldGrams: number; priceSilverGrams: number; volatility: number }[]> = {};
+      for (const p of a.prices ?? []) {
+        if (!pricesByAsset[p.assetId]) pricesByAsset[p.assetId] = [];
+        pricesByAsset[p.assetId].push(p);
+      }
+      store.setAssetPrices(pricesByAsset);
+      if (a.exchangeRates) store.setExchangeRates(a.exchangeRates);
+    }
+  } catch (err) {
+    console.error("Failed to refresh economic data:", err);
   }
 }

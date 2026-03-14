@@ -11,6 +11,8 @@ import CivilizationDetail from "@/components/CivilizationDetail";
 import LlmStreamPanel from "@/components/LlmStreamPanel";
 import EvolutionLogPanel from "@/components/EvolutionLogPanel";
 import WarsPanel from "@/components/WarsPanel";
+import EconomicPanel from "@/components/EconomicPanel";
+import RegionSearchBar from "@/components/RegionSearchBar";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import { getLlmHeaders } from "@/lib/client-headers";
 import { SUPPORTED_MODELS, DEFAULT_MODEL } from "@/lib/settings";
@@ -34,6 +36,7 @@ export default function Home() {
   const showLogPanel = useWorldStore((s) => s.showLogPanel);
   const activeWars = useWorldStore((s) => s.activeWars);
   const showWarsPanel = useWorldStore((s) => s.showWarsPanel);
+  const showEconomicPanel = useWorldStore((s) => s.showEconomicPanel);
   const isLoading = useWorldStore((s) => s.isLoading);
   const loadingStatus = useWorldStore((s) => s.loadingStatus);
   const locale = useWorldStore((s) => s.locale);
@@ -125,7 +128,7 @@ export default function Home() {
 
   useEffect(() => {
     const seen = localStorage.getItem("hcs-welcome-seen");
-    if (!seen) setShowWelcome(true);
+    if (!seen) { setShowWelcome(true); useWorldStore.getState().pushLayer("welcome"); }
   }, []);
 
   useEffect(() => {
@@ -133,6 +136,7 @@ export default function Home() {
     if (!hasEnvKey && !storedApiKey) {
       setRequireApiKey(true);
       setShowWelcome(true);
+      useWorldStore.getState().pushLayer("welcome");
     }
   }, [settingsLoaded, hasEnvKey, storedApiKey]);
 
@@ -157,6 +161,9 @@ export default function Home() {
           store.setViewingTime(stateData.timestamp);
           if (stateData.wars) {
             store.setActiveWars(stateData.wars as War[]);
+          }
+          if (stateData.warSnapshots) {
+            store.mergeWarSnapshots(stateData.warSnapshots);
           }
           hasState = true;
         }
@@ -206,6 +213,9 @@ export default function Home() {
           if (data.wars) {
             store.setActiveWars(data.wars as War[]);
           }
+          if (data.warSnapshots) {
+            store.mergeWarSnapshots(data.warSnapshots);
+          }
         }
       } catch (err) {
         console.error("Failed to load snapshot:", err);
@@ -214,8 +224,35 @@ export default function Home() {
     loadSnapshot();
   }, [viewingTime.year, viewingTime.month]);
 
+  useEffect(() => {
+    const LAYER_CLOSE: Record<string, () => void> = {
+      welcome: () => { setShowWelcome(false); setRequireApiKey(false); },
+      settings: () => useSettingsStore.getState().setShowSettings(false),
+      eraModal: () => setShowEraModal(false),
+      warDetail: () => useWorldStore.getState().setSelectedWar(null),
+      regionDetail: () => useWorldStore.getState().setSelectedRegionId(null),
+      economicPanel: () => useWorldStore.getState().setShowEconomicPanel(false),
+      warsPanel: () => useWorldStore.getState().setShowWarsPanel(false),
+      logPanel: () => useWorldStore.getState().setShowLogPanel(false),
+    };
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      const target = e.target as HTMLElement;
+      if (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable) return;
+
+      const top = useWorldStore.getState().popLayer();
+      if (top && LAYER_CLOSE[top]) {
+        LAYER_CLOSE[top]();
+      }
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, []);
+
   const handleEraSelect = async (eraId: string) => {
     setShowEraModal(false);
+    useWorldStore.getState().removeLayer("eraModal");
 
     const store = useWorldStore.getState();
     store.setIsLoading(true);
@@ -303,7 +340,7 @@ export default function Home() {
   return (
     <div className="h-screen w-screen flex flex-col overflow-hidden">
       {/* Top bar */}
-      <header className="glass-panel px-4 py-2 flex items-center justify-between shrink-0 z-30 border-b border-border-subtle relative">
+      <header className="glass-panel px-4 py-2 flex items-center justify-between shrink-0 z-50 border-b border-border-subtle relative">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="Logo" className="w-7 h-7" />
@@ -315,8 +352,12 @@ export default function Home() {
           <button
             onClick={() => {
               const next = !showLogPanel;
-              useWorldStore.getState().setShowLogPanel(next);
-              if (next) useWorldStore.getState().setShowWarsPanel(false);
+              const s = useWorldStore.getState();
+              s.setShowLogPanel(next);
+              if (next) {
+                s.setShowWarsPanel(false);
+                s.setShowEconomicPanel(false);
+              }
             }}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs cursor-pointer transition-all ${showLogPanel
               ? "border-accent-gold/60 bg-accent-gold/10 text-accent-gold"
@@ -334,8 +375,12 @@ export default function Home() {
           <button
             onClick={() => {
               const next = !showWarsPanel;
-              useWorldStore.getState().setShowWarsPanel(next);
-              if (next) useWorldStore.getState().setShowLogPanel(false);
+              const s = useWorldStore.getState();
+              s.setShowWarsPanel(next);
+              if (next) {
+                s.setShowLogPanel(false);
+                s.setShowEconomicPanel(false);
+              }
             }}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs cursor-pointer transition-all ${showWarsPanel
               ? "border-red-700/60 bg-red-900/25 text-red-300"
@@ -359,11 +404,33 @@ export default function Home() {
               </span>
             )}
           </button>
+          <button
+            onClick={() => {
+              const next = !showEconomicPanel;
+              const s = useWorldStore.getState();
+              s.setShowEconomicPanel(next);
+              if (next) {
+                s.setShowLogPanel(false);
+                s.setShowWarsPanel(false);
+              }
+            }}
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs cursor-pointer transition-all ${showEconomicPanel
+              ? "border-accent-gold/60 bg-accent-gold/10 text-accent-gold"
+              : "border-border-subtle text-text-muted hover:text-accent-gold hover:border-border-active"
+              }`}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+            <span>{t("economy")}</span>
+          </button>
         </div>
 
         <div className="flex items-center gap-3">
+          <RegionSearchBar />
           <button
-            onClick={() => setShowEraModal(true)}
+            onClick={() => { setShowEraModal(true); useWorldStore.getState().pushLayer("eraModal"); }}
             disabled={isLoading}
             className="flex items-center gap-1.5 px-3 py-1 rounded border border-border-subtle text-text-secondary hover:text-accent-gold hover:border-border-active transition-all cursor-pointer text-xs disabled:opacity-40 disabled:cursor-not-allowed"
           >
@@ -409,7 +476,7 @@ export default function Home() {
             </svg>
           </button>
           <button
-            onClick={() => setShowWelcome(true)}
+            onClick={() => { setShowWelcome(true); useWorldStore.getState().pushLayer("welcome"); }}
             className="tooltip-wrap tooltip-below flex items-center justify-center w-8 h-8 rounded-full border border-border-subtle text-text-secondary hover:text-accent-gold hover:border-border-active transition-all cursor-pointer"
             data-tooltip={locale === "zh" ? "关于" : "About"}
           >
@@ -451,6 +518,7 @@ export default function Home() {
 
         <EvolutionLogPanel />
         <WarsPanel />
+        <EconomicPanel />
         <CivilizationDetail />
         <EventList />
       </div>
@@ -460,7 +528,7 @@ export default function Home() {
       {showEraModal && (
         <EraSelectModal
           onConfirm={handleEraSelect}
-          onCancel={() => setShowEraModal(false)}
+          onCancel={() => { setShowEraModal(false); useWorldStore.getState().removeLayer("eraModal"); }}
         />
       )}
 
@@ -473,6 +541,7 @@ export default function Home() {
           onClose={() => {
             setShowWelcome(false);
             setRequireApiKey(false);
+            useWorldStore.getState().removeLayer("welcome");
             localStorage.setItem("hcs-welcome-seen", "1");
           }}
         />
@@ -576,6 +645,7 @@ function handleEraSSE(
       } else {
         store.setActiveWars([]);
       }
+      store.clearWarSnapshots();
       if (data.needsEvents) {
         store.setNeedsEvents(true);
       }

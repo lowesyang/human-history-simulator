@@ -90,8 +90,22 @@ function ImpactBadge({
   const computePos = useCallback(() => {
     if (!badgeRef.current) return null;
     const rect = badgeRef.current.getBoundingClientRect();
-    return { top: rect.top, left: rect.left + rect.width / 2 };
+    return { top: rect.top + rect.height / 2, left: rect.right + 8 };
   }, []);
+
+  const showAt = useCallback(() => {
+    const p = computePos();
+    if (p) setPos(p);
+    setShowTip(true);
+  }, [computePos]);
+
+  const toggle = useCallback(() => {
+    if (showTip) {
+      setShowTip(false);
+    } else {
+      showAt();
+    }
+  }, [showTip, showAt]);
 
   useEffect(() => {
     if (!showTip) return;
@@ -111,19 +125,13 @@ function ImpactBadge({
     };
   }, [showTip, computePos]);
 
-  const openTip = useCallback(() => {
-    const p = computePos();
-    if (p) setPos(p);
-    setShowTip(true);
-  }, [computePos]);
-
   const handleClick = useCallback(async (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
-    if (streaming) { setShowTip((p) => !p); return; }
-    if (explanation) { setShowTip((p) => !p); return; }
+    if (streaming) { toggle(); return; }
+    if (explanation) { toggle(); return; }
 
-    openTip();
+    showAt();
     setStreaming(true);
     setExplanation("");
 
@@ -189,12 +197,12 @@ function ImpactBadge({
     } finally {
       setStreaming(false);
     }
-  }, [streaming, explanation, changes, locale, regionName, regionId, epochContext, tier, isDirect, openTip]);
+  }, [streaming, explanation, changes, locale, regionName, regionId, epochContext, tier, isDirect, toggle, showAt]);
 
   const tooltipReady = showTip && pos;
-  const tooltipStyle: React.CSSProperties = pos
-    ? { position: "fixed", left: pos.left, top: pos.top - 8, transform: "translate(-50%, -100%)", zIndex: 9999, width: 300 }
-    : { position: "fixed", top: -9999, left: -9999, zIndex: 9999, width: 300, opacity: 0 };
+  const tooltipStyle: React.CSSProperties | undefined = pos
+    ? { position: "fixed", left: pos.left, top: pos.top, transform: "translateY(-50%)", zIndex: 9999, width: 300 }
+    : undefined;
 
   return (
     <>
@@ -207,8 +215,8 @@ function ImpactBadge({
         {tier.label[locale]}
       </button>
       {tooltipReady && typeof document !== "undefined" && createPortal(
-        <div ref={tipRef} className="explain-tooltip" style={tooltipStyle}>
-          <div className="explain-tooltip-arrow" />
+        <div ref={tipRef} className="explain-tooltip explain-tooltip-right" style={tooltipStyle}>
+          <div className="explain-tooltip-arrow-left" />
           <div className="explain-tooltip-body explain-prose" style={{ maxHeight: 200, overflowY: "auto" }}>
             {explanation ? (
               <Suspense fallback={<span className="text-text-muted text-xs">{explanation}</span>}>
@@ -676,6 +684,7 @@ function ChangeRow({
               changeDetail={localized(change.detail)}
               changeSentiment={change.sentiment}
               regionDescription={regionDescription}
+              tooltipPosition="right"
             />
           </div>
           <div

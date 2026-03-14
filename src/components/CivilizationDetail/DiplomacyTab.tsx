@@ -7,8 +7,10 @@ export default function DiplomacyTab({ region }: { region: Region }) {
   const { t, localized } = useLocale();
   const dip = region.diplomacy;
 
+  if (!dip) return null;
+
   return (
-    <div className="space-y-4 text-xs">
+    <div className="space-y-4">
       <LabeledValue label={t("diplomacy.policy")}>
         {localized(dip.foreignPolicy)}
       </LabeledValue>
@@ -51,10 +53,10 @@ export default function DiplomacyTab({ region }: { region: Region }) {
 function LabeledValue({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="font-semibold mb-1 text-accent-copper">
+      <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">
         {label}
       </h4>
-      <p className="text-text-secondary">{children}</p>
+      <p className="readable-prose">{children}</p>
     </div>
   );
 }

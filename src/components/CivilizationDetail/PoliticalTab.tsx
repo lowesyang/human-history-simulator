@@ -18,7 +18,7 @@ export default function PoliticalTab({ region }: { region: Region }) {
   }));
 
   return (
-    <div className="space-y-4 text-xs">
+    <div className="space-y-4">
       <Section title={t("govt.structure")}>
         <p>{localized(region.government.structure)}</p>
       </Section>
@@ -89,10 +89,10 @@ export default function PoliticalTab({ region }: { region: Region }) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="font-semibold mb-1.5 text-accent-copper">
+      <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">
         {title}
       </h4>
-      <div className="text-text-secondary">{children}</div>
+      <div className="readable-prose">{children}</div>
     </div>
   );
 }

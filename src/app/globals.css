@@ -34,8 +34,13 @@
 
 body {
   @apply bg-bg-primary text-text-primary m-0 overflow-hidden;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-family: "Inter", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 * {
@@ -45,6 +50,7 @@ body {
 
 *::-webkit-scrollbar {
   width: 6px;
+  height: 4px;
 }
 *::-webkit-scrollbar-thumb {
   @apply bg-accent-gold rounded-sm;
@@ -58,6 +64,30 @@ body {
   -webkit-backdrop-filter: blur(16px);
 }
 
+/* Readable prose utility for long-form content (descriptions, assessments, etc.) */
+.readable-prose {
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: 0.015em;
+  word-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.readable-prose p {
+  margin: 0.4em 0;
+}
+
+.readable-prose p:first-child {
+  margin-top: 0;
+}
+
+.readable-prose p:last-child {
+  margin-bottom: 0;
+}
+
 .gold-border-left {
   @apply border-l-2 border-accent-gold;
 }
@@ -69,6 +99,7 @@ input[type="range"] {
   height: 4px;
   border-radius: 2px;
   outline: none;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -229,7 +260,7 @@ input[type="range"]::-moz-range-thumb {
   border: 1px solid rgba(127, 29, 29, 0.4);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.6;
   white-space: normal;
   pointer-events: none;
   opacity: 0;
@@ -253,7 +284,7 @@ input[type="range"]::-moz-range-thumb {
 /* Explain "Why?" button & tooltip */
 .explain-btn {
   @apply shrink-0 px-2 py-0.5 rounded-full cursor-pointer transition-all;
-  font-size: 11px;
+  font-size: 12px;
   background: rgba(201, 168, 76, 0.12);
   color: #c9a84c;
   border: 1px solid rgba(201, 168, 76, 0.25);
@@ -275,6 +306,10 @@ input[type="range"]::-moz-range-thumb {
   animation: explainFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.explain-tooltip-right {
+  animation: explainFadeInRight 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .explain-tooltip-arrow {
   position: absolute;
   bottom: -5px;
@@ -284,6 +319,19 @@ input[type="range"]::-moz-range-thumb {
   height: 10px;
   background: #1e1b16;
   border-right: 1px solid rgba(201, 168, 76, 0.3);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  transform: rotate(45deg);
+}
+
+.explain-tooltip-arrow-left {
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  background: #1e1b16;
+  border-left: 1px solid rgba(201, 168, 76, 0.3);
   border-bottom: 1px solid rgba(201, 168, 76, 0.3);
   transform: rotate(45deg);
 }
@@ -301,7 +349,7 @@ input[type="range"]::-moz-range-thumb {
 
 .explain-prose p {
   margin: 0.35em 0;
-  line-height: 1.65;
+  line-height: 1.75;
 }
 
 .explain-prose p:first-child {
@@ -387,8 +435,13 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @keyframes explainFadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes explainFadeInRight {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ─── Welcome Modal ─── */
@@ -1029,6 +1082,15 @@ input[type="range"]::-moz-range-thumb {
   flex-shrink: 0;
 }
 
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s ease-out forwards;
+}
+
 /* ─── Era banner — grand overlay (header) ─── */
 .era-banner {
   position: absolute;
@@ -1087,4 +1149,25 @@ input[type="range"]::-moz-range-thumb {
   color: #e8dcc8;
   text-shadow: 0 0 10px rgba(232, 220, 200, 0.12);
   white-space: nowrap;
+}
+
+/* Hide native number-input spinners */
+input[type="number"].no-spin::-webkit-inner-spin-button,
+input[type="number"].no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"].no-spin {
+  -moz-appearance: textfield;
+}
+
+/* Hide scrollbar but keep scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }

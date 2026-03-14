@@ -47,3 +47,9 @@ next-env.d.ts
 
 # validation reports
 data/validation-report.json
+
+# temp files
+tmp_*.json
+
+# python cache
+__pycache__/

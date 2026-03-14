@@ -98,9 +98,20 @@ export type EventCategory =
   | "migration"
   | "technology"
   | "finance"
+  | "political"
   | "other";
 
 export type BatchMode = "per_event" | "per_month" | "per_year";
+
+export interface SimulationParams {
+  contingencyRatio: number;
+  categoryWeights: Partial<Record<EventCategory, number>>;
+}
+
+export const DEFAULT_SIMULATION_PARAMS: SimulationParams = {
+  contingencyRatio: 50,
+  categoryWeights: {},
+};
 
 export interface Faction {
   id: string;
@@ -223,6 +234,7 @@ export interface Region {
     foreignTradeVolume: MonetaryValue;
     tradeRoutes?: LocalizedText;
     economicSystem: LocalizedText;
+    giniEstimate?: number;
   };
 
   finances: {
@@ -262,6 +274,8 @@ export interface Region {
         name: LocalizedText;
         title: LocalizedText;
         command: LocalizedText;
+        notableBattles?: LocalizedText;
+        reputation?: LocalizedText;
       }[];
     };
     technology: LocalizedText;
@@ -269,6 +283,36 @@ export interface Region {
     militarySpendingPctGdp: number;
     threats?: LocalizedText;
     recentBattles?: LocalizedText;
+    doctrine?: LocalizedText;
+    training?: {
+      level: number;
+      description: LocalizedText;
+    };
+    morale?: {
+      level: number;
+      description: LocalizedText;
+    };
+    equipment?: {
+      name: LocalizedText;
+      category: "melee" | "ranged" | "siege" | "armor" | "naval" | "aerial" | "vehicle" | "artillery" | "missile" | "nuclear" | "cyber" | "other";
+      quantity?: number;
+      description: LocalizedText;
+    }[];
+    fortifications?: {
+      name: LocalizedText;
+      type: LocalizedText;
+      description: LocalizedText;
+    }[];
+    logistics?: {
+      supplyCapacity: LocalizedText;
+      mobilizationSpeed: LocalizedText;
+    };
+    notableCampaigns?: {
+      name: LocalizedText;
+      year: number;
+      outcome: LocalizedText;
+      description: LocalizedText;
+    }[];
   };
 
   demographics: {
@@ -279,6 +323,13 @@ export interface Region {
     majorCities: {
       name: LocalizedText;
       population: number;
+      tags?: string[];
+      description?: LocalizedText;
+    }[];
+    subdivisions?: {
+      name: LocalizedText;
+      population: number;
+      capital?: LocalizedText;
     }[];
     ethnicGroups?: LocalizedText;
     socialClasses: LocalizedText;
@@ -362,4 +413,198 @@ export interface War {
     side2: LocalizedText;
   };
   relatedEventIds: string[];
+  theater?: LocalizedText;
+  casualties?: {
+    side1: { military: number; civilian: number; description: LocalizedText };
+    side2: { military: number; civilian: number; description: LocalizedText };
+  };
+  keyBattles?: {
+    name: LocalizedText;
+    year: number;
+    location: LocalizedText;
+    outcome: LocalizedText;
+    description: LocalizedText;
+    casualties: { side1: number; side2: number };
+  }[];
+}
+
+export interface SideMetrics {
+  totalTroops: number;
+  standingArmy: number;
+  militaryLevel: number;
+  gdpGoldKg: number;
+  population: number;
+  techLevel: number;
+  casualties: number;
+  morale: number;
+}
+
+export interface WarMetricsSnapshot {
+  year: number;
+  side1: SideMetrics;
+  side2: SideMetrics;
+}
+
+// ── Economic History & Asset Tracking ──
+
+export interface EconomicSnapshot {
+  regionId: string;
+  year: number;
+  gdpGoldKg: number;
+  gdpPerCapitaGoldKg: number;
+  treasuryGoldKg: number;
+  revenueGoldKg: number;
+  expenditureGoldKg: number;
+  tradeVolumeGoldKg: number;
+  debtGoldKg: number;
+  militarySpendingPctGdp: number;
+  population: number;
+  urbanizationRate: number;
+  giniEstimate?: number;
+}
+
+export interface AssetPriceTick {
+  assetId: string;
+  year: number;
+  priceGoldGrams: number;
+  priceSilverGrams: number;
+  volatility: number;
+  eventDriver?: LocalizedText;
+}
+
+export interface ExchangeRatePoint {
+  year: number;
+  goldSilverRatio: number;
+  pppGrainGoldG: number;
+  pppWageGoldG: number;
+}
+
+export type AssetCategory =
+  | "precious_metal"
+  | "grain"
+  | "commodity"
+  | "luxury"
+  | "energy"
+  | "real_asset"
+  | "labor"
+  | "financial"
+  | "industrial_metal"
+  | "real_estate"
+  | "equity"
+  | "equity_index"
+  | "private_equity"
+  | "fund_lp"
+  | "bond"
+  | "futures"
+  | "crypto"
+  | "derivative"
+  | "grey_market"
+  | "etf"
+  | "forex";
+
+export interface CommodityDef {
+  id: string;
+  name: LocalizedText;
+  category: AssetCategory;
+  unit: string;
+  availableFrom: number;
+  availableTo: number;
+  baseVolatility: number;
+}
+
+export interface EconomicPanelView {
+  mode: "gdptrend" | "inequality" | "portfolio";
+  selectedAssetIds: string[];
+  selectedRegionIds: string[];
+  denomination: "gold" | "silver" | "usd";
+  timeRange: { from: number; to: number };
+}
+
+export interface EconShock {
+  epicenterRegionId: string;
+  magnitude: number;
+  type: "crash" | "boom" | "trade_disruption" | "bubble_burst" | "currency_crisis";
+  affectedRegionIds: string[];
+  priceDeltas: Record<string, number>;
+  description: LocalizedText;
+}
+
+export interface PriceEngineParams {
+  thetaMeanReversion: number;
+  volatilityMultiplier: number;
+  shockMagnitudeMultiplier: number;
+  enableStochastic: boolean;
+  randomSeed?: number;
+}
+
+export const DEFAULT_PRICE_ENGINE_PARAMS: PriceEngineParams = {
+  thetaMeanReversion: 0.3,
+  volatilityMultiplier: 1.0,
+  shockMagnitudeMultiplier: 1.0,
+  enableStochastic: true,
+};
+
+export interface InertiaParams {
+  minGrowthRate: number;
+  maxGrowthRate: number;
+  techPeakGrowth: number;
+  techPeakWidth: number;
+  urbanGrowthDampening: number;
+  warGrowthPenalty: number;
+  capitalShare: number;
+  surplusInvestmentRate: number;
+  baseTfpGrowth: number;
+  tradeGrowthBonus: number;
+  warGdpPenalty: number;
+  minGdpGrowth: number;
+  maxGdpGrowth: number;
+  revenueElasticity: number;
+  expenditureElasticity: number;
+  baseInterestRate: number;
+  riskPremiumMultiplier: number;
+  enabled: boolean;
+}
+
+export const DEFAULT_INERTIA_PARAMS: InertiaParams = {
+  minGrowthRate: 0.001,
+  maxGrowthRate: 0.015,
+  techPeakGrowth: 6,
+  techPeakWidth: 2.5,
+  urbanGrowthDampening: 0.3,
+  warGrowthPenalty: 0.5,
+  capitalShare: 0.35,
+  surplusInvestmentRate: 0.4,
+  baseTfpGrowth: 0.005,
+  tradeGrowthBonus: 0.02,
+  warGdpPenalty: 0.022,
+  minGdpGrowth: -0.20,
+  maxGdpGrowth: 0.10,
+  revenueElasticity: 1.1,
+  expenditureElasticity: 0.8,
+  baseInterestRate: 0.05,
+  riskPremiumMultiplier: 0.5,
+  enabled: true,
+};
+
+export interface PortfolioAllocation {
+  assetId: string;
+  percentage: number;
+  entryPrice: number;
+}
+
+export interface PortfolioSnapshot {
+  year: number;
+  totalValueGoldKg: number;
+  cashGoldKg: number;
+  holdings: Record<string, number>;
+}
+
+export interface Portfolio {
+  id: string;
+  name: string;
+  eraId: string;
+  startYear: number;
+  initialGoldKg: number;
+  allocations: PortfolioAllocation[];
+  snapshots: PortfolioSnapshot[];
 }

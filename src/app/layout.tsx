@@ -5,11 +5,13 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const cinzel = Cinzel({
@@ -36,6 +38,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} ${cinzel.variable} antialiased`}
       >

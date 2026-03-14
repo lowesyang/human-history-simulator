@@ -20,13 +20,14 @@ const CATEGORY_COLORS: Record<string, string> = {
   migration: "#7b6b8a",
   technology: "#6d28d9",
   finance: "#0d9488",
+  announcement: "#c026d3",
   other: "#6b5f4e",
 };
 
 const ALL_CATEGORIES: EventCategory[] = [
   "war", "dynasty", "invention", "trade", "religion",
   "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
-  "technology", "finance", "other",
+  "technology", "finance", "announcement", "other",
 ];
 
 function formatYear(year: number, locale: "zh" | "en"): string {
@@ -118,7 +119,7 @@ export default function EventList() {
       const resp = await fetch("/api/events/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json", ...getLlmHeaders() },
-        body: JSON.stringify(params),
+        body: JSON.stringify({ ...params, simulationParams: useWorldStore.getState().simulationParams }),
         signal: abortCtrl.signal,
       });
 
@@ -344,7 +345,7 @@ export default function EventList() {
           )}
           {sortedYears.map((year) => (
             <div key={year}>
-              <div className="font-mono text-xs font-semibold py-1 sticky top-0 text-accent-copper bg-bg-glass backdrop-blur-sm flex items-center justify-between">
+              <div className="font-mono text-xs font-semibold py-1 text-accent-copper flex items-center justify-between">
                 <span>{formatYear(year, locale)}</span>
                 {tab === "future" && (
                   <button
@@ -463,6 +464,36 @@ export default function EventList() {
   );
 }
 
+const GEN_PREFS_KEY = "hcs-event-gen-prefs";
+
+interface GenPrefs {
+  count: number;
+  startYear: number;
+  eventsPerYear: number;
+  detailLevel: "brief" | "normal" | "detailed";
+  webSearch: boolean;
+  categories?: string[];
+  focusRegions?: string[];
+}
+
+function loadGenPrefs(): GenPrefs | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(GEN_PREFS_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as GenPrefs;
+  } catch {
+    return null;
+  }
+}
+
+function saveGenPrefs(prefs: GenPrefs) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(GEN_PREFS_KEY, JSON.stringify(prefs));
+  } catch { /* ignore */ }
+}
+
 function GenerateConfirmModal({
   locale,
   t,
@@ -486,14 +517,15 @@ function GenerateConfirmModal({
   }) => void;
   onCancel: () => void;
 }) {
-  const defaultStart = frontier.year + 1;
-  const [count, setCount] = useState(20);
+  const saved = useMemo(() => loadGenPrefs(), []);
+  const defaultStart = saved?.startYear ?? frontier.year + 1;
+  const [count, setCount] = useState(saved?.count ?? 20);
   const [startEra, setStartEra] = useState<"bce" | "ce">(defaultStart <= 0 ? "bce" : "ce");
   const [startAbs, setStartAbs] = useState(Math.abs(defaultStart));
-  const [eventsPerYear, setEventsPerYear] = useState(4);
-  const [detailLevel, setDetailLevel] = useState<"brief" | "normal" | "detailed">("normal");
+  const [eventsPerYear, setEventsPerYear] = useState(saved?.eventsPerYear ?? 4);
+  const [detailLevel, setDetailLevel] = useState<"brief" | "normal" | "detailed">(saved?.detailLevel ?? "normal");
   const [showAdvanced, setShowAdvanced] = useState(false);
-  const [webSearch, setWebSearch] = useState(false);
+  const [webSearch, setWebSearch] = useState(saved?.webSearch ?? true);
 
   const allCategories: { id: string; label: string }[] = [
     { id: "war", label: t("events.category.war") },
@@ -507,10 +539,14 @@ function GenerateConfirmModal({
     { id: "diplomacy", label: t("events.category.diplomacy") },
     { id: "migration", label: t("events.category.migration") },
   ];
-  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
-    new Set(allCategories.map((c) => c.id))
-  );
-  const [focusRegions, setFocusRegions] = useState<Set<string>>(new Set());
+  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(() => {
+    if (saved?.categories && saved.categories.length > 0) return new Set(saved.categories);
+    return new Set(allCategories.map((c) => c.id));
+  });
+  const [focusRegions, setFocusRegions] = useState<Set<string>>(() => {
+    if (saved?.focusRegions && saved.focusRegions.length > 0) return new Set(saved.focusRegions);
+    return new Set();
+  });
 
   const toggleCategory = (id: string) => {
     setSelectedCategories((prev) => {
@@ -540,9 +576,19 @@ function GenerateConfirmModal({
   const allCategoriesSelected = selectedCategories.size === allCategories.length;
 
   const handleConfirm = () => {
+    const startYear = computeStart();
+    saveGenPrefs({
+      count,
+      startYear,
+      eventsPerYear,
+      detailLevel,
+      webSearch,
+      categories: allCategoriesSelected ? undefined : [...selectedCategories],
+      focusRegions: focusRegions.size > 0 ? [...focusRegions] : undefined,
+    });
     onConfirm({
       count,
-      startYear: computeStart(),
+      startYear,
       eventsPerYear,
       categories: allCategoriesSelected ? undefined : [...selectedCategories],
       focusRegions: focusRegions.size > 0 ? [...focusRegions] : undefined,
@@ -609,7 +655,10 @@ function GenerateConfirmModal({
                 type="number"
                 min={1}
                 value={startAbs}
-                onChange={(e) => setStartAbs(Math.max(1, Number(e.target.value)))}
+                onChange={(e) => {
+                  const val = Number(e.target.value);
+                  if (!isNaN(val)) setStartAbs(Math.max(1, val));
+                }}
                 className="w-full bg-bg-primary/60 border border-border-subtle rounded-r-md px-2 py-1.5 text-xs text-text-primary focus:outline-none focus:border-accent-gold/60 focus:ring-1 focus:ring-accent-gold/20 transition-all"
               />
             </div>
@@ -624,18 +673,16 @@ function GenerateConfirmModal({
             <input
               type="range"
               min={1}
-              max={8}
+              max={12}
               value={eventsPerYear}
               onChange={(e) => setEventsPerYear(Number(e.target.value))}
               className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-accent-gold bg-bg-tertiary"
               style={{ accentColor: "var(--accent-gold, #d4a853)" }}
             />
-            <div className="flex justify-between text-xs text-text-muted mt-1">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
+            <div className="flex justify-between text-xs text-text-muted mt-1 px-[6px]">
+              {Array.from({ length: 12 }, (_, i) => (
+                <span key={i + 1} className="w-0 text-center">{i + 1}</span>
+              ))}
             </div>
           </div>
 
@@ -1116,7 +1163,7 @@ const EventCard = React.memo(function EventCard({
         </svg>
       </div>
       {expanded && (
-        <div className="text-xs mt-2 leading-relaxed text-text-primary">
+        <div className="mt-2 readable-prose text-text-primary">
           {localized(event.description)}
         </div>
       )}

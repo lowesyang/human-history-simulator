@@ -1,8 +1,10 @@
 "use client";
 
-import type { Region, War, LocalizedText } from "@/lib/types";
+import { useMemo } from "react";
+import type { Region, War, LocalizedText, WarMetricsSnapshot } from "@/lib/types";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
+import { Sparkline } from "../charts/DualLineChart";
 
 function formatYear(year: number, locale: "zh" | "en"): string {
   if (locale === "zh") return year < 0 ? `公元前${Math.abs(year)}年` : `公元${year}年`;
@@ -22,6 +24,7 @@ export default function WarsTab({ region }: { region: Region }) {
   const pastEvents = useWorldStore((s) => s.pastEvents);
   const currentState = useWorldStore((s) => s.currentState);
   const setSelectedWar = useWorldStore((s) => s.setSelectedWar);
+  const warSnapshots = useWorldStore((s) => s.warSnapshots);
   const { locale, t, localized } = useLocale();
 
   const involvedWars = activeWars.filter(
@@ -54,6 +57,7 @@ export default function WarsTab({ region }: { region: Region }) {
           t={t}
           localized={localized}
           onOpenDetail={() => setSelectedWar(war)}
+          snapshots={warSnapshots[war.id] || []}
         />
       ))}
     </div>
@@ -69,6 +73,7 @@ function WarInvolvementCard({
   t,
   localized,
   onOpenDetail,
+  snapshots,
 }: {
   war: War;
   region: Region;
@@ -78,6 +83,7 @@ function WarInvolvementCard({
   t: (key: string) => string;
   localized: (text: LocalizedText | undefined) => string;
   onOpenDetail: () => void;
+  snapshots: WarMetricsSnapshot[];
 }) {
   const isOnSide1 = war.belligerents.side1.regionIds.includes(region.id);
   const mySide = isOnSide1 ? "side1" : "side2";
@@ -111,6 +117,27 @@ function WarInvolvementCard({
     : `${formatYear(war.startYear, locale)} — ${t("war.ongoing")}`;
 
   const mil = region.military;
+
+  const warImpactDeltas = useMemo(() => {
+    if (snapshots.length < 2) return null;
+    const first = snapshots[0];
+    const last = snapshots[snapshots.length - 1];
+    const mySideFirst = first[mySide as "side1" | "side2"];
+    const mySideLast = last[mySide as "side1" | "side2"];
+    const pct = (from: number, to: number) =>
+      from === 0 ? null : ((to - from) / Math.abs(from)) * 100;
+    return {
+      troopsPct: pct(mySideFirst.totalTroops, mySideLast.totalTroops),
+      gdpPct: pct(mySideFirst.gdpGoldKg, mySideLast.gdpGoldKg),
+      populationPct: pct(mySideFirst.population, mySideLast.population),
+      techDelta: mySideLast.techLevel - mySideFirst.techLevel,
+    };
+  }, [snapshots, mySide]);
+
+  const myTroopValues = useMemo(
+    () => snapshots.map((s) => s[mySide as "side1" | "side2"].totalTroops),
+    [snapshots, mySide]
+  );
 
   return (
     <div className="rounded-lg border border-red-900/30 overflow-hidden" style={{ background: "rgba(139,58,58,0.06)" }}>
@@ -149,11 +176,32 @@ function WarInvolvementCard({
       </div>
 
       <div className="px-3 py-2.5 space-y-3">
+        {/* War impact deltas */}
+        {warImpactDeltas && (
+          <div>
+            <div className="text-xs font-semibold text-text-secondary mb-1.5 flex items-center gap-1.5">
+              <span>📊</span>
+              <span>{t("wars.warImpactOnCiv")}</span>
+            </div>
+            <div className="grid grid-cols-4 gap-2">
+              <DeltaCard label={t("war.chart.military")} value={warImpactDeltas.troopsPct} suffix="%" />
+              <DeltaCard label={t("war.chart.economy")} value={warImpactDeltas.gdpPct} suffix="%" />
+              <DeltaCard label={t("war.chart.population")} value={warImpactDeltas.populationPct} suffix="%" />
+              <DeltaCard label={t("war.chart.technology")} value={warImpactDeltas.techDelta} suffix="" isAbsolute />
+            </div>
+            {myTroopValues.length >= 2 && (
+              <div className="mt-2 flex items-center gap-2">
+                <span className="text-xs text-text-muted">{t("war.chart.military")}:</span>
+                <Sparkline values={myTroopValues} color="#f87171" width={120} height={20} />
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Side alignment */}
         <div>
           <div className="text-xs font-semibold text-text-secondary mb-1.5">{t("wars.warRole")}</div>
           <div className="grid grid-cols-2 gap-2">
-            {/* My side */}
             <div className="rounded p-2 bg-red-900/10 border border-red-900/20">
               <div className="text-xs font-semibold text-red-400 mb-1">{t("wars.yourSide")}</div>
               <div className="text-xs text-text-primary font-semibold mb-0.5">{localized(myLabel)}</div>
@@ -170,7 +218,6 @@ function WarInvolvementCard({
                 </div>
               )}
             </div>
-            {/* Enemy side */}
             <div className="rounded p-2 bg-blue-900/10 border border-blue-900/20">
               <div className="text-xs font-semibold text-blue-400 mb-1">{t("wars.enemySide")}</div>
               <div className="text-xs text-text-primary font-semibold mb-0.5">{localized(enemyLabel)}</div>
@@ -269,6 +316,41 @@ function WarInvolvementCard({
             </div>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+function DeltaCard({
+  label,
+  value,
+  suffix,
+  isAbsolute = false,
+}: {
+  label: string;
+  value: number | null;
+  suffix: string;
+  isAbsolute?: boolean;
+}) {
+  if (value == null) {
+    return (
+      <div className="rounded p-1.5 bg-bg-tertiary/60 border border-border-subtle text-center">
+        <div className="text-xs text-text-muted truncate">{label}</div>
+        <div className="text-xs font-mono text-text-muted">—</div>
+      </div>
+    );
+  }
+
+  const color = isAbsolute
+    ? value > 0 ? "#4ade80" : value < 0 ? "#f87171" : "#9ca3af"
+    : value >= 0 ? "#4ade80" : "#f87171";
+  const sign = value >= 0 ? "+" : "";
+
+  return (
+    <div className="rounded p-1.5 bg-bg-tertiary/60 border border-border-subtle text-center">
+      <div className="text-xs text-text-muted truncate">{label}</div>
+      <div className="text-xs font-mono font-semibold" style={{ color }}>
+        {sign}{isAbsolute ? value : value.toFixed(1)}{suffix}
       </div>
     </div>
   );

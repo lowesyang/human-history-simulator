@@ -57,12 +57,13 @@ export async function callAgentStreaming(
   messages: AgentMessage[],
   regionId: string,
   onToken: TokenCallback,
-  options?: { temperature?: number }
+  options?: { temperature?: number; webSearch?: boolean }
 ): Promise<string> {
   const apiKey = getEffectiveApiKey();
   if (!apiKey) throw new Error("OPENROUTER_API_KEY is not configured");
 
-  const model = getEffectiveModel();
+  const baseModel = getEffectiveModel();
+  const model = options?.webSearch ? `${baseModel}:online` : baseModel;
   const temperature = options?.temperature ?? 0.5;
   const startTime = Date.now();
 
@@ -171,12 +172,13 @@ export async function callAgentStreaming(
 
 export async function callAgent(
   messages: AgentMessage[],
-  options?: { temperature?: number }
+  options?: { temperature?: number; webSearch?: boolean }
 ): Promise<string> {
   const apiKey = getEffectiveApiKey();
   if (!apiKey) throw new Error("OPENROUTER_API_KEY is not configured");
 
-  const model = getEffectiveModel();
+  const baseModel = getEffectiveModel();
+  const model = options?.webSearch ? `${baseModel}:online` : baseModel;
   const temperature = options?.temperature ?? 0.5;
 
   const controller = new AbortController();

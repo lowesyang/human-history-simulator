@@ -71,7 +71,7 @@ export default function HistoryTab({ region }: { region: Region }) {
   }
 
   return (
-    <div className="space-y-3 text-xs">
+    <div className="space-y-3">
       <div className="text-text-muted text-xs">
         {regionLogs.length} {t("history.records")}
       </div>

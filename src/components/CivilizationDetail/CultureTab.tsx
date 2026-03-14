@@ -7,8 +7,10 @@ export default function CultureTab({ region }: { region: Region }) {
   const { t, localized } = useLocale();
   const culture = region.culture;
 
+  if (!culture) return null;
+
   return (
-    <div className="space-y-4 text-xs">
+    <div className="space-y-4">
       <LabeledValue label={t("culture.religion")}>
         {localized(culture.religion)}
       </LabeledValue>
@@ -39,10 +41,10 @@ export default function CultureTab({ region }: { region: Region }) {
 function LabeledValue({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="font-semibold mb-1 text-accent-copper">
+      <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">
         {label}
       </h4>
-      <p className="text-text-secondary">{children}</p>
+      <p className="readable-prose">{children}</p>
     </div>
   );
 }

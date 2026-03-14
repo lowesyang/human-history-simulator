@@ -28,6 +28,7 @@ interface ExplainButtonProps {
   changeDetail: string;
   changeSentiment: string;
   regionDescription: string;
+  tooltipPosition?: "top" | "right";
 }
 
 export default function ExplainButton({
@@ -41,6 +42,7 @@ export default function ExplainButton({
   changeDetail,
   changeSentiment,
   regionDescription,
+  tooltipPosition = "top",
 }: ExplainButtonProps) {
   const key = cacheKey(regionId, year, changeLabel, changeSentiment);
   const [explanation, setExplanation] = useState(() => explainCache.get(key) ?? "");
@@ -50,15 +52,31 @@ export default function ExplainButton({
   const btnRef = useRef<HTMLButtonElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
-  const updatePos = useCallback(() => {
-    if (!btnRef.current) return;
+  const computePos = useCallback(() => {
+    if (!btnRef.current) return null;
     const rect = btnRef.current.getBoundingClientRect();
-    setPos({ top: rect.top, left: rect.left });
-  }, []);
+    if (tooltipPosition === "right") {
+      return { top: rect.top + rect.height / 2, left: rect.right + 8 };
+    }
+    return { top: rect.top, left: rect.left + rect.width / 2 };
+  }, [tooltipPosition]);
+
+  const showAt = useCallback(() => {
+    const p = computePos();
+    if (p) setPos(p);
+    setShowTooltip(true);
+  }, [computePos]);
+
+  const toggle = useCallback(() => {
+    if (showTooltip) {
+      setShowTooltip(false);
+    } else {
+      showAt();
+    }
+  }, [showTooltip, showAt]);
 
   useEffect(() => {
     if (!showTooltip) return;
-    updatePos();
 
     function onClickOutside(e: MouseEvent) {
       if (
@@ -67,7 +85,10 @@ export default function ExplainButton({
       ) return;
       setShowTooltip(false);
     }
-    function onScroll() { updatePos(); }
+    function onScroll() {
+      const p = computePos();
+      if (p) setPos(p);
+    }
 
     document.addEventListener("mousedown", onClickOutside);
     window.addEventListener("scroll", onScroll, true);
@@ -75,22 +96,22 @@ export default function ExplainButton({
       document.removeEventListener("mousedown", onClickOutside);
       window.removeEventListener("scroll", onScroll, true);
     };
-  }, [showTooltip, updatePos]);
+  }, [showTooltip, computePos]);
 
   const handleClick = useCallback(async () => {
     if (isStreaming) {
-      setShowTooltip((p) => !p);
+      toggle();
       return;
     }
 
     const cached = explainCache.get(key);
     if (cached) {
       setExplanation(cached);
-      setShowTooltip((p) => !p);
+      toggle();
       return;
     }
 
-    setShowTooltip(true);
+    showAt();
     setIsStreaming(true);
     setExplanation("");
 
@@ -154,18 +175,21 @@ export default function ExplainButton({
     } finally {
       setIsStreaming(false);
     }
-  }, [isStreaming, key, regionName, regionId, year, era, eventTitles, changeLabel, changeDetail, changeSentiment, regionDescription, locale]);
+  }, [isStreaming, key, regionName, regionId, year, era, eventTitles, changeLabel, changeDetail, changeSentiment, regionDescription, locale, toggle, showAt]);
 
+  const isRight = tooltipPosition === "right";
   const tooltipStyle: React.CSSProperties | undefined = pos
     ? {
       position: "fixed",
       left: pos.left,
-      top: pos.top - 8,
-      transform: "translateY(-100%)",
+      top: isRight ? pos.top : pos.top - 8,
+      transform: isRight ? "translateY(-50%)" : "translate(-50%, -100%)",
       zIndex: 9999,
       width: 340,
     }
     : undefined;
+
+  const ready = showTooltip && pos;
 
   return (
     <>
@@ -179,11 +203,12 @@ export default function ExplainButton({
           : locale === "zh" ? "为什么?" : "Why?"
         }
       </button>
-      {showTooltip &&
+      {ready &&
         typeof document !== "undefined" &&
         createPortal(
-          <div ref={tooltipRef} className="explain-tooltip" style={tooltipStyle}>
-            <div className="explain-tooltip-arrow" />
+          <div ref={tooltipRef} className={`explain-tooltip ${isRight ? "explain-tooltip-right" : ""}`} style={tooltipStyle}>
+            {!isRight && <div className="explain-tooltip-arrow" />}
+            {isRight && <div className="explain-tooltip-arrow-left" />}
             <div className="explain-tooltip-body explain-prose">
               {explanation ? (
                 <Suspense fallback={<span className="text-text-muted">{explanation}</span>}>

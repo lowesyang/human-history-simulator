@@ -1,0 +1,115 @@
+{
+  "_description": "Annual GDP benchmarks in current USD (billions). Sources: World Bank, IMF WEO, MacroTrends. Used to fill yearly data points on the GDP trend chart when DB snapshots are sparse.",
+  "north_america_usa": [
+    { "year": 2018, "gdpBillionUsd": 20660 },
+    { "year": 2019, "gdpBillionUsd": 21540 },
+    { "year": 2020, "gdpBillionUsd": 21350 },
+    { "year": 2021, "gdpBillionUsd": 23680 },
+    { "year": 2022, "gdpBillionUsd": 26010 },
+    { "year": 2023, "gdpBillionUsd": 27720 }
+  ],
+  "east_asia_china_prc": [
+    { "year": 2018, "gdpBillionUsd": 13890 },
+    { "year": 2019, "gdpBillionUsd": 14280 },
+    { "year": 2020, "gdpBillionUsd": 14690 },
+    { "year": 2021, "gdpBillionUsd": 17820 },
+    { "year": 2022, "gdpBillionUsd": 17880 },
+    { "year": 2023, "gdpBillionUsd": 17800 }
+  ],
+  "east_asia_japan": [
+    { "year": 2018, "gdpBillionUsd": 5040 },
+    { "year": 2019, "gdpBillionUsd": 5120 },
+    { "year": 2020, "gdpBillionUsd": 5050 },
+    { "year": 2021, "gdpBillionUsd": 5040 },
+    { "year": 2022, "gdpBillionUsd": 4270 },
+    { "year": 2023, "gdpBillionUsd": 4220 }
+  ],
+  "ai_germany": [
+    { "year": 2018, "gdpBillionUsd": 3910 },
+    { "year": 2019, "gdpBillionUsd": 3850 },
+    { "year": 2020, "gdpBillionUsd": 3940 },
+    { "year": 2021, "gdpBillionUsd": 4360 },
+    { "year": 2022, "gdpBillionUsd": 4200 },
+    { "year": 2023, "gdpBillionUsd": 4560 }
+  ],
+  "south_asia_india": [
+    { "year": 2018, "gdpBillionUsd": 2700 },
+    { "year": 2019, "gdpBillionUsd": 2835 },
+    { "year": 2020, "gdpBillionUsd": 2675 },
+    { "year": 2021, "gdpBillionUsd": 3167 },
+    { "year": 2022, "gdpBillionUsd": 3353 },
+    { "year": 2023, "gdpBillionUsd": 3568 }
+  ],
+  "ai_uk": [
+    { "year": 2018, "gdpBillionUsd": 2870 },
+    { "year": 2019, "gdpBillionUsd": 2851 },
+    { "year": 2020, "gdpBillionUsd": 2697 },
+    { "year": 2021, "gdpBillionUsd": 3143 },
+    { "year": 2022, "gdpBillionUsd": 3114 },
+    { "year": 2023, "gdpBillionUsd": 3381 }
+  ],
+  "ai_france": [
+    { "year": 2018, "gdpBillionUsd": 2780 },
+    { "year": 2019, "gdpBillionUsd": 2720 },
+    { "year": 2020, "gdpBillionUsd": 2650 },
+    { "year": 2021, "gdpBillionUsd": 2970 },
+    { "year": 2022, "gdpBillionUsd": 2800 },
+    { "year": 2023, "gdpBillionUsd": 3050 }
+  ],
+  "ai_italy": [
+    { "year": 2018, "gdpBillionUsd": 2100 },
+    { "year": 2019, "gdpBillionUsd": 2020 },
+    { "year": 2020, "gdpBillionUsd": 1910 },
+    { "year": 2021, "gdpBillionUsd": 2180 },
+    { "year": 2022, "gdpBillionUsd": 2110 },
+    { "year": 2023, "gdpBillionUsd": 2310 }
+  ],
+  "north_america_canada": [
+    { "year": 2018, "gdpBillionUsd": 1870 },
+    { "year": 2019, "gdpBillionUsd": 1750 },
+    { "year": 2020, "gdpBillionUsd": 1660 },
+    { "year": 2021, "gdpBillionUsd": 2020 },
+    { "year": 2022, "gdpBillionUsd": 2190 },
+    { "year": 2023, "gdpBillionUsd": 2170 }
+  ],
+  "south_america_brazil": [
+    { "year": 2018, "gdpBillionUsd": 1917 },
+    { "year": 2019, "gdpBillionUsd": 1873 },
+    { "year": 2020, "gdpBillionUsd": 1476 },
+    { "year": 2021, "gdpBillionUsd": 1671 },
+    { "year": 2022, "gdpBillionUsd": 1952 },
+    { "year": 2023, "gdpBillionUsd": 2174 }
+  ],
+  "ai_south_korea": [
+    { "year": 2018, "gdpBillionUsd": 1620 },
+    { "year": 2019, "gdpBillionUsd": 1650 },
+    { "year": 2020, "gdpBillionUsd": 1640 },
+    { "year": 2021, "gdpBillionUsd": 1810 },
+    { "year": 2022, "gdpBillionUsd": 1670 },
+    { "year": 2023, "gdpBillionUsd": 1710 }
+  ],
+  "ai_russia": [
+    { "year": 2018, "gdpBillionUsd": 1657 },
+    { "year": 2019, "gdpBillionUsd": 1693 },
+    { "year": 2020, "gdpBillionUsd": 1489 },
+    { "year": 2021, "gdpBillionUsd": 1836 },
+    { "year": 2022, "gdpBillionUsd": 2240 },
+    { "year": 2023, "gdpBillionUsd": 1862 }
+  ],
+  "ai_spain": [
+    { "year": 2018, "gdpBillionUsd": 1420 },
+    { "year": 2019, "gdpBillionUsd": 1393 },
+    { "year": 2020, "gdpBillionUsd": 1281 },
+    { "year": 2021, "gdpBillionUsd": 1446 },
+    { "year": 2022, "gdpBillionUsd": 1398 },
+    { "year": 2023, "gdpBillionUsd": 1580 }
+  ],
+  "ai_australia": [
+    { "year": 2018, "gdpBillionUsd": 1434 },
+    { "year": 2019, "gdpBillionUsd": 1397 },
+    { "year": 2020, "gdpBillionUsd": 1360 },
+    { "year": 2021, "gdpBillionUsd": 1553 },
+    { "year": 2022, "gdpBillionUsd": 1676 },
+    { "year": 2023, "gdpBillionUsd": 1688 }
+  ]
+}

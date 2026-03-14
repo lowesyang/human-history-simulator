@@ -160,6 +160,9 @@ function WorldMapInner() {
   const selectedRegionId = useWorldStore((s) => s.selectedRegionId);
   const activeWars = useWorldStore((s) => s.activeWars);
   const setSelectedWar = useWorldStore((s) => s.setSelectedWar);
+  const warSnapshots = useWorldStore((s) => s.warSnapshots);
+  const warNotifications = useWorldStore((s) => s.warNotifications);
+  const removeWarNotification = useWorldStore((s) => s.removeWarNotification);
   const [hoverInfo, setHoverInfo] = useState<{
     x: number;
     y: number;
@@ -174,6 +177,22 @@ function WorldMapInner() {
 
   useEffect(() => {
     loadTerritories().then(() => setTerritoriesLoaded(true));
+  }, []);
+
+  useEffect(() => {
+    const flyTo = (opts: { longitude: number; latitude: number; zoom?: number }) => {
+      const map = mapRef.current?.getMap();
+      if (!map) return;
+      map.flyTo({
+        center: [opts.longitude, opts.latitude],
+        zoom: opts.zoom ?? 5,
+        duration: 1500,
+      });
+    };
+    useWorldStore.getState().setMapFlyTo(flyTo);
+    return () => {
+      useWorldStore.getState().setMapFlyTo(null);
+    };
   }, []);
 
   useEffect(() => {
@@ -203,6 +222,14 @@ function WorldMapInner() {
     for (const war of activeWars) {
       const side1Ids = war.belligerents.side1.regionIds;
       const side2Ids = war.belligerents.side2.regionIds;
+      const snaps = warSnapshots[war.id];
+      const latestSnap = snaps && snaps.length > 0 ? snaps[snaps.length - 1] : null;
+      const totalTroops = latestSnap
+        ? latestSnap.side1.totalTroops + latestSnap.side2.totalTroops
+        : 0;
+      const intensity = Math.min(1, Math.max(0.2, totalTroops / 2_000_000));
+      const isOngoing = war.status === "ongoing";
+
       for (const r1 of side1Ids) {
         for (const r2 of side2Ids) {
           const c1 = centroids[r1];
@@ -214,14 +241,14 @@ function WorldMapInner() {
                 type: "LineString",
                 coordinates: [c1, c2],
               },
-              properties: { warId: war.id },
+              properties: { warId: war.id, intensity, isOngoing },
             });
           }
         }
       }
     }
     return { type: "FeatureCollection", features };
-  }, [activeWars, centroids]);
+  }, [activeWars, centroids, warSnapshots]);
 
   const warMarkers = useMemo(() => {
     if (activeWars.length === 0 || Object.keys(centroids).length === 0) return [];
@@ -505,8 +532,11 @@ function WorldMapInner() {
             type="line"
             paint={{
               "line-color": "#ef4444",
-              "line-width": 4,
-              "line-opacity": 0.15,
+              "line-width": [
+                "interpolate", ["linear"], ["get", "intensity"],
+                0, 3, 0.5, 5, 1, 8,
+              ] as any,
+              "line-opacity": 0.12,
               "line-blur": 4,
             }}
           />
@@ -515,7 +545,10 @@ function WorldMapInner() {
             type="line"
             paint={{
               "line-color": "#ef4444",
-              "line-width": 1.5,
+              "line-width": [
+                "interpolate", ["linear"], ["get", "intensity"],
+                0, 1, 0.5, 2, 1, 3.5,
+              ] as any,
               "line-opacity": 0.7,
               "line-dasharray": [4, 3],
             }}
@@ -584,6 +617,19 @@ function WorldMapInner() {
         style={{ display: "none" }}
       />
 
+      {/* War status notifications */}
+      {warNotifications.length > 0 && (
+        <div className="absolute top-14 left-1/2 -translate-x-1/2 z-40 flex flex-col gap-1.5 pointer-events-none">
+          {warNotifications.map((notif) => (
+            <WarNotificationBanner
+              key={notif.id}
+              notification={notif}
+              onDismiss={removeWarNotification}
+            />
+          ))}
+        </div>
+      )}
+
       {/* Hover tooltip */}
       {hoverInfo && (
         <div
@@ -617,6 +663,42 @@ function WorldMapInner() {
     </div>
   );
 }
+
+const WarNotificationBanner = React.memo(function WarNotificationBanner({
+  notification,
+  onDismiss,
+}: {
+  notification: { id: string; message: string; type: "new" | "ended" | "update" };
+  onDismiss: (id: string) => void;
+}) {
+  React.useEffect(() => {
+    const timer = setTimeout(() => onDismiss(notification.id), 5000);
+    return () => clearTimeout(timer);
+  }, [notification.id, onDismiss]);
+
+  const bgColor = notification.type === "new"
+    ? "rgba(239, 68, 68, 0.9)"
+    : notification.type === "ended"
+      ? "rgba(34, 197, 94, 0.9)"
+      : "rgba(251, 191, 36, 0.9)";
+
+  const icon = notification.type === "new" ? "⚔" : notification.type === "ended" ? "🕊" : "📢";
+
+  return (
+    <div
+      className="px-4 py-2 rounded-lg shadow-lg text-white text-xs font-semibold pointer-events-auto animate-fade-in-down"
+      style={{
+        background: bgColor,
+        backdropFilter: "blur(8px)",
+        minWidth: 200,
+        textAlign: "center",
+      }}
+    >
+      <span className="mr-1.5">{icon}</span>
+      {notification.message}
+    </div>
+  );
+});
 
 const WorldMap = React.memo(WorldMapInner);
 export default WorldMap;

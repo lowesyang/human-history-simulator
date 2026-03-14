@@ -20,6 +20,7 @@ export interface UserSettings {
   simulationMode: SimulationMode;
   enableCivMemory?: boolean;
   enableScenarioInjection?: boolean;
+  webSearchOnAdvance?: boolean;
 }
 
 export interface ModelProfile {
@@ -70,5 +71,9 @@ export function getModelProfile(): ModelProfile {
 
 export function getSimulationMode(): SimulationMode {
   return runtimeSettings?.simulationMode ?? "historical";
+}
+
+export function getWebSearchOnAdvance(): boolean {
+  return runtimeSettings?.webSearchOnAdvance ?? false;
 }
 

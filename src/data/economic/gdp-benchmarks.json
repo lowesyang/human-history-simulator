@@ -1,0 +1,181 @@
+{
+  "description": "Maddison Project-style historical GDP benchmarks for LLM prompt calibration. Values in millions of 1990 International Geary-Khamis dollars. Sources: Maddison Project Database 2020, Broadberry et al., Bolt & van Zanden.",
+  "benchmarks": [
+    {
+      "year": -1600,
+      "region": "egypt",
+      "gdpMillions1990": 2800,
+      "populationMillions": 3.0,
+      "note": "New Kingdom Egypt"
+    },
+    {
+      "year": -1600,
+      "region": "mesopotamia",
+      "gdpMillions1990": 2200,
+      "populationMillions": 2.5,
+      "note": "Babylonian Empire"
+    },
+    {
+      "year": -500,
+      "region": "persian_empire",
+      "gdpMillions1990": 10000,
+      "populationMillions": 17.0,
+      "note": "Achaemenid Empire at peak"
+    },
+    {
+      "year": -500,
+      "region": "greece",
+      "gdpMillions1990": 2500,
+      "populationMillions": 3.5,
+      "note": "Classical Greek city-states"
+    },
+    {
+      "year": -200,
+      "region": "china_han",
+      "gdpMillions1990": 26000,
+      "populationMillions": 60.0,
+      "note": "Western Han Dynasty"
+    },
+    {
+      "year": 100,
+      "region": "roman_empire",
+      "gdpMillions1990": 20000,
+      "populationMillions": 55.0,
+      "note": "Roman Empire at peak"
+    },
+    {
+      "year": 100,
+      "region": "china_han",
+      "gdpMillions1990": 26500,
+      "populationMillions": 58.0,
+      "note": "Eastern Han Dynasty"
+    },
+    {
+      "year": 100,
+      "region": "india_kushan",
+      "gdpMillions1990": 18000,
+      "populationMillions": 50.0,
+      "note": "Kushan Empire & South India"
+    },
+    {
+      "year": 750,
+      "region": "china_tang",
+      "gdpMillions1990": 30000,
+      "populationMillions": 52.0,
+      "note": "Tang Dynasty at peak"
+    },
+    {
+      "year": 750,
+      "region": "abbasid",
+      "gdpMillions1990": 15000,
+      "populationMillions": 30.0,
+      "note": "Abbasid Caliphate"
+    },
+    {
+      "year": 1000,
+      "region": "china_song",
+      "gdpMillions1990": 50000,
+      "populationMillions": 100.0,
+      "note": "Song Dynasty, world's largest economy"
+    },
+    {
+      "year": 1000,
+      "region": "india",
+      "gdpMillions1990": 34000,
+      "populationMillions": 75.0,
+      "note": "Chola & Pala dynasties"
+    },
+    {
+      "year": 1500,
+      "region": "china_ming",
+      "gdpMillions1990": 62000,
+      "populationMillions": 103.0,
+      "note": "Ming Dynasty"
+    },
+    {
+      "year": 1500,
+      "region": "india_mughal",
+      "gdpMillions1990": 60000,
+      "populationMillions": 110.0,
+      "note": "Pre-Mughal India aggregate"
+    },
+    {
+      "year": 1500,
+      "region": "western_europe",
+      "gdpMillions1990": 44000,
+      "populationMillions": 57.0,
+      "note": "W. Europe total"
+    },
+    {
+      "year": 1700,
+      "region": "china_qing",
+      "gdpMillions1990": 82000,
+      "populationMillions": 138.0,
+      "note": "Qing Dynasty, Kangxi era"
+    },
+    {
+      "year": 1700,
+      "region": "india_mughal",
+      "gdpMillions1990": 90000,
+      "populationMillions": 165.0,
+      "note": "Mughal India at peak, ~24% of world GDP"
+    },
+    {
+      "year": 1820,
+      "region": "china_qing",
+      "gdpMillions1990": 229000,
+      "populationMillions": 381.0,
+      "note": "Qing Dynasty, ~33% of world GDP"
+    },
+    {
+      "year": 1820,
+      "region": "united_kingdom",
+      "gdpMillions1990": 36000,
+      "populationMillions": 21.0,
+      "note": "Industrial Revolution underway"
+    },
+    {
+      "year": 1870,
+      "region": "united_kingdom",
+      "gdpMillions1990": 100000,
+      "populationMillions": 31.0,
+      "note": "Victorian Britain, workshop of the world"
+    },
+    {
+      "year": 1870,
+      "region": "united_states",
+      "gdpMillions1990": 98000,
+      "populationMillions": 40.0,
+      "note": "Post-Civil War expansion"
+    },
+    {
+      "year": 1913,
+      "region": "united_states",
+      "gdpMillions1990": 517000,
+      "populationMillions": 97.0,
+      "note": "Pre-WWI, largest economy"
+    },
+    {
+      "year": 1950,
+      "region": "united_states",
+      "gdpMillions1990": 1456000,
+      "populationMillions": 152.0,
+      "note": "Post-WWII dominance"
+    },
+    {
+      "year": 2000,
+      "region": "united_states",
+      "gdpMillions1990": 8032000,
+      "populationMillions": 282.0,
+      "note": "Dot-com era"
+    },
+    {
+      "year": 2000,
+      "region": "china_prc",
+      "gdpMillions1990": 3873000,
+      "populationMillions": 1263.0,
+      "note": "Pre-WTO accession"
+    }
+  ],
+  "goldKgConversionNotes": "To convert 1990 GK$ to goldKg: use approximate gold price of $383/oz in 1990, so 1M GK$ ≈ 83.7 kg gold. This is a rough calibration factor for cross-referencing goldKg values in region data."
+}

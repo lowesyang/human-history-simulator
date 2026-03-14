@@ -18,6 +18,18 @@ import {
 } from "@/lib/geo-snapshots";
 import type { Region } from "@/lib/types";
 import { CONTENT_FILTER_PROMPT, isBlockedEvent } from "@/lib/content-filter";
+import {
+  insertEconomicSnapshot,
+  insertAssetPrice,
+  insertExchangeRate,
+  interpolatePrice,
+  interpolateSeries,
+  clearEconomicData,
+  getLatestAssetPrices,
+  migratePortfoliosToEra,
+} from "@/lib/economic-history";
+import exchangeRatesData from "@/data/economic/exchange-rates.json";
+import assetPricesData from "@/data/economic/asset-prices.json";
 import fs from "fs";
 import path from "path";
 
@@ -138,6 +150,8 @@ function handlePrebuilt(
           dbEvents.length > 0 ? dbEvents : undefined,
           preset.id
         );
+
+        loadEconomicSeedData(preset.id, prebuilt.timestamp.year, regions);
 
         const snapshot = getLatestSnapshot();
         const events = getEvents();
@@ -329,7 +343,7 @@ Each event in the "events" array:
   "title": { "zh": "...", "en": "..." },
   "description": { "zh": "...", "en": "..." },
   "affectedRegions": ["region_id"],
-  "category": "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|technology|finance|other"
+  "category": "war|dynasty|invention|trade|religion|disaster|natural_disaster|exploration|diplomacy|migration|technology|finance|announcement|other"
 }
 
 ## Rules
@@ -479,7 +493,7 @@ Return compact JSON: {"state":{...},"events":[...]}`;
           const validCategories = new Set([
             "war", "dynasty", "invention", "trade", "religion",
             "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
-            "technology", "finance", "other",
+            "technology", "finance", "announcement", "other",
           ]);
           const regionIds = new Set(stateRegions.map((r) => r.id as string));
 
@@ -522,6 +536,8 @@ Return compact JSON: {"state":{...},"events":[...]}`;
             dbEvents,
             preset.id
           );
+
+          loadEconomicSeedData(preset.id, preset.year, stateRegions as unknown as Region[]);
 
           const snapshot = getLatestSnapshot();
           const events = getEvents();
@@ -591,4 +607,125 @@ function repairTruncatedJSON(json: string): string {
   for (let i = 0; i < openBrackets - closeBrackets; i++) repaired += "]";
   for (let i = 0; i < openBraces - closeBraces; i++) repaired += "}";
   return repaired;
+}
+
+function loadEconomicSeedData(eraId: string, eraStartYear: number, regions: Region[]) {
+  try {
+    const prevPrices = getLatestAssetPrices();
+    const prevPriceMap = new Map<string, number>();
+    for (const p of prevPrices) prevPriceMap.set(p.assetId, p.priceGoldGrams);
+
+    clearEconomicData(eraId);
+
+    const exRates = exchangeRatesData as {
+      goldSilverRatio: { year: number; ratio: number }[];
+      pppAnchors: {
+        grain_kg: { year: number; goldGrams: number }[];
+        daily_unskilled_wage: { year: number; silverGrams: number }[];
+      };
+    };
+    for (const entry of exRates.goldSilverRatio) {
+      if (entry.year <= eraStartYear) {
+        const grainGoldG = interpolateSeries(
+          exRates.pppAnchors.grain_kg.map((e) => ({ year: e.year, value: e.goldGrams })),
+          entry.year,
+          "value"
+        );
+        insertExchangeRate(entry.year, eraId, entry.ratio, grainGoldG, null);
+      }
+    }
+    const startRatio = interpolateSeries(
+      exRates.goldSilverRatio.map((e) => ({ year: e.year, value: e.ratio })),
+      eraStartYear,
+      "value"
+    );
+    const startGrain = interpolateSeries(
+      exRates.pppAnchors.grain_kg.map((e) => ({ year: e.year, value: e.goldGrams })),
+      eraStartYear,
+      "value"
+    );
+    insertExchangeRate(eraStartYear, eraId, startRatio, startGrain, null);
+
+    const assets = (assetPricesData as { assets: { id: string; priceHistory: { year: number; price: number }[]; availableFrom: number; availableTo: number; baseVolatility: number }[] }).assets;
+    for (const asset of assets) {
+      if (eraStartYear < asset.availableFrom || eraStartYear > asset.availableTo) continue;
+      const seedPrice = interpolatePrice(asset.priceHistory, eraStartYear);
+      const prevPrice = prevPriceMap.get(asset.id);
+      const price = prevPrice != null && prevPrice > 0
+        ? prevPrice * 0.7 + seedPrice * 0.3
+        : seedPrice;
+      const silverPrice = price * startRatio;
+      insertAssetPrice(asset.id, eraStartYear, eraId, price, silverPrice, asset.baseVolatility);
+    }
+
+    const newPriceMap = new Map<string, number>();
+    for (const asset of assets) {
+      if (eraStartYear < asset.availableFrom || eraStartYear > asset.availableTo) continue;
+      const seedPrice = interpolatePrice(asset.priceHistory, eraStartYear);
+      const prevPrice = prevPriceMap.get(asset.id);
+      newPriceMap.set(asset.id, prevPrice != null && prevPrice > 0 ? prevPrice * 0.7 + seedPrice * 0.3 : seedPrice);
+    }
+    const migrated = migratePortfoliosToEra(eraId, eraStartYear, newPriceMap);
+    if (migrated > 0) {
+      console.log(`[init-era] Migrated ${migrated} portfolio(s) to era ${eraId}`);
+    }
+
+    for (const region of regions) {
+      const gk = (v: { goldKg?: number } | undefined) =>
+        v?.goldKg ?? 0;
+      const snap = {
+        gdpGoldKg: gk(region.economy?.gdpEstimate),
+        gdpPerCapitaGoldKg: gk(region.economy?.gdpPerCapita),
+        treasuryGoldKg: gk(region.finances?.treasury),
+        revenueGoldKg: gk(region.finances?.annualRevenue),
+        expenditureGoldKg: gk(region.finances?.annualExpenditure),
+        tradeVolumeGoldKg: gk(region.economy?.foreignTradeVolume),
+        debtGoldKg: gk(region.finances?.debtLevel),
+        militarySpendingPctGdp: region.military?.militarySpendingPctGdp ?? 0,
+        population: region.demographics?.population ?? 0,
+        urbanizationRate: region.demographics?.urbanizationRate ?? 0,
+        giniEstimate: region.economy?.giniEstimate,
+      };
+      insertEconomicSnapshot(region.id, eraStartYear, eraId, snap);
+
+      if (snap.gdpGoldKg > 0) {
+        const growthRate = eraStartYear >= 2000 ? 0.03
+          : eraStartYear >= 1950 ? 0.04
+            : eraStartYear >= 1800 ? 0.02
+              : eraStartYear >= 1000 ? 0.005
+                : 0.002;
+        const baseGdp = snap.gdpGoldKg;
+        const basePop = snap.population || 1;
+        const popGrowth = eraStartYear >= 1900 ? 0.012 : eraStartYear >= 1500 ? 0.004 : 0.002;
+        // Backfill 5 points at 5-year intervals (year-5, -10, -15, -20, -25)
+        for (let i = 1; i <= 5; i++) {
+          const yearsBack = i * 5;
+          const pastYear = eraStartYear - yearsBack;
+          const factor = Math.pow(1 + growthRate, -yearsBack);
+          const popFactor = Math.pow(1 + popGrowth, -yearsBack);
+          const pastGdp = baseGdp * factor;
+          const pastPop = Math.round(basePop * popFactor);
+          const pastPcGdp = pastPop > 0 ? pastGdp / pastPop : 0;
+          const giniBase = snap.giniEstimate;
+          // ~1-3% variation per 5-year step, with a slight trend (older = slightly different)
+          const giniDrift = 0.012 * (3 - i);
+          const giniMod = giniBase != null ? Math.max(0.01, Math.min(0.99, giniBase * (1 + giniDrift))) : undefined;
+          insertEconomicSnapshot(region.id, pastYear, eraId, {
+            ...snap,
+            gdpGoldKg: pastGdp,
+            gdpPerCapitaGoldKg: pastPcGdp,
+            population: pastPop,
+            treasuryGoldKg: snap.treasuryGoldKg * factor,
+            revenueGoldKg: snap.revenueGoldKg * factor,
+            expenditureGoldKg: snap.expenditureGoldKg * factor,
+            tradeVolumeGoldKg: snap.tradeVolumeGoldKg * factor,
+            debtGoldKg: snap.debtGoldKg * factor,
+            giniEstimate: giniMod,
+          });
+        }
+      }
+    }
+  } catch (err) {
+    console.error("[init-era] Failed to load economic seed data:", err);
+  }
 }

@@ -98,39 +98,64 @@ const SECTOR_ICONS: Record<string, string> = {
   scienceAndLearning: "📚",
   defenseAndAgriculture: "🛡️",
   industrialAndResources: "🏭",
+  automotiveAndEV: "🚗",
+  digitalEconomy: "💻",
+  tourismTech: "🏖️",
+  foodAndAgriculture: "🌾",
+  greenEnergy: "🍃",
+  ecommerce: "🛒",
+  logistics: "📦",
+  healthcare: "🏥",
+  edtech: "📚",
+  smartCities: "🏙️",
+  blockchainAndCrypto: "⛓️",
+  droneAndRobotics: "🤖",
+  oilAndGas: "🛢️",
+  textileAndGarment: "🧵",
+  realEstate: "🏗️",
+  mediaAndEntertainment: "🎬",
+  cloudComputing: "☁️",
+  artificialIntelligence: "🧠",
+  biotech: "🧬",
+  spaceExploration: "🚀",
+  advancedMaterials: "🔬",
+  quantumTech: "⚛️",
 };
 
 export default function TechnologyTab({ region }: { region: Region }) {
   const { t, localized } = useLocale();
   const tech = region.technology;
+
+  if (!tech) return null;
+
   const sectors = tech.sectors;
   const sectorKeys = sectors ? Object.keys(sectors) : [];
   const [expandedSector, setExpandedSector] = useState<string | null>(null);
 
   return (
-    <div className="space-y-4 text-xs">
-      <StatBar label={t("info.technology")} value={tech.level} color="#4682B4" />
+    <div className="space-y-4">
+      <StatBar label={t("info.technology")} value={typeof tech.level === "number" ? tech.level : 0} color="#4682B4" />
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">
           {t("tech.era")}
         </h4>
         <p className="text-text-primary">{localized(tech.era)}</p>
       </div>
 
       <div>
-        <h4 className="font-semibold mb-1 text-accent-copper">
+        <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">
           {t("tech.innovations")}
         </h4>
-        <p className="text-text-secondary">{localized(tech.keyInnovations)}</p>
+        <p className="readable-prose">{localized(tech.keyInnovations)}</p>
       </div>
 
       {tech.infrastructure && (
         <div>
-          <h4 className="font-semibold mb-1 text-accent-copper">
+          <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">
             {t("tech.infrastructure")}
           </h4>
-          <p className="text-text-secondary">{localized(tech.infrastructure)}</p>
+          <p className="readable-prose">{localized(tech.infrastructure)}</p>
         </div>
       )}
 
@@ -142,10 +167,11 @@ export default function TechnologyTab({ region }: { region: Region }) {
           <div className="space-y-1.5">
             {sectorKeys.map((key) => {
               const isOpen = expandedSector === key;
+              const translated = t(`tech.sector.${key}`);
               const label =
-                t(`tech.sector.${key}`) !== `tech.sector.${key}`
-                  ? t(`tech.sector.${key}`)
-                  : key;
+                translated !== `tech.sector.${key}`
+                  ? translated
+                  : key.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (c) => c.toUpperCase());
               const icon = SECTOR_ICONS[key] || "📌";
               return (
                 <div
@@ -172,7 +198,7 @@ export default function TechnologyTab({ region }: { region: Region }) {
                   </button>
                   {isOpen && (
                     <div className="px-2.5 pb-2.5 pt-1 border-t border-border-subtle">
-                      <p className="text-text-secondary leading-relaxed">
+                      <p className="readable-prose">
                         {localized(sectors![key])}
                       </p>
                     </div>
@@ -186,10 +212,10 @@ export default function TechnologyTab({ region }: { region: Region }) {
 
       {tech.overallAssessment && (
         <div>
-          <h4 className="font-semibold mb-1 text-accent-copper">
+          <h4 className="font-semibold mb-1.5 text-accent-copper text-sm">
             {t("tech.overallAssessment")}
           </h4>
-          <p className="text-text-secondary leading-relaxed">
+          <p className="readable-prose">
             {localized(tech.overallAssessment)}
           </p>
         </div>

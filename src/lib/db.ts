@@ -8,9 +8,9 @@ const globalForDb = globalThis as unknown as {
   __historyDbVersion?: number;
 };
 
-const CURRENT_MIGRATION_VERSION = 4;
+const CURRENT_MIGRATION_VERSION = 9;
 
-function getDb(): Database.Database {
+export function getDb(): Database.Database {
   if (!globalForDb.__historyDb) {
     const fs = require("fs");
     const dir = path.dirname(DB_PATH);
@@ -85,6 +85,10 @@ function initSchema(db: Database.Database) {
       impact_json TEXT NOT NULL DEFAULT '{"side1":{"zh":"","en":""},"side2":{"zh":"","en":""}}',
       related_event_ids_json TEXT NOT NULL DEFAULT '[]',
       era_id TEXT,
+      last_narrative_update_year INTEGER,
+      theater_json TEXT,
+      casualties_json TEXT,
+      key_battles_json TEXT DEFAULT '[]',
       created_at TEXT DEFAULT (datetime('now'))
     );
     CREATE INDEX IF NOT EXISTS idx_wars_years ON wars(start_year, end_year);
@@ -147,6 +151,135 @@ function initSchema(db: Database.Database) {
     );
     CREATE INDEX IF NOT EXISTS idx_civ_memories_region ON civ_memories(region_id, year);
   `);
+
+  // v5 migration: war_snapshots table + last_narrative_update_year on wars
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS war_snapshots (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      war_id TEXT NOT NULL,
+      year INTEGER NOT NULL,
+      side TEXT NOT NULL,
+      total_troops INTEGER,
+      standing_army INTEGER,
+      military_level INTEGER,
+      gdp_gold_kg REAL,
+      population INTEGER,
+      tech_level INTEGER,
+      region_status TEXT,
+      era_id TEXT,
+      FOREIGN KEY (war_id) REFERENCES wars(id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_war_snapshots_war ON war_snapshots(war_id, year);
+  `);
+
+  if (!warCols.some((c) => c.name === "last_narrative_update_year")) {
+    db.exec("ALTER TABLE wars ADD COLUMN last_narrative_update_year INTEGER");
+  }
+  if (!warCols.some((c) => c.name === "theater_json")) {
+    db.exec("ALTER TABLE wars ADD COLUMN theater_json TEXT");
+  }
+  if (!warCols.some((c) => c.name === "casualties_json")) {
+    db.exec("ALTER TABLE wars ADD COLUMN casualties_json TEXT");
+  }
+  if (!warCols.some((c) => c.name === "key_battles_json")) {
+    db.exec("ALTER TABLE wars ADD COLUMN key_battles_json TEXT DEFAULT '[]'");
+  }
+
+  const snapCols2 = db.prepare("PRAGMA table_info(war_snapshots)").all() as { name: string }[];
+  if (!snapCols2.some((c) => c.name === "casualties")) {
+    db.exec("ALTER TABLE war_snapshots ADD COLUMN casualties INTEGER DEFAULT 0");
+  }
+  if (!snapCols2.some((c) => c.name === "morale")) {
+    db.exec("ALTER TABLE war_snapshots ADD COLUMN morale INTEGER DEFAULT 5");
+  }
+
+  // v6 migration: unique constraint on war_snapshots to support upsert
+  db.exec(`
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_war_snapshots_unique
+      ON war_snapshots(war_id, year, side);
+  `);
+
+  // v7 migration: economic history tables
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS economic_history (
+      id TEXT PRIMARY KEY,
+      region_id TEXT NOT NULL,
+      year INTEGER NOT NULL,
+      era_id TEXT,
+      gdp_gold_kg REAL DEFAULT 0,
+      gdp_per_capita_gold_kg REAL DEFAULT 0,
+      treasury_gold_kg REAL DEFAULT 0,
+      revenue_gold_kg REAL DEFAULT 0,
+      expenditure_gold_kg REAL DEFAULT 0,
+      trade_volume_gold_kg REAL DEFAULT 0,
+      debt_gold_kg REAL DEFAULT 0,
+      military_spending_pct_gdp REAL DEFAULT 0,
+      population INTEGER DEFAULT 0,
+      urbanization_rate REAL DEFAULT 0,
+      gini_estimate REAL,
+      UNIQUE(region_id, year, era_id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_econ_hist_region_year ON economic_history(region_id, year);
+    CREATE INDEX IF NOT EXISTS idx_econ_hist_era ON economic_history(era_id);
+
+    CREATE TABLE IF NOT EXISTS asset_prices (
+      id TEXT PRIMARY KEY,
+      asset_id TEXT NOT NULL,
+      year INTEGER NOT NULL,
+      era_id TEXT,
+      price_gold_grams REAL NOT NULL,
+      price_silver_grams REAL,
+      volatility REAL DEFAULT 0,
+      event_driver_json TEXT,
+      UNIQUE(asset_id, year, era_id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_asset_year ON asset_prices(asset_id, year);
+
+    CREATE TABLE IF NOT EXISTS exchange_rates (
+      id TEXT PRIMARY KEY,
+      year INTEGER NOT NULL,
+      era_id TEXT,
+      gold_silver_ratio REAL NOT NULL,
+      ppp_grain_gold_g REAL,
+      ppp_wage_gold_g REAL,
+      UNIQUE(year, era_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS portfolios (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      era_id TEXT,
+      start_year INTEGER NOT NULL,
+      initial_gold_kg REAL NOT NULL,
+      allocations_json TEXT NOT NULL,
+      created_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS portfolio_snapshots (
+      id TEXT PRIMARY KEY,
+      portfolio_id TEXT NOT NULL REFERENCES portfolios(id),
+      year INTEGER NOT NULL,
+      total_value_gold_kg REAL NOT NULL,
+      holdings_json TEXT NOT NULL,
+      UNIQUE(portfolio_id, year)
+    );
+    CREATE INDEX IF NOT EXISTS idx_portfolio_snap ON portfolio_snapshots(portfolio_id, year);
+  `);
+
+  // v9 migration: cash_gold_kg on portfolio_snapshots
+  const psCols = db.prepare("PRAGMA table_info(portfolio_snapshots)").all() as { name: string }[];
+  if (!psCols.some((c) => c.name === "cash_gold_kg")) {
+    db.exec("ALTER TABLE portfolio_snapshots ADD COLUMN cash_gold_kg REAL DEFAULT 0");
+  }
+
+  // v10 migration: cost basis and realized P&L tracking
+  const psCols2 = db.prepare("PRAGMA table_info(portfolio_snapshots)").all() as { name: string }[];
+  if (!psCols2.some((c) => c.name === "cost_basis_json")) {
+    db.exec("ALTER TABLE portfolio_snapshots ADD COLUMN cost_basis_json TEXT DEFAULT '{}'");
+  }
+  if (!psCols2.some((c) => c.name === "realized_pnl_gold_kg")) {
+    db.exec("ALTER TABLE portfolio_snapshots ADD COLUMN realized_pnl_gold_kg REAL DEFAULT 0");
+  }
 }
 
 export function insertSnapshot(
@@ -576,20 +709,28 @@ export function rollbackToYear(targetYear: number) {
         `UPDATE events SET status = 'pending', processed_at = NULL WHERE era_id = ? AND year > ?`
       ).run(eraId, targetYear);
       db.prepare(`DELETE FROM evolution_logs WHERE era_id = ? AND target_year > ?`).run(eraId, targetYear);
+      db.prepare(`DELETE FROM war_snapshots WHERE era_id = ? AND year > ?`).run(eraId, targetYear);
       db.prepare(`DELETE FROM wars WHERE era_id = ? AND start_year > ?`).run(eraId, targetYear);
       db.prepare(
         `UPDATE wars SET status = 'ongoing', end_year = NULL WHERE era_id = ? AND end_year IS NOT NULL AND end_year > ?`
       ).run(eraId, targetYear);
+      db.prepare(`DELETE FROM economic_history WHERE era_id = ? AND year > ?`).run(eraId, targetYear);
+      db.prepare(`DELETE FROM asset_prices WHERE era_id = ? AND year > ?`).run(eraId, targetYear);
+      db.prepare(`DELETE FROM exchange_rates WHERE era_id = ? AND year > ?`).run(eraId, targetYear);
     } else {
       db.prepare(`DELETE FROM state_snapshots WHERE year > ?`).run(targetYear);
       db.prepare(
         `UPDATE events SET status = 'pending', processed_at = NULL WHERE year > ?`
       ).run(targetYear);
       db.prepare(`DELETE FROM evolution_logs WHERE target_year > ?`).run(targetYear);
+      db.prepare(`DELETE FROM war_snapshots WHERE year > ?`).run(targetYear);
       db.prepare(`DELETE FROM wars WHERE start_year > ?`).run(targetYear);
       db.prepare(
         `UPDATE wars SET status = 'ongoing', end_year = NULL WHERE end_year IS NOT NULL AND end_year > ?`
       ).run(targetYear);
+      db.prepare(`DELETE FROM economic_history WHERE year > ?`).run(targetYear);
+      db.prepare(`DELETE FROM asset_prices WHERE year > ?`).run(targetYear);
+      db.prepare(`DELETE FROM exchange_rates WHERE year > ?`).run(targetYear);
     }
   });
   tx();
@@ -607,6 +748,7 @@ export function resetToInitialState() {
         `UPDATE events SET status = 'pending', processed_at = NULL WHERE era_id = ?`
       ).run(eraId);
       db.prepare(`DELETE FROM evolution_logs WHERE era_id = ?`).run(eraId);
+      db.prepare(`DELETE FROM war_snapshots WHERE era_id = ?`).run(eraId);
       db.prepare(`DELETE FROM wars WHERE era_id = ?`).run(eraId);
     } else {
       db.prepare(
@@ -616,6 +758,7 @@ export function resetToInitialState() {
         `UPDATE events SET status = 'pending', processed_at = NULL`
       ).run();
       db.prepare(`DELETE FROM evolution_logs`).run();
+      db.prepare(`DELETE FROM war_snapshots`).run();
       db.prepare(`DELETE FROM wars`).run();
     }
   });
@@ -657,7 +800,13 @@ export function switchToEra(
       db.prepare(`DELETE FROM state_snapshots WHERE era_id = ?`).run(eraId ?? null);
       db.prepare(`DELETE FROM events WHERE era_id = ?`).run(eraId ?? null);
       db.prepare(`DELETE FROM evolution_logs WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM war_snapshots WHERE era_id = ?`).run(eraId ?? null);
       db.prepare(`DELETE FROM wars WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM economic_history WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM asset_prices WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM exchange_rates WHERE era_id = ?`).run(eraId ?? null);
+      db.prepare(`DELETE FROM portfolio_snapshots WHERE portfolio_id IN (SELECT id FROM portfolios WHERE era_id = ?)`).run(eraId ?? null);
+      db.prepare(`DELETE FROM portfolios WHERE era_id = ?`).run(eraId ?? null);
     }
 
     db.prepare(`
@@ -714,7 +863,15 @@ export function resetCurrentEra() {
 
     db.prepare(`DELETE FROM evolution_logs WHERE era_id = ?`).run(eraId);
 
+    db.prepare(`DELETE FROM war_snapshots WHERE era_id = ?`).run(eraId);
+
     db.prepare(`DELETE FROM wars WHERE era_id = ?`).run(eraId);
+
+    db.prepare(`DELETE FROM economic_history WHERE era_id = ?`).run(eraId);
+    db.prepare(`DELETE FROM asset_prices WHERE era_id = ?`).run(eraId);
+    db.prepare(`DELETE FROM exchange_rates WHERE era_id = ?`).run(eraId);
+    db.prepare(`DELETE FROM portfolio_snapshots WHERE portfolio_id IN (SELECT id FROM portfolios WHERE era_id = ?)`).run(eraId);
+    db.prepare(`DELETE FROM portfolios WHERE era_id = ?`).run(eraId);
   });
   tx();
 }
@@ -728,6 +885,7 @@ export function hardResetCurrentEra() {
     db.prepare(`DELETE FROM state_snapshots WHERE era_id = ? AND triggered_by_event_id IS NOT NULL`).run(eraId);
     db.prepare(`DELETE FROM events WHERE era_id = ?`).run(eraId);
     db.prepare(`DELETE FROM evolution_logs WHERE era_id = ?`).run(eraId);
+    db.prepare(`DELETE FROM war_snapshots WHERE era_id = ?`).run(eraId);
     db.prepare(`DELETE FROM wars WHERE era_id = ?`).run(eraId);
   });
   tx();
@@ -780,14 +938,17 @@ export function insertWar(
   advantages: object,
   impact: object,
   relatedEventIds: string[],
-  victor?: string | null
+  victor?: string | null,
+  theater?: object | null,
+  casualties?: object | null,
+  keyBattles?: object[] | null
 ) {
   const db = getDb();
   const eraId = getCurrentEraId();
   db.prepare(`
     INSERT OR REPLACE INTO wars
-      (id, name_json, start_year, end_year, belligerents_json, cause_json, casus_belli_json, status, victor, summary_json, advantages_json, impact_json, related_event_ids_json, era_id)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      (id, name_json, start_year, end_year, belligerents_json, cause_json, casus_belli_json, status, victor, summary_json, advantages_json, impact_json, related_event_ids_json, era_id, theater_json, casualties_json, key_battles_json)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).run(
     id,
     JSON.stringify(name),
@@ -802,7 +963,10 @@ export function insertWar(
     JSON.stringify(advantages),
     JSON.stringify(impact),
     JSON.stringify(relatedEventIds),
-    eraId ?? null
+    eraId ?? null,
+    theater ? JSON.stringify(theater) : null,
+    casualties ? JSON.stringify(casualties) : null,
+    JSON.stringify(keyBattles ?? [])
   );
 }
 
@@ -851,8 +1015,10 @@ export function deleteAllWars() {
   const db = getDb();
   const eraId = getCurrentEraId();
   if (eraId) {
+    db.prepare(`DELETE FROM war_snapshots WHERE era_id = ?`).run(eraId);
     db.prepare(`DELETE FROM wars WHERE era_id = ?`).run(eraId);
   } else {
+    db.prepare(`DELETE FROM war_snapshots`).run();
     db.prepare(`DELETE FROM wars`).run();
   }
 }
@@ -872,7 +1038,153 @@ function parseWarRow(row: Record<string, unknown>) {
     advantages: JSON.parse(row.advantages_json as string),
     impact: JSON.parse((row.impact_json as string) || '{"side1":{"zh":"","en":""},"side2":{"zh":"","en":""}}'),
     relatedEventIds: JSON.parse(row.related_event_ids_json as string),
+    theater: row.theater_json ? JSON.parse(row.theater_json as string) : undefined,
+    casualties: row.casualties_json ? JSON.parse(row.casualties_json as string) : undefined,
+    keyBattles: row.key_battles_json ? JSON.parse(row.key_battles_json as string) : [],
   };
+}
+
+// ── Civilization Memory ──
+
+export function insertWarSnapshot(
+  warId: string,
+  year: number,
+  side: "side1" | "side2",
+  metrics: {
+    totalTroops: number;
+    standingArmy: number;
+    militaryLevel: number;
+    gdpGoldKg: number;
+    population: number;
+    techLevel: number;
+    regionStatus?: string;
+    casualties?: number;
+    morale?: number;
+  }
+) {
+  const db = getDb();
+  const eraId = getCurrentEraId();
+  db.prepare(`
+    INSERT OR REPLACE INTO war_snapshots
+      (war_id, year, side, total_troops, standing_army, military_level, gdp_gold_kg, population, tech_level, region_status, era_id, casualties, morale)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `).run(
+    warId, year, side,
+    metrics.totalTroops, metrics.standingArmy, metrics.militaryLevel,
+    metrics.gdpGoldKg, metrics.population, metrics.techLevel,
+    metrics.regionStatus ?? null, eraId ?? null,
+    metrics.casualties ?? 0, metrics.morale ?? 5
+  );
+}
+
+export function getWarSnapshots(warId: string) {
+  const db = getDb();
+  const rows = db.prepare(
+    `SELECT * FROM war_snapshots WHERE war_id = ? ORDER BY year ASC, side ASC`
+  ).all(warId) as Record<string, unknown>[];
+  return rows.map(parseWarSnapshotRow);
+}
+
+export function hasWarSnapshotForYear(warId: string, year: number): boolean {
+  const db = getDb();
+  const row = db.prepare(
+    `SELECT 1 FROM war_snapshots WHERE war_id = ? AND year = ? LIMIT 1`
+  ).get(warId, year);
+  return !!row;
+}
+
+export function getWarSnapshotsForWars(warIds: string[]) {
+  if (warIds.length === 0) return {};
+  const db = getDb();
+  const placeholders = warIds.map(() => "?").join(",");
+  const rows = db.prepare(
+    `SELECT * FROM war_snapshots WHERE war_id IN (${placeholders}) ORDER BY year ASC, side ASC`
+  ).all(...warIds) as Record<string, unknown>[];
+
+  const result: Record<string, { year: number; side1: Record<string, unknown>; side2: Record<string, unknown> }[]> = {};
+  for (const row of rows) {
+    const parsed = parseWarSnapshotRow(row);
+    if (!result[parsed.warId]) result[parsed.warId] = [];
+    let entry = result[parsed.warId].find((e) => e.year === parsed.year);
+    if (!entry) {
+      entry = { year: parsed.year, side1: {}, side2: {} };
+      result[parsed.warId].push(entry);
+    }
+    entry[parsed.side as "side1" | "side2"] = {
+      totalTroops: parsed.totalTroops,
+      standingArmy: parsed.standingArmy,
+      militaryLevel: parsed.militaryLevel,
+      gdpGoldKg: parsed.gdpGoldKg,
+      population: parsed.population,
+      techLevel: parsed.techLevel,
+      casualties: parsed.casualties,
+      morale: parsed.morale,
+    };
+  }
+  return result;
+}
+
+function parseWarSnapshotRow(row: Record<string, unknown>) {
+  return {
+    warId: row.war_id as string,
+    year: row.year as number,
+    side: row.side as string,
+    totalTroops: row.total_troops as number,
+    standingArmy: row.standing_army as number,
+    militaryLevel: row.military_level as number,
+    gdpGoldKg: row.gdp_gold_kg as number,
+    population: row.population as number,
+    techLevel: row.tech_level as number,
+    regionStatus: row.region_status as string | null,
+    casualties: (row.casualties as number) ?? 0,
+    morale: (row.morale as number) ?? 5,
+  };
+}
+
+export function deleteWarSnapshotsForEra(eraId: string) {
+  const db = getDb();
+  db.prepare(`DELETE FROM war_snapshots WHERE era_id = ?`).run(eraId);
+}
+
+export function deleteWarSnapshotsAfterYear(year: number, eraId?: string | null) {
+  const db = getDb();
+  if (eraId) {
+    db.prepare(`DELETE FROM war_snapshots WHERE era_id = ? AND year > ?`).run(eraId, year);
+  } else {
+    db.prepare(`DELETE FROM war_snapshots WHERE year > ?`).run(year);
+  }
+}
+
+export function updateWarDetails(
+  id: string,
+  summary: object,
+  advantages: object,
+  impact: object,
+  lastNarrativeUpdateYear: number,
+  theater?: object | null,
+  casualties?: object | null,
+  keyBattles?: object[] | null
+) {
+  const db = getDb();
+  db.prepare(`
+    UPDATE wars SET summary_json = ?, advantages_json = ?, impact_json = ?, last_narrative_update_year = ?,
+      theater_json = COALESCE(?, theater_json),
+      casualties_json = COALESCE(?, casualties_json),
+      key_battles_json = COALESCE(?, key_battles_json)
+    WHERE id = ?
+  `).run(
+    JSON.stringify(summary), JSON.stringify(advantages), JSON.stringify(impact), lastNarrativeUpdateYear,
+    theater ? JSON.stringify(theater) : null,
+    casualties ? JSON.stringify(casualties) : null,
+    keyBattles ? JSON.stringify(keyBattles) : null,
+    id
+  );
+}
+
+export function getWarLastNarrativeUpdateYear(id: string): number | null {
+  const db = getDb();
+  const row = db.prepare(`SELECT last_narrative_update_year FROM wars WHERE id = ?`).get(id) as { last_narrative_update_year: number | null } | undefined;
+  return row?.last_narrative_update_year ?? null;
 }
 
 // ── Civilization Memory ──

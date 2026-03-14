@@ -5,6 +5,7 @@ import { callAgentStreaming, safeParseJSON, type TokenCallback } from "./llm-cli
 import { getSimulationMode } from "../settings";
 import type { CivDecision } from "./civ-agent";
 import { buildMemoryContext } from "./civ-memory";
+import type { SimulationParams } from "../types";
 
 function buildSystemPrompt(base: string, mode: FieldSchemaMode, includeAiSector: boolean): string {
   return base + getRegionFieldSchema(mode, includeAiSector);
@@ -163,7 +164,9 @@ export async function runHistorian(
   onToken?: TokenCallback,
   isOrphanGroup?: boolean,
   isSpeculative?: boolean,
-  civDecisions?: CivDecision[]
+  civDecisions?: CivDecision[],
+  simulationParams?: SimulationParams,
+  webSearch?: boolean
 ): Promise<TransitionResult> {
   const regionIdSet = new Set(regionIds);
   const regionsToUpdate = ctx.currentState.regions.filter((r) =>
@@ -229,12 +232,16 @@ export async function runHistorian(
           economy: {
             level: r.economy?.level,
             gdpEstimate: r.economy?.gdpEstimate,
+            giniEstimate: r.economy?.giniEstimate,
           },
           military: {
             level: r.military?.level,
             standingArmy: r.military?.standingArmy,
             reserves: r.military?.reserves,
             totalTroops: r.military?.totalTroops,
+            doctrine: r.military?.doctrine,
+            training: r.military?.training,
+            morale: r.military?.morale,
           },
           technology: { level: r.technology?.level },
           diplomacy: {
@@ -256,7 +263,7 @@ export async function runHistorian(
           status: r.status,
           demographics: { population: r.demographics?.population },
           economy: { level: r.economy?.level },
-          military: { level: r.military?.level },
+          military: { level: r.military?.level, morale: r.military?.morale?.level },
           technology: { level: r.technology?.level },
           diplomacy: {
             allies: r.diplomacy?.allies,
@@ -334,6 +341,25 @@ export async function runHistorian(
     systemPrompt += CIV_AGENCY_SUPPLEMENT;
   }
 
+  if (webSearch) {
+    systemPrompt += `\n\nWEB SEARCH ENABLED: You have access to real-time web search results. Use the search data to verify historical facts — exact dates, names, figures, casualties, treaty terms, and outcomes. Prioritize web search findings over uncertain knowledge.\n`;
+  }
+
+  const contingency = simulationParams?.contingencyRatio ?? 50;
+  if (contingency === 0) {
+    systemPrompt += `\n\nSIMULATION STYLE — EXTREME CONTINGENCY:\nHistory is full of accidents. Assassinations, plagues, natural disasters, miscalculations, and freak events ROUTINELY rewrite the course of civilizations. Individual decisions have outsized consequences. Introduce dramatic, unexpected turns. A single event can topple empires or birth new ones. Favor chaos, surprise, and butterfly effects over predictable trends.\n`;
+    temperature = Math.min(temperature + 0.2, 0.95);
+  } else if (contingency === 25) {
+    systemPrompt += `\n\nSIMULATION STYLE — HIGH CONTINGENCY:\nChance plays a major role. Key individuals' decisions, sudden events, and unexpected crises frequently disrupt existing trends. While broad structures matter, they are regularly overridden by human agency and accidents. Include surprising turns at critical junctures. Outcomes should be hard to predict from initial conditions alone.\n`;
+    temperature = Math.min(temperature + 0.1, 0.85);
+  } else if (contingency === 75) {
+    systemPrompt += `\n\nSIMULATION STYLE — STRUCTURAL DOMINANCE:\nStructural forces dominate — economics, demographics, institutional inertia, and geography set the direction. Random events and individual decisions cause only short-term ripples that are quickly absorbed by deeper trends. Changes should follow predictable, logical patterns. Avoid dramatic surprises or unlikely twists.\n`;
+    temperature = Math.max(temperature - 0.1, 0.2);
+  } else if (contingency === 100) {
+    systemPrompt += `\n\nSIMULATION STYLE — IRON DETERMINISM:\nHistory is driven almost entirely by iron laws. Geography, resources, population structure, and economic systems determine everything. Individual will and accidents are negligible — even if a specific leader is replaced, the same structural pressures produce nearly identical outcomes. Changes must follow strict material logic with no surprising twists whatsoever.\n`;
+    temperature = Math.max(temperature - 0.2, 0.15);
+  }
+
   const userParts = [
     `Year: ${ctx.targetYear}`,
     `Era: ${JSON.stringify(ctx.currentState.era)}`,
@@ -371,7 +397,7 @@ export async function runHistorian(
     messages,
     rid,
     onToken ?? (() => { }),
-    { temperature }
+    { temperature, webSearch }
   );
   return safeParseJSON<TransitionResult>(response);
 }

@@ -5,7 +5,17 @@ import type {
   Region,
   YearMonth,
   War,
+  WarMetricsSnapshot,
+  SimulationParams,
+  EconomicSnapshot,
+  AssetPriceTick,
+  ExchangeRatePoint,
+  EconShock,
+  EconomicPanelView,
+  PriceEngineParams,
+  InertiaParams,
 } from "@/lib/types";
+import { DEFAULT_SIMULATION_PARAMS, DEFAULT_PRICE_ENGINE_PARAMS, DEFAULT_INERTIA_PARAMS } from "@/lib/types";
 import type { EpochChangelog } from "@/lib/changelog";
 
 type Locale = "zh" | "en";
@@ -137,6 +147,15 @@ interface WorldStore {
   showWarsPanel: boolean;
   setShowWarsPanel: (show: boolean) => void;
 
+  warSnapshots: Record<string, WarMetricsSnapshot[]>;
+  setWarSnapshots: (warId: string, snapshots: WarMetricsSnapshot[]) => void;
+  mergeWarSnapshots: (snapshots: Record<string, WarMetricsSnapshot[]>) => void;
+  clearWarSnapshots: () => void;
+
+  warNotifications: { id: string; message: string; type: "new" | "ended" | "update" }[];
+  addWarNotification: (notification: { id: string; message: string; type: "new" | "ended" | "update" }) => void;
+  removeWarNotification: (id: string) => void;
+
   preAdvanceYear: number | null;
   setPreAdvanceYear: (year: number | null) => void;
 
@@ -154,6 +173,42 @@ interface WorldStore {
   updatePipelineGroup: (groupIndex: number, update: Partial<PipelineGroupInfo>) => void;
   setPipelineGroups: (groups: PipelineGroupInfo[]) => void;
   resetPipeline: () => void;
+
+  simulationParams: SimulationParams;
+  setSimulationParams: (params: SimulationParams) => void;
+
+  showEconomicPanel: boolean;
+  setShowEconomicPanel: (show: boolean) => void;
+
+  economicPanelView: EconomicPanelView;
+  setEconomicPanelView: (view: Partial<EconomicPanelView>) => void;
+
+  economicHistory: Record<string, EconomicSnapshot[]>;
+  setEconomicHistory: (data: Record<string, EconomicSnapshot[]>) => void;
+
+  assetPrices: Record<string, AssetPriceTick[]>;
+  setAssetPrices: (data: Record<string, AssetPriceTick[]>) => void;
+
+  exchangeRates: ExchangeRatePoint[];
+  setExchangeRates: (data: ExchangeRatePoint[]) => void;
+
+  econShocks: EconShock[];
+  addEconShock: (shock: EconShock) => void;
+  clearEconShocks: () => void;
+
+  priceEngineParams: PriceEngineParams;
+  setPriceEngineParams: (params: PriceEngineParams) => void;
+
+  inertiaParams: InertiaParams;
+  setInertiaParams: (params: InertiaParams) => void;
+
+  mapFlyTo: ((opts: { longitude: number; latitude: number; zoom?: number }) => void) | null;
+  setMapFlyTo: (fn: ((opts: { longitude: number; latitude: number; zoom?: number }) => void) | null) => void;
+
+  layerStack: string[];
+  pushLayer: (id: string) => void;
+  removeLayer: (id: string) => void;
+  popLayer: () => string | null;
 }
 
 export const useWorldStore = create<WorldStore>((set, get) => ({
@@ -193,9 +248,13 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
 
   selectedRegionId: null,
   setSelectedRegionId: (id) => {
+    const prev = get().selectedRegionId;
     const state = get().currentState;
     const region = id && state ? state.regions.find((r) => r.id === id) ?? null : null;
     set({ selectedRegionId: id, selectedRegion: region });
+    if (id && !prev) get().pushLayer("regionDetail");
+    else if (!id && prev) get().removeLayer("regionDetail");
+    else if (id && prev && id !== prev) { /* layer already in stack */ }
   },
   selectedRegion: null,
 
@@ -246,7 +305,11 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
   clearEvolutionLogs: () => set({ evolutionLogs: [] }),
 
   showLogPanel: false,
-  setShowLogPanel: (showLogPanel) => set({ showLogPanel }),
+  setShowLogPanel: (showLogPanel) => {
+    set({ showLogPanel });
+    if (showLogPanel) get().pushLayer("logPanel");
+    else get().removeLayer("logPanel");
+  },
 
   abortController: null,
   setAbortController: (abortController) => set({ abortController }),
@@ -267,10 +330,40 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
   setActiveWars: (activeWars) => set({ activeWars }),
 
   selectedWar: null,
-  setSelectedWar: (selectedWar) => set({ selectedWar }),
+  setSelectedWar: (selectedWar) => {
+    const prev = get().selectedWar;
+    set({ selectedWar });
+    if (selectedWar && !prev) get().pushLayer("warDetail");
+    else if (!selectedWar && prev) get().removeLayer("warDetail");
+  },
 
   showWarsPanel: false,
-  setShowWarsPanel: (showWarsPanel) => set({ showWarsPanel }),
+  setShowWarsPanel: (showWarsPanel) => {
+    set({ showWarsPanel });
+    if (showWarsPanel) get().pushLayer("warsPanel");
+    else get().removeLayer("warsPanel");
+  },
+
+  warSnapshots: {},
+  setWarSnapshots: (warId, snapshots) =>
+    set((state) => ({
+      warSnapshots: { ...state.warSnapshots, [warId]: snapshots },
+    })),
+  mergeWarSnapshots: (snapshots) =>
+    set((state) => ({
+      warSnapshots: { ...state.warSnapshots, ...snapshots },
+    })),
+  clearWarSnapshots: () => set({ warSnapshots: {} }),
+
+  warNotifications: [],
+  addWarNotification: (notification) =>
+    set((state) => ({
+      warNotifications: [...state.warNotifications, notification],
+    })),
+  removeWarNotification: (id) =>
+    set((state) => ({
+      warNotifications: state.warNotifications.filter((n) => n.id !== id),
+    })),
 
   preAdvanceYear: null,
   setPreAdvanceYear: (preAdvanceYear) => set({ preAdvanceYear }),
@@ -321,4 +414,105 @@ export const useWorldStore = create<WorldStore>((set, get) => ({
       },
     })),
   resetPipeline: () => set({ pipeline: { ...EMPTY_PIPELINE } }),
+
+  simulationParams: (() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("hcs-simulation-params");
+        if (saved) return JSON.parse(saved) as SimulationParams;
+      } catch { /* use default */ }
+    }
+    return { ...DEFAULT_SIMULATION_PARAMS };
+  })(),
+  setSimulationParams: (simulationParams) => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("hcs-simulation-params", JSON.stringify(simulationParams));
+    }
+    set({ simulationParams });
+  },
+
+  showEconomicPanel: false,
+  setShowEconomicPanel: (showEconomicPanel) => {
+    set({ showEconomicPanel });
+    if (showEconomicPanel) get().pushLayer("economicPanel");
+    else get().removeLayer("economicPanel");
+  },
+
+  economicPanelView: {
+    mode: "gdptrend",
+    selectedAssetIds: [],
+    selectedRegionIds: [],
+    denomination: "gold",
+    timeRange: { from: -2000, to: 2023 },
+  },
+  setEconomicPanelView: (view) =>
+    set((state) => ({
+      economicPanelView: { ...state.economicPanelView, ...view },
+    })),
+
+  economicHistory: {},
+  setEconomicHistory: (economicHistory) => set({ economicHistory }),
+
+  assetPrices: {},
+  setAssetPrices: (assetPrices) => set({ assetPrices }),
+
+  exchangeRates: [],
+  setExchangeRates: (exchangeRates) => set({ exchangeRates }),
+
+  econShocks: [],
+  addEconShock: (shock) =>
+    set((state) => ({ econShocks: [...state.econShocks, shock] })),
+  clearEconShocks: () => set({ econShocks: [] }),
+
+  priceEngineParams: (() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("hcs-price-engine-params");
+        if (saved) return JSON.parse(saved) as PriceEngineParams;
+      } catch { /* use default */ }
+    }
+    return { ...DEFAULT_PRICE_ENGINE_PARAMS };
+  })(),
+  setPriceEngineParams: (priceEngineParams) => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("hcs-price-engine-params", JSON.stringify(priceEngineParams));
+    }
+    set({ priceEngineParams });
+  },
+
+  inertiaParams: (() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("hcs-inertia-params");
+        if (saved) return JSON.parse(saved) as InertiaParams;
+      } catch { /* use default */ }
+    }
+    return { ...DEFAULT_INERTIA_PARAMS };
+  })(),
+  setInertiaParams: (inertiaParams) => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("hcs-inertia-params", JSON.stringify(inertiaParams));
+    }
+    set({ inertiaParams });
+  },
+
+  mapFlyTo: null,
+  setMapFlyTo: (mapFlyTo) => set({ mapFlyTo }),
+
+  layerStack: [],
+  pushLayer: (id) =>
+    set((state) => ({
+      layerStack: [...state.layerStack.filter((l) => l !== id), id],
+    })),
+  removeLayer: (id) =>
+    set((state) => ({
+      layerStack: state.layerStack.filter((l) => l !== id),
+    })),
+  popLayer: () => {
+    const stack = get().layerStack;
+    if (stack.length === 0) return null;
+    const top = stack[stack.length - 1];
+    set({ layerStack: stack.slice(0, -1) });
+    return top;
+  },
 }));

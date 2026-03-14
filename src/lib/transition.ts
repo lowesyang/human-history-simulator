@@ -216,7 +216,8 @@ economy.householdWealth: LocalizedText
 economy.averageIncome: MonetaryValue
 economy.foreignTradeVolume: MonetaryValue
 economy.tradeRoutes: LocalizedText
-economy.economicSystem: LocalizedText`,
+economy.economicSystem: LocalizedText
+economy.giniEstimate: number (0-1, Gini coefficient. 0=equality, 1=inequality. hunter-gatherer 0.15-0.25, agrarian empire 0.40-0.55, industrial 0.35-0.50, welfare state 0.25-0.35)`,
   finances: `finances.annualRevenue: MonetaryValue
 finances.annualExpenditure: MonetaryValue
 finances.surplus: MonetaryValue
@@ -231,7 +232,17 @@ military.technology: LocalizedText
 military.annualMilitarySpending: MonetaryValue
 military.militarySpendingPctGdp: number
 military.threats: LocalizedText
-military.recentBattles: LocalizedText`,
+military.recentBattles: LocalizedText
+military.doctrine: LocalizedText
+military.training.level: number (1-10)
+military.training.description: LocalizedText
+military.morale.level: number (1-10)
+military.morale.description: LocalizedText
+military.equipment: [{name: LocalizedText, category: "melee"|"ranged"|"siege"|"armor"|"naval"|"aerial"|"vehicle"|"artillery"|"missile"|"nuclear"|"cyber"|"other", quantity: number, description: LocalizedText}]
+military.fortifications: [{name: LocalizedText, type: LocalizedText, description: LocalizedText}]
+military.logistics.supplyCapacity: LocalizedText
+military.logistics.mobilizationSpeed: LocalizedText
+military.notableCampaigns: [{name: LocalizedText, year: number, outcome: LocalizedText, description: LocalizedText}]`,
   demographics: `demographics.population: number (delta)
 demographics.populationDescription: LocalizedText
 demographics.urbanPopulation: number (delta)

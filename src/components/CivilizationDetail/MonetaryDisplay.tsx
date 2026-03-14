@@ -37,12 +37,12 @@ export default function MonetaryDisplay({
       <div className="text-text-primary">
         {amount} {unitStr}
       </div>
-      <div className="flex gap-3 text-xs text-text-muted">
-        {value.goldKg != null && value.goldKg > 0 && (
-          <span>≈ {fmtKg(value.goldKg, locale)}{goldLabel}</span>
+      <div className="text-xs text-text-muted">
+        {value.goldKg != null && value.goldKg !== 0 && (
+          <span>≈ {fmtKg(Math.abs(value.goldKg), locale)}{goldLabel}</span>
         )}
-        {value.silverKg != null && value.silverKg > 0 && (
-          <span>≈ {fmtKg(value.silverKg, locale)}{silverLabel}</span>
+        {value.silverKg != null && value.silverKg !== 0 && (
+          <span className="ml-3">≈ {fmtKg(Math.abs(value.silverKg), locale)}{silverLabel}</span>
         )}
       </div>
       {value.displayNote && (

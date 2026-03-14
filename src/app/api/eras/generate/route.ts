@@ -13,7 +13,8 @@ const LLM_TIMEOUT_MS = 600_000;
 
 const VALID_CATEGORIES = new Set([
   "war", "dynasty", "invention", "trade", "religion",
-  "disaster", "natural_disaster", "exploration", "diplomacy", "migration", "other",
+  "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
+  "technology", "finance", "announcement", "other",
 ]);
 
 function getTerritoryList(): string {
@@ -227,6 +228,28 @@ All text fields must be bilingual: {"zh":"...","en":"..."}
 Include 6-12 major civilizations. Use ONLY territoryIds from the list below.
 Be historically accurate. Events should span years ${yearRange}.
 Return ONLY valid JSON, no markdown.
+
+Military schema for each region (be detailed and historically accurate):
+  "military": {
+    "level": 1-10,
+    "totalTroops": number,
+    "standingArmy": number,
+    "reserves": number,
+    "branches": [{"name":{"zh":"...","en":"..."},"count":number,"description":{"zh":"...","en":"..."}}],
+    "commandStructure": {"commanderInChief":{"zh":"...","en":"..."},"totalGenerals":number,"keyGenerals":[{"name":{"zh":"...","en":"..."},"title":{"zh":"...","en":"..."},"command":{"zh":"...","en":"..."},"notableBattles":{"zh":"...","en":"..."},"reputation":{"zh":"...","en":"..."}}]},
+    "technology": {"zh":"...","en":"..."},
+    "annualMilitarySpending": {"amount":number,"unit":{"zh":"...","en":"..."},"silverKg":number},
+    "militarySpendingPctGdp": number,
+    "threats": {"zh":"...","en":"..."},
+    "doctrine": {"zh":"military doctrine/strategy philosophy","en":"..."},
+    "training": {"level":1-10,"description":{"zh":"...","en":"..."}},
+    "morale": {"level":1-10,"description":{"zh":"...","en":"..."}},
+    "equipment": [{"name":{"zh":"...","en":"..."},"category":"melee|ranged|siege|armor|naval|aerial|vehicle|artillery|missile|nuclear|cyber|other","quantity":number,"description":{"zh":"...","en":"..."}}],
+    "fortifications": [{"name":{"zh":"...","en":"..."},"type":{"zh":"...","en":"..."},"description":{"zh":"...","en":"..."}}],
+    "logistics": {"supplyCapacity":{"zh":"...","en":"..."},"mobilizationSpeed":{"zh":"...","en":"..."}},
+    "notableCampaigns": [{"name":{"zh":"...","en":"..."},"year":number,"outcome":{"zh":"...","en":"..."},"description":{"zh":"...","en":"..."}}]
+  }
+Provide at least 3 branches, 2+ equipment items, 1+ fortification, and 1+ notable campaign per region. Include historically accurate weapons, armor, siege engines, warships etc. appropriate to the era.
 
 ${CONTENT_FILTER_PROMPT}
 

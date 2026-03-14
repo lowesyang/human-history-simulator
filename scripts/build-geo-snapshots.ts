@@ -16,6 +16,7 @@ import {
   GEOMETRY_MERGE_RULES,
   GEOMETRY_CLIP_RULES,
   GEOMETRY_SUBTRACT_RULES,
+  CUSTOM_GEOMETRIES,
   SNAPSHOT_YEARS,
   snapshotYearToFilename,
 } from "./name-mapping";
@@ -133,6 +134,10 @@ function matchRegion(
       baseGeometry = mergeGeometries(geometries);
       break;
     }
+  }
+
+  if (!baseGeometry && CUSTOM_GEOMETRIES[regionId]) {
+    return CUSTOM_GEOMETRIES[regionId];
   }
 
   const mergeRules = GEOMETRY_MERGE_RULES[regionId];

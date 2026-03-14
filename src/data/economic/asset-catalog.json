@@ -1,0 +1,4820 @@
+{
+  "assets": [
+    {
+      "id": "gold",
+      "name": {
+        "zh": "黄金",
+        "en": "Gold"
+      },
+      "ticker": "GOLD",
+      "category": "precious_metal",
+      "icon": "gold",
+      "description": {
+        "zh": "永恒的价值存储",
+        "en": "The eternal store of value"
+      },
+      "riskLevel": 1,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "silver",
+      "name": {
+        "zh": "白银",
+        "en": "Silver"
+      },
+      "ticker": "SLVR",
+      "category": "precious_metal",
+      "icon": "silver",
+      "description": {
+        "zh": "贸易通货与工业金属",
+        "en": "Trade currency and industrial metal"
+      },
+      "riskLevel": 2,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "wheat",
+      "name": {
+        "zh": "小麦",
+        "en": "Wheat"
+      },
+      "ticker": "WHEA",
+      "category": "grain",
+      "icon": "grain",
+      "description": {
+        "zh": "文明的基石",
+        "en": "The foundation of civilization"
+      },
+      "riskLevel": 2,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "rice",
+      "name": {
+        "zh": "大米",
+        "en": "Rice"
+      },
+      "ticker": "RICE",
+      "category": "grain",
+      "icon": "grain",
+      "description": {
+        "zh": "亚洲文明的生命线",
+        "en": "The lifeline of Asian civilizations"
+      },
+      "riskLevel": 2,
+      "availableFrom": -1500,
+      "availableTo": 2023
+    },
+    {
+      "id": "salt",
+      "name": {
+        "zh": "盐",
+        "en": "Salt"
+      },
+      "ticker": "SALT",
+      "category": "commodity",
+      "icon": "crystal",
+      "description": {
+        "zh": "白色黄金：食物保存与税收",
+        "en": "White gold: preservation and taxation"
+      },
+      "riskLevel": 1,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "silk",
+      "name": {
+        "zh": "丝绸",
+        "en": "Silk"
+      },
+      "ticker": "SILK",
+      "category": "luxury",
+      "icon": "scroll",
+      "description": {
+        "zh": "东方最珍贵的出口品",
+        "en": "The Orient's most precious export"
+      },
+      "riskLevel": 3,
+      "availableFrom": -1500,
+      "availableTo": 2023
+    },
+    {
+      "id": "spices",
+      "name": {
+        "zh": "香料",
+        "en": "Spices"
+      },
+      "ticker": "SPCE",
+      "category": "luxury",
+      "icon": "spice",
+      "description": {
+        "zh": "驱动大航海时代的瑰宝",
+        "en": "The treasure that drove the Age of Exploration"
+      },
+      "riskLevel": 3,
+      "availableFrom": -500,
+      "availableTo": 2023
+    },
+    {
+      "id": "oil",
+      "name": {
+        "zh": "原油",
+        "en": "Crude Oil"
+      },
+      "ticker": "OIL",
+      "category": "energy",
+      "icon": "barrel",
+      "description": {
+        "zh": "现代工业的血液",
+        "en": "The blood of modern industry"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1860,
+      "availableTo": 2023
+    },
+    {
+      "id": "farmland",
+      "name": {
+        "zh": "农地",
+        "en": "Farmland"
+      },
+      "ticker": "LAND",
+      "category": "real_estate",
+      "icon": "land",
+      "description": {
+        "zh": "最古老的财富形式",
+        "en": "The oldest form of wealth"
+      },
+      "riskLevel": 2,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "copper",
+      "name": {
+        "zh": "铜",
+        "en": "Copper"
+      },
+      "ticker": "COPR",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "从青铜时代到电气时代",
+        "en": "From the Bronze Age to the Electric Age"
+      },
+      "riskLevel": 2,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "cotton",
+      "name": {
+        "zh": "棉花",
+        "en": "Cotton"
+      },
+      "ticker": "CTTN",
+      "category": "commodity",
+      "icon": "bale",
+      "description": {
+        "zh": "纺织工业革命的原料",
+        "en": "Raw material of the textile revolution"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1600,
+      "availableTo": 2023
+    },
+    {
+      "id": "rubber",
+      "name": {
+        "zh": "橡胶",
+        "en": "Rubber"
+      },
+      "ticker": "RUBR",
+      "category": "commodity",
+      "icon": "tire",
+      "description": {
+        "zh": "汽车时代与殖民掠夺",
+        "en": "The automobile age and colonial extraction"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1850,
+      "availableTo": 2023
+    },
+    {
+      "id": "natural_gas",
+      "name": {
+        "zh": "天然气",
+        "en": "Natural Gas"
+      },
+      "ticker": "NGAS",
+      "category": "energy",
+      "icon": "flame",
+      "description": {
+        "zh": "清洁能源过渡的关键",
+        "en": "Key to the clean energy transition"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1880,
+      "availableTo": 2023
+    },
+    {
+      "id": "uranium",
+      "name": {
+        "zh": "铀",
+        "en": "Uranium"
+      },
+      "ticker": "URAN",
+      "category": "energy",
+      "icon": "atom",
+      "description": {
+        "zh": "核能时代的燃料",
+        "en": "Fuel of the nuclear age"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1940,
+      "availableTo": 2023
+    },
+    {
+      "id": "voc_stock",
+      "name": {
+        "zh": "荷兰东印度公司",
+        "en": "VOC Stock"
+      },
+      "ticker": "VOC",
+      "category": "equity",
+      "icon": "ship",
+      "description": {
+        "zh": "人类史上第一家上市公司",
+        "en": "The world's first publicly traded company"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1602,
+      "availableTo": 1799,
+      "baseReturn": 0.18,
+      "baseDividend": 0.12
+    },
+    {
+      "id": "south_sea",
+      "name": {
+        "zh": "南海公司",
+        "en": "South Sea Company"
+      },
+      "ticker": "SSC",
+      "category": "equity",
+      "icon": "ship",
+      "description": {
+        "zh": "南海泡沫——连牛顿都亏了钱",
+        "en": "The South Sea Bubble — even Newton lost money"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1711,
+      "availableTo": 1721,
+      "isBubble": true
+    },
+    {
+      "id": "east_india_co",
+      "name": {
+        "zh": "英国东印度公司",
+        "en": "British East India Co."
+      },
+      "ticker": "EIC",
+      "category": "equity",
+      "icon": "ship",
+      "description": {
+        "zh": "日不落帝国的商业先锋",
+        "en": "Commercial vanguard of the British Empire"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1600,
+      "availableTo": 1874
+    },
+    {
+      "id": "us_steel",
+      "name": {
+        "zh": "美国钢铁公司",
+        "en": "US Steel"
+      },
+      "ticker": "X",
+      "category": "equity",
+      "icon": "factory",
+      "description": {
+        "zh": "安德鲁·卡内基的钢铁帝国",
+        "en": "Andrew Carnegie's steel empire"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1901,
+      "availableTo": 2023
+    },
+    {
+      "id": "standard_oil",
+      "name": {
+        "zh": "标准石油",
+        "en": "Standard Oil"
+      },
+      "ticker": "SOIL",
+      "category": "equity",
+      "icon": "barrel",
+      "description": {
+        "zh": "洛克菲勒的垄断帝国",
+        "en": "Rockefeller's monopoly empire"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1870,
+      "availableTo": 1911
+    },
+    {
+      "id": "ford",
+      "name": {
+        "zh": "福特汽车",
+        "en": "Ford Motor"
+      },
+      "ticker": "F",
+      "category": "equity",
+      "icon": "car",
+      "description": {
+        "zh": "流水线革命的缔造者",
+        "en": "Pioneer of the assembly line revolution"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1956,
+      "availableTo": 2023
+    },
+    {
+      "id": "apple",
+      "name": {
+        "zh": "苹果公司",
+        "en": "Apple Inc."
+      },
+      "ticker": "AAPL",
+      "category": "equity",
+      "icon": "chip",
+      "description": {
+        "zh": "从车库到全球市值之王",
+        "en": "From a garage to the world's most valuable company"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1980,
+      "availableTo": 2023
+    },
+    {
+      "id": "tesla",
+      "name": {
+        "zh": "特斯拉",
+        "en": "Tesla Inc."
+      },
+      "ticker": "TSLA",
+      "category": "equity",
+      "icon": "car",
+      "description": {
+        "zh": "电动汽车革命的引领者",
+        "en": "Leading the electric vehicle revolution"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2010,
+      "availableTo": 2023
+    },
+    {
+      "id": "nvidia",
+      "name": {
+        "zh": "英伟达",
+        "en": "NVIDIA Corp."
+      },
+      "ticker": "NVDA",
+      "category": "equity",
+      "icon": "chip",
+      "description": {
+        "zh": "AI算力时代的卖铲人",
+        "en": "Selling shovels in the AI gold rush"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1999,
+      "availableTo": 2023
+    },
+    {
+      "id": "tulip",
+      "name": {
+        "zh": "郁金香球茎",
+        "en": "Tulip Bulbs"
+      },
+      "ticker": "TULP",
+      "category": "commodity",
+      "icon": "flower",
+      "description": {
+        "zh": "荷兰郁金香狂热——史上第一个投机泡沫",
+        "en": "Dutch Tulip Mania — history's first speculative bubble"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1634,
+      "availableTo": 1637,
+      "isBubble": true
+    },
+    {
+      "id": "dow_jones",
+      "name": {
+        "zh": "道琼斯指数",
+        "en": "Dow Jones Index"
+      },
+      "ticker": "DJIA",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "美国最古老的股票指数",
+        "en": "America's oldest stock market index"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1896,
+      "availableTo": 2023
+    },
+    {
+      "id": "sp500",
+      "name": {
+        "zh": "标普500",
+        "en": "S&P 500"
+      },
+      "ticker": "SPX",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "全球最重要的股票基准",
+        "en": "The world's most important equity benchmark"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1957,
+      "availableTo": 2023
+    },
+    {
+      "id": "nikkei225",
+      "name": {
+        "zh": "日经225指数",
+        "en": "Nikkei 225"
+      },
+      "ticker": "NKY",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "日本经济的晴雨表",
+        "en": "Barometer of the Japanese economy"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1950,
+      "availableTo": 2023
+    },
+    {
+      "id": "shanghai_composite",
+      "name": {
+        "zh": "上证综指",
+        "en": "Shanghai Composite"
+      },
+      "ticker": "SHCI",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "中国资本市场的风向标",
+        "en": "Bellwether of China's capital markets"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1990,
+      "availableTo": 2023
+    },
+    {
+      "id": "venetian_commenda",
+      "name": {
+        "zh": "威尼斯康曼达合伙",
+        "en": "Venetian Commenda"
+      },
+      "ticker": "VCMD",
+      "category": "private_equity",
+      "icon": "ship",
+      "description": {
+        "zh": "中世纪风险投资的雏形",
+        "en": "The medieval prototype of venture capital"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1100,
+      "availableTo": 1500
+    },
+    {
+      "id": "ford_preipo",
+      "name": {
+        "zh": "福特汽车(私募)",
+        "en": "Ford Motor (Pre-IPO)"
+      },
+      "ticker": "FPRE",
+      "category": "private_equity",
+      "icon": "car",
+      "description": {
+        "zh": "在亨利·福特的车库里下注",
+        "en": "Betting on Henry Ford's garage venture"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1903,
+      "availableTo": 1955
+    },
+    {
+      "id": "amazon_preipo",
+      "name": {
+        "zh": "亚马逊(天使轮)",
+        "en": "Amazon (Pre-IPO)"
+      },
+      "ticker": "AMZP",
+      "category": "private_equity",
+      "icon": "box",
+      "description": {
+        "zh": "贝佐斯的网上书店，早期投资回报超60000%",
+        "en": "Bezos's online bookstore — 60,000%+ returns for early investors"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1994,
+      "availableTo": 1997
+    },
+    {
+      "id": "spacex",
+      "name": {
+        "zh": "SpaceX (私募)",
+        "en": "SpaceX (Private)"
+      },
+      "ticker": "SPCX",
+      "category": "private_equity",
+      "icon": "rocket",
+      "description": {
+        "zh": "马斯克的太空冒险",
+        "en": "Musk's space venture"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2002,
+      "availableTo": 2023
+    },
+    {
+      "id": "openai",
+      "name": {
+        "zh": "OpenAI (私募)",
+        "en": "OpenAI (Private)"
+      },
+      "ticker": "OAIP",
+      "category": "private_equity",
+      "icon": "brain",
+      "description": {
+        "zh": "通用人工智能的先驱",
+        "en": "Pioneer of artificial general intelligence"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2015,
+      "availableTo": 2023
+    },
+    {
+      "id": "medici_bank",
+      "name": {
+        "zh": "美第奇银行LP份额",
+        "en": "Medici Bank LP"
+      },
+      "ticker": "MDCI",
+      "category": "fund_lp",
+      "icon": "bank",
+      "description": {
+        "zh": "文艺复兴背后的金融帝国",
+        "en": "The financial empire behind the Renaissance"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1397,
+      "availableTo": 1494
+    },
+    {
+      "id": "rothschild_fund",
+      "name": {
+        "zh": "罗斯柴尔德基金LP",
+        "en": "Rothschild Fund LP"
+      },
+      "ticker": "ROTH",
+      "category": "fund_lp",
+      "icon": "bank",
+      "description": {
+        "zh": "跨越两个世纪的金融王朝",
+        "en": "A financial dynasty spanning two centuries"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1810,
+      "availableTo": 2023
+    },
+    {
+      "id": "berkshire",
+      "name": {
+        "zh": "伯克希尔·哈撒韦",
+        "en": "Berkshire Hathaway"
+      },
+      "ticker": "BRK",
+      "category": "fund_lp",
+      "icon": "bank",
+      "description": {
+        "zh": "巴菲特的价值投资传奇",
+        "en": "Buffett's legendary value investing vehicle"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1965,
+      "availableTo": 2023
+    },
+    {
+      "id": "bridgewater",
+      "name": {
+        "zh": "桥水基金LP",
+        "en": "Bridgewater LP"
+      },
+      "ticker": "BWTR",
+      "category": "fund_lp",
+      "icon": "bank",
+      "description": {
+        "zh": "全球最大对冲基金——全天候策略",
+        "en": "World's largest hedge fund — All Weather strategy"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1975,
+      "availableTo": 2023
+    },
+    {
+      "id": "sequoia",
+      "name": {
+        "zh": "红杉资本LP",
+        "en": "Sequoia Capital LP"
+      },
+      "ticker": "SEQA",
+      "category": "fund_lp",
+      "icon": "tree",
+      "description": {
+        "zh": "硅谷最传奇的风投基金",
+        "en": "Silicon Valley's most legendary venture fund"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1972,
+      "availableTo": 2023
+    },
+    {
+      "id": "venetian_prestiti",
+      "name": {
+        "zh": "威尼斯公债",
+        "en": "Venetian Prestiti"
+      },
+      "ticker": "VPRS",
+      "category": "bond",
+      "icon": "scroll",
+      "description": {
+        "zh": "西方世界最早的政府债券",
+        "en": "The Western world's earliest government bonds"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1171,
+      "availableTo": 1797
+    },
+    {
+      "id": "british_consols",
+      "name": {
+        "zh": "英国统一公债",
+        "en": "British Consols"
+      },
+      "ticker": "GILT",
+      "category": "bond",
+      "icon": "scroll",
+      "description": {
+        "zh": "大英帝国的信用基石",
+        "en": "The credit bedrock of the British Empire"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1751,
+      "availableTo": 2015
+    },
+    {
+      "id": "us_treasury",
+      "name": {
+        "zh": "美国国债",
+        "en": "US Treasury"
+      },
+      "ticker": "UST",
+      "category": "bond",
+      "icon": "scroll",
+      "description": {
+        "zh": "全球无风险利率基准",
+        "en": "The global risk-free rate benchmark"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1790,
+      "availableTo": 2023
+    },
+    {
+      "id": "german_bund",
+      "name": {
+        "zh": "德国国债",
+        "en": "German Bund"
+      },
+      "ticker": "BUND",
+      "category": "bond",
+      "icon": "scroll",
+      "description": {
+        "zh": "欧洲最安全的避风港",
+        "en": "Europe's safest haven"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1870,
+      "availableTo": 2023
+    },
+    {
+      "id": "junk_bonds",
+      "name": {
+        "zh": "垃圾债券",
+        "en": "Junk Bonds"
+      },
+      "ticker": "HYB",
+      "category": "bond",
+      "icon": "fire",
+      "description": {
+        "zh": "迈克尔·米尔肯的高收益革命",
+        "en": "Michael Milken's high-yield revolution"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1977,
+      "availableTo": 2023
+    },
+    {
+      "id": "dojima_rice_futures",
+      "name": {
+        "zh": "堂岛米期货",
+        "en": "Dojima Rice Futures"
+      },
+      "ticker": "DOJM",
+      "category": "futures",
+      "icon": "grain",
+      "description": {
+        "zh": "全球第一个期货市场——大阪堂岛",
+        "en": "The world's first futures market — Osaka Dojima"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1697,
+      "availableTo": 1868
+    },
+    {
+      "id": "cotton_futures",
+      "name": {
+        "zh": "棉花期货",
+        "en": "Cotton Futures"
+      },
+      "ticker": "CTF",
+      "category": "futures",
+      "icon": "bale",
+      "description": {
+        "zh": "纽约棉花交易所的明星合约",
+        "en": "The star contract of the NY Cotton Exchange"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1870,
+      "availableTo": 2023
+    },
+    {
+      "id": "oil_futures",
+      "name": {
+        "zh": "原油期货",
+        "en": "Crude Oil Futures"
+      },
+      "ticker": "CLF",
+      "category": "futures",
+      "icon": "barrel",
+      "description": {
+        "zh": "NYMEX的黑金合约",
+        "en": "NYMEX's black gold contract"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1983,
+      "availableTo": 2023
+    },
+    {
+      "id": "gold_futures",
+      "name": {
+        "zh": "黄金期货",
+        "en": "Gold Futures"
+      },
+      "ticker": "GCF",
+      "category": "futures",
+      "icon": "gold",
+      "description": {
+        "zh": "COMEX黄金期货——对冲通胀的利器",
+        "en": "COMEX Gold Futures — the inflation hedge weapon"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1974,
+      "availableTo": 2023
+    },
+    {
+      "id": "bitcoin",
+      "name": {
+        "zh": "比特币",
+        "en": "Bitcoin"
+      },
+      "ticker": "BTC",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "中本聪的数字黄金实验",
+        "en": "Satoshi's digital gold experiment"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2009,
+      "availableTo": 2023
+    },
+    {
+      "id": "ethereum",
+      "name": {
+        "zh": "以太坊",
+        "en": "Ethereum"
+      },
+      "ticker": "ETH",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "去中心化世界计算机",
+        "en": "The decentralized world computer"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2015,
+      "availableTo": 2023
+    },
+    {
+      "id": "sp_options",
+      "name": {
+        "zh": "标普期权",
+        "en": "S&P 500 Options"
+      },
+      "ticker": "SPXO",
+      "category": "derivative",
+      "icon": "chart",
+      "description": {
+        "zh": "CBOE期权——华尔街的杠杆魔术",
+        "en": "CBOE Options — Wall Street's leverage magic"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1973,
+      "availableTo": 2023
+    },
+    {
+      "id": "cds",
+      "name": {
+        "zh": "信用违约互换",
+        "en": "Credit Default Swaps"
+      },
+      "ticker": "CDS",
+      "category": "derivative",
+      "icon": "shield",
+      "description": {
+        "zh": "2008金融危机的主角——大空头的武器",
+        "en": "Star of the 2008 crisis — The Big Short's weapon"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1994,
+      "availableTo": 2023
+    },
+    {
+      "id": "opium_trade",
+      "name": {
+        "zh": "鸦片贸易",
+        "en": "Opium Trade"
+      },
+      "ticker": "OPUM",
+      "category": "grey_market",
+      "icon": "skull",
+      "description": {
+        "zh": "大英帝国的毒品贸易——引发两次鸦片战争",
+        "en": "British Empire's drug trade — sparked two Opium Wars"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1750,
+      "availableTo": 1910
+    },
+    {
+      "id": "prohibition_spirits",
+      "name": {
+        "zh": "禁酒令烈酒",
+        "en": "Prohibition Spirits"
+      },
+      "ticker": "BOOT",
+      "category": "grey_market",
+      "icon": "bottle",
+      "description": {
+        "zh": "美国禁酒令时期的地下酒业",
+        "en": "Underground liquor trade during American Prohibition"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1920,
+      "availableTo": 1933
+    },
+    {
+      "id": "offshore_banking",
+      "name": {
+        "zh": "离岸银行业务",
+        "en": "Offshore Banking"
+      },
+      "ticker": "OFSH",
+      "category": "grey_market",
+      "icon": "bank",
+      "description": {
+        "zh": "瑞士银行与开曼群岛的避税天堂",
+        "en": "Swiss banks and Cayman Islands tax havens"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1960,
+      "availableTo": 2023
+    },
+    {
+      "id": "shadow_banking",
+      "name": {
+        "zh": "影子银行产品",
+        "en": "Shadow Banking Products"
+      },
+      "ticker": "SHAD",
+      "category": "grey_market",
+      "icon": "ghost",
+      "description": {
+        "zh": "MBS、CDO、结构化产品——监管灰色地带",
+        "en": "MBS, CDOs, structured products — the regulatory grey zone"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "platinum",
+      "name": {
+        "zh": "铂金",
+        "en": "Platinum"
+      },
+      "ticker": "PLAT",
+      "category": "precious_metal",
+      "icon": "ingot",
+      "description": {
+        "zh": "比黄金更稀有——曾被路易十六称为'唯一配得上国王的金属'",
+        "en": "Rarer than gold — Louis XVI called it 'the only metal worthy of a king'"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1750,
+      "availableTo": 2023
+    },
+    {
+      "id": "palladium",
+      "name": {
+        "zh": "钯金",
+        "en": "Palladium"
+      },
+      "ticker": "PALL",
+      "category": "precious_metal",
+      "icon": "ingot",
+      "description": {
+        "zh": "催化转化器的灵魂金属，2020年价格一度超越黄金",
+        "en": "The soul of catalytic converters — briefly surpassed gold in 2020"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1900,
+      "availableTo": 2023
+    },
+    {
+      "id": "tin",
+      "name": {
+        "zh": "锡",
+        "en": "Tin"
+      },
+      "ticker": "TIN",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "青铜时代的关键合金，腓尼基人不惜远航至不列颠求之",
+        "en": "Key to the Bronze Age — Phoenicians sailed to Britain for it"
+      },
+      "riskLevel": 2,
+      "availableFrom": -1500,
+      "availableTo": 2023
+    },
+    {
+      "id": "iron",
+      "name": {
+        "zh": "铁",
+        "en": "Iron"
+      },
+      "ticker": "IRON",
+      "category": "industrial_metal",
+      "icon": "anvil",
+      "description": {
+        "zh": "终结青铜时代的金属，赫梯人曾以此称霸近东",
+        "en": "The metal that ended the Bronze Age — the Hittites' secret weapon"
+      },
+      "riskLevel": 2,
+      "availableFrom": -1200,
+      "availableTo": 2023
+    },
+    {
+      "id": "zinc",
+      "name": {
+        "zh": "锌",
+        "en": "Zinc"
+      },
+      "ticker": "ZINC",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "镀锌钢铁的防腐守护者，工业化的无名英雄",
+        "en": "The unsung hero of galvanization — guardian against corrosion"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1800,
+      "availableTo": 2023
+    },
+    {
+      "id": "nickel",
+      "name": {
+        "zh": "镍",
+        "en": "Nickel"
+      },
+      "ticker": "NCKL",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "不锈钢与电池的核心原料，2022年伦镍事件震惊全球",
+        "en": "Heart of stainless steel and EV batteries — the 2022 LME nickel squeeze shocked markets"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1850,
+      "availableTo": 2023
+    },
+    {
+      "id": "aluminum",
+      "name": {
+        "zh": "铝",
+        "en": "Aluminum"
+      },
+      "ticker": "ALUM",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "拿破仑三世曾用铝餐具款待贵宾，比银器更贵重",
+        "en": "Napoleon III served guests with aluminum — once more precious than silver"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1886,
+      "availableTo": 2023
+    },
+    {
+      "id": "lead",
+      "name": {
+        "zh": "铅",
+        "en": "Lead"
+      },
+      "ticker": "LEAD",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "罗马帝国的水管金属——繁荣与衰亡的隐秘帮凶",
+        "en": "Rome's plumbing metal — a silent accomplice in the empire's rise and fall"
+      },
+      "riskLevel": 2,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "barley",
+      "name": {
+        "zh": "大麦",
+        "en": "Barley"
+      },
+      "ticker": "BRLY",
+      "category": "grain",
+      "icon": "grain",
+      "description": {
+        "zh": "苏美尔人用大麦支付工资，也用它酿造人类最早的啤酒",
+        "en": "Sumerians paid wages in barley — and brewed humanity's first beer with it"
+      },
+      "riskLevel": 2,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "corn",
+      "name": {
+        "zh": "玉米",
+        "en": "Corn (Maize)"
+      },
+      "ticker": "CORN",
+      "category": "grain",
+      "icon": "grain",
+      "description": {
+        "zh": "阿兹特克人的神圣谷物，哥伦布大交换改变了全球农业",
+        "en": "Sacred grain of the Aztecs — the Columbian Exchange reshaped world agriculture"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1500,
+      "availableTo": 2023
+    },
+    {
+      "id": "soybean",
+      "name": {
+        "zh": "大豆",
+        "en": "Soybeans"
+      },
+      "ticker": "SOYB",
+      "category": "grain",
+      "icon": "grain",
+      "description": {
+        "zh": "从东亚传统食材到全球最大的油料作物和饲料来源",
+        "en": "From East Asian staple to the world's largest oilseed — feeds billions"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1800,
+      "availableTo": 2023
+    },
+    {
+      "id": "coffee",
+      "name": {
+        "zh": "咖啡",
+        "en": "Coffee"
+      },
+      "ticker": "CAFE",
+      "category": "commodity",
+      "icon": "cup",
+      "description": {
+        "zh": "埃塞俄比亚的牧羊人发现了它，伦敦咖啡馆孕育了现代金融",
+        "en": "Ethiopian shepherds discovered it; London coffeehouses birthed modern finance"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1600,
+      "availableTo": 2023
+    },
+    {
+      "id": "sugar",
+      "name": {
+        "zh": "蔗糖",
+        "en": "Sugar"
+      },
+      "ticker": "SUGR",
+      "category": "commodity",
+      "icon": "cube",
+      "description": {
+        "zh": "甜蜜的代价——加勒比种植园驱动了大西洋奴隶贸易",
+        "en": "The sweet price — Caribbean plantations fueled the Atlantic slave trade"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1500,
+      "availableTo": 2023
+    },
+    {
+      "id": "cocoa",
+      "name": {
+        "zh": "可可",
+        "en": "Cocoa"
+      },
+      "ticker": "COCO",
+      "category": "commodity",
+      "icon": "bean",
+      "description": {
+        "zh": "玛雅人的'众神饮品'，可可豆曾是中美洲的货币",
+        "en": "The Maya's 'drink of the gods' — cocoa beans served as Mesoamerican currency"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1600,
+      "availableTo": 2023
+    },
+    {
+      "id": "tobacco",
+      "name": {
+        "zh": "烟草",
+        "en": "Tobacco"
+      },
+      "ticker": "TOBC",
+      "category": "commodity",
+      "icon": "leaf",
+      "description": {
+        "zh": "弗吉尼亚殖民地的'绿色黄金'——曾直接用作货币流通",
+        "en": "Virginia's 'green gold' — once circulated as legal tender in the colonies"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1600,
+      "availableTo": 2023
+    },
+    {
+      "id": "tea",
+      "name": {
+        "zh": "茶叶",
+        "en": "Tea"
+      },
+      "ticker": "TEA",
+      "category": "commodity",
+      "icon": "leaf",
+      "description": {
+        "zh": "波士顿倾茶事件引发美国独立，茶叶贸易重塑了世界格局",
+        "en": "The Boston Tea Party sparked a revolution — tea trade reshaped the world order"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1600,
+      "availableTo": 2023
+    },
+    {
+      "id": "timber",
+      "name": {
+        "zh": "木材",
+        "en": "Timber"
+      },
+      "ticker": "TMBR",
+      "category": "commodity",
+      "icon": "log",
+      "description": {
+        "zh": "从古埃及造船到现代建筑——人类最持久的战略资源",
+        "en": "From Egyptian shipbuilding to modern construction — humanity's most enduring resource"
+      },
+      "riskLevel": 2,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "wool",
+      "name": {
+        "zh": "羊毛",
+        "en": "Wool"
+      },
+      "ticker": "WOOL",
+      "category": "commodity",
+      "icon": "fleece",
+      "description": {
+        "zh": "中世纪英格兰的国家命脉——大法官至今坐在羊毛袋上",
+        "en": "Medieval England's lifeblood — the Lord Chancellor still sits on the Woolsack"
+      },
+      "riskLevel": 2,
+      "availableFrom": -1000,
+      "availableTo": 2023
+    },
+    {
+      "id": "jade",
+      "name": {
+        "zh": "翡翠",
+        "en": "Jade"
+      },
+      "ticker": "JADE",
+      "category": "luxury",
+      "icon": "gem",
+      "description": {
+        "zh": "中国帝王的神圣之石——良渚文化以来五千年的权力象征",
+        "en": "Sacred stone of Chinese emperors — a symbol of power for 5,000 years since Liangzhu"
+      },
+      "riskLevel": 3,
+      "availableFrom": -2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "diamonds",
+      "name": {
+        "zh": "钻石",
+        "en": "Diamonds"
+      },
+      "ticker": "DMND",
+      "category": "luxury",
+      "icon": "gem",
+      "description": {
+        "zh": "德比尔斯用'钻石恒久远'创造了人类最成功的营销骗局",
+        "en": "De Beers' 'A Diamond Is Forever' — history's most successful marketing campaign"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1870,
+      "availableTo": 2023
+    },
+    {
+      "id": "porcelain",
+      "name": {
+        "zh": "瓷器",
+        "en": "Porcelain (Chinese)"
+      },
+      "ticker": "PORC",
+      "category": "luxury",
+      "icon": "vase",
+      "description": {
+        "zh": "欧洲人称之为'白色黄金'——中国瓷器曾比同等重量的白银更贵",
+        "en": "Europeans called it 'white gold' — Chinese porcelain once outpriced silver by weight"
+      },
+      "riskLevel": 2,
+      "availableFrom": 600,
+      "availableTo": 2023
+    },
+    {
+      "id": "wine",
+      "name": {
+        "zh": "名酒",
+        "en": "Fine Wine"
+      },
+      "ticker": "WINE",
+      "category": "luxury",
+      "icon": "goblet",
+      "description": {
+        "zh": "1787年份拉菲曾拍出15万美元——随时间增值的液体资产",
+        "en": "A 1787 Lafite sold for $150k — the liquid asset that appreciates with age"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1700,
+      "availableTo": 2023
+    },
+    {
+      "id": "coal",
+      "name": {
+        "zh": "煤炭",
+        "en": "Coal"
+      },
+      "ticker": "COAL",
+      "category": "energy",
+      "icon": "rock",
+      "description": {
+        "zh": "点燃工业革命的黑色石头——蒸汽机改变了人类的命运",
+        "en": "The black rock that ignited the Industrial Revolution — steam power changed everything"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1750,
+      "availableTo": 2023
+    },
+    {
+      "id": "london_property",
+      "name": {
+        "zh": "伦敦房产",
+        "en": "London Property"
+      },
+      "ticker": "LNDN",
+      "category": "real_estate",
+      "icon": "building",
+      "description": {
+        "zh": "自1666年大火重建以来持续升值——全球富豪的避风港",
+        "en": "Appreciating since the 1666 Great Fire rebuild — the global elite's safe haven"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1700,
+      "availableTo": 2023
+    },
+    {
+      "id": "manhattan_property",
+      "name": {
+        "zh": "曼哈顿房产",
+        "en": "Manhattan Property"
+      },
+      "ticker": "MNHT",
+      "category": "real_estate",
+      "icon": "building",
+      "description": {
+        "zh": "1626年用24美元珠宝买下的小岛，如今每平米价值数万美元",
+        "en": "Bought for $24 in beads in 1626 — now worth tens of thousands per square meter"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1800,
+      "availableTo": 2023
+    },
+    {
+      "id": "tokyo_property",
+      "name": {
+        "zh": "东京房产",
+        "en": "Tokyo Property"
+      },
+      "ticker": "TKYO",
+      "category": "real_estate",
+      "icon": "building",
+      "description": {
+        "zh": "1989年泡沫顶峰时皇居地价超过整个加州——至今未回高点",
+        "en": "At 1989's peak, the Imperial Palace grounds outpriced all of California — still hasn't recovered"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1920,
+      "availableTo": 2023
+    },
+    {
+      "id": "ge",
+      "name": {
+        "zh": "通用电气",
+        "en": "General Electric"
+      },
+      "ticker": "GE",
+      "category": "equity",
+      "icon": "lightbulb",
+      "description": {
+        "zh": "爱迪生创立的电力帝国——曾是道琼斯指数存活最久的初始成分股",
+        "en": "Edison's electric empire — the longest-surviving original Dow Jones component"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1892,
+      "availableTo": 2023
+    },
+    {
+      "id": "ibm",
+      "name": {
+        "zh": "IBM",
+        "en": "IBM"
+      },
+      "ticker": "IBM",
+      "category": "equity",
+      "icon": "mainframe",
+      "description": {
+        "zh": "'无人因选择IBM而被解雇'——从打孔机到人工智能的百年蓝色巨人",
+        "en": "'Nobody ever got fired for buying IBM' — from punch cards to AI across a century"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1911,
+      "availableTo": 2023
+    },
+    {
+      "id": "microsoft",
+      "name": {
+        "zh": "微软",
+        "en": "Microsoft"
+      },
+      "ticker": "MSFT",
+      "category": "equity",
+      "icon": "window",
+      "description": {
+        "zh": "盖茨的软件帝国——Windows操作系统统治了个人电脑时代",
+        "en": "Gates' software empire — Windows dominated the PC era and Azure leads the cloud"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1986,
+      "availableTo": 2023
+    },
+    {
+      "id": "google",
+      "name": {
+        "zh": "谷歌",
+        "en": "Alphabet"
+      },
+      "ticker": "GOOG",
+      "category": "equity",
+      "icon": "search",
+      "description": {
+        "zh": "斯坦福车库诞生的搜索引擎，'google'已成为英语动词",
+        "en": "Born in a Stanford garage — 'to google' became a verb in the English language"
+      },
+      "riskLevel": 3,
+      "availableFrom": 2004,
+      "availableTo": 2023
+    },
+    {
+      "id": "amazon",
+      "name": {
+        "zh": "亚马逊",
+        "en": "Amazon"
+      },
+      "ticker": "AMZN",
+      "category": "equity",
+      "icon": "box",
+      "description": {
+        "zh": "从网上书店到万物商店——贝佐斯花了7年才首次盈利",
+        "en": "From online bookstore to the everything store — took Bezos 7 years to turn a profit"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1997,
+      "availableTo": 2023
+    },
+    {
+      "id": "coca_cola",
+      "name": {
+        "zh": "可口可乐",
+        "en": "Coca-Cola"
+      },
+      "ticker": "KO",
+      "category": "equity",
+      "icon": "bottle",
+      "description": {
+        "zh": "巴菲特的最爱持仓——每天全球消费19亿份可口可乐产品",
+        "en": "Buffett's favorite holding — 1.9 billion Coca-Cola servings consumed daily worldwide"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1919,
+      "availableTo": 2023
+    },
+    {
+      "id": "toyota",
+      "name": {
+        "zh": "丰田汽车",
+        "en": "Toyota Motor"
+      },
+      "ticker": "TM",
+      "category": "equity",
+      "icon": "car",
+      "description": {
+        "zh": "从织布机到全球最大车企——精益生产改变了制造业",
+        "en": "From looms to world's largest automaker — lean manufacturing changed industry forever"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1949,
+      "availableTo": 2023
+    },
+    {
+      "id": "samsung",
+      "name": {
+        "zh": "三星电子",
+        "en": "Samsung Electronics"
+      },
+      "ticker": "SMSN",
+      "category": "equity",
+      "icon": "chip",
+      "description": {
+        "zh": "韩国GDP的20%——从鱼干贸易商到全球半导体霸主",
+        "en": "20% of South Korea's GDP — from dried-fish trader to global semiconductor titan"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1975,
+      "availableTo": 2023
+    },
+    {
+      "id": "alibaba",
+      "name": {
+        "zh": "阿里巴巴",
+        "en": "Alibaba"
+      },
+      "ticker": "BABA",
+      "category": "equity",
+      "icon": "cloud",
+      "description": {
+        "zh": "马云的18人创业团队打造了全球最大电商帝国——2014年IPO创纪录",
+        "en": "Jack Ma's 18-person team built the world's largest e-commerce empire — record 2014 IPO"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2014,
+      "availableTo": 2023
+    },
+    {
+      "id": "berkshire_equity",
+      "name": {
+        "zh": "伯克希尔(股票)",
+        "en": "Berkshire Hathaway Stock"
+      },
+      "ticker": "BRKA",
+      "category": "equity",
+      "icon": "bank",
+      "description": {
+        "zh": "单股价格超50万美元——从濒死纺织厂到史上最贵股票",
+        "en": "Over $500k per share — from a dying textile mill to the most expensive stock ever"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1965,
+      "availableTo": 2023
+    },
+    {
+      "id": "jpmorgan",
+      "name": {
+        "zh": "摩根大通",
+        "en": "JPMorgan Chase"
+      },
+      "ticker": "JPM",
+      "category": "equity",
+      "icon": "bank",
+      "description": {
+        "zh": "J.P.摩根曾个人出手拯救1907年美国银行业危机",
+        "en": "J.P. Morgan personally bailed out the 1907 banking crisis before the Fed existed"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1871,
+      "availableTo": 2023
+    },
+    {
+      "id": "exxon",
+      "name": {
+        "zh": "埃克森美孚",
+        "en": "ExxonMobil"
+      },
+      "ticker": "XOM",
+      "category": "equity",
+      "icon": "barrel",
+      "description": {
+        "zh": "标准石油拆分后最大的继承者——曾长期占据全球市值第一",
+        "en": "Standard Oil's largest heir — once the world's most valuable company for decades"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1920,
+      "availableTo": 2023
+    },
+    {
+      "id": "ftse100",
+      "name": {
+        "zh": "富时100指数",
+        "en": "FTSE 100"
+      },
+      "ticker": "UKX",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "伦敦证券交易所百强——追溯大英帝国商业遗产",
+        "en": "London's top 100 — tracing the commercial legacy of the British Empire"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1984,
+      "availableTo": 2023
+    },
+    {
+      "id": "dax",
+      "name": {
+        "zh": "德国DAX指数",
+        "en": "DAX Index"
+      },
+      "ticker": "DAX",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "德国工业心脏的脉搏——含总回报的独特指数设计",
+        "en": "Pulse of German industry — uniquely designed as a total return index"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1988,
+      "availableTo": 2023
+    },
+    {
+      "id": "hang_seng",
+      "name": {
+        "zh": "恒生指数",
+        "en": "Hang Seng Index"
+      },
+      "ticker": "HSI",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "东方之珠的金融晴雨表——连接中国与全球资本的桥梁",
+        "en": "Barometer of the Pearl of the Orient — bridging Chinese and global capital"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1969,
+      "availableTo": 2023
+    },
+    {
+      "id": "nasdaq",
+      "name": {
+        "zh": "纳斯达克",
+        "en": "NASDAQ Composite"
+      },
+      "ticker": "IXIC",
+      "category": "equity_index",
+      "icon": "chart",
+      "description": {
+        "zh": "全球科技股的圣殿——2000年互联网泡沫中暴跌78%后浴火重生",
+        "en": "Temple of global tech stocks — crashed 78% in the 2000 dot-com bust, then rose from the ashes"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1971,
+      "availableTo": 2023
+    },
+    {
+      "id": "google_preipo",
+      "name": {
+        "zh": "谷歌(天使轮)",
+        "en": "Google Pre-IPO"
+      },
+      "ticker": "GOPR",
+      "category": "private_equity",
+      "icon": "search",
+      "description": {
+        "zh": "安迪·贝托尔斯海姆10万美元支票——在谷歌注册成立之前",
+        "en": "Andy Bechtolsheim's $100k check — written before Google was even incorporated"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1998,
+      "availableTo": 2004
+    },
+    {
+      "id": "facebook_preipo",
+      "name": {
+        "zh": "Facebook(天使轮)",
+        "en": "Facebook Pre-IPO"
+      },
+      "ticker": "FBPR",
+      "category": "private_equity",
+      "icon": "network",
+      "description": {
+        "zh": "彼得·蒂尔50万美元天使投资，IPO时价值超10亿美元",
+        "en": "Peter Thiel's $500k angel bet returned over $1 billion at IPO"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2004,
+      "availableTo": 2012
+    },
+    {
+      "id": "bytedance",
+      "name": {
+        "zh": "字节跳动(私募)",
+        "en": "ByteDance Private"
+      },
+      "ticker": "BYTE",
+      "category": "private_equity",
+      "icon": "video",
+      "description": {
+        "zh": "TikTok母公司——全球估值最高的未上市公司，算法改变了信息传播",
+        "en": "TikTok's parent — world's most valuable private company, its algorithm reshaped media"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2012,
+      "availableTo": 2023
+    },
+    {
+      "id": "renaissance",
+      "name": {
+        "zh": "文艺复兴科技",
+        "en": "Renaissance Technologies LP"
+      },
+      "ticker": "RNTC",
+      "category": "fund_lp",
+      "icon": "brain",
+      "description": {
+        "zh": "数学家西蒙斯的大奖章基金——年化回报66%，华尔街最神秘的印钞机",
+        "en": "Jim Simons' Medallion Fund — 66% annualized returns, Wall Street's most secretive money machine"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1982,
+      "availableTo": 2023
+    },
+    {
+      "id": "softbank_vision",
+      "name": {
+        "zh": "软银愿景基金",
+        "en": "SoftBank Vision Fund LP"
+      },
+      "ticker": "SBVF",
+      "category": "fund_lp",
+      "icon": "rocket",
+      "description": {
+        "zh": "孙正义1000亿美元的疯狂赌注——从WeWork到ARM的过山车",
+        "en": "Masa Son's $100B mega-bet — a roller coaster from WeWork to ARM"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "a16z",
+      "name": {
+        "zh": "a16z基金LP",
+        "en": "Andreessen Horowitz LP"
+      },
+      "ticker": "A16Z",
+      "category": "fund_lp",
+      "icon": "chip",
+      "description": {
+        "zh": "'软件正在吞噬世界'——硅谷最具影响力的风投之一",
+        "en": "'Software is eating the world' — one of Silicon Valley's most influential VCs"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2009,
+      "availableTo": 2023
+    },
+    {
+      "id": "chinese_gov_bond",
+      "name": {
+        "zh": "中国国债",
+        "en": "Chinese Government Bond"
+      },
+      "ticker": "CGB",
+      "category": "bond",
+      "icon": "scroll",
+      "description": {
+        "zh": "全球第二大债券市场——人民币国际化的基石",
+        "en": "World's second-largest bond market — cornerstone of RMB internationalization"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1950,
+      "availableTo": 2023
+    },
+    {
+      "id": "japanese_gov_bond",
+      "name": {
+        "zh": "日本国债",
+        "en": "JGB"
+      },
+      "ticker": "JGB",
+      "category": "bond",
+      "icon": "scroll",
+      "description": {
+        "zh": "做空日本国债被称为'寡妇交易'——几十年来空头全部惨败",
+        "en": "Shorting JGBs is called the 'widow-maker trade' — bears have lost for decades"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1870,
+      "availableTo": 2023
+    },
+    {
+      "id": "sp_futures",
+      "name": {
+        "zh": "标普期货",
+        "en": "S&P 500 Futures"
+      },
+      "ticker": "ESF",
+      "category": "futures",
+      "icon": "chart",
+      "description": {
+        "zh": "利奥·梅拉梅德的发明——让整个股市变成可交易的合约",
+        "en": "Leo Melamed's invention — turned the entire stock market into a tradeable contract"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1982,
+      "availableTo": 2023
+    },
+    {
+      "id": "copper_futures",
+      "name": {
+        "zh": "铜期货",
+        "en": "Copper Futures"
+      },
+      "ticker": "HGF",
+      "category": "futures",
+      "icon": "metal",
+      "description": {
+        "zh": "'铜博士'——因准确预测经济周期而得名的金属期货",
+        "en": "'Dr. Copper' — the metal futures named for their uncanny ability to predict the economy"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1933,
+      "availableTo": 2023
+    },
+    {
+      "id": "wheat_futures",
+      "name": {
+        "zh": "小麦期货",
+        "en": "Wheat Futures"
+      },
+      "ticker": "ZWF",
+      "category": "futures",
+      "icon": "grain",
+      "description": {
+        "zh": "芝加哥期货交易所的创始合约——从1877年标准化至今",
+        "en": "CBOT's founding contract — standardized since 1877 and still going strong"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1877,
+      "availableTo": 2023
+    },
+    {
+      "id": "nat_gas_futures",
+      "name": {
+        "zh": "天然气期货",
+        "en": "Natural Gas Futures"
+      },
+      "ticker": "NGF",
+      "category": "futures",
+      "icon": "flame",
+      "description": {
+        "zh": "波动率之王——单日涨跌幅超10%的'寡妇制造者'",
+        "en": "The king of volatility — a 'widow-maker' with 10%+ daily swings"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1990,
+      "availableTo": 2023
+    },
+    {
+      "id": "dogecoin",
+      "name": {
+        "zh": "狗狗币",
+        "en": "Dogecoin"
+      },
+      "ticker": "DOGE",
+      "category": "crypto",
+      "icon": "dog",
+      "description": {
+        "zh": "始于玩笑的迷因币——马斯克一条推文就能让它暴涨50%",
+        "en": "The meme coin born as a joke — one Elon tweet can pump it 50%"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2013,
+      "availableTo": 2023
+    },
+    {
+      "id": "solana",
+      "name": {
+        "zh": "Solana",
+        "en": "Solana"
+      },
+      "ticker": "SOL",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "高速区块链新贵——每秒处理数千笔交易，以太坊杀手候选人",
+        "en": "The high-speed blockchain challenger — thousands of TPS, an 'Ethereum killer' contender"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023
+    },
+    {
+      "id": "ripple",
+      "name": {
+        "zh": "瑞波币",
+        "en": "Ripple XRP"
+      },
+      "ticker": "XRP",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "银行间跨境支付的区块链方案——与SEC的世纪诉讼定义了加密监管",
+        "en": "Blockchain for bank cross-border payments — its SEC lawsuit defined crypto regulation"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2013,
+      "availableTo": 2023
+    },
+    {
+      "id": "bnb",
+      "name": {
+        "zh": "币安币",
+        "en": "BNB"
+      },
+      "ticker": "BNB",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "全球最大加密交易所的平台币——从ICO的0.1美元到数百美元",
+        "en": "Token of the world's largest crypto exchange — from $0.10 ICO to hundreds of dollars"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "vix",
+      "name": {
+        "zh": "VIX波动率指数",
+        "en": "VIX Index"
+      },
+      "ticker": "VIX",
+      "category": "derivative",
+      "icon": "pulse",
+      "description": {
+        "zh": "华尔街的'恐慌指数'——市场越恐慌，VIX越飙升",
+        "en": "Wall Street's 'fear gauge' — the more panic, the higher the VIX spikes"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1993,
+      "availableTo": 2023
+    },
+    {
+      "id": "interest_rate_swap",
+      "name": {
+        "zh": "利率互换",
+        "en": "Interest Rate Swaps"
+      },
+      "ticker": "IRS",
+      "category": "derivative",
+      "icon": "swap",
+      "description": {
+        "zh": "全球规模最大的衍生品市场——名义本金超400万亿美元",
+        "en": "The world's largest derivatives market — over $400 trillion in notional value"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1981,
+      "availableTo": 2023
+    },
+    {
+      "id": "silk_road_market",
+      "name": {
+        "zh": "丝绸之路暗网",
+        "en": "Silk Road Market"
+      },
+      "ticker": "SLKR",
+      "category": "grey_market",
+      "icon": "skull",
+      "description": {
+        "zh": "暗网第一市场——Ross Ulbricht的比特币帝国，FBI关闭时缴获14万BTC",
+        "en": "The first darknet marketplace — FBI seized 144k BTC when they shut down Ross Ulbricht's empire"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2011,
+      "availableTo": 2013,
+      "isBubble": true
+    },
+    {
+      "id": "war_profiteering",
+      "name": {
+        "zh": "战争暴利贸易",
+        "en": "War Profiteering"
+      },
+      "ticker": "WARP",
+      "category": "grey_market",
+      "icon": "cannon",
+      "description": {
+        "zh": "从军火商到战时黑市——每场战争都造就一批暴利者",
+        "en": "From arms dealers to wartime black markets — every war mints its profiteers"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1700,
+      "availableTo": 2023
+    },
+    {
+      "id": "colonial_slave_trade",
+      "name": {
+        "zh": "殖民奴隶贸易",
+        "en": "Colonial Slave Trade"
+      },
+      "ticker": "SLVT",
+      "category": "grey_market",
+      "icon": "chain",
+      "description": {
+        "zh": "大西洋三角贸易——人类历史上最黑暗的'资产类别'，1200万人被贩卖",
+        "en": "The Atlantic triangle trade — history's darkest 'asset class', 12 million souls trafficked"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1500,
+      "availableTo": 1865
+    },
+    {
+      "id": "rhodium",
+      "name": {
+        "zh": "铑",
+        "en": "Rhodium"
+      },
+      "ticker": "RHOD",
+      "category": "precious_metal",
+      "icon": "precious",
+      "description": {
+        "zh": "最稀有的贵金属，催化转换器关键材料",
+        "en": "Rarest precious metal, critical for catalytic converters"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1803,
+      "availableTo": 2023
+    },
+    {
+      "id": "lithium",
+      "name": {
+        "zh": "锂",
+        "en": "Lithium"
+      },
+      "ticker": "LITH",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "电池革命的核心金属",
+        "en": "Core metal of the battery revolution"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1817,
+      "availableTo": 2023
+    },
+    {
+      "id": "cobalt",
+      "name": {
+        "zh": "钴",
+        "en": "Cobalt"
+      },
+      "ticker": "CBLT",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "电池与航空合金的战略金属",
+        "en": "Strategic metal for batteries and aerospace alloys"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1735,
+      "availableTo": 2023
+    },
+    {
+      "id": "manganese",
+      "name": {
+        "zh": "锰",
+        "en": "Manganese"
+      },
+      "ticker": "MANG",
+      "category": "industrial_metal",
+      "icon": "metal",
+      "description": {
+        "zh": "炼钢不可或缺的合金元素",
+        "en": "Essential alloying element for steelmaking"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1774,
+      "availableTo": 2023
+    },
+    {
+      "id": "oats",
+      "name": {
+        "zh": "燕麦",
+        "en": "Oats"
+      },
+      "ticker": "OATS",
+      "category": "grain",
+      "icon": "grain",
+      "description": {
+        "zh": "北方主要谷物，饲料与食品",
+        "en": "Northern cereal grain for feed and food"
+      },
+      "riskLevel": 2,
+      "availableFrom": -3000,
+      "availableTo": 2023
+    },
+    {
+      "id": "soybean_oil",
+      "name": {
+        "zh": "豆油",
+        "en": "Soybean Oil"
+      },
+      "ticker": "SOYO",
+      "category": "grain",
+      "icon": "grain",
+      "description": {
+        "zh": "全球最大宗植物油",
+        "en": "World's most traded vegetable oil"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1900,
+      "availableTo": 2023
+    },
+    {
+      "id": "orange_juice",
+      "name": {
+        "zh": "橙汁",
+        "en": "Orange Juice"
+      },
+      "ticker": "OJ",
+      "category": "commodity",
+      "icon": "commodity",
+      "description": {
+        "zh": "浓缩橙汁期货标的",
+        "en": "Frozen concentrate orange juice futures"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1500,
+      "availableTo": 2023
+    },
+    {
+      "id": "lumber",
+      "name": {
+        "zh": "木材期货",
+        "en": "Lumber"
+      },
+      "ticker": "LMBR",
+      "category": "commodity",
+      "icon": "commodity",
+      "description": {
+        "zh": "随机长度木材期货，建筑业基石",
+        "en": "Random length lumber futures, construction staple"
+      },
+      "riskLevel": 3,
+      "availableFrom": -3000,
+      "availableTo": 2023
+    },
+    {
+      "id": "live_cattle",
+      "name": {
+        "zh": "活牛",
+        "en": "Live Cattle"
+      },
+      "ticker": "CATL",
+      "category": "commodity",
+      "icon": "commodity",
+      "description": {
+        "zh": "芝加哥商品交易所活牛期货",
+        "en": "CME live cattle futures"
+      },
+      "riskLevel": 2,
+      "availableFrom": -8000,
+      "availableTo": 2023
+    },
+    {
+      "id": "lean_hogs",
+      "name": {
+        "zh": "瘦猪肉",
+        "en": "Lean Hogs"
+      },
+      "ticker": "HOGS",
+      "category": "commodity",
+      "icon": "commodity",
+      "description": {
+        "zh": "芝加哥商品交易所瘦猪期货",
+        "en": "CME lean hog futures"
+      },
+      "riskLevel": 3,
+      "availableFrom": -7000,
+      "availableTo": 2023
+    },
+    {
+      "id": "palm_oil",
+      "name": {
+        "zh": "棕榈油",
+        "en": "Palm Oil"
+      },
+      "ticker": "PLMO",
+      "category": "commodity",
+      "icon": "commodity",
+      "description": {
+        "zh": "全球产量最大的植物油",
+        "en": "World's most produced vegetable oil"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1800,
+      "availableTo": 2023
+    },
+    {
+      "id": "soybean_meal",
+      "name": {
+        "zh": "豆粕",
+        "en": "Soybean Meal"
+      },
+      "ticker": "SOYM",
+      "category": "commodity",
+      "icon": "commodity",
+      "description": {
+        "zh": "全球最重要的蛋白饲料原料",
+        "en": "World's most important protein feed ingredient"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1900,
+      "availableTo": 2023
+    },
+    {
+      "id": "feeder_cattle",
+      "name": {
+        "zh": "育肥牛",
+        "en": "Feeder Cattle"
+      },
+      "ticker": "FCATL",
+      "category": "commodity",
+      "icon": "commodity",
+      "description": {
+        "zh": "用于育肥的小牛期货",
+        "en": "Young cattle for fattening, CME futures"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1971,
+      "availableTo": 2023
+    },
+    {
+      "id": "brent_crude",
+      "name": {
+        "zh": "布伦特原油",
+        "en": "Brent Crude Oil"
+      },
+      "ticker": "BRNT",
+      "category": "energy",
+      "icon": "energy",
+      "description": {
+        "zh": "国际原油定价基准",
+        "en": "International crude oil pricing benchmark"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1970,
+      "availableTo": 2023
+    },
+    {
+      "id": "heating_oil",
+      "name": {
+        "zh": "取暖油",
+        "en": "Heating Oil"
+      },
+      "ticker": "HEAT",
+      "category": "energy",
+      "icon": "energy",
+      "description": {
+        "zh": "冬季取暖与柴油基础",
+        "en": "Winter heating fuel and diesel base"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1880,
+      "availableTo": 2023
+    },
+    {
+      "id": "gasoline",
+      "name": {
+        "zh": "汽油",
+        "en": "RBOB Gasoline"
+      },
+      "ticker": "GSLN",
+      "category": "energy",
+      "icon": "energy",
+      "description": {
+        "zh": "NYMEX无铅汽油期货",
+        "en": "NYMEX reformulated gasoline blendstock"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1900,
+      "availableTo": 2023
+    },
+    {
+      "id": "propane",
+      "name": {
+        "zh": "丙烷",
+        "en": "Propane"
+      },
+      "ticker": "PROP",
+      "category": "energy",
+      "icon": "energy",
+      "description": {
+        "zh": "液化石油气，家用与工业能源",
+        "en": "LPG fuel for residential and industrial use"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1910,
+      "availableTo": 2023
+    },
+    {
+      "id": "ethanol",
+      "name": {
+        "zh": "乙醇",
+        "en": "Ethanol"
+      },
+      "ticker": "ETHN",
+      "category": "energy",
+      "icon": "energy",
+      "description": {
+        "zh": "生物燃料与可再生能源",
+        "en": "Biofuel and renewable energy"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1906,
+      "availableTo": 2023
+    },
+    {
+      "id": "fine_art",
+      "name": {
+        "zh": "艺术品",
+        "en": "Fine Art"
+      },
+      "ticker": "ART",
+      "category": "luxury",
+      "icon": "luxury",
+      "description": {
+        "zh": "名家绘画与雕塑收藏",
+        "en": "Master paintings and sculpture collectibles"
+      },
+      "riskLevel": 3,
+      "availableFrom": -500,
+      "availableTo": 2023
+    },
+    {
+      "id": "luxury_watches",
+      "name": {
+        "zh": "奢侈腕表",
+        "en": "Luxury Watches"
+      },
+      "ticker": "WTCH",
+      "category": "luxury",
+      "icon": "luxury",
+      "description": {
+        "zh": "百达翡丽、劳力士等顶级腕表",
+        "en": "Patek Philippe, Rolex and other top timepieces"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1839,
+      "availableTo": 2023
+    },
+    {
+      "id": "rare_whisky",
+      "name": {
+        "zh": "稀有威士忌",
+        "en": "Rare Whisky"
+      },
+      "ticker": "WSKY",
+      "category": "luxury",
+      "icon": "luxury",
+      "description": {
+        "zh": "年份威士忌收藏投资",
+        "en": "Vintage whisky collectible investment"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1494,
+      "availableTo": 2023
+    },
+    {
+      "id": "hongkong_property",
+      "name": {
+        "zh": "香港房产",
+        "en": "Hong Kong Property"
+      },
+      "ticker": "HKRE",
+      "category": "real_estate",
+      "icon": "real_estate",
+      "description": {
+        "zh": "全球最贵房产市场之一",
+        "en": "One of the world's most expensive property markets"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1841,
+      "availableTo": 2023
+    },
+    {
+      "id": "shanghai_property",
+      "name": {
+        "zh": "上海房产",
+        "en": "Shanghai Property"
+      },
+      "ticker": "SHRE",
+      "category": "real_estate",
+      "icon": "real_estate",
+      "description": {
+        "zh": "中国最大城市核心地产",
+        "en": "China's largest city core property"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1843,
+      "availableTo": 2023
+    },
+    {
+      "id": "singapore_property",
+      "name": {
+        "zh": "新加坡房产",
+        "en": "Singapore Property"
+      },
+      "ticker": "SGRE",
+      "category": "real_estate",
+      "icon": "real_estate",
+      "description": {
+        "zh": "东南亚金融中心地产",
+        "en": "Southeast Asian financial hub property"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1965,
+      "availableTo": 2023
+    },
+    {
+      "id": "sydney_property",
+      "name": {
+        "zh": "悉尼房产",
+        "en": "Sydney Property"
+      },
+      "ticker": "SYRE",
+      "category": "real_estate",
+      "icon": "real_estate",
+      "description": {
+        "zh": "澳大利亚最大城市房产",
+        "en": "Australia's largest city property market"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1788,
+      "availableTo": 2023
+    },
+    {
+      "id": "meta",
+      "name": {
+        "zh": "Meta Platforms",
+        "en": "Meta Platforms"
+      },
+      "ticker": "META",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球社交媒体巨头（前Facebook）",
+        "en": "Global social media giant (formerly Facebook)"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2012,
+      "availableTo": 2023
+    },
+    {
+      "id": "amd",
+      "name": {
+        "zh": "超威半导体",
+        "en": "AMD"
+      },
+      "ticker": "AMD",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "先进微处理器与GPU制造商",
+        "en": "Advanced microprocessor and GPU manufacturer"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1969,
+      "availableTo": 2023
+    },
+    {
+      "id": "intel",
+      "name": {
+        "zh": "英特尔",
+        "en": "Intel"
+      },
+      "ticker": "INTC",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球半导体巨头，x86架构缔造者",
+        "en": "Global semiconductor giant, creator of x86 architecture"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1971,
+      "availableTo": 2023
+    },
+    {
+      "id": "tsmc",
+      "name": {
+        "zh": "台积电",
+        "en": "TSMC"
+      },
+      "ticker": "TSM",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大芯片代工厂",
+        "en": "World's largest semiconductor foundry"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1994,
+      "availableTo": 2023
+    },
+    {
+      "id": "broadcom",
+      "name": {
+        "zh": "博通",
+        "en": "Broadcom"
+      },
+      "ticker": "AVGO",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "半导体与基础设施软件巨头",
+        "en": "Semiconductor and infrastructure software giant"
+      },
+      "riskLevel": 3,
+      "availableFrom": 2009,
+      "availableTo": 2023
+    },
+    {
+      "id": "qualcomm",
+      "name": {
+        "zh": "高通",
+        "en": "Qualcomm"
+      },
+      "ticker": "QCOM",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "移动通信芯片与5G领导者",
+        "en": "Mobile communications chip and 5G leader"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1991,
+      "availableTo": 2023
+    },
+    {
+      "id": "micron",
+      "name": {
+        "zh": "美光科技",
+        "en": "Micron Technology"
+      },
+      "ticker": "MU",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球领先的存储芯片制造商",
+        "en": "Global leading memory chip manufacturer"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1984,
+      "availableTo": 2023
+    },
+    {
+      "id": "arm_holdings",
+      "name": {
+        "zh": "ARM控股",
+        "en": "ARM Holdings"
+      },
+      "ticker": "ARM",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球移动芯片架构设计公司",
+        "en": "Global mobile chip architecture designer"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2023,
+      "availableTo": 2023
+    },
+    {
+      "id": "eli_lilly",
+      "name": {
+        "zh": "礼来制药",
+        "en": "Eli Lilly"
+      },
+      "ticker": "LLY",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球顶级制药公司，GLP-1药物领导者",
+        "en": "Top global pharma, GLP-1 drug leader"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1952,
+      "availableTo": 2023
+    },
+    {
+      "id": "jnj",
+      "name": {
+        "zh": "强生",
+        "en": "Johnson & Johnson"
+      },
+      "ticker": "JNJ",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球医疗健康多元化巨头",
+        "en": "Global diversified healthcare giant"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1944,
+      "availableTo": 2023
+    },
+    {
+      "id": "unitedhealth",
+      "name": {
+        "zh": "联合健康",
+        "en": "UnitedHealth"
+      },
+      "ticker": "UNH",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "美国最大医疗保险公司",
+        "en": "Largest US health insurance company"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1984,
+      "availableTo": 2023
+    },
+    {
+      "id": "pfizer",
+      "name": {
+        "zh": "辉瑞",
+        "en": "Pfizer"
+      },
+      "ticker": "PFE",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大制药公司之一",
+        "en": "One of the world's largest pharmaceutical companies"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1944,
+      "availableTo": 2023
+    },
+    {
+      "id": "abbvie",
+      "name": {
+        "zh": "艾伯维",
+        "en": "AbbVie"
+      },
+      "ticker": "ABBV",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "生物制药巨头，修美乐制造商",
+        "en": "Biopharmaceutical giant, maker of Humira"
+      },
+      "riskLevel": 3,
+      "availableFrom": 2013,
+      "availableTo": 2023
+    },
+    {
+      "id": "merck",
+      "name": {
+        "zh": "默沙东",
+        "en": "Merck & Co."
+      },
+      "ticker": "MRK",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球顶级制药与疫苗公司",
+        "en": "Top global pharmaceutical and vaccine company"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1946,
+      "availableTo": 2023
+    },
+    {
+      "id": "novo_nordisk",
+      "name": {
+        "zh": "诺和诺德",
+        "en": "Novo Nordisk"
+      },
+      "ticker": "NVO",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球糖尿病与肥胖治疗领导者",
+        "en": "Global leader in diabetes and obesity treatment"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1981,
+      "availableTo": 2023
+    },
+    {
+      "id": "walmart",
+      "name": {
+        "zh": "沃尔玛",
+        "en": "Walmart"
+      },
+      "ticker": "WMT",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大零售商",
+        "en": "World's largest retailer"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1972,
+      "availableTo": 2023
+    },
+    {
+      "id": "costco",
+      "name": {
+        "zh": "好市多",
+        "en": "Costco"
+      },
+      "ticker": "COST",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "会员制仓储零售巨头",
+        "en": "Membership warehouse retail giant"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1985,
+      "availableTo": 2023
+    },
+    {
+      "id": "home_depot",
+      "name": {
+        "zh": "家得宝",
+        "en": "Home Depot"
+      },
+      "ticker": "HD",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大家居建材零售商",
+        "en": "World's largest home improvement retailer"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1981,
+      "availableTo": 2023
+    },
+    {
+      "id": "nike",
+      "name": {
+        "zh": "耐克",
+        "en": "Nike"
+      },
+      "ticker": "NKE",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大运动品牌",
+        "en": "World's largest sports brand"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1980,
+      "availableTo": 2023
+    },
+    {
+      "id": "mcdonalds",
+      "name": {
+        "zh": "麦当劳",
+        "en": "McDonald's"
+      },
+      "ticker": "MCD",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大连锁快餐企业",
+        "en": "World's largest fast-food chain"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1965,
+      "availableTo": 2023
+    },
+    {
+      "id": "visa",
+      "name": {
+        "zh": "Visa",
+        "en": "Visa"
+      },
+      "ticker": "V",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大电子支付网络",
+        "en": "World's largest electronic payment network"
+      },
+      "riskLevel": 2,
+      "availableFrom": 2008,
+      "availableTo": 2023
+    },
+    {
+      "id": "mastercard",
+      "name": {
+        "zh": "万事达卡",
+        "en": "Mastercard"
+      },
+      "ticker": "MA",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球第二大支付网络",
+        "en": "World's second largest payment network"
+      },
+      "riskLevel": 2,
+      "availableFrom": 2006,
+      "availableTo": 2023
+    },
+    {
+      "id": "disney",
+      "name": {
+        "zh": "迪士尼",
+        "en": "Disney"
+      },
+      "ticker": "DIS",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球娱乐帝国",
+        "en": "Global entertainment empire"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1957,
+      "availableTo": 2023
+    },
+    {
+      "id": "netflix",
+      "name": {
+        "zh": "奈飞",
+        "en": "Netflix"
+      },
+      "ticker": "NFLX",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球流媒体先驱",
+        "en": "Global streaming pioneer"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2002,
+      "availableTo": 2023
+    },
+    {
+      "id": "boeing",
+      "name": {
+        "zh": "波音",
+        "en": "Boeing"
+      },
+      "ticker": "BA",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大航空航天制造商",
+        "en": "World's largest aerospace manufacturer"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1934,
+      "availableTo": 2023
+    },
+    {
+      "id": "caterpillar",
+      "name": {
+        "zh": "卡特彼勒",
+        "en": "Caterpillar"
+      },
+      "ticker": "CAT",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大工程机械制造商",
+        "en": "World's largest construction equipment manufacturer"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1929,
+      "availableTo": 2023
+    },
+    {
+      "id": "procter_gamble",
+      "name": {
+        "zh": "宝洁",
+        "en": "Procter & Gamble"
+      },
+      "ticker": "PG",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大日用消费品公司",
+        "en": "World's largest consumer goods company"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1890,
+      "availableTo": 2023
+    },
+    {
+      "id": "salesforce",
+      "name": {
+        "zh": "Salesforce",
+        "en": "Salesforce"
+      },
+      "ticker": "CRM",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大CRM与企业云平台",
+        "en": "World's largest CRM and enterprise cloud platform"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2004,
+      "availableTo": 2023
+    },
+    {
+      "id": "adobe",
+      "name": {
+        "zh": "Adobe",
+        "en": "Adobe"
+      },
+      "ticker": "ADBE",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "创意与文档软件巨头",
+        "en": "Creative and document software giant"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1986,
+      "availableTo": 2023
+    },
+    {
+      "id": "oracle",
+      "name": {
+        "zh": "甲骨文",
+        "en": "Oracle"
+      },
+      "ticker": "ORCL",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "企业数据库与云计算巨头",
+        "en": "Enterprise database and cloud computing giant"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1986,
+      "availableTo": 2023
+    },
+    {
+      "id": "tencent",
+      "name": {
+        "zh": "腾讯控股",
+        "en": "Tencent"
+      },
+      "ticker": "0700",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "中国最大社交与游戏平台",
+        "en": "China's largest social and gaming platform"
+      },
+      "riskLevel": 3,
+      "availableFrom": 2004,
+      "availableTo": 2023
+    },
+    {
+      "id": "asml",
+      "name": {
+        "zh": "阿斯麦",
+        "en": "ASML"
+      },
+      "ticker": "ASML",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "EUV光刻机垄断供应商",
+        "en": "Monopoly supplier of EUV lithography machines"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1995,
+      "availableTo": 2023
+    },
+    {
+      "id": "lvmh",
+      "name": {
+        "zh": "路威酩轩",
+        "en": "LVMH"
+      },
+      "ticker": "LVMH",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大奢侈品集团",
+        "en": "World's largest luxury goods conglomerate"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1987,
+      "availableTo": 2023
+    },
+    {
+      "id": "nestle",
+      "name": {
+        "zh": "雀巢",
+        "en": "Nestlé"
+      },
+      "ticker": "NESN",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大食品饮料公司",
+        "en": "World's largest food and beverage company"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1905,
+      "availableTo": 2023
+    },
+    {
+      "id": "shell",
+      "name": {
+        "zh": "壳牌",
+        "en": "Shell"
+      },
+      "ticker": "SHEL",
+      "category": "equity",
+      "icon": "stock",
+      "description": {
+        "zh": "全球最大能源公司之一",
+        "en": "One of the world's largest energy companies"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1907,
+      "availableTo": 2023
+    },
+    {
+      "id": "russell2000",
+      "name": {
+        "zh": "罗素2000",
+        "en": "Russell 2000"
+      },
+      "ticker": "RUT",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "美国小盘股基准指数",
+        "en": "US small-cap benchmark index"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1984,
+      "availableTo": 2023
+    },
+    {
+      "id": "cac40",
+      "name": {
+        "zh": "法国CAC 40",
+        "en": "CAC 40"
+      },
+      "ticker": "CAC",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "法国40大上市公司指数",
+        "en": "France's top 40 listed companies index"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1987,
+      "availableTo": 2023
+    },
+    {
+      "id": "kospi",
+      "name": {
+        "zh": "韩国KOSPI",
+        "en": "KOSPI"
+      },
+      "ticker": "KSPI",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "韩国综合股价指数",
+        "en": "Korea Composite Stock Price Index"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1983,
+      "availableTo": 2023
+    },
+    {
+      "id": "bse_sensex",
+      "name": {
+        "zh": "印度SENSEX",
+        "en": "BSE Sensex"
+      },
+      "ticker": "SNSX",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "印度孟买证券交易所30股指数",
+        "en": "Bombay Stock Exchange 30-stock index"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1986,
+      "availableTo": 2023
+    },
+    {
+      "id": "ibovespa",
+      "name": {
+        "zh": "巴西IBOVESPA",
+        "en": "IBOVESPA"
+      },
+      "ticker": "BVSP",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "巴西圣保罗证券交易所指数",
+        "en": "São Paulo Stock Exchange index"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1968,
+      "availableTo": 2023
+    },
+    {
+      "id": "asx200",
+      "name": {
+        "zh": "澳洲ASX 200",
+        "en": "S&P/ASX 200"
+      },
+      "ticker": "ASX2",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "澳大利亚200大上市公司指数",
+        "en": "Australia's top 200 listed companies index"
+      },
+      "riskLevel": 2,
+      "availableFrom": 2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "stoxx600",
+      "name": {
+        "zh": "欧洲STOXX 600",
+        "en": "STOXX Europe 600"
+      },
+      "ticker": "SX6E",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "泛欧洲600家公司指数",
+        "en": "Pan-European 600 companies index"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1998,
+      "availableTo": 2023
+    },
+    {
+      "id": "moex",
+      "name": {
+        "zh": "俄罗斯MOEX",
+        "en": "MOEX Russia"
+      },
+      "ticker": "MOEX",
+      "category": "equity_index",
+      "icon": "index",
+      "description": {
+        "zh": "莫斯科交易所综合指数",
+        "en": "Moscow Exchange composite index"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1997,
+      "availableTo": 2023
+    },
+    {
+      "id": "spy_etf",
+      "name": {
+        "zh": "SPDR标普500 ETF",
+        "en": "SPDR S&P 500 ETF Trust"
+      },
+      "ticker": "SPY",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "全球交易量最大的ETF，追踪标普500",
+        "en": "World's most traded ETF, tracks S&P 500"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1993,
+      "availableTo": 2023
+    },
+    {
+      "id": "qqq_etf",
+      "name": {
+        "zh": "纳斯达克100 ETF",
+        "en": "Invesco QQQ Trust"
+      },
+      "ticker": "QQQ",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪纳斯达克100指数的科技ETF",
+        "en": "Tech ETF tracking Nasdaq 100"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1999,
+      "availableTo": 2023
+    },
+    {
+      "id": "iwm_etf",
+      "name": {
+        "zh": "罗素2000 ETF",
+        "en": "iShares Russell 2000 ETF"
+      },
+      "ticker": "IWM",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪美国小盘股指数",
+        "en": "Tracks US small-cap stocks index"
+      },
+      "riskLevel": 3,
+      "availableFrom": 2000,
+      "availableTo": 2023
+    },
+    {
+      "id": "gld_etf",
+      "name": {
+        "zh": "SPDR黄金ETF",
+        "en": "SPDR Gold Shares"
+      },
+      "ticker": "GLD",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "全球最大黄金ETF",
+        "en": "World's largest gold ETF"
+      },
+      "riskLevel": 2,
+      "availableFrom": 2004,
+      "availableTo": 2023
+    },
+    {
+      "id": "tlt_etf",
+      "name": {
+        "zh": "20年+美债ETF",
+        "en": "iShares 20+ Year Treasury Bond"
+      },
+      "ticker": "TLT",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪长期美国国债",
+        "en": "Tracks long-term US Treasury bonds"
+      },
+      "riskLevel": 2,
+      "availableFrom": 2002,
+      "availableTo": 2023
+    },
+    {
+      "id": "eem_etf",
+      "name": {
+        "zh": "新兴市场ETF",
+        "en": "iShares MSCI Emerging Markets"
+      },
+      "ticker": "EEM",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪新兴市场股票指数",
+        "en": "Tracks emerging markets equity index"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2003,
+      "availableTo": 2023
+    },
+    {
+      "id": "vti_etf",
+      "name": {
+        "zh": "全美股票ETF",
+        "en": "Vanguard Total Stock Market"
+      },
+      "ticker": "VTI",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "覆盖全美股票市场的ETF",
+        "en": "ETF covering the entire US stock market"
+      },
+      "riskLevel": 2,
+      "availableFrom": 2001,
+      "availableTo": 2023
+    },
+    {
+      "id": "uso_etf",
+      "name": {
+        "zh": "美国石油ETF",
+        "en": "United States Oil Fund"
+      },
+      "ticker": "USO",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪WTI原油期货的ETF",
+        "en": "ETF tracking WTI crude oil futures"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2006,
+      "availableTo": 2023
+    },
+    {
+      "id": "slv_etf",
+      "name": {
+        "zh": "iShares白银ETF",
+        "en": "iShares Silver Trust"
+      },
+      "ticker": "SLV",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪白银现货价格的ETF",
+        "en": "ETF tracking silver spot price"
+      },
+      "riskLevel": 3,
+      "availableFrom": 2006,
+      "availableTo": 2023
+    },
+    {
+      "id": "hyg_etf",
+      "name": {
+        "zh": "高收益债ETF",
+        "en": "iShares High Yield Corporate Bond"
+      },
+      "ticker": "HYG",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪高收益（垃圾）公司债",
+        "en": "Tracks high-yield (junk) corporate bonds"
+      },
+      "riskLevel": 3,
+      "availableFrom": 2007,
+      "availableTo": 2023
+    },
+    {
+      "id": "lqd_etf",
+      "name": {
+        "zh": "投资级债ETF",
+        "en": "iShares Investment Grade Corp Bond"
+      },
+      "ticker": "LQD",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪投资级公司债",
+        "en": "Tracks investment-grade corporate bonds"
+      },
+      "riskLevel": 2,
+      "availableFrom": 2002,
+      "availableTo": 2023
+    },
+    {
+      "id": "tqqq_etf",
+      "name": {
+        "zh": "三倍做多纳指ETF",
+        "en": "ProShares UltraPro QQQ"
+      },
+      "ticker": "TQQQ",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "3倍杠杆追踪纳斯达克100",
+        "en": "3x leveraged Nasdaq 100 tracker"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2010,
+      "availableTo": 2023
+    },
+    {
+      "id": "xlf_etf",
+      "name": {
+        "zh": "金融行业ETF",
+        "en": "Financial Select Sector SPDR"
+      },
+      "ticker": "XLF",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪标普500金融板块",
+        "en": "Tracks S&P 500 financial sector"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1998,
+      "availableTo": 2023
+    },
+    {
+      "id": "xlk_etf",
+      "name": {
+        "zh": "科技行业ETF",
+        "en": "Technology Select Sector SPDR"
+      },
+      "ticker": "XLK",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪标普500科技板块",
+        "en": "Tracks S&P 500 technology sector"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1998,
+      "availableTo": 2023
+    },
+    {
+      "id": "xle_etf",
+      "name": {
+        "zh": "能源行业ETF",
+        "en": "Energy Select Sector SPDR"
+      },
+      "ticker": "XLE",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "追踪标普500能源板块",
+        "en": "Tracks S&P 500 energy sector"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1998,
+      "availableTo": 2023
+    },
+    {
+      "id": "bito_etf",
+      "name": {
+        "zh": "比特币策略ETF",
+        "en": "ProShares Bitcoin ETF"
+      },
+      "ticker": "BITO",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "首个美国比特币期货ETF",
+        "en": "First US Bitcoin futures ETF"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2021,
+      "availableTo": 2023
+    },
+    {
+      "id": "soxl_etf",
+      "name": {
+        "zh": "三倍做多半导体ETF",
+        "en": "Direxion Daily Semiconductor Bull 3X"
+      },
+      "ticker": "SOXL",
+      "category": "etf",
+      "icon": "etf",
+      "description": {
+        "zh": "3倍杠杆追踪费城半导体指数",
+        "en": "3x leveraged Philadelphia Semiconductor tracker"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2010,
+      "availableTo": 2023
+    },
+    {
+      "id": "cardano",
+      "name": {
+        "zh": "卡尔达诺",
+        "en": "Cardano"
+      },
+      "ticker": "ADA",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "第三代区块链智能合约平台",
+        "en": "Third-generation blockchain smart contract platform"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "chainlink",
+      "name": {
+        "zh": "Chainlink",
+        "en": "Chainlink"
+      },
+      "ticker": "LINK",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "去中心化预言机网络",
+        "en": "Decentralized oracle network"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "litecoin",
+      "name": {
+        "zh": "莱特币",
+        "en": "Litecoin"
+      },
+      "ticker": "LTC",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "比特币的\"数字白银\"",
+        "en": "Bitcoin's \"digital silver\""
+      },
+      "riskLevel": 4,
+      "availableFrom": 2011,
+      "availableTo": 2023
+    },
+    {
+      "id": "bitcoin_cash",
+      "name": {
+        "zh": "比特币现金",
+        "en": "Bitcoin Cash"
+      },
+      "ticker": "BCH",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "比特币硬分叉，大区块链",
+        "en": "Bitcoin hard fork with larger blocks"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "polkadot",
+      "name": {
+        "zh": "波卡",
+        "en": "Polkadot"
+      },
+      "ticker": "DOT",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "跨链互操作协议",
+        "en": "Cross-chain interoperability protocol"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023
+    },
+    {
+      "id": "avalanche",
+      "name": {
+        "zh": "雪崩",
+        "en": "Avalanche"
+      },
+      "ticker": "AVAX",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "高性能智能合约平台",
+        "en": "High-performance smart contract platform"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023
+    },
+    {
+      "id": "polygon",
+      "name": {
+        "zh": "Polygon",
+        "en": "Polygon"
+      },
+      "ticker": "MATIC",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "以太坊Layer 2扩展方案",
+        "en": "Ethereum Layer 2 scaling solution"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2019,
+      "availableTo": 2023
+    },
+    {
+      "id": "shiba_inu",
+      "name": {
+        "zh": "柴犬币",
+        "en": "Shiba Inu"
+      },
+      "ticker": "SHIB",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "Meme代币，社区驱动",
+        "en": "Meme token, community-driven"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023
+    },
+    {
+      "id": "uniswap",
+      "name": {
+        "zh": "Uniswap",
+        "en": "Uniswap"
+      },
+      "ticker": "UNI",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "最大去中心化交易所协议",
+        "en": "Largest decentralized exchange protocol"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023
+    },
+    {
+      "id": "tron",
+      "name": {
+        "zh": "波场",
+        "en": "TRON"
+      },
+      "ticker": "TRX",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "去中心化内容分发协议",
+        "en": "Decentralized content distribution protocol"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "monero",
+      "name": {
+        "zh": "门罗币",
+        "en": "Monero"
+      },
+      "ticker": "XMR",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "专注隐私的加密货币",
+        "en": "Privacy-focused cryptocurrency"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2014,
+      "availableTo": 2023
+    },
+    {
+      "id": "tether",
+      "name": {
+        "zh": "泰达币",
+        "en": "Tether"
+      },
+      "ticker": "USDT",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "最大的美元稳定币",
+        "en": "Largest USD stablecoin"
+      },
+      "riskLevel": 1,
+      "availableFrom": 2015,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdc",
+      "name": {
+        "zh": "USD Coin",
+        "en": "USD Coin"
+      },
+      "ticker": "USDC",
+      "category": "crypto",
+      "icon": "crypto",
+      "description": {
+        "zh": "受监管的美元稳定币",
+        "en": "Regulated USD stablecoin"
+      },
+      "riskLevel": 1,
+      "availableFrom": 2018,
+      "availableTo": 2023
+    },
+    {
+      "id": "eurusd",
+      "name": {
+        "zh": "欧元/美元",
+        "en": "EUR/USD"
+      },
+      "ticker": "EURUSD",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "全球交易量最大的货币对",
+        "en": "World's most traded currency pair"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1999,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdjpy",
+      "name": {
+        "zh": "美元/日元",
+        "en": "USD/JPY"
+      },
+      "ticker": "USDJPY",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "美日货币对，避险指标",
+        "en": "USD/JPY pair, safe-haven indicator"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1971,
+      "availableTo": 2023
+    },
+    {
+      "id": "gbpusd",
+      "name": {
+        "zh": "英镑/美元",
+        "en": "GBP/USD"
+      },
+      "ticker": "GBPUSD",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "英美货币对，\"电缆\"",
+        "en": "GBP/USD pair, \"Cable\""
+      },
+      "riskLevel": 2,
+      "availableFrom": 1971,
+      "availableTo": 2023
+    },
+    {
+      "id": "audusd",
+      "name": {
+        "zh": "澳元/美元",
+        "en": "AUD/USD"
+      },
+      "ticker": "AUDUSD",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "商品货币，与大宗商品高度相关",
+        "en": "Commodity currency, highly correlated with raw materials"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1983,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdcny",
+      "name": {
+        "zh": "美元/人民币",
+        "en": "USD/CNY"
+      },
+      "ticker": "USDCNY",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "全球第二大经济体货币对",
+        "en": "Currency pair of world's 2nd largest economy"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1994,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdchf",
+      "name": {
+        "zh": "美元/瑞郎",
+        "en": "USD/CHF"
+      },
+      "ticker": "USDCHF",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "瑞士法郎，传统避险货币",
+        "en": "Swiss franc, traditional safe-haven currency"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1971,
+      "availableTo": 2023
+    },
+    {
+      "id": "eurgbp",
+      "name": {
+        "zh": "欧元/英镑",
+        "en": "EUR/GBP"
+      },
+      "ticker": "EURGBP",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "欧英货币对，欧洲主要交叉盘",
+        "en": "EUR/GBP cross, major European pair"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1999,
+      "availableTo": 2023
+    },
+    {
+      "id": "eurjpy",
+      "name": {
+        "zh": "欧元/日元",
+        "en": "EUR/JPY"
+      },
+      "ticker": "EURJPY",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "套利交易最受欢迎的货币对",
+        "en": "Most popular carry trade currency pair"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1999,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdhkd",
+      "name": {
+        "zh": "美元/港币",
+        "en": "USD/HKD"
+      },
+      "ticker": "USDHKD",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "联系汇率制度下的货币对",
+        "en": "Currency pair under linked exchange rate system"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1983,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdsgd",
+      "name": {
+        "zh": "美元/新加坡元",
+        "en": "USD/SGD"
+      },
+      "ticker": "USDSGD",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "新加坡元，亚洲金融中心货币",
+        "en": "Singapore dollar, Asian financial hub currency"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1971,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdinr",
+      "name": {
+        "zh": "美元/印度卢比",
+        "en": "USD/INR"
+      },
+      "ticker": "USDINR",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "印度卢比，新兴市场主要货币",
+        "en": "Indian rupee, major emerging market currency"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1991,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdmxn",
+      "name": {
+        "zh": "美元/墨西哥比索",
+        "en": "USD/MXN"
+      },
+      "ticker": "USDMXN",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "拉美最大经济体货币对",
+        "en": "Latin America's largest economy currency pair"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1994,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdzar",
+      "name": {
+        "zh": "美元/南非兰特",
+        "en": "USD/ZAR"
+      },
+      "ticker": "USDZAR",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "非洲最大经济体货币",
+        "en": "Africa's largest economy currency"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1961,
+      "availableTo": 2023
+    },
+    {
+      "id": "nzdusd",
+      "name": {
+        "zh": "新西兰元/美元",
+        "en": "NZD/USD"
+      },
+      "ticker": "NZDUSD",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "纽元，商品出口国货币",
+        "en": "Kiwi dollar, commodity exporter currency"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1985,
+      "availableTo": 2023
+    },
+    {
+      "id": "usdrub",
+      "name": {
+        "zh": "美元/俄罗斯卢布",
+        "en": "USD/RUB"
+      },
+      "ticker": "USDRUB",
+      "category": "forex",
+      "icon": "forex",
+      "description": {
+        "zh": "俄罗斯卢布，地缘政治敏感货币",
+        "en": "Russian ruble, geopolitically sensitive currency"
+      },
+      "riskLevel": 5,
+      "availableFrom": 1992,
+      "availableTo": 2023
+    },
+    {
+      "id": "tips",
+      "name": {
+        "zh": "通胀保护债券",
+        "en": "TIPS"
+      },
+      "ticker": "TIPS",
+      "category": "bond",
+      "icon": "bond",
+      "description": {
+        "zh": "美国通胀保护国债",
+        "en": "US Treasury Inflation-Protected Securities"
+      },
+      "riskLevel": 1,
+      "availableFrom": 1997,
+      "availableTo": 2023
+    },
+    {
+      "id": "mbs",
+      "name": {
+        "zh": "抵押贷款证券",
+        "en": "Mortgage-Backed Securities"
+      },
+      "ticker": "MBS",
+      "category": "bond",
+      "icon": "bond",
+      "description": {
+        "zh": "房贷支持的资产证券化产品",
+        "en": "Asset-backed securities from mortgage pools"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1970,
+      "availableTo": 2023
+    },
+    {
+      "id": "muni_bonds",
+      "name": {
+        "zh": "市政债券",
+        "en": "Municipal Bonds"
+      },
+      "ticker": "MUNI",
+      "category": "bond",
+      "icon": "bond",
+      "description": {
+        "zh": "美国州和地方政府债券，税收优惠",
+        "en": "US state and local government bonds, tax-exempt"
+      },
+      "riskLevel": 2,
+      "availableFrom": 1812,
+      "availableTo": 2023
+    },
+    {
+      "id": "em_bonds",
+      "name": {
+        "zh": "新兴市场债券",
+        "en": "Emerging Market Bonds"
+      },
+      "ticker": "EMB",
+      "category": "bond",
+      "icon": "bond",
+      "description": {
+        "zh": "新兴市场国家主权债券",
+        "en": "Sovereign bonds from emerging market nations"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1990,
+      "availableTo": 2023
+    },
+    {
+      "id": "italian_btp",
+      "name": {
+        "zh": "意大利BTP国债",
+        "en": "Italian BTP"
+      },
+      "ticker": "BTP",
+      "category": "bond",
+      "icon": "bond",
+      "description": {
+        "zh": "意大利政府债券，欧债危机焦点",
+        "en": "Italian government bonds, eurozone crisis focal point"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1861,
+      "availableTo": 2023
+    },
+    {
+      "id": "brent_futures",
+      "name": {
+        "zh": "布伦特原油期货",
+        "en": "Brent Crude Futures"
+      },
+      "ticker": "BZF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "ICE布伦特原油期货合约",
+        "en": "ICE Brent crude oil futures contract"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1988,
+      "availableTo": 2023
+    },
+    {
+      "id": "corn_futures",
+      "name": {
+        "zh": "玉米期货",
+        "en": "Corn Futures"
+      },
+      "ticker": "ZCF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "CBOT玉米期货合约",
+        "en": "CBOT corn futures contract"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1877,
+      "availableTo": 2023
+    },
+    {
+      "id": "soybean_futures",
+      "name": {
+        "zh": "大豆期货",
+        "en": "Soybean Futures"
+      },
+      "ticker": "ZSF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "CBOT大豆期货合约",
+        "en": "CBOT soybean futures contract"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1877,
+      "availableTo": 2023
+    },
+    {
+      "id": "silver_futures",
+      "name": {
+        "zh": "白银期货",
+        "en": "Silver Futures"
+      },
+      "ticker": "SIF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "COMEX白银期货合约",
+        "en": "COMEX silver futures contract"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1963,
+      "availableTo": 2023
+    },
+    {
+      "id": "platinum_futures",
+      "name": {
+        "zh": "铂金期货",
+        "en": "Platinum Futures"
+      },
+      "ticker": "PLF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "NYMEX铂金期货合约",
+        "en": "NYMEX platinum futures contract"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1956,
+      "availableTo": 2023
+    },
+    {
+      "id": "palladium_futures",
+      "name": {
+        "zh": "钯金期货",
+        "en": "Palladium Futures"
+      },
+      "ticker": "PAF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "NYMEX钯金期货合约",
+        "en": "NYMEX palladium futures contract"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1977,
+      "availableTo": 2023
+    },
+    {
+      "id": "lean_hog_futures",
+      "name": {
+        "zh": "瘦猪肉期货",
+        "en": "Lean Hog Futures"
+      },
+      "ticker": "HEF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "CME瘦猪肉期货合约",
+        "en": "CME lean hog futures contract"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1966,
+      "availableTo": 2023
+    },
+    {
+      "id": "cattle_futures",
+      "name": {
+        "zh": "活牛期货",
+        "en": "Live Cattle Futures"
+      },
+      "ticker": "LEF",
+      "category": "futures",
+      "icon": "futures",
+      "description": {
+        "zh": "CME活牛期货合约",
+        "en": "CME live cattle futures contract"
+      },
+      "riskLevel": 3,
+      "availableFrom": 1964,
+      "availableTo": 2023
+    },
+    {
+      "id": "bitcoin_futures",
+      "name": {
+        "zh": "比特币期货",
+        "en": "Bitcoin Futures"
+      },
+      "ticker": "BTCF",
+      "category": "derivative",
+      "icon": "derivative",
+      "description": {
+        "zh": "CME比特币期货合约",
+        "en": "CME Bitcoin futures contract"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "currency_options",
+      "name": {
+        "zh": "外汇期权",
+        "en": "Currency Options"
+      },
+      "ticker": "FXOP",
+      "category": "derivative",
+      "icon": "derivative",
+      "description": {
+        "zh": "主要货币对的期权合约",
+        "en": "Options contracts on major currency pairs"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1982,
+      "availableTo": 2023
+    },
+    {
+      "id": "commodity_swaps",
+      "name": {
+        "zh": "大宗商品互换",
+        "en": "Commodity Swaps"
+      },
+      "ticker": "CMSWP",
+      "category": "derivative",
+      "icon": "derivative",
+      "description": {
+        "zh": "大宗商品价格互换合约",
+        "en": "Commodity price swap agreements"
+      },
+      "riskLevel": 4,
+      "availableFrom": 1986,
+      "availableTo": 2023
+    },
+    {
+      "id": "stripe",
+      "name": {
+        "zh": "Stripe",
+        "en": "Stripe"
+      },
+      "ticker": "STRP",
+      "category": "private_equity",
+      "icon": "private",
+      "description": {
+        "zh": "全球最大在线支付处理平台",
+        "en": "World's largest online payment processing platform"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2010,
+      "availableTo": 2023
+    },
+    {
+      "id": "anthropic",
+      "name": {
+        "zh": "Anthropic",
+        "en": "Anthropic"
+      },
+      "ticker": "ANTH",
+      "category": "private_equity",
+      "icon": "private",
+      "description": {
+        "zh": "AI安全研究公司，Claude开发者",
+        "en": "AI safety research company, developer of Claude"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2021,
+      "availableTo": 2023
+    },
+    {
+      "id": "databricks",
+      "name": {
+        "zh": "Databricks",
+        "en": "Databricks"
+      },
+      "ticker": "DBKS",
+      "category": "private_equity",
+      "icon": "private",
+      "description": {
+        "zh": "企业级数据与AI平台",
+        "en": "Enterprise data and AI platform"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2013,
+      "availableTo": 2023
+    },
+    {
+      "id": "nft_market",
+      "name": {
+        "zh": "NFT市场",
+        "en": "NFT Market"
+      },
+      "ticker": "NFT",
+      "category": "grey_market",
+      "icon": "grey",
+      "description": {
+        "zh": "数字收藏品与NFT投机市场",
+        "en": "Digital collectibles and NFT speculation market"
+      },
+      "riskLevel": 5,
+      "availableFrom": 2017,
+      "availableTo": 2023
+    },
+    {
+      "id": "carbon_credits",
+      "name": {
+        "zh": "碳排放权",
+        "en": "Carbon Credits"
+      },
+      "ticker": "CRBN",
+      "category": "grey_market",
+      "icon": "grey",
+      "description": {
+        "zh": "碳交易市场排放配额",
+        "en": "Emission allowances from carbon trading markets"
+      },
+      "riskLevel": 4,
+      "availableFrom": 2005,
+      "availableTo": 2023
+    },
+    {
+      "id": "leo_token",
+      "ticker": "LEO",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 2,
+      "availableFrom": 2019,
+      "availableTo": 2023,
+      "name": {
+        "zh": "LEO代币",
+        "en": "UNUS SED LEO"
+      },
+      "description": {
+        "zh": "Bitfinex交易所平台代币",
+        "en": "Bitfinex exchange utility token"
+      }
+    },
+    {
+      "id": "stellar",
+      "ticker": "XLM",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2014,
+      "availableTo": 2023,
+      "name": {
+        "zh": "恒星币",
+        "en": "Stellar"
+      },
+      "description": {
+        "zh": "跨境支付与汇款协议",
+        "en": "Cross-border payment and remittance protocol"
+      }
+    },
+    {
+      "id": "dai",
+      "ticker": "DAI",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 1,
+      "availableFrom": 2017,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Dai稳定币",
+        "en": "Dai"
+      },
+      "description": {
+        "zh": "去中心化超额抵押美元稳定币",
+        "en": "Decentralized over-collateralized USD stablecoin"
+      }
+    },
+    {
+      "id": "hedera",
+      "ticker": "HBAR",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2019,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Hedera",
+        "en": "Hedera"
+      },
+      "description": {
+        "zh": "企业级分布式账本技术",
+        "en": "Enterprise-grade distributed ledger technology"
+      }
+    },
+    {
+      "id": "sui",
+      "ticker": "SUI",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2023,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Sui",
+        "en": "Sui"
+      },
+      "description": {
+        "zh": "Move语言新一代高性能L1",
+        "en": "Next-gen high-performance L1 built with Move"
+      }
+    },
+    {
+      "id": "zcash",
+      "ticker": "ZEC",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2016,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Zcash",
+        "en": "Zcash"
+      },
+      "description": {
+        "zh": "零知识证明隐私加密货币",
+        "en": "Zero-knowledge proof privacy cryptocurrency"
+      }
+    },
+    {
+      "id": "toncoin",
+      "ticker": "TON",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2021,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Toncoin",
+        "en": "Toncoin"
+      },
+      "description": {
+        "zh": "Telegram生态区块链",
+        "en": "Telegram ecosystem blockchain"
+      }
+    },
+    {
+      "id": "cronos",
+      "ticker": "CRO",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2018,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Cronos",
+        "en": "Cronos"
+      },
+      "description": {
+        "zh": "Crypto.com交易所生态链",
+        "en": "Crypto.com exchange ecosystem chain"
+      }
+    },
+    {
+      "id": "tether_gold",
+      "ticker": "XAUt",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 1,
+      "availableFrom": 2020,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Tether黄金",
+        "en": "Tether Gold"
+      },
+      "description": {
+        "zh": "泰达黄金代币，每枚锚定一盎司黄金",
+        "en": "Tether gold token, each pegged to one troy oz of gold"
+      }
+    },
+    {
+      "id": "bittensor",
+      "ticker": "TAO",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2021,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Bittensor",
+        "en": "Bittensor"
+      },
+      "description": {
+        "zh": "去中心化AI/机器学习网络",
+        "en": "Decentralized AI/machine learning network"
+      }
+    },
+    {
+      "id": "pax_gold",
+      "ticker": "PAXG",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 1,
+      "availableFrom": 2019,
+      "availableTo": 2023,
+      "name": {
+        "zh": "PAX黄金",
+        "en": "PAX Gold"
+      },
+      "description": {
+        "zh": "受监管的黄金代币化资产",
+        "en": "Regulated tokenized gold asset"
+      }
+    },
+    {
+      "id": "mantle",
+      "ticker": "MNT",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2023,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Mantle",
+        "en": "Mantle"
+      },
+      "description": {
+        "zh": "以太坊Layer 2模块化扩展方案",
+        "en": "Ethereum Layer 2 modular scaling solution"
+      }
+    },
+    {
+      "id": "okb",
+      "ticker": "OKB",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 3,
+      "availableFrom": 2019,
+      "availableTo": 2023,
+      "name": {
+        "zh": "OKB",
+        "en": "OKB"
+      },
+      "description": {
+        "zh": "OKX交易所平台代币",
+        "en": "OKX exchange platform token"
+      }
+    },
+    {
+      "id": "maker",
+      "ticker": "MKR",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2017,
+      "availableTo": 2023,
+      "name": {
+        "zh": "MakerDAO",
+        "en": "MakerDAO"
+      },
+      "description": {
+        "zh": "去中心化借贷协议治理代币",
+        "en": "Decentralized lending protocol governance token"
+      }
+    },
+    {
+      "id": "near",
+      "ticker": "NEAR",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023,
+      "name": {
+        "zh": "NEAR Protocol",
+        "en": "NEAR Protocol"
+      },
+      "description": {
+        "zh": "分片式高性能区块链平台",
+        "en": "Sharded high-performance blockchain platform"
+      }
+    },
+    {
+      "id": "aave",
+      "ticker": "AAVE",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2020,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Aave",
+        "en": "Aave"
+      },
+      "description": {
+        "zh": "最大的去中心化借贷协议",
+        "en": "Largest decentralized lending protocol"
+      }
+    },
+    {
+      "id": "bitget",
+      "ticker": "BGB",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2022,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Bitget Token",
+        "en": "Bitget Token"
+      },
+      "description": {
+        "zh": "Bitget交易所平台代币",
+        "en": "Bitget exchange platform token"
+      }
+    },
+    {
+      "id": "icp",
+      "ticker": "ICP",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2021,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Internet Computer",
+        "en": "Internet Computer"
+      },
+      "description": {
+        "zh": "去中心化世界计算机",
+        "en": "Decentralized world computer"
+      }
+    },
+    {
+      "id": "pepe",
+      "ticker": "PEPE",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2023,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Pepe",
+        "en": "Pepe"
+      },
+      "description": {
+        "zh": "以青蛙Pepe为主题的Meme代币",
+        "en": "Pepe the Frog themed meme token"
+      }
+    },
+    {
+      "id": "ethereum_classic",
+      "ticker": "ETC",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2016,
+      "availableTo": 2023,
+      "name": {
+        "zh": "以太坊经典",
+        "en": "Ethereum Classic"
+      },
+      "description": {
+        "zh": "以太坊原链，DAO分叉后保留",
+        "en": "Original Ethereum chain after DAO fork"
+      }
+    },
+    {
+      "id": "cosmos",
+      "ticker": "ATOM",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2019,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Cosmos",
+        "en": "Cosmos"
+      },
+      "description": {
+        "zh": "区块链互联网，跨链通信协议",
+        "en": "Internet of Blockchains, IBC protocol"
+      }
+    },
+    {
+      "id": "filecoin",
+      "ticker": "FIL",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Filecoin",
+        "en": "Filecoin"
+      },
+      "description": {
+        "zh": "去中心化存储网络",
+        "en": "Decentralized storage network"
+      }
+    },
+    {
+      "id": "aptos",
+      "ticker": "APT",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2022,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Aptos",
+        "en": "Aptos"
+      },
+      "description": {
+        "zh": "Move语言L1区块链（前Meta团队）",
+        "en": "Move-based L1 blockchain (ex-Meta team)"
+      }
+    },
+    {
+      "id": "render",
+      "ticker": "RENDER",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Render Network",
+        "en": "Render Network"
+      },
+      "description": {
+        "zh": "去中心化GPU渲染算力网络",
+        "en": "Decentralized GPU rendering compute network"
+      }
+    },
+    {
+      "id": "arbitrum",
+      "ticker": "ARB",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2023,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Arbitrum",
+        "en": "Arbitrum"
+      },
+      "description": {
+        "zh": "最大的以太坊Optimistic Rollup L2",
+        "en": "Largest Ethereum Optimistic Rollup L2"
+      }
+    },
+    {
+      "id": "stacks",
+      "ticker": "STX",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2019,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Stacks",
+        "en": "Stacks"
+      },
+      "description": {
+        "zh": "比特币智能合约层",
+        "en": "Bitcoin smart contract layer"
+      }
+    },
+    {
+      "id": "algorand",
+      "ticker": "ALGO",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2019,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Algorand",
+        "en": "Algorand"
+      },
+      "description": {
+        "zh": "纯权益证明高性能公链",
+        "en": "Pure proof-of-stake high-performance blockchain"
+      }
+    },
+    {
+      "id": "vechain",
+      "ticker": "VET",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2018,
+      "availableTo": 2023,
+      "name": {
+        "zh": "唯链",
+        "en": "VeChain"
+      },
+      "description": {
+        "zh": "企业级供应链管理区块链",
+        "en": "Enterprise supply chain management blockchain"
+      }
+    },
+    {
+      "id": "the_graph",
+      "ticker": "GRT",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023,
+      "name": {
+        "zh": "The Graph",
+        "en": "The Graph"
+      },
+      "description": {
+        "zh": "Web3数据索引协议",
+        "en": "Web3 data indexing protocol"
+      }
+    },
+    {
+      "id": "tezos",
+      "ticker": "XTZ",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 4,
+      "availableFrom": 2018,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Tezos",
+        "en": "Tezos"
+      },
+      "description": {
+        "zh": "自修正区块链协议",
+        "en": "Self-amending blockchain protocol"
+      }
+    },
+    {
+      "id": "curve",
+      "ticker": "CRV",
+      "category": "crypto",
+      "icon": "crypto",
+      "riskLevel": 5,
+      "availableFrom": 2020,
+      "availableTo": 2023,
+      "name": {
+        "zh": "Curve DAO",
+        "en": "Curve DAO"
+      },
+      "description": {
+        "zh": "稳定币交易专用去中心化交易所",
+        "en": "DEX specialized in stablecoin trading"
+      }
+    }
+  ]
+}

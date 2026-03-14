@@ -1,8 +1,9 @@
 "use client";
 
+import { useMemo } from "react";
 import { useWorldStore } from "@/store/useWorldStore";
 import { useLocale } from "@/lib/i18n";
-import type { War, LocalizedText } from "@/lib/types";
+import type { War, LocalizedText, WarMetricsSnapshot } from "@/lib/types";
 
 function formatYear(year: number, locale: "zh" | "en"): string {
   if (locale === "zh") return year < 0 ? `公元前${Math.abs(year)}年` : `公元${year}年`;
@@ -97,7 +98,10 @@ function WarCard({
 }) {
   const setSelectedWar = useWorldStore((s) => s.setSelectedWar);
   const currentState = useWorldStore((s) => s.currentState);
+  const warSnapshots = useWorldStore((s) => s.warSnapshots);
   const statusCfg = STATUS_CONFIG[war.status] ?? STATUS_CONFIG.ongoing;
+
+  const snapshots: WarMetricsSnapshot[] = warSnapshots[war.id] || [];
 
   const duration = (war.endYear ?? currentYear) - war.startYear;
   const period = war.endYear
@@ -162,7 +166,7 @@ function WarCard({
         </div>
 
         <div className="shrink-0 w-6 h-6 rounded-full bg-red-900/30 border border-red-800/30 flex items-center justify-center">
-          <span className="text-[10px] font-black text-red-400">VS</span>
+          <span className="text-xs font-black text-red-400 leading-none">VS</span>
         </div>
 
         <div className="flex-1 min-w-0 text-right">
@@ -184,6 +188,51 @@ function WarCard({
           </div>
         </div>
       </div>
+
+      {/* Military strength comparison */}
+      {snapshots.length >= 1 && (() => {
+        const last = snapshots[snapshots.length - 1];
+        const s1 = last.side1.totalTroops;
+        const s2 = last.side2.totalTroops;
+        const total = s1 + s2;
+        if (total === 0) return null;
+        const s1Pct = Math.round((s1 / total) * 100);
+        const s2Pct = 100 - s1Pct;
+        const fmtTroops = (v: number) => {
+          if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M`;
+          if (v >= 1_000) return `${(v / 1_000).toFixed(0)}K`;
+          return `${v}`;
+        };
+        const side1Label = localized(war.belligerents.side1.label);
+        const side2Label = localized(war.belligerents.side2.label);
+        const dominantLabel = s1Pct > 60 ? side1Label : s2Pct > 60 ? side2Label : null;
+        return (
+          <div className="mb-2">
+            <div className="flex items-center justify-between text-xs mb-1">
+              <span className="text-red-400 font-mono">{fmtTroops(s1)}</span>
+              <span className="text-text-muted" style={{ fontSize: 12 }}>⚔ {locale === "zh" ? "兵力" : "Troops"}</span>
+              <span className="text-blue-400 font-mono">{fmtTroops(s2)}</span>
+            </div>
+            <div className="flex h-1.5 rounded-full overflow-hidden bg-bg-tertiary">
+              <div className="rounded-l-full" style={{ width: `${s1Pct}%`, background: "linear-gradient(90deg, #f87171, #ef4444)" }} />
+              <div className="rounded-r-full" style={{ width: `${s2Pct}%`, background: "linear-gradient(90deg, #3b82f6, #60a5fa)" }} />
+            </div>
+            {dominantLabel && (
+              <div className="flex justify-center mt-1">
+                <span
+                  className="text-xs px-1.5 py-0.5 rounded"
+                  style={{
+                    color: s1Pct > 60 ? "#f87171" : "#60a5fa",
+                    background: s1Pct > 60 ? "rgba(248,113,113,0.1)" : "rgba(96,165,250,0.1)",
+                  }}
+                >
+                  {dominantLabel} {locale === "zh" ? "占优" : "dominant"}
+                </span>
+              </div>
+            )}
+          </div>
+        );
+      })()}
 
       {/* Summary */}
       {war.summary && (

@@ -432,7 +432,7 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   thailand_1962: ["Thailand"],
   burma_1962: ["Burma"],
   malaya_1962: ["Malaysia"],
-  singapore_1962: ["Malaysia"],
+  singapore_1962: ["Singapore"],
   philippines_1962: ["Philippines"],
   indonesia_1962: ["Indonesia"],
 
@@ -1978,6 +1978,27 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   basutoland_1939: ["Lesotho", "Basutoland"],
   swaziland_1939: ["Swaziland"],
   south_west_africa_1939: ["Namibia", "German South-West Africa"],
+
+  // --- WWII (1939) gap-fill ---
+  slovakia_1939: ["Slovakia", "Czechoslovakia"],
+  nepal_1939: ["Nepal"],
+  ceylon_1939: ["Ceylon", "Sri Lanka"],
+  tibet_1939: ["Tibet"],
+  yemen_1939: ["Yemen"],
+  oman_1939: ["Muscat and Oman", "Oman"],
+  kuwait_1939: ["Kuwait"],
+  panama_1939: ["Panama"],
+  costa_rica_1939: ["Costa Rica"],
+  guatemala_1939: ["Guatemala"],
+  honduras_1939: ["Honduras"],
+  el_salvador_1939: ["El Salvador"],
+  nicaragua_1939: ["Nicaragua"],
+  haiti_1939: ["Haiti"],
+  dominican_republic_1939: ["Dominican Republic"],
+  jamaica_1939: ["Jamaica"],
+  nyasaland_1939: ["Nyasaland", "Malawi"],
+  rwanda_urundi_1939: ["Ruanda-Urundi", "Rwanda", "Burundi"],
+  zanzibar_1939: ["Zanzibar", "Tanzania, United Republic of"],
 
   // --- Imperialism (1900) Africa gap-fill ---
   dahomey_1900: ["Dahomey"],
@@ -3613,15 +3634,69 @@ export const GEOMETRY_SUBTRACT_RULES: Record<
     { childRegionId: "finland_1900", yearMin: 1800, yearMax: 1920 },
   ],
 
-  // Cut established kingdoms out of the big "West African cereal farmers" catchall
   kanem_750: [
     { childRegionId: "ghana_empire" },
   ],
 
-  // Cut Khoisan out of Bantu and vice versa where they overlap
   bantu_south_750: [
     { childRegionId: "khoisan_750" },
   ],
+
+  malaya_1962: [
+    { childRegionId: "singapore_1962", yearMin: 1960 },
+  ],
+  modern_malaysia: [
+    { childRegionId: "modern_singapore" },
+  ],
+  ai_malaysia: [
+    { childRegionId: "ai_singapore" },
+  ],
+};
+
+/**
+ * Custom geometries for regions too small to appear in the basemaps.
+ * Used as a fallback when no basemap feature matches.
+ */
+export const CUSTOM_GEOMETRIES: Record<string, GeoJSON.Geometry> = {
+  singapore_1962: {
+    type: "Polygon",
+    coordinates: [[
+      [103.605, 1.265], [103.653, 1.222], [103.693, 1.215],
+      [103.748, 1.230], [103.804, 1.240], [103.860, 1.248],
+      [103.918, 1.263], [103.966, 1.278], [103.992, 1.310],
+      [104.020, 1.340], [104.040, 1.365], [104.028, 1.392],
+      [103.988, 1.416], [103.935, 1.430], [103.869, 1.438],
+      [103.808, 1.440], [103.748, 1.432], [103.690, 1.415],
+      [103.650, 1.393], [103.618, 1.360], [103.598, 1.325],
+      [103.594, 1.295], [103.605, 1.265],
+    ]],
+  } as GeoJSON.Geometry,
+  modern_singapore: {
+    type: "Polygon",
+    coordinates: [[
+      [103.605, 1.265], [103.653, 1.222], [103.693, 1.215],
+      [103.748, 1.230], [103.804, 1.240], [103.860, 1.248],
+      [103.918, 1.263], [103.966, 1.278], [103.992, 1.310],
+      [104.020, 1.340], [104.040, 1.365], [104.028, 1.392],
+      [103.988, 1.416], [103.935, 1.430], [103.869, 1.438],
+      [103.808, 1.440], [103.748, 1.432], [103.690, 1.415],
+      [103.650, 1.393], [103.618, 1.360], [103.598, 1.325],
+      [103.594, 1.295], [103.605, 1.265],
+    ]],
+  } as GeoJSON.Geometry,
+  ai_singapore: {
+    type: "Polygon",
+    coordinates: [[
+      [103.605, 1.265], [103.653, 1.222], [103.693, 1.215],
+      [103.748, 1.230], [103.804, 1.240], [103.860, 1.248],
+      [103.918, 1.263], [103.966, 1.278], [103.992, 1.310],
+      [104.020, 1.340], [104.040, 1.365], [104.028, 1.392],
+      [103.988, 1.416], [103.935, 1.430], [103.869, 1.438],
+      [103.808, 1.440], [103.748, 1.432], [103.690, 1.415],
+      [103.650, 1.393], [103.618, 1.360], [103.598, 1.325],
+      [103.594, 1.295], [103.605, 1.265],
+    ]],
+  } as GeoJSON.Geometry,
 };
 
 /**

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSnapshot, getLatestSnapshot, getActiveWars } from "@/lib/db";
+import { getSnapshot, getLatestSnapshot, getActiveWars, getWarSnapshotsForWars } from "@/lib/db";
 
 export async function GET(request: NextRequest) {
   try {
@@ -24,6 +24,8 @@ export async function GET(request: NextRequest) {
     }
 
     const wars = getActiveWars(snapshot.year);
+    const warIds = (wars as { id: string }[]).map((w) => w.id);
+    const warSnapshots = warIds.length > 0 ? getWarSnapshotsForWars(warIds) : {};
 
     return NextResponse.json({
       id: snapshot.id,
@@ -33,6 +35,7 @@ export async function GET(request: NextRequest) {
       summary: snapshot.summary,
       triggeredByEventId: snapshot.triggeredByEventId,
       wars,
+      warSnapshots,
     });
   } catch (error) {
     console.error("State API error:", error);

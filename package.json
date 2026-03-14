@@ -13,12 +13,14 @@
     "generate:eras": "npx tsx scripts/generate-era-states.ts",
     "build:geo": "npx tsx scripts/build-geo-snapshots.ts",
     "electron:compile": "esbuild electron/main.ts --bundle --platform=node --outfile=electron/dist/main.js --external:electron --format=cjs && esbuild electron/preload.ts --bundle --platform=node --outfile=electron/dist/preload.js --external:electron --format=cjs",
+    "electron:compress-geo": "node -e \"const fs=require('fs'),zlib=require('zlib'),path=require('path');const d='public/geojson/snapshots';fs.readdirSync(d).filter(f=>f.endsWith('.json')).forEach(f=>{const i=path.join(d,f),o=i+'.gz';fs.writeFileSync(o,zlib.gzipSync(fs.readFileSync(i),{level:9}));});console.log('Compressed GeoJSON snapshots')\"",
+    "electron:prebuild": "npm run build && npm run electron:compile && npm run electron:compress-geo",
     "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && npm run electron:compile && electron .\"",
-    "electron:build": "npm run build && npm run electron:compile && electron-builder --publish never",
-    "electron:build:mac": "npm run build && npm run electron:compile && electron-builder --mac --publish never",
-    "electron:build:win": "npm run build && npm run electron:compile && electron-builder --win --publish never",
-    "electron:build:linux": "npm run build && npm run electron:compile && electron-builder --linux --publish never",
-    "electron:publish": "npm run build && npm run electron:compile && electron-builder --publish always"
+    "electron:build": "npm run electron:prebuild && electron-builder --publish never",
+    "electron:build:mac": "npm run electron:prebuild && electron-builder --mac --publish never",
+    "electron:build:win": "npm run electron:prebuild && electron-builder --win --publish never",
+    "electron:build:linux": "npm run electron:prebuild && electron-builder --linux --publish never",
+    "electron:publish": "npm run electron:prebuild && electron-builder --publish always"
   },
   "dependencies": {
     "@turf/helpers": "^7.3.4",

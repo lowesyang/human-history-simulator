@@ -30,11 +30,12 @@ import {
 } from "@/lib/economic-history";
 import exchangeRatesData from "@/data/economic/exchange-rates.json";
 import assetPricesData from "@/data/economic/asset-prices.json";
+import { resolveSeedPath, getPublicDir } from "@/lib/paths";
 import fs from "fs";
 import path from "path";
 
 function getPrebuiltPath(eraId: string): string {
-  return path.join(process.cwd(), "src", "data", "seed", `era-${eraId}.json`);
+  return resolveSeedPath(eraId) ?? path.join(getPublicDir(), "..", "src", "data", "seed", `era-${eraId}.json`);
 }
 
 function tryLoadPrebuilt(eraId: string): {
@@ -65,7 +66,7 @@ function tryLoadPrebuilt(eraId: string): {
 
 function getTerritoryList(): string {
   const raw = fs.readFileSync(
-    path.join(process.cwd(), "public", "geojson", "territories.json"),
+    path.join(getPublicDir(), "geojson", "territories.json"),
     "utf-8"
   );
   const territories = JSON.parse(raw) as Record<string, Record<string, unknown>>;

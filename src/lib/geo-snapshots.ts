@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { Region } from "./types";
+import { getPublicDir } from "./paths";
 
 const SNAPSHOT_YEARS = [
   -2000, -1500, -1000, -700, -500, -400, -323, -300, -200, -100, -1,
@@ -32,8 +33,7 @@ export function loadSnapshot(
   if (cached) return cached;
 
   const filePath = path.join(
-    process.cwd(),
-    "public",
+    getPublicDir(),
     "geojson",
     "snapshots",
     `${year}.json`

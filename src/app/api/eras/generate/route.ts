@@ -4,11 +4,12 @@ import { ERA_PRESETS } from "@/data/era-presets";
 import { getEffectiveApiKey, getEffectiveModel } from "@/lib/settings";
 import { applyClientHeaders } from "@/lib/api-headers";
 import { CONTENT_FILTER_PROMPT, isBlockedEvent } from "@/lib/content-filter";
+import { getUserSeedDir, getPublicDir } from "@/lib/paths";
 import fs from "fs";
 import path from "path";
 
-const SEED_DIR = path.join(process.cwd(), "src", "data", "seed");
-const TERRITORY_PATH = path.join(process.cwd(), "public", "geojson", "territories.json");
+const SEED_DIR = getUserSeedDir();
+const TERRITORY_PATH = path.join(getPublicDir(), "geojson", "territories.json");
 const LLM_TIMEOUT_MS = 600_000;
 
 const VALID_CATEGORIES = new Set([

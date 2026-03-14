@@ -141,6 +141,199 @@ function ContingencySlider({ value, onChange, t }: { value: number; onChange: (v
   );
 }
 
+/* ── Desktop Update Section (Electron only) ── */
+
+interface ElectronAPI {
+  getVersion: () => Promise<string>;
+  checkForUpdates: () => Promise<unknown>;
+  downloadUpdate: () => Promise<void>;
+  installUpdate: () => Promise<void>;
+  getUpdateSettings: () => Promise<{ autoUpdate: boolean }>;
+  setUpdateSettings: (s: { autoUpdate?: boolean }) => Promise<void>;
+  onUpdateAvailable: (cb: (d: { version: string; autoDownloading: boolean }) => void) => void;
+  onUpdateProgress: (cb: (d: { percent: number }) => void) => void;
+  onUpdateDownloaded: (cb: (d: { version: string }) => void) => void;
+  onUpdateError: (cb: (d: { message: string }) => void) => void;
+}
+
+declare global {
+  interface Window {
+    electronAPI?: ElectronAPI;
+  }
+}
+
+type UpdateStatus = "idle" | "checking" | "available" | "downloading" | "downloaded" | "error";
+
+function DesktopUpdateSection({ t }: { t: (k: string) => string }) {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [version, setVersion] = useState("");
+  const [autoUpdate, setAutoUpdate] = useState(false);
+  const [status, setStatus] = useState<UpdateStatus>("idle");
+  const [newVersion, setNewVersion] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const api = window.electronAPI;
+    if (!api) return;
+    setIsDesktop(true);
+
+    api.getVersion().then(setVersion);
+    api.getUpdateSettings().then((s) => setAutoUpdate(s.autoUpdate));
+
+    api.onUpdateAvailable((d) => {
+      setNewVersion(d.version);
+      setStatus(d.autoDownloading ? "downloading" : "available");
+    });
+    api.onUpdateProgress((d) => {
+      setStatus("downloading");
+      setProgress(d.percent);
+    });
+    api.onUpdateDownloaded((d) => {
+      setNewVersion(d.version);
+      setStatus("downloaded");
+    });
+    api.onUpdateError((d) => {
+      setStatus("error");
+      setError(d.message);
+    });
+  }, []);
+
+  if (!isDesktop) return null;
+
+  const handleToggleAuto = async () => {
+    const next = !autoUpdate;
+    setAutoUpdate(next);
+    await window.electronAPI?.setUpdateSettings({ autoUpdate: next });
+  };
+
+  const handleCheck = async () => {
+    setStatus("checking");
+    setError("");
+    await window.electronAPI?.checkForUpdates();
+    setTimeout(() => {
+      setStatus((s) => (s === "checking" ? "idle" : s));
+    }, 5000);
+  };
+
+  const locale = t("app.title") !== "app.title" ? "auto" : "en";
+  const isZh = locale === "auto" && /[\u4e00-\u9fff]/.test(t("settings.title"));
+
+  return (
+    <>
+      <div className="border-t border-border-subtle" />
+      <div className="space-y-3 pt-1">
+        <label className="block text-xs font-semibold text-text-secondary tracking-wide uppercase">
+          {isZh ? "应用更新" : "App Update"}
+        </label>
+
+        {/* Version display */}
+        <div className="flex items-center justify-between text-xs">
+          <span className="text-text-muted">{isZh ? "当前版本" : "Current Version"}</span>
+          <span className="text-text-primary font-mono">v{version}</span>
+        </div>
+
+        {/* Auto-update toggle */}
+        <div className="flex items-center justify-between py-1">
+          <div className="flex-1 mr-3">
+            <div className="text-xs font-semibold text-text-primary">
+              {isZh ? "自动更新" : "Auto Update"}
+            </div>
+            <p className="text-xs text-text-muted mt-0.5 leading-relaxed">
+              {isZh ? "检测到新版本时自动下载并提示安装" : "Automatically download updates and prompt to install"}
+            </p>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={autoUpdate}
+            onClick={handleToggleAuto}
+            className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border transition-colors duration-200 focus:outline-none cursor-pointer ${autoUpdate
+              ? "bg-accent-gold/80 border-accent-gold"
+              : "bg-bg-tertiary border-border-subtle"
+              }`}
+          >
+            <span
+              className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-200 ${autoUpdate ? "translate-x-[18px]" : "translate-x-[2px]"
+                }`}
+            />
+          </button>
+        </div>
+
+        {/* Status & actions */}
+        <div className="flex items-center gap-2">
+          {status === "idle" && (
+            <button
+              onClick={handleCheck}
+              className="px-3 py-1.5 rounded text-xs font-semibold bg-accent-gold/20 text-accent-gold border border-accent-gold/40 hover:bg-accent-gold/30 transition-colors cursor-pointer"
+            >
+              {isZh ? "检查更新" : "Check for Updates"}
+            </button>
+          )}
+          {status === "checking" && (
+            <span className="text-xs text-text-muted animate-pulse">
+              {isZh ? "检查中…" : "Checking…"}
+            </span>
+          )}
+          {status === "available" && (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-accent-gold">
+                {isZh ? `新版本 v${newVersion} 可用` : `v${newVersion} available`}
+              </span>
+              <button
+                onClick={() => { setStatus("downloading"); window.electronAPI?.downloadUpdate(); }}
+                className="px-3 py-1.5 rounded text-xs font-semibold bg-accent-gold/20 text-accent-gold border border-accent-gold/40 hover:bg-accent-gold/30 transition-colors cursor-pointer"
+              >
+                {isZh ? "下载" : "Download"}
+              </button>
+            </div>
+          )}
+          {status === "downloading" && (
+            <div className="flex-1 space-y-1">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-text-muted">{isZh ? "下载中…" : "Downloading…"}</span>
+                <span className="text-accent-gold font-mono">{progress.toFixed(0)}%</span>
+              </div>
+              <div className="h-1 bg-bg-tertiary rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-accent-gold/80 rounded-full transition-all duration-300"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+            </div>
+          )}
+          {status === "downloaded" && (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-green-500">
+                {isZh ? `v${newVersion} 已就绪` : `v${newVersion} ready`}
+              </span>
+              <button
+                onClick={() => window.electronAPI?.installUpdate()}
+                className="px-3 py-1.5 rounded text-xs font-semibold bg-green-500/20 text-green-400 border border-green-500/40 hover:bg-green-500/30 transition-colors cursor-pointer"
+              >
+                {isZh ? "重启并更新" : "Restart to Update"}
+              </button>
+            </div>
+          )}
+          {status === "error" && (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-red-400 truncate max-w-[200px]" title={error}>
+                {isZh ? "检查失败" : "Check failed"}: {error}
+              </span>
+              <button
+                onClick={handleCheck}
+                className="px-3 py-1.5 rounded text-xs text-text-muted border border-border-subtle hover:border-border-active transition-colors cursor-pointer"
+              >
+                {isZh ? "重试" : "Retry"}
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default function SettingsModal() {
   const { t } = useLocale();
   const showSettings = useSettingsStore((s) => s.showSettings);
@@ -558,6 +751,9 @@ export default function SettingsModal() {
                   </div>
                 </div>
               )}
+
+              {/* Desktop App Update (only visible in Electron) */}
+              <DesktopUpdateSection t={t} />
             </div>
           )}
 

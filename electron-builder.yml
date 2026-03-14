@@ -1,0 +1,81 @@
+appId: com.humanhistory.simulator
+productName: Human History Simulator
+copyright: Copyright © 2024-2026
+
+directories:
+  buildResources: build
+  output: dist
+
+files:
+  - ".next/standalone/**/*"
+  - "!.next/standalone/node_modules/better-sqlite3/prebuilds/**"
+  - ".next/static/**/*"
+  - "electron/dist/**/*"
+  - "package.json"
+  - "!**/.env*"
+  - "!**/node_modules/.cache/**"
+
+extraResources:
+  - from: "public"
+    to: "public"
+    filter:
+      - "**/*"
+  - from: "src/data/seed"
+    to: "src/data/seed"
+    filter:
+      - "era-*.json"
+  - from: ".next/static"
+    to: ".next/static"
+    filter:
+      - "**/*"
+
+asar: false
+
+npmRebuild: true
+
+mac:
+  category: public.app-category.education
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
+  icon: build/icon.icns
+  hardenedRuntime: true
+  gatekeeperAssess: false
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.ico
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+  icon: build/icon.png
+  category: Education
+  maintainer: lowesyang
+
+publish:
+  provider: github
+  owner: lowesyang
+  repo: human-history-simulator
+  releaseType: release

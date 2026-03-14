@@ -1,13 +1,14 @@
 import type { WorldState, HistoricalEvent } from "./types";
 import fs from "fs";
 import path from "path";
+import { getPublicDir } from "./paths";
 
 let _territories: Record<string, unknown> | null = null;
 
 function getTerritoryList(): string {
   if (!_territories) {
     const raw = fs.readFileSync(
-      path.join(process.cwd(), "public", "geojson", "territories.json"),
+      path.join(getPublicDir(), "geojson", "territories.json"),
       "utf-8"
     );
     _territories = JSON.parse(raw);

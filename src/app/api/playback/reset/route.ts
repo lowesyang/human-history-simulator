@@ -13,14 +13,15 @@ import {
   findClosestSnapshotYear,
   mergeSnapshotGeometry,
 } from "@/lib/geo-snapshots";
+import { resolveSeedPath } from "@/lib/paths";
 import type { Region } from "@/lib/types";
 import fs from "fs";
 import path from "path";
 import { v4 as uuidv4 } from "uuid";
 
 function tryLoadPrebuilt(eraId: string) {
-  const filePath = path.join(process.cwd(), "src", "data", "seed", `era-${eraId}.json`);
-  if (!fs.existsSync(filePath)) return null;
+  const filePath = resolveSeedPath(eraId);
+  if (!filePath) return null;
   try {
     return JSON.parse(fs.readFileSync(filePath, "utf-8"));
   } catch {

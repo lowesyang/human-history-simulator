@@ -19,6 +19,12 @@
 
 # production
 /build
+!/build/icon.*
+!/build/README.md
+
+# electron
+/dist/
+/electron/dist/
 
 # misc
 .DS_Store

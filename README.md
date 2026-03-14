@@ -20,17 +20,48 @@ Territory boundaries are drawn from **47 real historical GeoJSON snapshots** (20
 
 ## Highlights
 
-- **[20 Historical Eras](#supported-eras)** covering Bronze Age through the AI Age, each seeded with historically accurate civilizations, rulers, and geopolitical configurations.
-- **1,400+ Civilizations** including empires, kingdoms, city-states, tribes, and trade networks, with 60 to 100 regions simulated per era.
-- **Multi-Agent Evolution** where an AI orchestrator clusters regions, generates events, and computes per-field state transitions across economy, military, diplomacy, culture, and more.
-- **Civilization Agent** giving key regions strategic intent — expand, defend, trade, invest in tech, forge alliances — so nations behave like nations, not passive data.
-- **Real Historical Boundaries** from 47 GeoJSON boundary snapshots sourced from open academic basemaps, spanning 4,000 years of territorial change.
-- **Interactive World Map** with territory overlays, hover inspection, and click-to-detail for every civilization.
-- **Deep Civilization Profiles** with 10 dimension tabs per region and 100+ tracked fields: rulers, government departments, GDP, trade goods, military branches, demographics, cultural achievements, and more.
-- **War System** providing structured conflict tracking with belligerents, casus belli, strategic advantages, and post-war impact.
-- **Threshold-Triggered Events** that auto-generate crises and breakthroughs when key metrics cross critical thresholds — economic collapse, military escalation, tech revolutions, population crises, and alliance breakdowns.
-- **Custom Events** that let you inject any scenario and watch the AI react — change a single invention's timing, unleash a plague, rewrite a discovery.
+### World & Civilizations
+
+- **[20 Historical Eras](#supported-eras)** from the Bronze Age (1600 BCE) to the AI Age (2023 CE), each seeded with historically accurate civilizations, rulers, and geopolitical configurations.
+- **1,400+ Civilizations** — empires, kingdoms, city-states, tribes, and trade networks — with 60 to 100 regions simulated per era.
+- **Real Historical Boundaries** from 47 GeoJSON snapshots sourced from open academic basemaps, spanning 4,000 years of territorial change.
+
+### AI Engine
+
+- **Multi-Agent Evolution** — an AI orchestrator clusters regions, generates events, and computes per-field state transitions across economy, military, diplomacy, culture, and more.
+- **Civilization Agent** gives key regions strategic intent — expand, defend, trade, invest in tech, forge alliances — so nations behave like nations, not passive data.
+- **Civilization Memory** preserves each nation's long-term goals and past decisions in Speculative mode, producing coherent multi-turn strategic behavior.
+- **Threshold-Triggered Events** auto-generate crises and breakthroughs when key metrics cross critical thresholds — economic collapse, military escalation, tech revolutions, population crises, and alliance breakdowns.
+
+### Economy & Markets
+
+- **Economic Simulation Engine** models GDP (Solow growth), population (Malthusian-demographic), fiscal policy (tax smoothing, debt dynamics), and Gini inequality — all evolving independently between LLM turns.
+- **Asset Price Engine** tracks historical commodities (gold, silver, grain, land, oil, stocks, crypto) with event-driven volatility, shocks (crashes, booms, bubbles, currency crises), and seeded RNG.
+- **Portfolio Simulation** lets you create portfolios, allocate across assets, trade at each turn, and track performance over millennia with cost-basis accounting — denominated in gold, silver, or USD.
+- **Wealth Flow Layer** animates trade routes between regions on the world map.
+- **EconQuake Overlay** pulses economic shock epicenters (crashes, booms, trade disruptions, bubble bursts, currency crises) directly on the map.
+
+### Visualization & Charts
+
+- **Interactive World Map** with GeoJSON territory overlays, hover inspection, region search, and click-to-detail for every civilization.
+- **Millennial K-Line Chart** renders GDP and asset trends across millennia with event markers (wars, inventions, disasters, trade shifts, financial crises) and zoom.
+- **GDP Race Chart** — animated ranking bar chart comparing regional GDP over time.
+- **Gini Prism & Race Chart** — inequality time series with benchmark zones (Equal / Moderate / Unequal / Extreme) and cross-region ranking.
+- **Population Trend Chart** tracks demographic shifts with period-over-period change indicators.
+- **Asset Fingerprint** radar chart profiles a region's economic shape across GDP/capita, trade, fiscal health, military, urbanization, population, debt, and tech.
+
+### Civilization Deep-Dive
+
+- **14 Dimension Tabs** per region with 100+ tracked fields: rulers, government departments, GDP, trade goods, military branches, demographics, cultural achievements, factions, AI sector (for the AI Age era), assessment, and war history.
+- **War System** with structured conflict tracking: belligerents, casus belli, strategic advantages, dual-line metric comparison charts, key battles, and post-war impact.
+- **Evolution Log** records every field-level change with impact tiers (critical / high / medium / low), sentiment coloring, and an AI Explain button that generates LLM-powered causal analysis for any single change.
+
+### Player Controls
+
+- **Custom Events** — inject any scenario and watch the AI react: change a single invention's timing, unleash a plague, rewrite a discovery.
 - **Dual Simulation Modes**: Historical mode grounds the simulation in documented events; Speculative mode unlocks civilization memory and scenario injection for deep alternate-history exploration.
+- **Tunable Simulation Parameters** — adjust contingency vs. determinism, tune event-category weights (war, diplomacy, trade, tech, culture, disaster), and compare divergence across parallel runs.
+- **Advance Confirmation** — preview and cherry-pick upcoming events, add or edit custom events inline, and batch-advance 1–10 epochs in a single step.
 - **Time Control** with play, pause, step, advance-by-epoch, and rollback to any year.
 - **Bilingual** with full English & Chinese UI and localized civilization data.
 
@@ -66,20 +97,33 @@ The core idea is simple: **the AI doesn't write a story; it computes consequence
 
 ## Getting Started
 
-### Prerequisites
+### Download Desktop App
 
-- **Node.js** ≥ 18
-- An **[OpenRouter](https://openrouter.ai/)** API key (can be set via `.env.local` or entered in the app)
+Download the latest release for your platform — no development tools required. On first launch, the app will prompt you to enter your [OpenRouter](https://openrouter.ai/) API key.
 
-### Install & Run
+| Platform       | Download                                                                                                  | Architecture          |
+| -------------- | --------------------------------------------------------------------------------------------------------- | --------------------- |
+| macOS          | [Human History Simulator.dmg](https://github.com/lowesyang/human-history-simulator/releases/latest)       | Apple Silicon & Intel |
+| Windows        | [Human History Simulator Setup.exe](https://github.com/lowesyang/human-history-simulator/releases/latest) | x64                   |
+| Linux          | [Human History Simulator.AppImage](https://github.com/lowesyang/human-history-simulator/releases/latest)  | x64                   |
+| Linux (Debian) | [human-history-simulator.deb](https://github.com/lowesyang/human-history-simulator/releases/latest)       | x64                   |
+
+> The app checks for updates on launch and every 4 hours. You can choose automatic or manual updates in Settings.
+
+### Run from Source (Development)
+
+Requires **Node.js** ≥ 18 and an **[OpenRouter](https://openrouter.ai/)** API key.
 
 ```bash
-git clone https://github.com/your-username/human-history-simulator.git
+git clone https://github.com/lowesyang/human-history-simulator.git
 cd human-history-simulator
 npm install
+npm run dev
 ```
 
-Create `.env.local` (optional — you can also enter your API key in Settings):
+Open [http://localhost:3000](http://localhost:3000). No external database needed — embedded SQLite is created automatically on first run.
+
+Optionally create `.env.local`:
 
 ```env
 OPENROUTER_API_KEY=your_openrouter_api_key_here
@@ -93,23 +137,24 @@ LLM_MAX_GROUP_SIZE=10
 | `LLM_MODEL`          | Model for simulation (any model on OpenRouter) |
 | `LLM_MAX_GROUP_SIZE` | Max regions per LLM call                       |
 
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000). If no API key is configured in `.env.local`, the Welcome screen will prompt you to enter and validate one. Pick an era and start simulating.
-
 ## Scripts
 
-| Command                      | Description                    |
-| ---------------------------- | ------------------------------ |
-| `npm run dev`                | Development server             |
-| `npm run build`              | Production build               |
-| `npm run start`              | Production server              |
-| `npm run lint`               | ESLint                         |
-| `npm run seed`               | Seed database with default era |
-| `npm run seed -- bronze-age` | Seed with a specific era       |
-| `npm run generate:eras`      | Generate era data via LLM      |
+| Command                        | Description                          |
+| ------------------------------ | ------------------------------------ |
+| `npm run dev`                  | Development server (web)             |
+| `npm run build`                | Production build (web)               |
+| `npm run start`                | Production server (web)              |
+| `npm run lint`                 | ESLint                               |
+| `npm run seed`                 | Seed database with default era       |
+| `npm run seed -- bronze-age`   | Seed with a specific era             |
+| `npm run generate:eras`        | Generate era data via LLM            |
+| `npm run build:geo`            | Rebuild GeoJSON boundary snapshots   |
+| `npm run electron:dev`         | Development mode (desktop)           |
+| `npm run electron:build`       | Package desktop app (all platforms)  |
+| `npm run electron:build:mac`   | Package for macOS                    |
+| `npm run electron:build:win`   | Package for Windows                  |
+| `npm run electron:build:linux` | Package for Linux                    |
+| `npm run electron:publish`     | Build and publish to GitHub Releases |
 
 ## Supported Eras
 
@@ -141,13 +186,13 @@ Open [http://localhost:3000](http://localhost:3000). If no API key is configured
 **Engine & Controls**
 
 - [x] **Tunable Simulation Engine**: Optimize progression efficiency and expose a control panel for shaping how history unfolds — adjust _contingency_ vs. _determinism_ to set the balance between butterfly effects and structural forces, tune event-category weights (war, diplomacy, trade, tech, culture, disaster) to amplify or suppress specific drivers, and compare divergence across parallel runs to see exactly where and why timelines split.
+- [x] **Historical Economics & Asset Tracking**: Ground each era's economy in real research — trade volumes, monetary systems, taxation, debt, wealth distribution — and model key asset trajectories (gold, silver, grain, oil, land, proto-equity instruments) as interactive trend charts that evolve alongside the simulation.
 - [ ] **Richer Custom Events**: Make custom-event injection more expressive: chain events together, set preconditions, and craft elaborate alternate-history scenarios with branching consequences.
 - [ ] **Live State Editor**: Directly modify any civilization's state at any point in time — tweak GDP, swap rulers, redraw alliances, adjust military strength — and watch the engine propagate consequences forward.
 
 **Content & Data**
 
 - [ ] **Deeper Civilization Profiles**: Enrich per-civilization modeling with finer-grained dimensions: social structure, religious influence, artistic movements, philosophical currents, collective morale, infrastructure, and more — making culture and spirit first-class simulation axes alongside economics and military.
-- [ ] **Historical Economics & Asset Tracking**: Ground each era's economy in real research — trade volumes, monetary systems, taxation, debt, wealth distribution — and model key asset trajectories (gold, silver, grain, oil, land, proto-equity instruments) as interactive trend charts that evolve alongside the simulation.
 - [ ] **Broader Historical Coverage**: Surface overlooked but historically significant states, tribes, and regions on the map. The ones textbooks forget, but history remembers.
 - [ ] **Future Era Projection**: Push the timeline beyond the AI Age — 2030, 2050, 2100 and further — and let the engine speculate on AGI, autonomous weapons, space colonization, climate tipping points, and the global order they reshape.
 

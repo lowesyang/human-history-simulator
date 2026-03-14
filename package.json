@@ -2,6 +2,7 @@
   "name": "human-history-simulator",
   "version": "0.2.0",
   "private": true,
+  "main": "electron/dist/main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +11,14 @@
     "seed": "npx tsx scripts/seed-db.ts",
     "seed:era": "npx tsx scripts/seed-db.ts",
     "generate:eras": "npx tsx scripts/generate-era-states.ts",
-    "build:geo": "npx tsx scripts/build-geo-snapshots.ts"
+    "build:geo": "npx tsx scripts/build-geo-snapshots.ts",
+    "electron:compile": "npx tsc -p electron/tsconfig.json",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && npm run electron:compile && electron .\"",
+    "electron:build": "npm run build && npm run electron:compile && electron-builder --publish never",
+    "electron:build:mac": "npm run build && npm run electron:compile && electron-builder --mac --publish never",
+    "electron:build:win": "npm run build && npm run electron:compile && electron-builder --win --publish never",
+    "electron:build:linux": "npm run build && npm run electron:compile && electron-builder --linux --publish never",
+    "electron:publish": "npm run build && npm run electron:compile && electron-builder --publish always"
   },
   "dependencies": {
     "@turf/helpers": "^7.3.4",
@@ -19,6 +27,7 @@
     "better-sqlite3": "^12.6.2",
     "echarts": "^6.0.0",
     "echarts-for-react": "^3.0.6",
+    "electron-updater": "^6.6.2",
     "maplibre-gl": "^5.19.0",
     "next": "16.1.6",
     "react": "19.2.3",
@@ -28,15 +37,20 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
+    "@electron/rebuild": "^3.7.1",
     "@tailwindcss/postcss": "^4",
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/uuid": "^10.0.0",
+    "concurrently": "^9.1.2",
+    "electron": "^35.0.1",
+    "electron-builder": "^26.0.12",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wait-on": "^8.0.3"
   }
 }

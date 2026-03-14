@@ -1,7 +1,8 @@
 import Database from "better-sqlite3";
 import path from "path";
+import { getDbPath } from "./paths";
 
-const DB_PATH = path.join(process.cwd(), "data", "history.db");
+const DB_PATH = getDbPath();
 
 const globalForDb = globalThis as unknown as {
   __historyDb?: Database.Database;

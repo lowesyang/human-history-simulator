@@ -29,7 +29,12 @@ extraResources:
     filter:
       - "**/*"
 
-asar: false
+asar: true
+asarUnpack:
+  - "node_modules/better-sqlite3/**/*"
+  - "node_modules/@napi-rs/**/*"
+  - "node_modules/@emnapi/**/*"
+  - ".next/standalone/**/*"
 
 npmRebuild: true
 

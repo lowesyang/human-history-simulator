@@ -96,6 +96,7 @@ async function startNextServer(): Promise<number> {
   if (isProd) {
     const serverPath = path.join(
       process.resourcesPath,
+      "app.asar.unpacked",
       ".next",
       "standalone",
       "server.js"

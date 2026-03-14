@@ -24,7 +24,7 @@ const CATEGORY_COLORS: Record<string, string> = {
 const ALL_CATEGORIES: EventCategory[] = [
   "war", "dynasty", "invention", "trade", "religion",
   "disaster", "natural_disaster", "exploration", "diplomacy", "migration",
-  "technology", "finance", "political", "other",
+  "technology", "finance", "announcement", "other",
 ];
 
 function formatYear(year: number, locale: "zh" | "en"): string {

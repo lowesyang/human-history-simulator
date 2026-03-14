@@ -99,6 +99,7 @@ export type EventCategory =
   | "technology"
   | "finance"
   | "political"
+  | "announcement"
   | "other";
 
 export type BatchMode = "per_event" | "per_month" | "per_year";

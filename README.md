@@ -14,14 +14,14 @@ An LLM-powered civilization simulator spanning **3,600+ years** across **20 eras
   <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
 </p>
 
-### Download (v0.2.0)
+### Download (v0.2.1)
 
 | Platform | Download                                                                                                                                                                                                                                                                | Architecture  |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| macOS    | [**Human History Simulator-0.2.0-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0-arm64.dmg)                                                                                                    | Apple Silicon |
-| macOS    | [**Human History Simulator-0.2.0.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.dmg)                                                                                                                | Intel         |
-| Windows  | [**Human History Simulator Setup 0.2.0.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator.Setup.0.2.0.exe)                                                                                                    | x64           |
-| Linux    | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/human-history-simulator_0.2.0_amd64.deb) | x64           |
+| macOS    | [**Human History Simulator-0.2.1-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1-arm64.dmg)                                                                                                    | Apple Silicon |
+| macOS    | [**Human History Simulator-0.2.1.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.dmg)                                                                                                                | Intel         |
+| Windows  | [**Human History Simulator Setup 0.2.1.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator.Setup.0.2.1.exe)                                                                                                    | x64           |
+| Linux    | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/human-history-simulator_0.2.1_amd64.deb) | x64           |
 
 > On first launch the app asks for an [OpenRouter](https://openrouter.ai/) API key. Auto-updates are built in.
 

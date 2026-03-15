@@ -14,14 +14,14 @@ LLM 多 Agent 驱动的文明推演模拟器，涵盖 **20 个纪元**、**3,600
   <img src="docs/assets/screenshot-zh.png" alt="Human History Simulator 截图" width="100%" />
 </p>
 
-### 下载客户端 (v0.2.0)
+### 下载客户端 (v0.2.1)
 
 | 平台    | 下载                                                                                                                                                                                                                                                                    | 架构          |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| macOS   | [**Human History Simulator-0.2.0-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0-arm64.dmg)                                                                                                    | Apple Silicon |
-| macOS   | [**Human History Simulator-0.2.0.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.dmg)                                                                                                                | Intel         |
-| Windows | [**Human History Simulator Setup 0.2.0.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator.Setup.0.2.0.exe)                                                                                                    | x64           |
-| Linux   | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/human-history-simulator_0.2.0_amd64.deb) | x64           |
+| macOS   | [**Human History Simulator-0.2.1-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1-arm64.dmg)                                                                                                    | Apple Silicon |
+| macOS   | [**Human History Simulator-0.2.1.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.dmg)                                                                                                                | Intel         |
+| Windows | [**Human History Simulator Setup 0.2.1.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator.Setup.0.2.1.exe)                                                                                                    | x64           |
+| Linux   | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/human-history-simulator_0.2.1_amd64.deb) | x64           |
 
 > 首次启动时需输入 [OpenRouter](https://openrouter.ai/) API 密钥。应用内置自动更新。
 

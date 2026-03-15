@@ -166,27 +166,28 @@ Runs after electron-builder packs each architecture. Four responsibilities:
 ### Publishing a New Release
 
 1. **Bump version** in `package.json`
-2. **Clean** previous build: `rm -rf dist/`
-3. **Commit and push** all changes to `main`
-4. **Build** (must be on macOS for macOS targets):
+2. **Update README download links** — update version numbers in both `README.md` and `README.zh-CN.md`: the heading (`### Download (vX.Y.Z)` / `### 下载客户端 (vX.Y.Z)`), all download URLs, and all filenames in the download table. Both files must stay in sync.
+3. **Clean** previous build: `rm -rf dist/`
+4. **Commit and push** all changes to `main`
+5. **Build** (must be on macOS for macOS targets):
    ```bash
    npm run electron:build:mac
    npx electron-builder --linux --publish never
    npx electron-builder --win --publish never
    ```
-5. **Create tag and release:**
+6. **Create tag and release:**
    ```bash
    git tag v<VERSION>
    git push origin v<VERSION>
    gh release create v<VERSION> --title "v<VERSION> — <title>" --notes "<notes>" --draft
    ```
-6. **Upload assets** (one at a time for large files):
+7. **Upload assets** (one at a time for large files):
    ```bash
    gh release upload v<VERSION> dist/latest-mac.yml dist/latest-linux.yml dist/latest.yml dist/*.blockmap
    gh release upload v<VERSION> "dist/<file>.dmg"
    gh release upload v<VERSION> "dist/<file>.exe"
    ```
-7. **Publish:** `gh release edit v<VERSION> --draft=false`
+8. **Publish:** `gh release edit v<VERSION> --draft=false`
 
 ### What NOT to Do
 

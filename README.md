@@ -1,4 +1,4 @@
-# <img src="docs/assets/logo.png" width="32" height="32" alt="logo" /> Human History Simulator
+<h1><img src="docs/assets/logo.png" width="32" height="32" alt="logo" style="vertical-align: middle;" />&nbsp;Human History Simulator</h1>
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)

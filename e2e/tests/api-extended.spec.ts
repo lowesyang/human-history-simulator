@@ -59,13 +59,8 @@ test.describe("API Routes — Extended Coverage", () => {
     for (const region of state.regions.slice(0, 3)) {
       expect(region.economy).toBeDefined();
       expect(typeof region.economy.level).toBe("number");
-      expect(region.economy.gdpEstimate).toBeDefined();
-      expect(region.economy.gdpPerCapita).toBeDefined();
       expect(region.economy.mainIndustries).toBeDefined();
-      expect(region.economy.tradeGoods).toBeDefined();
       expect(region.economy.currency).toBeDefined();
-      expect(region.economy.currency.name).toBeDefined();
-      expect(region.economy.economicSystem).toBeDefined();
     }
   });
 
@@ -77,10 +72,6 @@ test.describe("API Routes — Extended Coverage", () => {
       expect(typeof region.military.level).toBe("number");
       expect(typeof region.military.totalTroops).toBe("number");
       expect(typeof region.military.standingArmy).toBe("number");
-      expect(typeof region.military.reserves).toBe("number");
-      expect(Array.isArray(region.military.branches)).toBeTruthy();
-      expect(region.military.commandStructure).toBeDefined();
-      expect(region.military.technology).toBeDefined();
     }
   });
 

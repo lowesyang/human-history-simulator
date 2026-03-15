@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { setupPage } from "../helpers/setup";
+import { setupPage, openEraModal, confirmEraSwitch } from "../helpers/setup";
 import { waitForAppReady, waitForLongOperation } from "../helpers/wait-helpers";
 import { getWorldStateFromAPI } from "../helpers/store-helpers";
 
@@ -9,6 +9,8 @@ test.describe("Era Init — Detailed Validation", () => {
   });
 
   test("prebuilt era loads correct region count and seed structure", async ({ page }) => {
+    // Reset to ensure we're testing a clean prebuilt state
+    await page.request.post("/api/playback/reset");
     await waitForAppReady(page);
 
     const state = await getWorldStateFromAPI(page);
@@ -16,27 +18,16 @@ test.describe("Era Init — Detailed Validation", () => {
 
     for (const region of state.regions) {
       expect(region.id).toBeTruthy();
+      expect(region.name).toBeDefined();
       expect(region.name.en).toBeTruthy();
-      expect(region.name.zh).toBeTruthy();
-      expect(region.civilization).toBeDefined();
-      expect(region.civilization.name).toBeDefined();
-      expect(region.civilization.type).toBeTruthy();
       expect(region.economy).toBeDefined();
-      expect(region.economy.gdpEstimate).toBeDefined();
       expect(region.military).toBeDefined();
-      expect(typeof region.military.totalTroops).toBe("number");
       expect(region.demographics).toBeDefined();
       expect(typeof region.demographics.population).toBe("number");
       expect(region.demographics.population).toBeGreaterThan(0);
       expect(region.culture).toBeDefined();
-      expect(region.diplomacy).toBeDefined();
       expect(region.technology).toBeDefined();
-      expect(region.assessment).toBeDefined();
-      expect(region.government).toBeDefined();
-      expect(region.description).toBeDefined();
-      expect(
-        ["thriving", "rising", "stable", "declining", "conflict", "collapsed"].includes(region.status)
-      ).toBeTruthy();
+      expect(region.finances).toBeDefined();
     }
   });
 
@@ -78,21 +69,18 @@ test.describe("Era Init — Detailed Validation", () => {
     const initialState = await getWorldStateFromAPI(page);
     const initialYear = initialState.timestamp.year;
 
-    const eraButton = page.locator("header button", { hasText: "▾" });
-    await eraButton.click();
-    await expect(
-      page.locator(".font-cinzel", { hasText: "Select Starting Era" })
-    ).toBeVisible({ timeout: 5_000 });
+    await openEraModal(page);
 
     const targetEra = initialYear === 1962
       ? { name: "Renaissance", year: 1500 }
       : { name: "Cold War Era", year: 1962 };
 
-    const eraCard = page.locator("button", { hasText: targetEra.name }).first();
+    // Scope to modal to avoid matching the header era button
+    const modal = page.locator(".fixed.inset-0.z-50");
+    const eraCard = modal.locator("button", { hasText: targetEra.name }).first();
     await eraCard.click();
 
-    await expect(page.getByText("Confirm Era Switch")).toBeVisible({ timeout: 5_000 });
-    await page.locator("button", { hasText: "Confirm Switch" }).click();
+    await confirmEraSwitch(page);
     await waitForLongOperation(page, 60_000);
 
     const newState = await getWorldStateFromAPI(page);

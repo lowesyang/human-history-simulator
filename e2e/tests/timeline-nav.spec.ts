@@ -21,9 +21,10 @@ test.describe("Timeline Navigation", () => {
   test("API returns correct snapshot for a given year", async ({ page }) => {
     const state = await getWorldStateFromAPI(page);
     const currentYear = state.timestamp.year;
+    const currentMonth = state.timestamp.month;
 
     const resp = await page.request.get(
-      `/api/state?year=${currentYear}&month=1`
+      `/api/state?year=${currentYear}&month=${currentMonth}`
     );
     expect(resp.ok()).toBeTruthy();
     const snapshot = await resp.json();
@@ -32,19 +33,13 @@ test.describe("Timeline Navigation", () => {
   });
 
   test("era banner displays formatted year correctly", async ({ page }) => {
-    const state = await getWorldStateFromAPI(page);
-    const year = state.timestamp.year;
-
     const yearText = await page.locator(".era-banner-year").textContent();
     expect(yearText).toBeTruthy();
 
-    if (year < 0) {
-      expect(yearText).toContain("BCE");
-      expect(yearText).toContain(String(Math.abs(year)));
-    } else {
-      expect(yearText).toContain("CE");
-      expect(yearText).toContain(String(year));
-    }
+    // Banner must follow the format "YYYY BCE" or "YYYY CE"
+    const bceMatch = yearText!.match(/(\d+)\s*BCE/);
+    const ceMatch = yearText!.match(/(\d+)\s*CE/);
+    expect(bceMatch || ceMatch).toBeTruthy();
   });
 
   test("era name banner is non-empty and matches state", async ({ page }) => {

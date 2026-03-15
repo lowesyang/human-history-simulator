@@ -255,7 +255,7 @@ const EXACT_ID_MAP: Record<string, string> = {
   zaire_1962: "CD",
   malaya_1962: "MY",
   scandinavia_1939: "SE",
-  communist_base_areas_1939: "CN",
+
   latin_america_1939: "MX",
   aden_1962: "YE",
   pakistan_1962: "PK",

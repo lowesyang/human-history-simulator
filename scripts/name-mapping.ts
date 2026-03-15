@@ -86,7 +86,6 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   nanzhao: ["Nan Chao", "Nan-Zhao"],
   dali_kingdom: ["Nan Chao"],
   wang_jingwei_regime_1939: ["Chinese warlords"],
-  communist_base_areas_1939: ["Chinese warlords"],
 
   // --- Taiwan ---
   roc_taiwan_1962: ["Taiwan"],

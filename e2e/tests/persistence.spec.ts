@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { setupPage } from "../helpers/setup";
-import { waitForAppReady, waitForLongOperation } from "../helpers/wait-helpers";
+import { setupPage, openEraModal, confirmEraSwitch } from "../helpers/setup";
+import { waitForAppReady, waitForLoadingDone, waitForLongOperation } from "../helpers/wait-helpers";
 import { getWorldStateFromAPI, getDisplayedYear } from "../helpers/store-helpers";
 
 test.describe("Persistence & State Consistency", () => {
@@ -9,14 +9,16 @@ test.describe("Persistence & State Consistency", () => {
   });
 
   test("page reload preserves current era state", async ({ page }) => {
+    // Reset to a known state to avoid cross-test pollution
+    await page.request.post("/api/playback/reset");
     await waitForAppReady(page);
 
     const stateBefore = await getWorldStateFromAPI(page);
     const yearBefore = stateBefore.timestamp.year;
     const regionCountBefore = stateBefore.regions.length;
 
-    await page.reload();
-    await waitForAppReady(page);
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await waitForLoadingDone(page, 60_000);
 
     const stateAfter = await getWorldStateFromAPI(page);
     expect(stateAfter.timestamp.year).toBe(yearBefore);
@@ -110,23 +112,26 @@ test.describe("Persistence & State Consistency", () => {
   test("era switch followed by reload keeps the new era", async ({ page }) => {
     await waitForAppReady(page);
 
-    const eraButton = page.locator("header button", { hasText: "▾" });
-    await eraButton.click();
-    await expect(
-      page.locator(".font-cinzel", { hasText: "Select Starting Era" })
-    ).toBeVisible({ timeout: 5_000 });
+    await openEraModal(page);
 
-    const targetCard = page.locator("button", { hasText: "Bronze Age" }).first();
+    // Target the era card within the modal grid (not the header button)
+    const modal = page.locator(".fixed.inset-0.z-50");
+    const targetCard = modal.locator("button", { hasText: "Cold War Era" }).first();
     await targetCard.click();
 
-    await expect(page.getByText("Confirm Era Switch")).toBeVisible({ timeout: 5_000 });
-    await page.locator("button", { hasText: "Confirm Switch" }).click();
+    await confirmEraSwitch(page);
     await waitForLongOperation(page, 60_000);
 
     const stateAfterSwitch = await getWorldStateFromAPI(page);
 
-    await page.reload();
-    await waitForAppReady(page);
+    // Verify the DB actually has the new state before reloading
+    const apiCheck = await page.request.get("/api/state");
+    const apiState = await apiCheck.json();
+    expect(apiState.timestamp.year).toBe(stateAfterSwitch.timestamp.year);
+
+    await page.waitForTimeout(500);
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await waitForLoadingDone(page, 60_000);
 
     const stateAfterReload = await getWorldStateFromAPI(page);
     expect(stateAfterReload.timestamp.year).toBe(stateAfterSwitch.timestamp.year);

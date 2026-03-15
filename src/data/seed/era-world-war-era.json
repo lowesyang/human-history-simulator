@@ -16335,51 +16335,84 @@
           "en": ""
         },
         "training": {
-          "level": 4,
+          "level": 5,
           "description": {
-            "zh": "常规训练体系，兵种有基本配合",
-            "en": "Regular training regimen with basic unit coordination"
+            "zh": "中央军嫡系部队经德式训练，素质较高；地方部队训练水平参差不齐",
+            "en": "Central elite forces received German-style training with higher quality; provincial forces had uneven training levels"
           }
         },
         "morale": {
-          "level": 3,
+          "level": 5,
           "description": {
-            "zh": "士气低迷，纪律涣散",
-            "en": "Low morale, weakening discipline"
+            "zh": "抗战初期军民抗日意志坚定，但长期消耗战后部分部队士气有所下降",
+            "en": "Strong determination to resist Japan in early war phase, though some units' morale declined after prolonged war of attrition"
           }
         },
         "equipment": [
           {
             "name": {
-              "zh": "半自动步枪",
-              "en": "Semi-Auto Rifle"
+              "zh": "中正式步枪",
+              "en": "Chiang Kai-shek Rifle (Type Zhongzheng)"
             },
             "category": "ranged",
             "description": {
-              "zh": "M1加兰德/SVT-40等半自动步枪",
-              "en": "M1 Garand/SVT-40 semi-automatic rifles"
+              "zh": "仿毛瑟Kar98k的国造制式步枪，中央军主要装备，精准可靠",
+              "en": "Chinese-made standard rifle based on Mauser Kar98k, primary weapon of central forces, accurate and reliable"
             }
           },
           {
             "name": {
-              "zh": "冲锋枪",
-              "en": "Submachine Gun"
+              "zh": "汉阳八八式步枪",
+              "en": "Hanyang Type 88 Rifle"
             },
             "category": "ranged",
             "description": {
-              "zh": "汤普森/MP40/PPSh-41冲锋枪，近战火力猛",
-              "en": "Thompson/MP40/PPSh-41 SMGs with fierce close-quarters firepower"
+              "zh": "汉阳兵工厂仿制的老式步枪，地方部队大量使用",
+              "en": "Older rifle produced at Hanyang Arsenal, widely used by provincial forces"
             }
           },
           {
             "name": {
-              "zh": "俯冲轰炸机",
-              "en": "Dive Bomber"
+              "zh": "捷克式轻机枪",
+              "en": "ZB vz. 26 Light Machine Gun"
+            },
+            "category": "ranged",
+            "description": {
+              "zh": "捷克斯洛伐克ZB-26轻机枪及国产仿制型，国军最重要的班组支援武器",
+              "en": "Czech ZB-26 light machine gun and Chinese copies, the most important squad support weapon of the Chinese army"
+            }
+          },
+          {
+            "name": {
+              "zh": "博福斯75mm山炮",
+              "en": "Bofors 75mm Mountain Gun"
+            },
+            "category": "ranged",
+            "description": {
+              "zh": "瑞典博福斯山炮，国军炮兵主力装备之一，适合山地作战",
+              "en": "Swedish Bofors mountain gun, one of the main artillery pieces of the Chinese army, suitable for mountain warfare"
+            }
+          },
+          {
+            "name": {
+              "zh": "伊-15/伊-16战斗机",
+              "en": "I-15bis / I-16 Fighter Aircraft"
             },
             "category": "aerial",
             "description": {
-              "zh": "斯图卡/SBD俯冲轰炸机，精确打击地面目标",
-              "en": "Stuka/SBD dive bomber for precise ground target strikes"
+              "zh": "苏联援助的主力战斗机，1939年中国空军的骨干机型",
+              "en": "Soviet-supplied main fighter aircraft, backbone of the Chinese Air Force in 1939"
+            }
+          },
+          {
+            "name": {
+              "zh": "德制一号坦克",
+              "en": "Panzer I Light Tank"
+            },
+            "category": "armor",
+            "description": {
+              "zh": "少量德国一号坦克及维克斯轻型坦克，国军极有限的装甲力量",
+              "en": "Small number of German Panzer I and Vickers light tanks, the very limited armored force of the Chinese army"
             }
           }
         ],
@@ -16397,7 +16430,7 @@
         "notableCampaigns": []
       },
       "demographics": {
-        "population": 430000000,
+        "population": 450000000,
         "populationDescription": {
           "zh": "人口总量约4.5亿，仍为世界上人口最多的国家之一。人口分布高度集中于华北平原、长江流域、华南丘陵及四川盆地，但大量人口处于战区、沦陷区或难民流动状态。",
           "en": "With about 450 million people, China remained one of the most populous countries in the world. Population was heavily concentrated in the North China Plain, the Yangtze basin, the hills of South China, and the Sichuan Basin, but vast numbers were living in war zones, occupied areas, or refugee movement."
@@ -16463,13 +16496,13 @@
         "subdivisions": [
           {
             "name": {
-              "zh": "广东省",
-              "en": "Guangdong"
+              "zh": "四川省",
+              "en": "Sichuan"
             },
-            "population": 126800000,
+            "population": 52000000,
             "capital": {
-              "zh": "广州",
-              "en": "Guangzhou"
+              "zh": "成都",
+              "en": "Chengdu"
             }
           },
           {
@@ -16477,7 +16510,7 @@
               "zh": "山东省",
               "en": "Shandong"
             },
-            "population": 101530000,
+            "population": 38500000,
             "capital": {
               "zh": "济南",
               "en": "Jinan"
@@ -16488,7 +16521,7 @@
               "zh": "河南省",
               "en": "Henan"
             },
-            "population": 98830000,
+            "population": 34000000,
             "capital": {
               "zh": "郑州",
               "en": "Zhengzhou"
@@ -16499,7 +16532,7 @@
               "zh": "江苏省",
               "en": "Jiangsu"
             },
-            "population": 85150000,
+            "population": 36000000,
             "capital": {
               "zh": "南京",
               "en": "Nanjing"
@@ -16507,21 +16540,10 @@
           },
           {
             "name": {
-              "zh": "四川省",
-              "en": "Sichuan"
-            },
-            "population": 83670000,
-            "capital": {
-              "zh": "成都",
-              "en": "Chengdu"
-            }
-          },
-          {
-            "name": {
               "zh": "河北省",
               "en": "Hebei"
             },
-            "population": 74100000,
+            "population": 30000000,
             "capital": {
               "zh": "石家庄",
               "en": "Shijiazhuang"
@@ -16529,10 +16551,21 @@
           },
           {
             "name": {
+              "zh": "广东省",
+              "en": "Guangdong"
+            },
+            "population": 30000000,
+            "capital": {
+              "zh": "广州",
+              "en": "Guangzhou"
+            }
+          },
+          {
+            "name": {
               "zh": "湖南省",
               "en": "Hunan"
             },
-            "population": 66440000,
+            "population": 28000000,
             "capital": {
               "zh": "长沙",
               "en": "Changsha"
@@ -16543,7 +16576,7 @@
               "zh": "浙江省",
               "en": "Zhejiang"
             },
-            "population": 65770000,
+            "population": 21000000,
             "capital": {
               "zh": "杭州",
               "en": "Hangzhou"
@@ -16554,7 +16587,7 @@
               "zh": "安徽省",
               "en": "Anhui"
             },
-            "population": 61270000,
+            "population": 23000000,
             "capital": {
               "zh": "合肥",
               "en": "Hefei"
@@ -16565,7 +16598,7 @@
               "zh": "湖北省",
               "en": "Hubei"
             },
-            "population": 57700000,
+            "population": 25000000,
             "capital": {
               "zh": "武汉",
               "en": "Wuhan"
@@ -16573,10 +16606,32 @@
           },
           {
             "name": {
-              "zh": "广西壮族自治区",
+              "zh": "江西省",
+              "en": "Jiangxi"
+            },
+            "population": 16000000,
+            "capital": {
+              "zh": "南昌",
+              "en": "Nanchang"
+            }
+          },
+          {
+            "name": {
+              "zh": "福建省",
+              "en": "Fujian"
+            },
+            "population": 12000000,
+            "capital": {
+              "zh": "福州",
+              "en": "Fuzhou"
+            }
+          },
+          {
+            "name": {
+              "zh": "广西省",
               "en": "Guangxi"
             },
-            "population": 50370000,
+            "population": 14000000,
             "capital": {
               "zh": "南宁",
               "en": "Nanning"
@@ -16587,7 +16642,7 @@
               "zh": "云南省",
               "en": "Yunnan"
             },
-            "population": 47120000,
+            "population": 10000000,
             "capital": {
               "zh": "昆明",
               "en": "Kunming"
@@ -16595,76 +16650,10 @@
           },
           {
             "name": {
-              "zh": "江西省",
-              "en": "Jiangxi"
-            },
-            "population": 45190000,
-            "capital": {
-              "zh": "南昌",
-              "en": "Nanchang"
-            }
-          },
-          {
-            "name": {
-              "zh": "辽宁省",
-              "en": "Liaoning"
-            },
-            "population": 42150000,
-            "capital": {
-              "zh": "沈阳",
-              "en": "Shenyang"
-            }
-          },
-          {
-            "name": {
-              "zh": "福建省",
-              "en": "Fujian"
-            },
-            "population": 41880000,
-            "capital": {
-              "zh": "福州",
-              "en": "Fuzhou"
-            }
-          },
-          {
-            "name": {
-              "zh": "陕西省",
-              "en": "Shaanxi"
-            },
-            "population": 39530000,
-            "capital": {
-              "zh": "西安",
-              "en": "Xi'an"
-            }
-          },
-          {
-            "name": {
-              "zh": "黑龙江省",
-              "en": "Heilongjiang"
-            },
-            "population": 31230000,
-            "capital": {
-              "zh": "哈尔滨",
-              "en": "Harbin"
-            }
-          },
-          {
-            "name": {
-              "zh": "山西省",
-              "en": "Shanxi"
-            },
-            "population": 34920000,
-            "capital": {
-              "zh": "太原",
-              "en": "Taiyuan"
-            }
-          },
-          {
-            "name": {
               "zh": "贵州省",
               "en": "Guizhou"
             },
-            "population": 38530000,
+            "population": 10000000,
             "capital": {
               "zh": "贵阳",
               "en": "Guiyang"
@@ -16672,24 +16661,24 @@
           },
           {
             "name": {
-              "zh": "重庆市",
-              "en": "Chongqing"
+              "zh": "山西省",
+              "en": "Shanxi"
             },
-            "population": 32050000,
+            "population": 12000000,
             "capital": {
-              "zh": "重庆",
-              "en": "Chongqing"
+              "zh": "太原",
+              "en": "Taiyuan"
             }
           },
           {
             "name": {
-              "zh": "吉林省",
-              "en": "Jilin"
+              "zh": "陕西省",
+              "en": "Shaanxi"
             },
-            "population": 23830000,
+            "population": 10000000,
             "capital": {
-              "zh": "长春",
-              "en": "Changchun"
+              "zh": "西安",
+              "en": "Xi'an"
             }
           },
           {
@@ -16697,7 +16686,7 @@
               "zh": "甘肃省",
               "en": "Gansu"
             },
-            "population": 24940000,
+            "population": 6500000,
             "capital": {
               "zh": "兰州",
               "en": "Lanzhou"
@@ -16705,32 +16694,54 @@
           },
           {
             "name": {
-              "zh": "内蒙古自治区",
-              "en": "Inner Mongolia"
+              "zh": "辽宁省（沦陷）",
+              "en": "Liaoning (occupied)"
             },
-            "population": 24050000,
+            "population": 16000000,
             "capital": {
-              "zh": "呼和浩特",
-              "en": "Hohhot"
+              "zh": "沈阳",
+              "en": "Shenyang"
             }
           },
           {
             "name": {
-              "zh": "新疆维吾尔自治区",
-              "en": "Xinjiang"
+              "zh": "吉林省（沦陷）",
+              "en": "Jilin (occupied)"
             },
-            "population": 25890000,
+            "population": 9000000,
             "capital": {
-              "zh": "乌鲁木齐",
-              "en": "Urumqi"
+              "zh": "长春",
+              "en": "Changchun"
             }
           },
           {
             "name": {
-              "zh": "上海市",
-              "en": "Shanghai"
+              "zh": "黑龙江省（沦陷）",
+              "en": "Heilongjiang (occupied)"
             },
-            "population": 24870000,
+            "population": 6000000,
+            "capital": {
+              "zh": "哈尔滨",
+              "en": "Harbin"
+            }
+          },
+          {
+            "name": {
+              "zh": "重庆市（战时首都）",
+              "en": "Chongqing (Wartime Capital)"
+            },
+            "population": 1100000,
+            "capital": {
+              "zh": "重庆",
+              "en": "Chongqing"
+            }
+          },
+          {
+            "name": {
+              "zh": "上海市（沦陷/租界）",
+              "en": "Shanghai (Occupied/Concessions)"
+            },
+            "population": 3900000,
             "capital": {
               "zh": "上海",
               "en": "Shanghai"
@@ -16738,21 +16749,21 @@
           },
           {
             "name": {
-              "zh": "北京市",
-              "en": "Beijing"
+              "zh": "北平市（沦陷）",
+              "en": "Beiping (occupied)"
             },
-            "population": 21540000,
+            "population": 1600000,
             "capital": {
-              "zh": "北京",
-              "en": "Beijing"
+              "zh": "北平",
+              "en": "Beiping"
             }
           },
           {
             "name": {
-              "zh": "天津市",
-              "en": "Tianjin"
+              "zh": "天津市（沦陷）",
+              "en": "Tianjin (occupied)"
             },
-            "population": 13630000,
+            "population": 1300000,
             "capital": {
               "zh": "天津",
               "en": "Tianjin"
@@ -16760,21 +16771,32 @@
           },
           {
             "name": {
-              "zh": "海南省",
-              "en": "Hainan"
+              "zh": "内蒙古地区",
+              "en": "Inner Mongolia Region"
             },
-            "population": 10080000,
+            "population": 3500000,
             "capital": {
-              "zh": "海口",
-              "en": "Haikou"
+              "zh": "归绥",
+              "en": "Guisui"
             }
           },
           {
             "name": {
-              "zh": "宁夏回族自治区",
+              "zh": "新疆省",
+              "en": "Xinjiang"
+            },
+            "population": 4000000,
+            "capital": {
+              "zh": "迪化",
+              "en": "Dihua (Urumqi)"
+            }
+          },
+          {
+            "name": {
+              "zh": "宁夏省",
               "en": "Ningxia"
             },
-            "population": 7250000,
+            "population": 1200000,
             "capital": {
               "zh": "银川",
               "en": "Yinchuan"
@@ -16785,7 +16807,7 @@
               "zh": "青海省",
               "en": "Qinghai"
             },
-            "population": 5950000,
+            "population": 1500000,
             "capital": {
               "zh": "西宁",
               "en": "Xining"
@@ -16793,13 +16815,24 @@
           },
           {
             "name": {
-              "zh": "西藏自治区",
-              "en": "Tibet"
+              "zh": "西藏地方",
+              "en": "Tibet Region"
             },
-            "population": 3650000,
+            "population": 1000000,
             "capital": {
               "zh": "拉萨",
               "en": "Lhasa"
+            }
+          },
+          {
+            "name": {
+              "zh": "海南岛",
+              "en": "Hainan Island"
+            },
+            "population": 2500000,
+            "capital": {
+              "zh": "海口",
+              "en": "Haikou"
             }
           }
         ]
@@ -17142,6 +17175,441 @@
               "role": {
                 "zh": "政权二号人物",
                 "en": "Second-in-command of the regime"
+              }
+            }
+          ]
+        },
+        {
+          "id": "cc_clique_1939",
+          "name": {
+            "zh": "CC系（中央俱乐部）",
+            "en": "CC Clique (Central Club)"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "陈果夫、陈立夫",
+            "en": "Chen Guofu, Chen Lifu"
+          },
+          "leaderTitle": {
+            "zh": "中央组织部部长（陈立夫）、中央党部实际控制者",
+            "en": "Director of Central Organization Department (Chen Lifu), de facto controllers of central party apparatus"
+          },
+          "ideology": {
+            "zh": "三民主义、反共主义、力行哲学、党治国家",
+            "en": "Three Principles of the People, anti-communism, philosophy of practice, party-state"
+          },
+          "foundedYear": 1927,
+          "headquarters": {
+            "zh": "重庆（随国民政府西迁）",
+            "en": "Chongqing (relocated with the National Government)"
+          },
+          "controlledArea": {
+            "zh": "控制国民党中央党务系统、中央组织部、中统局、党务调查处及地方党部网络",
+            "en": "Controlled the KMT central party apparatus, Central Organization Department, Bureau of Investigation and Statistics (BIS/Zhongtong), Party Affairs Investigation Office, and local party branch networks"
+          },
+          "population": 0,
+          "status": "allied",
+          "relationship": {
+            "zh": "CC系是蒋介石在党务系统中的核心支柱，二陈兄弟自1920年代起追随蒋介石。CC系掌控国民党组织、宣传和特务（中统局）系统，在党内人事、思想控制和反共工作中具有巨大影响力。但与黄埔系、政学系之间存在争权竞争。",
+            "en": "The CC Clique was Chiang Kai-shek's core pillar in the party apparatus; the Chen brothers had followed Chiang since the 1920s. The CC Clique controlled the KMT's organization, propaganda, and intelligence (BIS/Zhongtong) systems, wielding enormous influence over party personnel, ideological control, and anti-communist operations. However, it competed for power with the Whampoa and Political Study cliques."
+          },
+          "description": {
+            "zh": "CC系因「中央俱乐部」（Central Club）得名，由陈果夫、陈立夫兄弟领导，是国民党党务系统中最强大的派系。CC系控制中央组织部和中统局（中央调查统计局），负责党务人事任命、意识形态管控和政治情报工作。1939年CC系在抗战期间持续强化对后方省份党部的控制，同时通过中统特务系统监控共产党活动和反政府异见。CC系在文化教育领域也有广泛渗透，主导国民精神总动员运动。",
+            "en": "Named after the 'Central Club', the CC Clique was led by the Chen Guofu and Chen Lifu brothers and was the most powerful faction in the KMT's party apparatus. The CC Clique controlled the Central Organization Department and the Bureau of Investigation and Statistics (BIS/Zhongtong), managing party personnel appointments, ideological control, and political intelligence. In 1939, the CC Clique continued to strengthen its hold on rear-area provincial party organizations while using the BIS intelligence network to monitor Communist activities and anti-government dissent. The CC Clique also had extensive influence in culture and education, leading the National Spiritual Mobilization Movement."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "陈果夫",
+                "en": "Chen Guofu"
+              },
+              "title": {
+                "zh": "国民党中央执行委员会常委",
+                "en": "Standing Member of KMT Central Executive Committee"
+              },
+              "role": {
+                "zh": "CC系实际创建者，虽因肺病退居二线但仍掌控派系布局",
+                "en": "Actual founder of the CC Clique; though sidelined by tuberculosis, still controlled factional networks"
+              }
+            },
+            {
+              "name": {
+                "zh": "陈立夫",
+                "en": "Chen Lifu"
+              },
+              "title": {
+                "zh": "中央组织部部长",
+                "en": "Director of Central Organization Department"
+              },
+              "role": {
+                "zh": "CC系日常运作核心，主管党务人事与中统系统",
+                "en": "Core operator of the CC Clique, overseeing party personnel and the BIS system"
+              }
+            },
+            {
+              "name": {
+                "zh": "徐恩曾",
+                "en": "Xu Enzeng"
+              },
+              "title": {
+                "zh": "中统局局长",
+                "en": "Director of BIS (Zhongtong)"
+              },
+              "role": {
+                "zh": "中统特务机关首脑，负责政治侦查和反共情报",
+                "en": "Head of the BIS intelligence agency, responsible for political investigation and anti-communist intelligence"
+              }
+            }
+          ]
+        },
+        {
+          "id": "whampoa_clique_1939",
+          "name": {
+            "zh": "黄埔系（军统系统）",
+            "en": "Whampoa Clique (Military Intelligence System)"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "戴笠",
+            "en": "Dai Li"
+          },
+          "leaderTitle": {
+            "zh": "军事委员会调查统计局副局长（实际主持）",
+            "en": "Deputy Director of Military Bureau of Investigation and Statistics (de facto head)"
+          },
+          "ideology": {
+            "zh": "军事效忠蒋介石、反共、特务政治、国家安全至上",
+            "en": "Military loyalty to Chiang Kai-shek, anti-communism, secret police politics, national security supremacy"
+          },
+          "foundedYear": 1924,
+          "headquarters": {
+            "zh": "重庆（军统局总部）",
+            "en": "Chongqing (Military Bureau of Investigation and Statistics headquarters)"
+          },
+          "controlledArea": {
+            "zh": "军统局在全国各地及敌后设有庞大的情报网络和行动队，控制军事情报、反间谍、暗杀、游击战指导等",
+            "en": "The Military BIS maintained vast intelligence networks and action teams throughout the country and behind enemy lines, controlling military intelligence, counter-espionage, assassinations, and guerrilla warfare direction"
+          },
+          "militaryStrength": {
+            "troops": 50000,
+            "description": {
+              "zh": "军统局拥有约5万名特工和武装人员，包括情报人员、行动队、敌后游击指挥员和忠义救国军等武装力量",
+              "en": "The Military BIS had approximately 50,000 agents and armed personnel, including intelligence operatives, action teams, behind-enemy-lines guerrilla commanders, and the Loyal and Righteous National Salvation Army"
+            }
+          },
+          "population": 0,
+          "status": "allied",
+          "relationship": {
+            "zh": "黄埔系以黄埔军校出身的军事将领和戴笠领导的军统局为核心，是蒋介石在军事和情报领域最依赖的力量。戴笠对蒋介石绝对忠诚，军统局直接向蒋介石汇报。黄埔系与CC系在情报系统上形成军统与中统的竞争格局。",
+            "en": "The Whampoa Clique centered on military generals from Whampoa Military Academy and Dai Li's Military BIS, forming Chiang Kai-shek's most trusted force in military and intelligence domains. Dai Li was absolutely loyal to Chiang, and the Military BIS reported directly to him. The Whampoa Clique and CC Clique competed through the rivalry between the Military BIS and the Bureau of Investigation."
+          },
+          "description": {
+            "zh": "黄埔系因黄埔军校而得名，1924年孙中山在广州创办黄埔军校，蒋介石任校长。黄埔军校培养了大批忠于蒋介石的军事骨干。1939年黄埔系在军事和情报领域的核心是戴笠领导的军统局（军事委员会调查统计局），该机构拥有遍布全国和敌后的庞大特务网络，执行军事情报搜集、反间谍、暗杀汉奸、敌后破坏、游击战组织等任务。军统局还控制忠义救国军等敌后武装力量，是抗战期间国民政府特务政治的核心机关。",
+            "en": "The Whampoa Clique was named after the Whampoa Military Academy, founded by Sun Yat-sen in Guangzhou in 1924 with Chiang Kai-shek as commandant. The academy trained a large cadre of military officers loyal to Chiang. In 1939, the core of the Whampoa Clique in military and intelligence affairs was Dai Li's Military Bureau of Investigation and Statistics (Juntong), which maintained a vast intelligence network throughout the country and behind enemy lines, carrying out military intelligence collection, counter-espionage, assassination of collaborators, sabotage behind enemy lines, and organization of guerrilla warfare. The Military BIS also controlled armed forces such as the Loyal and Righteous National Salvation Army, serving as the core organ of Nationalist wartime secret police operations."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "戴笠",
+                "en": "Dai Li"
+              },
+              "title": {
+                "zh": "军统局副局长",
+                "en": "Deputy Director of Military BIS"
+              },
+              "role": {
+                "zh": "军统局实际负责人，蒋介石最信赖的情报首脑",
+                "en": "De facto head of Military BIS, Chiang Kai-shek's most trusted intelligence chief"
+              }
+            },
+            {
+              "name": {
+                "zh": "何应钦",
+                "en": "He Yingqin"
+              },
+              "title": {
+                "zh": "军事委员会参谋总长",
+                "en": "Chief of General Staff, Military Affairs Commission"
+              },
+              "role": {
+                "zh": "黄埔系高级将领，军事决策核心成员",
+                "en": "Senior Whampoa general, core member of military decision-making"
+              }
+            },
+            {
+              "name": {
+                "zh": "陈诚",
+                "en": "Chen Cheng"
+              },
+              "title": {
+                "zh": "第九战区司令长官",
+                "en": "Commander of Ninth War Zone"
+              },
+              "role": {
+                "zh": "蒋介石嫡系将领，号称「小委员长」",
+                "en": "Chiang's most trusted general, nicknamed 'Little Generalissimo'"
+              }
+            },
+            {
+              "name": {
+                "zh": "胡宗南",
+                "en": "Hu Zongnan"
+              },
+              "title": {
+                "zh": "第三十四集团军总司令",
+                "en": "Commander of 34th Army Group"
+              },
+              "role": {
+                "zh": "黄埔一期毕业，负责西北防线和监视中共",
+                "en": "Whampoa first class graduate, responsible for northwest defense line and monitoring CCP"
+              }
+            }
+          ]
+        },
+        {
+          "id": "political_study_clique_1939",
+          "name": {
+            "zh": "政学系",
+            "en": "Political Study Clique"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "张群、杨永泰（已故）",
+            "en": "Zhang Qun, Yang Yongtai (deceased)"
+          },
+          "leaderTitle": {
+            "zh": "行政要员与政策顾问",
+            "en": "Administrative officials and policy advisors"
+          },
+          "ideology": {
+            "zh": "实用主义、技术官僚治国、中央集权行政现代化",
+            "en": "Pragmatism, technocratic governance, centralized administrative modernization"
+          },
+          "foundedYear": 1916,
+          "headquarters": {
+            "zh": "重庆",
+            "en": "Chongqing"
+          },
+          "controlledArea": {
+            "zh": "影响力集中于行政院、外交部、财政部等中央行政机关和部分省级政府",
+            "en": "Influence concentrated in the Executive Yuan, Ministry of Foreign Affairs, Ministry of Finance and other central administrative organs, and some provincial governments"
+          },
+          "population": 0,
+          "status": "allied",
+          "relationship": {
+            "zh": "政学系是蒋介石倚重的行政技术官僚集团，以实务能力和政策建议服务于蒋介石的统治需要。政学系成员多出身留学或行政经历，不像CC系和黄埔系那样拥有组织性的特务或军事力量，而是以行政能力和外交手腕见长。",
+            "en": "The Political Study Clique served as Chiang Kai-shek's trusted technocratic administrative group, serving his governance needs with practical competence and policy advice. Members typically had overseas study or administrative backgrounds; unlike the CC and Whampoa cliques, they lacked organized intelligence or military forces, excelling instead in administrative ability and diplomatic skills."
+          },
+          "description": {
+            "zh": "政学系起源于1916年国会中的政学会，后发展为国民党内以行政实务和外交事务见长的官僚派系。核心人物包括杨永泰（1936年被暗杀）、张群、吴鼎昌、熊式辉等人。1939年政学系在行政院、外交部和部分省政府中占据重要位置，是蒋介石处理日常行政和对外关系的重要班底。与CC系和黄埔系不同，政学系不搞特务政治，而是以政策能力和行政经验取得蒋介石信任。",
+            "en": "The Political Study Clique originated from the Political Study Association in the 1916 parliament, later evolving into a bureaucratic faction within the KMT known for administrative competence and diplomatic affairs. Key figures included Yang Yongtai (assassinated 1936), Zhang Qun, Wu Dingchang, and Xiong Shihui. In 1939, the Political Study Clique held important positions in the Executive Yuan, Ministry of Foreign Affairs, and some provincial governments, serving as Chiang Kai-shek's key team for handling routine administration and foreign relations. Unlike the CC and Whampoa cliques, the Political Study Clique did not engage in secret police politics but earned Chiang's trust through policy ability and administrative experience."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "张群",
+                "en": "Zhang Qun"
+              },
+              "title": {
+                "zh": "外交事务顾问、曾任外交部长",
+                "en": "Foreign affairs advisor, former Minister of Foreign Affairs"
+              },
+              "role": {
+                "zh": "政学系核心人物，负责对日外交和国际关系事务",
+                "en": "Core Political Study Clique figure, handling Japan-related diplomacy and international affairs"
+              }
+            },
+            {
+              "name": {
+                "zh": "吴鼎昌",
+                "en": "Wu Dingchang"
+              },
+              "title": {
+                "zh": "贵州省主席",
+                "en": "Chairman of Guizhou Province"
+              },
+              "role": {
+                "zh": "政学系重要成员，金融和行政专家",
+                "en": "Important Political Study Clique member, finance and administration expert"
+              }
+            },
+            {
+              "name": {
+                "zh": "熊式辉",
+                "en": "Xiong Shihui"
+              },
+              "title": {
+                "zh": "曾任江西省主席",
+                "en": "Former Chairman of Jiangxi Province"
+              },
+              "role": {
+                "zh": "省级行政干才，政学系地方代表",
+                "en": "Provincial administrative talent, Political Study Clique's local representative"
+              }
+            }
+          ]
+        },
+        {
+          "id": "youth_corps_1939",
+          "name": {
+            "zh": "三民主义青年团",
+            "en": "Three Principles of the People Youth Corps"
+          },
+          "type": "party",
+          "leader": {
+            "zh": "蒋介石（团长）、陈诚（副团长）",
+            "en": "Chiang Kai-shek (Director), Chen Cheng (Deputy Director)"
+          },
+          "leaderTitle": {
+            "zh": "三民主义青年团团长",
+            "en": "Director of the Three Principles Youth Corps"
+          },
+          "ideology": {
+            "zh": "三民主义、民族复兴、青年动员、抗战救国",
+            "en": "Three Principles of the People, national revival, youth mobilization, resistance and national salvation"
+          },
+          "foundedYear": 1938,
+          "headquarters": {
+            "zh": "重庆",
+            "en": "Chongqing"
+          },
+          "controlledArea": {
+            "zh": "在后方各省高校、城市和机关中建立支团部和分团部网络，吸收青年知识分子和学生",
+            "en": "Established branch networks in rear-area provincial universities, cities, and institutions, recruiting young intellectuals and students"
+          },
+          "population": 300000,
+          "status": "allied",
+          "relationship": {
+            "zh": "三青团于1938年在武汉成立，由蒋介石亲任团长，旨在创建一个超越国民党内各派系的青年组织，直接服从蒋介石领导。三青团与CC系控制的国民党党务系统形成竞争，蒋介石试图以三青团培养新一代忠于自己的干部力量。",
+            "en": "The Youth Corps was established in Wuhan in 1938, with Chiang Kai-shek personally serving as director, aiming to create a youth organization that transcended KMT factions and reported directly to Chiang. The Youth Corps competed with the CC Clique-controlled party apparatus, as Chiang sought to cultivate a new generation of cadres loyal to himself."
+          },
+          "description": {
+            "zh": "三民主义青年团（简称三青团）于1938年7月在武昌成立，是蒋介石为应对抗战需要和整合国民党内部派系而创建的青年政治组织。三青团以「团结青年、训练青年、指导青年」为宗旨，在全国后方高校和城市中广泛设立组织。1939年三青团正处于快速扩张期，成员已达30余万人。三青团不仅是青年动员工具，也是蒋介石绕过CC系等老派系、直接培植新生力量的政治手段。三青团内部有康泽等人主持的组织训练系统。",
+            "en": "The Three Principles of the People Youth Corps (abbreviated San Qing Tuan) was established in Wuchang in July 1938, a youth political organization created by Chiang Kai-shek to meet wartime needs and integrate KMT internal factions. With the mission of 'uniting, training, and guiding youth', the Youth Corps established organizations extensively in rear-area universities and cities nationwide. In 1939, the Youth Corps was in a phase of rapid expansion, with membership exceeding 300,000. The Youth Corps was not only a youth mobilization tool but also a political instrument for Chiang to cultivate new loyalists bypassing old factions like the CC Clique. The organization and training system within the Youth Corps was led by figures such as Kang Ze."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "康泽",
+                "en": "Kang Ze"
+              },
+              "title": {
+                "zh": "三青团中央团部组织处处长",
+                "en": "Director of Organization, Central Youth Corps Headquarters"
+              },
+              "role": {
+                "zh": "三青团实际组织者，蓝衣社核心成员",
+                "en": "De facto organizer of the Youth Corps, core Blue Shirts member"
+              }
+            },
+            {
+              "name": {
+                "zh": "蒋经国",
+                "en": "Chiang Ching-kuo"
+              },
+              "title": {
+                "zh": "江西省三青团干部训练班主持人",
+                "en": "Director of Jiangxi Youth Corps Cadre Training"
+              },
+              "role": {
+                "zh": "蒋介石之子，正通过三青团积累政治资本",
+                "en": "Chiang Kai-shek's son, building political capital through the Youth Corps"
+              }
+            }
+          ]
+        },
+        {
+          "id": "minor_parties_1939",
+          "name": {
+            "zh": "中间党派与民主人士",
+            "en": "Minor Democratic Parties and Independents"
+          },
+          "type": "other",
+          "leader": {
+            "zh": "张澜、沈钧儒、黄炎培等",
+            "en": "Zhang Lan, Shen Junru, Huang Yanpei, etc."
+          },
+          "leaderTitle": {
+            "zh": "各党派领袖与社会名流",
+            "en": "Party leaders and social notables"
+          },
+          "ideology": {
+            "zh": "民主宪政、社会改良、抗日救国、反对一党专政",
+            "en": "Democratic constitutionalism, social reform, anti-Japanese resistance, opposition to one-party rule"
+          },
+          "headquarters": {
+            "zh": "重庆",
+            "en": "Chongqing"
+          },
+          "controlledArea": {
+            "zh": "无直接控制领土，影响力通过国民参政会、新闻媒体和社会舆论发挥",
+            "en": "No directly controlled territory; influence exerted through the People's Political Council, press, and public opinion"
+          },
+          "population": 0,
+          "status": "opposition",
+          "relationship": {
+            "zh": "中间党派包括中国青年党、国家社会党（后改民主社会党）、第三党（中国农工民主党前身）、职教派（黄炎培）以及无党派民主人士。这些力量在国民参政会中有一定席位，呼吁实行宪政、结束训政。它们既不满国民党一党专政，也不完全认同共产党路线，试图在国共之间寻找第三条道路。蒋介石对中间派既拉拢又限制。",
+            "en": "Minor parties included the China Youth Party, National Social Party (later Democratic Socialist Party), Third Party (precursor to China Peasants and Workers Democratic Party), Vocational Education Group (Huang Yanpei), and non-partisan democrats. These forces had some seats in the People's Political Council, calling for constitutional government and an end to political tutelage. They were dissatisfied with KMT one-party rule but did not fully embrace the Communist line, seeking a third way between the KMT and CCP. Chiang Kai-shek alternately courted and restricted the middle parties."
+          },
+          "description": {
+            "zh": "1939年重庆汇聚了大批民主党派人士和社会名流。国民参政会（1938年成立）为中间力量提供了有限的政治参与平台。中国青年党的曾琦、左舜生，国社党的张君劢，救国会的沈钧儒、邹韬奋，以及张澜、黄炎培、梁漱溟等无党派名流，都在重庆积极活动。这些中间力量虽然缺乏军事实力和基层组织，但在舆论、文化和政治协商领域具有一定影响力，成为抗战时期中国政治光谱的重要组成部分。1941年他们将联合成立中国民主政团同盟。",
+            "en": "In 1939, Chongqing gathered numerous democratic party figures and social notables. The People's Political Council (established 1938) provided a limited platform for political participation by middle forces. Key figures included Zeng Qi and Zuo Shunsheng of the China Youth Party, Zhang Junmai of the National Social Party, Shen Junru and Zou Taofen of the National Salvation Association, and non-partisan luminaries like Zhang Lan, Huang Yanpei, and Liang Shuming, all active in Chongqing. Though lacking military power and grassroots organization, these middle forces had notable influence in public opinion, culture, and political consultation, forming an important part of China's wartime political spectrum. In 1941 they would unite to form the China Democratic League."
+          },
+          "keyFigures": [
+            {
+              "name": {
+                "zh": "张澜",
+                "en": "Zhang Lan"
+              },
+              "title": {
+                "zh": "国民参政员、社会名流",
+                "en": "People's Political Council member, social notable"
+              },
+              "role": {
+                "zh": "中间力量精神领袖，后任民盟主席",
+                "en": "Spiritual leader of middle forces, later Chairman of China Democratic League"
+              }
+            },
+            {
+              "name": {
+                "zh": "沈钧儒",
+                "en": "Shen Junru"
+              },
+              "title": {
+                "zh": "国民参政员、救国会领袖",
+                "en": "People's Political Council member, National Salvation Association leader"
+              },
+              "role": {
+                "zh": "「七君子」之一，著名爱国民主人士",
+                "en": "One of the 'Seven Gentlemen', renowned patriotic democrat"
+              }
+            },
+            {
+              "name": {
+                "zh": "黄炎培",
+                "en": "Huang Yanpei"
+              },
+              "title": {
+                "zh": "中华职业教育社创办人",
+                "en": "Founder of China Vocational Education Society"
+              },
+              "role": {
+                "zh": "职教派代表，社会活动家",
+                "en": "Representative of the Vocational Education Group, social activist"
+              }
+            },
+            {
+              "name": {
+                "zh": "梁漱溟",
+                "en": "Liang Shuming"
+              },
+              "title": {
+                "zh": "国民参政员、乡村建设运动领袖",
+                "en": "People's Political Council member, rural reconstruction movement leader"
+              },
+              "role": {
+                "zh": "新儒家思想家，国共调解人之一",
+                "en": "Neo-Confucian thinker, one of the KMT-CCP mediators"
               }
             }
           ]
@@ -79006,509 +79474,6 @@
       "description": {
         "zh": "1939年的西藏是一个事实上独立的藏传佛教神权政体，在第十四世达赖喇嘛年幼期间由摄政统治。",
         "en": "Tibet in 1939 was a de facto independent Tibetan Buddhist theocracy, ruled by a regent during the minority of the 14th Dalai Lama."
-      }
-    },
-    {
-      "id": "communist_base_areas_1939",
-      "name": {
-        "zh": "中国共产党根据地",
-        "en": "Chinese Communist Base Areas"
-      },
-      "territoryId": "communist_base_areas_1939",
-      "territoryScale": "md",
-      "civilization": {
-        "name": {
-          "zh": "中国共产党抗日根据地",
-          "en": "CCP Anti-Japanese Base Areas"
-        },
-        "type": "republic",
-        "ruler": {
-          "zh": "毛泽东",
-          "en": "Mao Zedong"
-        },
-        "rulerTitle": {
-          "zh": "中共中央主席",
-          "en": "Chairman of the CCP Central Committee"
-        },
-        "dynasty": {
-          "zh": "中国共产党",
-          "en": "Chinese Communist Party"
-        },
-        "capital": {
-          "zh": "延安",
-          "en": "Yan'an"
-        },
-        "governmentForm": {
-          "zh": "中国共产党领导下的抗日民主政权（三三制）",
-          "en": "Anti-Japanese democratic regime under CCP leadership (Three-thirds system)"
-        },
-        "socialStructure": {
-          "zh": "以农民为主体，在根据地推行土地改革和减租减息政策。党组织、军队和群众团体构成社会基本架构。延安整风运动正在酝酿。",
-          "en": "Peasant-dominated, with land reform and rent/interest reduction in base areas. Party organization, army, and mass organizations formed the basic social structure. The Yan'an Rectification Movement was being prepared."
-        },
-        "rulingClass": {
-          "zh": "中共中央政治局常委、军事委员会成员、各根据地党政领导",
-          "en": "CCP Politburo Standing Committee, Military Commission members, party-government leaders of various base areas"
-        },
-        "succession": {
-          "zh": "党内民主集中制，由中央委员会和政治局决策",
-          "en": "Democratic centralism within the Party, with decisions made by the Central Committee and Politburo"
-        }
-      },
-      "government": {
-        "structure": {
-          "zh": "1939年中共以延安为中心，在华北、华中建立了多个抗日根据地。推行'三三制'政权建设（共产党员、进步人士、中间人士各占三分之一）。陕甘宁边区政府为中央所在地的边区政权。",
-          "en": "In 1939, the CCP was centered in Yan'an, establishing multiple anti-Japanese base areas in North and Central China. The 'Three-thirds system' was implemented (one-third Communists, one-third progressives, one-third moderates). The Shaanxi-Gansu-Ningxia Border Region Government served as the central base area."
-        },
-        "departments": [
-          {
-            "name": {
-              "zh": "中共中央军事委员会",
-              "en": "CCP Central Military Commission"
-            },
-            "function": {
-              "zh": "统一指挥八路军、新四军和各地游击武装",
-              "en": "Unified command of Eighth Route Army, New Fourth Army, and guerrilla forces"
-            },
-            "headCount": 100
-          },
-          {
-            "name": {
-              "zh": "中共中央组织部",
-              "en": "CCP Central Organization Department"
-            },
-            "function": {
-              "zh": "管理党的干部任免和组织建设",
-              "en": "Managed party cadre appointments and organizational development"
-            },
-            "headCount": 200
-          }
-        ],
-        "totalOfficials": 50000,
-        "localAdmin": {
-          "zh": "各根据地设立边区政府、县政府、区公所和村政权。",
-          "en": "Each base area established border region governments, county governments, district offices, and village administrations."
-        },
-        "legalSystem": {
-          "zh": "根据地法律体系，强调保护农民权益和抗日统一战线。",
-          "en": "Base area legal system emphasizing protection of peasant rights and the anti-Japanese united front."
-        },
-        "taxationSystem": {
-          "zh": "合理负担政策（统一累进税），减租减息。",
-          "en": "Reasonable burden policy (unified progressive tax), rent and interest reduction."
-        }
-      },
-      "culture": {
-        "religion": {
-          "zh": "无官方宗教（马克思主义唯物论）",
-          "en": "No official religion (Marxist materialism)"
-        },
-        "culturalAchievements": {
-          "zh": "延安文艺运动蓬勃发展，鲁迅艺术学院培养了大批文艺工作者。新文化运动和抗战文学相结合。毛泽东的理论著作（《论持久战》《新民主主义论》等）影响深远。",
-          "en": "The Yan'an literary and art movement flourished; the Lu Xun Academy of Arts trained numerous cultural workers. New Culture Movement and wartime literature merged. Mao Zedong's theoretical works (On Protracted War, On New Democracy, etc.) were highly influential."
-        },
-        "languageFamily": {
-          "zh": "汉藏语系（汉语）",
-          "en": "Sino-Tibetan (Chinese)"
-        },
-        "philosophy": {
-          "zh": "马克思列宁主义、毛泽东思想",
-          "en": "Marxism-Leninism, Mao Zedong Thought"
-        },
-        "writingSystem": {
-          "zh": "简化汉字（推广使用）",
-          "en": "Simplified Chinese characters (promoted for use)"
-        }
-      },
-      "economy": {
-        "level": 2,
-        "gdpEstimate": {
-          "amount": 300,
-          "unit": {
-            "zh": "百万1939年美元",
-            "en": "million 1939 US dollars"
-          },
-          "goldKg": 266602
-        },
-        "gdpPerCapita": {
-          "amount": 10,
-          "unit": {
-            "zh": "1939年美元/人",
-            "en": "1939 US dollars per person"
-          },
-          "goldKg": 1
-        },
-        "gdpDescription": {
-          "zh": "战时经济极度困难，以农业生产和手工业自给为主。大生产运动尚未全面展开。根据地依靠减租减息维持农民支持，部分地区开展合作社运动。",
-          "en": "Wartime economy under extreme difficulty, primarily subsistence agriculture and handicraft production. The Great Production Movement had not yet fully begun. Base areas relied on rent and interest reduction to maintain peasant support; cooperative movements were emerging in some areas."
-        },
-        "mainIndustries": {
-          "zh": "农业、手工业、军工（弹药和武器修理）",
-          "en": "Agriculture, handicrafts, military industries (ammunition and weapons repair)"
-        },
-        "tradeGoods": {
-          "zh": "农产品、棉布、简易军需品",
-          "en": "Agricultural products, cotton cloth, basic military supplies"
-        },
-        "currency": {
-          "name": {
-            "zh": "边区银行券",
-            "en": "Border Region banknotes"
-          },
-          "type": "fiat",
-          "unitName": {
-            "zh": "元",
-            "en": "yuan"
-          }
-        },
-        "householdWealth": {
-          "zh": "普遍贫困，但根据地农民通过减租减息改善了生活。",
-          "en": "Widespread poverty, but base area peasants improved their lives through rent and interest reduction."
-        },
-        "averageIncome": {
-          "amount": 8,
-          "unit": {
-            "zh": "1939年美元/人/年",
-            "en": "1939 US dollars per person/year"
-          },
-          "goldKg": 1
-        },
-        "foreignTradeVolume": {
-          "amount": 5,
-          "unit": {
-            "zh": "百万1939年美元",
-            "en": "million 1939 US dollars"
-          },
-          "goldKg": 4443
-        },
-        "economicSystem": {
-          "zh": "新民主主义经济（公有、私有并存，以农业为基础）。",
-          "en": "New Democratic economy (coexistence of public and private, agriculture-based)."
-        },
-        "giniEstimate": 0.445
-      },
-      "finances": {
-        "annualRevenue": {
-          "amount": 10,
-          "unit": {
-            "zh": "百万1939年美元",
-            "en": "million 1939 US dollars"
-          },
-          "goldKg": 8887
-        },
-        "annualExpenditure": {
-          "amount": 12,
-          "unit": {
-            "zh": "百万1939年美元",
-            "en": "million 1939 US dollars"
-          },
-          "goldKg": 10664
-        },
-        "surplus": {
-          "amount": -2,
-          "unit": {
-            "zh": "百万1939年美元",
-            "en": "million 1939 US dollars"
-          },
-          "goldKg": -1777
-        },
-        "revenueBreakdown": [
-          {
-            "source": {
-              "zh": "农业税",
-              "en": "Agricultural tax"
-            },
-            "amount": {
-              "amount": 6,
-              "unit": {
-                "zh": "百万1939年美元",
-                "en": "million 1939 US dollars"
-              },
-              "goldKg": 5332
-            },
-            "percentage": 60
-          },
-          {
-            "source": {
-              "zh": "国民政府军饷拨款和外部援助",
-              "en": "KMT government military stipends and external aid"
-            },
-            "amount": {
-              "amount": 4,
-              "unit": {
-                "zh": "百万1939年美元",
-                "en": "million 1939 US dollars"
-              },
-              "goldKg": 3555
-            },
-            "percentage": 40
-          }
-        ],
-        "expenditureBreakdown": [
-          {
-            "category": {
-              "zh": "军事",
-              "en": "Military"
-            },
-            "amount": {
-              "amount": 8,
-              "unit": {
-                "zh": "百万1939年美元",
-                "en": "million 1939 US dollars"
-              },
-              "goldKg": 7109
-            },
-            "percentage": 67
-          },
-          {
-            "category": {
-              "zh": "行政与社会",
-              "en": "Administration and social services"
-            },
-            "amount": {
-              "amount": 4,
-              "unit": {
-                "zh": "百万1939年美元",
-                "en": "million 1939 US dollars"
-              },
-              "goldKg": 3555
-            },
-            "percentage": 33
-          }
-        ],
-        "treasury": {
-          "amount": 2,
-          "unit": {
-            "zh": "百万1939年美元",
-            "en": "million 1939 US dollars"
-          },
-          "goldKg": 1777
-        },
-        "treasuryDescription": {
-          "zh": "根据地财政极度紧张，主要依靠自力更生和外部拨款。",
-          "en": "Base area finances were extremely tight, relying mainly on self-reliance and external allocations."
-        },
-        "fiscalPolicy": {
-          "zh": "精兵简政、自力更生、开源节流。",
-          "en": "Streamlined administration, self-reliance, increasing income while reducing expenditure."
-        },
-        "debtLevel": {
-          "amount": 75,
-          "unit": {
-            "zh": "元",
-            "en": "yuan"
-          },
-          "goldKg": 66650
-        }
-      },
-      "military": {
-        "level": 4,
-        "totalTroops": 500000,
-        "standingArmy": 320000,
-        "reserves": 180000,
-        "branches": [
-          {
-            "name": {
-              "zh": "八路军",
-              "en": "Eighth Route Army"
-            },
-            "count": 200000,
-            "description": {
-              "zh": "主力部队，由红军改编，在华北地区与日军展开游击战。下辖第115、120、129师。",
-              "en": "Main force reorganized from the Red Army, conducting guerrilla warfare against Japan in North China. Comprised 115th, 120th, and 129th Divisions."
-            }
-          },
-          {
-            "name": {
-              "zh": "新四军",
-              "en": "New Fourth Army"
-            },
-            "count": 50000,
-            "description": {
-              "zh": "在华中地区活动的共产党武装力量。",
-              "en": "Communist armed forces operating in Central China."
-            }
-          },
-          {
-            "name": {
-              "zh": "地方游击队和民兵",
-              "en": "Local guerrillas and militia"
-            },
-            "count": 250000,
-            "description": {
-              "zh": "各根据地的地方武装力量。",
-              "en": "Local armed forces in various base areas."
-            }
-          }
-        ],
-        "commandStructure": {
-          "totalGenerals": 20,
-          "commanderInChief": {
-            "zh": "朱德（总司令）",
-            "en": "Zhu De (Commander-in-Chief)"
-          }
-        },
-        "technology": {
-          "zh": "武器装备严重不足，主要靠缴获日军装备和土造武器。在游击战术和人民战争理论方面有独到创新。",
-          "en": "Severely lacking in weapons; relied mainly on captured Japanese equipment and homemade weapons. Had distinctive innovations in guerrilla tactics and people's war theory."
-        },
-        "annualMilitarySpending": {
-          "amount": 8,
-          "unit": {
-            "zh": "百万1939年美元",
-            "en": "million 1939 US dollars"
-          }
-        },
-        "militarySpendingPctGdp": 2.7,
-        "threats": {
-          "zh": "日本侵略军是最大威胁；国共之间虽然处于第二次国共合作期间，但摩擦日益加剧。",
-          "en": "Japanese invading forces were the greatest threat; although in the second KMT-CCP cooperation period, friction was increasingly intensifying."
-        },
-        "doctrine": {
-          "zh": "",
-          "en": ""
-        },
-        "training": {
-          "level": 4,
-          "description": {
-            "zh": "常规训练体系，兵种有基本配合",
-            "en": "Regular training regimen with basic unit coordination"
-          }
-        },
-        "morale": {
-          "level": 3,
-          "description": {
-            "zh": "士气低迷，纪律涣散",
-            "en": "Low morale, weakening discipline"
-          }
-        },
-        "equipment": [
-          {
-            "name": {
-              "zh": "手榴弹",
-              "en": "Hand Grenade"
-            },
-            "category": "ranged",
-            "description": {
-              "zh": "破片手榴弹，步兵必备",
-              "en": "Fragmentation hand grenade, infantry essential"
-            }
-          },
-          {
-            "name": {
-              "zh": "战斗机",
-              "en": "Fighter Aircraft"
-            },
-            "category": "aerial",
-            "description": {
-              "zh": "喷火/零式/Bf109战斗机，争夺制空权",
-              "en": "Spitfire/Zero/Bf109 fighter for air superiority"
-            }
-          },
-          {
-            "name": {
-              "zh": "潜艇",
-              "en": "Submarine"
-            },
-            "category": "naval",
-            "description": {
-              "zh": "U型潜艇/美军舰队潜艇，破交战利器",
-              "en": "U-boat/Fleet submarine for commerce raiding"
-            }
-          }
-        ],
-        "fortifications": [],
-        "logistics": {
-          "supplyCapacity": {
-            "zh": "",
-            "en": ""
-          },
-          "mobilizationSpeed": {
-            "zh": "",
-            "en": ""
-          }
-        },
-        "notableCampaigns": []
-      },
-      "demographics": {
-        "population": 30000000,
-        "populationDescription": {
-          "zh": "各抗日根据地总人口约3000万，以华北农民为主体。",
-          "en": "Total population of various anti-Japanese base areas was about 30 million, predominantly North China peasants."
-        },
-        "urbanPopulation": 300000,
-        "urbanizationRate": 1,
-        "majorCities": [
-          {
-            "name": {
-              "zh": "延安",
-              "en": "Yan'an"
-            },
-            "population": 50000
-          },
-          {
-            "name": {
-              "zh": "阜平",
-              "en": "Fuping"
-            },
-            "population": 20000
-          },
-          {
-            "name": {
-              "zh": "盐城",
-              "en": "Yancheng"
-            },
-            "population": 30000
-          }
-        ],
-        "socialClasses": {
-          "zh": "中共干部和军人、根据地农民、地方知识分子、进步商人",
-          "en": "CCP cadres and soldiers, base area peasants, local intellectuals, progressive merchants"
-        }
-      },
-      "diplomacy": {
-        "allies": {
-          "zh": "名义上与国民政府处于抗日统一战线，接受苏联的有限援助。",
-          "en": "Nominally in the anti-Japanese united front with the KMT government; received limited Soviet aid."
-        },
-        "enemies": {
-          "zh": "日本帝国主义为最大敌人。",
-          "en": "Japanese imperialism as the greatest enemy."
-        },
-        "foreignPolicy": {
-          "zh": "抗日民族统一战线政策，同时保持中共的独立性和自主权。",
-          "en": "Anti-Japanese national united front policy, while maintaining CCP independence and autonomy."
-        }
-      },
-      "technology": {
-        "level": 2,
-        "era": {
-          "zh": "战时游击经济",
-          "en": "Wartime guerrilla economy"
-        },
-        "keyInnovations": {
-          "zh": "地道战技术、土造武器工艺、根据地无线电通讯网络、战地印刷技术。",
-          "en": "Tunnel warfare techniques, homemade weapons craft, base area wireless communications networks, field printing technology."
-        }
-      },
-      "assessment": {
-        "strengths": {
-          "zh": "深厚的群众基础、灵活的游击战术、强大的组织动员能力、坚定的意识形态凝聚力。",
-          "en": "Deep mass base, flexible guerrilla tactics, strong organizational mobilization capacity, firm ideological cohesion."
-        },
-        "weaknesses": {
-          "zh": "武器装备严重不足、经济基础薄弱、面临日伪和国民党双重军事压力。",
-          "en": "Severely lacking weapons, weak economic base, facing dual military pressure from Japanese puppet forces and the KMT."
-        },
-        "outlook": {
-          "zh": "通过持久抗战和根据地建设逐步壮大，到抗战结束时将发展为拥有百万军队的强大力量，最终在1949年建立中华人民共和国。",
-          "en": "Gradually strengthened through protracted war and base area construction; by war's end would grow into a powerful force with over a million troops, ultimately establishing the People's Republic of China in 1949."
-        }
-      },
-      "status": "rising",
-      "description": {
-        "zh": "1939年的中国共产党以延安为中心，在华北华中建立了广大的抗日根据地，正处于由弱到强的关键转变期。",
-        "en": "In 1939 the CCP, centered in Yan'an, had established extensive anti-Japanese base areas across North and Central China, at a critical turning point from weakness to strength."
       }
     },
     {

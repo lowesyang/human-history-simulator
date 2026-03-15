@@ -1,22 +1,31 @@
-# Human History Simulator
+# <img src="docs/assets/logo.png" width="32" height="32" alt="logo" /> Human History Simulator
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-username/human-history-simulator/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/lowesyang/human-history-simulator/pulls)
 
 > _If you had the power to rewrite history, where would you take humanity?_
 
-**Human History Simulator** is a civilization simulation powered by an LLM-based multi-agent system as its historical reasoning engine. Choose from **20 eras** spanning **3,600+ years**, from the Bronze Age forges of 1600 BCE through the rise and fall of empires to the AI revolution of 2023 CE, and set **1,400+ civilizations** in motion on an interactive world map. Each civilization is a deeply modeled entity tracking **100+ state fields**: GDP, military strength, literacy, trade routes, cultural output, and far more. Every turn, the multi-agent engine — including a **strategic civilization agent** that gives each nation its own goals — weaves new events, computes state transitions, and reshapes the geopolitical landscape. No two playthroughs are ever the same.
+An LLM-powered civilization simulator spanning **3,600+ years** across **20 eras** and **1,400+ civilizations**. Multi-agent AI computes consequences across economy, military, diplomacy, and culture on an interactive world map with real historical boundaries. Same starting conditions, endlessly divergent histories.
+
+### Download (v0.2.0)
+
+| Platform | Download                                                                                                                                                                                                                                                                | Architecture  |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| macOS    | [**Human History Simulator-0.2.0-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0-arm64.dmg)                                                                                                    | Apple Silicon |
+| macOS    | [**Human History Simulator-0.2.0.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.dmg)                                                                                                                | Intel         |
+| Windows  | [**Human History Simulator Setup 0.2.0.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator.Setup.0.2.0.exe)                                                                                                    | x64           |
+| Linux    | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/human-history-simulator_0.2.0_amd64.deb) | x64           |
+
+> On first launch the app asks for an [OpenRouter](https://openrouter.ai/) API key. Auto-updates are built in.
+
+[English](./README.md) · [中文](./README.zh-CN.md)
 
 <p align="center">
   <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
 </p>
-
-Territory boundaries are drawn from **47 real historical GeoJSON snapshots** (2000 BCE – 2010 CE) built on open academic basemaps: actual scholarly boundary data, not approximations. Wars redraw borders. Trade routes shift wealth across continents. Plagues decimate populations. Inventions ignite revolutions. The newest era, **AI Age (2023)**, drops you into the dawn of the artificial intelligence revolution: the foundation model race, chip export controls, AI regulation battles, and the geopolitical realignment they trigger. Every mutation is logged at field-level granularity, giving you a god's-eye view of cause and effect across millennia. Same starting conditions, endlessly divergent histories.
-
-[English](./README.md) · [中文](./README.zh-CN.md)
 
 ## Highlights
 
@@ -97,20 +106,7 @@ The core idea is simple: **the AI doesn't write a story; it computes consequence
 
 ## Getting Started
 
-### Download Desktop App
-
-Download the latest release for your platform — no development tools required. On first launch, the app will prompt you to enter your [OpenRouter](https://openrouter.ai/) API key.
-
-| Platform       | Download                                                                                                  | Architecture          |
-| -------------- | --------------------------------------------------------------------------------------------------------- | --------------------- |
-| macOS          | [Human History Simulator.dmg](https://github.com/lowesyang/human-history-simulator/releases/latest)       | Apple Silicon & Intel |
-| Windows        | [Human History Simulator Setup.exe](https://github.com/lowesyang/human-history-simulator/releases/latest) | x64                   |
-| Linux          | [Human History Simulator.AppImage](https://github.com/lowesyang/human-history-simulator/releases/latest)  | x64                   |
-| Linux (Debian) | [human-history-simulator.deb](https://github.com/lowesyang/human-history-simulator/releases/latest)       | x64                   |
-
-> The app checks for updates on launch and every 4 hours. You can choose automatic or manual updates in Settings.
-
-### Run from Source (Development)
+### Run from Source
 
 Requires **Node.js** ≥ 18 and an **[OpenRouter](https://openrouter.ai/)** API key.
 

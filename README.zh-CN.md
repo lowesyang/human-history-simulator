@@ -1,22 +1,31 @@
-# Human History Simulator
+# <img src="docs/assets/logo.png" width="32" height="32" alt="logo" /> Human History Simulator
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-username/human-history-simulator/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/lowesyang/human-history-simulator/pulls)
 
 > _如果你能改写历史，你会把人类引向何方？_
 
-**Human History Simulator** 是一款由 LLM 多 Agent 驱动的文明推演模拟器。**20 个纪元**任你选择，时间跨度超过 **3,600 年**——从公元前 1600 年的青铜熔炉，历经帝国兴衰更替，直到 2023 年的 AI 革命。**1,400+ 文明**在交互式世界地图上同时运转，每个文明都经过深度建模，追踪 **100+ 项状态指标**：GDP、军事实力、识字率、贸易路线、文化产出，不一而足。每一回合，多 Agent 推演引擎协同工作——其中**文明决策 Agent** 赋予每个国家独立的战略意志——生成新事件、计算状态变迁、重塑地缘格局。同一个起点，每次推演都通往不同的历史。
+LLM 多 Agent 驱动的文明推演模拟器，涵盖 **20 个纪元**、**3,600+ 年**、**1,400+ 文明**。AI 在经济、军事、外交、文化等维度同步推算因果，在交互式世界地图上以真实历史疆域实时呈现。同一个起点，每次推演都通往不同的历史。
+
+### 下载客户端 (v0.2.0)
+
+| 平台    | 下载                                                                                                                                                                                                                                                                    | 架构          |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| macOS   | [**Human History Simulator-0.2.0-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0-arm64.dmg)                                                                                                    | Apple Silicon |
+| macOS   | [**Human History Simulator-0.2.0.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.dmg)                                                                                                                | Intel         |
+| Windows | [**Human History Simulator Setup 0.2.0.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator.Setup.0.2.0.exe)                                                                                                    | x64           |
+| Linux   | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/Human.History.Simulator-0.2.0.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.0/human-history-simulator_0.2.0_amd64.deb) | x64           |
+
+> 首次启动时需输入 [OpenRouter](https://openrouter.ai/) API 密钥。应用内置自动更新。
+
+[English](./README.md) · [中文](./README.zh-CN.md)
 
 <p align="center">
   <img src="docs/assets/screenshot-zh.png" alt="Human History Simulator 截图" width="100%" />
 </p>
-
-疆域边界取自 **47 组真实历史 GeoJSON 快照**（公元前 2000 年 – 公元 2010 年），基于开源学术地图构建——这是经过考据的学术疆域数据，而非粗略近似。战争改写疆界，贸易路线在大陆间搬运财富，瘟疫吞噬人口，发明点燃变革。最新纪元 **AI 时代（2023）** 把你带到人工智能革命的前夜：大模型军备竞赛、芯片出口管制、AI 监管角力，以及由此掀起的地缘洗牌。每一次变化都以字段级粒度留档，让你以上帝视角纵览千年因果。相同起点，无限分叉。
-
-[English](./README.md) · [中文](./README.zh-CN.md)
 
 ## 亮点
 
@@ -96,19 +105,6 @@
 核心思想很简单：**AI 不是在讲故事，而是在推算后果。** 给定一组事件和每个文明的当前状态，引擎推算数十个维度上最可能出现的下一步。结果呈现出自然涌现而非照本宣科的质感，因为事实就是如此——同一纪元的两次推演几乎会立刻走向分叉，不是因为随机因素，而是因为事件时序上的细微差异会通过彼此关联的系统产生不可预测的连锁反应。
 
 ## 快速开始
-
-### 下载桌面客户端
-
-直接下载适合你平台的最新版本——无需安装开发工具。首次启动时，应用会引导你输入 [OpenRouter](https://openrouter.ai/) API 密钥。
-
-| 平台           | 下载                                                                                                      | 架构                  |
-| -------------- | --------------------------------------------------------------------------------------------------------- | --------------------- |
-| macOS          | [Human History Simulator.dmg](https://github.com/lowesyang/human-history-simulator/releases/latest)       | Apple Silicon & Intel |
-| Windows        | [Human History Simulator Setup.exe](https://github.com/lowesyang/human-history-simulator/releases/latest) | x64                   |
-| Linux          | [Human History Simulator.AppImage](https://github.com/lowesyang/human-history-simulator/releases/latest)  | x64                   |
-| Linux (Debian) | [human-history-simulator.deb](https://github.com/lowesyang/human-history-simulator/releases/latest)       | x64                   |
-
-> 应用启动时及每 4 小时自动检查更新。可在设置中选择自动更新或手动确认。
 
 ### 从源码运行（开发者）
 

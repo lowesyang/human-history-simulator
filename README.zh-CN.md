@@ -10,6 +10,10 @@
 
 LLM 多 Agent 驱动的文明推演模拟器，涵盖 **20 个纪元**、**3,600+ 年**、**1,400+ 文明**。AI 在经济、军事、外交、文化等维度同步推算因果，在交互式世界地图上以真实历史疆域实时呈现。同一个起点，每次推演都通往不同的历史。
 
+<p align="center">
+  <img src="docs/assets/screenshot-zh.png" alt="Human History Simulator 截图" width="100%" />
+</p>
+
 ### 下载客户端 (v0.2.0)
 
 | 平台    | 下载                                                                                                                                                                                                                                                                    | 架构          |
@@ -22,10 +26,6 @@ LLM 多 Agent 驱动的文明推演模拟器，涵盖 **20 个纪元**、**3,600
 > 首次启动时需输入 [OpenRouter](https://openrouter.ai/) API 密钥。应用内置自动更新。
 
 [English](./README.md) · [中文](./README.zh-CN.md)
-
-<p align="center">
-  <img src="docs/assets/screenshot-zh.png" alt="Human History Simulator 截图" width="100%" />
-</p>
 
 ## 亮点
 

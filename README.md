@@ -10,6 +10,10 @@
 
 An LLM-powered civilization simulator spanning **3,600+ years** across **20 eras** and **1,400+ civilizations**. Multi-agent AI computes consequences across economy, military, diplomacy, and culture on an interactive world map with real historical boundaries. Same starting conditions, endlessly divergent histories.
 
+<p align="center">
+  <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
+</p>
+
 ### Download (v0.2.0)
 
 | Platform | Download                                                                                                                                                                                                                                                                | Architecture  |
@@ -22,10 +26,6 @@ An LLM-powered civilization simulator spanning **3,600+ years** across **20 eras
 > On first launch the app asks for an [OpenRouter](https://openrouter.ai/) API key. Auto-updates are built in.
 
 [English](./README.md) · [中文](./README.zh-CN.md)
-
-<p align="center">
-  <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
-</p>
 
 ## Highlights
 

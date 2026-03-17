@@ -43,6 +43,7 @@ interface AppSettings {
   enableCivMemory?: boolean;
   enableScenarioInjection?: boolean;
   webSearchOnAdvance?: boolean;
+  enableDiplomatAgent?: boolean;
 }
 
 function getSettingsPath(): string {

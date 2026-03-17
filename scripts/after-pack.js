@@ -40,34 +40,45 @@ module.exports = async function afterPack(context) {
     return;
   }
 
+  function dirSizeBytes(dir) {
+    let total = 0;
+    try {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          total += dirSizeBytes(full);
+        } else {
+          try {
+            total += fs.statSync(full).size;
+          } catch {}
+        }
+      }
+    } catch {}
+    return total;
+  }
+
   // ── 1. Prune directories not needed at runtime ──
   const dirsToRemove = ["src", "data", "scripts", "build", "docs", "electron"];
   let savedBytes = 0;
   for (const d of dirsToRemove) {
     const target = path.join(projRoot, d);
     if (fs.existsSync(target)) {
-      const stat = execSync(`du -sk "${target}"`)
-        .toString()
-        .trim()
-        .split("\t")[0];
-      savedBytes += parseInt(stat) * 1024;
+      const size = dirSizeBytes(target);
+      savedBytes += size;
       fs.rmSync(target, { recursive: true, force: true });
       console.log(
-        `  afterPack: removed standalone/${d}/ (${(parseInt(stat) / 1024).toFixed(0)}MB)`,
+        `  afterPack: removed standalone/${d}/ (${(size / 1048576).toFixed(0)}MB)`,
       );
     }
   }
 
   const standalonePublic = path.join(projRoot, "public");
   if (fs.existsSync(standalonePublic)) {
-    const stat = execSync(`du -sk "${standalonePublic}"`)
-      .toString()
-      .trim()
-      .split("\t")[0];
-    savedBytes += parseInt(stat) * 1024;
+    const size = dirSizeBytes(standalonePublic);
+    savedBytes += size;
     fs.rmSync(standalonePublic, { recursive: true, force: true });
     console.log(
-      `  afterPack: removed standalone/public/ (${(parseInt(stat) / 1024).toFixed(0)}MB)`,
+      `  afterPack: removed standalone/public/ (${(size / 1048576).toFixed(0)}MB)`,
     );
   }
 

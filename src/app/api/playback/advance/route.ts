@@ -22,10 +22,12 @@ import {
   findClosestSnapshotYear,
   mergeSnapshotGeometry,
 } from "@/lib/geo-snapshots";
-import { getSimulationMode } from "@/lib/settings";
+import { getSimulationMode, getEnableDiplomatAgent, getEnablePresetEvents } from "@/lib/settings";
 import { applyClientHeaders } from "@/lib/api-headers";
 import { checkThresholds } from "@/lib/agents/threshold-trigger";
 import { processCivMemories } from "@/lib/agents/civ-memory";
+import { selectDiplomaticPairs, runDiplomatBatch, type DiplomaticDecision } from "@/lib/agents/diplomat";
+import { getCommunityEventsForYears } from "@/lib/community-events";
 import {
   insertEconomicSnapshot,
   insertAssetPrice,
@@ -150,6 +152,21 @@ async function runBatchAdvance(
   }
 
   const years = [...new Set(pendingEvents.map((e) => e.timestamp.year))].sort((a, b) => a - b);
+
+  if (getEnablePresetEvents()) {
+    const existingIds = new Set(pendingEvents.map((e) => e.id));
+    const communityEvents = getCommunityEventsForYears(years);
+    for (const ce of communityEvents) {
+      if (!existingIds.has(ce.id) && !excludedEventIds.has(ce.id)) {
+        pendingEvents.push(ce);
+        existingIds.add(ce.id);
+      }
+    }
+    if (communityEvents.length > 0) {
+      console.log(`[Advance] Injected ${communityEvents.length} community seed events for years ${years.join(", ")}`);
+    }
+  }
+
   const startYear = years[0];
   const endYear = years[years.length - 1];
   const targetYear = endYear;
@@ -200,12 +217,33 @@ async function runBatchAdvance(
 
   const warsForOrchestrate = getActiveWars(targetYear) as War[];
 
+  const enableDiplomat = getEnableDiplomatAgent();
+  let diplomaticDecisions: DiplomaticDecision[] = [];
+
+  if (enableDiplomat) {
+    sendSSE(controller, "diplomat_agent_start", { targetYear });
+    const pairs = selectDiplomaticPairs(currentState.regions, pendingEvents, warsForOrchestrate);
+    if (pairs.length > 0) {
+      const [dipResults] = await Promise.all([
+        runDiplomatBatch(currentState.regions, pairs, pendingEvents, warsForOrchestrate, targetYear),
+        Promise.resolve(applyInertiaToRegions(currentState, targetYear, sendSSE, controller)),
+      ]);
+      diplomaticDecisions = dipResults;
+      console.log(`[Advance] Diplomat Agent returned ${diplomaticDecisions.length} decisions for ${pairs.length} pairs`);
+    } else {
+      applyInertiaToRegions(currentState, targetYear, sendSSE, controller);
+    }
+    sendSSE(controller, "diplomat_agent_done", { targetYear, decisionCount: diplomaticDecisions.length });
+  } else {
+    applyInertiaToRegions(currentState, targetYear, sendSSE, controller);
+  }
+
   const hasWarEvents = hasWarRelatedEvents(pendingEvents);
   const warPromise = hasWarEvents
     ? (async () => {
       try {
         return await extractWarsFromEvents(
-          pendingEvents, currentState.regions, warsForOrchestrate, targetYear
+          pendingEvents, currentState.regions, warsForOrchestrate, targetYear, 0, diplomaticDecisions
         );
       } catch (err) {
         console.error("[Advance] War extraction failed:", err);
@@ -214,13 +252,11 @@ async function runBatchAdvance(
     })()
     : Promise.resolve([] as Partial<War>[]);
 
-  applyInertiaToRegions(currentState, targetYear, sendSSE, controller);
-
   const result = await orchestrate(
     currentState,
     pendingEvents,
     (stage, detail) => {
-      if (stage === "clustering_done" || stage === "civ_agent_start" || stage === "group_start" || stage === "group_done") {
+      if (stage === "clustering_done" || stage === "civ_agent_start" || stage === "diplomat_agent_start" || stage === "diplomat_agent_done" || stage === "group_start" || stage === "group_done") {
         sendSSE(controller, stage, { epoch: 1, totalEpochs: 1, targetYear, ...detail });
       } else {
         sendSSE(controller, "progress", {
@@ -239,7 +275,9 @@ async function runBatchAdvance(
       if (tokenFlushTimer) { clearTimeout(tokenFlushTimer); tokenFlushTimer = null; }
       flushTokens();
       sendSSE(controller, "llm_region_done", { regionIds });
-    }
+    },
+    undefined,
+    diplomaticDecisions
   );
 
   if (tokenFlushTimer) clearTimeout(tokenFlushTimer);
@@ -335,7 +373,7 @@ async function runBatchAdvance(
     snapshots: warSnapshotsData,
   });
 
-  updateOngoingWarNarratives(activeWarsForYear, result.regions as Region[], targetYear).catch(
+  updateOngoingWarNarratives(activeWarsForYear, result.regions as Region[], targetYear, diplomaticDecisions).catch(
     (err) => console.error("[Advance] War narrative update failed:", err)
   );
 
@@ -372,6 +410,20 @@ async function runSingleAdvance(
   }
 
   const targetYear = pendingEvents[0].timestamp.year;
+
+  if (getEnablePresetEvents()) {
+    const existingIds = new Set(pendingEvents.map((e) => e.id));
+    const communityEvents = getCommunityEventsForYears([targetYear]);
+    for (const ce of communityEvents) {
+      if (!existingIds.has(ce.id) && !excludedEventIds.has(ce.id)) {
+        pendingEvents.push(ce);
+        existingIds.add(ce.id);
+      }
+    }
+    if (communityEvents.length > 0) {
+      console.log(`[Advance] Injected ${communityEvents.length} community seed events for year ${targetYear}`);
+    }
+  }
 
   sendSSE(controller, "epoch_start", {
     epoch: 1, totalEpochs: 1, targetYear,
@@ -411,12 +463,33 @@ async function runSingleAdvance(
 
   const warsForOrchestrate = getActiveWars(targetYear) as War[];
 
+  const enableDiplomat = getEnableDiplomatAgent();
+  let diplomaticDecisions: DiplomaticDecision[] = [];
+
+  if (enableDiplomat) {
+    sendSSE(controller, "diplomat_agent_start", { targetYear });
+    const pairs = selectDiplomaticPairs(currentState.regions, pendingEvents, warsForOrchestrate);
+    if (pairs.length > 0) {
+      const [dipResults] = await Promise.all([
+        runDiplomatBatch(currentState.regions, pairs, pendingEvents, warsForOrchestrate, targetYear),
+        Promise.resolve(applyInertiaToRegions(currentState, targetYear, sendSSE, controller)),
+      ]);
+      diplomaticDecisions = dipResults;
+      console.log(`[Advance] Diplomat Agent returned ${diplomaticDecisions.length} decisions for ${pairs.length} pairs`);
+    } else {
+      applyInertiaToRegions(currentState, targetYear, sendSSE, controller);
+    }
+    sendSSE(controller, "diplomat_agent_done", { targetYear, decisionCount: diplomaticDecisions.length });
+  } else {
+    applyInertiaToRegions(currentState, targetYear, sendSSE, controller);
+  }
+
   const hasWarEvents = hasWarRelatedEvents(pendingEvents);
   const warPromise = hasWarEvents
     ? (async () => {
       try {
         return await extractWarsFromEvents(
-          pendingEvents, currentState.regions, warsForOrchestrate, targetYear
+          pendingEvents, currentState.regions, warsForOrchestrate, targetYear, 0, diplomaticDecisions
         );
       } catch (err) {
         console.error("[Advance] War extraction failed:", err);
@@ -425,13 +498,11 @@ async function runSingleAdvance(
     })()
     : Promise.resolve([] as Partial<War>[]);
 
-  applyInertiaToRegions(currentState, targetYear, sendSSE, controller);
-
   const result = await orchestrate(
     currentState,
     pendingEvents,
     (stage, detail) => {
-      if (stage === "clustering_done" || stage === "civ_agent_start" || stage === "group_start" || stage === "group_done") {
+      if (stage === "clustering_done" || stage === "civ_agent_start" || stage === "diplomat_agent_start" || stage === "diplomat_agent_done" || stage === "group_start" || stage === "group_done") {
         sendSSE(controller, stage, { epoch: 1, totalEpochs: 1, targetYear, ...detail });
       } else {
         sendSSE(controller, "progress", {
@@ -450,7 +521,9 @@ async function runSingleAdvance(
       if (tokenFlushTimer) { clearTimeout(tokenFlushTimer); tokenFlushTimer = null; }
       flushTokens();
       sendSSE(controller, "llm_region_done", { regionIds });
-    }
+    },
+    undefined,
+    diplomaticDecisions
   );
 
   if (tokenFlushTimer) clearTimeout(tokenFlushTimer);
@@ -539,7 +612,7 @@ async function runSingleAdvance(
     snapshots: warSnapshotsData,
   });
 
-  updateOngoingWarNarratives(activeWarsForYear, result.regions as Region[], targetYear).catch(
+  updateOngoingWarNarratives(activeWarsForYear, result.regions as Region[], targetYear, diplomaticDecisions).catch(
     (err) => console.error("[Advance] War narrative update failed:", err)
   );
 

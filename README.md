@@ -14,14 +14,14 @@ An LLM-powered civilization simulator spanning **3,600+ years** across **20 eras
   <img src="docs/assets/screenshot.png" alt="Human History Simulator Screenshot" width="100%" />
 </p>
 
-### Download (v0.2.1)
+### Download (v0.3.0)
 
 | Platform | Download                                                                                                                                                                                                                                                                | Architecture  |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| macOS    | [**Human History Simulator-0.2.1-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1-arm64.dmg)                                                                                                    | Apple Silicon |
-| macOS    | [**Human History Simulator-0.2.1.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.dmg)                                                                                                                | Intel         |
-| Windows  | [**Human History Simulator Setup 0.2.1.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator.Setup.0.2.1.exe)                                                                                                    | x64           |
-| Linux    | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/human-history-simulator_0.2.1_amd64.deb) | x64           |
+| macOS    | [**Human History Simulator-0.3.0-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator-0.3.0-arm64.dmg)                                                                                                    | Apple Silicon |
+| macOS    | [**Human History Simulator-0.3.0.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator-0.3.0.dmg)                                                                                                                | Intel         |
+| Windows  | [**Human History Simulator Setup 0.3.0.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator.Setup.0.3.0.exe)                                                                                                    | x64           |
+| Linux    | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator-0.3.0.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/human-history-simulator_0.3.0_amd64.deb) | x64           |
 
 > On first launch the app asks for an [OpenRouter](https://openrouter.ai/) API key. Auto-updates are built in.
 
@@ -38,6 +38,7 @@ An LLM-powered civilization simulator spanning **3,600+ years** across **20 eras
 ### AI Engine
 
 - **Multi-Agent Evolution** — an AI orchestrator clusters regions, generates events, and computes per-field state transitions across economy, military, diplomacy, culture, and more.
+- **Diplomatic & Trade Agent** — a dedicated bilateral reasoning step that analyzes region pairs to produce structured diplomatic, trade, and war-coalition decisions. Alliances, rivalries, trade pacts, and embargoes are negotiated between civilizations before the historian computes transitions, ensuring both sides of every relationship stay consistent and that diplomatic shifts correctly cascade into trade flows and war side assignments.
 - **Civilization Agent** gives key regions strategic intent — expand, defend, trade, invest in tech, forge alliances — so nations behave like nations, not passive data.
 - **Civilization Memory** preserves each nation's long-term goals and past decisions in Speculative mode, producing coherent multi-turn strategic behavior.
 - **Threshold-Triggered Events** auto-generate crises and breakthroughs when key metrics cross critical thresholds — economic collapse, military escalation, tech revolutions, population crises, and alliance breakdowns.
@@ -84,7 +85,7 @@ When you press play or advance the clock, three things happen in sequence:
 
 1. **Events shape the world.** The engine looks at the upcoming events on your timeline and asks: which civilizations are affected? A famine in Egypt, a trade treaty between Venice and Constantinople, a Mongol invasion sweeping across Central Asia. Each event names the regions it touches and the kind of change it brings.
 
-2. **Civilizations respond together.** Regions that share the same events, fight the same wars, or border each other are grouped and reasoned about as a whole. This ensures that when the Ottoman Empire expands, the Byzantine reaction, Egyptian trade shifts, and Venetian diplomatic maneuvers are all computed in the same context, not in isolation. Regions with no connection to current events evolve on their own internal logic.
+2. **Civilizations negotiate, then respond together.** Before the main simulation pass, a Diplomatic & Trade Agent identifies the most important bilateral relationships — pairs of regions sharing events, engaged in wars, or linked by trade routes — and reasons about both sides of each relationship simultaneously. The result is a set of structured diplomatic decisions (alliances, rivalries, trade pacts, embargoes, war-coalition shifts) that feed into three downstream systems: the War Extractor uses them to assign correct war sides, the Historian uses them to keep both sides of every relationship consistent, and the War Narrative Updater reflects diplomatic shifts in ongoing conflict stories. Meanwhile, regions that share the same events, fight the same wars, or border each other are grouped and reasoned about as a whole, ensuring that when the Ottoman Empire expands, the Byzantine reaction, Egyptian trade shifts, and Venetian diplomatic maneuvers are all computed in the same context.
 
 3. **The world updates.** Every change, from a population shift to a new ruler to a GDP fluctuation, is recorded as a precise field-level delta. Nothing is overwritten wholesale. You can trace exactly what changed, why, and how it rippled outward, all visible in the History tab and Evolution Log.
 
@@ -135,22 +136,23 @@ LLM_MAX_GROUP_SIZE=10
 
 ## Scripts
 
-| Command                        | Description                          |
-| ------------------------------ | ------------------------------------ |
-| `npm run dev`                  | Development server (web)             |
-| `npm run build`                | Production build (web)               |
-| `npm run start`                | Production server (web)              |
-| `npm run lint`                 | ESLint                               |
-| `npm run seed`                 | Seed database with default era       |
-| `npm run seed -- bronze-age`   | Seed with a specific era             |
-| `npm run generate:eras`        | Generate era data via LLM            |
-| `npm run build:geo`            | Rebuild GeoJSON boundary snapshots   |
-| `npm run electron:dev`         | Development mode (desktop)           |
-| `npm run electron:build`       | Package desktop app (all platforms)  |
-| `npm run electron:build:mac`   | Package for macOS                    |
-| `npm run electron:build:win`   | Package for Windows                  |
-| `npm run electron:build:linux` | Package for Linux                    |
-| `npm run electron:publish`     | Build and publish to GitHub Releases |
+| Command                        | Description                                |
+| ------------------------------ | ------------------------------------------ |
+| `npm run dev`                  | Development server (web)                   |
+| `npm run build`                | Production build (web)                     |
+| `npm run start`                | Production server (web)                    |
+| `npm run lint`                 | ESLint                                     |
+| `npm run seed`                 | Seed database with default era             |
+| `npm run seed -- bronze-age`   | Seed with a specific era                   |
+| `npm run generate:eras`        | Generate era data via LLM                  |
+| `npm run build:geo`            | Rebuild GeoJSON boundary snapshots         |
+| `npm run electron:dev`         | Development mode (desktop)                 |
+| `npm run electron:build`       | Package desktop app (all platforms)        |
+| `npm run electron:build:mac`   | Package for macOS                          |
+| `npm run electron:build:win`   | Package for Windows                        |
+| `npm run electron:build:linux` | Package for Linux                          |
+| `npm run electron:publish`     | Build and publish (prefer CI via tag push) |
+| `npm run validate:events`      | Validate community event files             |
 
 ## Supported Eras
 
@@ -216,6 +218,56 @@ LLM_MAX_GROUP_SIZE=10
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
+
+### Contributing Community Historical Events
+
+You can contribute curated, historically documented seed events that get injected into the simulation when the timeline reaches the corresponding year. Community events live in `public/community-events/`, with one JSON file per year.
+
+**Quick start:**
+
+1. Fork the repository
+2. Create a JSON file named by year in `public/community-events/` (e.g., `1939.json`, `-207.json` for 207 BCE)
+3. Add events following this format (see [`public/community-events/1939.json`](./public/community-events/1939.json) for a complete example):
+
+```json
+[
+  {
+    "timestamp": { "year": 1939, "month": 8 },
+    "title": {
+      "zh": "苏德互不侵犯条约签订",
+      "en": "Molotov–Ribbentrop Pact Signed"
+    },
+    "description": {
+      "zh": "苏联与纳粹德国签署互不侵犯条约，秘密议定书划分了东欧势力范围，为德国入侵波兰扫清了障碍。",
+      "en": "The Soviet Union and Nazi Germany signed a non-aggression pact with secret protocols dividing Eastern Europe into spheres of influence, clearing the path for Germany's invasion of Poland."
+    },
+    "affectedRegions": ["soviet_union_1939", "germany_1939", "poland_1939"],
+    "category": "diplomacy",
+    "source": "https://en.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop_Pact",
+    "contributor": "community"
+  }
+]
+```
+
+4. Submit a Pull Request
+
+**Rules:**
+
+- **No `id` field** — IDs are auto-generated from event content (year + month + title + category fingerprint)
+- **Filename**: `{year}.json` — integer only, negative for BCE (e.g. `1939.json`, `-207.json`). No leading zeros, no padding.
+- **Year consistency**: `timestamp.year` must equal the filename year. `timestamp.month` must be 1–12.
+- **`source` required** — must be a valid HTTP/HTTPS URL (Wikipedia, academic papers, reputable archives)
+
+**Other requirements:**
+
+- Events must be real, documented historical events
+- Both Chinese (`zh`) and English (`en`) fields are required and non-empty for `title` and `description`
+- `affectedRegions` must be a non-empty array with IDs from the corresponding era seed file (`src/data/seed/era-*.json`)
+- `category` must be one of: `war`, `dynasty`, `invention`, `trade`, `religion`, `disaster`, `natural_disaster`, `exploration`, `diplomacy`, `migration`, `technology`, `finance`, `political`, `announcement`, `other`
+
+> CI validates format on every PR — must pass to merge.
+
+See [`public/community-events/README.md`](./public/community-events/README.md) for the full contributing guide, region ID tips, and PR checklist. Run `npm run validate:events` locally to check your files before submitting. You can browse all community events via the community events button in the app header.
 
 ## License
 

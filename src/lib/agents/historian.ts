@@ -4,6 +4,7 @@ import { getRegionFieldSchema, type FieldSchemaMode } from "../transition";
 import { callAgentStreaming, safeParseJSON, type TokenCallback } from "./llm-client";
 import { getSimulationMode } from "../settings";
 import type { CivDecision } from "./civ-agent";
+import type { DiplomaticDecision } from "./diplomat";
 import { buildMemoryContext } from "./civ-memory";
 import type { SimulationParams } from "../types";
 
@@ -157,6 +158,17 @@ Include a "strategicIntent" field in each transition:
 "strategicIntent": {"zh":"...","en":"..."} — 1 sentence summary of the civilization's primary goal this period.
 `;
 
+const DIPLOMAT_CONTEXT_SUPPLEMENT = `
+
+BILATERAL DIPLOMATIC CONTEXT:
+You have been provided with pre-analyzed bilateral diplomatic, trade, and war-implication decisions for specific civilization pairs. When updating fields for regions involved in these decisions:
+
+1. **Diplomacy alignment**: Update diplomacy.allies, diplomacy.enemies, diplomacy.treaties, diplomacy.foreignPolicy to be CONSISTENT with the bilateral decisions. If the decision says "alliance", both regions must list each other as allies.
+2. **Trade alignment**: Update economy.foreignTradeVolume and economy.tradeRoutes to reflect the tradeImpact. An "embargo" means trade volume decreases for BOTH regions. A "new_route" means both regions gain the route.
+3. **Military alignment**: If warImplication indicates "escalation" or "ally_joins", reflect this in military.threats, military.morale, and assessment.outlook for the affected regions.
+4. **Bilateral consistency**: Ensure BOTH regions in a pair reflect compatible changes. Do not update one side without the other.
+`;
+
 export async function runHistorian(
   ctx: AgentContext,
   regionIds: string[],
@@ -166,7 +178,8 @@ export async function runHistorian(
   isSpeculative?: boolean,
   civDecisions?: CivDecision[],
   simulationParams?: SimulationParams,
-  webSearch?: boolean
+  webSearch?: boolean,
+  diplomaticDecisions?: DiplomaticDecision[]
 ): Promise<TransitionResult> {
   const regionIdSet = new Set(regionIds);
   const regionsToUpdate = ctx.currentState.regions.filter((r) =>
@@ -345,6 +358,13 @@ export async function runHistorian(
     systemPrompt += `\n\nWEB SEARCH ENABLED: You have access to real-time web search results. Use the search data to verify historical facts — exact dates, names, figures, casualties, treaty terms, and outcomes. Prioritize web search findings over uncertain knowledge.\n`;
   }
 
+  const relevantDipDecisions = diplomaticDecisions?.filter((d) =>
+    regionIdSet.has(d.regionA) || regionIdSet.has(d.regionB)
+  );
+  if (relevantDipDecisions && relevantDipDecisions.length > 0) {
+    systemPrompt += DIPLOMAT_CONTEXT_SUPPLEMENT;
+  }
+
   const contingency = simulationParams?.contingencyRatio ?? 50;
   if (contingency === 0) {
     systemPrompt += `\n\nSIMULATION STYLE — EXTREME CONTINGENCY:\nHistory is full of accidents. Assassinations, plagues, natural disasters, miscalculations, and freak events ROUTINELY rewrite the course of civilizations. Individual decisions have outsized consequences. Introduce dramatic, unexpected turns. A single event can topple empires or birth new ones. Favor chaos, surprise, and butterfly effects over predictable trends.\n`;
@@ -380,6 +400,12 @@ export async function runHistorian(
         `Strategic decisions by key civilizations (use as additional context for computing transitions):\n${JSON.stringify(relevant)}`
       );
     }
+  }
+
+  if (relevantDipDecisions && relevantDipDecisions.length > 0) {
+    userParts.push(
+      `Bilateral diplomatic, trade & war context for this period (ensure BOTH regions in each pair reflect consistent changes):\n${JSON.stringify(relevantDipDecisions)}`
+    );
   }
 
   const memoryCtx = buildMemoryContext(regionIds);

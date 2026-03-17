@@ -24,7 +24,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance } = body;
+  const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance, enableDiplomatAgent, enablePresetEvents } = body;
 
   const validModelIds = SUPPORTED_MODELS.map((m) => m.id);
   if (model && !validModelIds.includes(model)) {
@@ -41,6 +41,8 @@ export async function POST(request: NextRequest) {
     enableCivMemory: enableCivMemory ?? false,
     enableScenarioInjection: enableScenarioInjection ?? false,
     webSearchOnAdvance: webSearchOnAdvance ?? false,
+    enableDiplomatAgent: enableDiplomatAgent ?? false,
+    enablePresetEvents: enablePresetEvents ?? true,
   });
 
   return NextResponse.json({ success: true });

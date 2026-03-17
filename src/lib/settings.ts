@@ -21,6 +21,8 @@ export interface UserSettings {
   enableCivMemory?: boolean;
   enableScenarioInjection?: boolean;
   webSearchOnAdvance?: boolean;
+  enableDiplomatAgent?: boolean;
+  enablePresetEvents?: boolean;
 }
 
 export interface ModelProfile {
@@ -75,5 +77,13 @@ export function getSimulationMode(): SimulationMode {
 
 export function getWebSearchOnAdvance(): boolean {
   return runtimeSettings?.webSearchOnAdvance ?? false;
+}
+
+export function getEnableDiplomatAgent(): boolean {
+  return runtimeSettings?.enableDiplomatAgent ?? false;
+}
+
+export function getEnablePresetEvents(): boolean {
+  return runtimeSettings?.enablePresetEvents ?? true;
 }
 

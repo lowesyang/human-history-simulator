@@ -12,6 +12,8 @@ interface SettingsStore {
   enableCivMemory: boolean;
   enableScenarioInjection: boolean;
   webSearchOnAdvance: boolean;
+  enableDiplomatAgent: boolean;
+  enablePresetEvents: boolean;
   hasEnvKey: boolean;
   envModel: string;
   showSettings: boolean;
@@ -24,6 +26,8 @@ interface SettingsStore {
   setEnableCivMemory: (enable: boolean) => void;
   setEnableScenarioInjection: (enable: boolean) => void;
   setWebSearchOnAdvance: (enable: boolean) => void;
+  setEnableDiplomatAgent: (enable: boolean) => void;
+  setEnablePresetEvents: (enable: boolean) => void;
   setHasEnvKey: (has: boolean) => void;
   setEnvModel: (model: string) => void;
   setShowSettings: (show: boolean, tab?: SettingsTab) => void;
@@ -42,6 +46,8 @@ interface StoredSettings {
   enableCivMemory?: boolean;
   enableScenarioInjection?: boolean;
   webSearchOnAdvance?: boolean;
+  enableDiplomatAgent?: boolean;
+  enablePresetEvents?: boolean;
 }
 
 function isElectron(): boolean {
@@ -78,10 +84,10 @@ function loadStorageLocal(): StoredSettings | null {
   }
 }
 
-async function persistSettings(apiKey: string, model: SupportedModelId, simulationMode: SimulationMode, enableCivMemory: boolean, enableScenarioInjection: boolean, webSearchOnAdvance: boolean) {
+async function persistSettings(apiKey: string, model: SupportedModelId, simulationMode: SimulationMode, enableCivMemory: boolean, enableScenarioInjection: boolean, webSearchOnAdvance: boolean, enableDiplomatAgent: boolean, enablePresetEvents: boolean) {
   if (typeof window === "undefined") return;
 
-  const payload = { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance };
+  const payload = { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance, enableDiplomatAgent, enablePresetEvents };
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 
@@ -102,6 +108,8 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
   enableCivMemory: false,
   enableScenarioInjection: false,
   webSearchOnAdvance: false,
+  enableDiplomatAgent: false,
+  enablePresetEvents: true,
   hasEnvKey: false,
   envModel: DEFAULT_MODEL,
   showSettings: false,
@@ -114,6 +122,8 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
   setEnableCivMemory: (enableCivMemory) => set({ enableCivMemory }),
   setEnableScenarioInjection: (enableScenarioInjection) => set({ enableScenarioInjection }),
   setWebSearchOnAdvance: (webSearchOnAdvance) => set({ webSearchOnAdvance }),
+  setEnableDiplomatAgent: (enableDiplomatAgent) => set({ enableDiplomatAgent }),
+  setEnablePresetEvents: (enablePresetEvents) => set({ enablePresetEvents }),
   setHasEnvKey: (hasEnvKey) => set({ hasEnvKey }),
   setEnvModel: (envModel) => set({ envModel }),
   setShowSettings: (showSettings, tab) => {
@@ -132,17 +142,19 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
         enableCivMemory: stored.enableCivMemory ?? false,
         enableScenarioInjection: stored.enableScenarioInjection ?? false,
         webSearchOnAdvance: stored.webSearchOnAdvance ?? false,
+        enableDiplomatAgent: stored.enableDiplomatAgent ?? false,
+        enablePresetEvents: stored.enablePresetEvents ?? true,
       });
     }
   },
 
   syncToServer: async () => {
-    const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance } = get();
-    await persistSettings(apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance);
+    const { apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance, enableDiplomatAgent, enablePresetEvents } = get();
+    await persistSettings(apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance, enableDiplomatAgent, enablePresetEvents);
     await fetch("/api/settings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance }),
+      body: JSON.stringify({ apiKey, model, simulationMode, enableCivMemory, enableScenarioInjection, webSearchOnAdvance, enableDiplomatAgent, enablePresetEvents }),
     });
   },
 
@@ -165,6 +177,8 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
         updates.enableCivMemory = stored.enableCivMemory ?? false;
         updates.enableScenarioInjection = stored.enableScenarioInjection ?? false;
         updates.webSearchOnAdvance = stored.webSearchOnAdvance ?? false;
+        updates.enableDiplomatAgent = stored.enableDiplomatAgent ?? false;
+        updates.enablePresetEvents = stored.enablePresetEvents ?? true;
       }
 
       set(updates);
@@ -180,6 +194,8 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
             enableCivMemory: stored.enableCivMemory ?? false,
             enableScenarioInjection: stored.enableScenarioInjection ?? false,
             webSearchOnAdvance: stored.webSearchOnAdvance ?? false,
+            enableDiplomatAgent: stored.enableDiplomatAgent ?? false,
+            enablePresetEvents: stored.enablePresetEvents ?? true,
           }),
         });
       }

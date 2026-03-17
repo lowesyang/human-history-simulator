@@ -8553,615 +8553,517 @@
       }
     },
     {
-      "id": "scandinavia_1939",
+      "id": "sweden_1939",
       "name": {
-        "zh": "北欧诸国",
-        "en": "Scandinavian States"
+        "zh": "瑞典",
+        "en": "Sweden"
       },
-      "territoryId": "europe_north",
-      "territoryScale": "md",
+      "territoryId": "sweden_1939",
+      "territoryScale": "lg",
       "civilization": {
         "name": {
-          "zh": "北欧诸国（瑞典、挪威、丹麦与芬兰）",
-          "en": "The Nordic States (Sweden, Norway, Denmark, and Finland)"
+          "zh": "瑞典王国",
+          "en": "Kingdom of Sweden"
         },
-        "type": "republic",
+        "type": "kingdom",
         "ruler": {
-          "zh": "古斯塔夫五世、哈康七世、克里斯蒂安十世，以及芬兰总统卡吕斯蒂·卡利奥与元帅卡尔·古斯塔夫·曼纳海姆",
-          "en": "Gustaf V, Haakon VII, Christian X, and in Finland President Kyosti Kallio with Marshal Carl Gustaf Mannerheim"
+          "zh": "古斯塔夫五世",
+          "en": "Gustav V"
         },
         "rulerTitle": {
-          "zh": "国王；芬兰为共和国总统与国防总司令体系",
-          "en": "Kings; in Finland a republican presidency with a commander-in-chief system"
+          "zh": "国王",
+          "en": "King"
         },
         "dynasty": {
-          "zh": "贝尔纳多特王朝、石勒苏益格-荷尔斯泰因-宗德堡-格吕克斯堡王朝，以及芬兰共和政体",
-          "en": "The House of Bernadotte, the House of Schleswig-Holstein-Sonderburg-Glucksburg, and the Finnish republican system"
+          "zh": "贝尔纳多特王朝",
+          "en": "House of Bernadotte"
         },
         "capital": {
-          "zh": "斯德哥尔摩、奥斯陆、哥本哈根与赫尔辛基",
-          "en": "Stockholm, Oslo, Copenhagen, and Helsinki"
+          "zh": "斯德哥尔摩",
+          "en": "Stockholm"
         },
         "governmentForm": {
-          "zh": "君主立宪制与议会民主制并存，芬兰为共和国；各国主权独立但文化与外交联系密切",
-          "en": "Constitutional monarchies and parliamentary democracies, with Finland as a republic; all sovereign states but closely linked culturally and diplomatically"
+          "zh": "君主立宪制议会民主国家。国王仅具仪式性角色，实权由首相和议会掌握。社会民主党自1932年连续执政，推行'人民之家'福利国家理念。",
+          "en": "A constitutional monarchy and parliamentary democracy. The king held only ceremonial powers, with real authority in the Prime Minister and Riksdag. The Social Democrats governed continuously since 1932, advancing the 'People's Home' welfare state."
         },
         "socialStructure": {
-          "zh": "以城市中产阶级、产业工人、小农与渔民为主体，贵族影响仍存但已受议会政治、工会组织与合作社体系明显限制",
-          "en": "Societies centered on urban middle classes, industrial workers, smallholders, and fishermen, with residual aristocratic influence constrained by parliamentary politics, labor unions, and cooperative institutions"
+          "zh": "社会以强大的中产阶级为基础，工会运动组织度极高。阶级矛盾通过'萨尔特舍巴登协议'（1938年劳资妥协）缓和。工业化程度高，城乡差距缩小。",
+          "en": "Society was built on a strong middle class with highly organized labor unions. Class tensions were moderated by the Saltsjöbaden Agreement (1938 labor-capital compromise). Industrialization was advanced."
         },
         "rulingClass": {
-          "zh": "国王、内阁、议会多数党、文官体系、军队高层以及工商金融精英共同构成统治核心；芬兰则由总统、议会、政府与军方高层共享主导权",
-          "en": "Kings, cabinets, parliamentary majorities, civil administrations, senior military leaders, and business-financial elites formed the ruling core; in Finland power was shared by the president, parliament, government, and top military leadership"
+          "zh": "政治精英由社会民主党领导层、工业家家族（瓦伦堡家族等）和高级官僚组成。",
+          "en": "The political elite comprised Social Democratic leadership, industrial dynasties (the Wallenberg family, etc.), and senior bureaucrats."
         },
         "succession": {
-          "zh": "瑞典、挪威与丹麦实行王位世袭继承；芬兰总统依宪法经选举产生，战时军权集中于总司令曼纳海姆",
-          "en": "Sweden, Norway, and Denmark followed hereditary royal succession; Finland's presidency was constitutionally elective, while wartime military authority was concentrated in Commander-in-Chief Mannerheim"
+          "zh": "王位世袭，但政治权力通过民主选举产生。首相由议会多数党推举。",
+          "en": "The throne was hereditary, but political power was determined by democratic elections."
         }
       },
       "government": {
         "structure": {
-          "zh": "四个主权国家各自设有议会、内阁与独立司法体系。瑞典和丹麦以成熟议会君主制运行，挪威维持国王与议会并立的立宪制度，芬兰实行共和国体制并在1939年因对苏战争强化国防决策机制",
-          "en": "The four sovereign states each maintained their own parliament, cabinet, and independent judiciary. Sweden and Denmark operated mature parliamentary monarchies, Norway maintained a constitutional system balancing king and parliament, and Finland functioned as a republic that strengthened defense decision-making in 1939 because of war with the Soviet Union"
+          "zh": "瑞典采用两院制议会（瑞典国会），首相为行政首长。中央政府下设各部委，地方自治体系完善。",
+          "en": "Sweden used a bicameral parliament (Riksdag) with the Prime Minister as head of government."
         },
         "departments": [
           {
             "name": {
-              "zh": "外交部体系",
-              "en": "Foreign Affairs Establishments"
+              "zh": "外交部",
+              "en": "Ministry of Foreign Affairs"
             },
             "function": {
-              "zh": "处理与德国、英国、法国、苏联及其他列强的外交关系，维护中立、贸易和条约安排，并在芬兰危机中协调国际援助与舆论支持",
-              "en": "Managed relations with Germany, Britain, France, the Soviet Union, and other powers; maintained neutrality, trade, and treaty arrangements; and in the Finnish crisis coordinated international support and diplomacy"
+              "zh": "维护中立政策，管理外交关系和贸易谈判。",
+              "en": "Maintained neutrality policy, managed diplomatic relations and trade negotiations."
             },
-            "headCount": 1200
+            "headCount": 350
           },
           {
             "name": {
-              "zh": "财政与税务部体系",
-              "en": "Finance and Tax Administrations"
+              "zh": "国防部",
+              "en": "Ministry of Defense"
             },
             "function": {
-              "zh": "征收所得税、关税、消费税和企业税，编制预算，管理债务、货币稳定与战时财政动员",
-              "en": "Collected income taxes, customs duties, excise taxes, and business taxes; prepared budgets; and managed debt, currency stability, and wartime fiscal mobilization"
+              "zh": "管理军队动员和武装中立防务。",
+              "en": "Managed military mobilization and armed neutrality defense."
             },
-            "headCount": 4800
+            "headCount": 280
           },
           {
             "name": {
-              "zh": "内政与地方行政体系",
-              "en": "Interior and Local Administration"
+              "zh": "社会事务部",
+              "en": "Ministry of Social Affairs"
             },
             "function": {
-              "zh": "监督警察、治安、地方政府、人口登记、边境管制、公共秩序与应急动员",
-              "en": "Supervised police, public order, local government, civil registration, border controls, and emergency mobilization"
+              "zh": "推行社会福利政策、劳动立法和公共卫生。",
+              "en": "Implemented social welfare policies, labor legislation, and public health."
             },
-            "headCount": 6200
+            "headCount": 420
           },
           {
             "name": {
-              "zh": "国防部与总参谋体系",
-              "en": "Defense Ministries and General Staffs"
+              "zh": "财政部",
+              "en": "Ministry of Finance"
             },
             "function": {
-              "zh": "统筹陆军、海军、空军及后备动员，负责海峡防卫、海岸炮兵、领土防御与芬兰冬季战争中的作战指挥",
-              "en": "Coordinated army, navy, air force, and reserve mobilization, including strait defense, coastal artillery, territorial defense, and wartime operations in Finland during the Winter War"
+              "zh": "管理国家预算、税收和经济计划。",
+              "en": "Managed state budget, taxation, and economic planning."
             },
-            "headCount": 9500
-          },
-          {
-            "name": {
-              "zh": "司法与法务体系",
-              "en": "Justice and Legal Administrations"
-            },
-            "function": {
-              "zh": "维持法院运作、刑法与民法执行、监狱管理、宪政秩序和行政法审查",
-              "en": "Maintained the courts, enforced criminal and civil law, administered prisons, preserved constitutional order, and reviewed administrative legality"
-            },
-            "headCount": 3100
-          },
-          {
-            "name": {
-              "zh": "社会事务、教育与公共卫生体系",
-              "en": "Social Affairs, Education, and Public Health Administrations"
-            },
-            "function": {
-              "zh": "管理学校、大学、贫困救济、劳工关系、社会保险、医院与传染病防控，体现北欧社会改革传统",
-              "en": "Managed schools, universities, poor relief, labor relations, social insurance, hospitals, and disease control, reflecting the Nordic reform tradition"
-            },
-            "headCount": 7400
+            "headCount": 310
           }
         ],
-        "totalOfficials": 32200,
+        "totalOfficials": 8500,
         "localAdmin": {
-          "zh": "地方治理以市镇、郡、省和县为核心。瑞典依托省与市政体系，挪威以郡和市镇自治为主，丹麦以县与市政机构管理全国，芬兰以省、县区与市镇配合中央动员。地方自治程度较高，但战时国防和外交通常由中央严密掌握",
-          "en": "Local administration centered on municipalities, counties, provinces, and districts. Sweden relied on provincial and municipal structures, Norway on counties and local communes, Denmark on counties and municipal institutions, and Finland on provinces, districts, and municipalities coordinated with central mobilization. Local autonomy was relatively high, though defense and foreign affairs were tightly controlled by the central governments"
+          "zh": "瑞典分为24个省，每省设省长和省议会。市镇自治权较大。",
+          "en": "Sweden was divided into 24 counties, each with a governor and county council."
         },
         "legalSystem": {
-          "zh": "各国均属大陆法传统并结合本国宪政实践，强调成文法、独立法院、财产权和议会监督。瑞典、挪威与丹麦司法制度稳定成熟，芬兰则在战争状态下仍保持法定程序，但安全法规与军法影响上升",
-          "en": "All four states belonged broadly to the civil-law tradition combined with their own constitutional practices, emphasizing codified law, independent courts, property rights, and parliamentary oversight. The judicial systems of Sweden, Norway, and Denmark were stable and mature, while Finland retained legal procedure under wartime conditions though security regulations and military law gained importance"
+          "zh": "以成文法典为基础的大陆法系统，辅以习惯法和判例。",
+          "en": "A civil law system based on codified statutes, supplemented by customary law and precedent."
         },
         "taxationSystem": {
-          "zh": "税制以直接税与间接税并重，包括个人所得税、企业税、关税、消费税、酒类和烟草税、财产税及地方税。战时芬兰和防务扩充中的其他北欧国家更加依赖借款、特别附加税和关税收入",
-          "en": "Taxation balanced direct and indirect taxes, including personal income taxes, business taxes, customs duties, excises, alcohol and tobacco taxes, property taxes, and local levies. Wartime Finland and the other Nordic states expanding defense relied increasingly on borrowing, surtaxes, and customs revenues"
+          "zh": "累进所得税和消费税体系。社会保险缴费日益增加。",
+          "en": "A progressive income and consumption tax system with growing social insurance contributions."
         }
       },
       "culture": {
         "religion": {
-          "zh": "路德宗新教为主导宗教，国家教会在瑞典、挪威和丹麦社会中仍具重要地位；芬兰以福音路德教会为主体并有东正教少数群体。宗教影响深植教育、婚姻与社会伦理，但公共生活已高度世俗化",
-          "en": "Lutheran Protestantism was the dominant religion, and state churches remained socially important in Sweden, Norway, and Denmark; Finland was also primarily Evangelical Lutheran with a small Orthodox minority. Religion still shaped education, marriage, and social ethics, though public life had become highly secularized"
-        },
-        "philosophy": {
-          "zh": "政治文化强调议会主义、法治、社会改良、民族团结与温和民主社会主义或自由保守主义并存，普遍重视公民教育、合作主义和国家对社会福利的责任",
-          "en": "Political culture emphasized parliamentarism, rule of law, social reform, national cohesion, and a coexistence of moderate democratic socialism and liberal conservatism, with broad respect for civic education, cooperativism, and state responsibility for social welfare"
-        },
-        "writingSystem": {
-          "zh": "采用拉丁字母文字系统；主要书面语言包括瑞典语、丹麦语、挪威语与芬兰语，芬兰还承认瑞典语的重要地位。政府、教育与报刊出版高度发达，识字率极高",
-          "en": "Used the Latin alphabet; the principal written languages were Swedish, Danish, Norwegian, and Finnish, with Swedish retaining important status in Finland. Government, education, and newspaper publication were highly developed, and literacy was very high"
+          "zh": "路德宗（国教）",
+          "en": "Lutheranism (state religion)"
         },
         "culturalAchievements": {
-          "zh": "北欧诸国在文学、戏剧、设计、建筑、音乐、社会思想和体育运动方面影响深远。1930年代已形成现代功能主义建筑、合作社消费文化、公共图书馆网络、普及教育以及高水平新闻出版传统。芬兰民族音乐、瑞典工业设计、丹麦家具与挪威航海文化均具代表性",
-          "en": "The Nordic states were highly influential in literature, drama, design, architecture, music, social thought, and sport. By the 1930s they had developed modern functionalist architecture, cooperative consumer culture, public library networks, mass education, and a strong press tradition. Finnish national music, Swedish industrial design, Danish furniture, and Norwegian maritime culture were especially notable"
+          "zh": "诺贝尔奖故乡。文学（拉格洛夫、斯特林堡传统）、设计（功能主义运动）、电影（早期电影产业）、科学研究均处世界前列。",
+          "en": "Home of the Nobel Prizes. Literature (Lagerlöf, Strindberg tradition), design (functionalism), film, and science were world-leading."
         },
         "languageFamily": {
-          "zh": "北日耳曼语族与乌拉尔语系并存：瑞典语、丹麦语和挪威语属北日耳曼语支，芬兰语属芬兰-乌戈尔语支",
-          "en": "A combination of North Germanic and Uralic language families: Swedish, Danish, and Norwegian were North Germanic, while Finnish belonged to the Finno-Ugric branch"
+          "zh": "日耳曼语族北日耳曼语支（瑞典语）",
+          "en": "Germanic, North Germanic (Swedish)"
+        },
+        "philosophy": {
+          "zh": "社会民主主义与福利国家理念",
+          "en": "Social democracy and welfare state philosophy"
+        },
+        "writingSystem": {
+          "zh": "拉丁字母（瑞典语正字法）",
+          "en": "Latin alphabet (Swedish orthography)"
         }
       },
       "economy": {
         "level": 7,
         "gdpEstimate": {
-          "amount": 11200000000,
+          "amount": 4600000000,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
           },
-          "goldKg": 9953127,
-          "silverKg": 622720000
+          "goldKg": 4100000
         },
         "gdpPerCapita": {
-          "amount": 659,
+          "amount": 725,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
+            "zh": "1939年美元/人/年",
+            "en": "1939 USD/person/year"
           },
-          "goldKg": 1,
-          "silverKg": 36.63
+          "goldKg": 646
         },
         "gdpDescription": {
-          "zh": "北欧诸国整体经济在欧洲属于中上水平，工业化、航运、林业、农业机械化和合作社经济发展较为成熟。瑞典工业最强，丹麦农业和食品出口高效，挪威依赖航运、渔业和水电，芬兰则以林产、纸浆和边境防务工业为主。1939年战争阴影下，贸易路线、保险成本和国防采购明显影响经济结构",
-          "en": "Taken together, the Nordic economies ranked in the upper-middle tier of Europe, with relatively mature industrialization, shipping, forestry, mechanized agriculture, and cooperative organization. Sweden had the strongest industrial base, Denmark the most efficient agricultural and food export sector, Norway depended heavily on shipping, fisheries, and hydropower, and Finland relied on forest products, pulp, and frontier defense industry. In 1939 the shadow of war significantly affected trade routes, insurance costs, and defense procurement"
+          "zh": "瑞典在1930年代通过出口导向的工业化实现快速增长。铁矿石、纸浆、木材和机械为主要出口品。中立政策使其成为战时贸易枢纽。",
+          "en": "Sweden achieved rapid growth through export-oriented industrialization. Iron ore, pulp, timber, and machinery were major exports."
         },
         "mainIndustries": {
-          "zh": "钢铁与机械制造、木材与纸浆、造船、航运服务、渔业、乳制品与肉类加工、水电、化工、纺织、军需工业、矿业（尤其瑞典铁矿）",
-          "en": "Steel and machinery, timber and pulp, shipbuilding, shipping services, fisheries, dairy and meat processing, hydropower, chemicals, textiles, defense industry, and mining, especially Swedish iron ore"
+          "zh": "铁矿开采、钢铁、造船、纸浆造纸、机械制造、球轴承",
+          "en": "Iron mining, steel, shipbuilding, pulp and paper, machinery, ball bearings"
         },
         "tradeGoods": {
-          "zh": "铁矿石、钢材、木材、纸浆、纸张、黄油、培根、鱼类、船运服务、电力密集型工业品、机械设备和部分军工产品",
-          "en": "Iron ore, steel, timber, pulp, paper, butter, bacon, fish, shipping services, electricity-intensive manufactures, machinery, and some military goods"
+          "zh": "铁矿石、钢铁、纸浆、木材、机械、球轴承",
+          "en": "Iron ore, steel, pulp, timber, machinery, ball bearings"
         },
         "currency": {
           "name": {
-            "zh": "北欧各国克朗体系",
-            "en": "Nordic Krona Systems"
+            "zh": "瑞典克朗",
+            "en": "Swedish krona"
           },
           "type": "fiat",
           "unitName": {
             "zh": "克朗",
-            "en": "krona / krone"
+            "en": "krona"
           }
         },
         "householdWealth": {
-          "zh": "普通家庭财富以住房、储蓄、合作社份额、农地、渔船和小型工商资产为主。城市职工拥有稳定工资收入和较高识字水平，但1930年代后期军费上升与国际贸易风险使消费趋于谨慎。芬兰边境地区家庭因战争动员和疏散面临更大损失",
-          "en": "Household wealth was mainly held in homes, savings, cooperative shares, farmland, fishing boats, and small business assets. Urban workers had steady wages and high literacy, but rising defense costs and international trade risks in the late 1930s made consumption more cautious. In Finland, families in border regions faced heavier losses because of mobilization and evacuation"
+          "zh": "中产阶级家庭拥有住房、储蓄和社会保障。工人阶级通过工会获得较好待遇。",
+          "en": "Middle-class families owned homes, savings, and social security."
         },
         "averageIncome": {
-          "amount": 540,
+          "amount": 580,
           "unit": {
-            "zh": "1939年国际美元/年",
-            "en": "1939 international dollars per year"
+            "zh": "1939年美元/人/年",
+            "en": "1939 USD/person/year"
           },
-          "silverKg": 30,
-          "goldKg": 1
+          "goldKg": 517
         },
         "foreignTradeVolume": {
-          "amount": 4300000000,
+          "amount": 1200000000,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
           },
-          "goldKg": 3821290,
-          "silverKg": 239080000
+          "goldKg": 1070000
         },
         "economicSystem": {
-          "zh": "混合市场经济，以私有企业、出口贸易、合作社、工会谈判和逐步扩大的国家监管相结合。各国并非计划经济，但已在就业、社会保障、价格调节与基础设施上体现早期福利国家特征",
-          "en": "A mixed market economy combining private enterprise, export trade, cooperatives, union bargaining, and expanding state regulation. The Nordic states were not planned economies, but already showed early welfare-state characteristics in employment policy, social insurance, price regulation, and infrastructure"
+          "zh": "以私有制为主、国家积极干预的混合经济体。劳资协商机制成熟。",
+          "en": "A mixed economy with predominant private ownership and active state intervention."
         },
-        "giniEstimate": 0.34
+        "giniEstimate": 0.35
       },
       "finances": {
         "annualRevenue": {
-          "amount": 2560000000,
+          "amount": 920000000,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
           },
-          "goldKg": 2275000,
-          "silverKg": 142387200
+          "goldKg": 820000
         },
         "annualExpenditure": {
-          "amount": 2720000000,
+          "amount": 880000000,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
           },
-          "goldKg": 2417188,
-          "silverKg": 151289600
+          "goldKg": 785000
         },
         "surplus": {
-          "amount": -160000000,
+          "amount": 40000000,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
           },
-          "goldKg": -142188,
-          "silverKg": -8896000
+          "goldKg": 35000
         },
         "revenueBreakdown": [
           {
             "source": {
-              "zh": "所得税与企业税",
-              "en": "Income and business taxes"
+              "zh": "所得税",
+              "en": "Income tax"
             },
             "amount": {
-              "amount": 1040000000,
+              "amount": 340000000,
               "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
               },
-              "goldKg": 924219
+              "goldKg": 303000
             },
-            "percentage": 40.6
+            "percentage": 37
           },
           {
             "source": {
-              "zh": "关税与贸易税",
-              "en": "Customs and trade duties"
-            },
-            "amount": {
-              "amount": 460000000,
-              "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
-              },
-              "goldKg": 408789
-            },
-            "percentage": 18
-          },
-          {
-            "source": {
-              "zh": "消费税与专卖收入",
-              "en": "Excises and monopoly revenues"
-            },
-            "amount": {
-              "amount": 520000000,
-              "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
-              },
-              "goldKg": 462109
-            },
-            "percentage": 20.3
-          },
-          {
-            "source": {
-              "zh": "地方上缴与财产税",
-              "en": "Local transfers and property taxes"
+              "zh": "消费税与关税",
+              "en": "Excise and customs"
             },
             "amount": {
               "amount": 280000000,
               "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
               },
-              "goldKg": 248828
+              "goldKg": 250000
             },
-            "percentage": 10.9
+            "percentage": 30
           },
           {
             "source": {
-              "zh": "国有企业、邮政与其他行政收入",
-              "en": "State enterprises, postal services, and other administrative revenues"
+              "zh": "社会保险缴费",
+              "en": "Social insurance"
             },
             "amount": {
-              "amount": 260000000,
+              "amount": 180000000,
               "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
               },
-              "goldKg": 231055
+              "goldKg": 160000
             },
-            "percentage": 10.2
+            "percentage": 20
+          },
+          {
+            "source": {
+              "zh": "国企收入与其他",
+              "en": "State enterprises"
+            },
+            "amount": {
+              "amount": 120000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 107000
+            },
+            "percentage": 13
           }
         ],
         "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "社会福利",
+              "en": "Social welfare"
+            },
+            "amount": {
+              "amount": 265000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 236000
+            },
+            "percentage": 30
+          },
           {
             "category": {
               "zh": "国防",
               "en": "Defense"
             },
             "amount": {
-              "amount": 760000000,
+              "amount": 220000000,
               "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
               },
-              "goldKg": 675391
+              "goldKg": 196000
             },
-            "percentage": 27.9
+            "percentage": 25
           },
           {
             "category": {
-              "zh": "社会事务、卫生与救济",
-              "en": "Social affairs, health, and relief"
+              "zh": "教育",
+              "en": "Education"
             },
             "amount": {
-              "amount": 610000000,
+              "amount": 175000000,
               "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
               },
-              "goldKg": 542090
+              "goldKg": 156000
             },
-            "percentage": 22.4
+            "percentage": 20
           },
           {
             "category": {
-              "zh": "教育与文化",
-              "en": "Education and culture"
+              "zh": "基础设施",
+              "en": "Infrastructure"
             },
             "amount": {
-              "amount": 370000000,
+              "amount": 220000000,
               "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
               },
-              "goldKg": 328809
+              "goldKg": 196000
             },
-            "percentage": 13.6
-          },
-          {
-            "category": {
-              "zh": "基础设施与交通",
-              "en": "Infrastructure and transport"
-            },
-            "amount": {
-              "amount": 410000000,
-              "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
-              },
-              "goldKg": 364356
-            },
-            "percentage": 15.1
-          },
-          {
-            "category": {
-              "zh": "行政、司法与警务",
-              "en": "Administration, justice, and policing"
-            },
-            "amount": {
-              "amount": 330000000,
-              "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
-              },
-              "goldKg": 293262
-            },
-            "percentage": 12.1
-          },
-          {
-            "category": {
-              "zh": "债务利息与特别战时支出",
-              "en": "Debt service and extraordinary wartime costs"
-            },
-            "amount": {
-              "amount": 240000000,
-              "unit": {
-                "zh": "1939年国际美元",
-                "en": "1939 international dollars"
-              },
-              "goldKg": 213281
-            },
-            "percentage": 8.9
+            "percentage": 25
           }
         ],
         "treasury": {
-          "amount": 1880000000,
+          "amount": 480000000,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
+            "zh": "1939年美元",
+            "en": "1939 USD"
           },
-          "goldKg": 1670703,
-          "silverKg": 104585600
+          "goldKg": 428000
         },
         "treasuryDescription": {
-          "zh": "公共财政总体稳健，瑞典外汇与黄金地位较强，丹麦和挪威依赖贸易与航运收入，芬兰因冬季战争承受更大资金压力并需要贷款、募债及外国援助。虽然1939年支出高于收入，但北欧信用状况整体仍优于多数东欧国家",
-          "en": "Public finance was generally sound, with Sweden in the strongest foreign-exchange and gold position, Denmark and Norway relying on trade and shipping income, and Finland facing much heavier financial strain from the Winter War and needing loans, bond drives, and foreign aid. Although 1939 expenditures exceeded revenues, Nordic creditworthiness remained stronger than that of most Eastern European states"
+          "zh": "瑞典央行持有大量黄金储备，外汇储备充裕。",
+          "en": "The Riksbank held substantial gold reserves with ample foreign exchange."
         },
         "fiscalPolicy": {
-          "zh": "财政政策偏向审慎平衡预算，但在国际危机和战争风险面前逐步接受赤字融资、国防公债、进口管制和对关键产业的定向支持。芬兰财政最具战时色彩，瑞典则更重视储备、工业扩军和价格稳定",
-          "en": "Fiscal policy generally favored prudence and balanced budgets, but under international crisis and war risk increasingly accepted deficit finance, defense bonds, import controls, and targeted support for key industries. Finland's finances were the most overtly wartime, while Sweden placed greater emphasis on reserves, industrial rearmament, and price stability"
+          "zh": "扩张性财政政策与社会支出并重。",
+          "en": "Expansionary fiscal policy balanced with social spending."
         },
         "debtLevel": {
-          "amount": 3360000000,
+          "amount": 1800000000,
           "unit": {
-            "zh": "克朗",
-            "en": "krona / krone"
+            "zh": "1939年美元",
+            "en": "1939 USD"
           },
-          "goldKg": 2985938
+          "goldKg": 1607000
         }
       },
       "military": {
-        "level": 6,
-        "totalTroops": 440000,
-        "standingArmy": 125000,
-        "reserves": 315000,
+        "level": 4,
+        "totalTroops": 104000,
+        "standingArmy": 40000,
+        "reserves": 64000,
         "branches": [
           {
             "name": {
               "zh": "陆军",
-              "en": "Army"
+              "en": "Swedish Army"
             },
-            "count": 325000,
+            "count": 70000,
             "description": {
-              "zh": "以征兵制和预备役为基础，芬兰陆军因冬季战争大规模动员，瑞典保持强化中立防御，丹麦和挪威规模较小但维持国土防卫编制",
-              "en": "Built on conscription and reserves; the Finnish Army underwent large-scale mobilization because of the Winter War, Sweden strengthened neutral defense, and Denmark and Norway maintained smaller territorial forces"
+              "zh": "以步兵师为核心，装备现代化步枪和火炮。",
+              "en": "Centered on infantry divisions with modern rifles and artillery."
             }
           },
           {
             "name": {
               "zh": "海军",
-              "en": "Navy"
+              "en": "Royal Swedish Navy"
             },
-            "count": 42000,
+            "count": 18000,
             "description": {
-              "zh": "负责波罗的海、卡特加特海峡、斯卡格拉克海峡和北海沿岸防御，以海岸防御舰、驱逐舰、潜艇、鱼雷艇和海岸炮兵为核心",
-              "en": "Responsible for defense of the Baltic, Kattegat, Skagerrak, and North Sea coasts, centered on coastal defense ships, destroyers, submarines, torpedo craft, and coastal artillery"
+              "zh": "海岸防御为主，拥有巡洋舰和潜艇。",
+              "en": "Focused on coastal defense with cruisers and submarines."
             }
           },
           {
             "name": {
               "zh": "空军",
-              "en": "Air Forces"
+              "en": "Swedish Air Force"
             },
-            "count": 18000,
+            "count": 16000,
             "description": {
-              "zh": "仍处于扩张期，拥有战斗机、侦察机和轻型轰炸机，瑞典和芬兰尤其重视防空、侦察与国土航空工业发展",
-              "en": "Still in expansion, with fighters, reconnaissance aircraft, and light bombers; Sweden and Finland in particular emphasized air defense, reconnaissance, and domestic aviation industry"
-            }
-          },
-          {
-            "name": {
-              "zh": "国民警卫、边防与辅助部队",
-              "en": "Home Guard, Border, and Auxiliary Forces"
-            },
-            "count": 55000,
-            "description": {
-              "zh": "包括边境警备、地方防卫、后勤、铁路守备和志愿辅助组织，在芬兰边境和北部地区作用尤为突出",
-              "en": "Included border guards, local defense, logistics, railway security, and volunteer auxiliaries, with particular importance in Finland's frontier and northern regions"
+              "zh": "装备国产和进口战斗机。",
+              "en": "Equipped with domestic and imported fighters."
             }
           }
         ],
         "commandStructure": {
+          "totalGenerals": 45,
           "commanderInChief": {
-            "zh": "各国名义上由君主或总统统帅军队；芬兰实际战时总司令为曼纳海姆",
-            "en": "The armed forces were nominally commanded by each state's monarch or president; in Finland the effective wartime commander-in-chief was Mannerheim"
-          },
-          "totalGenerals": 96
+            "zh": "国王（名义），国防参谋长实际指挥",
+            "en": "King (nominal), Chief of Defence effectively commanded"
+          }
         },
         "technology": {
-          "zh": "军事技术属1930年代后期欧洲中等偏上水平。瑞典在火炮、博福斯高射炮、机械制造和军工设计方面突出；芬兰善于冬季作战、野战防御和轻步兵机动；挪威和丹麦装备更新较慢。总体上装甲力量有限，空军规模不及大国，海军偏重近海和海峡防御",
-          "en": "Military technology stood at a moderately high late-1930s European level. Sweden was notable in artillery, Bofors anti-aircraft guns, engineering, and armaments design; Finland excelled in winter warfare, field fortification, and light infantry mobility; Norway and Denmark modernized more slowly. Armor remained limited overall, air forces were smaller than those of the major powers, and naval doctrine focused on coastal and strait defense"
+          "zh": "武装中立政策下积极发展国防工业。博福斯高射炮世界闻名。",
+          "en": "Active defense industry under armed neutrality. Bofors AA guns were world-renowned."
         },
         "annualMilitarySpending": {
-          "amount": 760000000,
+          "amount": 220000000,
           "unit": {
-            "zh": "1939年国际美元",
-            "en": "1939 international dollars"
-          },
-          "silverKg": 42195200
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          }
         },
-        "militarySpendingPctGdp": 6.8,
+        "militarySpendingPctGdp": 4.8,
         "threats": {
-          "zh": "最大威胁来自纳粹德国对北海、丹麦海峡和挪威海岸的战略兴趣，以及苏联对芬兰的军事进攻。另有波罗的海航线中断、贸易封锁、空袭、潜艇战和被迫卷入大国阵营对抗的风险",
-          "en": "The greatest threats came from Nazi Germany's strategic interest in the North Sea, the Danish straits, and the Norwegian coast, and from the Soviet military assault on Finland. Other dangers included disruption of Baltic shipping, trade blockade, air attack, submarine warfare, and the risk of being drawn into great-power confrontation"
+          "zh": "德国扩张主义和苏联在波罗的海地区的野心是主要威胁。",
+          "en": "German expansionism and Soviet Baltic ambitions were primary threats."
         },
         "doctrine": {
-          "zh": "",
-          "en": ""
+          "zh": "武装中立与全面防御",
+          "en": "Armed neutrality and total defense"
         },
         "training": {
           "level": 5,
           "description": {
-            "zh": "职业化训练，拥有成熟的操典",
-            "en": "Professional training with established manuals"
+            "zh": "全民义务兵役制，训练水平较高",
+            "en": "Universal conscription with high training standards"
           }
         },
         "morale": {
-          "level": 5,
+          "level": 6,
           "description": {
-            "zh": "士气尚可，常规水平",
-            "en": "Adequate morale, average cohesion"
+            "zh": "民族团结意识强烈，保卫中立决心坚定",
+            "en": "Strong national solidarity, firm resolve to defend neutrality"
           }
         },
         "equipment": [
           {
             "name": {
-              "zh": "半自动步枪",
-              "en": "Semi-Auto Rifle"
+              "zh": "博福斯40毫米高射炮",
+              "en": "Bofors 40mm AA Gun"
             },
-            "category": "ranged",
+            "category": "artillery",
             "description": {
-              "zh": "M1加兰德/SVT-40等半自动步枪",
-              "en": "M1 Garand/SVT-40 semi-automatic rifles"
+              "zh": "世界领先的防空武器",
+              "en": "World-leading anti-aircraft weapon"
             }
           },
           {
             "name": {
-              "zh": "俯冲轰炸机",
-              "en": "Dive Bomber"
+              "zh": "卡尔·古斯塔夫步枪",
+              "en": "Carl Gustaf rifle"
             },
-            "category": "aerial",
+            "category": "firearm",
             "description": {
-              "zh": "斯图卡/SBD俯冲轰炸机，精确打击地面目标",
-              "en": "Stuka/SBD dive bomber for precise ground target strikes"
-            }
-          },
-          {
-            "name": {
-              "zh": "冲锋枪",
-              "en": "Submachine Gun"
-            },
-            "category": "ranged",
-            "description": {
-              "zh": "汤普森/MP40/PPSh-41冲锋枪，近战火力猛",
-              "en": "Thompson/MP40/PPSh-41 SMGs with fierce close-quarters firepower"
-            }
-          },
-          {
-            "name": {
-              "zh": "重机枪",
-              "en": "Heavy Machine Gun"
-            },
-            "category": "ranged",
-            "description": {
-              "zh": "MG42/勃朗宁M2重机枪，火力压制核心",
-              "en": "MG42/Browning M2 HMG, core fire suppression weapon"
+              "zh": "6.5毫米毛瑟步枪",
+              "en": "6.5mm Mauser rifle"
             }
           }
         ],
-        "fortifications": [],
+        "fortifications": [
+          {
+            "name": {
+              "zh": "博登要塞",
+              "en": "Boden Fortress"
+            },
+            "description": {
+              "zh": "北部最大防御工事群",
+              "en": "Largest northern fortification complex"
+            }
+          }
+        ],
         "logistics": {
           "supplyCapacity": {
-            "zh": "",
-            "en": ""
+            "zh": "依托发达铁路网和港口体系",
+            "en": "Relied on developed railway and port system"
           },
           "mobilizationSpeed": {
-            "zh": "",
-            "en": ""
+            "zh": "72小时内可动员至战时编制",
+            "en": "Could mobilize to wartime strength within 72 hours"
           }
         },
         "notableCampaigns": []
       },
       "demographics": {
-        "population": 17000000,
+        "population": 6341000,
         "populationDescription": {
-          "zh": "总人口约1700万，分布于瑞典、丹麦、挪威和芬兰四国。人口集中在南瑞典、丹麦本土、挪威沿海与芬兰南部城市带；北部地区地广人稀。人口健康、识字率与平均寿命在当时欧洲均属较高水平",
-          "en": "The combined population was about 17 million across Sweden, Denmark, Norway, and Finland. Settlement was concentrated in southern Sweden, Denmark proper, the Norwegian coast, and southern Finland's urban belt, while the northern regions remained sparsely populated. Health, literacy, and life expectancy were high by European standards"
+          "zh": "人口集中在南部和中部地区，斯德哥尔摩、哥德堡和马尔默为主要城市。",
+          "en": "Population concentrated in southern and central regions, with Stockholm, Gothenburg, and Malmö as major cities."
         },
-        "urbanPopulation": 7900000,
-        "urbanizationRate": 46.5,
+        "urbanPopulation": 3500000,
+        "urbanizationRate": 55,
         "majorCities": [
           {
             "name": {
@@ -9172,102 +9074,1182 @@
           },
           {
             "name": {
-              "zh": "哥本哈根",
-              "en": "Copenhagen"
+              "zh": "哥德堡",
+              "en": "Gothenburg"
             },
-            "population": 770000
+            "population": 280000
           },
           {
             "name": {
-              "zh": "赫尔辛基",
-              "en": "Helsinki"
+              "zh": "马尔默",
+              "en": "Malmö"
             },
-            "population": 320000
+            "population": 155000
+          }
+        ],
+        "socialClasses": {
+          "zh": "工业资产阶级、新兴中产阶级、有组织的产业工人和农业人口。社会流动性较高。",
+          "en": "Industrial bourgeoisie, emerging middle class, organized industrial workers, and agricultural population."
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与挪威和丹麦保持北欧合作，与英美维持贸易关系，同时对德国保持经济往来。",
+          "en": "Nordic cooperation with Norway and Denmark, trade ties with Britain and the US, economic relations with Germany."
+        },
+        "enemies": {
+          "zh": "无正式敌对关系，但德国和苏联均对瑞典中立构成潜在威胁。",
+          "en": "No formal enemies, but Germany and the USSR posed threats to neutrality."
+        },
+        "foreignPolicy": {
+          "zh": "严格中立政策，通过经济手段维持与交战各方的关系。",
+          "en": "Strict neutrality, maintaining relations with belligerents through economic means."
+        }
+      },
+      "technology": {
+        "level": 6,
+        "era": {
+          "zh": "工业化成熟期",
+          "en": "Mature industrialization"
+        },
+        "keyInnovations": {
+          "zh": "博福斯火炮、SKF球轴承、爱立信电信、先进造船工艺。",
+          "en": "Bofors artillery, SKF ball bearings, Ericsson telecommunications, advanced shipbuilding."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "高度工业化、社会凝聚力强、教育和科技水平领先、外汇储备充裕。",
+          "en": "Highly industrialized, strong social cohesion, leading education and technology."
+        },
+        "weaknesses": {
+          "zh": "人口规模有限、军事力量相对薄弱、对外贸易依赖度高。",
+          "en": "Limited population, modest military, high trade dependency."
+        },
+        "outlook": {
+          "zh": "瑞典凭借中立政策和战略资源在二战中维持了独立，但需在德国与盟国之间走钢丝。",
+          "en": "Sweden maintained independence through neutrality and strategic resources, walking a tightrope between Germany and the Allies."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "1939年的瑞典是北欧最大的工业国，奉行武装中立政策，社会民主福利制度正在成型。",
+        "en": "Sweden in 1939 was the largest Nordic industrial nation, pursuing armed neutrality while its social democratic welfare system was taking shape."
+      }
+    },
+    {
+      "id": "norway_1939",
+      "name": {
+        "zh": "挪威",
+        "en": "Norway"
+      },
+      "territoryId": "norway_1939",
+      "territoryScale": "lg",
+      "civilization": {
+        "name": {
+          "zh": "挪威王国",
+          "en": "Kingdom of Norway"
+        },
+        "type": "kingdom",
+        "ruler": {
+          "zh": "哈康七世",
+          "en": "Haakon VII"
+        },
+        "rulerTitle": {
+          "zh": "国王",
+          "en": "King"
+        },
+        "dynasty": {
+          "zh": "格吕克斯堡王朝",
+          "en": "House of Glücksburg"
+        },
+        "capital": {
+          "zh": "奥斯陆",
+          "en": "Oslo"
+        },
+        "governmentForm": {
+          "zh": "君主立宪制议会民主国家。工党自1935年执政，推行渐进式社会改革。",
+          "en": "A constitutional monarchy and parliamentary democracy. Labour governed from 1935, pursuing gradual social reforms."
+        },
+        "socialStructure": {
+          "zh": "以小农场主、渔民和航运业者为社会基础。社会平等意识强烈。",
+          "en": "Small farmers, fishermen, and shipping workers formed the social base. Egalitarian values were strong."
+        },
+        "rulingClass": {
+          "zh": "工党政治精英、航运业巨头、农业合作社领导人和高级公务员。",
+          "en": "Labour Party elites, shipping magnates, cooperative leaders, and senior civil servants."
+        },
+        "succession": {
+          "zh": "王位世袭，政治权力经民主选举产生。",
+          "en": "Hereditary monarchy; political power was democratically elected."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "一院制议会（Storting）分为上下两院审议。首相为行政首长。",
+          "en": "Unicameral parliament (Storting) divided into chambers. Prime Minister headed the executive."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "外交部",
+              "en": "Ministry of Foreign Affairs"
+            },
+            "function": {
+              "zh": "维护中立与多边外交。",
+              "en": "Maintained neutrality and multilateral diplomacy."
+            },
+            "headCount": 200
           },
+          {
+            "name": {
+              "zh": "国防部",
+              "en": "Ministry of Defense"
+            },
+            "function": {
+              "zh": "管理陆海空三军。",
+              "en": "Managed army, navy, and air forces."
+            },
+            "headCount": 180
+          },
+          {
+            "name": {
+              "zh": "贸易与航运部",
+              "en": "Ministry of Trade and Shipping"
+            },
+            "function": {
+              "zh": "监管庞大的商船队和外贸。",
+              "en": "Oversaw the massive merchant fleet and foreign trade."
+            },
+            "headCount": 250
+          }
+        ],
+        "totalOfficials": 5200,
+        "localAdmin": {
+          "zh": "分为20个郡，地方自治发达。",
+          "en": "20 counties with well-developed local autonomy."
+        },
+        "legalSystem": {
+          "zh": "北欧民法体系，成文法与习惯法并用。",
+          "en": "Nordic civil law combining codified and customary law."
+        },
+        "taxationSystem": {
+          "zh": "累进所得税为主，辅以消费税和航运收入税。",
+          "en": "Progressive income tax, supplemented by excise and shipping revenue taxes."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "路德宗（国教）",
+          "en": "Lutheranism (state religion)"
+        },
+        "culturalAchievements": {
+          "zh": "蒙克的表现主义绘画、格里格的音乐遗产、探险传统（南森、阿蒙森）、文学（汉姆生、温塞特获诺贝尔奖）。滑雪运动发源地。",
+          "en": "Munch's Expressionism, Grieg's musical legacy, exploration tradition (Nansen, Amundsen), Nobel-winning literature (Hamsun, Undset). Birthplace of skiing."
+        },
+        "languageFamily": {
+          "zh": "日耳曼语族北日耳曼语支（挪威语）",
+          "en": "Germanic, North Germanic (Norwegian)"
+        },
+        "philosophy": {
+          "zh": "民主平等主义与户外生活传统",
+          "en": "Democratic egalitarianism and outdoor life tradition"
+        },
+        "writingSystem": {
+          "zh": "拉丁字母（书面挪威语与新挪威语并行）",
+          "en": "Latin alphabet (Bokmål and Nynorsk)"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 1900000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 1695000
+        },
+        "gdpPerCapita": {
+          "amount": 650,
+          "unit": {
+            "zh": "1939年美元/人/年",
+            "en": "1939 USD/person/year"
+          },
+          "goldKg": 580
+        },
+        "gdpDescription": {
+          "zh": "经济高度依赖航运业和渔业。商船队位居世界第四。水力发电支撑电化学和冶金工业。",
+          "en": "Economy heavily reliant on shipping and fishing. Merchant fleet ranked fourth globally. Hydropower supported electrochemical and metallurgical industries."
+        },
+        "mainIndustries": {
+          "zh": "航运、渔业、水力发电、造纸、冶金、造船",
+          "en": "Shipping, fishing, hydroelectric power, paper, metallurgy, shipbuilding"
+        },
+        "tradeGoods": {
+          "zh": "鱼产品、纸浆、航运服务、铝、化肥",
+          "en": "Fish products, pulp, shipping services, aluminum, fertilizers"
+        },
+        "currency": {
+          "name": {
+            "zh": "挪威克朗",
+            "en": "Norwegian krone"
+          },
+          "type": "fiat",
+          "unitName": {
+            "zh": "克朗",
+            "en": "krone"
+          }
+        },
+        "householdWealth": {
+          "zh": "渔民和农民拥有自己的船只和土地，城市工人通过合作社保障权益。",
+          "en": "Fishermen and farmers owned boats and land; urban workers secured rights through cooperatives."
+        },
+        "averageIncome": {
+          "amount": 520,
+          "unit": {
+            "zh": "1939年美元/人/年",
+            "en": "1939 USD/person/year"
+          },
+          "goldKg": 464
+        },
+        "foreignTradeVolume": {
+          "amount": 650000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 580000
+        },
+        "economicSystem": {
+          "zh": "混合经济，国家通过合作社和公共企业发挥重要调节作用。",
+          "en": "Mixed economy with state playing important regulatory role through cooperatives."
+        },
+        "giniEstimate": 0.33
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 380000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 339000
+        },
+        "annualExpenditure": {
+          "amount": 360000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 321000
+        },
+        "surplus": {
+          "amount": 20000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 17800
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "所得税",
+              "en": "Income tax"
+            },
+            "amount": {
+              "amount": 130000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 116000
+            },
+            "percentage": 34
+          },
+          {
+            "source": {
+              "zh": "航运与贸易税收",
+              "en": "Shipping and trade taxes"
+            },
+            "amount": {
+              "amount": 115000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 103000
+            },
+            "percentage": 30
+          },
+          {
+            "source": {
+              "zh": "消费税",
+              "en": "Excise duties"
+            },
+            "amount": {
+              "amount": 85000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 76000
+            },
+            "percentage": 22
+          },
+          {
+            "source": {
+              "zh": "其他收入",
+              "en": "Other"
+            },
+            "amount": {
+              "amount": 50000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 44600
+            },
+            "percentage": 14
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "社会服务",
+              "en": "Social services"
+            },
+            "amount": {
+              "amount": 110000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 98100
+            },
+            "percentage": 31
+          },
+          {
+            "category": {
+              "zh": "国防",
+              "en": "Defense"
+            },
+            "amount": {
+              "amount": 72000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 64200
+            },
+            "percentage": 20
+          },
+          {
+            "category": {
+              "zh": "交通基础设施",
+              "en": "Transport infrastructure"
+            },
+            "amount": {
+              "amount": 95000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 84700
+            },
+            "percentage": 26
+          },
+          {
+            "category": {
+              "zh": "教育与文化",
+              "en": "Education"
+            },
+            "amount": {
+              "amount": 83000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 74000
+            },
+            "percentage": 23
+          }
+        ],
+        "treasury": {
+          "amount": 210000000,
+          "unit": {
+            "zh": "1939年美元",
+            "en": "1939 USD"
+          },
+          "goldKg": 187300
+        },
+        "treasuryDescription": {
+          "zh": "央行黄金储备适度，外汇储备主要来自航运收入。",
+          "en": "Moderate gold reserves; forex mainly from shipping income."
+        },
+        "fiscalPolicy": {
+          "zh": "审慎财政管理，注重基础设施投资和社会安全网。",
+          "en": "Prudent fiscal management focused on infrastructure and social safety net."
+        },
+        "debtLevel": {
+          "amount": 800000000,
+          "unit": {
+            "zh": "1939年美元",
+            "en": "1939 USD"
+          },
+          "goldKg": 713500
+        }
+      },
+      "military": {
+        "level": 3,
+        "totalTroops": 25000,
+        "standingArmy": 15000,
+        "reserves": 10000,
+        "branches": [
+          {
+            "name": {
+              "zh": "陆军",
+              "en": "Norwegian Army"
+            },
+            "count": 15000,
+            "description": {
+              "zh": "步兵为主的国土防御力量。",
+              "en": "Infantry-based homeland defense force."
+            }
+          },
+          {
+            "name": {
+              "zh": "皇家海军",
+              "en": "Royal Norwegian Navy"
+            },
+            "count": 6000,
+            "description": {
+              "zh": "海岸防御和巡逻舰队。",
+              "en": "Coastal defense and patrol fleet."
+            }
+          },
+          {
+            "name": {
+              "zh": "陆军航空兵",
+              "en": "Army Air Service"
+            },
+            "count": 4000,
+            "description": {
+              "zh": "小型空中力量。",
+              "en": "Small air arm."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 18,
+          "commanderInChief": {
+            "zh": "国王（名义），国防总司令实际指挥",
+            "en": "King (nominal), Commander-in-Chief actual command"
+          }
+        },
+        "technology": {
+          "zh": "军事装备较为老旧，海岸要塞防御体系相对完善。",
+          "en": "Dated equipment, but comparatively solid coastal fortress defense."
+        },
+        "annualMilitarySpending": {
+          "amount": 72000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          }
+        },
+        "militarySpendingPctGdp": 3.8,
+        "threats": {
+          "zh": "德国对挪威海岸线和北方铁矿石运输线的战略兴趣是最大威胁。",
+          "en": "Germany's strategic interest in Norway's coast and ore routes was the greatest threat."
+        },
+        "doctrine": {
+          "zh": "中立防御与海岸要塞体系",
+          "en": "Neutral defense and coastal fortress system"
+        },
+        "training": {
+          "level": 4,
+          "description": {
+            "zh": "义务兵役制，训练基础扎实",
+            "en": "Conscription with solid basic training"
+          }
+        },
+        "morale": {
+          "level": 5,
+          "description": {
+            "zh": "对独立的珍视转化为防卫意志",
+            "en": "Cherishing of independence as defense resolve"
+          }
+        },
+        "equipment": [
+          {
+            "name": {
+              "zh": "克拉格-约根森步枪",
+              "en": "Krag-Jørgensen rifle"
+            },
+            "category": "firearm",
+            "description": {
+              "zh": "挪威标准制式步枪",
+              "en": "Norwegian standard rifle"
+            }
+          }
+        ],
+        "fortifications": [
+          {
+            "name": {
+              "zh": "奥斯卡堡要塞",
+              "en": "Oscarsborg Fortress"
+            },
+            "description": {
+              "zh": "守卫奥斯陆峡湾入口",
+              "en": "Guarded the Oslo Fjord entrance"
+            }
+          }
+        ],
+        "logistics": {
+          "supplyCapacity": {
+            "zh": "依赖沿海航运和有限铁路网",
+            "en": "Relied on coastal shipping and limited railways"
+          },
+          "mobilizationSpeed": {
+            "zh": "动员速度较慢",
+            "en": "Slow mobilization"
+          }
+        },
+        "notableCampaigns": []
+      },
+      "demographics": {
+        "population": 2920000,
+        "populationDescription": {
+          "zh": "人口集中在南部沿海，北部人口稀疏。",
+          "en": "Population concentrated in southern coastal areas; north sparsely populated."
+        },
+        "urbanPopulation": 1300000,
+        "urbanizationRate": 44,
+        "majorCities": [
           {
             "name": {
               "zh": "奥斯陆",
               "en": "Oslo"
             },
-            "population": 290000
-          },
-          {
-            "name": {
-              "zh": "哥德堡",
-              "en": "Gothenburg"
-            },
-            "population": 330000
-          },
-          {
-            "name": {
-              "zh": "马尔默",
-              "en": "Malmo"
-            },
-            "population": 155000
-          },
-          {
-            "name": {
-              "zh": "图尔库",
-              "en": "Turku"
-            },
-            "population": 80000
+            "population": 280000
           },
           {
             "name": {
               "zh": "卑尔根",
               "en": "Bergen"
             },
-            "population": 100000
+            "population": 110000
+          },
+          {
+            "name": {
+              "zh": "特隆赫姆",
+              "en": "Trondheim"
+            },
+            "population": 56000
           }
         ],
         "socialClasses": {
-          "zh": "社会阶层包括王室与旧贵族、工商资产阶级、专业中产阶级、熟练与非熟练工人、小农、渔民、林业劳动者以及公务员群体。北欧工会组织率较高，阶级冲突较许多欧洲国家温和，但芬兰内战遗绪尚未完全消散，国家团结在1939年对外战争压力下得到强化",
-          "en": "Social classes included royal houses and old aristocracies, the business bourgeoisie, professional middle classes, skilled and unskilled workers, small farmers, fishermen, forestry laborers, and civil servants. Trade union organization was high across the Nordic world, and class conflict was generally milder than in many European countries, though the legacy of the Finnish Civil War had not entirely vanished and national unity was strengthened under external wartime pressure in 1939"
+          "zh": "沿海渔民、小农场主、航运从业者、城市工人和专业中产阶级。",
+          "en": "Coastal fishermen, small farmers, shipping workers, urban laborers, and professional middle class."
         }
       },
       "diplomacy": {
         "allies": {
-          "zh": "北欧国家之间维持紧密合作与中立协调；芬兰在冬季战争中获得瑞典志愿者、物资支援以及英法等国同情，但1939年并无统一正式军事同盟",
-          "en": "The Nordic countries maintained close cooperation and coordination in neutrality; during the Winter War Finland received Swedish volunteers, material support, and sympathy from Britain and France, but there was no unified formal military alliance in 1939"
+          "zh": "与瑞典和丹麦保持紧密北欧合作。与英国有深厚航运贸易纽带。",
+          "en": "Close Nordic cooperation with Sweden and Denmark. Deep shipping ties with Britain."
         },
         "enemies": {
-          "zh": "芬兰的直接敌人为苏联；其余北欧国家并未在1939年正式对外宣战，但普遍警惕纳粹德国和苏联的战略压力",
-          "en": "Finland's direct enemy was the Soviet Union; the other Nordic states were not formally at war in 1939, but all were wary of strategic pressure from Nazi Germany and the Soviet Union"
+          "zh": "无正式敌国。德国觊觎挪威海岸和矿石运输线。",
+          "en": "No formal enemies. Germany coveted Norway's coast and ore routes."
         },
         "foreignPolicy": {
-          "zh": "总体外交方针是维护主权、中立、航运安全与出口市场，尽量避免卷入欧洲大战。瑞典尤其注重武装中立和经济平衡，丹麦与挪威力图通过谨慎外交避免刺激德国，芬兰则在对苏防务中寻求国际援助与道义支持",
-          "en": "The overall foreign policy aim was to preserve sovereignty, neutrality, shipping security, and export markets while avoiding entanglement in the wider European war. Sweden especially emphasized armed neutrality and economic balancing, Denmark and Norway pursued cautious diplomacy to avoid provoking Germany, and Finland sought international aid and moral support for its defense against the Soviet Union"
+          "zh": "坚持中立政策，依赖国际法和北欧合作维护安全。",
+          "en": "Adhered to neutrality, relying on international law and Nordic cooperation."
         }
       },
       "technology": {
-        "level": 7,
+        "level": 5,
         "era": {
-          "zh": "世界大战时代",
-          "en": "World War Era"
+          "zh": "工业化中期与航运技术前沿",
+          "en": "Mid-industrialization with frontier shipping technology"
         },
         "keyInnovations": {
-          "zh": "水电开发、现代造船、无线电通信、博福斯火炮系统、林业机械化、纸浆与造纸工业、电气化铁路与港口设施、合作社冷链和乳制品加工、功能主义建筑与社会住宅规划",
-          "en": "Hydropower development, modern shipbuilding, radio communications, Bofors artillery systems, mechanized forestry, pulp and paper industry advances, electrified rail and port facilities, cooperative cold-chain and dairy processing, and functionalist architecture with social housing planning"
+          "zh": "先进造船技术、水力发电、渔业加工、电化学工业。",
+          "en": "Advanced shipbuilding, hydroelectric, fisheries processing, electrochemicals."
         }
       },
       "assessment": {
         "strengths": {
-          "zh": "政治制度稳定、识字率和社会信任高、工业和航运基础较强、财政信用良好、国民动员能力高、地理位置控制北海与波罗的海重要通道。瑞典军工与资源、丹麦农业效率、挪威海运和芬兰防御意志各具优势",
-          "en": "They possessed stable political institutions, high literacy and social trust, strong industrial and shipping foundations, good fiscal credit, high capacity for national mobilization, and geography controlling important North Sea and Baltic approaches. Sweden's armaments and resources, Denmark's agricultural efficiency, Norway's shipping, and Finland's defensive resolve were all major strengths"
+          "zh": "世界第四商船队、丰富水力资源、高度社会凝聚力。",
+          "en": "World's 4th largest merchant fleet, abundant hydro resources, strong cohesion."
         },
         "weaknesses": {
-          "zh": "人口和军力规模有限，对外贸易依赖度高，战略纵深不足，关键海峡和海岸线容易受大国海空力量胁迫。丹麦地势平坦难守，挪威海岸线漫长，芬兰面临苏联陆上压力，瑞典虽较强但难单独决定地区安全格局",
-          "en": "Their populations and armed forces were limited in scale, they were heavily dependent on foreign trade, and they lacked strategic depth, while key straits and coastlines were vulnerable to pressure from major naval and air powers. Denmark was hard to defend on flat terrain, Norway had a very long coastline, Finland faced direct Soviet land pressure, and Sweden, though stronger than the others, could not alone determine the region's security balance"
+          "zh": "军事力量薄弱、人口稀少、地形狭长难以防御。",
+          "en": "Weak military, sparse population, narrow territory difficult to defend."
         },
         "outlook": {
-          "zh": "1939年的北欧前景谨慎而危险。若中立政策能够被交战大国容忍，瑞典、挪威和丹麦可望暂时维持稳定；但德国对北方海运线和铁矿供应的兴趣，以及苏联对芬兰的进攻，已表明北欧难以长期置身大战之外。短期内芬兰将持续承受最大军事压力，其余国家则被迫加速重整军备与外交应变",
-          "en": "The Nordic outlook in 1939 was cautious but dangerous. If neutrality were tolerated by the belligerent powers, Sweden, Norway, and Denmark might preserve temporary stability; yet Germany's interest in northern sea routes and iron ore, together with the Soviet attack on Finland, already showed that the region could not remain outside the great war indefinitely. In the short term Finland would bear the greatest military pressure, while the other states would be compelled to accelerate rearmament and diplomatic adaptation"
+          "zh": "挪威的中立将在1940年4月遭德国入侵而终结。",
+          "en": "Norway's neutrality would end with the German invasion in April 1940."
         }
       },
       "status": "stable",
       "description": {
-        "zh": "北欧保持主权，但1939年芬兰与苏联的冬季战争已爆发。",
-        "en": "The Nordic states remained sovereign, though the Winter War between Finland and the USSR began in 1939."
+        "zh": "1939年的挪威依赖航运和渔业，奉行中立政策，社会平等而安定。",
+        "en": "Norway in 1939 relied on shipping and fishing, pursuing neutrality with an egalitarian society."
+      }
+    },
+    {
+      "id": "denmark_1939",
+      "name": {
+        "zh": "丹麦",
+        "en": "Denmark"
+      },
+      "territoryId": "denmark_1939",
+      "territoryScale": "sm",
+      "civilization": {
+        "name": {
+          "zh": "丹麦王国",
+          "en": "Kingdom of Denmark"
+        },
+        "type": "kingdom",
+        "ruler": {
+          "zh": "克里斯蒂安十世",
+          "en": "Christian X"
+        },
+        "rulerTitle": {
+          "zh": "国王",
+          "en": "King"
+        },
+        "dynasty": {
+          "zh": "格吕克斯堡王朝",
+          "en": "House of Glücksburg"
+        },
+        "capital": {
+          "zh": "哥本哈根",
+          "en": "Copenhagen"
+        },
+        "governmentForm": {
+          "zh": "君主立宪制议会民主国家。社会民主党为最大党，与激进自由党联合执政。",
+          "en": "Constitutional monarchy and parliamentary democracy. Social Democrats were the largest party, in coalition with the Radical Left."
+        },
+        "socialStructure": {
+          "zh": "以农业合作社和城市工匠、工人为社会基础。合作社运动是全球典范。",
+          "en": "Agricultural cooperatives, artisans, and workers formed the social base. The cooperative movement was a global model."
+        },
+        "rulingClass": {
+          "zh": "社会民主党政治家、农业合作社领袖、工商业精英和高级文官。",
+          "en": "Social Democratic politicians, cooperative leaders, business elites, and senior civil servants."
+        },
+        "succession": {
+          "zh": "王位世袭，政治权力民主选举产生。",
+          "en": "Hereditary monarchy; political power was democratically elected."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "两院制议会。首相领导内阁，对议会负责。",
+          "en": "Bicameral parliament. The Prime Minister led the cabinet, accountable to parliament."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "外交部",
+              "en": "Ministry of Foreign Affairs"
+            },
+            "function": {
+              "zh": "维护中立外交和对外贸易。",
+              "en": "Maintained neutral diplomacy and foreign trade."
+            },
+            "headCount": 180
+          },
+          {
+            "name": {
+              "zh": "国防部",
+              "en": "Ministry of Defense"
+            },
+            "function": {
+              "zh": "管理有限的国防力量。",
+              "en": "Managed limited defense forces."
+            },
+            "headCount": 120
+          },
+          {
+            "name": {
+              "zh": "农业部",
+              "en": "Ministry of Agriculture"
+            },
+            "function": {
+              "zh": "监管农产品出口和合作社体系。",
+              "en": "Oversaw agricultural exports and cooperatives."
+            },
+            "headCount": 200
+          }
+        ],
+        "totalOfficials": 4800,
+        "localAdmin": {
+          "zh": "分为若干郡和市镇，地方自治传统悠久。",
+          "en": "Counties and municipalities with long tradition of local self-governance."
+        },
+        "legalSystem": {
+          "zh": "北欧民法传统，成文法为主。",
+          "en": "Nordic civil law tradition, primarily codified."
+        },
+        "taxationSystem": {
+          "zh": "累进所得税和土地税，辅以农产品出口关税。",
+          "en": "Progressive income and land taxes, supplemented by agricultural export duties."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "路德宗（国教）",
+          "en": "Lutheranism (state religion)"
+        },
+        "culturalAchievements": {
+          "zh": "安徒生童话遗产延续，尼尔斯·玻尔的量子物理贡献。丹麦设计（功能主义家具）享有国际声誉。合作社运动和民众高等学校制度影响深远。",
+          "en": "Andersen's cultural heritage, Bohr's quantum physics. Danish design gaining international fame. Cooperative movement and folk high schools had far-reaching influence."
+        },
+        "languageFamily": {
+          "zh": "日耳曼语族北日耳曼语支（丹麦语）",
+          "en": "Germanic, North Germanic (Danish)"
+        },
+        "philosophy": {
+          "zh": "克尔凯郭尔存在主义传统与社会民主理想",
+          "en": "Kierkegaard's existentialism and social democratic ideals"
+        },
+        "writingSystem": {
+          "zh": "拉丁字母（丹麦语正字法）",
+          "en": "Latin alphabet (Danish orthography)"
+        }
+      },
+      "economy": {
+        "level": 6,
+        "gdpEstimate": {
+          "amount": 2100000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 1873000
+        },
+        "gdpPerCapita": {
+          "amount": 550,
+          "unit": {
+            "zh": "1939年美元/人/年",
+            "en": "1939 USD/person/year"
+          },
+          "goldKg": 490
+        },
+        "gdpDescription": {
+          "zh": "欧洲最发达的农业出口国之一，乳制品、培根和鸡蛋为主要出口品。食品加工业发达。",
+          "en": "One of Europe's most advanced agricultural exporters, with dairy, bacon, and eggs as main exports."
+        },
+        "mainIndustries": {
+          "zh": "农业（乳业、畜牧）、食品加工、航运、造船、水泥",
+          "en": "Agriculture (dairy, livestock), food processing, shipping, shipbuilding, cement"
+        },
+        "tradeGoods": {
+          "zh": "黄油、培根、鸡蛋、乳酪、啤酒、水泥",
+          "en": "Butter, bacon, eggs, cheese, beer, cement"
+        },
+        "currency": {
+          "name": {
+            "zh": "丹麦克朗",
+            "en": "Danish krone"
+          },
+          "type": "fiat",
+          "unitName": {
+            "zh": "克朗",
+            "en": "krone"
+          }
+        },
+        "householdWealth": {
+          "zh": "农民通过合作社获得较好回报，城市居民生活水平欧洲中上游。",
+          "en": "Farmers got good returns via cooperatives; urban living standards were upper-middle in Europe."
+        },
+        "averageIncome": {
+          "amount": 440,
+          "unit": {
+            "zh": "1939年美元/人/年",
+            "en": "1939 USD/person/year"
+          },
+          "goldKg": 392
+        },
+        "foreignTradeVolume": {
+          "amount": 800000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 713500
+        },
+        "economicSystem": {
+          "zh": "以私有农业合作社和自由贸易为特色的混合经济。",
+          "en": "Mixed economy featuring private agricultural cooperatives and free trade."
+        },
+        "giniEstimate": 0.34
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 420000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 374600
+        },
+        "annualExpenditure": {
+          "amount": 400000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 356800
+        },
+        "surplus": {
+          "amount": 20000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          },
+          "goldKg": 17800
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "所得税",
+              "en": "Income tax"
+            },
+            "amount": {
+              "amount": 150000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 133800
+            },
+            "percentage": 36
+          },
+          {
+            "source": {
+              "zh": "关税与消费税",
+              "en": "Customs and excise"
+            },
+            "amount": {
+              "amount": 130000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 116000
+            },
+            "percentage": 31
+          },
+          {
+            "source": {
+              "zh": "土地与财产税",
+              "en": "Land and property tax"
+            },
+            "amount": {
+              "amount": 80000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 71400
+            },
+            "percentage": 19
+          },
+          {
+            "source": {
+              "zh": "其他",
+              "en": "Other"
+            },
+            "amount": {
+              "amount": 60000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 53500
+            },
+            "percentage": 14
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "社会福利与卫生",
+              "en": "Social welfare and health"
+            },
+            "amount": {
+              "amount": 130000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 116000
+            },
+            "percentage": 32
+          },
+          {
+            "category": {
+              "zh": "教育",
+              "en": "Education"
+            },
+            "amount": {
+              "amount": 90000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 80300
+            },
+            "percentage": 23
+          },
+          {
+            "category": {
+              "zh": "国防",
+              "en": "Defense"
+            },
+            "amount": {
+              "amount": 60000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 53500
+            },
+            "percentage": 15
+          },
+          {
+            "category": {
+              "zh": "基础设施",
+              "en": "Infrastructure"
+            },
+            "amount": {
+              "amount": 120000000,
+              "unit": {
+                "zh": "1939年美元/年",
+                "en": "1939 USD/year"
+              },
+              "goldKg": 107000
+            },
+            "percentage": 30
+          }
+        ],
+        "treasury": {
+          "amount": 180000000,
+          "unit": {
+            "zh": "1939年美元",
+            "en": "1939 USD"
+          },
+          "goldKg": 160600
+        },
+        "treasuryDescription": {
+          "zh": "央行黄金储备适度，财政总体健康。",
+          "en": "Moderate gold reserves; overall fiscal health was sound."
+        },
+        "fiscalPolicy": {
+          "zh": "审慎平衡的财政政策，注重农业补贴和社会保障。",
+          "en": "Balanced fiscal policy focused on agricultural subsidies and social security."
+        },
+        "debtLevel": {
+          "amount": 700000000,
+          "unit": {
+            "zh": "1939年美元",
+            "en": "1939 USD"
+          },
+          "goldKg": 624500
+        }
+      },
+      "military": {
+        "level": 2,
+        "totalTroops": 15000,
+        "standingArmy": 6600,
+        "reserves": 8400,
+        "branches": [
+          {
+            "name": {
+              "zh": "陆军",
+              "en": "Danish Army"
+            },
+            "count": 9500,
+            "description": {
+              "zh": "小规模防御型陆军。",
+              "en": "Small defensive army."
+            }
+          },
+          {
+            "name": {
+              "zh": "海军",
+              "en": "Royal Danish Navy"
+            },
+            "count": 3500,
+            "description": {
+              "zh": "海岸巡防舰队。",
+              "en": "Coastal patrol fleet."
+            }
+          },
+          {
+            "name": {
+              "zh": "陆军航空队",
+              "en": "Army Aviation"
+            },
+            "count": 2000,
+            "description": {
+              "zh": "少量侦察和战斗机。",
+              "en": "Small number of aircraft."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 10,
+          "commanderInChief": {
+            "zh": "国王（名义），国防司令实际指挥",
+            "en": "King (nominal), Commander-in-Chief actual command"
+          }
+        },
+        "technology": {
+          "zh": "军事装备陈旧，政府长期压缩军费。",
+          "en": "Outdated equipment; government had long compressed military spending."
+        },
+        "annualMilitarySpending": {
+          "amount": 60000000,
+          "unit": {
+            "zh": "1939年美元/年",
+            "en": "1939 USD/year"
+          }
+        },
+        "militarySpendingPctGdp": 2.9,
+        "threats": {
+          "zh": "地处德国北邻，地形平坦无险可守。纳粹德国扩张意图是最直接威胁。",
+          "en": "Bordered Germany with flat terrain. Nazi expansionism was the most direct threat."
+        },
+        "doctrine": {
+          "zh": "象征性防御与中立声明",
+          "en": "Symbolic defense and neutrality declarations"
+        },
+        "training": {
+          "level": 3,
+          "description": {
+            "zh": "义务兵役但训练时间短",
+            "en": "Conscription with short training"
+          }
+        },
+        "morale": {
+          "level": 4,
+          "description": {
+            "zh": "对德国威胁有现实主义认知",
+            "en": "Realistic awareness of the German threat"
+          }
+        },
+        "equipment": [
+          {
+            "name": {
+              "zh": "麦德森轻机枪",
+              "en": "Madsen LMG"
+            },
+            "category": "firearm",
+            "description": {
+              "zh": "丹麦著名出口武器",
+              "en": "Famous Danish export weapon"
+            }
+          }
+        ],
+        "fortifications": [],
+        "logistics": {
+          "supplyCapacity": {
+            "zh": "国土面积小，后勤压力不大",
+            "en": "Small territory, modest logistics"
+          },
+          "mobilizationSpeed": {
+            "zh": "48小时内完成动员",
+            "en": "Mobilization within 48 hours"
+          }
+        },
+        "notableCampaigns": []
+      },
+      "demographics": {
+        "population": 3810000,
+        "populationDescription": {
+          "zh": "人口集中在西兰岛和日德兰半岛。哥本哈根都市圈约四分之一人口。",
+          "en": "Population on Zealand and Jutland. Copenhagen metro held about a quarter."
+        },
+        "urbanPopulation": 2400000,
+        "urbanizationRate": 63,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "哥本哈根",
+              "en": "Copenhagen"
+            },
+            "population": 700000
+          },
+          {
+            "name": {
+              "zh": "奥胡斯",
+              "en": "Aarhus"
+            },
+            "population": 108000
+          },
+          {
+            "name": {
+              "zh": "欧登塞",
+              "en": "Odense"
+            },
+            "population": 92000
+          }
+        ],
+        "socialClasses": {
+          "zh": "农业合作社成员、城市工人、商业与专业中产阶级。",
+          "en": "Cooperative members, urban workers, commercial and professional middle class."
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与瑞典和挪威保持北欧合作。与英国有重要贸易纽带。1939年与德国签互不侵犯条约。",
+          "en": "Nordic cooperation with Sweden and Norway. Trade ties with Britain. Non-aggression pact with Germany in 1939."
+        },
+        "enemies": {
+          "zh": "名义上无敌国。对德国扩张野心深感不安。",
+          "en": "Nominally no enemies. Deep unease about German expansionism."
+        },
+        "foreignPolicy": {
+          "zh": "通过互不侵犯条约和中立声明寻求安全保障。",
+          "en": "Sought security through non-aggression pacts and neutrality declarations."
+        }
+      },
+      "technology": {
+        "level": 5,
+        "era": {
+          "zh": "农业工业化与科学前沿",
+          "en": "Agricultural industrialization and scientific frontier"
+        },
+        "keyInnovations": {
+          "zh": "乳制品加工、玻尔量子物理、马士基航运、合作社管理创新。",
+          "en": "Dairy processing, Bohr's quantum physics, Maersk shipping, cooperative innovations."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "高效农业出口、发达合作社制度、高教育水平和社会凝聚力。",
+          "en": "Efficient agricultural exports, developed cooperatives, high education and social cohesion."
+        },
+        "weaknesses": {
+          "zh": "军事极度薄弱、地形无险可守、完全无法抵抗德国入侵。",
+          "en": "Extremely weak military, flat terrain, completely unable to resist German invasion."
+        },
+        "outlook": {
+          "zh": "丹麦将在1940年4月9日遭德国入侵，几乎未经抵抗即被占领。但将以非暴力抵抗维护尊严。",
+          "en": "Denmark would be invaded April 9, 1940, occupied with almost no resistance. But maintained dignity through non-violent resistance."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "1939年的丹麦以农业出口和合作社制度闻名，面对德国威胁几乎无力防御。",
+        "en": "Denmark in 1939 was known for agricultural exports and cooperatives, virtually defenseless against Germany."
       }
     },
     {

@@ -27,6 +27,7 @@ const EraSelectModal = dynamic(() => import("@/components/EraSelectModal"), { ss
 const WarDetailModal = dynamic(() => import("@/components/WarDetailModal"), { ssr: false });
 const SettingsModal = dynamic(() => import("@/components/SettingsModal"), { ssr: false });
 const WelcomeModal = dynamic(() => import("@/components/WelcomeModal"), { ssr: false });
+const CommunityEventsModal = dynamic(() => import("@/components/CommunityEventsModal"), { ssr: false });
 
 export default function Home() {
   const { t } = useLocale();
@@ -46,6 +47,7 @@ export default function Home() {
 
   const [showEraModal, setShowEraModal] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
+  const [showCommunityEvents, setShowCommunityEvents] = useState(false);
   const [requireApiKey, setRequireApiKey] = useState(false);
   const fetchServerState = useSettingsStore((s) => s.fetchServerState);
   const settingsModel = useSettingsStore((s) => s.model);
@@ -486,6 +488,18 @@ export default function Home() {
               <line x1="12" y1="8" x2="12.01" y2="8" />
             </svg>
           </button>
+          <button
+            onClick={() => setShowCommunityEvents(true)}
+            className="tooltip-wrap tooltip-below flex items-center justify-center w-8 h-8 rounded-full border border-border-subtle text-text-secondary hover:text-accent-gold hover:border-border-active transition-all cursor-pointer"
+            data-tooltip={t("communityEvents.viewAll")}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </button>
           <LanguageSwitch />
         </div>
       </header>
@@ -545,6 +559,10 @@ export default function Home() {
             localStorage.setItem("hcs-welcome-seen", "1");
           }}
         />
+      )}
+
+      {showCommunityEvents && (
+        <CommunityEventsModal onClose={() => setShowCommunityEvents(false)} />
       )}
     </div>
   );

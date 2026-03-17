@@ -34342,6 +34342,569 @@
       }
     },
     {
+      "id": "norsemen_100",
+      "name": {
+        "zh": "北欧日耳曼诸部",
+        "en": "Nordic Germanic Tribes"
+      },
+      "territoryId": "norsemen_100",
+      "territoryScale": "md",
+      "civilization": {
+        "name": {
+          "zh": "北欧日耳曼诸部",
+          "en": "Nordic Germanic Tribes"
+        },
+        "type": "tribal",
+        "ruler": {
+          "zh": "部族首领",
+          "en": "Tribal Chieftain"
+        },
+        "rulerTitle": {
+          "zh": "王",
+          "en": "King"
+        },
+        "dynasty": {
+          "zh": "北欧铁器时代部族传统",
+          "en": "Nordic Iron Age tribal tradition"
+        },
+        "capital": {
+          "zh": "无固定都城",
+          "en": "No fixed capital"
+        },
+        "governmentForm": {
+          "zh": "以氏族会议、宗教祭祀和战时首领制为核心的分散部落联盟。各部落独立治理，在共同威胁或贸易利益面前形成临时联合。",
+          "en": "A decentralized tribal confederation centered on clan assemblies, religious ceremonies, and wartime chieftainship. Each tribe governed independently, forming temporary alliances against shared threats or for trade interests."
+        },
+        "socialStructure": {
+          "zh": "社会分为自由农民、半自由人（thralls的前身）和奴隶。自由人参加部落议会（Thing的前身），贵族地位取决于土地持有、战功和与祭祀传统的联系。",
+          "en": "Society was divided into free farmers, semi-free dependents (proto-thralls), and slaves. Free men attended tribal assemblies (proto-Thing), with noble status determined by landholding, military prowess, and ties to ritual tradition."
+        },
+        "rulingClass": {
+          "zh": "贵族由大农场主、战士首领和祭司组成。其权力来自对土地和牲畜的控制、血统声望和宗教仪式中的角色。",
+          "en": "The ruling class consisted of large landholders, warrior chieftains, and priests. Their power derived from control of land and livestock, lineage prestige, and roles in religious ceremonies."
+        },
+        "succession": {
+          "zh": "首领地位通常在特定家族内部传承，但需要部落议会的认可。选举因素与血统因素并存。",
+          "en": "Chieftainship typically passed within certain families but required assembly approval. Elective and hereditary elements coexisted."
+        }
+      },
+      "government": {
+        "structure": {
+          "zh": "治理以地方部落议会为中心，首领由长老和自由人推选。无常设官僚，宗教仪式和习惯法维持社会秩序。区域性大会可在危机时协调多个部落行动。",
+          "en": "Governance centered on local tribal assemblies where chieftains were chosen by elders and freemen. Without a standing bureaucracy, religious ritual and customary law maintained social order. Regional gatherings could coordinate multiple tribes in times of crisis."
+        },
+        "departments": [
+          {
+            "name": {
+              "zh": "部族议事会",
+              "en": "Tribal Assembly (proto-Thing)"
+            },
+            "function": {
+              "zh": "裁决纠纷、决定战和、分配资源和认可首领。",
+              "en": "Adjudicated disputes, decided matters of war and peace, allocated resources, and approved chieftains."
+            },
+            "headCount": 12
+          },
+          {
+            "name": {
+              "zh": "祭司团",
+              "en": "Priestly Circle"
+            },
+            "function": {
+              "zh": "主持季节性祭祀、占卜和维护神圣法律传统。",
+              "en": "Conducted seasonal sacrifices, divination, and maintained sacred legal traditions."
+            },
+            "headCount": 8
+          },
+          {
+            "name": {
+              "zh": "战士首领团",
+              "en": "War-band Leaders"
+            },
+            "function": {
+              "zh": "组织防御和远征队伍，训练年轻战士。",
+              "en": "Organized defense and raiding parties, trained young warriors."
+            },
+            "headCount": 6
+          }
+        ],
+        "totalOfficials": 26,
+        "localAdmin": {
+          "zh": "地方管理依靠家族农庄和村落长老，无成文法规。事务通过口头协议和习惯法解决。",
+          "en": "Local administration relied on family farmsteads and village elders without written statutes. Affairs were settled through oral agreements and customary law."
+        },
+        "legalSystem": {
+          "zh": "习惯法以血亲责任、赔偿金（wergild前身）和宣誓为核心。严重犯罪可导致放逐。",
+          "en": "Customary law centered on kin responsibility, compensation payments (proto-wergild), and oaths. Serious offenses could result in outlawry."
+        },
+        "taxationSystem": {
+          "zh": "无正式税收。公共义务以劳役、牲畜贡献和节庆供奉形式存在。",
+          "en": "No formal taxation. Public obligations took the form of labor service, livestock contributions, and festival offerings."
+        }
+      },
+      "culture": {
+        "religion": {
+          "zh": "北欧原始多神信仰",
+          "en": "Proto-Norse polytheism"
+        },
+        "culturalAchievements": {
+          "zh": "发展了精湛的铁器锻造、木制船只建造、独特的动物纹样装饰艺术和如尼文字的早期形式。口头史诗传统为后世北欧萨迦文学奠定基础。",
+          "en": "Developed skilled ironworking, wooden shipbuilding, distinctive animal-style decorative art, and early forms of runic script. Oral epic traditions laid foundations for later Norse saga literature."
+        },
+        "languageFamily": {
+          "zh": "日耳曼语族北日耳曼语支（原始北欧语）",
+          "en": "Germanic, North Germanic branch (Proto-Norse)"
+        },
+        "philosophy": {
+          "zh": "多神崇拜与命运观念",
+          "en": "Polytheistic worship and fatalistic worldview"
+        },
+        "writingSystem": {
+          "zh": "如尼文字的早期形式（长枝如尼文前身），主要用于铭文和仪式目的，日常事务依赖口头传统。",
+          "en": "Early runic script (proto-Elder Futhark), mainly used for inscriptions and ritual purposes; daily affairs relied on oral tradition."
+        }
+      },
+      "economy": {
+        "level": 2,
+        "gdpEstimate": {
+          "amount": 800000,
+          "unit": {
+            "zh": "银克等值/年",
+            "en": "grams of silver equivalent/year"
+          },
+          "goldKg": 80000
+        },
+        "gdpPerCapita": {
+          "amount": 25,
+          "unit": {
+            "zh": "银克等值/人/年",
+            "en": "grams of silver equivalent/person/year"
+          },
+          "goldKg": 2.5
+        },
+        "gdpDescription": {
+          "zh": "经济以畜牧、渔业、小规模耕作和铁器加工为主。通过波罗的海和北海路线进行琥珀、皮毛和铁器的远程贸易。",
+          "en": "The economy was based on pastoralism, fishing, small-scale agriculture, and ironworking. Long-distance trade in amber, furs, and iron goods was conducted via Baltic and North Sea routes."
+        },
+        "mainIndustries": {
+          "zh": "畜牧、渔业、铁器锻造、造船、耕作",
+          "en": "Pastoralism, fishing, ironworking, shipbuilding, agriculture"
+        },
+        "tradeGoods": {
+          "zh": "琥珀、皮毛、铁器、鱼干、蜂蜡、奴隶",
+          "en": "Amber, furs, iron goods, dried fish, beeswax, slaves"
+        },
+        "currency": {
+          "name": {
+            "zh": "无统一货币",
+            "en": "No unified currency"
+          },
+          "type": "commodity",
+          "unitName": {
+            "zh": "银重与牲畜等值",
+            "en": "silver-weight and livestock equivalents"
+          }
+        },
+        "householdWealth": {
+          "zh": "家庭财富体现为牲畜、土地、铁器工具、船只和珠宝饰品。",
+          "en": "Household wealth was reflected in livestock, land, iron tools, boats, and jewelry."
+        },
+        "averageIncome": {
+          "amount": 22,
+          "unit": {
+            "zh": "银克等值/人/年",
+            "en": "grams of silver equivalent/person/year"
+          },
+          "goldKg": 2.2
+        },
+        "foreignTradeVolume": {
+          "amount": 60000,
+          "unit": {
+            "zh": "银克等值/年",
+            "en": "grams of silver equivalent/year"
+          },
+          "goldKg": 6000
+        },
+        "economicSystem": {
+          "zh": "以家庭农庄为基础、辅以区域贸易网络的部族经济。",
+          "en": "A tribal economy based on family farmsteads supplemented by regional trade networks."
+        },
+        "giniEstimate": 0.38
+      },
+      "finances": {
+        "annualRevenue": {
+          "amount": 25000,
+          "unit": {
+            "zh": "银克等值/年",
+            "en": "grams of silver equivalent/year"
+          },
+          "goldKg": 2500
+        },
+        "annualExpenditure": {
+          "amount": 23000,
+          "unit": {
+            "zh": "银克等值/年",
+            "en": "grams of silver equivalent/year"
+          },
+          "goldKg": 2300
+        },
+        "surplus": {
+          "amount": 2000,
+          "unit": {
+            "zh": "银克等值/年",
+            "en": "grams of silver equivalent/year"
+          },
+          "goldKg": 200
+        },
+        "revenueBreakdown": [
+          {
+            "source": {
+              "zh": "牲畜与农产贡献",
+              "en": "Livestock and agricultural contributions"
+            },
+            "amount": {
+              "amount": 10000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 1000
+            },
+            "percentage": 40
+          },
+          {
+            "source": {
+              "zh": "贸易分成",
+              "en": "Trade shares"
+            },
+            "amount": {
+              "amount": 7000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 700
+            },
+            "percentage": 28
+          },
+          {
+            "source": {
+              "zh": "节庆供奉",
+              "en": "Festival offerings"
+            },
+            "amount": {
+              "amount": 5000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 500
+            },
+            "percentage": 20
+          },
+          {
+            "source": {
+              "zh": "劳役与战利品",
+              "en": "Labor levies and plunder"
+            },
+            "amount": {
+              "amount": 3000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 300
+            },
+            "percentage": 12
+          }
+        ],
+        "expenditureBreakdown": [
+          {
+            "category": {
+              "zh": "防卫与武备",
+              "en": "Defense and armament"
+            },
+            "amount": {
+              "amount": 9000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 900
+            },
+            "percentage": 39
+          },
+          {
+            "category": {
+              "zh": "祭祀活动",
+              "en": "Religious ceremonies"
+            },
+            "amount": {
+              "amount": 5000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 500
+            },
+            "percentage": 22
+          },
+          {
+            "category": {
+              "zh": "贸易与接待",
+              "en": "Trade and hospitality"
+            },
+            "amount": {
+              "amount": 5000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 500
+            },
+            "percentage": 22
+          },
+          {
+            "category": {
+              "zh": "冬季储备",
+              "en": "Winter reserves"
+            },
+            "amount": {
+              "amount": 4000,
+              "unit": {
+                "zh": "银克等值/年",
+                "en": "grams of silver equivalent/year"
+              },
+              "goldKg": 400
+            },
+            "percentage": 17
+          }
+        ],
+        "treasury": {
+          "amount": 12000,
+          "unit": {
+            "zh": "银克等值",
+            "en": "grams of silver equivalent"
+          },
+          "goldKg": 1200
+        },
+        "treasuryDescription": {
+          "zh": "公共储备为牲畜、铁器、皮毛和粮食，分散于各首领农庄。",
+          "en": "Public reserves consisted of livestock, iron goods, furs, and grain, dispersed among chieftains's farmsteads."
+        },
+        "fiscalPolicy": {
+          "zh": "财政政策侧重冬季生存和防卫准备，积累能力有限但比纯采集社会更强。",
+          "en": "Fiscal policy prioritized winter survival and defensive readiness, with greater accumulation capacity than pure forager societies."
+        },
+        "debtLevel": {
+          "amount": 8000,
+          "unit": {
+            "zh": "银克等值",
+            "en": "grams of silver equivalent"
+          },
+          "goldKg": 800
+        }
+      },
+      "military": {
+        "level": 2,
+        "totalTroops": 3000,
+        "standingArmy": 500,
+        "reserves": 2500,
+        "branches": [
+          {
+            "name": {
+              "zh": "部族战士",
+              "en": "Tribal Warriors"
+            },
+            "count": 2000,
+            "description": {
+              "zh": "装备铁矛、木盾、短剑和弓箭的自由人战士，是军事力量的核心。",
+              "en": "Free men warriors equipped with iron spears, wooden shields, short swords, and bows, forming the military core."
+            }
+          },
+          {
+            "name": {
+              "zh": "海上突击队",
+              "en": "Sea Raiders"
+            },
+            "count": 500,
+            "description": {
+              "zh": "驾驭早期桨船进行沿海突袭和贸易护卫。",
+              "en": "Operating early oared vessels for coastal raids and trade escort."
+            }
+          },
+          {
+            "name": {
+              "zh": "侦察骑手",
+              "en": "Scout Riders"
+            },
+            "count": 500,
+            "description": {
+              "zh": "骑马或步行的侦察力量，负责预警和信息传递。",
+              "en": "Mounted or foot scouts responsible for early warning and message relay."
+            }
+          }
+        ],
+        "commandStructure": {
+          "totalGenerals": 15,
+          "commanderInChief": {
+            "zh": "战时部族联盟首领",
+            "en": "Wartime tribal confederation leader"
+          }
+        },
+        "technology": {
+          "zh": "铁制武器为主流，包括矛、剑、斧和弓箭。木制圆盾广泛使用，部分精英战士拥有锁子甲。",
+          "en": "Iron weapons were standard, including spears, swords, axes, and bows. Wooden round shields were common; some elite warriors possessed mail armor."
+        },
+        "annualMilitarySpending": {
+          "amount": 9000,
+          "unit": {
+            "zh": "银克等值/年",
+            "en": "grams of silver equivalent/year"
+          }
+        },
+        "militarySpendingPctGdp": 1.1,
+        "threats": {
+          "zh": "主要威胁来自日耳曼南部部族的扩张压力、罗马帝国北方边境的军事存在以及部族间的领地争夺。",
+          "en": "Main threats came from expansion pressure of southern Germanic tribes, Roman military presence on the northern frontier, and inter-tribal territorial competition."
+        },
+        "doctrine": {
+          "zh": "以伏击、突袭和近距离肉搏为主的部族战术。",
+          "en": "Tribal tactics emphasizing ambush, raids, and close-quarters combat."
+        },
+        "training": {
+          "level": 2,
+          "description": {
+            "zh": "战士从少年时期开始训练，技能通过氏族传承",
+            "en": "Warriors trained from youth, skills passed through clan tradition"
+          }
+        },
+        "morale": {
+          "level": 3,
+          "description": {
+            "zh": "士气坚定，受荣誉文化和宗教信仰驱动",
+            "en": "Firm morale driven by honor culture and religious belief"
+          }
+        },
+        "equipment": [
+          {
+            "name": {
+              "zh": "铁矛",
+              "en": "Iron Spear"
+            },
+            "category": "melee",
+            "description": {
+              "zh": "最常见的近战武器",
+              "en": "Most common melee weapon"
+            }
+          },
+          {
+            "name": {
+              "zh": "木盾",
+              "en": "Wooden Round Shield"
+            },
+            "category": "armor",
+            "description": {
+              "zh": "以木材和铁箍制成的圆形盾牌",
+              "en": "Round shield made of wood with iron boss"
+            }
+          }
+        ],
+        "fortifications": [],
+        "logistics": {
+          "supplyCapacity": {
+            "zh": "",
+            "en": ""
+          },
+          "mobilizationSpeed": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        "notableCampaigns": []
+      },
+      "demographics": {
+        "population": 32000,
+        "populationDescription": {
+          "zh": "人口分布于斯堪的纳维亚半岛南部和丹麦地区的农庄聚落，以沿海和河谷地带最为集中。北部山区人口稀疏。",
+          "en": "Population was distributed across farmstead settlements in southern Scandinavia and Denmark, most concentrated in coastal and river valley areas. Northern mountain regions were sparsely populated."
+        },
+        "urbanPopulation": 0,
+        "urbanizationRate": 0,
+        "majorCities": [
+          {
+            "name": {
+              "zh": "隆德地区聚落",
+              "en": "Lund-area settlement"
+            },
+            "population": 400
+          },
+          {
+            "name": {
+              "zh": "于特兰半岛聚落",
+              "en": "Jutland settlement"
+            },
+            "population": 350
+          },
+          {
+            "name": {
+              "zh": "梅拉伦湖畔聚落",
+              "en": "Mälaren lakeside settlement"
+            },
+            "population": 300
+          }
+        ],
+        "socialClasses": {
+          "zh": "社会分为部族贵族（大农场主和战士首领）、自由农民、半自由佃户和奴隶。",
+          "en": "Society was divided into tribal nobles (large landholders and war leaders), free farmers, semi-free tenants, and slaves."
+        }
+      },
+      "diplomacy": {
+        "allies": {
+          "zh": "与邻近日耳曼部族和波罗的海贸易伙伴保持松散联系。与芬兰-乌戈尔人在皮毛贸易中有互利关系。",
+          "en": "Maintained loose ties with neighboring Germanic tribes and Baltic trade partners. Had mutually beneficial fur trade relations with Finno-Ugric peoples."
+        },
+        "enemies": {
+          "zh": "与南方日耳曼扩张势力及争夺贸易路线的竞争部族存在冲突。罗马帝国是远方的潜在威胁。",
+          "en": "Conflicts existed with expanding southern Germanic groups and competing tribes over trade routes. The Roman Empire was a distant potential threat."
+        },
+        "foreignPolicy": {
+          "zh": "以维护贸易路线安全和领地完整为核心，通过联姻和季节性集会维持部族间和平。",
+          "en": "Centered on maintaining trade route security and territorial integrity, using intermarriage and seasonal assemblies to preserve inter-tribal peace."
+        }
+      },
+      "technology": {
+        "level": 2,
+        "era": {
+          "zh": "北欧前罗马铁器时代晚期",
+          "en": "Late Pre-Roman Iron Age in Scandinavia"
+        },
+        "keyInnovations": {
+          "zh": "铁器锻造、桨船建造、如尼铭文、动物纹样金属艺术和适应北方气候的农牧技术。",
+          "en": "Ironworking, oared ship construction, runic inscriptions, animal-style metalwork, and agricultural-pastoral techniques adapted to northern climate."
+        }
+      },
+      "assessment": {
+        "strengths": {
+          "zh": "熟悉海岸和森林环境，铁器技术较为先进，航海能力初步发展，贸易网络连接波罗的海区域。",
+          "en": "Intimate knowledge of coastal and forest environments, relatively advanced ironworking, emerging seafaring capability, and trade networks connecting the Baltic region."
+        },
+        "weaknesses": {
+          "zh": "政治分散、人口稀少、缺乏统一行政和文字记录，难以形成持续的大规模军事行动。",
+          "en": "Political fragmentation, sparse population, lack of unified administration and written records, making sustained large-scale military campaigns difficult."
+        },
+        "outlook": {
+          "zh": "北欧日耳曼诸部在公元100年处于铁器文化成熟期，贸易和航海能力稳步增长。数百年后，这些传统将为维京时代的崛起奠定基础。",
+          "en": "Nordic Germanic tribes around 100 CE were in a mature iron-culture phase, with trade and seafaring capabilities steadily growing. Centuries later, these traditions would lay the foundation for the Viking Age."
+        }
+      },
+      "status": "stable",
+      "description": {
+        "zh": "公元100年的北欧日耳曼诸部是分布于斯堪的纳维亚半岛和丹麦的铁器时代部族社会，以畜牧、渔业、铁器锻造和波罗的海贸易为生。",
+        "en": "Around 100 CE, the Nordic Germanic tribes were Iron Age tribal societies across Scandinavia and Denmark, sustained by pastoralism, fishing, ironworking, and Baltic trade."
+      }
+    },
+    {
       "id": "savanna_han",
       "name": {
         "zh": "热带草原采集者",

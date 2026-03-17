@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import React from "react";
 import { useWorldStore } from "@/store/useWorldStore";
+import { useSettingsStore } from "@/store/useSettingsStore";
 import { useLocale } from "@/lib/i18n";
 import { getLlmHeaders } from "@/lib/client-headers";
 import type { HistoricalEvent, EventCategory } from "@/lib/types";
@@ -518,7 +519,10 @@ function GenerateConfirmModal({
   onCancel: () => void;
 }) {
   const saved = useMemo(() => loadGenPrefs(), []);
-  const defaultStart = saved?.startYear ?? frontier.year + 1;
+  const minStartYear = frontier.year;
+  const defaultStart = (saved?.startYear != null && saved.startYear >= minStartYear)
+    ? saved.startYear
+    : frontier.year + 1;
   const [count, setCount] = useState(saved?.count ?? 20);
   const [startEra, setStartEra] = useState<"bce" | "ce">(defaultStart <= 0 ? "bce" : "ce");
   const [startAbs, setStartAbs] = useState(Math.abs(defaultStart));
@@ -526,6 +530,9 @@ function GenerateConfirmModal({
   const [detailLevel, setDetailLevel] = useState<"brief" | "normal" | "detailed">(saved?.detailLevel ?? "normal");
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [webSearch, setWebSearch] = useState(saved?.webSearch ?? true);
+  const presetEvents = useSettingsStore((s) => s.enablePresetEvents);
+  const setPresetEvents = useSettingsStore((s) => s.setEnablePresetEvents);
+  const syncToServer = useSettingsStore((s) => s.syncToServer);
 
   const allCategories: { id: string; label: string }[] = [
     { id: "war", label: t("events.category.war") },
@@ -576,7 +583,8 @@ function GenerateConfirmModal({
   const allCategoriesSelected = selectedCategories.size === allCategories.length;
 
   const handleConfirm = () => {
-    const startYear = computeStart();
+    const raw = computeStart();
+    const startYear = raw < minStartYear ? minStartYear : raw;
     saveGenPrefs({
       count,
       startYear,
@@ -645,7 +653,15 @@ function GenerateConfirmModal({
             <div className="flex">
               <select
                 value={startEra}
-                onChange={(e) => setStartEra(e.target.value as "bce" | "ce")}
+                onChange={(e) => {
+                  const newEra = e.target.value as "bce" | "ce";
+                  setStartEra(newEra);
+                  const newYear = newEra === "bce" ? -startAbs : startAbs;
+                  if (newYear < minStartYear) {
+                    setStartEra(minStartYear <= 0 ? "bce" : "ce");
+                    setStartAbs(Math.abs(minStartYear));
+                  }
+                }}
                 className="shrink-0 bg-bg-primary/60 border border-r-0 border-border-subtle rounded-l-md px-2 py-1.5 text-xs text-text-primary focus:outline-none focus:border-accent-gold/60 transition-all"
               >
                 <option value="bce">{t("events.customEra.bce")}</option>
@@ -658,6 +674,13 @@ function GenerateConfirmModal({
                 onChange={(e) => {
                   const val = Number(e.target.value);
                   if (!isNaN(val)) setStartAbs(Math.max(1, val));
+                }}
+                onBlur={() => {
+                  const current = computeStart();
+                  if (current < minStartYear) {
+                    setStartEra(minStartYear <= 0 ? "bce" : "ce");
+                    setStartAbs(Math.abs(minStartYear));
+                  }
                 }}
                 className="w-full bg-bg-primary/60 border border-border-subtle rounded-r-md px-2 py-1.5 text-xs text-text-primary focus:outline-none focus:border-accent-gold/60 focus:ring-1 focus:ring-accent-gold/20 transition-all"
               />
@@ -727,6 +750,29 @@ function GenerateConfirmModal({
             >
               <span
                 className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-200 ${webSearch ? "translate-x-[18px]" : "translate-x-[2px]"
+                  }`}
+              />
+            </button>
+          </div>
+
+          {/* Community Preset Events toggle */}
+          <div className="flex items-center justify-between py-1">
+            <div className="flex-1 mr-3">
+              <label className="text-xs font-medium text-text-secondary">{t("settings.enablePresetEvents")}</label>
+              <p className="text-xs text-text-muted mt-0.5 leading-relaxed">{t("settings.enablePresetEvents.desc")}</p>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={presetEvents}
+              onClick={() => { setPresetEvents(!presetEvents); setTimeout(() => syncToServer(), 0); }}
+              className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border transition-colors duration-200 focus:outline-none ${presetEvents
+                ? "bg-accent-gold/80 border-accent-gold"
+                : "bg-bg-tertiary border-border-subtle"
+                }`}
+            >
+              <span
+                className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-200 ${presetEvents ? "translate-x-[18px]" : "translate-x-[2px]"
                   }`}
               />
             </button>

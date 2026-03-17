@@ -165,29 +165,50 @@ Runs after electron-builder packs each architecture. Four responsibilities:
 
 ### Publishing a New Release
 
+Releases are built automatically by GitHub Actions (`.github/workflows/release.yml`). Pushing a `v*` tag triggers parallel builds on macOS, Windows, and Linux runners, which upload artifacts to a draft GitHub Release and then publish it.
+
 1. **Bump version** in `package.json`
 2. **Update README download links** — update version numbers in both `README.md` and `README.zh-CN.md`: the heading (`### Download (vX.Y.Z)` / `### 下载客户端 (vX.Y.Z)`), all download URLs, and all filenames in the download table. Both files must stay in sync.
-3. **Clean** previous build: `rm -rf dist/`
-4. **Commit and push** all changes to `main`
-5. **Build** (must be on macOS for macOS targets):
-   ```bash
-   npm run electron:build:mac
-   npx electron-builder --linux --publish never
-   npx electron-builder --win --publish never
-   ```
-6. **Create tag and release:**
+3. **Commit and push** all changes to `main`
+4. **Create and push tag:**
    ```bash
    git tag v<VERSION>
    git push origin v<VERSION>
-   gh release create v<VERSION> --title "v<VERSION> — <title>" --notes "<notes>" --draft
    ```
-7. **Upload assets** (one at a time for large files):
-   ```bash
-   gh release upload v<VERSION> dist/latest-mac.yml dist/latest-linux.yml dist/latest.yml dist/*.blockmap
-   gh release upload v<VERSION> "dist/<file>.dmg"
-   gh release upload v<VERSION> "dist/<file>.exe"
-   ```
-8. **Publish:** `gh release edit v<VERSION> --draft=false`
+5. **CI builds automatically:**
+   - Creates a draft release with auto-generated notes
+   - Builds macOS (dmg + zip, x64 + arm64), Windows (nsis exe, x64), and Linux (AppImage + deb, x64) in parallel
+   - Uploads all artifacts and auto-update manifests (`latest-mac.yml`, `latest.yml`, `latest-linux.yml`)
+   - Publishes the release (removes draft flag) after all builds succeed
+6. **(Optional)** Edit release title/notes on GitHub after publishing
+
+#### Manual local build (fallback)
+
+If CI is unavailable, you can still build locally:
+
+```bash
+rm -rf dist/
+npm run electron:build:mac
+npx electron-builder --linux --publish never
+npx electron-builder --win --publish never
+```
+
+Then create the release and upload manually:
+
+```bash
+gh release create v<VERSION> --title "v<VERSION>" --draft
+gh release upload v<VERSION> dist/*.dmg dist/*.exe dist/*.AppImage dist/*.deb dist/*.yml dist/*.blockmap
+gh release edit v<VERSION> --draft=false
+```
+
+#### Code signing (optional)
+
+To enable code signing in CI, add these repository secrets:
+
+- **macOS**: `CSC_LINK` (base64-encoded .p12 certificate), `CSC_KEY_PASSWORD`
+- **Windows**: `WIN_CSC_LINK` (base64-encoded .pfx certificate), `WIN_CSC_KEY_PASSWORD`
+
+Without these secrets, builds are unsigned (same as current local builds).
 
 ### What NOT to Do
 

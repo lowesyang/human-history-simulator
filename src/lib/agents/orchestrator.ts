@@ -7,6 +7,7 @@ import { buildRelationGraph, clusterRegions, type RegionGroup } from "../region-
 import { getModelProfile, getSimulationMode, getWebSearchOnAdvance } from "../settings";
 import { getLlmUsageStats, resetLlmUsageStats } from "./llm-client";
 import { runCivAgentBatch, selectKeyRegions } from "./civ-agent";
+import type { DiplomaticDecision } from "./diplomat";
 
 function getMaxParallel(): number {
   const envVal = process.env.LLM_MAX_PARALLEL;
@@ -84,7 +85,8 @@ export async function orchestrate(
   onToken?: TokenStreamCallback,
   activeWars?: War[],
   onRegionDone?: RegionDoneCallback,
-  simulationParams?: SimulationParams
+  simulationParams?: SimulationParams,
+  diplomaticDecisions?: DiplomaticDecision[]
 ): Promise<OrchestrateResult> {
   const targetYear = events[events.length - 1].timestamp.year;
   const ctx: AgentContext = { currentState, events, targetYear };
@@ -198,7 +200,7 @@ export async function orchestrate(
       : Promise.resolve([]);
 
     const normalTasks = normalGroups.map((group, i) => wrapTask(
-      buildHistorianTask(ctx, group, directIds, onToken, onRegionDone, isSpeculative, undefined, simulationParams, webSearch),
+      buildHistorianTask(ctx, group, directIds, onToken, onRegionDone, isSpeculative, undefined, simulationParams, webSearch, diplomaticDecisions),
       i
     ));
     const normalResults = await runWithConcurrency(normalTasks, maxParallel);
@@ -209,7 +211,7 @@ export async function orchestrate(
     }
 
     const keyTasks = keyGroups.map((group, i) => wrapTask(
-      buildHistorianTask(ctx, group, directIds, onToken, onRegionDone, isSpeculative, civDecisions, simulationParams, webSearch),
+      buildHistorianTask(ctx, group, directIds, onToken, onRegionDone, isSpeculative, civDecisions, simulationParams, webSearch, diplomaticDecisions),
       normalGroups.length + i
     ));
     const keyResults = await runWithConcurrency(keyTasks, maxParallel);
@@ -219,7 +221,7 @@ export async function orchestrate(
   }
 
   const tasks = groups.map((group, i) => wrapTask(
-    buildHistorianTask(ctx, group, directIds, onToken, onRegionDone, false, undefined, simulationParams, webSearch),
+    buildHistorianTask(ctx, group, directIds, onToken, onRegionDone, false, undefined, simulationParams, webSearch, diplomaticDecisions),
     i
   ));
   const results = await runWithConcurrency(tasks, maxParallel);
@@ -236,7 +238,8 @@ function buildHistorianTask(
   isSpeculative?: boolean,
   civDecisions?: import("./civ-agent").CivDecision[],
   simulationParams?: SimulationParams,
-  webSearch?: boolean
+  webSearch?: boolean,
+  diplomaticDecisions?: DiplomaticDecision[]
 ): () => Promise<TransitionResult | null> {
   return async (): Promise<TransitionResult | null> => {
     const { regionIds: groupIds, isOrphanGroup } = group;
@@ -244,7 +247,7 @@ function buildHistorianTask(
     const MAX_RETRIES = 2;
     for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
       try {
-        const result = await runHistorian(ctx, groupIds, hasDirect, onToken, isOrphanGroup, isSpeculative, civDecisions, simulationParams, webSearch);
+        const result = await runHistorian(ctx, groupIds, hasDirect, onToken, isOrphanGroup, isSpeculative, civDecisions, simulationParams, webSearch, diplomaticDecisions);
         onRegionDone?.(groupIds);
         return result;
       } catch (err) {

@@ -14,14 +14,14 @@ LLM 多 Agent 驱动的文明推演模拟器，涵盖 **20 个纪元**、**3,600
   <img src="docs/assets/screenshot-zh.png" alt="Human History Simulator 截图" width="100%" />
 </p>
 
-### 下载客户端 (v0.2.1)
+### 下载客户端 (v0.3.0)
 
 | 平台    | 下载                                                                                                                                                                                                                                                                    | 架构          |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| macOS   | [**Human History Simulator-0.2.1-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1-arm64.dmg)                                                                                                    | Apple Silicon |
-| macOS   | [**Human History Simulator-0.2.1.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.dmg)                                                                                                                | Intel         |
-| Windows | [**Human History Simulator Setup 0.2.1.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator.Setup.0.2.1.exe)                                                                                                    | x64           |
-| Linux   | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/Human.History.Simulator-0.2.1.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.2.1/human-history-simulator_0.2.1_amd64.deb) | x64           |
+| macOS   | [**Human History Simulator-0.3.0-arm64.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator-0.3.0-arm64.dmg)                                                                                                    | Apple Silicon |
+| macOS   | [**Human History Simulator-0.3.0.dmg**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator-0.3.0.dmg)                                                                                                                | Intel         |
+| Windows | [**Human History Simulator Setup 0.3.0.exe**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator.Setup.0.3.0.exe)                                                                                                    | x64           |
+| Linux   | [**AppImage**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/Human.History.Simulator-0.3.0.AppImage) / [**deb**](https://github.com/lowesyang/human-history-simulator/releases/download/v0.3.0/human-history-simulator_0.3.0_amd64.deb) | x64           |
 
 > 首次启动时需输入 [OpenRouter](https://openrouter.ai/) API 密钥。应用内置自动更新。
 
@@ -38,6 +38,7 @@ LLM 多 Agent 驱动的文明推演模拟器，涵盖 **20 个纪元**、**3,600
 ### AI 引擎
 
 - **多 Agent 协同推演** —— AI 编排器将区域聚类、生成事件，并在经济、军事、外交、文化等维度逐字段计算状态变迁。
+- **外交与贸易 Agent** —— 独立的双边推理步骤，分析文明对之间的关系，产出结构化的外交、贸易与战争阵营决策。联盟、敌对、贸易协定、禁运等关系在历史学家计算状态变迁之前就已"谈判"完毕，确保每段双边关系的两侧保持一致，并让外交变化正确地级联到贸易流动与战争阵营分配。
 - **文明决策 Agent** —— 为关键区域注入战略意志：扩张、防御、通商、投资科技、结盟斡旋——让国家像国家一样思考，而非被动的数据容器。
 - **文明记忆** —— 在推演模式下保留每个国家的长期目标与历史决策，使其在多轮推演中表现出连贯的战略行为。
 - **阈值触发事件** —— 当关键指标越过临界值，系统自动生成危机或突破：经济崩盘、军备升级、科技飞跃、人口危机、同盟瓦解。
@@ -84,7 +85,7 @@ LLM 多 Agent 驱动的文明推演模拟器，涵盖 **20 个纪元**、**3,600
 
 1. **事件塑造世界。** 引擎审视时间线上即将到来的事件，追问：哪些文明会被卷入？一场埃及饥荒、一份威尼斯与君士坦丁堡的贸易条约、一轮蒙古铁骑横扫中亚——每个事件都标注了它波及的区域和变化类型。
 
-2. **文明协同响应。** 共享同一事件、参与同一场战争、或疆域毗邻的区域会被编入同一组，在统一的上下文中推演。这意味着当奥斯曼帝国扩张时，拜占庭的应对、埃及的贸易震荡、威尼斯的外交筹谋都在同一语境下计算，不会各自为战。与当前事件无关的区域则按各自内在逻辑独立演化。
+2. **文明先谈判，再协同响应。** 在主推演之前，外交与贸易 Agent 识别最重要的双边关系——共享事件的文明对、交战各方、贸易伙伴——然后同时从双方的立场进行推理。输出一组结构化的外交决策（联盟、敌对、贸易协定、禁运、战争阵营变动），这些决策注入三个下游系统：战争提取器据此判定正确的交战阵营，历史学家据此保证每段关系两侧的一致性，战争叙事更新器据此将外交变局写入正在进行的冲突故事。同时，共享同一事件、参与同一场战争、或疆域毗邻的区域会被编入同一组，在统一的上下文中推演——这意味着当奥斯曼帝国扩张时，拜占庭的应对、埃及的贸易震荡、威尼斯的外交筹谋都在同一语境下计算，不会各自为战。
 
 3. **世界状态刷新。** 每一项变化——人口迁徙、新君登基、GDP 起伏——都以精确的字段级增量写入，不做整体覆盖。什么发生了变化、因何而变、如何向外扩散，尽在历史标签页和演化日志中。
 
@@ -135,22 +136,23 @@ LLM_MAX_GROUP_SIZE=10
 
 ## 常用命令
 
-| 命令                           | 说明                         |
-| ------------------------------ | ---------------------------- |
-| `npm run dev`                  | 启动开发服务器（Web）        |
-| `npm run build`                | 生产构建（Web）              |
-| `npm run start`                | 启动生产服务器（Web）        |
-| `npm run lint`                 | ESLint 检查                  |
-| `npm run seed`                 | 使用默认纪元初始化数据库     |
-| `npm run seed -- bronze-age`   | 使用指定纪元初始化           |
-| `npm run generate:eras`        | 通过 LLM 生成纪元数据        |
-| `npm run build:geo`            | 重建 GeoJSON 疆域快照        |
-| `npm run electron:dev`         | 开发模式（桌面端）           |
-| `npm run electron:build`       | 打包桌面客户端（全平台）     |
-| `npm run electron:build:mac`   | 打包 macOS 客户端            |
-| `npm run electron:build:win`   | 打包 Windows 客户端          |
-| `npm run electron:build:linux` | 打包 Linux 客户端            |
-| `npm run electron:publish`     | 构建并发布到 GitHub Releases |
+| 命令                           | 说明                                   |
+| ------------------------------ | -------------------------------------- |
+| `npm run dev`                  | 启动开发服务器（Web）                  |
+| `npm run build`                | 生产构建（Web）                        |
+| `npm run start`                | 启动生产服务器（Web）                  |
+| `npm run lint`                 | ESLint 检查                            |
+| `npm run seed`                 | 使用默认纪元初始化数据库               |
+| `npm run seed -- bronze-age`   | 使用指定纪元初始化                     |
+| `npm run generate:eras`        | 通过 LLM 生成纪元数据                  |
+| `npm run build:geo`            | 重建 GeoJSON 疆域快照                  |
+| `npm run electron:dev`         | 开发模式（桌面端）                     |
+| `npm run electron:build`       | 打包桌面客户端（全平台）               |
+| `npm run electron:build:mac`   | 打包 macOS 客户端                      |
+| `npm run electron:build:win`   | 打包 Windows 客户端                    |
+| `npm run electron:build:linux` | 打包 Linux 客户端                      |
+| `npm run electron:publish`     | 构建并发布（推荐通过推送 tag 触发 CI） |
+| `npm run validate:events`      | 校验社区事件文件格式                   |
 
 ## 支持的纪元
 
@@ -216,6 +218,61 @@ LLM_MAX_GROUP_SIZE=10
 ## 参与贡献
 
 欢迎贡献！随时提交 Issue 或 Pull Request。
+
+### 贡献社区预置历史事件
+
+你可以为项目贡献经过考据的真实历史种子事件。当模拟时间线推进到对应年份时，这些事件会自动注入推演。社区事件文件存放在 `public/community-events/` 下，每个年份一个 JSON 文件。
+
+**快速开始：**
+
+1. Fork 本仓库
+2. 在 `public/community-events/` 目录下创建以年份命名的 JSON 文件（如 `1939.json`、`-207.json` 表示公元前 207 年）
+3. 参照以下格式添加事件（完整示例见 [`public/community-events/1939.json`](./public/community-events/1939.json)）：
+
+```json
+[
+  {
+    "timestamp": { "year": 1939, "month": 9 },
+    "title": {
+      "zh": "德国入侵波兰，第二次世界大战爆发",
+      "en": "Germany Invades Poland — World War II Begins"
+    },
+    "description": {
+      "zh": "1939年9月1日，纳粹德国以闪电战入侵波兰，英法随后对德宣战，第二次世界大战全面爆发。",
+      "en": "On September 1, 1939, Nazi Germany launched a blitzkrieg invasion of Poland. Britain and France declared war on Germany two days later, marking the start of World War II in Europe."
+    },
+    "affectedRegions": [
+      "germany_1939",
+      "poland_1939",
+      "united_kingdom_1939",
+      "france_1939"
+    ],
+    "category": "war",
+    "source": "https://en.wikipedia.org/wiki/Invasion_of_Poland",
+    "contributor": "community"
+  }
+]
+```
+
+4. 提交 Pull Request
+
+**规则：**
+
+- **无需 `id` 字段** —— 事件 ID 由系统根据内容自动生成指纹（基于年份 + 月份 + 英文标题 + 类别的哈希值）
+- **文件名**：`{年份}.json` — 纯整数，公元前使用负数（如 `1939.json`、`-207.json`）。不允许前导零或填充字符。
+- **年份一致性**：`timestamp.year` 必须等于文件名年份。`timestamp.month` 必须为 1–12。
+- **`source` 必填** —— 必须填写合法的 HTTP/HTTPS 链接（维基百科、学术论文、权威档案馆等）
+
+**其他要求：**
+
+- 事件必须是有据可查的真实历史事件
+- `title` 和 `description` 的中文（`zh`）和英文（`en`）字段均为必填且不能为空
+- `affectedRegions` 必须是非空数组，区域 ID 必须与对应纪元种子文件一致（`src/data/seed/era-*.json`）
+- `category` 必须为以下之一：`war`（战争）、`dynasty`（朝代更替）、`invention`（发明创造）、`trade`（贸易）、`religion`（宗教）、`disaster`（灾害）、`natural_disaster`（自然灾害）、`exploration`（探索）、`diplomacy`（外交）、`migration`（民族迁徙）、`technology`（科技突破）、`finance`（金融事件）、`political`（政治）、`announcement`（重大发布）、`other`（其他）
+
+> CI 会在每个 PR 上自动执行格式校验，必须通过才能合并。
+
+完整的贡献指南、区域 ID 说明和 PR 清单请参阅 [`public/community-events/README.md`](./public/community-events/README.md)。提交前请在本地运行 `npm run validate:events` 检查文件格式。你也可以在应用顶部工具栏的社区事件按钮中浏览所有社区预置事件。
 
 ## 许可证
 

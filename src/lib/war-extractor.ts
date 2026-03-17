@@ -2,6 +2,7 @@ import type { HistoricalEvent, War, Region } from "./types";
 import { callAgent, safeParseJSON } from "./agents/llm-client";
 import type { AgentMessage } from "./agents/types";
 import { getWarLastNarrativeUpdateYear, updateWarDetails, getWarSnapshots } from "./db";
+import type { DiplomaticDecision } from "./agents/diplomat";
 
 const WAR_SYSTEM = `You analyze historical events and extract war/conflict information. Given war-related events and the civilizations involved, produce structured war data.
 
@@ -64,7 +65,8 @@ export async function extractWarsFromEvents(
   regions: Region[],
   existingWars: War[],
   year: number,
-  _depth = 0
+  _depth = 0,
+  diplomaticDecisions?: DiplomaticDecision[]
 ): Promise<Partial<War>[]> {
   const warEvents = events.filter((e) => e.category === "war");
 
@@ -138,6 +140,29 @@ export async function extractWarsFromEvents(
 
   const allRegionIds = regions.map((r) => ({ id: r.id, name: r.name }));
 
+  let diplomaticContextBlock = "";
+  if (diplomaticDecisions && diplomaticDecisions.length > 0) {
+    const warRelevant = diplomaticDecisions.filter(
+      (d) => d.warImplication && d.warImplication.effect !== "none"
+    );
+    const allRelevant = warRelevant.length > 0 ? warRelevant : diplomaticDecisions;
+    diplomaticContextBlock = `
+Diplomatic context for this period:
+${JSON.stringify(allRelevant.map((d) => ({
+      regionA: d.regionA,
+      regionB: d.regionB,
+      relation: d.relation,
+      warImplication: d.warImplication,
+    })))}
+
+Use this to:
+- Determine correct war sides: if A and B are "alliance", they should be on the SAME side
+- If A and B have "rivalry"/"deteriorating" with warImplication "escalation", this supports extracting a war between them
+- If A and B are "alliance" and one is already in a war, consider whether the ally should be added to the same side
+
+`;
+  }
+
   const messages: AgentMessage[] = [
     { role: "system", content: WAR_SYSTEM },
     {
@@ -155,7 +180,7 @@ ${JSON.stringify(allRegionIds)}
 
 Existing wars in database:
 ${JSON.stringify(existingWarSummaries)}
-
+${diplomaticContextBlock}
 CRITICAL INSTRUCTIONS:
 1. Output a JSON ARRAY: [{war1}, {war2}, ...]. Even for a single war, wrap it in [].
 2. Each DISTINCT conflict in the events above MUST have its own war object. For example, if events mention BOTH "Russia-Ukraine War" AND "Israel-Hamas War", you MUST output TWO separate war objects.
@@ -347,7 +372,8 @@ Rules:
 export async function updateOngoingWarNarratives(
   activeWars: War[],
   regions: Region[],
-  currentYear: number
+  currentYear: number,
+  diplomaticDecisions?: DiplomaticDecision[]
 ): Promise<void> {
   const ongoingWars = activeWars.filter((w) => w.status === "ongoing");
   if (ongoingWars.length === 0) return;
@@ -398,11 +424,34 @@ export async function updateOngoingWarNarratives(
     };
   });
 
+  let diplomaticContextBlock = "";
+  if (diplomaticDecisions && diplomaticDecisions.length > 0) {
+    const warBelligerents = new Set<string>();
+    for (const war of warsToUpdate) {
+      for (const rid of war.belligerents.side1.regionIds) warBelligerents.add(rid);
+      for (const rid of war.belligerents.side2.regionIds) warBelligerents.add(rid);
+    }
+    const relevantDip = diplomaticDecisions.filter(
+      (d) =>
+        d.warImplication &&
+        d.warImplication.effect !== "none" &&
+        (warBelligerents.has(d.regionA) || warBelligerents.has(d.regionB))
+    );
+    if (relevantDip.length > 0) {
+      diplomaticContextBlock = `\n\nRecent diplomatic shifts affecting these wars:\n${JSON.stringify(relevantDip.map((d) => ({
+        regionA: d.regionA,
+        regionB: d.regionB,
+        relation: d.relation,
+        warImplication: d.warImplication,
+      })))}\n\nReflect these shifts in the war narrative: new allies joining, betrayals weakening a side, ceasefire pressures, or escalation due to new arms suppliers.`;
+    }
+  }
+
   const messages: AgentMessage[] = [
     { role: "system", content: NARRATIVE_UPDATE_SYSTEM },
     {
       role: "user",
-      content: `Year: ${currentYear}\nWars to update:\n${JSON.stringify(warDataForLLM)}\n\nUpdate the narratives based on the metric trends.`,
+      content: `Year: ${currentYear}\nWars to update:\n${JSON.stringify(warDataForLLM)}${diplomaticContextBlock}\n\nUpdate the narratives based on the metric trends.`,
     },
   ];
 

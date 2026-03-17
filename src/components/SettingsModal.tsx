@@ -345,6 +345,7 @@ export default function SettingsModal() {
   const storeCivMemory = useSettingsStore((s) => s.enableCivMemory);
   const storeScenarioInj = useSettingsStore((s) => s.enableScenarioInjection);
   const storeWebSearchAdv = useSettingsStore((s) => s.webSearchOnAdvance);
+  const storeDiplomatAgent = useSettingsStore((s) => s.enableDiplomatAgent);
   const hasEnvKey = useSettingsStore((s) => s.hasEnvKey);
   const envModel = useSettingsStore((s) => s.envModel);
   const setApiKey = useSettingsStore((s) => s.setApiKey);
@@ -353,6 +354,7 @@ export default function SettingsModal() {
   const setEnableCivMemory = useSettingsStore((s) => s.setEnableCivMemory);
   const setEnableScenarioInjection = useSettingsStore((s) => s.setEnableScenarioInjection);
   const setWebSearchOnAdvance = useSettingsStore((s) => s.setWebSearchOnAdvance);
+  const setEnableDiplomatAgent = useSettingsStore((s) => s.setEnableDiplomatAgent);
   const syncToServer = useSettingsStore((s) => s.syncToServer);
 
   const simulationParams = useWorldStore((s) => s.simulationParams);
@@ -368,6 +370,7 @@ export default function SettingsModal() {
   const [localCivMemory, setLocalCivMemory] = useState(false);
   const [localScenarioInj, setLocalScenarioInj] = useState(false);
   const [localWebSearchAdv, setLocalWebSearchAdv] = useState(false);
+  const [localDiplomatAgent, setLocalDiplomatAgent] = useState(false);
   const [showKey, setShowKey] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -388,9 +391,10 @@ export default function SettingsModal() {
       setLocalCivMemory(storeCivMemory);
       setLocalScenarioInj(storeScenarioInj);
       setLocalWebSearchAdv(storeWebSearchAdv);
+      setLocalDiplomatAgent(storeDiplomatAgent);
       setSaved(false);
     }
-  }, [showSettings, storeApiKey, storeModel, storeSimMode, storeCivMemory, storeScenarioInj, storeWebSearchAdv]);
+  }, [showSettings, storeApiKey, storeModel, storeSimMode, storeCivMemory, storeScenarioInj, storeWebSearchAdv, storeDiplomatAgent]);
 
   const setTab = useCallback((tab: SettingsTab) => {
     useSettingsStore.setState({ activeSettingsTab: tab });
@@ -405,6 +409,7 @@ export default function SettingsModal() {
     setEnableCivMemory(localCivMemory);
     setEnableScenarioInjection(localScenarioInj);
     setWebSearchOnAdvance(localWebSearchAdv);
+    setEnableDiplomatAgent(localDiplomatAgent);
 
     await new Promise((resolve) => setTimeout(resolve, 0));
     useSettingsStore.getState().syncToServer().then(() => {
@@ -421,6 +426,7 @@ export default function SettingsModal() {
     setLocalCivMemory(false);
     setLocalScenarioInj(false);
     setLocalWebSearchAdv(false);
+    setLocalDiplomatAgent(false);
   };
 
   const updateContingency = useCallback(
@@ -696,6 +702,29 @@ export default function SettingsModal() {
                 >
                   <span
                     className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-200 ${localWebSearchAdv ? "translate-x-[18px]" : "translate-x-[2px]"
+                      }`}
+                  />
+                </button>
+              </div>
+
+              {/* Diplomat Agent */}
+              <div className="flex items-center justify-between py-1">
+                <div className="flex-1 mr-3">
+                  <div className="text-xs font-semibold text-text-secondary">{t("settings.enableDiplomatAgent")}</div>
+                  <p className="text-xs text-text-muted mt-0.5 leading-relaxed">{t("settings.enableDiplomatAgent.desc")}</p>
+                </div>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={localDiplomatAgent}
+                  onClick={() => setLocalDiplomatAgent(!localDiplomatAgent)}
+                  className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border transition-colors duration-200 focus:outline-none cursor-pointer ${localDiplomatAgent
+                    ? "bg-accent-gold/80 border-accent-gold"
+                    : "bg-bg-tertiary border-border-subtle"
+                    }`}
+                >
+                  <span
+                    className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-200 ${localDiplomatAgent ? "translate-x-[18px]" : "translate-x-[2px]"
                       }`}
                   />
                 </button>

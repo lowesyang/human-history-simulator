@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": {
+      "year": 1939,
+      "month": 8
+    },
+    "title": {
+      "zh": "苏德互不侵犯条约签订",
+      "en": "Molotov–Ribbentrop Pact Signed"
+    },
+    "description": {
+      "zh": "苏联与纳粹德国签署互不侵犯条约，秘密议定书划分了东欧势力范围，为德国入侵波兰扫清了障碍。",
+      "en": "The Soviet Union and Nazi Germany signed a non-aggression pact with secret protocols dividing Eastern Europe into spheres of influence, clearing the path for Germany's invasion of Poland."
+    },
+    "affectedRegions": [
+      "soviet_union_1939",
+      "germany_1939",
+      "poland_1939"
+    ],
+    "category": "diplomacy",
+    "source": "https://en.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop_Pact",
+    "contributor": "community"
+  },
+  {
+    "timestamp": {
+      "year": 1939,
+      "month": 9
+    },
+    "title": {
+      "zh": "德国入侵波兰，第二次世界大战爆发",
+      "en": "Germany Invades Poland — World War II Begins"
+    },
+    "description": {
+      "zh": "1939年9月1日，纳粹德国以闪电战入侵波兰，英法随后对德宣战，第二次世界大战全面爆发。",
+      "en": "On September 1, 1939, Nazi Germany launched a blitzkrieg invasion of Poland. Britain and France declared war on Germany two days later, marking the start of World War II in Europe."
+    },
+    "affectedRegions": [
+      "germany_1939",
+      "poland_1939",
+      "united_kingdom_1939",
+      "france_1939"
+    ],
+    "category": "war",
+    "source": "https://en.wikipedia.org/wiki/Invasion_of_Poland",
+    "contributor": "community"
+  }
+]

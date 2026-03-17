@@ -435,8 +435,8 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   philippines_1962: ["Philippines"],
   indonesia_1962: ["Indonesia"],
 
-  southeast_asia_mainland_1939: ["Siam", "French Indo-China", "Burma"],
-  southeast_asia_maritime_1939: ["Dutch East Indies", "Malaysia", "Philippines"],
+  southeast_asia_mainland_1939: ["Siam"],
+  southeast_asia_maritime_1939: ["Dutch East Indies"],
   johor_1900: ["Malaya"],
 
   // ==================== WEST ASIA / MIDDLE EAST ====================
@@ -562,8 +562,8 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   jordan_1962: ["Jordan"],
   syria_1962: ["Syria"],
   lebanon_1962: ["Lebanon"],
-  levant_1939: ["Mandatory Palestine (GB)", "Jordan", "Syria (France)", "Lebanon"],
-  arabia_1939: ["Saudi Arabia", "Yemen", "Muscat and Oman"],
+  levant_1939: ["Mandatory Palestine (GB)"],
+  arabia_1939: ["Saudi Arabia"],
   west_asia_levant_israel_palestine_jordan_lebanon_syria: ["Israel", "Jordan", "Syria", "Lebanon"],
   arabia_gulf_states: ["Saudi Arabia", "United Arab Emirates", "Qatar", "Kuwait", "Oman", "Yemen"],
 
@@ -605,7 +605,7 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   ifriqiya_egypt_umayyad: ["Umayyad Caliphate"],
   al_andalus: ["Emirate of Córdoba", "Umayyad Caliphate"],
   maghreb_berber_polities: ["Mauri", "Berber Tribes"],
-  north_west_africa_1939: ["Algeria (France)", "Morocco (France)", "Tunisia"],
+  north_west_africa_1939: ["Algeria (France)"],
   africa_north_maghreb: ["Algeria", "Morocco", "Tunisia", "Libya"],
 
   // --- West Africa ---
@@ -679,7 +679,7 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   congo_1962: ["Zaire", "Congo"],
   kenya_colony_1962: ["Kenya"],
   somalia_1962: ["Somalia"],
-  east_africa_colonial_1939: ["Kenya", "Tanzania, United Republic of", "Uganda"],
+  east_africa_colonial_1939: ["Kenya"],
   africa_east_horn_swahili: ["Ethiopia", "Kenya", "Tanzania, United Republic of", "Somalia", "Uganda", "Djibouti", "Eritrea"],
   africa_central_congo_region: ["Congo", "Cameroon", "Central African Republic", "Gabon"],
   beja_polities: ["Bega"],
@@ -887,7 +887,9 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   sweden_norway_1900: ["Sweden–Norway"],
   denmark_1840: ["Denmark"],
   denmark_1900: ["Denmark"],
-  scandinavia_1939: ["Norway", "Sweden", "Denmark", "Finland"],
+  sweden_1939: ["Sweden"],
+  norway_1939: ["Norway"],
+  denmark_1939: ["Denmark"],
   sweden_1962: ["Sweden"],
   europe_north_nordic_baltic: ["Sweden", "Norway", "Denmark", "Finland", "Iceland", "Estonia", "Latvia", "Lithuania"],
 
@@ -1044,8 +1046,8 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   ecuador_1840: ["Ecuador", "Vice-Royalty of New Granada"],
   uruguay_1840: ["Uruguay", "Viceroyalty of the Río de la Plata"],
   haiti_1840: ["Haiti"],
-  latin_america_1939: ["Mexico", "Cuba", "Guatemala"],
-  south_america_states_1939: ["Brazil", "Argentina", "Chile", "Peru", "Colombia", "Venezuela", "Bolivia", "Ecuador", "Paraguay", "Uruguay"],
+  latin_america_1939: ["Mexico"],
+  south_america_states_1939: ["Brazil"],
 
   // ==================== OCEANIA ====================
   oceania_australia_new_zealand_pacific: ["Australia", "New Zealand", "Papua New Guinea", "Fiji"],
@@ -1306,6 +1308,7 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   mon_khmer_peoples: ["Mon-Khmer"],
   malays_prestate: ["Malays"],
   norsemen_early: ["Norsemen"],
+  norsemen_100: ["Norsemen"],
   thai_early: ["Thai"],
   thai_early_800bce: ["Thai"],
   dardania_221: ["Dardania"],
@@ -3613,6 +3616,44 @@ export const GEOMETRY_MERGE_RULES: Record<
   ],
   qing_dynasty: [
     { names: ["Tibet", "Tibetan Empire"], yearMin: 1700, yearMax: 1900 },
+  ],
+  southeast_asia_mainland_1939: [
+    { names: ["French Indo-China"], yearMin: 1914, yearMax: 1945 },
+  ],
+  southeast_asia_maritime_1939: [
+    { names: ["Malaysia"], yearMin: 1914, yearMax: 1945 },
+    { names: ["Philippines"], yearMin: 1914, yearMax: 1945 },
+  ],
+  levant_1939: [
+    { names: ["Jordan"], yearMin: 1920, yearMax: 1945 },
+    { names: ["Syria (France)"], yearMin: 1920, yearMax: 1945 },
+  ],
+  arabia_1939: [
+    { names: ["Yemen"], yearMin: 1914, yearMax: 1945 },
+    { names: ["Muscat and Oman"], yearMin: 1914, yearMax: 1945 },
+  ],
+  north_west_africa_1939: [
+    { names: ["Morocco (France)"], yearMin: 1900, yearMax: 1945 },
+    { names: ["Tunisia"], yearMin: 1900, yearMax: 1945 },
+  ],
+  east_africa_colonial_1939: [
+    { names: ["Tanzania, United Republic of"], yearMin: 1914, yearMax: 1945 },
+    { names: ["Uganda"], yearMin: 1914, yearMax: 1945 },
+  ],
+  latin_america_1939: [
+    { names: ["Cuba"], yearMin: 1900, yearMax: 1945 },
+    { names: ["Guatemala"], yearMin: 1900, yearMax: 1945 },
+  ],
+  south_america_states_1939: [
+    { names: ["Argentina"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Chile"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Peru"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Colombia"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Venezuela"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Bolivia"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Ecuador"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Paraguay"], yearMin: 1880, yearMax: 1945 },
+    { names: ["Uruguay"], yearMin: 1880, yearMax: 1945 },
   ],
 };
 

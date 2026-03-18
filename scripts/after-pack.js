@@ -237,46 +237,123 @@ module.exports = async function afterPack(context) {
   }
 
   // ── 5. Fix broken better-sqlite3 hashed refs in unpacked asar ──
-  // Next.js file tracing creates hashed directory references like
-  // better-sqlite3-<hash> that become broken symlinks/empty dirs after packing.
-  // 7zip fails if these paths are in the manifest but missing on disk.
-  function fixBrokenSqliteRefs(dir, depth) {
-    if (depth > 15) return;
-    try {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        const full = path.join(dir, entry.name);
-        if (entry.name.startsWith("better-sqlite3")) {
-          let accessible = true;
-          try {
-            fs.accessSync(full, fs.constants.R_OK);
-          } catch {
-            accessible = false;
+  // Next.js standalone creates hashed symlinks like better-sqlite3-<hash> in
+  // .next/node_modules/. These become broken refs in the unpacked asar on
+  // Windows, causing 7zip to fail. We directly check the known problematic
+  // locations and create valid directories with the rebuilt .node file.
+  const nextNodeModules = path.join(standaloneDir, ".next", "node_modules");
+  try {
+    if (fs.existsSync(nextNodeModules)) {
+      const entries = fs.readdirSync(nextNodeModules);
+      for (const name of entries) {
+        if (name.startsWith("better-sqlite3")) {
+          const full = path.join(nextNodeModules, name);
+          const hasNode = findNodeFile(full);
+          if (!hasNode) {
+            const br = path.join(full, "build", "Release");
+            fs.mkdirSync(br, { recursive: true });
+            fs.copyFileSync(srcNode, path.join(br, "better_sqlite3.node"));
+            console.log(`  afterPack: fixed .next/node_modules/${name} ✓`);
           }
-          if (!accessible) {
-            try {
-              fs.rmSync(full, { recursive: true, force: true });
-              console.log(`  afterPack: removed broken ref ${path.relative(unpackedBase, full)}`);
-            } catch {}
-          } else if (entry.isDirectory()) {
+        }
+      }
+    }
+  } catch (e) {
+    console.log(`  afterPack: .next/node_modules scan: ${e.message}`);
+  }
+
+  // Also check the same location in the unpacked asar root (outside standalone)
+  const unpackedNextNM = path.join(
+    unpackedBase,
+    ".next",
+    "standalone",
+    ".next",
+    "node_modules",
+  );
+  try {
+    if (fs.existsSync(unpackedNextNM)) {
+      const entries = fs.readdirSync(unpackedNextNM);
+      for (const name of entries) {
+        if (name.startsWith("better-sqlite3")) {
+          const full = path.join(unpackedNextNM, name);
+          const hasNode = findNodeFile(full);
+          if (!hasNode) {
+            const br = path.join(full, "build", "Release");
+            fs.mkdirSync(br, { recursive: true });
+            fs.copyFileSync(srcNode, path.join(br, "better_sqlite3.node"));
+            console.log(`  afterPack: fixed unpacked .next/node_modules/${name} ✓`);
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.log(`  afterPack: unpacked .next/node_modules scan: ${e.message}`);
+  }
+
+  // Last resort: if the hashed dir doesn't appear in readdirSync (broken
+  // symlink on Windows), directly check the appOutDir for any 7zip-problematic
+  // paths by scanning the win-unpacked/resources tree.
+  const appOutResources = path.join(context.appOutDir, "resources");
+  function ensureSqliteInTree(dir, depth) {
+    if (depth > 10) return;
+    try {
+      const entries = fs.readdirSync(dir);
+      for (const name of entries) {
+        const full = path.join(dir, name);
+        if (name.startsWith("better-sqlite3")) {
+          let stat;
+          try {
+            stat = fs.lstatSync(full);
+          } catch {
+            continue;
+          }
+          if (stat.isSymbolicLink()) {
+            try { fs.unlinkSync(full); } catch {}
+            fs.mkdirSync(path.join(full, "build", "Release"), {
+              recursive: true,
+            });
+            fs.copyFileSync(
+              srcNode,
+              path.join(full, "build", "Release", "better_sqlite3.node"),
+            );
+            console.log(
+              `  afterPack: replaced symlink ${path.relative(context.appOutDir, full)} ✓`,
+            );
+          } else if (stat.isDirectory()) {
             const hasNode = findNodeFile(full);
             if (!hasNode) {
               const br = path.join(full, "build", "Release");
               fs.mkdirSync(br, { recursive: true });
-              fs.copyFileSync(srcNode, path.join(br, "better_sqlite3.node"));
-              console.log(`  afterPack: fixed hashed ref ${path.relative(unpackedBase, full)} ✓`);
+              fs.copyFileSync(
+                srcNode,
+                path.join(br, "better_sqlite3.node"),
+              );
+              console.log(
+                `  afterPack: fixed ${path.relative(context.appOutDir, full)} ✓`,
+              );
             }
           }
-        } else if (
-          entry.isDirectory() &&
-          (entry.name === "node_modules" ||
-            entry.name === ".next" ||
-            entry.name === "standalone")
-        ) {
-          fixBrokenSqliteRefs(full, depth + 1);
+        } else {
+          let stat;
+          try {
+            stat = fs.lstatSync(full);
+          } catch {
+            continue;
+          }
+          if (
+            stat.isDirectory() &&
+            (name === "node_modules" ||
+              name === ".next" ||
+              name === "standalone" ||
+              name === "resources" ||
+              name === "app.asar.unpacked")
+          ) {
+            ensureSqliteInTree(full, depth + 1);
+          }
         }
       }
     } catch {}
   }
 
-  fixBrokenSqliteRefs(unpackedBase, 0);
+  ensureSqliteInTree(appOutResources, 0);
 };

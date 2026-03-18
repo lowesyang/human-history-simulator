@@ -279,3 +279,4 @@ module.exports = async function afterPack(context) {
   }
 
   fixBrokenSqliteRefs(unpackedBase, 0);
+};

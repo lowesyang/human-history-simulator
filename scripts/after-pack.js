@@ -170,6 +170,25 @@ module.exports = async function afterPack(context) {
   }
 
   // Find the .node destination in standalone
+  // Next.js standalone may use hashed directory names like better-sqlite3-<hash>
+  function findBetterSqliteDirs(dir, depth = 0) {
+    if (depth > 10) return [];
+    const results = [];
+    try {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        if (!entry.isDirectory()) continue;
+        const full = path.join(dir, entry.name);
+        if (entry.name.startsWith("better-sqlite3")) {
+          results.push(full);
+        }
+        if (entry.name === "node_modules" || entry.name === ".next") {
+          results.push(...findBetterSqliteDirs(full, depth + 1));
+        }
+      }
+    } catch {}
+    return results;
+  }
+
   function findNodeFile(dir) {
     try {
       for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -184,13 +203,28 @@ module.exports = async function afterPack(context) {
     return null;
   }
 
-  const destNode = findNodeFile(path.join(projRoot, "node_modules"));
+  // Strategy 1: find existing .node file in standalone and replace it
+  const destNode = findNodeFile(standaloneDir);
   if (destNode) {
     fs.copyFileSync(srcNode, destNode);
     console.log(`  afterPack: copied rebuilt .node to standalone ✓`);
   } else {
-    console.log(
-      "  afterPack: could not find better_sqlite3.node in standalone to replace",
-    );
+    // Strategy 2: find better-sqlite3* dirs in standalone and place .node inside
+    const sqliteDirs = findBetterSqliteDirs(standaloneDir);
+    let placed = false;
+    for (const d of sqliteDirs) {
+      const buildRelease = path.join(d, "build", "Release");
+      fs.mkdirSync(buildRelease, { recursive: true });
+      fs.copyFileSync(srcNode, path.join(buildRelease, "better_sqlite3.node"));
+      console.log(`  afterPack: placed rebuilt .node into ${path.relative(standaloneDir, d)} ✓`);
+      placed = true;
+    }
+    if (!placed) {
+      // Strategy 3: place into standard node_modules path
+      const fallbackDir = path.join(projRoot, "node_modules", "better-sqlite3", "build", "Release");
+      fs.mkdirSync(fallbackDir, { recursive: true });
+      fs.copyFileSync(srcNode, path.join(fallbackDir, "better_sqlite3.node"));
+      console.log(`  afterPack: placed rebuilt .node into fallback path ✓`);
+    }
   }
 };

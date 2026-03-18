@@ -21,10 +21,16 @@ jobs:
         id: tag
         run: echo "tag=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
 
-      - name: Create draft release
+      - name: Create draft release (if not exists)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ steps.tag.outputs.tag }}" --draft --title "${{ steps.tag.outputs.tag }}" --generate-notes
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          if gh release view "$TAG" &>/dev/null; then
+            echo "Release $TAG already exists, skipping creation"
+          else
+            gh release create "$TAG" --draft --title "$TAG" --generate-notes
+          fi
 
   build-macos:
     name: Build macOS

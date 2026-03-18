@@ -1960,8 +1960,6 @@ export const REGION_NAME_MAP: Record<string, string[]> = {
   spanish_sahara_1939: ["Spanish Sahara"],
   iceland_1939: ["Iceland"],
   luxembourg_1939: ["Luxembourg"],
-  norway_1939: ["Norway"],
-  denmark_1939: ["Denmark"],
   liberia_1939: ["Liberia"],
   tanganyika_1939: ["Tanzania, United Republic of", "German E. Africa (Tanganyika)"],
   northern_rhodesia_1939: ["Northern Rhodesia"],

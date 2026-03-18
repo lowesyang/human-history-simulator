@@ -49,8 +49,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-          CSC_IDENTITY_AUTO_DISCOVERY: ${{ secrets.CSC_LINK != '' && 'true' || 'false' }}
-        run: npx electron-builder --mac --publish always
+        run: |
+          SIGN_ARGS=""
+          if [ -z "$CSC_LINK" ]; then
+            export CSC_IDENTITY_AUTO_DISCOVERY=false
+            SIGN_ARGS="--config.mac.identity=null"
+          fi
+          npx electron-builder --mac --publish always $SIGN_ARGS
 
   build-windows:
     name: Build Windows

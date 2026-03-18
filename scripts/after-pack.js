@@ -216,15 +216,66 @@ module.exports = async function afterPack(context) {
       const buildRelease = path.join(d, "build", "Release");
       fs.mkdirSync(buildRelease, { recursive: true });
       fs.copyFileSync(srcNode, path.join(buildRelease, "better_sqlite3.node"));
-      console.log(`  afterPack: placed rebuilt .node into ${path.relative(standaloneDir, d)} ✓`);
+      console.log(
+        `  afterPack: placed rebuilt .node into ${path.relative(standaloneDir, d)} ✓`,
+      );
       placed = true;
     }
     if (!placed) {
       // Strategy 3: place into standard node_modules path
-      const fallbackDir = path.join(projRoot, "node_modules", "better-sqlite3", "build", "Release");
+      const fallbackDir = path.join(
+        projRoot,
+        "node_modules",
+        "better-sqlite3",
+        "build",
+        "Release",
+      );
       fs.mkdirSync(fallbackDir, { recursive: true });
       fs.copyFileSync(srcNode, path.join(fallbackDir, "better_sqlite3.node"));
       console.log(`  afterPack: placed rebuilt .node into fallback path ✓`);
     }
   }
-};
+
+  // ── 5. Fix broken better-sqlite3 hashed refs in unpacked asar ──
+  // Next.js file tracing creates hashed directory references like
+  // better-sqlite3-<hash> that become broken symlinks/empty dirs after packing.
+  // 7zip fails if these paths are in the manifest but missing on disk.
+  function fixBrokenSqliteRefs(dir, depth) {
+    if (depth > 15) return;
+    try {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, entry.name);
+        if (entry.name.startsWith("better-sqlite3")) {
+          let accessible = true;
+          try {
+            fs.accessSync(full, fs.constants.R_OK);
+          } catch {
+            accessible = false;
+          }
+          if (!accessible) {
+            try {
+              fs.rmSync(full, { recursive: true, force: true });
+              console.log(`  afterPack: removed broken ref ${path.relative(unpackedBase, full)}`);
+            } catch {}
+          } else if (entry.isDirectory()) {
+            const hasNode = findNodeFile(full);
+            if (!hasNode) {
+              const br = path.join(full, "build", "Release");
+              fs.mkdirSync(br, { recursive: true });
+              fs.copyFileSync(srcNode, path.join(br, "better_sqlite3.node"));
+              console.log(`  afterPack: fixed hashed ref ${path.relative(unpackedBase, full)} ✓`);
+            }
+          }
+        } else if (
+          entry.isDirectory() &&
+          (entry.name === "node_modules" ||
+            entry.name === ".next" ||
+            entry.name === "standalone")
+        ) {
+          fixBrokenSqliteRefs(full, depth + 1);
+        }
+      }
+    } catch {}
+  }
+
+  fixBrokenSqliteRefs(unpackedBase, 0);

@@ -3,7 +3,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/lowesyang/human-history-simulator/pulls)
 
 > _If you had the power to rewrite history, where would you take humanity?_
@@ -271,4 +271,13 @@ See [`public/community-events/README.md`](./public/community-events/README.md) f
 
 ## License
 
-MIT
+AGPL-3.0 for non-commercial use. **Commercial license** required for any commercial use.
+
+| Use Case                           | Allowed?                         |
+| ---------------------------------- | -------------------------------- |
+| Personal / research / educational  | Yes                              |
+| Self-hosted (non-commercial)       | Yes, with attribution            |
+| Fork and modify (non-commercial)   | Yes, share source under AGPL-3.0 |
+| Commercial use / SaaS / rebranding | Requires commercial license      |
+
+See [LICENSE](./LICENSE) for full terms. For commercial licensing, contact the maintainer.

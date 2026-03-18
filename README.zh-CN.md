@@ -3,7 +3,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/lowesyang/human-history-simulator/pulls)
 
 > _如果你能改写历史，你会把人类引向何方？_
@@ -276,4 +276,13 @@ LLM_MAX_GROUP_SIZE=10
 
 ## 许可证
 
-MIT
+非商业用途采用 AGPL-3.0 协议。**商业用途**需获取商业授权。
+
+| 使用场景                   | 是否允许                 |
+| -------------------------- | ------------------------ |
+| 个人 / 学术研究 / 教育     | 允许                     |
+| 自部署（非商业）           | 允许，需保留署名         |
+| Fork 并修改（非商业）      | 允许，需以 AGPL-3.0 开源 |
+| 商业用途 / SaaS / 品牌定制 | 需获取商业授权           |
+
+完整条款见 [LICENSE](./LICENSE)。商业授权请联系项目维护者。
